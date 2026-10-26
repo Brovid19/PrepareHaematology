@@ -5,6 +5,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -27,16 +28,21 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.Alarm
 import androidx.compose.material.icons.filled.Autorenew
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.GraphicEq
+import androidx.compose.material.icons.filled.Headphones
 import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.PlaylistAdd
 import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material.icons.filled.TrendingUp
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.AlertDialog
@@ -117,6 +123,13 @@ fun SpacedRepetitionScreen(
     onCreateCustomCard: (String, String, String, String, String, String) -> Unit = { _, _, _, _, _, _ -> },
     onDismissSessionCompleted: () -> Unit,
     onOpenResourceModal: (ApprovedResource) -> Unit,
+    onSpeakFlashcard: (Flashcard, ApprovedResource?) -> Unit = { _, _ -> },
+    onAddFlashcardToPlaylist: (Flashcard, ApprovedResource?) -> Unit = { _, _ -> },
+    onAddAllDueFlashcardsToPlaylist: (List<Flashcard>, List<ApprovedResource>) -> Unit = { _, _ -> },
+    onAddAllFlashcardsToPlaylist: (List<Flashcard>, List<ApprovedResource>) -> Unit = { _, _ -> },
+    onOpenPlaylist: () -> Unit = {},
+    isTtsPlaying: Boolean = false,
+    activeSpeakingCardId: String? = null,
     onBackToDashboard: () -> Unit
 ) {
     val now = System.currentTimeMillis()
@@ -355,6 +368,48 @@ fun SpacedRepetitionScreen(
                         fontFamily = FontFamily.Monospace
                     )
                 }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
+
+        // Audio Playlist Quick Action Bar
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            OutlinedButton(
+                onClick = { onAddAllDueFlashcardsToPlaylist(resourceFiltered, resources) },
+                modifier = Modifier.weight(1f).testTag("queue_due_cards_btn"),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFD66371)),
+                border = BorderStroke(1.dp, Color(0xFFD66371).copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(8.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 6.dp, vertical = 5.dp)
+            ) {
+                Icon(imageVector = Icons.Default.PlaylistAdd, contentDescription = null, modifier = Modifier.size(15.dp))
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    text = "Queue Due (${scheduleForecast.dueNowCount})",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+
+            OutlinedButton(
+                onClick = onOpenPlaylist,
+                modifier = Modifier.weight(1f).testTag("open_tts_playlist_btn"),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = TealAccent),
+                border = BorderStroke(1.dp, TealAccent.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(8.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 6.dp, vertical = 5.dp)
+            ) {
+                Icon(imageVector = Icons.AutoMirrored.Filled.QueueMusic, contentDescription = null, modifier = Modifier.size(15.dp))
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    text = "Audio Playlist",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
 
@@ -743,7 +798,67 @@ fun SpacedRepetitionScreen(
                 )
             }
 
-            Spacer(modifier = Modifier.height(18.dp))
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Audio Revision Controls for Current Flashcard
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 2.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                val isSpeakingThisCard = isTtsPlaying && activeSpeakingCardId == "card_${activeCard.id}"
+                Button(
+                    onClick = { onSpeakFlashcard(activeCard, activeResource) },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isSpeakingThisCard) Color(0xFFD66371) else TealAccent
+                    ),
+                    shape = RoundedCornerShape(8.dp),
+                    modifier = Modifier
+                        .weight(1f)
+                        .testTag("flashcard_tts_listen_btn")
+                ) {
+                    Icon(
+                        imageVector = if (isSpeakingThisCard) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
+                        contentDescription = "Read flashcard aloud",
+                        tint = DeepNavyBg,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = if (isSpeakingThisCard) "Speaking..." else "Listen (TTS)",
+                        color = DeepNavyBg,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+
+                OutlinedButton(
+                    onClick = { onAddFlashcardToPlaylist(activeCard, activeResource) },
+                    shape = RoundedCornerShape(8.dp),
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = CyanPrimary),
+                    border = BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.5f)),
+                    modifier = Modifier
+                        .weight(1f)
+                        .testTag("flashcard_add_playlist_btn")
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.PlaylistAdd,
+                        contentDescription = "Add to Audio Playlist",
+                        tint = CyanPrimary,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "+ Audio Queue",
+                        color = CyanPrimary,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(14.dp))
 
             // Navigation Controls
             Row(

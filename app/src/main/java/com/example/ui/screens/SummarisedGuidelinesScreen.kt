@@ -31,18 +31,23 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
+import androidx.compose.material.icons.automirrored.filled.QueueMusic
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.filled.GraphicEq
+import androidx.compose.material.icons.filled.Headphones
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.LocalHospital
 import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.filled.PlaylistAdd
 import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.UnfoldLess
 import androidx.compose.material.icons.filled.UnfoldMore
 import androidx.compose.material.icons.filled.Verified
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -95,6 +100,12 @@ fun SummarisedGuidelinesScreen(
     flashcards: List<Flashcard>,
     onPracticeGuideline: (String) -> Unit,
     onRecallGuideline: (String) -> Unit,
+    onSpeakGuideline: (ApprovedResource) -> Unit = {},
+    onAddGuidelineToPlaylist: (ApprovedResource) -> Unit = {},
+    onAddAllSummariesToPlaylist: (List<ApprovedResource>) -> Unit = {},
+    onOpenPlaylist: () -> Unit = {},
+    ttsActiveSpeakingId: String? = null,
+    isTtsPlaying: Boolean = false,
     onBackToDashboard: () -> Unit
 ) {
     var searchQuery by remember { mutableStateOf("") }
@@ -213,6 +224,48 @@ fun SummarisedGuidelinesScreen(
         }
 
         Spacer(modifier = Modifier.height(12.dp))
+
+        // Audio Revision & Playlist Action Bar
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            OutlinedButton(
+                onClick = { onAddAllSummariesToPlaylist(filtered) },
+                modifier = Modifier.weight(1f).testTag("add_all_summaries_playlist_btn"),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = TealAccent),
+                border = androidx.compose.foundation.BorderStroke(1.dp, TealAccent.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(8.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 6.dp)
+            ) {
+                Icon(imageVector = Icons.Default.PlaylistAdd, contentDescription = null, modifier = Modifier.size(16.dp))
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "Queue All (${filtered.size}) to Audio",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+
+            OutlinedButton(
+                onClick = onOpenPlaylist,
+                modifier = Modifier.weight(1f).testTag("summaries_open_playlist_btn"),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = CyanPrimary),
+                border = androidx.compose.foundation.BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.5f)),
+                shape = RoundedCornerShape(8.dp),
+                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 6.dp)
+            ) {
+                Icon(imageVector = Icons.AutoMirrored.Filled.QueueMusic, contentDescription = null, modifier = Modifier.size(16.dp))
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "Audio Playlist Queue",
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(10.dp))
 
         // Search Bar
         OutlinedTextField(
@@ -477,30 +530,57 @@ fun SummarisedGuidelinesScreen(
                             modifier = Modifier.weight(1f)
                         )
                         Spacer(modifier = Modifier.width(6.dp))
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(4.dp))
-                                .background(CyanPrimary.copy(alpha = 0.15f))
-                                .clickable {
-                                    try {
-                                        uriHandler.openUri(res.getOnlineUrl())
-                                    } catch (e: Exception) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            val isSpeakingThis = isTtsPlaying && ttsActiveSpeakingId == "summary_${res.id}"
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(if (isSpeakingThis) Color(0xFFD66371).copy(alpha = 0.2f) else TealAccent.copy(alpha = 0.15f))
+                                    .clickable { onSpeakGuideline(res) }
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                                    .testTag("summary_quick_tts_${res.id}")
+                            ) {
+                                Icon(
+                                    imageVector = if (isSpeakingThis) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
+                                    contentDescription = "Listen to summary",
+                                    tint = if (isSpeakingThis) Color(0xFFD66371) else TealAccent,
+                                    modifier = Modifier.size(13.dp)
+                                )
+                                Spacer(modifier = Modifier.width(3.dp))
+                                Text(
+                                    text = if (isSpeakingThis) "Speaking" else "TTS",
+                                    color = if (isSpeakingThis) Color(0xFFD66371) else TealAccent,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(CyanPrimary.copy(alpha = 0.15f))
+                                    .clickable {
                                         try {
-                                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(res.getOnlineUrl()))
-                                            context.startActivity(intent)
-                                        } catch (_: Exception) {}
+                                            uriHandler.openUri(res.getOnlineUrl())
+                                        } catch (e: Exception) {
+                                            try {
+                                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(res.getOnlineUrl()))
+                                                context.startActivity(intent)
+                                            } catch (_: Exception) {}
+                                        }
                                     }
-                                }
-                                .padding(horizontal = 6.dp, vertical = 2.dp)
-                                .testTag("online_chip_${res.id}")
-                        ) {
-                            Text(
-                                text = "Online ↗",
-                                color = CyanPrimary,
-                                fontSize = 10.sp,
-                                fontWeight = FontWeight.Bold
-                            )
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                                    .testTag("online_chip_${res.id}")
+                            ) {
+                                Text(
+                                    text = "Online ↗",
+                                    color = CyanPrimary,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
                         }
                     }
 
@@ -623,6 +703,60 @@ fun SummarisedGuidelinesScreen(
                             }
 
                             Spacer(modifier = Modifier.height(10.dp))
+
+                            // Audio Listen & Queue Action Buttons
+                            val isSpeakingThis = isTtsPlaying && ttsActiveSpeakingId == "summary_${res.id}"
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Button(
+                                    onClick = { onSpeakGuideline(res) },
+                                    colors = ButtonDefaults.buttonColors(
+                                        containerColor = if (isSpeakingThis) Color(0xFFD66371) else TealAccent
+                                    ),
+                                    shape = RoundedCornerShape(8.dp),
+                                    modifier = Modifier.weight(1f).testTag("summary_tts_listen_${res.id}")
+                                ) {
+                                    Icon(
+                                        imageVector = if (isSpeakingThis) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
+                                        contentDescription = "Listen to summary",
+                                        tint = DeepNavyBg,
+                                        modifier = Modifier.size(16.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text(
+                                        text = if (isSpeakingThis) "Speaking..." else "Listen (TTS)",
+                                        color = DeepNavyBg,
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 12.sp
+                                    )
+                                }
+
+                                OutlinedButton(
+                                    onClick = { onAddGuidelineToPlaylist(res) },
+                                    shape = RoundedCornerShape(8.dp),
+                                    colors = ButtonDefaults.outlinedButtonColors(contentColor = CyanPrimary),
+                                    border = androidx.compose.foundation.BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.5f)),
+                                    modifier = Modifier.weight(1f).testTag("summary_tts_queue_${res.id}")
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.PlaylistAdd,
+                                        contentDescription = "Add summary to audio playlist",
+                                        tint = CyanPrimary,
+                                        modifier = Modifier.size(16.dp)
+                                    )
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text(
+                                        text = "+ Audio Queue",
+                                        color = CyanPrimary,
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 12.sp
+                                    )
+                                }
+                            }
+
+                            Spacer(modifier = Modifier.height(8.dp))
 
                             // Action buttons: Practice questions & Spaced review on this guideline
                             Row(

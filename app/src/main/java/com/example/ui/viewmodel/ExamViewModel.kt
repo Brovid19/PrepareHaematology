@@ -4,6 +4,11 @@ import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.audio.TtsItemType
+import com.example.audio.TtsPlaybackState
+import com.example.audio.TtsPlaylistItem
+import com.example.audio.TtsPlayer
+import com.example.audio.TtsTextFormatter
 import com.example.data.ai.GeneratedGuidelinePackage
 import com.example.data.ai.GuidelineAiSynthesizer
 import com.example.data.model.ApprovedResource
@@ -118,10 +123,18 @@ data class ExamUiState(
     val aiGeneratedPackage: GeneratedGuidelinePackage? = null
 )
 
-class ExamViewModel(private val repository: ExamRepository) : ViewModel() {
+class ExamViewModel(
+    private val repository: ExamRepository,
+    context: Context? = null
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ExamUiState())
     val uiState: StateFlow<ExamUiState> = _uiState.asStateFlow()
+
+    private val _ttsState = MutableStateFlow(TtsPlaybackState())
+    val ttsState: StateFlow<TtsPlaybackState> = _ttsState.asStateFlow()
+
+    private var ttsPlayer: TtsPlayer? = null
 
     val allResources: StateFlow<List<ApprovedResource>> = repository.allResources
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
@@ -151,6 +164,20 @@ class ExamViewModel(private val repository: ExamRepository) : ViewModel() {
     init {
         viewModelScope.launch {
             repository.ensureDataSeeded()
+        }
+        if (context != null) {
+            ttsPlayer = TtsPlayer(
+                context = context,
+                onInitResult = { success ->
+                    _ttsState.value = _ttsState.value.copy(isInitialized = success)
+                },
+                onUtteranceFinished = { utteranceId ->
+                    handleUtteranceFinished(utteranceId)
+                },
+                onUtteranceError = { utteranceId ->
+                    handleUtteranceError(utteranceId)
+                }
+            )
         }
     }
 
@@ -765,4 +792,326 @@ class ExamViewModel(private val repository: ExamRepository) : ViewModel() {
             )
         }
     }
+
+    // ==========================================
+    // TEXT-TO-SPEECH (TTS) & AUDIO PLAYLIST
+    // ==========================================
+
+    private fun handleUtteranceFinished(utteranceId: String) {
+        viewModelScope.launch {
+            val state = _ttsState.value
+            if (state.isPlaying && state.playlist.isNotEmpty()) {
+                val nextIndex = state.currentItemIndex + 1
+                if (nextIndex < state.playlist.size) {
+                    delay(650) // Natural breathing pause between playlist items
+                    playPlaylistItem(nextIndex)
+                } else {
+                    _ttsState.value = state.copy(
+                        isPlaying = false,
+                        isPaused = false,
+                        currentSpeakingItem = null,
+                        statusMessage = "Audio playlist completed"
+                    )
+                }
+            } else {
+                _ttsState.value = state.copy(
+                    isPlaying = false,
+                    isPaused = false,
+                    currentSpeakingItem = null
+                )
+            }
+        }
+    }
+
+    private fun handleUtteranceError(utteranceId: String) {
+        _ttsState.value = _ttsState.value.copy(
+            isPlaying = false,
+            isPaused = false,
+            currentSpeakingItem = null,
+            statusMessage = "Audio playback interrupted"
+        )
+    }
+
+    fun speakSingleSummary(resource: ApprovedResource) {
+        val text = TtsTextFormatter.formatSummaryForSpeech(resource)
+        val item = TtsPlaylistItem(
+            id = "summary_${resource.id}",
+            type = TtsItemType.SUMMARY,
+            title = resource.title,
+            subtitle = "${resource.issuingBody} (${resource.year})",
+            spokenText = text,
+            referenceId = resource.id
+        )
+        playDirectItem(item)
+    }
+
+    fun addSummaryToPlaylist(resource: ApprovedResource) {
+        val text = TtsTextFormatter.formatSummaryForSpeech(resource)
+        val item = TtsPlaylistItem(
+            id = "summary_${resource.id}",
+            type = TtsItemType.SUMMARY,
+            title = resource.title,
+            subtitle = "${resource.issuingBody} (${resource.year})",
+            spokenText = text,
+            referenceId = resource.id
+        )
+        addToPlaylistInternal(item)
+    }
+
+    fun addAllSummariesToPlaylist(resources: List<ApprovedResource>) {
+        val items = resources.map { res ->
+            TtsPlaylistItem(
+                id = "summary_${res.id}",
+                type = TtsItemType.SUMMARY,
+                title = res.title,
+                subtitle = "${res.issuingBody} (${res.year})",
+                spokenText = TtsTextFormatter.formatSummaryForSpeech(res),
+                referenceId = res.id
+            )
+        }
+        val currentList = _ttsState.value.playlist.toMutableList()
+        var addedCount = 0
+        items.forEach { item ->
+            if (currentList.none { it.id == item.id }) {
+                currentList.add(item)
+                addedCount++
+            }
+        }
+        _ttsState.value = _ttsState.value.copy(
+            playlist = currentList,
+            statusMessage = "Added $addedCount guideline summaries to audio playlist (${currentList.size} total in queue)"
+        )
+    }
+
+    fun speakSingleFlashcard(card: Flashcard, resource: ApprovedResource?) {
+        val text = TtsTextFormatter.formatFlashcardForSpeech(card, resource)
+        val item = TtsPlaylistItem(
+            id = "card_${card.id}",
+            type = TtsItemType.FLASHCARD,
+            title = card.front,
+            subtitle = "${card.domain} • ${card.evidenceGrade ?: "Core Fact"}",
+            spokenText = text,
+            referenceId = card.id
+        )
+        playDirectItem(item)
+    }
+
+    fun addFlashcardToPlaylist(card: Flashcard, resource: ApprovedResource?) {
+        val text = TtsTextFormatter.formatFlashcardForSpeech(card, resource)
+        val item = TtsPlaylistItem(
+            id = "card_${card.id}",
+            type = TtsItemType.FLASHCARD,
+            title = card.front,
+            subtitle = "${card.domain} • ${card.evidenceGrade ?: "Core Fact"}",
+            spokenText = text,
+            referenceId = card.id
+        )
+        addToPlaylistInternal(item)
+    }
+
+    fun addAllDueFlashcardsToPlaylist(cards: List<Flashcard>, resources: List<ApprovedResource>) {
+        val now = System.currentTimeMillis()
+        val dueCards = cards.filter { it.dueDateTimestamp <= now }
+        if (dueCards.isEmpty()) {
+            _ttsState.value = _ttsState.value.copy(statusMessage = "No cards currently due for review")
+            return
+        }
+        val resMap = resources.associateBy { it.id }
+        val items = dueCards.map { card ->
+            TtsPlaylistItem(
+                id = "card_${card.id}",
+                type = TtsItemType.FLASHCARD,
+                title = card.front,
+                subtitle = "${card.domain} • ${card.evidenceGrade ?: "Due"}",
+                spokenText = TtsTextFormatter.formatFlashcardForSpeech(card, resMap[card.sourceResourceId]),
+                referenceId = card.id
+            )
+        }
+        val currentList = _ttsState.value.playlist.toMutableList()
+        var addedCount = 0
+        items.forEach { item ->
+            if (currentList.none { it.id == item.id }) {
+                currentList.add(item)
+                addedCount++
+            }
+        }
+        _ttsState.value = _ttsState.value.copy(
+            playlist = currentList,
+            statusMessage = "Queued $addedCount due flashcards to audio playlist (${currentList.size} total in queue)"
+        )
+    }
+
+    fun addAllFlashcardsToPlaylist(cards: List<Flashcard>, resources: List<ApprovedResource>) {
+        val resMap = resources.associateBy { it.id }
+        val items = cards.map { card ->
+            TtsPlaylistItem(
+                id = "card_${card.id}",
+                type = TtsItemType.FLASHCARD,
+                title = card.front,
+                subtitle = "${card.domain} • ${card.evidenceGrade ?: "Recall"}",
+                spokenText = TtsTextFormatter.formatFlashcardForSpeech(card, resMap[card.sourceResourceId]),
+                referenceId = card.id
+            )
+        }
+        val currentList = _ttsState.value.playlist.toMutableList()
+        var addedCount = 0
+        items.forEach { item ->
+            if (currentList.none { it.id == item.id }) {
+                currentList.add(item)
+                addedCount++
+            }
+        }
+        _ttsState.value = _ttsState.value.copy(
+            playlist = currentList,
+            statusMessage = "Queued $addedCount flashcards to audio playlist (${currentList.size} total in queue)"
+        )
+    }
+
+    private fun addToPlaylistInternal(item: TtsPlaylistItem) {
+        val currentList = _ttsState.value.playlist.toMutableList()
+        val existingIndex = currentList.indexOfFirst { it.id == item.id }
+        if (existingIndex >= 0) {
+            _ttsState.value = _ttsState.value.copy(
+                statusMessage = "'${item.title.take(28)}...' is already in the audio playlist"
+            )
+        } else {
+            currentList.add(item)
+            _ttsState.value = _ttsState.value.copy(
+                playlist = currentList,
+                statusMessage = "Added to audio playlist (${currentList.size} items queued)"
+            )
+        }
+    }
+
+    private fun playDirectItem(item: TtsPlaylistItem) {
+        ttsPlayer?.stop()
+        _ttsState.value = _ttsState.value.copy(
+            isPlaying = true,
+            isPaused = false,
+            currentSpeakingItem = item,
+            statusMessage = "Playing: ${item.title.take(35)}..."
+        )
+        ttsPlayer?.speak(item.spokenText, item.id)
+    }
+
+    fun playTtsPlaylist(startIndex: Int? = null) {
+        val state = _ttsState.value
+        if (state.playlist.isEmpty()) {
+            _ttsState.value = state.copy(statusMessage = "Audio playlist is empty. Add summaries or flashcards to play.")
+            return
+        }
+        val indexToPlay = startIndex ?: state.currentItemIndex.coerceIn(0, state.playlist.size - 1)
+        playPlaylistItem(indexToPlay)
+    }
+
+    private fun playPlaylistItem(index: Int) {
+        val playlist = _ttsState.value.playlist
+        if (index !in playlist.indices) return
+        val item = playlist[index]
+        ttsPlayer?.stop()
+        _ttsState.value = _ttsState.value.copy(
+            currentItemIndex = index,
+            isPlaying = true,
+            isPaused = false,
+            currentSpeakingItem = item,
+            statusMessage = "Playing (${index + 1}/${playlist.size}): ${item.title.take(30)}..."
+        )
+        ttsPlayer?.speak(item.spokenText, item.id)
+    }
+
+    fun pauseTtsPlaylist() {
+        ttsPlayer?.stop()
+        _ttsState.value = _ttsState.value.copy(
+            isPlaying = false,
+            isPaused = true,
+            statusMessage = "Playback paused"
+        )
+    }
+
+    fun resumeTtsPlaylist() {
+        if (_ttsState.value.playlist.isNotEmpty()) {
+            playPlaylistItem(_ttsState.value.currentItemIndex)
+        } else if (_ttsState.value.currentSpeakingItem != null) {
+            playDirectItem(_ttsState.value.currentSpeakingItem!!)
+        }
+    }
+
+    fun stopTts() {
+        ttsPlayer?.stop()
+        _ttsState.value = _ttsState.value.copy(
+            isPlaying = false,
+            isPaused = false,
+            currentSpeakingItem = null,
+            statusMessage = null
+        )
+    }
+
+    fun skipTtsNext() {
+        val state = _ttsState.value
+        if (state.playlist.isEmpty()) return
+        val nextIndex = (state.currentItemIndex + 1) % state.playlist.size
+        playPlaylistItem(nextIndex)
+    }
+
+    fun skipTtsPrevious() {
+        val state = _ttsState.value
+        if (state.playlist.isEmpty()) return
+        val prevIndex = if (state.currentItemIndex - 1 < 0) state.playlist.size - 1 else state.currentItemIndex - 1
+        playPlaylistItem(prevIndex)
+    }
+
+    fun removeTtsItem(index: Int) {
+        val currentList = _ttsState.value.playlist.toMutableList()
+        if (index in currentList.indices) {
+            val isCurrent = index == _ttsState.value.currentItemIndex
+            currentList.removeAt(index)
+            var newIndex = _ttsState.value.currentItemIndex
+            if (newIndex >= currentList.size) {
+                newIndex = (currentList.size - 1).coerceAtLeast(0)
+            }
+            if (isCurrent && _ttsState.value.isPlaying) {
+                if (currentList.isNotEmpty()) {
+                    _ttsState.value = _ttsState.value.copy(playlist = currentList, currentItemIndex = newIndex)
+                    playPlaylistItem(newIndex)
+                } else {
+                    stopTts()
+                    _ttsState.value = _ttsState.value.copy(playlist = emptyList())
+                }
+            } else {
+                _ttsState.value = _ttsState.value.copy(playlist = currentList, currentItemIndex = newIndex)
+            }
+        }
+    }
+
+    fun clearTtsPlaylist() {
+        stopTts()
+        _ttsState.value = _ttsState.value.copy(
+            playlist = emptyList(),
+            currentItemIndex = 0,
+            statusMessage = "Audio playlist cleared"
+        )
+    }
+
+    fun setTtsSpeechRate(rate: Float) {
+        ttsPlayer?.setSpeechRate(rate)
+        _ttsState.value = _ttsState.value.copy(speechRate = rate)
+    }
+
+    fun toggleTtsPlaylistSheet() {
+        _ttsState.value = _ttsState.value.copy(isPlaylistSheetOpen = !_ttsState.value.isPlaylistSheetOpen)
+    }
+
+    fun closeTtsPlaylistSheet() {
+        _ttsState.value = _ttsState.value.copy(isPlaylistSheetOpen = false)
+    }
+
+    fun dismissTtsMessage() {
+        _ttsState.value = _ttsState.value.copy(statusMessage = null)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        ttsPlayer?.shutdown()
+    }
 }
+

@@ -7,6 +7,8 @@ import com.example.data.db.SeedData
 import com.example.data.repository.ExamRepository
 import com.example.ui.viewmodel.ExamViewModel
 import com.example.ui.viewmodel.ProficiencyLevel
+import com.example.audio.TtsItemType
+import com.example.audio.TtsTextFormatter
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue

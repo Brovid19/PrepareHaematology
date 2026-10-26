@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBars
@@ -41,6 +42,8 @@ import com.example.data.db.SeedData
 import com.example.data.model.Question
 import com.example.data.repository.ExamRepository
 import com.example.ui.components.GroundingSourceModal
+import com.example.ui.components.TtsAudioPlayerBar
+import com.example.ui.components.TtsPlaylistDialog
 import com.example.ui.screens.DashboardScreen
 import com.example.ui.screens.MockExamScreen
 import com.example.ui.screens.PracticeScreen
@@ -72,7 +75,7 @@ class MainActivity : ComponentActivity() {
 
         val database = AppDatabase.getInstance(applicationContext)
         val repository = ExamRepository(database)
-        val viewModelFactory = ExamViewModelFactory(repository)
+        val viewModelFactory = ExamViewModelFactory(repository, applicationContext)
 
         setContent {
             MyApplicationTheme {
@@ -87,6 +90,7 @@ class MainActivity : ComponentActivity() {
 fun MainAppScreen(viewModel: ExamViewModel) {
     val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val ttsState by viewModel.ttsState.collectAsStateWithLifecycle()
     val resources by viewModel.allResources.collectAsStateWithLifecycle()
     val questions by viewModel.allQuestions.collectAsStateWithLifecycle()
     val flashcards by viewModel.allFlashcards.collectAsStateWithLifecycle()
@@ -108,10 +112,22 @@ fun MainAppScreen(viewModel: ExamViewModel) {
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         bottomBar = {
             if (!uiState.isMockActive || uiState.isMockFinished) {
-                PrepareBottomNavigationBar(
-                    currentScreen = uiState.currentScreen,
-                    onNavigate = { viewModel.navigateTo(it) }
-                )
+                Column {
+                    TtsAudioPlayerBar(
+                        ttsState = ttsState,
+                        onPlayPause = {
+                            if (ttsState.isPlaying) viewModel.pauseTtsPlaylist() else viewModel.resumeTtsPlaylist()
+                        },
+                        onSkipNext = { viewModel.skipTtsNext() },
+                        onSkipPrevious = { viewModel.skipTtsPrevious() },
+                        onStop = { viewModel.stopTts() },
+                        onOpenPlaylist = { viewModel.toggleTtsPlaylistSheet() }
+                    )
+                    PrepareBottomNavigationBar(
+                        currentScreen = uiState.currentScreen,
+                        onNavigate = { viewModel.navigateTo(it) }
+                    )
+                }
             }
         }
     ) { innerPadding ->
@@ -160,6 +176,12 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                             viewModel.setFlashcardResourceFilter(filterName)
                             viewModel.navigateTo(Screen.SPACED_REPETITION)
                         },
+                        onSpeakGuideline = { viewModel.speakSingleSummary(it) },
+                        onAddGuidelineToPlaylist = { viewModel.addSummaryToPlaylist(it) },
+                        onAddAllSummariesToPlaylist = { viewModel.addAllSummariesToPlaylist(it) },
+                        onOpenPlaylist = { viewModel.toggleTtsPlaylistSheet() },
+                        ttsActiveSpeakingId = ttsState.currentSpeakingItem?.id,
+                        isTtsPlaying = ttsState.isPlaying,
                         onBackToDashboard = { viewModel.navigateTo(Screen.DASHBOARD) }
                     )
                 }
@@ -215,6 +237,13 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                         onCreateCustomCard = { f, b, d, r, s, e -> viewModel.addCustomFlashcard(f, b, d, r, s, e) },
                         onDismissSessionCompleted = { viewModel.dismissSessionCompletion() },
                         onOpenResourceModal = { viewModel.openGroundingDrawer(it) },
+                        onSpeakFlashcard = { card, res -> viewModel.speakSingleFlashcard(card, res) },
+                        onAddFlashcardToPlaylist = { card, res -> viewModel.addFlashcardToPlaylist(card, res) },
+                        onAddAllDueFlashcardsToPlaylist = { cards, res -> viewModel.addAllDueFlashcardsToPlaylist(cards, res) },
+                        onAddAllFlashcardsToPlaylist = { cards, res -> viewModel.addAllFlashcardsToPlaylist(cards, res) },
+                        onOpenPlaylist = { viewModel.toggleTtsPlaylistSheet() },
+                        isTtsPlaying = ttsState.isPlaying,
+                        activeSpeakingCardId = ttsState.currentSpeakingItem?.id,
                         onBackToDashboard = { viewModel.navigateTo(Screen.DASHBOARD) }
                     )
                 }
@@ -327,6 +356,23 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                     resource = uiState.activeResourceDetail,
                     activeQuestion = activeQ,
                     onDismiss = { viewModel.closeGroundingDrawer() }
+                )
+            }
+
+            // Audio Revision Playlist Dialog
+            if (ttsState.isPlaylistSheetOpen) {
+                TtsPlaylistDialog(
+                    ttsState = ttsState,
+                    onDismiss = { viewModel.closeTtsPlaylistSheet() },
+                    onPlayItem = { viewModel.playTtsPlaylist(it) },
+                    onPlayPause = {
+                        if (ttsState.isPlaying) viewModel.pauseTtsPlaylist() else viewModel.resumeTtsPlaylist()
+                    },
+                    onRemoveItem = { viewModel.removeTtsItem(it) },
+                    onClearPlaylist = { viewModel.clearTtsPlaylist() },
+                    onSetSpeechRate = { viewModel.setTtsSpeechRate(it) },
+                    onAddAllSummaries = { viewModel.addAllSummariesToPlaylist(resources) },
+                    onAddDueCards = { viewModel.addAllDueFlashcardsToPlaylist(flashcards, resources) }
                 )
             }
         }
