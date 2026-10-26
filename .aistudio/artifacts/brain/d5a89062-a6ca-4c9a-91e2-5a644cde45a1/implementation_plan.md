@@ -194,3 +194,18 @@ Specialist trainees in haematology (ST3–ST7), clinical scientists, and patholo
    - Implement flashcard spaced repetition review loop.
 5. **Step 5: Verification & Build**
    - Execute `compile_applet` to verify compilation, test edge-to-edge layout, and finalize polish.
+
+---
+
+## 6. Recent Enhancements & Design Refinements
+
+- **Soft, Eye-Comfort Haematology Red Palette**:
+  - Replaced high-glare, electric reds (`#E11D48`, `#EF4444`, `#FB7185`) with calibrated, softer haematology crimson (`#D66371`), gentle dusty rose accent (`#E28B96`), and calming terracotta error/alert tone (`#E06C75`).
+  - Reduced saturation and chromatic aberration while retaining distinct clinical Haematology identity.
+- **Optimized for Night Mode by Default**:
+  - `MyApplicationTheme` explicitly defaults to `darkTheme = true`.
+  - Edge-to-edge system bars configured with `SystemBarStyle.dark` to guarantee crisp, non-glaring status and navigation bar icons on dark backgrounds regardless of device-level day/night settings.
+  - Deep OLED-friendly obsidian background (`#0B0C10`), smooth charcoal surfaces (`#13141A`), subtle low-contrast borders (`#262833`), and anti-glare off-white text (`#ECEEF2`) to eliminate eye strain during late-night revision sessions.
+- **Verification**:
+  - Full applet compilation succeeded with zero warnings.
+  - Robolectric test suite (`gradle :app:testDebugUnitTest`) verified with 33 tasks executed and 100% passing.
