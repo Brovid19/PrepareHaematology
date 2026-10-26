@@ -25,6 +25,24 @@ class ExamRepository(private val db: AppDatabase) {
         val existing = db.approvedResourceDao().getAllResources().firstOrNull()
         if (existing.isNullOrEmpty()) {
             AppDatabase.seedDatabase(db)
+        } else {
+            val currentResIds = existing.map { it.id }.toSet()
+            val newResources = SeedData.getApprovedResources().filter { it.id !in currentResIds }
+            if (newResources.isNotEmpty()) {
+                db.approvedResourceDao().insertResources(newResources)
+            }
+            val existingQuestions = db.questionDao().getAllQuestions().firstOrNull() ?: emptyList()
+            val currentQIds = existingQuestions.map { it.id }.toSet()
+            val newQuestions = SeedData.getQuestions().filter { it.id !in currentQIds }
+            if (newQuestions.isNotEmpty()) {
+                db.questionDao().insertQuestions(newQuestions)
+            }
+            val existingCards = db.flashcardDao().getAllFlashcards().firstOrNull() ?: emptyList()
+            val currentCardIds = existingCards.map { it.id }.toSet()
+            val newCards = SeedData.getFlashcards().filter { it.id !in currentCardIds }
+            if (newCards.isNotEmpty()) {
+                db.flashcardDao().insertFlashcards(newCards)
+            }
         }
     }
 

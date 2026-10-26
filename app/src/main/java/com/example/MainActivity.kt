@@ -261,6 +261,33 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                                 firstRes.summary + "\n" + firstRes.keyCutoffs + "\n" + firstRes.stagingCriteria + "\n" + firstRes.recommendations
                             )
                         },
+                        onLoadPresetGuideline = { presetKey ->
+                            when (presetKey) {
+                                "biss" -> viewModel.analyzeSampleGuideline(
+                                    "Biss et al. (2026) BSH UKHCDO Multidisciplinary Haematology & Gynaecology Service",
+                                    "BSH UKHCDO Good Practice Paper on multidisciplinary haematology and gynaecology service for bleeding and thrombotic disorders by Tina Biss et al. 2026. Heavy menstrual bleeding HMB, PALM-COEIN classification, apixaban dabigatran switch, intrauterine system LNS-IUS expulsion."
+                                )
+                                "tam" -> viewModel.analyzeSampleGuideline(
+                                    "Tam et al. (2026) Point-of-Care Testing in General Haematology BSH Good Practice Paper",
+                                    "British Society for Haematology good practice paper on point-of-care testing POCT by Jennifer Tam et al. 2026. ISO 15189:2022, POCT PT/INR antiphospholipid syndrome, high-sensitivity D-dimer, blood gas analyser BGA Hb underestimation, viscoelastic TEG ROTEM."
+                                )
+                                "macdonald" -> viewModel.analyzeSampleGuideline(
+                                    "MacDonald et al. (2026) Diagnosis and Monitoring of Thrombotic Thrombocytopenic Purpura",
+                                    "British Society for Haematology guideline on diagnosis and monitoring of TTP and ADAMTS13 by Stephen MacDonald et al. 2026. ADAMTS13 activity <10 IU/dL, 0.109 M sodium citrate tube, EDTA contraindicated, platelet <30x10^9/L MAHA film <60min, anti-ADAMTS13 antibody ELISA within 72h."
+                                )
+                                "osborne" -> viewModel.analyzeSampleGuideline(
+                                    "Osborne et al. (2026) Primary Mediastinal B-Cell Lymphoma BSH Guideline",
+                                    "British Society for Haematology guideline on primary mediastinal B-cell lymphoma PMBCL by Wendy Osborne et al. 2026. R-CHOP-14 DA-R-EPOCH first-line, R-CHOP-21 not recommended, IELSG37 trial complete metabolic response DS 1-3 omit radiotherapy, thromboprophylaxis platelets >50, liso-cel CAR-T second-line."
+                                )
+                                else -> {
+                                    val firstRes = resources.firstOrNull() ?: SeedData.getApprovedResources().first()
+                                    viewModel.analyzeSampleGuideline(
+                                        firstRes.title,
+                                        firstRes.summary + "\n" + firstRes.keyCutoffs + "\n" + firstRes.stagingCriteria + "\n" + firstRes.recommendations
+                                    )
+                                }
+                            }
+                        },
                         onUpdateAiPackage = { pkg -> viewModel.updateAiGeneratedPackage(pkg) },
                         onCommitAiPackage = { viewModel.commitAiGeneratedPackage() },
                         onDismissAiReview = { viewModel.dismissAiReviewDialog() },

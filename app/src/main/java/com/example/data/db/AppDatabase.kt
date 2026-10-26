@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
         Flashcard::class,
         UserAnswerHistory::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

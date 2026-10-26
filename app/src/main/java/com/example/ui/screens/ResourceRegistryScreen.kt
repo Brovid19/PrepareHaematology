@@ -96,6 +96,7 @@ fun ResourceRegistryScreen(
     onIngestGuideline: (String, String, Int, String, String, String, String, String, String, String) -> Unit,
     onUploadPdf: (Uri) -> Unit = {},
     onLoadSamplePdf: () -> Unit = {},
+    onLoadPresetGuideline: (String) -> Unit = {},
     onUpdateAiPackage: (GeneratedGuidelinePackage) -> Unit = {},
     onCommitAiPackage: () -> Unit = {},
     onDismissAiReview: () -> Unit = {},
@@ -278,6 +279,57 @@ fun ResourceRegistryScreen(
                             Icon(imageVector = Icons.Default.Description, contentDescription = null, tint = CyanPrimary, modifier = Modifier.size(14.dp))
                             Spacer(modifier = Modifier.width(4.dp))
                             Text("Test BSH PDF", color = CyanPrimary, fontWeight = FontWeight.Bold, fontSize = 11.sp)
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Text(
+                        text = "TEST ATTACHED 2026 GUIDELINES VIA AI SYNTHESIS:",
+                        color = TextSecondary,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Bold,
+                        letterSpacing = 0.5.sp
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        OutlinedButton(
+                            onClick = { onLoadPresetGuideline("biss") },
+                            shape = RoundedCornerShape(6.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, CardBorderStroke),
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                            modifier = Modifier.weight(1f).testTag("test_biss_btn")
+                        ) {
+                            Text("Biss 2026\n(Gynae)", fontSize = 10.sp, color = TealAccent, textAlign = androidx.compose.ui.text.style.TextAlign.Center, lineHeight = 12.sp)
+                        }
+                        OutlinedButton(
+                            onClick = { onLoadPresetGuideline("tam") },
+                            shape = RoundedCornerShape(6.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, CardBorderStroke),
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                            modifier = Modifier.weight(1f).testTag("test_tam_btn")
+                        ) {
+                            Text("Tam 2026\n(POCT)", fontSize = 10.sp, color = CyanPrimary, textAlign = androidx.compose.ui.text.style.TextAlign.Center, lineHeight = 12.sp)
+                        }
+                        OutlinedButton(
+                            onClick = { onLoadPresetGuideline("macdonald") },
+                            shape = RoundedCornerShape(6.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, CardBorderStroke),
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                            modifier = Modifier.weight(1f).testTag("test_macdonald_btn")
+                        ) {
+                            Text("MacDonald\n(TTP)", fontSize = 10.sp, color = EmeraldSuccess, textAlign = androidx.compose.ui.text.style.TextAlign.Center, lineHeight = 12.sp)
+                        }
+                        OutlinedButton(
+                            onClick = { onLoadPresetGuideline("osborne") },
+                            shape = RoundedCornerShape(6.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, CardBorderStroke),
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                            modifier = Modifier.weight(1f).testTag("test_osborne_btn")
+                        ) {
+                            Text("Osborne\n(PMBCL)", fontSize = 10.sp, color = AmberWarning, textAlign = androidx.compose.ui.text.style.TextAlign.Center, lineHeight = 12.sp)
                         }
                     }
                 }

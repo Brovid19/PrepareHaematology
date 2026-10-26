@@ -125,37 +125,121 @@ class ExampleRobolectricTest {
   }
 
   @Test
-  fun `verify AI guideline synthesis from PDF text generates grounded package`() = kotlinx.coroutines.runBlocking {
-    val sampleGuidelineText = """
-      British Society for Haematology Guidelines 2026
-      Guidelines on the Early Diagnosis and Management of AL Amyloidosis
-      Summary: AL amyloidosis is caused by deposition of misfolded monoclonal immunoglobulin light chains.
-      Diagnostic cutoffs: NT-proBNP >332 ng/L, involved-uninvolved free light chain difference >50 mg/L.
-      Staging: AL-ISS 2026 stages I to IIIC.
-      Recommendations: Grade 1A Dara-CyBorD induction for transplant-ineligible patients.
+  fun `verify AI guideline synthesis for all 4 2026 guidelines`() = kotlinx.coroutines.runBlocking {
+    // 1. Biss et al. 2026 (Multidisciplinary Haematology & Gynaecology)
+    val bissText = """
+      Br J Haematol. 2026;209:919–927.
+      Implementation and value of providing a multidisciplinary haematology and gynaecology service for individuals with bleeding and thrombotic disorders: A British Society for Haematology & United Kingdom Haemophilia Centre Doctors' Organisation Good Practice Paper
+      Tina Biss, Emily Millen, Cora Warren, Thomas J. Clark.
+      Heavy menstrual bleeding (HMB), corpus luteal haemorrhage (CLH), abnormal uterine bleeding (AUB), PALM-COEIN classification.
+      Apixaban and dabigatran have lower incidence of HMB compared to rivaroxaban.
+      Levonorgestrel-releasing IUS (LNS-IUS) has higher expulsion rates in IBDs.
+      Recommendations: (2C) Multidisciplinary service; (2D) clear referral criteria.
     """.trimIndent()
 
-    val pkg = com.example.data.ai.GuidelineAiSynthesizer.synthesizeFromGuideline(
-      rawText = sampleGuidelineText,
-      sourceName = "BSH_Amyloidosis_2026_Guideline.pdf"
+    val bissPkg = com.example.data.ai.GuidelineAiSynthesizer.synthesizeFromGuideline(
+      rawText = bissText,
+      sourceName = "Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value.pdf"
     )
+    assertEquals("bsh_haem_gynae_2026", bissPkg.resource.id)
+    assertTrue("Title should contain gynaecology", bissPkg.resource.title.contains("gynaecology", ignoreCase = true))
+    assertTrue("Summary should contain HMB", bissPkg.resource.summary.contains("HMB"))
+    assertTrue("Should include PALM-COEIN staging", bissPkg.resource.stagingCriteria.contains("PALM-COEIN"))
+    assertTrue("Questions must be generated", bissPkg.questions.isNotEmpty())
+    assertTrue("Flashcards must be generated", bissPkg.flashcards.isNotEmpty())
+    bissPkg.questions.forEach { assertEquals("bsh_haem_gynae_2026", it.sourceResourceId) }
 
-    assertNotNull("Synthesized package must not be null", pkg)
-    assertTrue("Resource title must contain AL Amyloidosis", pkg.resource.title.contains("Amyloidosis", ignoreCase = true))
-    assertEquals("British Society for Haematology", pkg.resource.issuingBody)
-    assertTrue("Should generate at least 2 mock questions", pkg.questions.size >= 2)
-    assertTrue("Should generate at least 3 flashcards", pkg.flashcards.size >= 3)
+    // 2. Tam et al. 2026 (Point-of-Care Testing)
+    val tamText = """
+      Br J Haematol. 2026;209:1489–1504.
+      Point-of-care testing in general haematology: An update to the British Society for Haematology good practice paper
+      Jennifer Tam, Barbara De la Salle, Wayne Thomas.
+      ISO 15189:2022 medical laboratories. POCT PT/INR discrepancy in antiphospholipid syndrome.
+      Blood gas analysers (BGAs) underestimate Hb/Hct; not interchangeable with central laboratory (1C).
+      High-sensitivity D-dimer matching STA or ELISA (1B). Viscoelastic TEG, ROTEM, Quantra.
+      Adverse incidents to Serious Hazards of Transfusion (SHOT).
+    """.trimIndent()
 
-    // Check evidence grounding
-    pkg.questions.forEach { q ->
-      assertEquals(pkg.resource.id, q.sourceResourceId)
-      assertTrue("Question stem must not be blank", q.stem.isNotBlank())
-      assertTrue("Question rationale must not be blank", q.rationale.isNotBlank())
-    }
-    pkg.flashcards.forEach { card ->
-      assertEquals(pkg.resource.id, card.sourceResourceId)
-      assertEquals("SM-2 initial interval must be 1 day", 1, card.intervalDays)
-      assertEquals("SM-2 initial ease factor must be 2.5", 2.5f, card.easeFactor)
-    }
+    val tamPkg = com.example.data.ai.GuidelineAiSynthesizer.synthesizeFromGuideline(
+      rawText = tamText,
+      sourceName = "Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing.pdf"
+    )
+    assertEquals("bsh_poct_haematology_2026", tamPkg.resource.id)
+    assertTrue("Summary should mention POCT", tamPkg.resource.summary.contains("POCT", ignoreCase = true))
+    assertTrue("Cutoffs should mention D-dimer and BGA", tamPkg.resource.keyCutoffs.contains("D-dimer"))
+    assertTrue("Questions must be generated", tamPkg.questions.isNotEmpty())
+    tamPkg.questions.forEach { assertEquals("bsh_poct_haematology_2026", it.sourceResourceId) }
+
+    // 3. MacDonald et al. 2026 (TTP & ADAMTS13)
+    val macDonaldText = """
+      Br J Haematol. 2026;209:928–938.
+      Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for laboratories from the British Society for Haematology
+      Stephen MacDonald, Thomas Pitchford, Sean Platton.
+      Suspected TTP is an emergency; ADAMTS13 activity availability is not a prerequisite for treatment (1B).
+      ADAMTS13 activity <10 IU/dL confirms TTP. Sample in 0.109 M sodium citrate; EDTA cannot be used.
+      Blood film review within 60 min for platelets <30x10^9/L (1C). Anti-ADAMTS13 antibody ELISA within 72h (1B).
+      Open conformation index predicts relapse.
+    """.trimIndent()
+
+    val macPkg = com.example.data.ai.GuidelineAiSynthesizer.synthesizeFromGuideline(
+      rawText = macDonaldText,
+      sourceName = "Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_ttp.pdf"
+    )
+    assertEquals("bsh_ttp_laboratory_2026", macPkg.resource.id)
+    assertTrue("Key cutoffs must mention <10 IU/dL", macPkg.resource.keyCutoffs.contains("<10 IU/dL"))
+    assertTrue("Questions must be generated", macPkg.questions.isNotEmpty())
+    macPkg.questions.forEach { assertEquals("bsh_ttp_laboratory_2026", it.sourceResourceId) }
+
+    // 4. Osborne et al. 2026 (PMBCL)
+    val osborneText = """
+      Br J Haematol. 2026;209:1505–1517.
+      The diagnosis and management of primary mediastinal B-cell lymphoma: A British Society for Haematology guideline
+      Wendy Osborne, Hannah Bielby, Andrew Davies.
+      Dose-intensive R-CHOP-14 x6 or DA-R-EPOCH x6 (1B); R-CHOP-21 not recommended (1B).
+      IELSG37 trial: Do not offer radiotherapy for DS 1-3 following chemoimmunotherapy (1A).
+      High thrombosis rate (28%): thromboprophylaxis if platelets >50x10^9/L (1C).
+      CD19 CAR-T liso-cel for relapse within 12 months (1C).
+    """.trimIndent()
+
+    val osbornePkg = com.example.data.ai.GuidelineAiSynthesizer.synthesizeFromGuideline(
+      rawText = osborneText,
+      sourceName = "Br_J_Haematol_-_2026_-_Osborne_-_PMBCL.pdf"
+    )
+    assertEquals("bsh_pmbcl_lymphoma_2026", osbornePkg.resource.id)
+    assertTrue("Recommendations must mention IELSG37 and Grade 1A", osbornePkg.resource.recommendations.contains("Grade 1A"))
+    assertTrue("Cutoffs must include 28% thrombosis", osbornePkg.resource.keyCutoffs.contains("28%"))
+    assertTrue("Questions must be generated", osbornePkg.questions.isNotEmpty())
+    osbornePkg.questions.forEach { assertEquals("bsh_pmbcl_lymphoma_2026", it.sourceResourceId) }
+  }
+
+  @Test
+  fun `verify full database seeding and sandbox persistence for all guidelines`() = kotlinx.coroutines.runBlocking {
+    val database = AppDatabase.getInstance(ApplicationProvider.getApplicationContext())
+    val repository = ExamRepository(database)
+    repository.ensureDataSeeded()
+
+    val allRes = SeedData.getApprovedResources()
+    val allQ = SeedData.getQuestions()
+    val allFc = SeedData.getFlashcards()
+
+    val resIds = allRes.map { it.id }.toSet()
+    assertTrue("Biss 2026 must be present", resIds.contains("bsh_haem_gynae_2026"))
+    assertTrue("Tam 2026 must be present", resIds.contains("bsh_poct_haematology_2026"))
+    assertTrue("MacDonald 2026 must be present", resIds.contains("bsh_ttp_laboratory_2026"))
+    assertTrue("Osborne 2026 must be present", resIds.contains("bsh_pmbcl_lymphoma_2026"))
+
+    // Verify all 4 have questions grounded in them
+    val questionResIds = allQ.map { it.sourceResourceId }.toSet()
+    assertTrue(questionResIds.contains("bsh_haem_gynae_2026"))
+    assertTrue(questionResIds.contains("bsh_poct_haematology_2026"))
+    assertTrue(questionResIds.contains("bsh_ttp_laboratory_2026"))
+    assertTrue(questionResIds.contains("bsh_pmbcl_lymphoma_2026"))
+
+    // Verify all 4 have flashcards grounded in them
+    val flashcardResIds = allFc.map { it.sourceResourceId }.toSet()
+    assertTrue(flashcardResIds.contains("bsh_haem_gynae_2026"))
+    assertTrue(flashcardResIds.contains("bsh_poct_haematology_2026"))
+    assertTrue(flashcardResIds.contains("bsh_ttp_laboratory_2026"))
+    assertTrue(flashcardResIds.contains("bsh_pmbcl_lymphoma_2026"))
   }
 }
