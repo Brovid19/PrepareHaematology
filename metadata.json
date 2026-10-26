@@ -1,0 +1,6 @@
+{
+  "name": "Prepare Haematology",
+  "description": "Prepare Haematology - FRCPath Haematology Part 1 exam revision platform with spaced repetition, evidence-grounded questions, and clinical guidelines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
