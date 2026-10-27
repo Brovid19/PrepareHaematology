@@ -1,0 +1,3 @@
+# Ignore maps and temporary files during Cloudflare assets upload
+*.map
+.DS_Store

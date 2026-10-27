@@ -1,0 +1,13 @@
+{
+  "name": "preparehaematology",
+  "version": "1.0.0",
+  "description": "Prepare Haematology - FRCPath Part 1 Revision Platform",
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static assets ready in ./public'",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}
