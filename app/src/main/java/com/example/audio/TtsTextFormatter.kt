@@ -42,9 +42,9 @@ object TtsTextFormatter {
         val cleanBack = cleanMarkdownAndSymbols(card.back)
         return buildString {
             append("Haematology flashcard. ")
-            if (!card.guidelineSection.isNullOrBlank()) {
-                append("Section: ")
-                append(card.guidelineSection)
+            if (card.guidelineRef.isNotBlank()) {
+                append("Reference: ")
+                append(card.guidelineRef)
                 append(". ")
             } else if (res != null) {
                 append("Guideline: ")
@@ -55,11 +55,6 @@ object TtsTextFormatter {
             append(cleanFront)
             append(". ... Answer: ")
             append(cleanBack)
-            if (!card.evidenceGrade.isNullOrBlank()) {
-                append(". Evidence: ")
-                append(card.evidenceGrade)
-                append(".")
-            }
         }
     }
 

@@ -48,6 +48,7 @@ import com.example.ui.screens.DashboardScreen
 import com.example.ui.screens.MockExamScreen
 import com.example.ui.screens.PracticeScreen
 import com.example.ui.screens.ResourceRegistryScreen
+import com.example.ui.screens.SettingsScreen
 import com.example.ui.screens.SpacedRepetitionScreen
 import com.example.ui.screens.SummarisedGuidelinesScreen
 import com.example.ui.screens.WeakSpotsScreen
@@ -98,6 +99,7 @@ fun MainAppScreen(viewModel: ExamViewModel) {
     val bookmarkedIds by viewModel.bookmarkedIds.collectAsStateWithLifecycle()
     val incorrectIds by viewModel.incorrectIds.collectAsStateWithLifecycle()
     val scheduleForecast by viewModel.scheduleForecast.collectAsStateWithLifecycle()
+    val appSettings by viewModel.appSettings.collectAsStateWithLifecycle()
 
     // Android System BackHandler to safely pop to Dashboard
     if (uiState.currentScreen != Screen.DASHBOARD) {
@@ -337,6 +339,18 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                             viewModel.navigateTo(Screen.PRACTICE)
                         },
                         onOpenResourceModal = { viewModel.openGroundingDrawer(it) },
+                        onBackToDashboard = { viewModel.navigateTo(Screen.DASHBOARD) }
+                    )
+                }
+
+                Screen.SETTINGS -> {
+                    SettingsScreen(
+                        currentSettings = appSettings,
+                        savedMessage = uiState.settingsSavedMessage,
+                        onUpdateSettings = { viewModel.updateSettings(it) },
+                        onResetToDefaults = { viewModel.resetSettingsToDefaults() },
+                        onResetSpacedProgress = { viewModel.resetSpacedRepetitionProgress() },
+                        onDismissMessage = { viewModel.dismissSettingsMessage() },
                         onBackToDashboard = { viewModel.navigateTo(Screen.DASHBOARD) }
                     )
                 }

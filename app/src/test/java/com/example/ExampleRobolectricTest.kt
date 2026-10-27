@@ -7,8 +7,11 @@ import com.example.data.db.SeedData
 import com.example.data.repository.ExamRepository
 import com.example.ui.viewmodel.ExamViewModel
 import com.example.ui.viewmodel.ProficiencyLevel
+import com.example.ui.viewmodel.Screen
 import com.example.audio.TtsItemType
 import com.example.audio.TtsTextFormatter
+import com.example.data.repository.AppSettings
+import com.example.data.repository.SettingsManager
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
@@ -244,4 +247,162 @@ class ExampleRobolectricTest {
     assertTrue(flashcardResIds.contains("bsh_ttp_laboratory_2026"))
     assertTrue(flashcardResIds.contains("bsh_pmbcl_lymphoma_2026"))
   }
+
+  @Test
+  fun `verify TTS text formatting for summaries and flashcards`() {
+    val resources = SeedData.getApprovedResources()
+    val flashcards = SeedData.getFlashcards()
+
+    val firstRes = resources.first()
+    val summarySpeech = TtsTextFormatter.formatSummaryForSpeech(firstRes)
+    assertTrue("Spoken summary should contain title", summarySpeech.contains(firstRes.title))
+    assertTrue("Spoken summary should contain issuing body", summarySpeech.contains(firstRes.issuingBody))
+    assertTrue("Spoken summary should not contain raw bullets", !summarySpeech.contains("•"))
+
+    val firstCard = flashcards.first()
+    val cardSpeech = TtsTextFormatter.formatFlashcardForSpeech(firstCard, firstRes)
+    assertTrue("Spoken card should contain question label", cardSpeech.contains("Question:"))
+    assertTrue("Spoken card should contain answer label", cardSpeech.contains("Answer:"))
+    assertTrue("Spoken card should contain reference", cardSpeech.contains("Reference") || cardSpeech.contains(firstRes.title))
+  }
+
+  @Test
+  fun `verify TTS playlist creation queue management and controls`() {
+    val database = AppDatabase.getInstance(ApplicationProvider.getApplicationContext())
+    val repository = ExamRepository(database)
+    val viewModel = ExamViewModel(repository)
+
+    val resources = SeedData.getApprovedResources()
+    val flashcards = SeedData.getFlashcards()
+
+    val res1 = resources[0]
+    val res2 = resources[1]
+    val card1 = flashcards[0]
+
+    // 1. Add single summary to playlist
+    viewModel.addSummaryToPlaylist(res1)
+    val state1 = viewModel.ttsState.value
+    assertEquals(1, state1.playlist.size)
+    assertEquals(TtsItemType.SUMMARY, state1.playlist[0].type)
+    assertEquals("summary_${res1.id}", state1.playlist[0].id)
+    assertTrue("Duration estimate should be positive", state1.playlist[0].estimatedDurationSeconds > 0)
+
+    // 2. Add single flashcard to playlist
+    viewModel.addFlashcardToPlaylist(card1, res1)
+    val state2 = viewModel.ttsState.value
+    assertEquals(2, state2.playlist.size)
+    assertEquals(TtsItemType.FLASHCARD, state2.playlist[1].type)
+    assertEquals("card_${card1.id}", state2.playlist[1].id)
+
+    // Duplicate prevention
+    viewModel.addSummaryToPlaylist(res1)
+    assertEquals(2, viewModel.ttsState.value.playlist.size)
+
+    // 3. Speech rate adjustment
+    viewModel.setTtsSpeechRate(1.25f)
+    assertEquals(1.25f, viewModel.ttsState.value.speechRate, 0.01f)
+
+    // 4. Playlist navigation
+    viewModel.skipTtsNext()
+    assertEquals(1, viewModel.ttsState.value.currentItemIndex)
+    viewModel.skipTtsPrevious()
+    assertEquals(0, viewModel.ttsState.value.currentItemIndex)
+
+    // 5. Item removal
+    viewModel.removeTtsItem(0)
+    assertEquals(1, viewModel.ttsState.value.playlist.size)
+    assertEquals(TtsItemType.FLASHCARD, viewModel.ttsState.value.playlist[0].type)
+
+    // 6. Clear playlist
+    viewModel.clearTtsPlaylist()
+    assertTrue("Playlist should be empty after clear", viewModel.ttsState.value.playlist.isEmpty())
+
+    // 7. Bulk add all summaries
+    viewModel.addAllSummariesToPlaylist(resources)
+    assertEquals(resources.size, viewModel.ttsState.value.playlist.size)
+  }
+
+  @Test
+  fun `verify SettingsManager persistence and default configuration`() {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val manager = SettingsManager(context)
+
+    // 1. Verify default values
+    val defaultSettings = manager.settingsState.value
+    assertEquals(1.0f, defaultSettings.defaultSpeechRate, 0.01f)
+    assertEquals("en-GB", defaultSettings.preferredVoiceLocale)
+    assertEquals(20, defaultSettings.dailyFlashcardGoal)
+    assertEquals("DUE_FOR_REVIEW", defaultSettings.defaultSessionMode)
+    assertEquals(2.5f, defaultSettings.defaultEaseFactor, 0.01f)
+    assertEquals(20, defaultSettings.defaultMockDurationMinutes)
+    assertEquals("DARK_SOFT_RED", defaultSettings.displayThemeMode)
+    assertEquals("EXPAND_FIRST", defaultSettings.summariesDefaultExpansion)
+    assertEquals(100, defaultSettings.textScalePercent)
+
+    // 2. Modify and save settings
+    val customSettings = defaultSettings.copy(
+        defaultSpeechRate = 1.25f,
+        preferredVoiceLocale = "en-US",
+        dailyFlashcardGoal = 35,
+        defaultMockDurationMinutes = 30,
+        displayThemeMode = "OLED_BLACK",
+        textScalePercent = 115
+    )
+    manager.saveSettings(customSettings)
+    assertEquals(35, manager.settingsState.value.dailyFlashcardGoal)
+    assertEquals(1.25f, manager.settingsState.value.defaultSpeechRate, 0.01f)
+
+    // 3. Re-instantiate from SharedPreferences to verify real persistence
+    val reloadedManager = SettingsManager(context)
+    val persisted = reloadedManager.settingsState.value
+    assertEquals(1.25f, persisted.defaultSpeechRate, 0.01f)
+    assertEquals("en-US", persisted.preferredVoiceLocale)
+    assertEquals(35, persisted.dailyFlashcardGoal)
+    assertEquals(30, persisted.defaultMockDurationMinutes)
+    assertEquals("OLED_BLACK", persisted.displayThemeMode)
+    assertEquals(115, persisted.textScalePercent)
+
+    // 4. Test reset to defaults
+    val restored = reloadedManager.resetToDefaults()
+    assertEquals(20, restored.dailyFlashcardGoal)
+    assertEquals(1.0f, restored.defaultSpeechRate, 0.01f)
+    assertEquals("DARK_SOFT_RED", restored.displayThemeMode)
+  }
+
+  @Test
+  fun `verify ExamViewModel settings operations and navigation`() {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val database = AppDatabase.getInstance(context)
+    val repository = ExamRepository(database)
+    val viewModel = ExamViewModel(repository, context = context)
+
+    // 1. Navigation to Settings screen
+    viewModel.navigateTo(Screen.SETTINGS)
+    assertEquals(Screen.SETTINGS, viewModel.uiState.value.currentScreen)
+
+    // 2. Update settings via ViewModel
+    val current = viewModel.appSettings.value
+    val updated = current.copy(
+        dailyFlashcardGoal = 40,
+        defaultSpeechRate = 1.5f,
+        defaultMockDurationMinutes = 45
+    )
+    viewModel.updateSettings(updated)
+    assertEquals(40, viewModel.appSettings.value.dailyFlashcardGoal)
+    assertEquals(1.5f, viewModel.appSettings.value.defaultSpeechRate, 0.01f)
+    assertNotNull(viewModel.uiState.value.settingsSavedMessage)
+    assertTrue(viewModel.uiState.value.settingsSavedMessage!!.contains("updated and saved"))
+
+    // 3. Dismiss message
+    viewModel.dismissSettingsMessage()
+    assertEquals(null, viewModel.uiState.value.settingsSavedMessage)
+
+    // 4. Reset settings via ViewModel
+    viewModel.resetSettingsToDefaults()
+    assertEquals(20, viewModel.appSettings.value.dailyFlashcardGoal)
+    assertEquals(1.0f, viewModel.appSettings.value.defaultSpeechRate, 0.01f)
+    assertNotNull(viewModel.uiState.value.settingsSavedMessage)
+    assertTrue(viewModel.uiState.value.settingsSavedMessage!!.contains("factory defaults"))
+  }
 }
+

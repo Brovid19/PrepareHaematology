@@ -15,7 +15,9 @@ import com.example.data.model.ApprovedResource
 import com.example.data.model.Flashcard
 import com.example.data.model.Question
 import com.example.data.model.UserAnswerHistory
+import com.example.data.repository.AppSettings
 import com.example.data.repository.ExamRepository
+import com.example.data.repository.SettingsManager
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,7 +36,8 @@ enum class Screen {
     MOCK_EXAM,
     RESOURCE_REGISTRY,
     SUMMARISED_GUIDELINES,
-    WEAK_SPOTS
+    WEAK_SPOTS,
+    SETTINGS
 }
 
 enum class ProficiencyLevel {
@@ -120,7 +123,9 @@ data class ExamUiState(
     // AI PDF Ingestion & Synthesis State
     val isAiAnalyzingPdf: Boolean = false,
     val isAiReviewDialogOpen: Boolean = false,
-    val aiGeneratedPackage: GeneratedGuidelinePackage? = null
+    val aiGeneratedPackage: GeneratedGuidelinePackage? = null,
+    // Settings state
+    val settingsSavedMessage: String? = null
 )
 
 class ExamViewModel(
@@ -131,7 +136,12 @@ class ExamViewModel(
     private val _uiState = MutableStateFlow(ExamUiState())
     val uiState: StateFlow<ExamUiState> = _uiState.asStateFlow()
 
-    private val _ttsState = MutableStateFlow(TtsPlaybackState())
+    private val settingsManager = SettingsManager(context)
+    val appSettings: StateFlow<AppSettings> = settingsManager.settingsState
+
+    private val _ttsState = MutableStateFlow(
+        TtsPlaybackState(speechRate = settingsManager.settingsState.value.defaultSpeechRate)
+    )
     val ttsState: StateFlow<TtsPlaybackState> = _ttsState.asStateFlow()
 
     private var ttsPlayer: TtsPlayer? = null
@@ -889,7 +899,7 @@ class ExamViewModel(
             id = "card_${card.id}",
             type = TtsItemType.FLASHCARD,
             title = card.front,
-            subtitle = "${card.domain} • ${card.evidenceGrade ?: "Core Fact"}",
+            subtitle = "${card.domain} • ${card.guidelineRef}",
             spokenText = text,
             referenceId = card.id
         )
@@ -902,7 +912,7 @@ class ExamViewModel(
             id = "card_${card.id}",
             type = TtsItemType.FLASHCARD,
             title = card.front,
-            subtitle = "${card.domain} • ${card.evidenceGrade ?: "Core Fact"}",
+            subtitle = "${card.domain} • ${card.guidelineRef}",
             spokenText = text,
             referenceId = card.id
         )
@@ -922,7 +932,7 @@ class ExamViewModel(
                 id = "card_${card.id}",
                 type = TtsItemType.FLASHCARD,
                 title = card.front,
-                subtitle = "${card.domain} • ${card.evidenceGrade ?: "Due"}",
+                subtitle = "${card.domain} • Due (${card.intervalDays}d)",
                 spokenText = TtsTextFormatter.formatFlashcardForSpeech(card, resMap[card.sourceResourceId]),
                 referenceId = card.id
             )
@@ -948,7 +958,7 @@ class ExamViewModel(
                 id = "card_${card.id}",
                 type = TtsItemType.FLASHCARD,
                 title = card.front,
-                subtitle = "${card.domain} • ${card.evidenceGrade ?: "Recall"}",
+                subtitle = "${card.domain} • ${card.guidelineRef}",
                 spokenText = TtsTextFormatter.formatFlashcardForSpeech(card, resMap[card.sourceResourceId]),
                 referenceId = card.id
             )
@@ -1107,6 +1117,49 @@ class ExamViewModel(
 
     fun dismissTtsMessage() {
         _ttsState.value = _ttsState.value.copy(statusMessage = null)
+    }
+
+    // ==========================================
+    // SETTINGS MANAGEMENT
+    // ==========================================
+
+    fun updateSettings(newSettings: AppSettings) {
+        settingsManager.saveSettings(newSettings)
+        setTtsSpeechRate(newSettings.defaultSpeechRate)
+        _uiState.value = _uiState.value.copy(
+            settingsSavedMessage = "Default settings updated and saved successfully!"
+        )
+    }
+
+    fun resetSettingsToDefaults() {
+        val defaults = settingsManager.resetToDefaults()
+        setTtsSpeechRate(defaults.defaultSpeechRate)
+        _uiState.value = _uiState.value.copy(
+            settingsSavedMessage = "All preferences reset to factory defaults."
+        )
+    }
+
+    fun resetSpacedRepetitionProgress() {
+        viewModelScope.launch {
+            val cards = allFlashcards.value
+            val defaultEase = settingsManager.settingsState.value.defaultEaseFactor
+            cards.forEach { card ->
+                val resetCard = card.copy(
+                    intervalDays = 1,
+                    repetitionCount = 0,
+                    easeFactor = defaultEase,
+                    dueDateTimestamp = System.currentTimeMillis()
+                )
+                repository.updateFlashcard(resetCard)
+            }
+            _uiState.value = _uiState.value.copy(
+                settingsSavedMessage = "Spaced repetition intervals and proficiency reset for all ${cards.size} flashcards."
+            )
+        }
+    }
+
+    fun dismissSettingsMessage() {
+        _uiState.value = _uiState.value.copy(settingsSavedMessage = null)
     }
 
     override fun onCleared() {

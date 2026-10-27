@@ -1,0 +1,16 @@
+{
+  "name": "Prepare Haematology",
+  "short_name": "PrepareHaem",
+  "description": "FRCPath Haematology Part 1 exam revision platform with spaced repetition, evidence-grounded questions, and clinical guidelines.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0C10",
+  "theme_color": "#0B0C10",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
