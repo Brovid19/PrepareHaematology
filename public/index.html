@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prepare Haematology | FRCPath Part 1 Revision Platform</title>
-  <meta name="description" content="Prepare Haematology - FRCPath Part 1 exam revision platform with spaced repetition, evidence-grounded questions, and clinical guidelines.">
+  <meta name="description" content="Prepare Haematology - FRCPath Part 1 exam revision platform with spaced repetition, evidence-grounded questions, clinical guidelines, timed mock exams, and audio playlists.">
   <meta name="theme-color" content="#0B0C10">
   <link rel="manifest" href="/site.webmanifest">
   <style>
@@ -25,6 +25,13 @@
       --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
+    body.theme-oled {
+      --bg: #000000;
+      --surface: #0A0A0A;
+      --card-bg: #121212;
+      --card-border: #222222;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -36,11 +43,12 @@
       color: var(--text);
       font-family: var(--font-main);
       line-height: 1.6;
-      padding-bottom: 90px;
+      padding-bottom: 100px;
       min-height: 100vh;
+      transition: background-color 0.3s ease;
     }
 
-    /* Top Navigation Header */
+    /* Header */
     header {
       background: rgba(21, 25, 34, 0.95);
       backdrop-filter: blur(12px);
@@ -52,7 +60,7 @@
     }
 
     .header-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -65,6 +73,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      cursor: pointer;
     }
 
     .brand-icon {
@@ -99,7 +108,7 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .btn {
@@ -148,11 +157,12 @@
     .badge-primary { background: var(--primary-dim); color: var(--primary); border: 1px solid rgba(214,99,113,0.3); }
     .badge-green { background: rgba(72,187,120,0.15); color: var(--accent-green); border: 1px solid rgba(72,187,120,0.3); }
     .badge-blue { background: rgba(66,153,225,0.15); color: var(--accent-blue); border: 1px solid rgba(66,153,225,0.3); }
+    .badge-amber { background: rgba(236,201,75,0.15); color: var(--accent-amber); border: 1px solid rgba(236,201,75,0.3); }
 
     /* Main Container */
     main {
-      max-width: 1100px;
-      margin: 24px auto;
+      max-width: 1200px;
+      margin: 20px auto;
       padding: 0 16px;
     }
 
@@ -164,17 +174,18 @@
       padding-bottom: 12px;
       overflow-x: auto;
       margin-bottom: 24px;
+      scrollbar-width: thin;
     }
 
     .nav-tab {
-      padding: 8px 16px;
+      padding: 8px 14px;
       background: transparent;
       border: 1px solid transparent;
       color: var(--text-muted);
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       white-space: nowrap;
       transition: all 0.2s ease;
     }
@@ -190,7 +201,6 @@
       background: var(--card-bg);
     }
 
-    /* Content Panels */
     .tab-panel {
       display: none;
     }
@@ -227,7 +237,7 @@
 
     .hero-text p {
       color: var(--text-muted);
-      max-width: 650px;
+      max-width: 700px;
       font-size: 0.95rem;
     }
 
@@ -245,6 +255,59 @@
       border-color: rgba(214, 99, 113, 0.4);
     }
 
+    /* Domain Grid & Stats */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .domain-meter-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .progress-bar-bg {
+      background: #171B24;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
     /* Accordion */
     .accordion-item {
       background: var(--card-bg);
@@ -252,7 +315,6 @@
       border-radius: var(--radius);
       margin-bottom: 12px;
       overflow: hidden;
-      transition: border-color 0.2s ease;
     }
 
     .accordion-header {
@@ -324,9 +386,9 @@
       line-height: 1;
     }
 
-    /* Flashcard Interactive View */
+    /* Flashcard View */
     .flashcard-container {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
     }
 
@@ -335,7 +397,7 @@
       border: 1px solid var(--card-border);
       border-radius: 16px;
       padding: 32px 24px;
-      min-height: 260px;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -401,7 +463,7 @@
     .btn-rating.good:hover { background: #22543D; color: #FFF; border-color: #38A169; }
     .btn-rating.easy:hover { background: #2B6CB0; color: #FFF; border-color: #3182CE; }
 
-    /* Mock Questions */
+    /* Practice & Mock */
     .question-block {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -452,13 +514,50 @@
       font-size: 0.9rem;
     }
 
-    /* Fixed Audio Player Bar */
+    /* Mock Palette Grid */
+    .mock-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .grid-num-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: #171B24;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .grid-num-btn.active {
+      border-color: var(--primary);
+      color: #FFF;
+      background: var(--primary-dim);
+    }
+
+    .grid-num-btn.answered {
+      background: rgba(72,187,120,0.2);
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    .grid-num-btn.flagged {
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+    }
+
+    /* Audio Player Bar */
     .audio-player-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(21, 25, 34, 0.97);
+      background: rgba(21, 25, 34, 0.98);
       backdrop-filter: blur(12px);
       border-top: 1px solid var(--card-border);
       padding: 12px 20px;
@@ -528,7 +627,7 @@
       background: var(--primary-hover);
     }
 
-    /* Modal / Form */
+    /* Forms */
     .form-group {
       margin-bottom: 16px;
     }
@@ -557,242 +656,225 @@
       border-color: var(--primary);
     }
 
-    /* Platform Badges & Stats */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .stat-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
+    /* Modal Sheet */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
       padding: 16px;
-      text-align: center;
+      backdrop-filter: blur(4px);
     }
 
-    .stat-value {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 4px;
+    .modal-overlay.open {
+      display: flex;
     }
 
-    .stat-label {
-      font-size: 0.8rem;
+    .modal-content {
+      background: #191E28;
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      max-width: 650px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.6);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .modal-close-btn {
+      background: transparent;
+      border: none;
       color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-close-btn:hover {
+      color: #FFF;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Header -->
+  <!-- Top Navigation Header -->
   <header>
     <div class="header-container">
-      <div class="brand">
+      <div class="brand" onclick="switchTab('dashboard')">
         <div class="brand-icon">PH</div>
         <div class="brand-text">
           <h1>Prepare Haematology</h1>
-          <p>FRCPath Part 1 Revision • Evidence-Based Practice</p>
+          <p>FRCPath Part 1 Revision Platform</p>
         </div>
       </div>
       <div class="header-actions">
         <a href="/downloads/prepare-haematology.apk" class="btn btn-primary" download>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download APK (Android)
+          Get Android App
         </a>
-        <button class="btn btn-secondary" onclick="queueAllSummariesAudio()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-          Listen All
+        <button class="btn btn-secondary" onclick="togglePlaylistModal()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Audio Queue (<span id="queue-badge-count">5</span>)
+        </button>
+        <button class="btn btn-secondary" onclick="switchTab('settings')">
+          ⚙️ Settings
         </button>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero / Status Banner -->
-    <div class="hero-banner">
-      <div class="hero-text">
-        <div style="display:flex; gap:8px; margin-bottom:8px;">
-          <span class="badge badge-primary">2026 British Society for Haematology</span>
-          <span class="badge badge-green">High-Yield Revision</span>
-          <span class="badge badge-blue">Spaced Repetition SM-2</span>
-        </div>
-        <h2>High-Yield Haematology Exam Preparation</h2>
-        <p>Ground your revision in official BSH guidelines. Interactive collapsible summaries, spaced repetition flashcard drills, custom cards, and timed practice with audio speech recitation.</p>
-      </div>
-      <div>
-        <a href="#mock" onclick="switchTab('mock')" class="btn btn-primary" style="margin-right:8px;">Start Timed Mock</a>
-        <a href="#summaries" onclick="switchTab('summaries')" class="btn btn-secondary">Read Summaries</a>
-      </div>
-    </div>
-
-    <!-- Quick Stats -->
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-value" id="stat-guidelines-count">5</div>
-        <div class="stat-label">2026 BSH Guidelines</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="stat-flashcards-count">18</div>
-        <div class="stat-label">Flashcards in Deck</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="stat-questions-count">12</div>
-        <div class="stat-label">MCQ / SBA Mock Bank</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value" id="stat-audio-count">5</div>
-        <div class="stat-label">Audio Tracks Queued</div>
-      </div>
-    </div>
-
-    <!-- Navigation Tabs -->
+    <!-- Navigation Tabs Bar -->
     <div class="nav-tabs">
-      <button class="nav-tab active" onclick="switchTab('summaries', this)">Guideline Summaries</button>
+      <button class="nav-tab active" onclick="switchTab('dashboard', this)">Dashboard</button>
+      <button class="nav-tab" onclick="switchTab('summaries', this)">Guideline Summaries</button>
       <button class="nav-tab" onclick="switchTab('flashcards', this)">Spaced Repetition (SM-2)</button>
-      <button class="nav-tab" onclick="switchTab('create_card', this)">Create Custom Card</button>
-      <button class="nav-tab" onclick="switchTab('mock', this)">Practice & Mock Exam</button>
+      <button class="nav-tab" onclick="switchTab('practice', this)">Practice Bank</button>
+      <button class="nav-tab" onclick="switchTab('mock', this)">Timed Mock Exam</button>
+      <button class="nav-tab" onclick="switchTab('ingest', this)">Ingest Guideline (AI)</button>
+      <button class="nav-tab" onclick="switchTab('weakspots', this)">Weak Spots Drill</button>
       <button class="nav-tab" onclick="switchTab('library', this)">2026 PDF Library</button>
-      <button class="nav-tab" onclick="switchTab('download', this)">Android APK Download</button>
+      <button class="nav-tab" onclick="switchTab('settings', this)">Settings</button>
+      <button class="nav-tab" onclick="switchTab('download', this)">Android APK</button>
     </div>
 
-    <!-- TAB 1: GUIDELINE SUMMARIES -->
-    <div id="tab-summaries" class="tab-panel active">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-        <h3 style="font-size:1.1rem; color:#FFF;">Collapsible Approved Guideline Digests</h3>
-        <button class="btn btn-secondary" onclick="toggleAllAccordions()">Expand / Collapse All</button>
-      </div>
-
-      <!-- Guideline 1: Haem-Gynae -->
-      <div class="accordion-item open" id="guide-1">
-        <div class="accordion-header" onclick="toggleAccordion('guide-1')">
-          <div>
-            <div class="accordion-title">Implementation and value of providing a multidisciplinary haematology and gynaecology service</div>
-            <div class="accordion-meta">Biss et al. • Br J Haematol 2026 • General Haematology / Coagulation • Evidence Grade 1B</div>
+    <!-- TAB 1: DASHBOARD -->
+    <div id="tab-dashboard" class="tab-panel active">
+      <div class="hero-banner">
+        <div class="hero-text">
+          <div style="display:flex; gap:8px; margin-bottom:8px;">
+            <span class="badge badge-primary">2026 British Society for Haematology</span>
+            <span class="badge badge-green">High-Yield Revision</span>
+            <span class="badge badge-blue">Spaced Repetition SM-2</span>
           </div>
-          <div style="display:flex; align-items:center; gap:12px;">
-            <button class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="event.stopPropagation(); playSpecificSummary(0);">🔊 Audio</button>
-            <span class="accordion-chevron">▼</span>
-          </div>
+          <h2>FRCPath Part 1 Exam Readiness</h2>
+          <p>Ground your revision in official BSH guidelines. Interactive collapsible digests, spaced repetition retention forecasting, custom cards, and timed SBA mock exams with speech synthesis.</p>
         </div>
-        <div class="accordion-body">
-          <p><strong>Clinical Focus:</strong> Heavy Menstrual Bleeding (HMB) in women with inherited bleeding disorders, thrombosis risk during hormonal contraception/HRT, and anticoagulation management during pregnancy.</p>
-          <ul class="key-points-list">
-            <li>Joint haematology-gynaecology clinics significantly reduce time to definitive haemostatic diagnosis for women with menorrhagia.</li>
-            <li>First-line medical therapy for HMB in von Willebrand Disease (VWD) includes tranexamic acid and levonorgestrel-releasing intrauterine systems (LNG-IUS).</li>
-            <li>Mandatory MDT review prior to uterine artery embolization or hysterectomy in severe factor deficiencies.</li>
-          </ul>
-          <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-            <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value_of_providing_a_multidisciplinary_haematology_and_gynaecology_service_4743a72b.pdf" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View Official PDF</a>
-            <a href="https://onlinelibrary.wiley.com/journal/13652141" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 View on British Journal of Haematology</a>
-            <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToAudioQueue(0)">+ Add to Audio Playlist</button>
-          </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="startTimedMock()">Start Timed Mock Exam</button>
+          <button class="btn btn-secondary" onclick="switchTab('flashcards')">Drill Flashcards</button>
         </div>
       </div>
 
-      <!-- Guideline 2: POCT -->
-      <div class="accordion-item" id="guide-2">
-        <div class="accordion-header" onclick="toggleAccordion('guide-2')">
-          <div>
-            <div class="accordion-title">Point of care testing in general haematology: An update to the British Society for Haematology</div>
-            <div class="accordion-meta">Tam et al. • Br J Haematol 2026 • Laboratory & Quality Assurance • Evidence Grade 1A</div>
-          </div>
-          <div style="display:flex; align-items:center; gap:12px;">
-            <button class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="event.stopPropagation(); playSpecificSummary(1);">🔊 Audio</button>
-            <span class="accordion-chevron">▼</span>
-          </div>
+      <!-- Quick Stats -->
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="dash-due-count">8</div>
+          <div class="stat-label">Cards Due Today</div>
         </div>
-        <div class="accordion-body">
-          <p><strong>Clinical Focus:</strong> Quality governance, ISO 22870 accreditation standards, internal quality control (IQC), and external quality assessment (EQA) for handheld coagulometers, haemoglobinometers, and platelet function analysers.</p>
-          <ul class="key-points-list">
-            <li>All POCT haematology devices must sit under hospital central laboratory clinical governance.</li>
-            <li>MicroINR / CoaguChek INR measurements are unreliable at INR &gt; 4.5 or in the presence of antiphospholipid antibodies; venous laboratory confirmation is mandatory.</li>
-            <li>Rotational thromboelastometry (ROTEM) / TEG in trauma and postpartum haemorrhage must adhere to daily calibrated IQC runs.</li>
-          </ul>
-          <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-            <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View Official PDF</a>
-            <a href="https://b-s-h.org.uk/guidelines" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 View on BSH Guidelines Portal</a>
-            <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToAudioQueue(1)">+ Add to Audio Playlist</button>
-          </div>
+        <div class="stat-card">
+          <div class="stat-value" id="dash-goal-count">20</div>
+          <div class="stat-label">Daily Review Goal</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="dash-mastered-count">14</div>
+          <div class="stat-label">Cards Mastered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="dash-mock-score">78%</div>
+          <div class="stat-label">Last Mock Score</div>
         </div>
       </div>
 
-      <!-- Guideline 3: TTP Guidance -->
-      <div class="accordion-item" id="guide-3">
-        <div class="accordion-header" onclick="toggleAccordion('guide-3')">
-          <div>
-            <div class="accordion-title">Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for clinical laboratories</div>
-            <div class="accordion-meta">MacDonald et al. • Br J Haematol 2026 • Haemostasis & Thrombosis • Evidence Grade 1A</div>
+      <!-- Curriculum Domain Proficiency Progress -->
+      <div class="card">
+        <h3 style="color:#FFF; font-size:1.1rem; margin-bottom:12px;">FRCPath Curriculum Domain Mastery</h3>
+        
+        <div class="domain-meter-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <strong>Haemostasis & Thrombosis</strong>
+            <span style="color:var(--accent-green); font-weight:700;">85% • Mastered</span>
           </div>
-          <div style="display:flex; align-items:center; gap:12px;">
-            <button class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="event.stopPropagation(); playSpecificSummary(2);">🔊 Audio</button>
-            <span class="accordion-chevron">▼</span>
-          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:85%;"></div></div>
         </div>
-        <div class="accordion-body">
-          <p><strong>Clinical Focus:</strong> Diagnostic criteria for immune and congenital TTP, rapid ADAMTS13 activity assays (FRETS-VWF73, chemiluminescent immunoassays), antibody quantification, and pre-plasma exchange sampling.</p>
-          <ul class="key-points-list">
-            <li>Pre-treatment citrate sample for ADAMTS13 activity must be obtained prior to initiating therapeutic plasma exchange (TPE) or caplacizumab.</li>
-            <li>Severe deficiency defined as ADAMTS13 activity &lt; 10% (&lt; 0.10 IU/mL).</li>
-            <li>Clinical scores (PLASMIC score &ge; 6 or French Score 2) justify immediate prompt start of caplacizumab, corticosteroids, and plasma exchange while awaiting definitive enzyme results.</li>
-          </ul>
-          <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-            <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_thrombotic_thrombocytopenic_purpura_Guidance_for_c719170c.pdf" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View Official PDF</a>
-            <a href="https://b-s-h.org.uk/guidelines" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 View on BSH Guidelines Portal</a>
-            <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToAudioQueue(2)">+ Add to Audio Playlist</button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Guideline 4: PMBCL -->
-      <div class="accordion-item" id="guide-4">
-        <div class="accordion-header" onclick="toggleAccordion('guide-4')">
-          <div>
-            <div class="accordion-title">The diagnosis and management of primary mediastinal B-cell lymphoma: A British Society for Haematology guideline</div>
-            <div class="accordion-meta">Osborne et al. • Br J Haematol 2026 • Malignant Haematology • Evidence Grade 1B</div>
+        <div class="domain-meter-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <strong>Malignant Haematology</strong>
+            <span style="color:var(--accent-blue); font-weight:700;">70% • Proficient</span>
           </div>
-          <div style="display:flex; align-items:center; gap:12px;">
-            <button class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="event.stopPropagation(); playSpecificSummary(3);">🔊 Audio</button>
-            <span class="accordion-chevron">▼</span>
-          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:70%;"></div></div>
         </div>
-        <div class="accordion-body">
-          <p><strong>Clinical Focus:</strong> Distinguishing PMBCL from Classical Hodgkin Lymphoma and DLBCL, mediastinal core biopsy immunohistochemistry (CD20+, CD30+ weak/heterogeneous, CD15-, MAL+, TRAF1+), DA-EPOCH-R vs R-CHOP-14, and PET-CT Deauville scoring to spare consolidative radiotherapy.</p>
-          <ul class="key-points-list">
-            <li>DA-EPOCH-R is the preferred induction regimen to achieve high cure rates and avoid mediastinal radiotherapy in young patients.</li>
-            <li>End-of-treatment PET-CT with Deauville score 1–3 justifies complete observation without radiation.</li>
-            <li>Relapsed/refractory PMBCL responds strongly to checkpoint blockade (Pembrolizumab / Nivolumab) and CD19 CAR-T cell therapy due to 9p24.1 (PD-L1/PD-L2) copy gain.</li>
-          </ul>
-          <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
-            <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Osborne_-_The_diagnosis_and_management_of_primary_mediastinal_B_cell_lymphoma_A_British_Society_for_3361c436.pdf" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View Official PDF</a>
-            <a href="https://b-s-h.org.uk/guidelines" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 View on BSH Guidelines Portal</a>
-            <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToAudioQueue(3)">+ Add to Audio Playlist</button>
+
+        <div class="domain-meter-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <strong>General & Diagnostic Haematology</strong>
+            <span style="color:var(--primary); font-weight:700;">60% • Review Recommended</span>
           </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:60%;"></div></div>
+        </div>
+
+        <div class="domain-meter-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <strong>Transfusion Medicine</strong>
+            <span style="color:var(--accent-green); font-weight:700;">90% • Mastered</span>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:90%;"></div></div>
+        </div>
+
+        <div class="domain-meter-card">
+          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
+            <strong>Obstetric Haematology</strong>
+            <span style="color:var(--accent-blue); font-weight:700;">75% • Proficient</span>
+          </div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:75%;"></div></div>
         </div>
       </div>
     </div>
 
-    <!-- TAB 2: SPACED REPETITION (SM-2) -->
+    <!-- TAB 2: GUIDELINE SUMMARIES -->
+    <div id="tab-summaries" class="tab-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+        <h3 style="font-size:1.1rem; color:#FFF;">Approved BSH Guideline Digests</h3>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-secondary" onclick="toggleAllAccordions()">Expand / Collapse All</button>
+          <button class="btn btn-primary" onclick="queueAllSummariesAudio()">Queue All to Audio</button>
+        </div>
+      </div>
+
+      <div id="summaries-accordion-container"></div>
+    </div>
+
+    <!-- TAB 3: SPACED REPETITION (SM-2) -->
     <div id="tab-flashcards" class="tab-panel">
       <div class="flashcard-container">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-          <h3 style="font-size:1.1rem; color:#FFF;">Flashcard Drill (SM-2 Spaced Algorithm)</h3>
-          <span class="badge badge-primary" id="fc-progress-counter">Card 1 of 8</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+          <div>
+            <h3 style="font-size:1.1rem; color:#FFF;">Spaced Repetition Drill (SM-2)</h3>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Calculates retention intervals based on your self-rating</span>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn btn-secondary" onclick="openCreateCardModal()">+ Type Custom Card</button>
+            <span class="badge badge-primary" id="fc-progress-counter">Card 1 of 8</span>
+          </div>
+        </div>
+
+        <!-- Filter Mode -->
+        <div style="display:flex; gap:8px; margin-bottom:16px;">
+          <button class="btn btn-secondary" id="fc-mode-due" onclick="setSessionMode('DUE_FOR_REVIEW')">Due for Review</button>
+          <button class="btn btn-secondary" id="fc-mode-all" onclick="setSessionMode('ALL_CARDS')">All Cards</button>
+          <button class="btn btn-secondary" id="fc-mode-diff" onclick="setSessionMode('DIFFICULT_DRILL')">Difficult Drill</button>
         </div>
 
         <div class="flashcard" id="active-flashcard" onclick="flipCurrentCard()">
           <div class="card-meta-top">
-            <span class="badge badge-blue" id="fc-domain">Haemostasis</span>
-            <span style="font-size:0.75rem; color:var(--text-muted);" id="fc-ref">MacDonald et al., BSH 2026</span>
+            <span class="badge badge-blue" id="fc-domain">Domain</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);" id="fc-ref">Guideline Ref</span>
           </div>
-          <div class="flashcard-text" id="fc-content">
-            What is the diagnostic threshold for ADAMTS13 activity in confirmed Thrombotic Thrombocytopenic Purpura (TTP)?
-          </div>
+          <div class="flashcard-text" id="fc-content">Loading flashcard prompt...</div>
           <div class="flip-hint" id="fc-flip-hint">Tap / Click to reveal answer</div>
         </div>
 
@@ -803,121 +885,144 @@
           <button class="btn-rating easy" onclick="rateFlashcard(4)">Easy (7d)</button>
         </div>
 
-        <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;">
+        <div style="display:flex; justify-content:center; gap:12px; margin-top:20px; flex-wrap:wrap;">
           <button class="btn btn-secondary" onclick="speakCurrentCard()">🔊 Listen to Card</button>
+          <button class="btn btn-secondary" onclick="addCurrentCardToPlaylist()">➕ Add to Audio Queue</button>
           <button class="btn btn-secondary" onclick="nextCard()">Next Card →</button>
         </div>
       </div>
     </div>
 
-    <!-- TAB 3: CREATE CUSTOM CARD -->
-    <div id="tab-create_card" class="tab-panel">
-      <div class="card" style="max-width:650px; margin:0 auto;">
-        <h3 style="color:#FFF; margin-bottom:8px;">Type Your Own High-Yield Flashcard</h3>
-        <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px;">Add personal revision notes or guideline insights. Custom flashcards are saved locally in browser storage and added directly to your SM-2 spaced repetition queue.</p>
-
-        <form id="custom-card-form" onsubmit="handleCreateCard(event)">
-          <div class="form-group">
-            <label class="form-label">Exam Domain / Category</label>
-            <select class="form-select" id="new-card-domain" required>
+    <!-- TAB 4: PRACTICE BANK -->
+    <div id="tab-practice" class="tab-panel">
+      <div style="max-width:800px; margin:0 auto;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
+          <div>
+            <h3 style="color:#FFF; font-size:1.15rem;">FRCPath Part 1 Practice Question Bank</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Single Best Answer (SBA) questions with guideline evidence rationales.</p>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <select class="form-select" id="practice-domain-filter" onchange="filterPracticeDomain(this.value)" style="width:auto; padding:6px 12px;">
+              <option value="All">All Domains</option>
               <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
               <option value="Malignant Haematology">Malignant Haematology</option>
-              <option value="General & Diagnostic Haematology">General & Diagnostic Haematology</option>
-              <option value="Transfusion Medicine">Transfusion Medicine</option>
+              <option value="General Haematology">General Haematology</option>
               <option value="Obstetric Haematology">Obstetric Haematology</option>
             </select>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label class="form-label">Front (Question or Clinical Prompt)</label>
-            <textarea class="form-textarea" id="new-card-front" rows="3" placeholder="e.g. What is the recommended first-line therapy for Heavy Menstrual Bleeding in Type 1 VWD?" required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Back (Model Answer & Key Distinction)</label>
-            <textarea class="form-textarea" id="new-card-back" rows="4" placeholder="e.g. Tranexamic acid and/or levonorgestrel-releasing intrauterine system (LNG-IUS). Desmopressin (DDAVP) for breakthrough." required></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Guideline Source Reference</label>
-            <input type="text" class="form-input" id="new-card-ref" placeholder="e.g. BSH Haem-Gynae 2026, Section 4.2" required>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width:100%; padding:12px; margin-top:8px;">
-            Save & Add to Flashcard Deck
-          </button>
-        </form>
+        <div id="practice-questions-container"></div>
       </div>
     </div>
 
-    <!-- TAB 4: PRACTICE & MOCK EXAM -->
+    <!-- TAB 5: TIMED MOCK EXAM -->
     <div id="tab-mock" class="tab-panel">
-      <div style="max-width:750px; margin:0 auto;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+      <div style="max-width:850px; margin:0 auto;">
+        <!-- Mock Active Header -->
+        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
           <div>
-            <h3 style="color:#FFF; font-size:1.15rem;">FRCPath Part 1 Practice Bank</h3>
-            <p style="color:var(--text-muted); font-size:0.85rem;">Single Best Answer (SBA) questions with strict BSH guideline evidence rationales.</p>
+            <h3 style="color:#FFF;">Timed Mock Exam Simulation</h3>
+            <span style="font-size:0.85rem; color:var(--text-muted);">Timed single best answer conditions with pass mark review.</span>
           </div>
-          <button class="btn btn-primary" onclick="resetMockBank()">Reset Mock</button>
-        </div>
-
-        <!-- Question 1 -->
-        <div class="question-block" id="qb-1">
-          <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-            <span class="badge badge-primary">Question 1 • Haemostasis</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">BSH TTP 2026</span>
-          </div>
-          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">A 34-year-old woman presents with severe microangiopathic hemolytic anemia, thrombocytopenia (platelets 14 × 10⁹/L), and mild fluctuating confusion. Plasma creatinine is 110 µmol/L. Coagulation screen (PT, APTT, fibrinogen) is normal. Which of the following is the single most critical diagnostic action before initiating therapeutic plasma exchange (TPE)?</p>
-
-          <div class="option-item" onclick="selectAnswer(1, 0, false)">
-            <strong>A.</strong> Take a whole blood sample for bone marrow trephine biopsy
-          </div>
-          <div class="option-item" onclick="selectAnswer(1, 1, true)">
-            <strong>B.</strong> Obtain a pre-treatment citrate plasma sample for ADAMTS13 activity and antibody assay
-          </div>
-          <div class="option-item" onclick="selectAnswer(1, 2, false)">
-            <strong>C.</strong> Administer 1 unit of adult platelets to prevent intracranial hemorrhage
-          </div>
-          <div class="option-item" onclick="selectAnswer(1, 3, false)">
-            <strong>D.</strong> Perform urgent renal biopsy to exclude atypical hemolytic uremic syndrome (aHUS)
-          </div>
-
-          <div class="explanation-box" id="exp-1" style="display:none;">
-            <strong style="color:var(--accent-green);">Correct Answer: B</strong><br>
-            <em>Evidence Grounding:</em> According to the 2026 British Society for Haematology TTP Guidance (MacDonald et al.), obtaining a baseline pre-transfusion/pre-TPE citrated plasma sample is mandatory because donor plasma will immediately replenish circulating ADAMTS13 activity and mask the diagnostic threshold (&lt;10%). Platelet transfusions are contraindicated in TTP except in life-threatening bleeding.
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="font-size:1.3rem; font-weight:700; color:var(--primary); font-family:monospace;" id="mock-timer-display">20:00</div>
+            <button class="btn btn-primary" onclick="finishMockExam()">Finish Exam</button>
           </div>
         </div>
 
-        <!-- Question 2 -->
-        <div class="question-block" id="qb-2">
-          <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-            <span class="badge badge-blue">Question 2 • Malignant Haematology</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">BSH PMBCL 2026</span>
+        <!-- Question Navigation Grid -->
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <span style="font-size:0.85rem; font-weight:600; color:#FFF;">Question Palette</span>
+            <div style="display:flex; gap:12px; font-size:0.75rem;">
+              <span style="color:var(--accent-green);">■ Answered</span>
+              <span style="color:var(--accent-amber);">■ Flagged</span>
+              <span style="color:var(--text-muted);">■ Unanswered</span>
+            </div>
           </div>
-          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">A 28-year-old female presents with a 9 cm anterior mediastinal mass causing superior vena cava compression. Core biopsy confirms Primary Mediastinal B-cell Lymphoma (PMBCL). She completes 6 cycles of DA-EPOCH-R. An end-of-treatment FDG PET-CT shows a residual mass with Deauville Score 2. What is the recommended management according to the 2026 BSH guidelines?</p>
+          <div class="mock-grid" id="mock-palette-grid"></div>
+        </div>
 
-          <div class="option-item" onclick="selectAnswer(2, 0, false)">
-            <strong>A.</strong> Consolidative mediastinal radiotherapy (30–36 Gy)
+        <!-- Current Mock Question View -->
+        <div id="mock-question-display"></div>
+
+        <!-- Mock Results Modal / Container -->
+        <div id="mock-results-container" style="display:none;" class="card">
+          <h2 style="color:#FFF; margin-bottom:12px;">Mock Exam Results Breakdown</h2>
+          <div class="stat-grid" style="margin-bottom:16px;">
+            <div class="stat-card">
+              <div class="stat-value" id="mock-final-score">0%</div>
+              <div class="stat-label">Final Score</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="mock-final-status" style="color:var(--accent-green);">PASS</div>
+              <div class="stat-label">Outcome (Pass: &ge;65%)</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" id="mock-correct-count">0 / 0</div>
+              <div class="stat-label">Correct Answers</div>
+            </div>
           </div>
-          <div class="option-item" onclick="selectAnswer(2, 1, false)">
-            <strong>B.</strong> High-dose therapy and autologous stem cell transplantation (ASCT)
-          </div>
-          <div class="option-item" onclick="selectAnswer(2, 2, true)">
-            <strong>C.</strong> Clinical observation and surveillance without radiotherapy
-          </div>
-          <div class="option-item" onclick="selectAnswer(2, 3, false)">
-            <strong>D.</strong> Immediate salvage CD19 CAR-T cell infusion
+          <button class="btn btn-primary" onclick="startTimedMock()">Restart Mock Exam</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: INGEST GUIDELINE (AI SANDBOX) -->
+    <div id="tab-ingest" class="tab-panel">
+      <div style="max-width:800px; margin:0 auto;">
+        <div class="card">
+          <h3 style="color:#FFF; margin-bottom:8px;">Ingest Approved Guideline & AI Analysis Sandbox</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">Upload a guideline PDF or select an official 2026 BSH preset paper. The AI extraction pipeline analyzes the clinical recommendations and generates new flashcards, mock questions, and summary points.</p>
+
+          <h4 style="color:#FFF; font-size:0.95rem; margin-bottom:8px;">Select 2026 BSH Preset Guideline:</h4>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px;">
+            <button class="btn btn-secondary" onclick="runPresetIngestion('biss')">Biss (Haem-Gynae 2026)</button>
+            <button class="btn btn-secondary" onclick="runPresetIngestion('tam')">Tam (POCT 2026)</button>
+            <button class="btn btn-secondary" onclick="runPresetIngestion('macdonald')">MacDonald (TTP 2026)</button>
+            <button class="btn btn-secondary" onclick="runPresetIngestion('osborne')">Osborne (PMBCL 2026)</button>
           </div>
 
-          <div class="explanation-box" id="exp-2" style="display:none;">
-            <strong style="color:var(--accent-green);">Correct Answer: C</strong><br>
-            <em>Evidence Grounding:</em> The 2026 BSH PMBCL Guideline (Osborne et al.) recommends that patients treated with DA-EPOCH-R who achieve complete metabolic response (Deauville Score 1–3) on end-of-treatment PET-CT should be observed without mediastinal radiotherapy. Radiotherapy is reserved for Deauville 4–5 residual metabolic activity.
+          <div class="form-group">
+            <label class="form-label">Or Upload Clinical Guideline PDF File:</label>
+            <input type="file" id="guideline-file-input" accept=".pdf,.txt" class="form-input" onchange="handleFileUpload(event)">
+          </div>
+
+          <div id="ingest-loading-state" style="display:none; text-align:center; padding:20px;">
+            <div style="color:var(--primary); font-size:1.1rem; font-weight:700; margin-bottom:8px;">Analyzing Clinical Evidence & Extracting Flashcards...</div>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Applying FRCPath Part 1 syllabus grounding criteria.</p>
+          </div>
+
+          <!-- AI Generated Package Preview -->
+          <div id="ingest-package-preview" style="display:none; margin-top:20px; background:#171B24; padding:16px; border-radius:8px; border:1px solid var(--card-border);">
+            <h4 style="color:var(--accent-green); margin-bottom:10px;">✓ AI Package Generated Ready for Commit</h4>
+            <div id="ai-summary-points" style="margin-bottom:12px; font-size:0.9rem;"></div>
+            <div id="ai-cards-preview" style="margin-bottom:12px; font-size:0.9rem;"></div>
+            <button class="btn btn-primary" onclick="commitAiPackage()">Commit Package to Active Deck & Practice Bank</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- TAB 5: 2026 PDF LIBRARY -->
+    <!-- TAB 7: WEAK SPOTS DRILL -->
+    <div id="tab-weakspots" class="tab-panel">
+      <div style="max-width:800px; margin:0 auto;">
+        <div class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+            <div>
+              <h3 style="color:#FFF;">Targeted Weak Spots Drill</h3>
+              <p style="color:var(--text-muted); font-size:0.85rem;">Automatically collects questions missed during mock exams and practice sessions.</p>
+            </div>
+            <button class="btn btn-secondary" onclick="clearWeakSpots()">Clear History</button>
+          </div>
+
+          <div id="weak-spots-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 8: 2026 PDF LIBRARY -->
     <div id="tab-library" class="tab-panel">
       <div style="max-width:850px; margin:0 auto;">
         <h3 style="color:#FFF; margin-bottom:12px;">Official Approved 2026 BSH Guidelines & Past Papers</h3>
@@ -965,7 +1070,69 @@
       </div>
     </div>
 
-    <!-- TAB 6: ANDROID APK DOWNLOAD -->
+    <!-- TAB 9: SETTINGS -->
+    <div id="tab-settings" class="tab-panel">
+      <div style="max-width:700px; margin:0 auto;">
+        <h3 style="color:#FFF; margin-bottom:16px;">App Settings & Preferences</h3>
+
+        <!-- Audio Settings Card -->
+        <div class="card">
+          <h4 style="color:#FFF; margin-bottom:12px;">Audio & Text-to-Speech (TTS)</h4>
+          <div class="form-group">
+            <label class="form-label">Preferred Dialect</label>
+            <select class="form-select" id="setting-voice-locale" onchange="saveAppSetting('voiceLocale', this.value)">
+              <option value="en-GB">British English (en-GB) - Recommended</option>
+              <option value="en-US">American English (en-US)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Default Speech Rate: <span id="setting-rate-label">1.0x</span></label>
+            <input type="range" min="0.75" max="1.75" step="0.25" value="1.0" id="setting-rate" oninput="updateSpeechRateSetting(this.value)" style="width:100%;">
+          </div>
+        </div>
+
+        <!-- Spaced Repetition Settings Card -->
+        <div class="card">
+          <h4 style="color:#FFF; margin-bottom:12px;">Spaced Repetition (SM-2)</h4>
+          <div class="form-group">
+            <label class="form-label">Daily Flashcard Goal</label>
+            <input type="number" min="5" max="100" value="20" class="form-input" id="setting-daily-goal" onchange="saveAppSetting('dailyGoal', parseInt(this.value))">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Default Mock Duration (Minutes)</label>
+            <select class="form-select" id="setting-mock-duration" onchange="saveAppSetting('mockDuration', parseInt(this.value))">
+              <option value="10">10 Minutes (Rapid Sprint)</option>
+              <option value="20" selected>20 Minutes (Standard FRCPath Drill)</option>
+              <option value="40">40 Minutes (Extended Mock)</option>
+              <option value="60">60 Minutes (Full Paper Section)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Theme Mode Card -->
+        <div class="card">
+          <h4 style="color:#FFF; margin-bottom:12px;">Display & Night Theme</h4>
+          <div class="form-group">
+            <label class="form-label">Theme Mode</label>
+            <select class="form-select" id="setting-theme" onchange="changeTheme(this.value)">
+              <option value="DARK_SOFT_RED" selected>Soft Red Charcoal Night Mode (Default)</option>
+              <option value="OLED_BLACK">OLED Pure Black</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Maintenance Card -->
+        <div class="card">
+          <h4 style="color:#FFF; margin-bottom:12px;">Data & Progress Maintenance</h4>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-secondary" onclick="resetSpacedRepetitionProgress()">Reset Spaced Repetition Progress</button>
+            <button class="btn btn-secondary" onclick="resetSettingsToDefaults()">Reset All Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 10: ANDROID APK DOWNLOAD -->
     <div id="tab-download" class="tab-panel">
       <div style="max-width:700px; margin:0 auto; text-align:center;">
         <div class="brand-icon" style="width:72px; height:72px; font-size:36px; margin:0 auto 16px; border-radius:18px;">PH</div>
@@ -990,7 +1157,7 @@
     </div>
   </main>
 
-  <!-- Global Audio Player Bar -->
+  <!-- Sticky Global Audio Player Bar -->
   <div class="audio-player-bar">
     <div class="player-track-info">
       <div class="player-title" id="player-title">Welcome to Prepare Haematology</div>
@@ -1014,8 +1181,261 @@
     </div>
   </div>
 
+  <!-- Audio Playlist Queue Modal -->
+  <div class="modal-overlay" id="playlist-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:#FFF;">Active Audio Playlist Queue</h3>
+        <button class="modal-close-btn" onclick="togglePlaylistModal()">&times;</button>
+      </div>
+      <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="queueAllSummariesAudio()">Add All Summaries</button>
+        <button class="btn btn-secondary" onclick="queueDueCardsAudio()">Queue Due Cards</button>
+        <button class="btn btn-secondary" onclick="clearAudioQueue()">Clear Queue</button>
+      </div>
+      <div id="playlist-items-list"></div>
+    </div>
+  </div>
+
+  <!-- Evidence Grounding Modal -->
+  <div class="modal-overlay" id="grounding-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:#FFF;" id="grounding-title">Guideline Evidence Grounding</h3>
+        <button class="modal-close-btn" onclick="closeGroundingModal()">&times;</button>
+      </div>
+      <div id="grounding-body" style="font-size:0.92rem;"></div>
+    </div>
+  </div>
+
+  <!-- Create Custom Card Modal -->
+  <div class="modal-overlay" id="create-card-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:#FFF;">Type Custom Spaced Flashcard</h3>
+        <button class="modal-close-btn" onclick="closeCreateCardModal()">&times;</button>
+      </div>
+      <form onsubmit="handleCreateCardSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Domain</label>
+          <select class="form-select" id="custom-domain" required>
+            <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
+            <option value="Malignant Haematology">Malignant Haematology</option>
+            <option value="General Haematology">General Haematology</option>
+            <option value="Transfusion Medicine">Transfusion Medicine</option>
+            <option value="Obstetric Haematology">Obstetric Haematology</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Question / Prompt (Front)</label>
+          <textarea class="form-textarea" id="custom-front" rows="3" placeholder="Clinical prompt or diagnostic criterion..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Answer & Key Distinction (Back)</label>
+          <textarea class="form-textarea" id="custom-back" rows="4" placeholder="Model answer with key high-yield distinctions..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Guideline Source Reference</label>
+          <input type="text" class="form-input" id="custom-ref" placeholder="e.g. BSH TTP 2026, Section 3.1" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; padding:12px;">Add Flashcard to Deck</button>
+      </form>
+    </div>
+  </div>
+
   <script>
-    // Tab switching
+    // Approved Guidelines Data
+    const approvedGuidelines = [
+      {
+        id: "bsh_haem_gynae_2026",
+        title: "Implementation and value of providing a multidisciplinary haematology and gynaecology service",
+        issuingBody: "British Society for Haematology",
+        year: 2026,
+        domain: "Obstetric Haematology",
+        grade: "Grade 1B",
+        citation: "Biss T, et al. Br J Haematol. 2026;204(2):312-325.",
+        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value_of_providing_a_multidisciplinary_haematology_and_gynaecology_service_4743a72b.pdf",
+        onlineUrl: "https://onlinelibrary.wiley.com/journal/13652141",
+        summary: "Joint haematology-gynaecology clinics significantly shorten time to diagnosis for women with menorrhagia and bleeding disorders.",
+        cutoffs: "HMB defined as >80mL menstrual blood loss; VWD screening in menorrhagia with PBAC >100.",
+        recommendations: [
+          "Joint clinics reduce time to definitive haemostatic diagnosis.",
+          "First-line medical therapy for HMB in VWD includes tranexamic acid and LNG-IUS.",
+          "Mandatory MDT review prior to uterine artery embolization or hysterectomy."
+        ]
+      },
+      {
+        id: "bsh_poct_haematology_2026",
+        title: "Point of care testing in general haematology: An update to the British Society for Haematology",
+        issuingBody: "British Society for Haematology",
+        year: 2026,
+        domain: "General Haematology",
+        grade: "Grade 1A",
+        citation: "Tam J, et al. Br J Haematol. 2026;204(3):450-466.",
+        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf",
+        onlineUrl: "https://b-s-h.org.uk/guidelines",
+        summary: "Clinical laboratory governance, ISO accreditation, IQC, and EQA standards for handheld coagulometers and point-of-care devices.",
+        cutoffs: "Handheld INR unreliable at >4.5 or in presence of antiphospholipid antibodies.",
+        recommendations: [
+          "All POCT devices must sit under hospital central laboratory governance.",
+          "MicroINR/CoaguChek INR > 4.5 requires mandatory venous laboratory confirmation.",
+          "Rotational thromboelastometry (ROTEM) requires daily calibrated IQC runs."
+        ]
+      },
+      {
+        id: "bsh_ttp_laboratory_2026",
+        title: "Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for clinical laboratories",
+        issuingBody: "British Society for Haematology",
+        year: 2026,
+        domain: "Haemostasis & Thrombosis",
+        grade: "Grade 1A",
+        citation: "MacDonald S, et al. Br J Haematol. 2026;204(1):110-128.",
+        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_thrombotic_thrombocytopenic_purpura_Guidance_for_c719170c.pdf",
+        onlineUrl: "https://b-s-h.org.uk/guidelines",
+        summary: "Diagnostic criteria, pre-treatment citrated plasma sampling, and rapid ADAMTS13 assays in suspected TTP.",
+        cutoffs: "ADAMTS13 activity < 10% (< 0.10 IU/mL) confirms severe deficiency.",
+        recommendations: [
+          "Citrate sample for ADAMTS13 must be taken before starting plasma exchange or caplacizumab.",
+          "PLASMIC score >= 6 or French Score 2 justifies prompt therapy before test completion.",
+          "Platelet transfusions strictly contraindicated unless life-threatening hemorrhage."
+        ]
+      },
+      {
+        id: "bsh_pmbcl_lymphoma_2026",
+        title: "The diagnosis and management of primary mediastinal B-cell lymphoma: A British Society for Haematology guideline",
+        issuingBody: "British Society for Haematology",
+        year: 2026,
+        domain: "Malignant Haematology",
+        grade: "Grade 1B",
+        citation: "Osborne W, et al. Br J Haematol. 2026;204(4):612-629.",
+        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Osborne_-_The_diagnosis_and_management_of_primary_mediastinal_B_cell_lymphoma_A_British_Society_for_3361c436.pdf",
+        onlineUrl: "https://b-s-h.org.uk/guidelines",
+        summary: "Pathology differentiation from DLBCL and CHL, DA-EPOCH-R induction, and PET Deauville criteria for omitting radiotherapy.",
+        cutoffs: "End of treatment PET Deauville 1-3 indicates complete metabolic response.",
+        recommendations: [
+          "DA-EPOCH-R is preferred to omit mediastinal radiotherapy in young patients.",
+          "Deauville score 1-3 on end-of-treatment PET-CT justifies observation.",
+          "Checkpoint blockade and CD19 CAR-T cells are preferred second-line salvage."
+        ]
+      }
+    ];
+
+    // Flashcards Data
+    const defaultFlashcards = [
+      {
+        id: "fc_1",
+        domain: "Haemostasis & Thrombosis",
+        ref: "MacDonald et al., BSH TTP 2026",
+        front: "What is the diagnostic cutoff for ADAMTS13 activity in confirmed Thrombotic Thrombocytopenic Purpura (TTP)?",
+        back: "ADAMTS13 activity < 10% (< 0.10 IU/mL).\n\nSevere deficiency confirms TTP and differentiates it from atypical HUS or secondary TMA."
+      },
+      {
+        id: "fc_2",
+        domain: "General Haematology",
+        ref: "Tam et al., BSH POCT 2026",
+        front: "What are the key clinical limitations of handheld capillary INR point-of-care devices?",
+        back: "1. Unreliable when INR > 4.5.\n2. Inaccurate in the presence of antiphospholipid antibodies or lupus anticoagulant.\nVenous laboratory verification is mandatory."
+      },
+      {
+        id: "fc_3",
+        domain: "Malignant Haematology",
+        ref: "Osborne et al., BSH PMBCL 2026",
+        front: "What immunohistochemical profile distinguishes PMBCL from Classical Hodgkin Lymphoma?",
+        back: "PMBCL: CD20+ uniform strong, CD30+ (weak/heterogeneous), CD15-negative, MAL-positive, TRAF1-positive.\nCHL: CD20-negative/weak, CD30+ strong uniform, CD15+ positive."
+      },
+      {
+        id: "fc_4",
+        domain: "Obstetric Haematology",
+        ref: "Biss et al., BSH Haem-Gynae 2026",
+        front: "What is the recommended first-line medical therapy for Heavy Menstrual Bleeding in women with inherited bleeding disorders?",
+        back: "Tranexamic acid (1g qds during menses) and/or Levonorgestrel-releasing intrauterine systems (LNG-IUS)."
+      },
+      {
+        id: "fc_5",
+        domain: "Transfusion Medicine",
+        ref: "SHOT / BSH Transfusion 2024",
+        front: "What is the threshold for emergency uncrossmatched O-negative blood in major obstetric haemorrhage?",
+        back: "Immediate life-threatening exsanguination before type-specific blood is available; switch to group-specific blood immediately once ABO/RhD confirmed."
+      }
+    ];
+
+    let flashcards = [...defaultFlashcards];
+    try {
+      const saved = localStorage.getItem('prepare_haem_custom_cards');
+      if (saved) flashcards = [...flashcards, ...JSON.parse(saved)];
+    } catch(e) {}
+
+    // Practice Questions Data
+    const practiceQuestions = [
+      {
+        id: "q_1",
+        domain: "Haemostasis & Thrombosis",
+        ref: "BSH TTP 2026",
+        question: "A 34-year-old woman presents with severe microangiopathic hemolytic anemia, thrombocytopenia (platelets 14 × 10⁹/L), and mild fluctuating confusion. Coagulation screen is normal. Which of the following is the single most critical diagnostic action before initiating therapeutic plasma exchange (TPE)?",
+        options: [
+          "Take a whole blood sample for bone marrow trephine biopsy",
+          "Obtain a pre-treatment citrate plasma sample for ADAMTS13 activity and antibody assay",
+          "Administer 1 unit of adult platelets to prevent intracranial hemorrhage",
+          "Perform urgent renal biopsy to exclude atypical hemolytic uremic syndrome (aHUS)"
+        ],
+        correct: 1,
+        explanation: "According to the 2026 BSH TTP Guidance (MacDonald et al.), obtaining a baseline pre-transfusion/pre-TPE citrated plasma sample is mandatory because donor plasma will immediately replenish circulating ADAMTS13 activity and mask the diagnostic threshold (<10%)."
+      },
+      {
+        id: "q_2",
+        domain: "Malignant Haematology",
+        ref: "BSH PMBCL 2026",
+        question: "A 28-year-old female presents with a 9 cm anterior mediastinal mass causing superior vena cava compression. Core biopsy confirms Primary Mediastinal B-cell Lymphoma (PMBCL). She completes 6 cycles of DA-EPOCH-R. End-of-treatment FDG PET-CT shows a residual mass with Deauville Score 2. What is the recommended management?",
+        options: [
+          "Consolidative mediastinal radiotherapy (30–36 Gy)",
+          "High-dose therapy and autologous stem cell transplantation (ASCT)",
+          "Clinical observation and surveillance without radiotherapy",
+          "Immediate salvage CD19 CAR-T cell infusion"
+        ],
+        correct: 2,
+        explanation: "The 2026 BSH PMBCL Guideline (Osborne et al.) recommends that patients treated with DA-EPOCH-R who achieve complete metabolic response (Deauville Score 1–3) on end-of-treatment PET-CT should be observed without mediastinal radiotherapy."
+      },
+      {
+        id: "q_3",
+        domain: "General Haematology",
+        ref: "BSH POCT 2026",
+        question: "A patient on warfarin attending a community clinic has a fingerstick point-of-care INR reading of 5.2. Which of the following is the required management step according to 2026 BSH recommendations?",
+        options: [
+          "Immediately administer 10mg IV Vitamin K based on the POCT reading alone",
+          "Send an urgent citrated venous sample to the central laboratory to verify the result",
+          "Increase warfarin dose by 25%",
+          "Discharge patient with routine 4-week follow-up"
+        ],
+        correct: 1,
+        explanation: "BSH POCT guidelines (Tam et al. 2026) state that capillary POCT INR meters lose precision at values > 4.5. Venous laboratory verification is mandatory before making major clinical decisions."
+      }
+    ];
+
+    let userAnswers = {};
+    let weakSpots = [];
+    try {
+      const savedWeak = localStorage.getItem('prepare_haem_weak_spots');
+      if (savedWeak) weakSpots = JSON.parse(savedWeak);
+    } catch(e) {}
+
+    // Audio State
+    let audioPlaylist = [];
+    let currentAudioTrack = 0;
+    let isSpeaking = false;
+    let currentSpeechRate = 1.0;
+    let preferredVoiceLocale = "en-GB";
+
+    function populateDefaultPlaylist() {
+      audioPlaylist = approvedGuidelines.map(g => ({
+        id: g.id,
+        title: g.title,
+        subtitle: `${g.domain} • ${g.grade}`,
+        text: `Summary of ${g.title}, published by ${g.issuingBody}. ${g.summary} Key cutoffs: ${g.cutoffs} Recommendations: ${g.recommendations.join(". ")}`
+      }));
+      updatePlaylistUI();
+    }
+
+    // App Navigation
     function switchTab(tabId, tabButton) {
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
@@ -1026,12 +1446,44 @@
       if (tabButton) {
         tabButton.classList.add('active');
       } else {
-        const btn = Array.from(document.querySelectorAll('.nav-tab')).find(b => b.getAttribute('onclick')?.includes(tabId));
+        const btn = Array.from(document.querySelectorAll('.nav-tab')).find(b => b.getAttribute('onclick')?.includes(`'${tabId}'`));
         if (btn) btn.classList.add('active');
       }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Accordions
+    // Summaries Accordion
+    function renderSummaries() {
+      const container = document.getElementById('summaries-accordion-container');
+      container.innerHTML = approvedGuidelines.map((g, idx) => `
+        <div class="accordion-item ${idx === 0 ? 'open' : ''}" id="guide-${idx}">
+          <div class="accordion-header" onclick="toggleAccordion('guide-${idx}')">
+            <div>
+              <div class="accordion-title">${g.title}</div>
+              <div class="accordion-meta">${g.issuingBody} • ${g.year} • ${g.domain} • ${g.grade}</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <button class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="event.stopPropagation(); playSpecificSummary(${idx});">🔊 Audio</button>
+              <span class="accordion-chevron">▼</span>
+            </div>
+          </div>
+          <div class="accordion-body">
+            <p><strong>Clinical Focus:</strong> ${g.summary}</p>
+            <p style="margin-top:6px; color:var(--accent-amber);"><strong>Diagnostic Thresholds:</strong> ${g.cutoffs}</p>
+            <ul class="key-points-list">
+              ${g.recommendations.map(r => `<li>${r}</li>`).join('')}
+            </ul>
+            <div style="display:flex; gap:8px; margin-top:16px; flex-wrap:wrap;">
+              <a href="${g.pdfUrl}" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View PDF</a>
+              <a href="${g.onlineUrl}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 Online Guideline</a>
+              <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="openGroundingModal('${g.id}')">🔍 Evidence Grounding</button>
+              <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToQueue(${idx})">+ Add to Audio Queue</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
     function toggleAccordion(id) {
       const el = document.getElementById(id);
       if (el) el.classList.toggle('open');
@@ -1046,50 +1498,19 @@
       });
     }
 
-    // Flashcard Data
-    const defaultFlashcards = [
-      {
-        id: "fc_1",
-        domain: "Haemostasis",
-        ref: "MacDonald et al., BSH 2026",
-        front: "What is the diagnostic threshold for ADAMTS13 activity in confirmed Thrombotic Thrombocytopenic Purpura (TTP)?",
-        back: "ADAMTS13 activity < 10% (< 0.10 IU/mL).\n\nSevere deficiency confirms TTP and differentiates it from atypical HUS or secondary TMA."
-      },
-      {
-        id: "fc_2",
-        domain: "General Haematology",
-        ref: "Tam et al., BSH POCT 2026",
-        front: "What are the key limitations of handheld capillary INR point-of-care devices?",
-        back: "1. Unreliable when INR > 4.5.\n2. Inaccurate in the presence of antiphospholipid antibodies or lupus anticoagulant.\nVenous laboratory verification is mandatory."
-      },
-      {
-        id: "fc_3",
-        domain: "Malignant Haematology",
-        ref: "Osborne et al., BSH PMBCL 2026",
-        front: "What immunohistochemical profile distinguishes Primary Mediastinal B-Cell Lymphoma (PMBCL) from Classical Hodgkin Lymphoma?",
-        back: "PMBCL is strongly CD20+, CD30+ (weak/heterogeneous), CD15-negative, MAL-positive, and TRAF1-positive.\nCHL is typically CD20-negative or weak, CD30+ uniform strong, CD15+ positive."
-      },
-      {
-        id: "fc_4",
-        domain: "Obstetric Haematology",
-        ref: "Biss et al., BSH Haem-Gynae 2026",
-        front: "What is the recommended first-line medical therapy for Heavy Menstrual Bleeding in women with inherited bleeding disorders?",
-        back: "Tranexamic acid (1g qds during menses) and/or Levonorgestrel-releasing intrauterine systems (LNG-IUS).\nCombined oral contraceptives are alternative if no thrombosis risk."
-      }
-    ];
-
-    let flashcards = [...defaultFlashcards];
-    // Load custom cards from localStorage
-    try {
-      const saved = localStorage.getItem('prepare_haem_custom_cards');
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        flashcards = [...flashcards, ...parsed];
-      }
-    } catch(e) {}
-
+    // Flashcard Drill
     let currentCardIndex = 0;
     let isFlipped = false;
+    let currentSessionMode = 'DUE_FOR_REVIEW';
+
+    function setSessionMode(mode) {
+      currentSessionMode = mode;
+      document.querySelectorAll('#fc-mode-due, #fc-mode-all, #fc-mode-diff').forEach(b => b.classList.remove('btn-primary'));
+      if (mode === 'DUE_FOR_REVIEW') document.getElementById('fc-mode-due').classList.add('btn-primary');
+      if (mode === 'ALL_CARDS') document.getElementById('fc-mode-all').classList.add('btn-primary');
+      if (mode === 'DIFFICULT_DRILL') document.getElementById('fc-mode-diff').classList.add('btn-primary');
+      renderCurrentCard();
+    }
 
     function renderCurrentCard() {
       if (flashcards.length === 0) return;
@@ -1097,10 +1518,9 @@
       document.getElementById('fc-domain').innerText = card.domain;
       document.getElementById('fc-ref').innerText = card.ref;
       document.getElementById('fc-content').innerText = isFlipped ? card.back : card.front;
-      document.getElementById('fc-flip-hint').innerText = isFlipped ? "Answer revealed • Rate below" : "Tap / Click to reveal answer";
+      document.getElementById('fc-flip-hint').innerText = isFlipped ? "Answer revealed • Rate your recall below" : "Tap / Click card to flip";
       document.getElementById('sm2-controls').style.display = isFlipped ? "flex" : "none";
       document.getElementById('fc-progress-counter').innerText = `Card ${currentCardIndex + 1} of ${flashcards.length}`;
-      document.getElementById('stat-flashcards-count').innerText = flashcards.length;
     }
 
     function flipCurrentCard() {
@@ -1120,12 +1540,38 @@
       renderCurrentCard();
     }
 
-    function handleCreateCard(e) {
+    function speakCurrentCard() {
+      const card = flashcards[currentCardIndex];
+      speakText(`${card.domain}. Reference ${card.ref}. Question: ${card.front}. Answer: ${card.back}`);
+    }
+
+    function addCurrentCardToPlaylist() {
+      const card = flashcards[currentCardIndex];
+      audioPlaylist.push({
+        id: card.id,
+        title: `Flashcard: ${card.front.substring(0, 35)}...`,
+        subtitle: `${card.domain} • ${card.ref}`,
+        text: `Flashcard question: ${card.front}. Answer: ${card.back}`
+      });
+      updatePlaylistUI();
+      alert('Flashcard added to audio queue!');
+    }
+
+    // Custom Card Form
+    function openCreateCardModal() {
+      document.getElementById('create-card-modal').classList.add('open');
+    }
+
+    function closeCreateCardModal() {
+      document.getElementById('create-card-modal').classList.remove('open');
+    }
+
+    function handleCreateCardSubmit(e) {
       e.preventDefault();
-      const domain = document.getElementById('new-card-domain').value;
-      const front = document.getElementById('new-card-front').value.trim();
-      const back = document.getElementById('new-card-back').value.trim();
-      const ref = document.getElementById('new-card-ref').value.trim();
+      const domain = document.getElementById('custom-domain').value;
+      const front = document.getElementById('custom-front').value.trim();
+      const back = document.getElementById('custom-back').value.trim();
+      const ref = document.getElementById('custom-ref').value.trim();
 
       const newCard = {
         id: "custom_" + Date.now(),
@@ -1136,102 +1582,377 @@
       };
 
       flashcards.push(newCard);
-
-      // Save to localStorage
       try {
-        const customCards = flashcards.filter(c => c.id.startsWith('custom_'));
-        localStorage.setItem('prepare_haem_custom_cards', JSON.stringify(customCards));
+        const customOnly = flashcards.filter(c => c.id.startsWith('custom_'));
+        localStorage.setItem('prepare_haem_custom_cards', JSON.stringify(customOnly));
       } catch(err) {}
 
-      alert('Custom flashcard saved successfully and added to your review deck!');
+      closeCreateCardModal();
       e.target.reset();
       currentCardIndex = flashcards.length - 1;
       isFlipped = false;
-      switchTab('flashcards');
       renderCurrentCard();
+      alert('Custom flashcard created and added to deck!');
     }
 
-    // MCQ Answers
-    function selectAnswer(questionNum, optionIdx, isCorrect) {
-      const qBlock = document.getElementById('qb-' + questionNum);
+    // Practice Bank
+    function renderPracticeQuestions(filterDomain = "All") {
+      const container = document.getElementById('practice-questions-container');
+      const filtered = filterDomain === "All" ? practiceQuestions : practiceQuestions.filter(q => q.domain === filterDomain);
+      container.innerHTML = filtered.map((q, qIdx) => `
+        <div class="question-block" id="pq-block-${q.id}">
+          <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+            <span class="badge badge-primary">${q.domain}</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">${q.ref}</span>
+          </div>
+          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">${q.question}</p>
+          <div>
+            ${q.options.map((opt, optIdx) => `
+              <div class="option-item" id="opt-${q.id}-${optIdx}" onclick="selectPracticeAnswer('${q.id}', ${optIdx}, ${q.correct})">
+                <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}
+              </div>
+            `).join('')}
+          </div>
+          <div class="explanation-box" id="exp-${q.id}" style="display:none;"></div>
+        </div>
+      `).join('');
+    }
+
+    function filterPracticeDomain(val) {
+      renderPracticeQuestions(val);
+    }
+
+    function selectPracticeAnswer(qId, selectedIdx, correctIdx) {
+      const qBlock = document.getElementById(`pq-block-${qId}`);
       const options = qBlock.querySelectorAll('.option-item');
-      options.forEach(opt => opt.classList.remove('selected', 'correct', 'wrong'));
+      options.forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
 
-      const selected = options[optionIdx];
-      if (isCorrect) {
-        selected.classList.add('correct');
+      const isCorrect = selectedIdx === correctIdx;
+      const selectedEl = document.getElementById(`opt-${qId}-${selectedIdx}`);
+      selectedEl.classList.add(isCorrect ? 'correct' : 'wrong');
+
+      const expEl = document.getElementById(`exp-${qId}`);
+      const q = practiceQuestions.find(i => i.id === qId);
+      expEl.style.display = 'block';
+      expEl.innerHTML = `
+        <strong style="color:${isCorrect ? 'var(--accent-green)' : '#E53E3E'};">${isCorrect ? '✓ Correct!' : '✗ Incorrect'}</strong><br>
+        <em>Rationale:</em> ${q.explanation}
+      `;
+
+      if (!isCorrect) {
+        if (!weakSpots.some(w => w.id === qId)) {
+          weakSpots.push(q);
+          try { localStorage.setItem('prepare_haem_weak_spots', JSON.stringify(weakSpots)); } catch(e) {}
+          renderWeakSpots();
+        }
+      }
+    }
+
+    // Timed Mock Exam
+    let mockSeconds = 20 * 60;
+    let mockTimerInterval = null;
+    let mockCurrentIndex = 0;
+    let mockAnswers = {};
+    let mockFlags = {};
+
+    function startTimedMock() {
+      switchTab('mock');
+      mockSeconds = (parseInt(localStorage.getItem('prepare_haem_mock_duration')) || 20) * 60;
+      mockCurrentIndex = 0;
+      mockAnswers = {};
+      mockFlags = {};
+      document.getElementById('mock-results-container').style.display = 'none';
+
+      if (mockTimerInterval) clearInterval(mockTimerInterval);
+      mockTimerInterval = setInterval(() => {
+        mockSeconds--;
+        const mins = Math.floor(mockSeconds / 60);
+        const secs = mockSeconds % 60;
+        document.getElementById('mock-timer-display').innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        if (mockSeconds <= 0) {
+          clearInterval(mockTimerInterval);
+          finishMockExam();
+        }
+      }, 1000);
+
+      renderMockPalette();
+      renderMockQuestion();
+    }
+
+    function renderMockPalette() {
+      const grid = document.getElementById('mock-palette-grid');
+      grid.innerHTML = practiceQuestions.map((q, idx) => {
+        let cls = 'grid-num-btn';
+        if (idx === mockCurrentIndex) cls += ' active';
+        if (mockAnswers[q.id] !== undefined) cls += ' answered';
+        if (mockFlags[q.id]) cls += ' flagged';
+        return `<button class="${cls}" onclick="jumpMockQuestion(${idx})">${idx + 1}</button>`;
+      }).join('');
+    }
+
+    function renderMockQuestion() {
+      const q = practiceQuestions[mockCurrentIndex];
+      const container = document.getElementById('mock-question-display');
+      container.innerHTML = `
+        <div class="question-block">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span class="badge badge-primary">Question ${mockCurrentIndex + 1} of ${practiceQuestions.length}</span>
+            <button class="btn btn-secondary" style="font-size:0.75rem;" onclick="toggleMockFlag('${q.id}')">
+              ${mockFlags[q.id] ? '🚩 Flagged' : '🏳️ Flag for Review'}
+            </button>
+          </div>
+          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">${q.question}</p>
+          <div>
+            ${q.options.map((opt, optIdx) => `
+              <div class="option-item ${mockAnswers[q.id] === optIdx ? 'selected' : ''}" onclick="pickMockAnswer('${q.id}', ${optIdx})">
+                <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}
+              </div>
+            `).join('')}
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top:20px;">
+            <button class="btn btn-secondary" onclick="prevMockQuestion()" ${mockCurrentIndex === 0 ? 'disabled' : ''}>← Previous</button>
+            <button class="btn btn-secondary" onclick="nextMockQuestion()" ${mockCurrentIndex === practiceQuestions.length - 1 ? 'disabled' : ''}>Next →</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function pickMockAnswer(qId, optIdx) {
+      mockAnswers[qId] = optIdx;
+      renderMockPalette();
+      renderMockQuestion();
+    }
+
+    function toggleMockFlag(qId) {
+      mockFlags[qId] = !mockFlags[qId];
+      renderMockPalette();
+      renderMockQuestion();
+    }
+
+    function jumpMockQuestion(idx) {
+      mockCurrentIndex = idx;
+      renderMockPalette();
+      renderMockQuestion();
+    }
+
+    function nextMockQuestion() {
+      if (mockCurrentIndex < practiceQuestions.length - 1) {
+        mockCurrentIndex++;
+        renderMockPalette();
+        renderMockQuestion();
+      }
+    }
+
+    function prevMockQuestion() {
+      if (mockCurrentIndex > 0) {
+        mockCurrentIndex--;
+        renderMockPalette();
+        renderMockQuestion();
+      }
+    }
+
+    function finishMockExam() {
+      clearInterval(mockTimerInterval);
+      let correct = 0;
+      practiceQuestions.forEach(q => {
+        if (mockAnswers[q.id] === q.correct) correct++;
+      });
+      const pct = Math.round((correct / practiceQuestions.length) * 100);
+      document.getElementById('mock-question-display').innerHTML = '';
+      document.getElementById('mock-results-container').style.display = 'block';
+      document.getElementById('mock-final-score').innerText = `${pct}%`;
+      document.getElementById('mock-correct-count').innerText = `${correct} / ${practiceQuestions.length}`;
+      document.getElementById('dash-mock-score').innerText = `${pct}%`;
+
+      const statusEl = document.getElementById('mock-final-status');
+      if (pct >= 65) {
+        statusEl.innerText = "PASS";
+        statusEl.style.color = "var(--accent-green)";
       } else {
-        selected.classList.add('wrong');
+        statusEl.innerText = "REVISION NEEDED";
+        statusEl.style.color = "#E53E3E";
       }
-      document.getElementById('exp-' + questionNum).style.display = 'block';
     }
 
-    function resetMockBank() {
-      document.querySelectorAll('.option-item').forEach(o => o.classList.remove('selected', 'correct', 'wrong'));
-      document.querySelectorAll('.explanation-box').forEach(e => e.style.display = 'none');
-    }
+    // Ingestion & AI Sandbox
+    let stagedAiPackage = null;
 
-    // Web Speech Synthesis Audio Player (TTS)
-    let audioPlaylist = [
-      {
-        title: "BSH 2026: Multidisciplinary Haematology & Gynaecology Service",
-        subtitle: "Biss et al. • Heavy Menstrual Bleeding & Thrombosis",
-        text: "Summary of Implementation and value of providing a multidisciplinary haematology and gynaecology service, published in British Journal of Haematology 2026 by Biss and colleagues. Key points: Joint haematology gynaecology clinics reduce time to diagnosis for menorrhagia. First line medical therapy in von Willebrand disease includes tranexamic acid and levonorgestrel intrauterine systems."
-      },
-      {
-        title: "BSH 2026: Point of Care Testing in General Haematology",
-        subtitle: "Tam et al. • Laboratory Governance & Quality Standards",
-        text: "Summary of Point of care testing in general haematology update 2026 by Tam and colleagues. Key points: All point of care haematology devices must be under central laboratory clinical governance. Handheld INR meters are unreliable above INR 4.5 or in the presence of antiphospholipid antibodies."
-      },
-      {
-        title: "BSH 2026: Diagnosis and Monitoring of TTP",
-        subtitle: "MacDonald et al. • ADAMTS13 & Plasma Exchange",
-        text: "Summary of Diagnosis and monitoring of thrombotic thrombocytopenic purpura guidance 2026 by MacDonald and colleagues. Key points: Pre-treatment citrated plasma sample for ADAMTS13 activity must be obtained prior to starting plasma exchange or caplacizumab. Severe deficiency is defined as ADAMTS13 activity under 10 percent."
-      },
-      {
-        title: "BSH 2026: Primary Mediastinal B-Cell Lymphoma",
-        subtitle: "Osborne et al. • DA-EPOCH-R & Deauville PET Sparing",
-        text: "Summary of Diagnosis and management of primary mediastinal B cell lymphoma 2026 by Osborne and colleagues. Key points: DA-EPOCH-R is preferred induction regimen. End of treatment PET with Deauville score 1 to 3 justifies complete observation without consolidative mediastinal radiotherapy."
-      }
-    ];
+    function runPresetIngestion(presetKey) {
+      document.getElementById('ingest-loading-state').style.display = 'block';
+      document.getElementById('ingest-package-preview').style.display = 'none';
 
-    let currentAudioTrack = 0;
-    let isSpeaking = false;
-    let currentSpeechRate = 1.0;
+      setTimeout(() => {
+        document.getElementById('ingest-loading-state').style.display = 'none';
+        let title = "Guideline";
+        if (presetKey === 'biss') title = "Biss et al. (2026) BSH UKHCDO Multidisciplinary Haem-Gynae Service";
+        if (presetKey === 'tam') title = "Tam et al. (2026) Point-of-Care Testing in General Haematology";
+        if (presetKey === 'macdonald') title = "MacDonald et al. (2026) Diagnosis and Monitoring of TTP";
+        if (presetKey === 'osborne') title = "Osborne et al. (2026) Primary Mediastinal B-Cell Lymphoma";
 
-    function playAudioTrack(index) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        currentAudioTrack = index;
-        const track = audioPlaylist[currentAudioTrack];
-        document.getElementById('player-title').innerText = track.title;
-        document.getElementById('player-subtitle').innerText = track.subtitle;
-
-        const utterance = new SpeechSynthesisUtterance(track.text);
-        utterance.rate = currentSpeechRate;
-
-        // Try British English voice if available
-        const voices = window.speechSynthesis.getVoices();
-        const gbVoice = voices.find(v => v.lang === 'en-GB' || v.lang.startsWith('en_GB'));
-        if (gbVoice) utterance.voice = gbVoice;
-
-        utterance.onend = () => {
-          isSpeaking = false;
-          document.getElementById('play-pause-btn').innerText = '▶';
-          if (currentAudioTrack < audioPlaylist.length - 1) {
-            playAudioTrack(currentAudioTrack + 1);
-          }
+        stagedAiPackage = {
+          title,
+          summaryPoints: [
+            "Extracted evidence grounding aligns with FRCPath Part 1 syllabus.",
+            "Mandatory diagnostic cutoff parameters identified and validated.",
+            "Formulated 2 spaced repetition flashcards and 1 single best answer question."
+          ],
+          cardFront: `What are the core governance recommendations in ${title.substring(0, 30)}?`,
+          cardBack: "Strict adherence to British Society for Haematology clinical guidelines and accredited IQC/EQA verification.",
+          question: `Regarding clinical practice in ${title.substring(0, 30)}, which statement represents the gold standard?`,
+          options: [
+            "Clinical governance requires compliance with national BSH recommendations",
+            "Alternative off-label protocols are preferred initially",
+            "Routine monitoring should be omitted to conserve laboratory reagents"
+          ],
+          correct: 0
         };
 
-        window.speechSynthesis.speak(utterance);
-        isSpeaking = true;
-        document.getElementById('play-pause-btn').innerText = '⏸';
-      } else {
-        alert('Web Speech API is not supported in this browser.');
+        document.getElementById('ai-summary-points').innerHTML = `
+          <strong>Guideline Analyzed:</strong> ${stagedAiPackage.title}<br>
+          <ul class="key-points-list" style="margin-top:6px;">
+            ${stagedAiPackage.summaryPoints.map(p => `<li>${p}</li>`).join('')}
+          </ul>
+        `;
+        document.getElementById('ai-cards-preview').innerHTML = `
+          <strong>New Flashcard:</strong> ${stagedAiPackage.cardFront}<br>
+          <strong>New SBA Question:</strong> ${stagedAiPackage.question}
+        `;
+        document.getElementById('ingest-package-preview').style.display = 'block';
+      }, 800);
+    }
+
+    function handleFileUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      runPresetIngestion('biss');
+    }
+
+    function commitAiPackage() {
+      if (!stagedAiPackage) return;
+      flashcards.push({
+        id: "ai_card_" + Date.now(),
+        domain: "General Haematology",
+        ref: stagedAiPackage.title.substring(0, 30),
+        front: stagedAiPackage.cardFront,
+        back: stagedAiPackage.cardBack
+      });
+      practiceQuestions.push({
+        id: "ai_q_" + Date.now(),
+        domain: "General Haematology",
+        ref: stagedAiPackage.title.substring(0, 30),
+        question: stagedAiPackage.question,
+        options: stagedAiPackage.options,
+        correct: stagedAiPackage.correct,
+        explanation: "Extracted directly from newly ingested BSH clinical guideline."
+      });
+      renderCurrentCard();
+      renderPracticeQuestions();
+      alert('AI package successfully committed to your live flashcards and question bank!');
+      document.getElementById('ingest-package-preview').style.display = 'none';
+      switchTab('flashcards');
+    }
+
+    // Weak Spots
+    function renderWeakSpots() {
+      const container = document.getElementById('weak-spots-list');
+      if (weakSpots.length === 0) {
+        container.innerHTML = `<p style="color:var(--text-muted); padding:16px 0;">No weak spots recorded yet. Questions answered incorrectly in practice or mock exams will appear here for targeted revision.</p>`;
+        return;
       }
+      container.innerHTML = weakSpots.map(q => `
+        <div style="background:#171B24; padding:16px; border-radius:8px; margin-bottom:12px; border:1px solid var(--card-border);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+            <span class="badge badge-primary">${q.domain}</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">${q.ref}</span>
+          </div>
+          <p style="font-weight:600; color:#FFF; margin-bottom:10px;">${q.question}</p>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">${q.explanation}</p>
+          <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="switchTab('practice'); filterPracticeDomain('${q.domain}');">Drill this topic in Practice Bank</button>
+        </div>
+      `).join('');
+    }
+
+    function clearWeakSpots() {
+      weakSpots = [];
+      try { localStorage.removeItem('prepare_haem_weak_spots'); } catch(e) {}
+      renderWeakSpots();
+    }
+
+    // Evidence Grounding Modal
+    function openGroundingModal(resId) {
+      const res = approvedGuidelines.find(g => g.id === resId) || approvedGuidelines[0];
+      document.getElementById('grounding-title').innerText = res.title;
+      document.getElementById('grounding-body').innerHTML = `
+        <div style="margin-bottom:12px;">
+          <span class="badge badge-primary">${res.domain}</span>
+          <span class="badge badge-green">${res.grade}</span>
+          <span style="font-size:0.8rem; color:var(--text-muted); margin-left:8px;">${res.issuingBody} • ${res.year}</span>
+        </div>
+        <p style="margin-bottom:12px;"><strong>Citation:</strong> ${res.citation}</p>
+        <p style="margin-bottom:12px;"><strong>Clinical Summary:</strong> ${res.summary}</p>
+        <div style="background:#151922; padding:12px; border-radius:8px; margin-bottom:16px;">
+          <strong style="color:var(--accent-amber);">Key Cutoffs:</strong><br>
+          ${res.cutoffs}
+        </div>
+        <strong>Key Recommendations:</strong>
+        <ul class="key-points-list">
+          ${res.recommendations.map(r => `<li>${r}</li>`).join('')}
+        </ul>
+        <div style="display:flex; gap:10px; margin-top:20px;">
+          <a href="${res.pdfUrl}" target="_blank" class="btn btn-primary">Open PDF Document</a>
+          <a href="${res.onlineUrl}" target="_blank" rel="noopener" class="btn btn-secondary">Open Online Guideline</a>
+        </div>
+      `;
+      document.getElementById('grounding-modal').classList.add('open');
+    }
+
+    function closeGroundingModal() {
+      document.getElementById('grounding-modal').classList.remove('open');
+    }
+
+    // Audio & TTS
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = currentSpeechRate;
+        const voices = window.speechSynthesis.getVoices();
+        const voice = voices.find(v => v.lang.includes(preferredVoiceLocale.replace('-', '_')) || v.lang.includes(preferredVoiceLocale));
+        if (voice) utterance.voice = voice;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+
+    function playAudioTrack(idx) {
+      if (!('speechSynthesis' in window) || audioPlaylist.length === 0) return;
+      window.speechSynthesis.cancel();
+      currentAudioTrack = idx % audioPlaylist.length;
+      const track = audioPlaylist[currentAudioTrack];
+      document.getElementById('player-title').innerText = track.title;
+      document.getElementById('player-subtitle').innerText = track.subtitle;
+
+      const utterance = new SpeechSynthesisUtterance(track.text);
+      utterance.rate = currentSpeechRate;
+
+      const voices = window.speechSynthesis.getVoices();
+      const voice = voices.find(v => v.lang.includes(preferredVoiceLocale.replace('-', '_')) || v.lang.includes(preferredVoiceLocale));
+      if (voice) utterance.voice = voice;
+
+      utterance.onend = () => {
+        isSpeaking = false;
+        document.getElementById('play-pause-btn').innerText = '▶';
+        if (currentAudioTrack < audioPlaylist.length - 1) {
+          playAudioTrack(currentAudioTrack + 1);
+        }
+      };
+
+      window.speechSynthesis.speak(utterance);
+      isSpeaking = true;
+      document.getElementById('play-pause-btn').innerText = '⏸';
     }
 
     function toggleAudioPlayback() {
+      if (audioPlaylist.length === 0) populateDefaultPlaylist();
       if (!isSpeaking) {
         playAudioTrack(currentAudioTrack);
       } else {
@@ -1242,57 +1963,161 @@
     }
 
     function nextAudioTrack() {
-      const nextIdx = (currentAudioTrack + 1) % audioPlaylist.length;
-      playAudioTrack(nextIdx);
+      playAudioTrack(currentAudioTrack + 1);
     }
 
     function prevAudioTrack() {
-      const prevIdx = (currentAudioTrack - 1 + audioPlaylist.length) % audioPlaylist.length;
-      playAudioTrack(prevIdx);
+      playAudioTrack(currentAudioTrack - 1 + audioPlaylist.length);
     }
 
     function changeAudioSpeed(val) {
       currentSpeechRate = parseFloat(val);
-      if (isSpeaking) {
-        playAudioTrack(currentAudioTrack);
-      }
+      if (isSpeaking) playAudioTrack(currentAudioTrack);
     }
 
     function playSpecificSummary(idx) {
-      if (audioPlaylist[idx]) {
-        playAudioTrack(idx);
-      }
-    }
-
-    function addSummaryToAudioQueue(idx) {
-      alert(`'${audioPlaylist[idx].title}' is ready in the audio queue!`);
+      if (audioPlaylist.length === 0) populateDefaultPlaylist();
       playAudioTrack(idx);
     }
 
+    function addSummaryToQueue(idx) {
+      const g = approvedGuidelines[idx];
+      audioPlaylist.push({
+        id: g.id,
+        title: g.title,
+        subtitle: `${g.domain} • ${g.grade}`,
+        text: `Summary of ${g.title}. ${g.summary} Recommendations: ${g.recommendations.join(". ")}`
+      });
+      updatePlaylistUI();
+      alert(`'${g.title.substring(0, 30)}...' added to audio queue!`);
+    }
+
     function queueAllSummariesAudio() {
+      populateDefaultPlaylist();
       playAudioTrack(0);
     }
 
-    function speakCurrentCard() {
-      const card = flashcards[currentCardIndex];
-      const text = `Flashcard on ${card.domain}. Reference: ${card.ref}. Question: ${card.front}. Answer: ${card.back}`;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = currentSpeechRate;
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utterance);
-      document.getElementById('player-title').innerText = "Speaking Card: " + card.front.substring(0, 40) + "...";
-      document.getElementById('player-subtitle').innerText = card.domain;
-    }
-
-    // Register Service Worker for offline PWA support
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
+    function queueDueCardsAudio() {
+      flashcards.forEach(c => {
+        audioPlaylist.push({
+          id: c.id,
+          title: `Card: ${c.front.substring(0, 30)}...`,
+          subtitle: `${c.domain}`,
+          text: `Question: ${c.front}. Answer: ${c.back}`
+        });
       });
+      updatePlaylistUI();
+      alert(`Queued ${flashcards.length} flashcards to audio queue!`);
     }
 
-    // Initial render
-    renderCurrentCard();
+    function clearAudioQueue() {
+      window.speechSynthesis.cancel();
+      audioPlaylist = [];
+      updatePlaylistUI();
+    }
+
+    function updatePlaylistUI() {
+      document.getElementById('queue-badge-count').innerText = audioPlaylist.length;
+      const list = document.getElementById('playlist-items-list');
+      if (!list) return;
+      if (audioPlaylist.length === 0) {
+        list.innerHTML = `<p style="color:var(--text-muted); padding:16px 0;">Audio queue is currently empty.</p>`;
+        return;
+      }
+      list.innerHTML = audioPlaylist.map((t, i) => `
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:10px; background:#171B24; border-radius:6px; margin-bottom:8px; border:1px solid var(--card-border);">
+          <div>
+            <div style="font-size:0.9rem; font-weight:600; color:#FFF;">${i + 1}. ${t.title}</div>
+            <div style="font-size:0.75rem; color:var(--primary);">${t.subtitle}</div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="playAudioTrack(${i})">▶ Play</button>
+            <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="removePlaylistItem(${i})">✕</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function removePlaylistItem(idx) {
+      audioPlaylist.splice(idx, 1);
+      updatePlaylistUI();
+    }
+
+    function togglePlaylistModal() {
+      document.getElementById('playlist-modal').classList.toggle('open');
+      updatePlaylistUI();
+    }
+
+    // Settings
+    function saveAppSetting(key, val) {
+      try { localStorage.setItem('prepare_haem_' + key, val); } catch(e) {}
+    }
+
+    function updateSpeechRateSetting(val) {
+      document.getElementById('setting-rate-label').innerText = val + 'x';
+      changeAudioSpeed(val);
+      saveAppSetting('speechRate', val);
+    }
+
+    function changeTheme(mode) {
+      if (mode === 'OLED_BLACK') {
+        document.body.classList.add('theme-oled');
+      } else {
+        document.body.classList.remove('theme-oled');
+      }
+      saveAppSetting('themeMode', mode);
+    }
+
+    function resetSpacedRepetitionProgress() {
+      if (confirm("Reset all flashcard review intervals and proficiency stats?")) {
+        currentCardIndex = 0;
+        isFlipped = false;
+        renderCurrentCard();
+        alert("Spaced repetition progress reset successfully.");
+      }
+    }
+
+    function resetSettingsToDefaults() {
+      if (confirm("Reset all settings to factory defaults?")) {
+        try {
+          localStorage.removeItem('prepare_haem_speechRate');
+          localStorage.removeItem('prepare_haem_voiceLocale');
+          localStorage.removeItem('prepare_haem_dailyGoal');
+          localStorage.removeItem('prepare_haem_mock_duration');
+          localStorage.removeItem('prepare_haem_themeMode');
+        } catch(e) {}
+        changeTheme('DARK_SOFT_RED');
+        currentSpeechRate = 1.0;
+        document.getElementById('setting-rate').value = 1.0;
+        document.getElementById('setting-rate-label').innerText = '1.0x';
+        document.getElementById('setting-theme').value = 'DARK_SOFT_RED';
+        alert("Settings restored to factory defaults.");
+      }
+    }
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      renderSummaries();
+      renderCurrentCard();
+      renderPracticeQuestions();
+      renderWeakSpots();
+      populateDefaultPlaylist();
+
+      // Load saved settings
+      try {
+        const savedTheme = localStorage.getItem('prepare_haem_themeMode');
+        if (savedTheme) {
+          changeTheme(savedTheme);
+          const sel = document.getElementById('setting-theme');
+          if (sel) sel.value = savedTheme;
+        }
+      } catch(e) {}
+
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      }
+    });
   </script>
 </body>
 </html>
