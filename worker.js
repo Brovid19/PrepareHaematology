@@ -1,10 +1,10 @@
-// Cloudflare Worker entrypoint for preparehaematology
+// Worker entrypoint for preparehaematology
 // Serves static assets from ./public via env.ASSETS with SPA routing fallback
 
 export default {
   async fetch(request, env) {
     try {
-      // Fetch the static asset from the Cloudflare Assets binding
+      // Fetch static asset from the environment assets binding
       const response = await env.ASSETS.fetch(request);
       
       // If the asset exists (not a 404), return it directly

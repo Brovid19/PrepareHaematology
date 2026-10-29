@@ -1,4 +1,4 @@
-// Prepare Haematology Service Worker for Cloudflare Pages Edge Serving
+// Prepare Haematology Service Worker for Offline & Edge Caching
 const CACHE_NAME = 'prepare-haematology-v1';
 const ASSETS_TO_CACHE = [
   '/',
