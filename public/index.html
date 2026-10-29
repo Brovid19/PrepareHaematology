@@ -43,7 +43,7 @@
       color: var(--text);
       font-family: var(--font-main);
       line-height: 1.6;
-      padding-bottom: 100px;
+      padding-bottom: 110px;
       min-height: 100vh;
       transition: background-color 0.3s ease;
     }
@@ -727,7 +727,7 @@
         </a>
         <button class="btn btn-secondary" onclick="togglePlaylistModal()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-          Audio Queue (<span id="queue-badge-count">5</span>)
+          Audio Queue (<span id="queue-badge-count">0</span>)
         </button>
         <button class="btn btn-secondary" onclick="switchTab('settings')">
           ⚙️ Settings
@@ -769,10 +769,10 @@
         </div>
       </div>
 
-      <!-- Quick Stats -->
+      <!-- Live Spaced Repetition Stats & Goal -->
       <div class="stat-grid">
         <div class="stat-card">
-          <div class="stat-value" id="dash-due-count">8</div>
+          <div class="stat-value" id="dash-due-count">0</div>
           <div class="stat-label">Cards Due Today</div>
         </div>
         <div class="stat-card">
@@ -780,12 +780,12 @@
           <div class="stat-label">Daily Review Goal</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value" id="dash-mastered-count">14</div>
+          <div class="stat-value" id="dash-mastered-count">0</div>
           <div class="stat-label">Cards Mastered</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value" id="dash-mock-score">78%</div>
-          <div class="stat-label">Last Mock Score</div>
+          <div class="stat-value" id="dash-retention-rate">100%</div>
+          <div class="stat-label">Expected Retention</div>
         </div>
       </div>
 
@@ -796,41 +796,33 @@
         <div class="domain-meter-card">
           <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
             <strong>Haemostasis & Thrombosis</strong>
-            <span style="color:var(--accent-green); font-weight:700;">85% • Mastered</span>
+            <span style="color:var(--accent-green); font-weight:700;" id="dom-prof-haem">88% • Mastered</span>
           </div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:85%;"></div></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:88%;"></div></div>
         </div>
 
         <div class="domain-meter-card">
           <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
-            <strong>Malignant Haematology</strong>
-            <span style="color:var(--accent-blue); font-weight:700;">70% • Proficient</span>
+            <strong>Malignant Haematology (Haemato-Oncology)</strong>
+            <span style="color:var(--accent-blue); font-weight:700;" id="dom-prof-malig">82% • Proficient</span>
           </div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:70%;"></div></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:82%;"></div></div>
         </div>
 
         <div class="domain-meter-card">
           <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
             <strong>General & Diagnostic Haematology</strong>
-            <span style="color:var(--primary); font-weight:700;">60% • Review Recommended</span>
+            <span style="color:var(--primary); font-weight:700;" id="dom-prof-gen">75% • Review Recommended</span>
           </div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:60%;"></div></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:75%;"></div></div>
         </div>
 
         <div class="domain-meter-card">
           <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
             <strong>Transfusion Medicine</strong>
-            <span style="color:var(--accent-green); font-weight:700;">90% • Mastered</span>
+            <span style="color:var(--accent-green); font-weight:700;" id="dom-prof-trans">92% • Mastered</span>
           </div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:90%;"></div></div>
-        </div>
-
-        <div class="domain-meter-card">
-          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
-            <strong>Obstetric Haematology</strong>
-            <span style="color:var(--accent-blue); font-weight:700;">75% • Proficient</span>
-          </div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:75%;"></div></div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:92%;"></div></div>
         </div>
       </div>
     </div>
@@ -854,18 +846,18 @@
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
           <div>
             <h3 style="font-size:1.1rem; color:#FFF;">Spaced Repetition Drill (SM-2)</h3>
-            <span style="font-size:0.8rem; color:var(--text-muted);">Calculates retention intervals based on your self-rating</span>
+            <span style="font-size:0.8rem; color:var(--text-muted);">Real-time retention intervals calculated per SuperMemo-2</span>
           </div>
           <div style="display:flex; gap:8px;">
             <button class="btn btn-secondary" onclick="openCreateCardModal()">+ Type Custom Card</button>
-            <span class="badge badge-primary" id="fc-progress-counter">Card 1 of 8</span>
+            <span class="badge badge-primary" id="fc-progress-counter">Card 1</span>
           </div>
         </div>
 
         <!-- Filter Mode -->
         <div style="display:flex; gap:8px; margin-bottom:16px;">
+          <button class="btn btn-secondary btn-primary" id="fc-mode-all" onclick="setSessionMode('ALL_CARDS')">All Cards</button>
           <button class="btn btn-secondary" id="fc-mode-due" onclick="setSessionMode('DUE_FOR_REVIEW')">Due for Review</button>
-          <button class="btn btn-secondary" id="fc-mode-all" onclick="setSessionMode('ALL_CARDS')">All Cards</button>
           <button class="btn btn-secondary" id="fc-mode-diff" onclick="setSessionMode('DIFFICULT_DRILL')">Difficult Drill</button>
         </div>
 
@@ -875,7 +867,7 @@
             <span style="font-size:0.75rem; color:var(--text-muted);" id="fc-ref">Guideline Ref</span>
           </div>
           <div class="flashcard-text" id="fc-content">Loading flashcard prompt...</div>
-          <div class="flip-hint" id="fc-flip-hint">Tap / Click to reveal answer</div>
+          <div class="flip-hint" id="fc-flip-hint">Tap / Click card to flip</div>
         </div>
 
         <div class="sm2-ratings" id="sm2-controls" style="display:none;">
@@ -895,19 +887,20 @@
 
     <!-- TAB 4: PRACTICE BANK -->
     <div id="tab-practice" class="tab-panel">
-      <div style="max-width:800px; margin:0 auto;">
+      <div style="max-width:850px; margin:0 auto;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
           <div>
             <h3 style="color:#FFF; font-size:1.15rem;">FRCPath Part 1 Practice Question Bank</h3>
-            <p style="color:var(--text-muted); font-size:0.85rem;">Single Best Answer (SBA) questions with guideline evidence rationales.</p>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Single Best Answer (SBA) and past paper essay questions with evidence rationales.</p>
           </div>
           <div style="display:flex; gap:8px;">
             <select class="form-select" id="practice-domain-filter" onchange="filterPracticeDomain(this.value)" style="width:auto; padding:6px 12px;">
               <option value="All">All Domains</option>
               <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
+              <option value="Haemato-Oncology">Haemato-Oncology</option>
               <option value="Malignant Haematology">Malignant Haematology</option>
               <option value="General Haematology">General Haematology</option>
-              <option value="Obstetric Haematology">Obstetric Haematology</option>
+              <option value="Transfusion Medicine">Transfusion Medicine</option>
             </select>
           </div>
         </div>
@@ -1067,6 +1060,22 @@
           </div>
           <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Garg_-_Early_diagnosis_of_AL_amyloidosis_in_haematology_cardiology_neurology_renal_and_general_b50657c2.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
         </div>
+
+        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h4 style="color:#FFF;">Haematology Paper 1 Past Papers Collection</h4>
+            <p style="color:var(--text-muted); font-size:0.8rem;">RCPath Examination Papers Archive</p>
+          </div>
+          <a href="/assets/aistudio/Haematology-paper-1-Past-Papers_d6c83302.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
+        </div>
+
+        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h4 style="color:#FFF;">Sample MCQ and EMQ Examination Questions</h4>
+            <p style="color:var(--text-muted); font-size:0.8rem;">RCPath Official Practice Bank</p>
+          </div>
+          <a href="/assets/aistudio/haematology-sample-mcq-and-emq-questions_babdb595.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
+        </div>
       </div>
     </div>
 
@@ -1220,10 +1229,10 @@
           <label class="form-label">Domain</label>
           <select class="form-select" id="custom-domain" required>
             <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
+            <option value="Haemato-Oncology">Haemato-Oncology</option>
             <option value="Malignant Haematology">Malignant Haematology</option>
             <option value="General Haematology">General Haematology</option>
             <option value="Transfusion Medicine">Transfusion Medicine</option>
-            <option value="Obstetric Haematology">Obstetric Haematology</option>
           </select>
         </div>
         <div class="form-group">
@@ -1244,60 +1253,83 @@
   </div>
 
   <script>
-    // Approved Guidelines Data
+    // Approved Guidelines Data (Exact from SeedData.kt)
     const approvedGuidelines = [
       {
-        id: "bsh_haem_gynae_2026",
-        title: "Implementation and value of providing a multidisciplinary haematology and gynaecology service",
+        id: "bsh_amyloidosis_2026",
+        title: "Early diagnosis of AL amyloidosis in haematology, cardiology, neurology, renal and general clinics: A British Society for Haematology Guideline",
         issuingBody: "British Society for Haematology",
         year: 2026,
-        domain: "Obstetric Haematology",
-        grade: "Grade 1B",
-        citation: "Biss T, et al. Br J Haematol. 2026;204(2):312-325.",
-        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value_of_providing_a_multidisciplinary_haematology_and_gynaecology_service_4743a72b.pdf",
-        onlineUrl: "https://onlinelibrary.wiley.com/journal/13652141",
-        summary: "Joint haematology-gynaecology clinics significantly shorten time to diagnosis for women with menorrhagia and bleeding disorders.",
-        cutoffs: "HMB defined as >80mL menstrual blood loss; VWD screening in menorrhagia with PBAC >100.",
+        domain: "Haemato-Oncology",
+        grade: "Grade 1A",
+        citation: "Garg M, Choudhuri S, Parrish C, Hawkins S, Lachmann H, Clayton L, et al. Br J Haematol. 2026;208(6):1931–1938.",
+        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Garg_-_Early_diagnosis_of_AL_amyloidosis_in_haematology_cardiology_neurology_renal_and_general_b50657c2.pdf",
+        onlineUrl: "https://doi.org/10.1111/bjh.20173",
+        summary: "Official 2026 BSH clinical guideline establishing early diagnostic algorithms, biomarker screening in MGUS/myeloma, non-invasive biopsy sequences, and adopting the international AL-ISS staging system. Early diagnosis yields ~80% 5-year survival vs <30% in advanced disease.",
+        cutoffs: "Renal: 24h proteinuria >0.5g/24h OR urine PCR >50 mg/mmol with concordant urine ACR >30 mg/mmol. Cardiac: NT-proBNP >332 ng/L. Hepatic: ALP >1.5x ULN. Neuropathy: Sustained BP fall >=20/10 mmHg.",
         recommendations: [
-          "Joint clinics reduce time to definitive haemostatic diagnosis.",
-          "First-line medical therapy for HMB in VWD includes tranexamic acid and LNG-IUS.",
-          "Mandatory MDT review prior to uterine artery embolization or hysterectomy."
+          "Urine PCR, ACR, and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS (Grade 1A).",
+          "Falling serum albumin and raised alkaline phosphatase should be investigated promptly (Grade 1A).",
+          "Patients can progress to AL amyloidosis with minimal or no increase in clonal light chains (Grade 1A).",
+          "Screen in unexplained HFpEF, low ECG voltage with LVH, bilateral carpal tunnel, or hypotension post ACE-I/ARBs (Grade 1B).",
+          "Bone marrow or abdominal fat pad biopsy with Congo red should precede renal biopsy (Grade 2B)."
+        ]
+      },
+      {
+        id: "bsh_haem_gynae_2026",
+        title: "Implementation and value of providing a multidisciplinary haematology and gynaecology service for individuals with bleeding and thrombotic disorders",
+        issuingBody: "British Society for Haematology & UKHCDO",
+        year: 2026,
+        domain: "Haemostasis & Thrombosis",
+        grade: "Grade 2C",
+        citation: "Biss T, Millen E, Warren C, Raheja P, Garside S, Motwani J, et al. Br J Haematol. 2026;209(3):919–927.",
+        pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value_of_providing_a_multidisciplinary_haematology_and_gynaecology_service_4743a72b.pdf",
+        onlineUrl: "https://doi.org/10.1111/bjh.70717",
+        summary: "2026 BSH & UKHCDO Good Practice Paper on multidisciplinary haematology-gynaecology care for heavy menstrual bleeding, corpus luteal haemorrhage, and abnormal uterine bleeding in bleeding disorders or anticoagulation.",
+        cutoffs: "HMB prevalence affects up to 25% of women; >=10% have an inherited bleeding disorder (IBD). Switching from Rivaroxaban to Apixaban/Dabigatran significantly reduces HMB.",
+        recommendations: [
+          "Joint haematology-gynaecology clinics significantly reduce time to definitive haemostatic diagnosis (Grade 2C).",
+          "First-line medical therapy for HMB in VWD includes tranexamic acid and LNG-IUS (Grade 2D).",
+          "Mandatory MDT review prior to uterine artery embolization or hysterectomy.",
+          "In anticoagulant-induced HMB, switch to Apixaban or Dabigatran which have a lower incidence of HMB compared to Rivaroxaban."
         ]
       },
       {
         id: "bsh_poct_haematology_2026",
-        title: "Point of care testing in general haematology: An update to the British Society for Haematology",
+        title: "Point-of-care testing in general haematology: An update to the British Society for Haematology good practice paper",
         issuingBody: "British Society for Haematology",
         year: 2026,
         domain: "General Haematology",
         grade: "Grade 1A",
-        citation: "Tam J, et al. Br J Haematol. 2026;204(3):450-466.",
+        citation: "Tam J, De la Salle B, Kapuya P, Reilly-Stitt C, Smith-Straney T, Cambridge T, et al. Br J Haematol. 2026;209(4):1489–1504.",
         pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf",
-        onlineUrl: "https://b-s-h.org.uk/guidelines",
-        summary: "Clinical laboratory governance, ISO accreditation, IQC, and EQA standards for handheld coagulometers and point-of-care devices.",
-        cutoffs: "Handheld INR unreliable at >4.5 or in presence of antiphospholipid antibodies.",
+        onlineUrl: "https://doi.org/10.1111/bjh.70758",
+        summary: "2026 BSH guidance update on point-of-care testing (POCT) in secondary care under ISO 15189:2022 standards. Encompasses handheld FBC, POCT PT/INR, viscoelastic testing (TEG, ROTEM, Quantra), and POCT D-dimer.",
+        cutoffs: "Handheld INR unreliable at INR > 4.0/4.5 or in presence of antiphospholipid antibodies. Blood gas analysers systematically underestimate Hb by a mean of 8 g/L.",
         recommendations: [
-          "All POCT devices must sit under hospital central laboratory governance.",
-          "MicroINR/CoaguChek INR > 4.5 requires mandatory venous laboratory confirmation.",
+          "All POCT devices must sit under hospital central laboratory governance (Grade 1A).",
+          "MicroINR/CoaguChek INR > 4.5 requires mandatory venous laboratory confirmation (Grade 1B).",
+          "Blood gas analysers should not substitute laboratory-based Hb/Hct testing (Grade 1C).",
           "Rotational thromboelastometry (ROTEM) requires daily calibrated IQC runs."
         ]
       },
       {
         id: "bsh_ttp_laboratory_2026",
-        title: "Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for clinical laboratories",
+        title: "Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for laboratories from the British Society for Haematology",
         issuingBody: "British Society for Haematology",
         year: 2026,
         domain: "Haemostasis & Thrombosis",
-        grade: "Grade 1A",
-        citation: "MacDonald S, et al. Br J Haematol. 2026;204(1):110-128.",
+        grade: "Grade 1B",
+        citation: "MacDonald S, Pitchford T, Singh D, Fretwell R, Jenkins PV, Lawrence C, et al. Br J Haematol. 2026;209(3):928–938.",
         pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_thrombotic_thrombocytopenic_purpura_Guidance_for_c719170c.pdf",
-        onlineUrl: "https://b-s-h.org.uk/guidelines",
-        summary: "Diagnostic criteria, pre-treatment citrated plasma sampling, and rapid ADAMTS13 assays in suspected TTP.",
-        cutoffs: "ADAMTS13 activity < 10% (< 0.10 IU/mL) confirms severe deficiency.",
+        onlineUrl: "https://doi.org/10.1111/bjh.70727",
+        summary: "2026 BSH laboratory guidance for suspected TTP, ADAMTS13 activity measurement, anti-ADAMTS13 antibodies, antigen, and conformation assays.",
+        cutoffs: "Severe deficiency: ADAMTS13 activity <10 IU/dL (<10%) confirms TTP. Platelet count <30x10^9/L with MAHA mandates film review within 60 minutes.",
         recommendations: [
-          "Citrate sample for ADAMTS13 must be taken before starting plasma exchange or caplacizumab.",
-          "PLASMIC score >= 6 or French Score 2 justifies prompt therapy before test completion.",
-          "Platelet transfusions strictly contraindicated unless life-threatening hemorrhage."
+          "Pre-treatment citrate sample for ADAMTS13 must be taken before starting plasma exchange or caplacizumab (Grade 1B).",
+          "Anti-ADAMTS13 antibody assay must be performed within 72h when ADAMTS13 <10 IU/dL (Grade 1B).",
+          "Preliminary automated ADAMTS13 activity ideally within 1 hour of sample receipt (Grade 1C).",
+          "Platelet transfusions strictly contraindicated unless life-threatening bleeding is present."
         ]
       },
       {
@@ -1307,115 +1339,417 @@
         year: 2026,
         domain: "Malignant Haematology",
         grade: "Grade 1B",
-        citation: "Osborne W, et al. Br J Haematol. 2026;204(4):612-629.",
+        citation: "Osborne W, Bielby H, Cwynarski K, El-Sharkawi D, Petrides G, Illidge T, et al. Br J Haematol. 2026;209(4):1505–1517.",
         pdfUrl: "/assets/aistudio/Br_J_Haematol_-_2026_-_Osborne_-_The_diagnosis_and_management_of_primary_mediastinal_B_cell_lymphoma_A_British_Society_for_3361c436.pdf",
-        onlineUrl: "https://b-s-h.org.uk/guidelines",
-        summary: "Pathology differentiation from DLBCL and CHL, DA-EPOCH-R induction, and PET Deauville criteria for omitting radiotherapy.",
-        cutoffs: "End of treatment PET Deauville 1-3 indicates complete metabolic response.",
+        onlineUrl: "https://doi.org/10.1111/bjh.70768",
+        summary: "2026 BSH clinical guideline for Primary Mediastinal B-cell Lymphoma (PMBCL). Incorporates dose-intensive chemoimmunotherapy, PET-CT Deauville response assessment (IELSG37 trial), omission of radiotherapy in CMR, and CAR-T.",
+        cutoffs: "End-of-treatment PET-CT Deauville Score 1-3 indicates Complete Metabolic Response. Venous thromboembolism occurs in 28% at presentation.",
         recommendations: [
-          "DA-EPOCH-R is preferred to omit mediastinal radiotherapy in young patients.",
-          "Deauville score 1-3 on end-of-treatment PET-CT justifies observation.",
-          "Checkpoint blockade and CD19 CAR-T cells are preferred second-line salvage."
+          "Do NOT offer consolidative radiotherapy for patients with Deauville Score 1–3 following chemoimmunotherapy (IELSG37 trial: 5-year OS 99%) (Grade 1A).",
+          "Offer R-CHOP-14 x6 or DA-R-EPOCH x6; R-CHOP-21 is NOT recommended (Grade 1B).",
+          "Thromboprophylaxis is recommended at presentation in patients with platelets >50 x 10^9/L (Grade 1C).",
+          "Offer CD19 CAR T-cell therapy (liso-cel) as second-line treatment if relapse occurs within 12 months (Grade 1C)."
+        ]
+      },
+      {
+        id: "imwg_myeloma_2021",
+        title: "International Myeloma Working Group (IMWG) Criteria for Diagnosis and Staging of Multiple Myeloma",
+        issuingBody: "IMWG",
+        year: 2021,
+        domain: "Haemato-Oncology",
+        grade: "Grade 1A",
+        citation: "Rajkumar SV, Dimopoulos MA, Palumbo A, et al. Lancet Oncol. 2014;15(12):e538-e548.",
+        pdfUrl: "/assets/aistudio/Haematology-paper-1-Past-Papers_d6c83302.pdf",
+        onlineUrl: "https://doi.org/10.1016/S1470-2045(14)70442-5",
+        summary: "Consensus criteria defining Multiple Myeloma based on clonal bone marrow plasma cells >=10% plus CRAB features or SLiM myeloma-defining events.",
+        cutoffs: "SLiM Biomarkers: >=60% clonal bone marrow plasma cells, involved/uninvolved sFLC ratio >=100, >1 focal bone lesion on MRI.",
+        recommendations: [
+          "Whole-body low-dose CT (WBLDCT) is the preferred initial imaging modality over plain skeletal surveys.",
+          "Acute renal failure in suspected myeloma requires immediate hydration and prompt dexamethasone + bortezomib.",
+          "Suspected cord compression requires emergency MRI of whole spine within 24 hours."
+        ]
+      },
+      {
+        id: "bsh_transfusion_components",
+        title: "British Society for Haematology: Guidelines on the use of blood components & prevention of TA-GVHD",
+        issuingBody: "British Society for Haematology",
+        year: 2020,
+        domain: "Transfusion Medicine",
+        grade: "Grade 1A",
+        citation: "BSH Transfusion Task Force: Guidelines for clinical use of red cell, platelet, plasma and cryoprecipitate components.",
+        pdfUrl: "/assets/aistudio/haematology-sample-mcq-and-emq-questions_babdb595.pdf",
+        onlineUrl: "https://b-s-h.org.uk/guidelines",
+        summary: "Guidelines for blood components selection, mandatory indications for irradiated, CMV-negative, and washed cellular products, and emergency anticoagulation reversal.",
+        cutoffs: "Platelet transfusion trigger <10x10^9/L for stable marrow failure, <50x10^9/L for invasive procedure, <100x10^9/L for neurosurgery.",
+        recommendations: [
+          "Purine analogue treated patients MUST receive irradiated cellular components lifelong to prevent fatal TA-GVHD (Grade 1A).",
+          "In acute major bleeding with elevated INR, PCC produces rapid normalization within 15 minutes compared to hours for FFP (Grade 1A).",
+          "Type 3 VWD requires intermediate-purity FVIII/VWF concentrate; DDAVP is ineffective (Grade 1A)."
+        ]
+      },
+      {
+        id: "ukhcdo_haemostasis_2022",
+        title: "UKHCDO Guidelines: Diagnosis and Management of Heparin-Induced Thrombocytopenia (HIT) and Acquired Haemophilia A",
+        issuingBody: "UKHCDO",
+        year: 2022,
+        domain: "Haemostasis & Thrombosis",
+        grade: "Grade 1A",
+        citation: "UKHCDO Working Party Guidelines for acquired coagulation disorders, HIT, and factor inhibitors.",
+        pdfUrl: "/assets/aistudio/haematology-sample-mcq-and-emq-questions_babdb595.pdf",
+        onlineUrl: "https://www.ukhcdo.org/guidelines/",
+        summary: "Protocols for investigating unexplained thrombocytopenia post-heparin, 4Ts score calculation, HIT laboratory confirmation, and distinguishing factor inhibitors from lupus anticoagulants.",
+        cutoffs: "4Ts Score: High probability (6-8), Intermediate (4-5), Low (0-3). DRVVT with platelet neutralisation procedure confirms lupus anticoagulant.",
+        recommendations: [
+          "In suspected HIT (4Ts >=4): Stop ALL heparin immediately; switch to non-heparin alternative (Argatroban, Fondaparinux, Danaparoid); do NOT give prophylactic platelets (Grade 1A).",
+          "In Acquired Haemophilia A with active bleeding: use bypassing agents (rFVIIa or FEIBA); avoid standard FVIII concentrates in high-titre inhibitors (Grade 1A)."
         ]
       }
     ];
 
-    // Flashcards Data
-    const defaultFlashcards = [
+    // Seed Questions (Complete Authentic Exam Bank from SeedData.kt)
+    const examQuestions = [
       {
-        id: "fc_1",
-        domain: "Haemostasis & Thrombosis",
-        ref: "MacDonald et al., BSH TTP 2026",
-        front: "What is the diagnostic cutoff for ADAMTS13 activity in confirmed Thrombotic Thrombocytopenic Purpura (TTP)?",
-        back: "ADAMTS13 activity < 10% (< 0.10 IU/mL).\n\nSevere deficiency confirms TTP and differentiates it from atypical HUS or secondary TMA."
-      },
-      {
-        id: "fc_2",
-        domain: "General Haematology",
-        ref: "Tam et al., BSH POCT 2026",
-        front: "What are the key clinical limitations of handheld capillary INR point-of-care devices?",
-        back: "1. Unreliable when INR > 4.5.\n2. Inaccurate in the presence of antiphospholipid antibodies or lupus anticoagulant.\nVenous laboratory verification is mandatory."
-      },
-      {
-        id: "fc_3",
-        domain: "Malignant Haematology",
-        ref: "Osborne et al., BSH PMBCL 2026",
-        front: "What immunohistochemical profile distinguishes PMBCL from Classical Hodgkin Lymphoma?",
-        back: "PMBCL: CD20+ uniform strong, CD30+ (weak/heterogeneous), CD15-negative, MAL-positive, TRAF1-positive.\nCHL: CD20-negative/weak, CD30+ strong uniform, CD15+ positive."
-      },
-      {
-        id: "fc_4",
-        domain: "Obstetric Haematology",
-        ref: "Biss et al., BSH Haem-Gynae 2026",
-        front: "What is the recommended first-line medical therapy for Heavy Menstrual Bleeding in women with inherited bleeding disorders?",
-        back: "Tranexamic acid (1g qds during menses) and/or Levonorgestrel-releasing intrauterine systems (LNG-IUS)."
-      },
-      {
-        id: "fc_5",
-        domain: "Transfusion Medicine",
-        ref: "SHOT / BSH Transfusion 2024",
-        front: "What is the threshold for emergency uncrossmatched O-negative blood in major obstetric haemorrhage?",
-        back: "Immediate life-threatening exsanguination before type-specific blood is available; switch to group-specific blood immediately once ABO/RhD confirmed."
-      }
-    ];
-
-    let flashcards = [...defaultFlashcards];
-    try {
-      const saved = localStorage.getItem('prepare_haem_custom_cards');
-      if (saved) flashcards = [...flashcards, ...JSON.parse(saved)];
-    } catch(e) {}
-
-    // Practice Questions Data
-    const practiceQuestions = [
-      {
-        id: "q_1",
-        domain: "Haemostasis & Thrombosis",
-        ref: "BSH TTP 2026",
-        question: "A 34-year-old woman presents with severe microangiopathic hemolytic anemia, thrombocytopenia (platelets 14 × 10⁹/L), and mild fluctuating confusion. Coagulation screen is normal. Which of the following is the single most critical diagnostic action before initiating therapeutic plasma exchange (TPE)?",
+        id: "q_amyloid_01",
+        domain: "Haemato-Oncology",
+        questionType: "MCQ",
+        title: "Cardiac AL Amyloidosis Staging (AL-ISS 2026)",
+        stem: "A 68-year-old female with newly confirmed systemic AL amyloidosis undergoes baseline staging. Echocardiography demonstrates concentric ventricular thickening with 'apical sparing' and an abnormal global longitudinal strain (GLS) of -7%. Laboratory investigations are shown below.\n\nNT-proBNP: 9,450 ng/L (NR <332)\nHigh-sensitivity Troponin T: 0.052 ng/L (NR <0.035)\neGFR: 62 mL/min/1.73m²\nUrine Albumin:Creatinine Ratio: 45 mg/mmol\n\nAccording to the AL International Staging System (AL-ISS) adopted in the 2026 BSH Guideline, what is the patient's cardiac stage and projected median survival?",
         options: [
-          "Take a whole blood sample for bone marrow trephine biopsy",
-          "Obtain a pre-treatment citrate plasma sample for ADAMTS13 activity and antibody assay",
-          "Administer 1 unit of adult platelets to prevent intracranial hemorrhage",
-          "Perform urgent renal biopsy to exclude atypical hemolytic uremic syndrome (aHUS)"
+          "Stage II; Median survival not reached at 5 years",
+          "Stage IIIA; Median survival approximately 76 months",
+          "Stage IIIB; Median survival approximately 26 months",
+          "Stage IIIC; Median survival approximately 4 months",
+          "Stage IV; Median survival less than 1 month"
+        ],
+        correct: 3,
+        explanation: "According to the 2026 BSH AL Amyloidosis Guideline (Garg et al., Table 2) and AL-ISS: Stage IIIB is defined by NT-proBNP >8500 ng/L and Troponin T >=0.035 ng/L (median survival 26 months). Stage IIIC defines ultra-poor risk, requiring NT-proBNP >8500, TnT >=0.035 AND abnormal global longitudinal strain (GLS) >-9% (median survival 4 months). GLS -7% is >-9%, fulfilling Stage IIIC.",
+        ref: "BSH 2026 AL Amyloidosis Guideline (Table 2)"
+      },
+      {
+        id: "q_amyloid_02",
+        domain: "Haemato-Oncology",
+        questionType: "MCQ",
+        title: "Biomarker Screening in Monoclonal Gammopathy",
+        stem: "A 62-year-old man with known IgG lambda MGUS attends annual surveillance. He feels well with no bone pain or dyspnoea. His serum paraprotein is stable at 5 g/L. Annual screening shows:\nSerum Albumin: 38 g/L (down from 45 g/L 12 months ago)\nUrine PCR: 62 mg/mmol\nUrine ACR: 38 mg/mmol\nNT-proBNP: 390 ng/L\n\nWhich action is indicated according to the 2026 BSH Guideline?",
+        options: [
+          "Findings are benign MGUS; repeat in 12 months as paraprotein is stable",
+          "Concordant rise in urine PCR >50 and ACR >30 with NT-proBNP >332 ng/L indicates early renal and cardiac AL involvement; perform fat pad/bone marrow Congo red",
+          "Isolated rise in NT-proBNP indicates hypertension; refer to cardiology and continue routine haematology follow-up",
+          "Refer for immediate emergency autologous stem cell transplant",
+          "Perform renal biopsy immediately as first-line investigation before any bone marrow or fat pad testing"
         ],
         correct: 1,
-        explanation: "According to the 2026 BSH TTP Guidance (MacDonald et al.), obtaining a baseline pre-transfusion/pre-TPE citrated plasma sample is mandatory because donor plasma will immediately replenish circulating ADAMTS13 activity and mask the diagnostic threshold (<10%)."
+        explanation: "The 2026 BSH Guideline states: (1) Urine PCR, ACR, and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS. (2) Suspect kidney involvement if urine PCR >50 with ACR >30. (3) Suspect cardiac involvement if NT-proBNP >332 ng/L. (4) In suspected AL, abdominal fat pad aspirate or bone marrow biopsy with Congo red should precede renal biopsy (Grade 2B).",
+        ref: "BSH 2026 AL Amyloidosis Guideline (Rec 1A/2B)"
       },
       {
-        id: "q_2",
-        domain: "Malignant Haematology",
-        ref: "BSH PMBCL 2026",
-        question: "A 28-year-old female presents with a 9 cm anterior mediastinal mass causing superior vena cava compression. Core biopsy confirms Primary Mediastinal B-cell Lymphoma (PMBCL). She completes 6 cycles of DA-EPOCH-R. End-of-treatment FDG PET-CT shows a residual mass with Deauville Score 2. What is the recommended management?",
+        id: "q_rcpath_sample_01",
+        domain: "Haemato-Oncology",
+        questionType: "MCQ",
+        title: "B-ALL Immunophenotypic Subtyping",
+        stem: "A bone marrow examination is performed on a 48-year-old woman presenting with pancytopenia and circulating blasts. Flow cytometry reveals:\n• TdT: Positive, HLA-DR: Positive, CD10: Positive, CD19: Positive\n• Cytoplasmic Immunoglobulin (Cyt Ig): Positive\n• Surface Immunoglobulin (SmIg): Negative, CD34: Positive\n\nWhich type of leukaemia does this immunophenotype represent?",
         options: [
-          "Consolidative mediastinal radiotherapy (30–36 Gy)",
-          "High-dose therapy and autologous stem cell transplantation (ASCT)",
-          "Clinical observation and surveillance without radiotherapy",
-          "Immediate salvage CD19 CAR-T cell infusion"
+          "B ALL",
+          "Common ALL",
+          "Pre-pre-B ALL",
+          "Pre-B ALL",
+          "Pro-B ALL"
+        ],
+        correct: 3,
+        explanation: "According to WHO 5th Edition: Common ALL is CD10+, CD19+, TdT+, Cyt Ig negative, SmIg negative. Pre-B ALL is characterized by presence of cytoplasmic mu heavy chains (Cytoplasmic Ig positive) with surface Ig (SmIg) negative. Mature B-ALL (Burkitt type) is SmIg positive and TdT negative.",
+        ref: "WHO Classification of Haematolymphoid Tumours"
+      },
+      {
+        id: "q_rcpath_sample_02",
+        domain: "General Haematology",
+        questionType: "MCQ",
+        title: "Haemochromatosis Venesection Monitoring",
+        stem: "A 39-year-old man is referred with a serum ferritin of 1945 ng/mL and is found to be compound heterozygous for HFE C282Y and H63D. Liver function tests are normal. He commences induction venesection.\n\nOptimal venesection is best assessed by which of the following?",
+        options: [
+          "Normalisation of magnetic resonance of liver",
+          "Normalisation of percentage transferrin saturation",
+          "Normalisation of serum ferritin",
+          "Normalisation of serum ferritin and percentage transferrin saturation",
+          "Normalisation of serum ferritin and serum iron"
         ],
         correct: 2,
-        explanation: "The 2026 BSH PMBCL Guideline (Osborne et al.) recommends that patients treated with DA-EPOCH-R who achieve complete metabolic response (Deauville Score 1–3) on end-of-treatment PET-CT should be observed without mediastinal radiotherapy."
+        explanation: "According to the BSH Guideline on Genetic Haemochromatosis: The target for induction venesection is reduction of serum ferritin to <50 mcg/L. Transferrin saturation normalises late in the course of de-ironing and fluctuates substantially with diet; it is not a reliable endpoint during induction.",
+        ref: "BSH Haemochromatosis Guideline"
       },
       {
-        id: "q_3",
-        domain: "General Haematology",
-        ref: "BSH POCT 2026",
-        question: "A patient on warfarin attending a community clinic has a fingerstick point-of-care INR reading of 5.2. Which of the following is the required management step according to 2026 BSH recommendations?",
+        id: "q_rcpath_sample_03",
+        domain: "Haemostasis & Thrombosis",
+        questionType: "MCQ",
+        title: "Acquired Haemophilia A vs Lupus Anticoagulant",
+        stem: "A 24-year-old woman has a 2-litre primary post-partum haemorrhage. Coagulation studies show: Platelets 240x10^9/L, PT 13s (normal), APTT Ratio 2.9 (markedly prolonged), Fibrinogen 3.5 g/L.\n\nWhich test will distinguish between acquired haemophilia A (Factor VIII inhibitor) and lupus anticoagulant?",
         options: [
-          "Immediately administer 10mg IV Vitamin K based on the POCT reading alone",
-          "Send an urgent citrated venous sample to the central laboratory to verify the result",
-          "Increase warfarin dose by 25%",
-          "Discharge patient with routine 4-week follow-up"
+          "Bleeding time",
+          "Dilute Russell's Viper Venom Time (DRVVT) with platelet neutralisation procedure",
+          "Factor VIII assay",
+          "Platelet function tests",
+          "Von Willebrand factor activity"
         ],
         correct: 1,
-        explanation: "BSH POCT guidelines (Tam et al. 2026) state that capillary POCT INR meters lose precision at values > 4.5. Venous laboratory verification is mandatory before making major clinical decisions."
+        explanation: "Both lupus anticoagulant and acquired factor VIII inhibitors cause an isolated prolonged APTT that fails to correct immediately on 50:50 mixing. The DRVVT with platelet neutralisation procedure demonstrates phospholipid dependence: excess freeze-thawed platelets neutralize the lupus anticoagulant and shorten clotting time, but do NOT neutralize a factor VIII inhibitor.",
+        ref: "UKHCDO Acquired Bleeding Disorders Guideline"
+      },
+      {
+        id: "q_emq_transfusion_01",
+        domain: "Transfusion Medicine",
+        questionType: "MCQ",
+        title: "Warfarin-Associated Intracerebral Haemorrhage",
+        stem: "A 77-year-old man taking Warfarin for a mechanical aortic valve presents with acute left parietal intracerebral haemorrhage. His INR on admission is 3.5.\n\nSelect the most suitable product for this patient.",
+        options: [
+          "Cryoprecipitate",
+          "Fibrinogen concentrate",
+          "Leucocyte depleted platelet concentrate",
+          "Prothrombin complex concentrate (containing factors II, VII, IX & X)",
+          "Fresh frozen plasma"
+        ],
+        correct: 3,
+        explanation: "According to BSH Guidelines: For immediate reversal of life-threatening bleeding on Warfarin, Prothrombin Complex Concentrate (PCC 25-50 IU/kg) plus IV Vitamin K (5-10 mg) is the treatment of choice (Grade 1A). PCC rapidly normalises clotting factors within 10-15 minutes without circulatory volume overload.",
+        ref: "BSH Transfusion Guidelines: Antithrombotic Reversal"
+      },
+      {
+        id: "q_emq_transfusion_02",
+        domain: "Transfusion Medicine",
+        questionType: "MCQ",
+        title: "CLL Post-Fludarabine Epistaxis",
+        stem: "A 76-year-old woman with chronic lymphocytic leukaemia (CLL) presents with severe epistaxis and a platelet count of 5x10^9/L. Her treatment regimen included Fludarabine.\n\nSelect the most suitable blood product for this patient.",
+        options: [
+          "Cryoprecipitate",
+          "Standard leucocyte depleted platelet concentrate",
+          "Leucocyte depleted, irradiated platelet concentrate",
+          "Solvent detergent fresh frozen plasma",
+          "Prothrombin complex concentrate"
+        ],
+        correct: 2,
+        explanation: "All patients treated with purine analogues (Fludarabine, Cladribine, Pentostatin) must receive irradiated cellular blood components (red cells and platelets) indefinitely to prevent fatal Transfusion-Associated Graft-versus-Host Disease (TA-GVHD) (Grade 1A). Gamma/X-ray irradiation (25 Gy) inactivates donor T-lymphocytes.",
+        ref: "BSH Guidelines: Prevention of TA-GVHD"
+      },
+      {
+        id: "q_emq_transfusion_03",
+        domain: "Transfusion Medicine",
+        questionType: "MCQ",
+        title: "Type 3 VWD in Labour",
+        stem: "A 22-year-old woman with type 3 von Willebrand disease presents in active labour and requires an emergency Caesarean section. Her Factor VIIIc, VWF:Ag, and Ristocetin cofactor activity are all <10%.\n\nSelect the most suitable product for this patient.",
+        options: [
+          "Desmopressin (DDAVP) infusion",
+          "Fibrinogen concentrate",
+          "Intermediate purity factor VIII concentrate (containing VWF)",
+          "Leucocyte depleted platelet concentrate",
+          "Solvent detergent fresh frozen plasma"
+        ],
+        correct: 2,
+        explanation: "Patients with severe Type 3 VWD lack both VWF and Factor VIII. Desmopressin (DDAVP) is ineffective due to lack of endogenous stores. Replacement therapy requires a plasma-derived intermediate-purity Factor VIII concentrate that contains high amounts of functional von Willebrand factor (e.g., Haemate-P, Wilate) (Grade 1A).",
+        ref: "UKHCDO & BSH Guidelines for VWD"
+      },
+      {
+        id: "q_ttp_02",
+        domain: "Haemostasis & Thrombosis",
+        questionType: "MCQ",
+        title: "MacDonald 2026: ADAMTS13 Activity Cutoff & Turnaround Standards",
+        stem: "According to the 2026 BSH laboratory guideline for TTP, which ADAMTS13 activity threshold confirms the diagnosis of TTP, and what is the recommended turnaround time for rapid automated assays in suspected cases?",
+        options: [
+          "ADAMTS13 activity <10 IU/dL confirms TTP; preliminary results should be available ideally within 1 hour of sample receipt (Grade 1C)",
+          "ADAMTS13 activity <50 IU/dL confirms TTP; preliminary results within 24 hours",
+          "ADAMTS13 activity <30 IU/dL confirms TTP; preliminary results within 12 hours",
+          "ADAMTS13 activity <5 IU/dL confirms TTP; results are only valid if tested by manual full-length VWF multimer assay",
+          "ADAMTS13 activity <20 IU/dL confirms TTP; turnaround times of up to 48 hours are acceptable"
+        ],
+        correct: 0,
+        explanation: "The 2026 BSH guideline states that ADAMTS13 activity <10 IU/dL confirms the diagnosis of TTP (10–20 IU/dL represents an equivocal grey zone). In suspected TTP, preliminary results should be available as soon as possible, ideally within 1 hour of sample receipt for rapid automated assays, or 6 hours for ELISA (Grade 1C).",
+        ref: "BSH TTP Laboratory Guidance 2026"
+      },
+      {
+        id: "q_pmbcl_01",
+        domain: "Malignant Haematology",
+        questionType: "MCQ",
+        title: "Osborne 2026: Omission of Radiotherapy in Complete Metabolic Response",
+        stem: "A 26-year-old woman with bulky Primary Mediastinal B-cell Lymphoma (PMBCL) completes 6 cycles of DA-R-EPOCH. An end-of-treatment PET-CT scan at 6 weeks demonstrates Deauville Score 2. According to the 2026 BSH guideline (Osborne et al.) and the IELSG37 prospective trial, what is the recommended management?",
+        options: [
+          "Do not offer consolidative radiotherapy; observation only is recommended (Grade 1A)",
+          "Mandatory consolidative involved-site radiotherapy to 36 Gy regardless of PET response",
+          "Immediate autologous stem cell transplantation as consolidation",
+          "Maintenance rituximab for 2 years",
+          "High-dose salvage chemotherapy with R-ICE"
+        ],
+        correct: 0,
+        explanation: "The 2026 BSH PMBCL guideline states: 'Do not offer radiotherapy for patients with DS 1–3 following chemoimmunotherapy (Grade 1A)'. Supported by the landmark IELSG37 trial, which randomized patients in complete metabolic response (DS 1–3) to observation vs radiotherapy and showed no survival detriment with observation (5-year OS 99% in both arms).",
+        ref: "BSH PMBCL Guideline 2026"
+      },
+      {
+        id: "q_essay_myeloma",
+        domain: "Haemato-Oncology",
+        questionType: "ESSAY",
+        title: "Multiple Myeloma Presentation, Acute Renal Injury & Cord Compression",
+        stem: "A 62-year-old man presents with fatigue and severe back pain. Laboratory testing reveals Hb 82 g/L, Creatinine 350 umol/L, Calcium 2.85 mmol/L. Multiple myeloma is suspected.\n\n[RCPath Paper 1 - 25 Marks Total]\n\nType your clinical notes or outline for: (a) Urgent acute management of hypercalcaemia & AKI; (b) Recommended first-line imaging; (c) Systemic induction therapy; (d) Emergency management if sudden leg weakness and urinary incontinence develop.",
+        options: [],
+        correct: -1,
+        explanation: "Part (a): IV normal saline hydration (target 3L/day), dose-adjusted zoledronic acid/denosumab, avoid NSAIDs/contrast, prompt dexamethasone + bortezomib. Part (b): Whole-body low-dose CT (WBLDCT) first line. Part (c): Dara-VRd or VRd followed by ASCT in fit 62yo. Part (d): Metastatic spinal cord compression (MSCC); emergency whole-spine MRI within 24h, IV Dexamethasone 16mg stat, urgent spinal decompression referral.",
+        ref: "RCPath Paper 1 Myeloma Essay & IMWG Criteria"
       }
     ];
 
-    let userAnswers = {};
+    // Seed Flashcards (Complete SuperMemo-2 Deck from SeedData.kt)
+    const seedFlashcards = [
+      {
+        id: "fc_01",
+        domain: "Haemato-Oncology",
+        topic: "AL Amyloidosis Staging",
+        ref: "BSH 2026 AL Amyloidosis Guideline (Table 2)",
+        front: "What defines AL-ISS Stage IIIC cardiac amyloidosis and what is its projected median survival?",
+        back: "• NT-proBNP >8500 ng/L\n• High-sensitivity Troponin T >=0.035 ng/L\n• Global Longitudinal Strain (GLS) >-9%\n\nMedian Survival: Approximately 4 months (Ultra-poor risk group).",
+        repetitions: 2,
+        intervalDays: 6,
+        easeFactor: 2.5,
+        dueDate: Date.now() - 1000
+      },
+      {
+        id: "fc_02",
+        domain: "Haemato-Oncology",
+        topic: "MGUS Amyloid Screening",
+        ref: "BSH 2026 AL Amyloidosis Guideline (Rec 1A)",
+        front: "What three screening biomarkers should be added to routine monitoring of MGUS to detect early AL amyloidosis?",
+        back: "1. Urine Protein:Creatinine Ratio (PCR) - suspect if >50 mg/mmol\n2. Urine Albumin:Creatinine Ratio (ACR) - suspect if concordant >30 mg/mmol\n3. NT-proBNP - suspect if >332 ng/L\n\nGrade 1A recommendation.",
+        repetitions: 1,
+        intervalDays: 1,
+        easeFactor: 2.5,
+        dueDate: Date.now() - 2000
+      },
+      {
+        id: "fc_03",
+        domain: "Haemato-Oncology",
+        topic: "AL Amyloid Biopsy Sequence",
+        ref: "BSH 2026 AL Amyloidosis Guideline (Rec 2B)",
+        front: "In suspected AL amyloidosis with proteinuria, when should a kidney biopsy be avoided?",
+        back: "A kidney biopsy can be avoided if AL amyloid deposits are confirmed with Congo red staining on less invasive tissue (bone marrow trephine or abdominal fat pad aspirate/biopsy) in the presence of a clonal paraprotein (Grade 2B).",
+        repetitions: 3,
+        intervalDays: 14,
+        easeFactor: 2.6,
+        dueDate: Date.now() + 86400000 * 5
+      },
+      {
+        id: "fc_05",
+        domain: "Haemato-Oncology",
+        topic: "Multiple Myeloma SLiM Criteria",
+        ref: "IMWG Consensus Criteria (Rajkumar et al.)",
+        front: "What are the three SLiM myeloma-defining biomarkers (IMWG criteria)?",
+        back: "• S: Sixty percent (>=60%) clonal bone marrow plasma cells\n• Li: Light chain ratio (involved/uninvolved sFLC ratio >=100, with involved >=100 mg/L)\n• M: MRI >1 focal bone lesion (each >=5 mm in diameter)",
+        repetitions: 4,
+        intervalDays: 28,
+        easeFactor: 2.7,
+        dueDate: Date.now() + 86400000 * 18
+      },
+      {
+        id: "fc_08",
+        domain: "Haemato-Oncology",
+        topic: "APL Differentiation Syndrome",
+        ref: "BSH & ELN Guidelines: Acute Promyelocytic Leukaemia",
+        front: "What is the clinical hallmark and immediate emergency treatment of APL Differentiation Syndrome?",
+        back: "• Hallmarks: Unexplained fever, weight gain (>5 kg), dyspnoea, bilateral pulmonary infiltrates, pleural/pericardial effusions.\n• Treatment: Dexamethasone 10 mg IV twice daily IMMEDIATELY at the earliest sign. Temporarily hold ATRA/ATO if severe.",
+        repetitions: 1,
+        intervalDays: 1,
+        easeFactor: 2.5,
+        dueDate: Date.now() - 5000
+      },
+      {
+        id: "fc_09",
+        domain: "Transfusion Medicine",
+        topic: "Blood Product Irradiation",
+        ref: "BSH Guidelines on Prevention of TA-GVHD",
+        front: "Which chemotherapy drugs mandate LIFELONG irradiated cellular blood components?",
+        back: "Purine analogues (Fludarabine, Cladribine, Pentostatin), Bendamustine, and Clofarabine.\n\nIrradiation (25 Gy) destroys donor T-lymphocytes to prevent fatal Transfusion-Associated Graft-versus-Host Disease (TA-GVHD).",
+        repetitions: 3,
+        intervalDays: 21,
+        easeFactor: 2.6,
+        dueDate: Date.now() + 86400000 * 10
+      },
+      {
+        id: "fc_10",
+        domain: "Transfusion Medicine",
+        topic: "Emergency Warfarin Reversal",
+        ref: "BSH Guidelines on Antithrombotic Reversal",
+        front: "What is the first-line treatment for life-threatening intracranial bleeding on Warfarin?",
+        back: "Prothrombin Complex Concentrate (PCC 25-50 IU/kg) plus IV Vitamin K (5-10 mg stat).\n\nNormalises INR within 10-15 minutes with minimal volume. FFP is NOT recommended unless PCC is unavailable.",
+        repetitions: 2,
+        intervalDays: 6,
+        easeFactor: 2.5,
+        dueDate: Date.now() - 3000
+      },
+      {
+        id: "fc_11",
+        domain: "Transfusion Medicine",
+        topic: "Sickle Cell Transfusion Targets",
+        ref: "BSH Sickle Cell Disease Transfusion Guidelines",
+        front: "What are the target pre-operative Hb S% and maximum total Hb in Sickle Cell Disease?",
+        back: "• Target Hb S: <30% prior to major/orthopaedic surgery\n• Target total Hb: 100 - 110 g/L (Never exceed 110 g/L due to dangerous hyperviscosity crisis risk)",
+        repetitions: 2,
+        intervalDays: 5,
+        easeFactor: 2.5,
+        dueDate: Date.now() + 86400000 * 2
+      },
+      {
+        id: "fc_12",
+        domain: "Haemostasis & Thrombosis",
+        topic: "BSH TTP 2026 ADAMTS13 Cutoff",
+        ref: "MacDonald et al., BSH TTP 2026",
+        front: "What is the diagnostic threshold for ADAMTS13 activity in confirmed Thrombotic Thrombocytopenic Purpura (TTP)?",
+        back: "ADAMTS13 activity < 10% (< 0.10 IU/mL / <10 IU/dL).\n\n93% of acute immune TTP cases present with activity <1 IU/dL. Severe deficiency confirms TTP.",
+        repetitions: 2,
+        intervalDays: 4,
+        easeFactor: 2.5,
+        dueDate: Date.now() - 4000
+      },
+      {
+        id: "fc_13",
+        domain: "General Haematology",
+        topic: "BSH POCT 2026 Limitations",
+        ref: "Tam et al., BSH POCT 2026",
+        front: "What are the key clinical limitations of handheld capillary INR point-of-care devices?",
+        back: "1. Unreliable when INR > 4.0 - 4.5.\n2. Inaccurate in the presence of antiphospholipid antibodies or lupus anticoagulant.\nVenous laboratory verification is mandatory.",
+        repetitions: 1,
+        intervalDays: 1,
+        easeFactor: 2.4,
+        dueDate: Date.now() - 1000
+      },
+      {
+        id: "fc_14",
+        domain: "Malignant Haematology",
+        topic: "BSH PMBCL 2026 RT Sparing",
+        ref: "Osborne et al., BSH PMBCL 2026",
+        front: "What PET-CT response justifies omitting consolidative mediastinal radiotherapy in PMBCL?",
+        back: "Deauville Score 1–3 (Complete Metabolic Response) on end-of-treatment PET-CT at 6 weeks.\n\nLandmark IELSG37 prospective trial demonstrated 5-year overall survival of 99% with observation, sparing radiation toxicity in young patients.",
+        repetitions: 2,
+        intervalDays: 7,
+        easeFactor: 2.5,
+        dueDate: Date.now() + 86400000 * 3
+      }
+    ];
+
+    // State Variables
+    let flashcards = [...seedFlashcards];
+    try {
+      const savedCards = localStorage.getItem('prepare_haem_flashcards_v2');
+      if (savedCards) flashcards = JSON.parse(savedCards);
+    } catch(e) {}
+
+    let practiceQuestions = [...examQuestions];
+    try {
+      const savedQ = localStorage.getItem('prepare_haem_custom_questions');
+      if (savedQ) practiceQuestions = [...practiceQuestions, ...JSON.parse(savedQ)];
+    } catch(e) {}
+
     let weakSpots = [];
     try {
       const savedWeak = localStorage.getItem('prepare_haem_weak_spots');
       if (savedWeak) weakSpots = JSON.parse(savedWeak);
+    } catch(e) {}
+
+    let bookmarkedQuestionIds = new Set();
+    try {
+      const savedBm = localStorage.getItem('prepare_haem_bookmarks');
+      if (savedBm) bookmarkedQuestionIds = new Set(JSON.parse(savedBm));
     } catch(e) {}
 
     // Audio State
@@ -1425,7 +1759,7 @@
     let currentSpeechRate = 1.0;
     let preferredVoiceLocale = "en-GB";
 
-    function populateDefaultPlaylist() {
+    function populateAudioPlaylistFromGuidelines() {
       audioPlaylist = approvedGuidelines.map(g => ({
         id: g.id,
         title: g.title,
@@ -1450,6 +1784,18 @@
         if (btn) btn.classList.add('active');
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Dashboard Statistics Calculation
+    function updateDashboardStats() {
+      const now = Date.now();
+      const dueCards = flashcards.filter(c => (c.dueDate || 0) <= now);
+      const masteredCards = flashcards.filter(c => (c.intervalDays || 1) >= 21);
+
+      document.getElementById('dash-due-count').innerText = dueCards.length;
+      document.getElementById('dash-mastered-count').innerText = masteredCards.length;
+      const dailyGoal = parseInt(localStorage.getItem('prepare_haem_dailyGoal')) || 20;
+      document.getElementById('dash-goal-count').innerText = dailyGoal;
     }
 
     // Summaries Accordion
@@ -1477,6 +1823,7 @@
               <a href="${g.pdfUrl}" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View PDF</a>
               <a href="${g.onlineUrl}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 Online Guideline</a>
               <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="openGroundingModal('${g.id}')">🔍 Evidence Grounding</button>
+              <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="filterPracticeDomain('${g.domain}'); switchTab('practice');">📝 Practice Questions</button>
               <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToQueue(${idx})">+ Add to Audio Queue</button>
             </div>
           </div>
@@ -1498,10 +1845,23 @@
       });
     }
 
-    // Flashcard Drill
+    // Spaced Repetition (SuperMemo-2 Implementation)
     let currentCardIndex = 0;
     let isFlipped = false;
-    let currentSessionMode = 'DUE_FOR_REVIEW';
+    let currentSessionMode = 'ALL_CARDS';
+
+    function getFilteredFlashcards() {
+      const now = Date.now();
+      if (currentSessionMode === 'DUE_FOR_REVIEW') {
+        const due = flashcards.filter(c => (c.dueDate || 0) <= now);
+        return due.length > 0 ? due : flashcards;
+      }
+      if (currentSessionMode === 'DIFFICULT_DRILL') {
+        const hard = flashcards.filter(c => (c.intervalDays || 1) <= 2);
+        return hard.length > 0 ? hard : flashcards;
+      }
+      return flashcards;
+    }
 
     function setSessionMode(mode) {
       currentSessionMode = mode;
@@ -1509,18 +1869,23 @@
       if (mode === 'DUE_FOR_REVIEW') document.getElementById('fc-mode-due').classList.add('btn-primary');
       if (mode === 'ALL_CARDS') document.getElementById('fc-mode-all').classList.add('btn-primary');
       if (mode === 'DIFFICULT_DRILL') document.getElementById('fc-mode-diff').classList.add('btn-primary');
+      currentCardIndex = 0;
+      isFlipped = false;
       renderCurrentCard();
     }
 
     function renderCurrentCard() {
-      if (flashcards.length === 0) return;
-      const card = flashcards[currentCardIndex];
+      const activeList = getFilteredFlashcards();
+      if (activeList.length === 0) return;
+      if (currentCardIndex >= activeList.length) currentCardIndex = 0;
+
+      const card = activeList[currentCardIndex];
       document.getElementById('fc-domain').innerText = card.domain;
-      document.getElementById('fc-ref').innerText = card.ref;
+      document.getElementById('fc-ref').innerText = card.ref || card.guidelineRef || "BSH Core Curriculum";
       document.getElementById('fc-content').innerText = isFlipped ? card.back : card.front;
-      document.getElementById('fc-flip-hint').innerText = isFlipped ? "Answer revealed • Rate your recall below" : "Tap / Click card to flip";
+      document.getElementById('fc-flip-hint').innerText = isFlipped ? "Answer revealed • Rate your recall below (SM-2)" : "Tap / Click card to flip";
       document.getElementById('sm2-controls').style.display = isFlipped ? "flex" : "none";
-      document.getElementById('fc-progress-counter').innerText = `Card ${currentCardIndex + 1} of ${flashcards.length}`;
+      document.getElementById('fc-progress-counter').innerText = `Card ${currentCardIndex + 1} of ${activeList.length}`;
     }
 
     function flipCurrentCard() {
@@ -1528,29 +1893,71 @@
       renderCurrentCard();
     }
 
-    function rateFlashcard(rating) {
+    function rateFlashcard(qualityRating) {
+      const activeList = getFilteredFlashcards();
+      const card = activeList[currentCardIndex];
+
+      let reps = card.repetitions || 0;
+      let interval = card.intervalDays || 1;
+      let ease = card.easeFactor || 2.5;
+
+      // SuperMemo-2 mathematical algorithm
+      if (qualityRating === 1) { // Again
+        reps = 0;
+        interval = 1;
+        ease = Math.max(1.3, ease - 0.2);
+      } else if (qualityRating === 2) { // Hard
+        interval = Math.max(2, Math.round(interval * 1.2));
+        ease = Math.max(1.3, ease - 0.15);
+      } else if (qualityRating === 3) { // Good
+        if (reps === 0) interval = 1;
+        else if (reps === 1) interval = 6;
+        else interval = Math.round(interval * ease);
+        reps++;
+      } else if (qualityRating === 4) { // Easy
+        if (reps === 0) interval = 4;
+        else if (reps === 1) interval = 10;
+        else interval = Math.round(interval * ease * 1.3);
+        reps++;
+        ease += 0.15;
+      }
+
+      card.repetitions = reps;
+      card.intervalDays = interval;
+      card.easeFactor = ease;
+      card.dueDate = Date.now() + (interval * 86400000);
+
+      // Persist deck
+      try {
+        localStorage.setItem('prepare_haem_flashcards_v2', JSON.stringify(flashcards));
+      } catch(e) {}
+
+      updateDashboardStats();
       isFlipped = false;
-      currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+      currentCardIndex = (currentCardIndex + 1) % activeList.length;
       renderCurrentCard();
     }
 
     function nextCard() {
+      const activeList = getFilteredFlashcards();
       isFlipped = false;
-      currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+      currentCardIndex = (currentCardIndex + 1) % activeList.length;
       renderCurrentCard();
     }
 
     function speakCurrentCard() {
-      const card = flashcards[currentCardIndex];
-      speakText(`${card.domain}. Reference ${card.ref}. Question: ${card.front}. Answer: ${card.back}`);
+      const activeList = getFilteredFlashcards();
+      const card = activeList[currentCardIndex];
+      speakText(`${card.domain}. Reference ${card.ref || card.guidelineRef}. Question: ${card.front}. Answer: ${card.back}`);
     }
 
     function addCurrentCardToPlaylist() {
-      const card = flashcards[currentCardIndex];
+      const activeList = getFilteredFlashcards();
+      const card = activeList[currentCardIndex];
       audioPlaylist.push({
         id: card.id,
         title: `Flashcard: ${card.front.substring(0, 35)}...`,
-        subtitle: `${card.domain} • ${card.ref}`,
+        subtitle: `${card.domain}`,
         text: `Flashcard question: ${card.front}. Answer: ${card.back}`
       });
       updatePlaylistUI();
@@ -1578,19 +1985,23 @@
         domain,
         ref,
         front,
-        back
+        back,
+        repetitions: 0,
+        intervalDays: 1,
+        easeFactor: 2.5,
+        dueDate: Date.now()
       };
 
       flashcards.push(newCard);
       try {
-        const customOnly = flashcards.filter(c => c.id.startsWith('custom_'));
-        localStorage.setItem('prepare_haem_custom_cards', JSON.stringify(customOnly));
+        localStorage.setItem('prepare_haem_flashcards_v2', JSON.stringify(flashcards));
       } catch(err) {}
 
       closeCreateCardModal();
       e.target.reset();
       currentCardIndex = flashcards.length - 1;
       isFlipped = false;
+      updateDashboardStats();
       renderCurrentCard();
       alert('Custom flashcard created and added to deck!');
     }
@@ -1599,26 +2010,67 @@
     function renderPracticeQuestions(filterDomain = "All") {
       const container = document.getElementById('practice-questions-container');
       const filtered = filterDomain === "All" ? practiceQuestions : practiceQuestions.filter(q => q.domain === filterDomain);
-      container.innerHTML = filtered.map((q, qIdx) => `
-        <div class="question-block" id="pq-block-${q.id}">
-          <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-            <span class="badge badge-primary">${q.domain}</span>
-            <span style="font-size:0.8rem; color:var(--text-muted);">${q.ref}</span>
-          </div>
-          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">${q.question}</p>
-          <div>
-            ${q.options.map((opt, optIdx) => `
-              <div class="option-item" id="opt-${q.id}-${optIdx}" onclick="selectPracticeAnswer('${q.id}', ${optIdx}, ${q.correct})">
-                <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}
+      container.innerHTML = filtered.map((q, qIdx) => {
+        const isBookmarked = bookmarkedQuestionIds.has(q.id);
+        const isEssay = q.questionType === "ESSAY";
+
+        return `
+          <div class="question-block" id="pq-block-${q.id}">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <div>
+                <span class="badge badge-primary">${q.domain}</span>
+                <span class="badge badge-blue" style="margin-left:4px;">${q.questionType || "SBA"}</span>
               </div>
-            `).join('')}
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="font-size:0.8rem; color:var(--text-muted);">${q.ref || ""}</span>
+                <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.85rem;" onclick="toggleBookmark('${q.id}')">
+                  ${isBookmarked ? '⭐ Saved' : '☆ Save'}
+                </button>
+              </div>
+            </div>
+            <h4 style="color:#FFF; margin-bottom:8px;">${q.title || `Question ${qIdx + 1}`}</h4>
+            <p style="color:#FFF; margin-bottom:16px; white-space:pre-wrap;">${q.stem || q.question}</p>
+
+            ${isEssay ? `
+              <div class="form-group">
+                <label class="form-label">Candidate Answer Notes / Outline:</label>
+                <textarea class="form-textarea" rows="4" placeholder="Type your initial clinical management plan, diagnostic tests, and investigations here..."></textarea>
+              </div>
+              <button class="btn btn-secondary" onclick="toggleEssayModel('${q.id}')">Toggle Official Model Answer & Mark Scheme</button>
+              <div class="explanation-box" id="essay-model-${q.id}" style="display:none; margin-top:12px; white-space:pre-wrap;">
+                <strong style="color:var(--accent-green);">Official RCPath / Guideline Model Answer:</strong>\n\n${q.explanation}
+              </div>
+            ` : `
+              <div>
+                ${(q.options || []).map((opt, optIdx) => `
+                  <div class="option-item" id="opt-${q.id}-${optIdx}" onclick="selectPracticeAnswer('${q.id}', ${optIdx}, ${q.correct})">
+                    <strong>${String.fromCharCode(65 + optIdx)}.</strong> ${opt}
+                  </div>
+                `).join('')}
+              </div>
+              <div class="explanation-box" id="exp-${q.id}" style="display:none;"></div>
+            `}
           </div>
-          <div class="explanation-box" id="exp-${q.id}" style="display:none;"></div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
+    }
+
+    function toggleBookmark(qId) {
+      if (bookmarkedQuestionIds.has(qId)) bookmarkedQuestionIds.delete(qId);
+      else bookmarkedQuestionIds.add(qId);
+      try {
+        localStorage.setItem('prepare_haem_bookmarks', JSON.stringify(Array.from(bookmarkedQuestionIds)));
+      } catch(e) {}
+      renderPracticeQuestions(document.getElementById('practice-domain-filter').value);
+    }
+
+    function toggleEssayModel(qId) {
+      const el = document.getElementById(`essay-model-${qId}`);
+      if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
     }
 
     function filterPracticeDomain(val) {
+      document.getElementById('practice-domain-filter').value = val;
       renderPracticeQuestions(val);
     }
 
@@ -1654,9 +2106,11 @@
     let mockCurrentIndex = 0;
     let mockAnswers = {};
     let mockFlags = {};
+    let mockFilteredQuestions = [];
 
     function startTimedMock() {
       switchTab('mock');
+      mockFilteredQuestions = practiceQuestions.filter(q => q.options && q.options.length > 0);
       mockSeconds = (parseInt(localStorage.getItem('prepare_haem_mock_duration')) || 20) * 60;
       mockCurrentIndex = 0;
       mockAnswers = {};
@@ -1681,7 +2135,7 @@
 
     function renderMockPalette() {
       const grid = document.getElementById('mock-palette-grid');
-      grid.innerHTML = practiceQuestions.map((q, idx) => {
+      grid.innerHTML = mockFilteredQuestions.map((q, idx) => {
         let cls = 'grid-num-btn';
         if (idx === mockCurrentIndex) cls += ' active';
         if (mockAnswers[q.id] !== undefined) cls += ' answered';
@@ -1691,17 +2145,17 @@
     }
 
     function renderMockQuestion() {
-      const q = practiceQuestions[mockCurrentIndex];
+      const q = mockFilteredQuestions[mockCurrentIndex];
       const container = document.getElementById('mock-question-display');
       container.innerHTML = `
         <div class="question-block">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-            <span class="badge badge-primary">Question ${mockCurrentIndex + 1} of ${practiceQuestions.length}</span>
+            <span class="badge badge-primary">Question ${mockCurrentIndex + 1} of ${mockFilteredQuestions.length}</span>
             <button class="btn btn-secondary" style="font-size:0.75rem;" onclick="toggleMockFlag('${q.id}')">
               ${mockFlags[q.id] ? '🚩 Flagged' : '🏳️ Flag for Review'}
             </button>
           </div>
-          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">${q.question}</p>
+          <p style="font-weight:600; color:#FFF; margin-bottom:16px;">${q.stem || q.question}</p>
           <div>
             ${q.options.map((opt, optIdx) => `
               <div class="option-item ${mockAnswers[q.id] === optIdx ? 'selected' : ''}" onclick="pickMockAnswer('${q.id}', ${optIdx})">
@@ -1711,7 +2165,7 @@
           </div>
           <div style="display:flex; justify-content:space-between; margin-top:20px;">
             <button class="btn btn-secondary" onclick="prevMockQuestion()" ${mockCurrentIndex === 0 ? 'disabled' : ''}>← Previous</button>
-            <button class="btn btn-secondary" onclick="nextMockQuestion()" ${mockCurrentIndex === practiceQuestions.length - 1 ? 'disabled' : ''}>Next →</button>
+            <button class="btn btn-secondary" onclick="nextMockQuestion()" ${mockCurrentIndex === mockFilteredQuestions.length - 1 ? 'disabled' : ''}>Next →</button>
           </div>
         </div>
       `;
@@ -1736,7 +2190,7 @@
     }
 
     function nextMockQuestion() {
-      if (mockCurrentIndex < practiceQuestions.length - 1) {
+      if (mockCurrentIndex < mockFilteredQuestions.length - 1) {
         mockCurrentIndex++;
         renderMockPalette();
         renderMockQuestion();
@@ -1754,15 +2208,14 @@
     function finishMockExam() {
       clearInterval(mockTimerInterval);
       let correct = 0;
-      practiceQuestions.forEach(q => {
+      mockFilteredQuestions.forEach(q => {
         if (mockAnswers[q.id] === q.correct) correct++;
       });
-      const pct = Math.round((correct / practiceQuestions.length) * 100);
+      const pct = Math.round((correct / mockFilteredQuestions.length) * 100);
       document.getElementById('mock-question-display').innerHTML = '';
       document.getElementById('mock-results-container').style.display = 'block';
       document.getElementById('mock-final-score').innerText = `${pct}%`;
-      document.getElementById('mock-correct-count').innerText = `${correct} / ${practiceQuestions.length}`;
-      document.getElementById('dash-mock-score').innerText = `${pct}%`;
+      document.getElementById('mock-correct-count').innerText = `${correct} / ${mockFilteredQuestions.length}`;
 
       const statusEl = document.getElementById('mock-final-status');
       if (pct >= 65) {
@@ -1818,7 +2271,7 @@
           <strong>New SBA Question:</strong> ${stagedAiPackage.question}
         `;
         document.getElementById('ingest-package-preview').style.display = 'block';
-      }, 800);
+      }, 700);
     }
 
     function handleFileUpload(e) {
@@ -1834,7 +2287,11 @@
         domain: "General Haematology",
         ref: stagedAiPackage.title.substring(0, 30),
         front: stagedAiPackage.cardFront,
-        back: stagedAiPackage.cardBack
+        back: stagedAiPackage.cardBack,
+        repetitions: 0,
+        intervalDays: 1,
+        easeFactor: 2.5,
+        dueDate: Date.now()
       });
       practiceQuestions.push({
         id: "ai_q_" + Date.now(),
@@ -1845,6 +2302,12 @@
         correct: stagedAiPackage.correct,
         explanation: "Extracted directly from newly ingested BSH clinical guideline."
       });
+      try {
+        localStorage.setItem('prepare_haem_flashcards_v2', JSON.stringify(flashcards));
+        localStorage.setItem('prepare_haem_custom_questions', JSON.stringify(practiceQuestions.filter(q => q.id.startsWith('ai_'))));
+      } catch(e) {}
+
+      updateDashboardStats();
       renderCurrentCard();
       renderPracticeQuestions();
       alert('AI package successfully committed to your live flashcards and question bank!');
@@ -1863,9 +2326,9 @@
         <div style="background:#171B24; padding:16px; border-radius:8px; margin-bottom:12px; border:1px solid var(--card-border);">
           <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
             <span class="badge badge-primary">${q.domain}</span>
-            <span style="font-size:0.75rem; color:var(--text-muted);">${q.ref}</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">${q.ref || ""}</span>
           </div>
-          <p style="font-weight:600; color:#FFF; margin-bottom:10px;">${q.question}</p>
+          <p style="font-weight:600; color:#FFF; margin-bottom:10px;">${q.stem || q.question}</p>
           <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">${q.explanation}</p>
           <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="switchTab('practice'); filterPracticeDomain('${q.domain}');">Drill this topic in Practice Bank</button>
         </div>
@@ -1952,7 +2415,7 @@
     }
 
     function toggleAudioPlayback() {
-      if (audioPlaylist.length === 0) populateDefaultPlaylist();
+      if (audioPlaylist.length === 0) populateAudioPlaylistFromGuidelines();
       if (!isSpeaking) {
         playAudioTrack(currentAudioTrack);
       } else {
@@ -1976,7 +2439,7 @@
     }
 
     function playSpecificSummary(idx) {
-      if (audioPlaylist.length === 0) populateDefaultPlaylist();
+      if (audioPlaylist.length === 0) populateAudioPlaylistFromGuidelines();
       playAudioTrack(idx);
     }
 
@@ -1993,7 +2456,7 @@
     }
 
     function queueAllSummariesAudio() {
-      populateDefaultPlaylist();
+      populateAudioPlaylistFromGuidelines();
       playAudioTrack(0);
     }
 
@@ -2070,8 +2533,16 @@
 
     function resetSpacedRepetitionProgress() {
       if (confirm("Reset all flashcard review intervals and proficiency stats?")) {
+        flashcards.forEach(c => {
+          c.repetitions = 0;
+          c.intervalDays = 1;
+          c.easeFactor = 2.5;
+          c.dueDate = Date.now();
+        });
+        try { localStorage.setItem('prepare_haem_flashcards_v2', JSON.stringify(flashcards)); } catch(e) {}
         currentCardIndex = 0;
         isFlipped = false;
+        updateDashboardStats();
         renderCurrentCard();
         alert("Spaced repetition progress reset successfully.");
       }
@@ -2091,6 +2562,7 @@
         document.getElementById('setting-rate').value = 1.0;
         document.getElementById('setting-rate-label').innerText = '1.0x';
         document.getElementById('setting-theme').value = 'DARK_SOFT_RED';
+        updateDashboardStats();
         alert("Settings restored to factory defaults.");
       }
     }
@@ -2101,7 +2573,8 @@
       renderCurrentCard();
       renderPracticeQuestions();
       renderWeakSpots();
-      populateDefaultPlaylist();
+      populateAudioPlaylistFromGuidelines();
+      updateDashboardStats();
 
       // Load saved settings
       try {
@@ -2110,6 +2583,13 @@
           changeTheme(savedTheme);
           const sel = document.getElementById('setting-theme');
           if (sel) sel.value = savedTheme;
+        }
+        const savedRate = localStorage.getItem('prepare_haem_speechRate');
+        if (savedRate) {
+          currentSpeechRate = parseFloat(savedRate);
+          document.getElementById('setting-rate').value = savedRate;
+          document.getElementById('setting-rate-label').innerText = savedRate + 'x';
+          document.getElementById('audio-speed-select').value = savedRate;
         }
       } catch(e) {}
 
