@@ -620,7 +620,7 @@ fun SummarisedGuidelinesScreen(
                         Column(modifier = Modifier.padding(top = 10.dp)) {
                             // Section 0: Full Summary
                             SummaryBlock(
-                                title = "EXECUTIVE CLINICAL DIGEST",
+                                title = "EXECUTIVE CLINICAL DIGEST & FRCPath EXAM FOCUS",
                                 content = res.summary,
                                 accentColor = CyanPrimary,
                                 icon = Icons.Default.MenuBook
@@ -648,9 +648,9 @@ fun SummarisedGuidelinesScreen(
 
                             Spacer(modifier = Modifier.height(10.dp))
 
-                            // Section 3: Core Recommendations
+                            // Section 3: Final Official Recommendations
                             SummaryBlock(
-                                title = "CORE CLINICAL RECOMMENDATIONS (GRADE 1A/1B)",
+                                title = "FINAL OFFICIAL RECOMMENDATIONS (WITH EVIDENCE GRADES)",
                                 content = res.recommendations,
                                 accentColor = EmeraldSuccess,
                                 icon = Icons.Default.CheckCircle
@@ -858,34 +858,65 @@ fun getGuidelineExamPitfall(resourceId: String): String? {
         "imwg_myeloma_2021" -> """
             • EXAM PITFALL 1: Plain skeletal survey misses ~30% of lytic lesions and is now superseded by Whole-Body Low-Dose CT (WBLDCT).
             • EXAM PITFALL 2: Bortezomib requires NO dose adjustment in acute renal failure, making it ideal for cast nephropathy induction.
-            • EXAM PITFALL 3: The SLiM biomarkers define myeloma requiring treatment even in the absence of traditional CRAB symptoms.
+            • EXAM PITFALL 3: The SLiM biomarkers (>=60% bone marrow plasma cells, sFLC ratio >=100, >1 focal MRI lesion) define myeloma requiring treatment even in the absence of traditional CRAB symptoms.
+        """.trimIndent()
+        "who_haem_5th" -> """
+            • EXAM PITFALL 1: Do NOT diagnose Common ALL if cytoplasmic mu heavy chain is positive; cytoplasmic Ig positivity defines Pre-B ALL. Mature B-ALL (Burkitt) is SmIg positive and TdT negative.
+            • EXAM PITFALL 2: AML with defining cytogenetics (PML-RARA, RUNX1-RUNX1T1, CBFB-MYH11) does NOT require >=20% blasts to diagnose AML.
+            • EXAM PITFALL 3: Flow cytometry for PNH must use high-sensitivity analysis with FLAER and GPI-linked markers (CD55, CD59) on granulocytes and monocytes.
         """.trimIndent()
         "bsh_transfusion_components" -> """
-            • EXAM PITFALL 1: Purine analogue treated patients (Fludarabine, Cladribine, Pentostatin) require LIFELONG irradiated cellular components.
+            • EXAM PITFALL 1: Purine analogue treated patients (Fludarabine, Cladribine, Pentostatin) require LIFELONG irradiated cellular components to prevent fatal TA-GVHD.
             • EXAM PITFALL 2: In acute life-threatening Warfarin bleeding, use 4-factor Prothrombin Complex Concentrate (PCC 25-50 IU/kg) + IV Vitamin K; FFP takes too long and causes TACO.
             • EXAM PITFALL 3: Prophylactic platelet transfusions are contraindicated in TTP and HIT unless life-threatening hemorrhage is present.
         """.trimIndent()
         "ukhcdo_haemostasis_2022" -> """
             • EXAM PITFALL 1: In suspected HIT (4Ts >=4), stop all heparin immediately and switch to non-heparin anticoagulation (Argatroban, Fondaparinux, Danaparoid). Never give Warfarin acutely until platelets >150x10^9/L!
             • EXAM PITFALL 2: Acquired Haemophilia A has an isolated prolonged APTT that shows time- and temperature-dependent prolongation after 2-hour incubation at 37°C.
+            • EXAM PITFALL 3: DRVVT with platelet neutralization procedure (PNP) corrects in Lupus Anticoagulant, NOT in Factor VIII inhibitors.
         """.trimIndent()
         "bsh_iron_haemochromatosis" -> """
             • EXAM PITFALL 1: Optimal induction venesection is assessed by serum ferritin (<50 mcg/L), NOT transferrin saturation (which fluctuates with meals).
             • EXAM PITFALL 2: Check Hb before every venesection and defer if Hb <110 g/L.
+            • EXAM PITFALL 3: Ferritin >1000 mcg/L, AST/ALT elevation, or platelets <200x10^9/L warrants FibroScan or liver biopsy to assess cirrhosis.
         """.trimIndent()
         "bsh_sickle_transfusion" -> """
             • EXAM PITFALL 1: In sickle cell pre-op, never transfuse Hb above 100-110 g/L (hyperviscosity crisis risk). Target Hb S is <30%.
             • EXAM PITFALL 2: Extended Rh (D, C, c, E, e) and Kell (K) phenotyping is mandatory to prevent dangerous alloimmunization and delayed hemolytic reactions.
+            • EXAM PITFALL 3: In hyperhaemolysis syndrome, stop all transfusions immediately; transfusing further blood causes catastrophic rapid haemolysis.
         """.trimIndent()
         "bsh_apl_guidelines" -> """
             • EXAM PITFALL 1: Start ATRA immediately upon morphological suspicion of APL; do NOT wait for molecular confirmation of PML-RARA.
             • EXAM PITFALL 2: Differentiation syndrome (weight gain, dyspnea, pleural effusions) requires immediate high-dose IV Dexamethasone 10 mg BD.
+            • EXAM PITFALL 3: Aggressively maintain platelets >50x10^9/L and fibrinogen >1.5 g/L with cryoprecipitate or fibrinogen concentrate to prevent fatal intracranial haemorrhage.
         """.trimIndent()
         "bsh_antiphospholipid" -> """
-            • EXAM PITFALL 1: DOACs are contraindicated in triple-positive Antiphospholipid Syndrome due to increased arterial thrombotic risk; Warfarin remains first-line.
+            • EXAM PITFALL 1: DOACs are contraindicated in triple-positive Antiphospholipid Syndrome due to increased arterial thrombotic risk; Warfarin remains first-line (target INR 2.0-3.0).
+            • EXAM PITFALL 2: Persistent antibody positivity must be confirmed at least 12 weeks apart to distinguish transient post-infectious antibodies from true APS.
         """.trimIndent()
         "bsh_ttp_guidelines" -> """
-            • EXAM PITFALL 1: Never transfuse platelets in TTP unless life-threatening intracranial hemorrhage. Commence Therapeutic Plasma Exchange with SD-FFP urgently.
+            • EXAM PITFALL 1: Never transfuse platelets in TTP unless life-threatening intracranial hemorrhage. Commence Therapeutic Plasma Exchange with SD-FFP urgently within 4-8 hours.
+            • EXAM PITFALL 2: Do NOT wait for ADAMTS13 activity results before starting TPE, caplacizumab, and high-dose methylprednisolone.
+        """.trimIndent()
+        "bsh_haem_gynae_2026" -> """
+            • EXAM PITFALL 1: In persistent anticoagulant-induced heavy menstrual bleeding, switch Rivaroxaban to Apixaban or Dabigatran (significantly lower bleeding rates). Do NOT stop anticoagulation abruptly without VTE risk appraisal.
+            • EXAM PITFALL 2: Levonorgestrel-releasing IUS (Mirena) has high expulsion rates in bleeding disorders; short-term medical menstrual suppression around insertion reduces expulsion risk.
+            • EXAM PITFALL 3: Adolescent females presenting with HMB from menarche have up to 33% prevalence of underlying inherited bleeding disorders (VWD, platelet dysfunction).
+        """.trimIndent()
+        "bsh_poct_haematology_2026" -> """
+            • EXAM PITFALL 1: Handheld POCT INR devices are inaccurate when INR >4.0 and unreliable in Antiphospholipid Syndrome (APS) due to variable lupus anticoagulant reagent interference. Mandatory central lab venous INR required.
+            • EXAM PITFALL 2: Blood gas analysers systematically underestimate Hb/Hct (mean ~8 g/L lower), causing inappropriate transfusions in up to 21% of patients. Do NOT substitute BGA for lab FBC before transfusing.
+            • EXAM PITFALL 3: Qualitative POCT D-dimer assays have poor sensitivity; only high-sensitivity quantitative assays matching STA Liatest or ELISA may be used for DVT/PE rule-out (Grade 1B).
+        """.trimIndent()
+        "bsh_ttp_laboratory_2026" -> """
+            • EXAM PITFALL 1: EDTA sample tubes are STRICTLY CONTRAINDICATED for ADAMTS13 testing because EDTA chelates essential divalent cations (zinc/calcium), creating artifactually severe deficiency (Grade 1B). Always use 0.109 M (3.2%) sodium citrate filled >=90%.
+            • EXAM PITFALL 2: Never delay plasma exchange, caplacizumab, or steroids while awaiting ADAMTS13 activity results in suspected TTP (Grade 1B).
+            • EXAM PITFALL 3: Platelet count <30 x 10^9/L with MAHA mandates blood film review within 60 minutes and immediate consultant haematologist contact (Grade 1C).
+        """.trimIndent()
+        "bsh_pmbcl_lymphoma_2026" -> """
+            • EXAM PITFALL 1: Never offer consolidative radiotherapy for PMBCL patients with Deauville Score 1–3 (CMR) on end-of-treatment PET-CT; IELSG37 trial showed 99% 5-year OS with observation alone (Grade 1A).
+            • EXAM PITFALL 2: Standard R-CHOP-21 is NOT recommended in PMBCL due to significantly inferior EFS and a 3-fold higher rate of DS 5 failure; dose-intensive R-CHOP-14 or DA-R-EPOCH is standard (Grade 1B).
+            • EXAM PITFALL 3: PMBCL has a 28% VTE rate requiring thromboprophylaxis if platelets >50 x 10^9/L (Grade 1C). CD19 CAR T-cell therapy (liso-cel) is recommended for early relapse <12 months (Grade 1C).
         """.trimIndent()
         else -> null
     }
