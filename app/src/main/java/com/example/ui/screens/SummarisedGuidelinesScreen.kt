@@ -26,12 +26,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.OpenInNew
 import androidx.compose.material.icons.automirrored.filled.QueueMusic
+import androidx.compose.material.icons.filled.Analytics
+import androidx.compose.material.icons.filled.Biotech
+import androidx.compose.material.icons.filled.Bloodtype
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
@@ -49,6 +53,7 @@ import androidx.compose.material.icons.filled.UnfoldMore
 import androidx.compose.material.icons.filled.Verified
 import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material.icons.filled.WaterDrop
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -58,6 +63,10 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -421,387 +430,883 @@ fun SummarisedGuidelinesScreen(
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        // List of Collapsible Guideline Accordion Cards
-        filtered.forEach { res ->
-            val isExpanded = expandedGuidelineIds[res.id] == true
-            val resQuestions = questions.filter { it.sourceResourceId == res.id }
-            val resCards = flashcards.filter { it.sourceResourceId == res.id }
+        Spacer(modifier = Modifier.height(10.dp))
 
-            // Chevron rotation animation
-            val chevronRotation by animateFloatAsState(
-                targetValue = if (isExpanded) 180f else 0f,
-                animationSpec = tween(durationMillis = 250),
-                label = "chevron_rotate"
+        // Predefined Curriculum Domain Order featuring Haemostasis & Thrombosis prominently
+        val domainOrder = listOf(
+            "Haemostasis & Thrombosis",
+            "Malignant Haematology",
+            "Transfusion Medicine",
+            "General Haematology"
+        )
+
+        if (selectedCategory == "All" && searchQuery.isBlank()) {
+            domainOrder.forEachIndexed { groupIndex, domainName ->
+                val domainItems = filtered.filter { it.category.equals(domainName, ignoreCase = true) }
+                if (domainItems.isNotEmpty()) {
+                    CategorySubheadingBar(
+                        category = domainName,
+                        count = domainItems.size,
+                        isFirst = (groupIndex == 0)
+                    )
+
+                    domainItems.forEach { res ->
+                        GuidelineAccordionCard(
+                            res = res,
+                            isExpanded = expandedGuidelineIds[res.id] == true,
+                            onToggleExpanded = {
+                                expandedGuidelineIds[res.id] = !(expandedGuidelineIds[res.id] ?: false)
+                            },
+                            onSetExpanded = { expandedGuidelineIds[res.id] = true },
+                            questions = questions,
+                            flashcards = flashcards,
+                            isTtsPlaying = isTtsPlaying,
+                            ttsActiveSpeakingId = ttsActiveSpeakingId,
+                            onSpeakGuideline = onSpeakGuideline,
+                            onAddGuidelineToPlaylist = onAddGuidelineToPlaylist,
+                            onPracticeGuideline = onPracticeGuideline,
+                            onRecallGuideline = onRecallGuideline
+                        )
+                    }
+                }
+            }
+        } else if (selectedCategory == "Haemostasis & Thrombosis" && searchQuery.isBlank()) {
+            HaemostasisThrombosisHeroBanner(count = filtered.size)
+
+            filtered.forEach { res ->
+                GuidelineAccordionCard(
+                    res = res,
+                    isExpanded = expandedGuidelineIds[res.id] == true,
+                    onToggleExpanded = {
+                        expandedGuidelineIds[res.id] = !(expandedGuidelineIds[res.id] ?: false)
+                    },
+                    onSetExpanded = { expandedGuidelineIds[res.id] = true },
+                    questions = questions,
+                    flashcards = flashcards,
+                    isTtsPlaying = isTtsPlaying,
+                    ttsActiveSpeakingId = ttsActiveSpeakingId,
+                    onSpeakGuideline = onSpeakGuideline,
+                    onAddGuidelineToPlaylist = onAddGuidelineToPlaylist,
+                    onPracticeGuideline = onPracticeGuideline,
+                    onRecallGuideline = onRecallGuideline
+                )
+            }
+        } else if (selectedCategory != "All" && searchQuery.isBlank()) {
+            CategorySubheadingBar(
+                category = selectedCategory,
+                count = filtered.size,
+                isFirst = true
             )
 
-            Card(
-                colors = CardDefaults.cardColors(containerColor = SlateNavySurface),
-                shape = RoundedCornerShape(12.dp),
+            filtered.forEach { res ->
+                GuidelineAccordionCard(
+                    res = res,
+                    isExpanded = expandedGuidelineIds[res.id] == true,
+                    onToggleExpanded = {
+                        expandedGuidelineIds[res.id] = !(expandedGuidelineIds[res.id] ?: false)
+                    },
+                    onSetExpanded = { expandedGuidelineIds[res.id] = true },
+                    questions = questions,
+                    flashcards = flashcards,
+                    isTtsPlaying = isTtsPlaying,
+                    ttsActiveSpeakingId = ttsActiveSpeakingId,
+                    onSpeakGuideline = onSpeakGuideline,
+                    onAddGuidelineToPlaylist = onAddGuidelineToPlaylist,
+                    onPracticeGuideline = onPracticeGuideline,
+                    onRecallGuideline = onRecallGuideline
+                )
+            }
+        } else {
+            // Search Results Mode
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 5.dp)
-                    .border(
-                        1.dp,
-                        if (isExpanded) CyanPrimary.copy(alpha = 0.6f) else CardBorderStroke,
-                        RoundedCornerShape(12.dp)
-                    )
-                    .testTag("summary_card_${res.id}")
+                    .padding(vertical = 6.dp)
+                    .clip(RoundedCornerShape(8.dp))
+                    .background(SlateNavySurface)
+                    .border(1.dp, CyanPrimary.copy(alpha = 0.4f), RoundedCornerShape(8.dp))
+                    .padding(horizontal = 12.dp, vertical = 8.dp)
             ) {
-                Column(modifier = Modifier.padding(14.dp)) {
-                    // Accordion Header Row (Entire row clickable to toggle)
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween,
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = null,
+                        tint = CyanPrimary,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "FILTER RESULTS: ${filtered.size} GUIDELINES MATCHING \"$searchQuery\"",
+                        color = CyanPrimary,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
+
+            filtered.forEach { res ->
+                GuidelineAccordionCard(
+                    res = res,
+                    isExpanded = expandedGuidelineIds[res.id] == true,
+                    onToggleExpanded = {
+                        expandedGuidelineIds[res.id] = !(expandedGuidelineIds[res.id] ?: false)
+                    },
+                    onSetExpanded = { expandedGuidelineIds[res.id] = true },
+                    questions = questions,
+                    flashcards = flashcards,
+                    isTtsPlaying = isTtsPlaying,
+                    ttsActiveSpeakingId = ttsActiveSpeakingId,
+                    onSpeakGuideline = onSpeakGuideline,
+                    onAddGuidelineToPlaylist = onAddGuidelineToPlaylist,
+                    onPracticeGuideline = onPracticeGuideline,
+                    onRecallGuideline = onRecallGuideline
+                )
+            }
+        }
+
+        Spacer(modifier = Modifier.height(100.dp))
+    }
+}
+
+@Composable
+fun CategorySubheadingBar(
+    category: String,
+    count: Int,
+    isFirst: Boolean = false
+) {
+    val (icon, accentColor, description) = when {
+        category.contains("Haemostasis", ignoreCase = true) -> Triple(
+            Icons.Default.WaterDrop,
+            EmeraldSuccess,
+            "Anticoagulation, TTP & ADAMTS13, Antiphospholipid Syndrome & Bleeding in Gynaecology"
+        )
+        category.contains("Malignant", ignoreCase = true) -> Triple(
+            Icons.Default.Biotech,
+            CyanPrimary,
+            "Myeloma (IMWG/BSH), AL Amyloidosis (2026), PMBCL & Acute Leukaemias (WHO 5th / ELN)"
+        )
+        category.contains("Transfusion", ignoreCase = true) -> Triple(
+            Icons.Default.Bloodtype,
+            Color(0xFFE57373),
+            "Blood Components, Reversal Strategies, TA-GVHD, SHOT & Sickle Cell Transfusion"
+        )
+        else -> Triple(
+            Icons.Default.Analytics,
+            TealAccent,
+            "Diagnostic Laboratory Medicine, Point-of-Care Testing (ISO 15189:2022) & Iron Overload"
+        )
+    }
+
+    val tagId = category.lowercase().replace(" ", "_").replace("&", "and")
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = if (isFirst) 8.dp else 22.dp, bottom = 8.dp)
+            .testTag("subheading_$tagId")
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.weight(1f)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(28.dp)
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(accentColor.copy(alpha = 0.15f))
+                        .border(1.dp, accentColor.copy(alpha = 0.4f), RoundedCornerShape(6.dp)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = null,
+                        tint = accentColor,
+                        modifier = Modifier.size(16.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.width(8.dp))
+                Column {
+                    Text(
+                        text = category.uppercase(),
+                        color = TextPrimary,
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.ExtraBold,
+                        letterSpacing = 0.8.sp
+                    )
+                    Text(
+                        text = description,
+                        color = TextSecondary,
+                        fontSize = 10.sp,
+                        lineHeight = 13.sp,
+                        maxLines = 1
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.width(8.dp))
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(accentColor.copy(alpha = 0.15f))
+                    .border(1.dp, accentColor.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
+                    .padding(horizontal = 8.dp, vertical = 3.dp)
+            ) {
+                Text(
+                    text = "$count ${if (count == 1) "Guideline" else "Guidelines"}",
+                    color = accentColor,
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
+        Spacer(modifier = Modifier.height(6.dp))
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.5.dp)
+                .background(accentColor.copy(alpha = 0.35f))
+        )
+    }
+}
+
+@Composable
+fun HaemostasisThrombosisHeroBanner(count: Int) {
+    Card(
+        colors = CardDefaults.cardColors(containerColor = SlateNavySurface),
+        shape = RoundedCornerShape(12.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+            .border(1.dp, EmeraldSuccess.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
+            .testTag("haemostasis_thrombosis_hero_banner")
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Box(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { expandedGuidelineIds[res.id] = !isExpanded }
+                            .size(32.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(EmeraldSuccess.copy(alpha = 0.15f))
+                            .border(1.dp, EmeraldSuccess.copy(alpha = 0.4f), RoundedCornerShape(8.dp)),
+                        contentAlignment = Alignment.Center
                     ) {
-                        Column(modifier = Modifier.weight(1f)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Box(
-                                    modifier = Modifier
-                                        .clip(RoundedCornerShape(4.dp))
-                                        .background(CyanPrimary.copy(alpha = 0.2f))
-                                        .padding(horizontal = 6.dp, vertical = 2.dp)
-                                ) {
-                                    Text(
-                                        text = "${res.issuingBody} • ${res.year}",
-                                        color = CyanPrimary,
-                                        fontSize = 10.sp,
-                                        fontWeight = FontWeight.Bold
-                                    )
-                                }
-                                Spacer(modifier = Modifier.width(6.dp))
-                                DomainChip(domain = res.category)
-                                Spacer(modifier = Modifier.width(6.dp))
-                                Box(
-                                    modifier = Modifier
-                                        .clip(RoundedCornerShape(4.dp))
-                                        .background(if (isExpanded) EmeraldSuccess.copy(alpha = 0.15f) else DeepNavyBg)
-                                        .padding(horizontal = 5.dp, vertical = 2.dp)
-                                ) {
-                                    Text(
-                                        text = if (isExpanded) "Expanded" else "Collapsed",
-                                        color = if (isExpanded) EmeraldSuccess else TextMuted,
-                                        fontSize = 9.sp,
-                                        fontWeight = FontWeight.SemiBold
-                                    )
-                                }
-                            }
-
-                            Spacer(modifier = Modifier.height(6.dp))
-
-                            Text(
-                                text = res.title,
-                                color = TextPrimary,
-                                fontSize = 14.sp,
-                                fontWeight = FontWeight.Bold,
-                                lineHeight = 19.sp
-                            )
-                        }
-
-                        // Animated Accordion Chevron Toggle
-                        IconButton(
-                            onClick = { expandedGuidelineIds[res.id] = !isExpanded },
-                            modifier = Modifier.size(36.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.KeyboardArrowDown,
-                                contentDescription = if (isExpanded) "Collapse summary" else "Expand summary",
-                                tint = if (isExpanded) CyanPrimary else TextSecondary,
-                                modifier = Modifier
-                                    .size(24.dp)
-                                    .rotate(chevronRotation)
-                            )
-                        }
+                        Icon(
+                            imageVector = Icons.Default.WaterDrop,
+                            contentDescription = null,
+                            tint = EmeraldSuccess,
+                            modifier = Modifier.size(18.dp)
+                        )
                     }
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Column {
+                        Text(
+                            text = "HAEMOSTASIS & THROMBOSIS",
+                            color = TextPrimary,
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.ExtraBold,
+                            letterSpacing = 0.8.sp
+                        )
+                        Text(
+                            text = "BSH & UKHCDO Core Curriculum • FRCPath High-Yield",
+                            color = EmeraldSuccess,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                    }
+                }
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(EmeraldSuccess.copy(alpha = 0.15f))
+                        .border(1.dp, EmeraldSuccess.copy(alpha = 0.5f), RoundedCornerShape(12.dp))
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                ) {
+                    Text(
+                        text = "$count Guidelines",
+                        color = EmeraldSuccess,
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
 
-                    Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(10.dp))
 
-                    // Citation and Online Chip Row
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        modifier = Modifier.fillMaxWidth()
+            Text(
+                text = "Key high-yield exam algorithms covering TTP laboratory guidance (2026), multidisciplinary gynaecology haemostasis (2026), Antiphospholipid Syndrome (APS), Heparin-Induced Thrombocytopenia (HIT), and Acquired Haemophilia A.",
+                color = TextSecondary,
+                fontSize = 11.5.sp,
+                lineHeight = 16.sp
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // High-Yield Quick Pearls Strip
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(8.dp))
+                    .background(DeepNavyBg)
+                    .border(1.dp, EmeraldSuccess.copy(alpha = 0.25f), RoundedCornerShape(8.dp))
+                    .padding(10.dp),
+                verticalArrangement = Arrangement.spacedBy(6.dp)
+            ) {
+                Text(
+                    text = "CRITICAL EXAM TAKEAWAYS (DO NOT MISS IN SBA/VIVA):",
+                    color = EmeraldSuccess,
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 0.5.sp
+                )
+                Text(
+                    text = "• TTP (2026): Diagnostic threshold ADAMTS13 <10 IU/dL (<10%). Sodium citrate sample tube mandatory; EDTA is STRICTLY CONTRAINDICATED. Never delay TPE + Caplacizumab + Steroids.",
+                    color = TextPrimary,
+                    fontSize = 11.sp,
+                    lineHeight = 15.sp
+                )
+                Text(
+                    text = "• HIT (4Ts >=4): Discontinue all heparin immediately; switch to Argatroban, Fondaparinux, or Danaparoid. Do NOT start Warfarin acutely until platelets >150 x 10^9/L.",
+                    color = TextPrimary,
+                    fontSize = 11.sp,
+                    lineHeight = 15.sp
+                )
+                Text(
+                    text = "• Antiphospholipid Syndrome: DOACs are CONTRAINDICATED in triple-positive APS due to high arterial thrombosis risk; Warfarin remains standard (target INR 2-3).",
+                    color = TextPrimary,
+                    fontSize = 11.sp,
+                    lineHeight = 15.sp
+                )
+                Text(
+                    text = "• Gynae Haemostasis (2026): In anticoagulant-induced persistent HMB, switch Rivaroxaban to Apixaban or Dabigatran; Tranexamic acid is first-line non-hormonal therapy.",
+                    color = TextPrimary,
+                    fontSize = 11.sp,
+                    lineHeight = 15.sp
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun GuidelineAccordionCard(
+    res: ApprovedResource,
+    isExpanded: Boolean,
+    onToggleExpanded: () -> Unit,
+    onSetExpanded: () -> Unit,
+    questions: List<Question>,
+    flashcards: List<Flashcard>,
+    isTtsPlaying: Boolean,
+    ttsActiveSpeakingId: String?,
+    onSpeakGuideline: (ApprovedResource) -> Unit,
+    onAddGuidelineToPlaylist: (ApprovedResource) -> Unit,
+    onPracticeGuideline: (String) -> Unit,
+    onRecallGuideline: (String) -> Unit
+) {
+    val uriHandler = LocalUriHandler.current
+    val context = LocalContext.current
+
+    val resQuestions = questions.filter { it.sourceResourceId == res.id }
+    val resCards = flashcards.filter { it.sourceResourceId == res.id }
+
+    // Chevron rotation animation
+    val chevronRotation by animateFloatAsState(
+        targetValue = if (isExpanded) 180f else 0f,
+        animationSpec = tween(durationMillis = 250),
+        label = "chevron_rotate"
+    )
+
+    Card(
+        colors = CardDefaults.cardColors(containerColor = SlateNavySurface),
+        shape = RoundedCornerShape(12.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 5.dp)
+            .border(
+                1.dp,
+                if (isExpanded) CyanPrimary.copy(alpha = 0.6f) else CardBorderStroke,
+                RoundedCornerShape(12.dp)
+            )
+            .testTag("summary_card_${res.id}")
+    ) {
+        val (domainColor, shortDomainLabel) = when {
+            res.category.contains("Haemostasis", ignoreCase = true) -> Pair(EmeraldSuccess, "Haemostasis")
+            res.category.contains("Malignant", ignoreCase = true) -> Pair(CyanPrimary, "Malignant")
+            res.category.contains("Transfusion", ignoreCase = true) -> Pair(Color(0xFFE57373), "Transfusion")
+            else -> Pair(TealAccent, "General")
+        }
+
+        val cleanIssuer = res.issuingBody
+            .replace("British Society for Haematology", "BSH")
+            .replace("United Kingdom Haemophilia Centre Doctors' Organisation", "UKHCDO")
+            .replace("World Health Organization", "WHO")
+            .replace("International Myeloma Working Group", "IMWG")
+            .trim()
+
+        Column(modifier = Modifier.padding(14.dp)) {
+            // 1. TOP METADATA & ACCORDION TOGGLE ROW (Symmetrical & Non-Wrapping)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onToggleExpanded() },
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Left: Issuing Body + Year & Short Domain Badges
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                    modifier = Modifier.weight(1f, fill = false)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(CyanPrimary.copy(alpha = 0.12f))
+                            .border(1.dp, CyanPrimary.copy(alpha = 0.35f), RoundedCornerShape(6.dp))
+                            .padding(horizontal = 8.dp, vertical = 3.dp)
                     ) {
                         Text(
-                            text = res.citation,
-                            color = TealAccent,
+                            text = "$cleanIssuer • ${res.year}",
+                            color = CyanPrimary,
                             fontSize = 11.sp,
-                            modifier = Modifier.weight(1f)
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
                         )
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            val isSpeakingThis = isTtsPlaying && ttsActiveSpeakingId == "summary_${res.id}"
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                                modifier = Modifier
-                                    .clip(RoundedCornerShape(4.dp))
-                                    .background(if (isSpeakingThis) Color(0xFFD66371).copy(alpha = 0.2f) else TealAccent.copy(alpha = 0.15f))
-                                    .clickable { onSpeakGuideline(res) }
-                                    .padding(horizontal = 6.dp, vertical = 2.dp)
-                                    .testTag("summary_quick_tts_${res.id}")
-                            ) {
-                                Icon(
-                                    imageVector = if (isSpeakingThis) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
-                                    contentDescription = "Listen to summary",
-                                    tint = if (isSpeakingThis) Color(0xFFD66371) else TealAccent,
-                                    modifier = Modifier.size(13.dp)
-                                )
-                                Spacer(modifier = Modifier.width(3.dp))
-                                Text(
-                                    text = if (isSpeakingThis) "Speaking" else "TTS",
-                                    color = if (isSpeakingThis) Color(0xFFD66371) else TealAccent,
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
-                                modifier = Modifier
-                                    .clip(RoundedCornerShape(4.dp))
-                                    .background(CyanPrimary.copy(alpha = 0.15f))
-                                    .clickable {
-                                        try {
-                                            uriHandler.openUri(res.getOnlineUrl())
-                                        } catch (e: Exception) {
-                                            try {
-                                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(res.getOnlineUrl()))
-                                                context.startActivity(intent)
-                                            } catch (_: Exception) {}
-                                        }
-                                    }
-                                    .padding(horizontal = 6.dp, vertical = 2.dp)
-                                    .testTag("online_chip_${res.id}")
-                            ) {
-                                Text(
-                                    text = "Online ↗",
-                                    color = CyanPrimary,
-                                    fontSize = 10.sp,
-                                    fontWeight = FontWeight.Bold
-                                )
-                            }
-                        }
                     }
 
-                    // Collapsed state: Brief summary preview + tap to expand cue
-                    if (!isExpanded) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(domainColor.copy(alpha = 0.12f))
+                            .border(1.dp, domainColor.copy(alpha = 0.35f), RoundedCornerShape(6.dp))
+                            .padding(horizontal = 7.dp, vertical = 3.dp)
+                    ) {
+                        Text(
+                            text = shortDomainLabel.uppercase(),
+                            color = domainColor,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            maxLines = 1
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.width(8.dp))
+
+                // Right: Symmetrical Expand/Collapse Button with animated chevron
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(if (isExpanded) CyanPrimary.copy(alpha = 0.15f) else DeepNavyBg)
+                        .border(
+                            1.dp,
+                            if (isExpanded) CyanPrimary.copy(alpha = 0.45f) else CardBorderStroke,
+                            RoundedCornerShape(6.dp)
+                        )
+                        .clickable { onToggleExpanded() }
+                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = if (isExpanded) "Collapse" else "Details",
+                            color = if (isExpanded) CyanPrimary else TextSecondary,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.SemiBold
+                        )
+                        Icon(
+                            imageVector = Icons.Default.KeyboardArrowDown,
+                            contentDescription = if (isExpanded) "Collapse summary" else "Expand summary",
+                            tint = if (isExpanded) CyanPrimary else TextSecondary,
+                            modifier = Modifier
+                                .size(16.dp)
+                                .rotate(chevronRotation)
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // 2. GUIDELINE TITLE (Full width, bold, readable)
+            Text(
+                text = res.title,
+                color = TextPrimary,
+                fontSize = 14.5.sp,
+                fontWeight = FontWeight.Bold,
+                lineHeight = 20.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable { onToggleExpanded() }
+            )
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            // 3. CITATION (Full width, clean italic styling)
+            Text(
+                text = res.citation,
+                color = TealAccent,
+                fontSize = 11.sp,
+                lineHeight = 15.sp,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // 4. ACTION TOOLBAR (Clean, balanced button chips)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Listen (TTS)
+                val isSpeakingThis = isTtsPlaying && ttsActiveSpeakingId == "summary_${res.id}"
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(if (isSpeakingThis) Color(0xFFD66371).copy(alpha = 0.2f) else DeepNavyBg)
+                        .border(
+                            1.dp,
+                            if (isSpeakingThis) Color(0xFFD66371) else TealAccent.copy(alpha = 0.4f),
+                            RoundedCornerShape(6.dp)
+                        )
+                        .clickable { onSpeakGuideline(res) }
+                        .padding(horizontal = 10.dp, vertical = 6.dp)
+                        .testTag("summary_quick_tts_${res.id}")
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(5.dp)
+                    ) {
+                        Icon(
+                            imageVector = if (isSpeakingThis) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
+                            contentDescription = "Listen to summary",
+                            tint = if (isSpeakingThis) Color(0xFFD66371) else TealAccent,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Text(
+                            text = if (isSpeakingThis) "Speaking..." else "Listen",
+                            color = if (isSpeakingThis) Color(0xFFD66371) else TealAccent,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                // Official Guideline Link
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(DeepNavyBg)
+                        .border(1.dp, CyanPrimary.copy(alpha = 0.4f), RoundedCornerShape(6.dp))
+                        .clickable {
+                            try {
+                                uriHandler.openUri(res.getOnlineUrl())
+                            } catch (e: Exception) {
+                                try {
+                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(res.getOnlineUrl()))
+                                    context.startActivity(intent)
+                                } catch (_: Exception) {}
+                            }
+                        }
+                        .padding(horizontal = 10.dp, vertical = 6.dp)
+                        .testTag("online_chip_${res.id}")
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(5.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.OpenInNew,
+                            contentDescription = null,
+                            tint = CyanPrimary,
+                            modifier = Modifier.size(13.dp)
+                        )
+                        Text(
+                            text = "Paper ↗",
+                            color = CyanPrimary,
+                            fontSize = 11.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.weight(1f))
+
+                // Practice shortcut if questions available
+                if (resQuestions.isNotEmpty()) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(6.dp))
+                            .background(EmeraldSuccess.copy(alpha = 0.12f))
+                            .border(1.dp, EmeraldSuccess.copy(alpha = 0.35f), RoundedCornerShape(6.dp))
+                            .clickable { onPracticeGuideline(res.id) }
+                            .padding(horizontal = 8.dp, vertical = 6.dp)
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Quiz,
+                                contentDescription = null,
+                                tint = EmeraldSuccess,
+                                modifier = Modifier.size(13.dp)
+                            )
+                            Text(
+                                text = "${resQuestions.size} Qs",
+                                color = EmeraldSuccess,
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+            }
+
+            // 5. COLLAPSED PREVIEW CARD (Clean, symmetrical framed box)
+            if (!isExpanded) {
+                Spacer(modifier = Modifier.height(10.dp))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(DeepNavyBg)
+                        .border(1.dp, CardBorderStroke.copy(alpha = 0.6f), RoundedCornerShape(8.dp))
+                        .clickable { onSetExpanded() }
+                        .padding(12.dp)
+                ) {
+                    Column {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "EXECUTIVE CLINICAL DIGEST",
+                                color = CyanPrimary,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold,
+                                letterSpacing = 0.6.sp
+                            )
+                            Text(
+                                text = "Tap to expand cutoffs & recommendations →",
+                                color = TealAccent,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
                         Spacer(modifier = Modifier.height(6.dp))
                         Text(
                             text = res.summary,
                             color = TextSecondary,
                             fontSize = 12.sp,
-                            lineHeight = 16.sp,
-                            maxLines = 2
+                            lineHeight = 16.5.sp,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis
                         )
-                        Spacer(modifier = Modifier.height(6.dp))
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier
-                                .clickable { expandedGuidelineIds[res.id] = true }
-                                .padding(vertical = 2.dp)
+                    }
+                }
+            }
+
+            // Expandable Accordion High-Yield Details with smooth transition
+            AnimatedVisibility(
+                visible = isExpanded,
+                enter = fadeIn() + expandVertically(),
+                exit = fadeOut() + shrinkVertically()
+            ) {
+                Column(modifier = Modifier.padding(top = 10.dp)) {
+                    // Section 0: Full Summary
+                    SummaryBlock(
+                        title = "EXECUTIVE CLINICAL DIGEST & FRCPath EXAM FOCUS",
+                        content = res.summary,
+                        accentColor = CyanPrimary,
+                        icon = Icons.Default.MenuBook
+                    )
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // Section 1: Key Cutoffs & Diagnostic Thresholds
+                    SummaryBlock(
+                        title = "KEY DIAGNOSTIC CUTOFFS & BIOMARKERS",
+                        content = res.keyCutoffs,
+                        accentColor = TealAccent,
+                        icon = Icons.Default.Verified
+                    )
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // Section 2: Staging Criteria & Classification
+                    SummaryBlock(
+                        title = "STAGING SYSTEMS & RISK STRATIFICATION",
+                        content = res.stagingCriteria,
+                        accentColor = CyanPrimary,
+                        icon = Icons.Default.LocalHospital
+                    )
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // Section 3: Final Official Recommendations
+                    SummaryBlock(
+                        title = "FINAL OFFICIAL RECOMMENDATIONS (WITH EVIDENCE GRADES)",
+                        content = res.recommendations,
+                        accentColor = EmeraldSuccess,
+                        icon = Icons.Default.CheckCircle
+                    )
+
+                    // Section 4: Exam Pitfalls & Pearls
+                    val pitfalls = getGuidelineExamPitfall(res.id)
+                    if (pitfalls != null) {
+                        Spacer(modifier = Modifier.height(10.dp))
+                        SummaryBlock(
+                            title = "EXAM TRAPS & HIGH-YIELD CLINICAL PEARLS",
+                            content = pitfalls,
+                            accentColor = AmberWarning,
+                            icon = Icons.Default.Warning
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    // Full Guideline Online Link
+                    OutlinedButton(
+                        onClick = {
+                            try {
+                                uriHandler.openUri(res.getOnlineUrl())
+                            } catch (e: Exception) {
+                                try {
+                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(res.getOnlineUrl()))
+                                    context.startActivity(intent)
+                                } catch (_: Exception) {}
+                            }
+                        },
+                        shape = RoundedCornerShape(8.dp),
+                        border = BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.6f)),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag("open_online_guideline_${res.id}")
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.OpenInNew,
+                            contentDescription = null,
+                            tint = CyanPrimary,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = "Read Full Guideline Online (${res.issuingBody})",
+                            color = CyanPrimary,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 12.sp
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // Audio Listen & Queue Action Buttons
+                    val isSpeakingThis = isTtsPlaying && ttsActiveSpeakingId == "summary_${res.id}"
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Button(
+                            onClick = { onSpeakGuideline(res) },
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = if (isSpeakingThis) Color(0xFFD66371) else TealAccent
+                            ),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.weight(1f).testTag("summary_tts_listen_${res.id}")
                         ) {
+                            Icon(
+                                imageVector = if (isSpeakingThis) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
+                                contentDescription = "Listen to summary",
+                                tint = DeepNavyBg,
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
                             Text(
-                                text = "Tap to expand diagnostic cutoffs, staging & recommendations →",
+                                text = if (isSpeakingThis) "Speaking..." else "Listen (TTS)",
+                                color = DeepNavyBg,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp
+                            )
+                        }
+
+                        OutlinedButton(
+                            onClick = { onAddGuidelineToPlaylist(res) },
+                            shape = RoundedCornerShape(8.dp),
+                            colors = ButtonDefaults.outlinedButtonColors(contentColor = CyanPrimary),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.5f)),
+                            modifier = Modifier.weight(1f).testTag("summary_tts_queue_${res.id}")
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.PlaylistAdd,
+                                contentDescription = "Add summary to audio playlist",
+                                tint = CyanPrimary,
+                                modifier = Modifier.size(16.dp)
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = "+ Audio Queue",
                                 color = CyanPrimary,
-                                fontSize = 11.sp,
-                                fontWeight = FontWeight.SemiBold
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp
                             )
                         }
                     }
 
-                    // Expandable Accordion High-Yield Details with smooth transition
-                    AnimatedVisibility(
-                        visible = isExpanded,
-                        enter = fadeIn() + expandVertically(),
-                        exit = fadeOut() + shrinkVertically()
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    // Action buttons: Practice questions & Spaced review on this guideline
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        Column(modifier = Modifier.padding(top = 10.dp)) {
-                            // Section 0: Full Summary
-                            SummaryBlock(
-                                title = "EXECUTIVE CLINICAL DIGEST & FRCPath EXAM FOCUS",
-                                content = res.summary,
-                                accentColor = CyanPrimary,
-                                icon = Icons.Default.MenuBook
+                        Button(
+                            onClick = { onPracticeGuideline(res.id) },
+                            colors = ButtonDefaults.buttonColors(containerColor = CyanPrimary),
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Icon(imageVector = Icons.Default.Quiz, contentDescription = null, tint = DeepNavyBg, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = if (resQuestions.isNotEmpty()) "Practice (${resQuestions.size})" else "Practice",
+                                color = DeepNavyBg,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp
                             )
+                        }
 
-                            Spacer(modifier = Modifier.height(10.dp))
-
-                            // Section 1: Key Cutoffs & Diagnostic Thresholds
-                            SummaryBlock(
-                                title = "KEY DIAGNOSTIC CUTOFFS & BIOMARKERS",
-                                content = res.keyCutoffs,
-                                accentColor = TealAccent,
-                                icon = Icons.Default.Verified
+                        OutlinedButton(
+                            onClick = { onRecallGuideline(res.id) },
+                            shape = RoundedCornerShape(8.dp),
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Icon(imageVector = Icons.Default.Psychology, contentDescription = null, tint = TealAccent, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Text(
+                                text = if (resCards.isNotEmpty()) "Recall (${resCards.size})" else "Recall Deck",
+                                color = TealAccent,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp
                             )
-
-                            Spacer(modifier = Modifier.height(10.dp))
-
-                            // Section 2: Staging Criteria & Classification
-                            SummaryBlock(
-                                title = "STAGING SYSTEMS & RISK STRATIFICATION",
-                                content = res.stagingCriteria,
-                                accentColor = CyanPrimary,
-                                icon = Icons.Default.LocalHospital
-                            )
-
-                            Spacer(modifier = Modifier.height(10.dp))
-
-                            // Section 3: Final Official Recommendations
-                            SummaryBlock(
-                                title = "FINAL OFFICIAL RECOMMENDATIONS (WITH EVIDENCE GRADES)",
-                                content = res.recommendations,
-                                accentColor = EmeraldSuccess,
-                                icon = Icons.Default.CheckCircle
-                            )
-
-                            // Section 4: Exam Pitfalls & Pearls
-                            val pitfalls = getGuidelineExamPitfall(res.id)
-                            if (pitfalls != null) {
-                                Spacer(modifier = Modifier.height(10.dp))
-                                SummaryBlock(
-                                    title = "EXAM TRAPS & HIGH-YIELD CLINICAL PEARLS",
-                                    content = pitfalls,
-                                    accentColor = AmberWarning,
-                                    icon = Icons.Default.Warning
-                                )
-                            }
-
-                            Spacer(modifier = Modifier.height(12.dp))
-
-                            // Full Guideline Online Link
-                            OutlinedButton(
-                                onClick = {
-                                    try {
-                                        uriHandler.openUri(res.getOnlineUrl())
-                                    } catch (e: Exception) {
-                                        try {
-                                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(res.getOnlineUrl()))
-                                            context.startActivity(intent)
-                                        } catch (_: Exception) {}
-                                    }
-                                },
-                                shape = RoundedCornerShape(8.dp),
-                                border = BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.6f)),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .testTag("open_online_guideline_${res.id}")
-                            ) {
-                                Icon(
-                                    imageVector = Icons.AutoMirrored.Filled.OpenInNew,
-                                    contentDescription = null,
-                                    tint = CyanPrimary,
-                                    modifier = Modifier.size(16.dp)
-                                )
-                                Spacer(modifier = Modifier.width(8.dp))
-                                Text(
-                                    text = "Read Full Guideline Online (${res.issuingBody})",
-                                    color = CyanPrimary,
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 12.sp
-                                )
-                            }
-
-                            Spacer(modifier = Modifier.height(10.dp))
-
-                            // Audio Listen & Queue Action Buttons
-                            val isSpeakingThis = isTtsPlaying && ttsActiveSpeakingId == "summary_${res.id}"
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                Button(
-                                    onClick = { onSpeakGuideline(res) },
-                                    colors = ButtonDefaults.buttonColors(
-                                        containerColor = if (isSpeakingThis) Color(0xFFD66371) else TealAccent
-                                    ),
-                                    shape = RoundedCornerShape(8.dp),
-                                    modifier = Modifier.weight(1f).testTag("summary_tts_listen_${res.id}")
-                                ) {
-                                    Icon(
-                                        imageVector = if (isSpeakingThis) Icons.Default.GraphicEq else Icons.Default.VolumeUp,
-                                        contentDescription = "Listen to summary",
-                                        tint = DeepNavyBg,
-                                        modifier = Modifier.size(16.dp)
-                                    )
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text(
-                                        text = if (isSpeakingThis) "Speaking..." else "Listen (TTS)",
-                                        color = DeepNavyBg,
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 12.sp
-                                    )
-                                }
-
-                                OutlinedButton(
-                                    onClick = { onAddGuidelineToPlaylist(res) },
-                                    shape = RoundedCornerShape(8.dp),
-                                    colors = ButtonDefaults.outlinedButtonColors(contentColor = CyanPrimary),
-                                    border = androidx.compose.foundation.BorderStroke(1.dp, CyanPrimary.copy(alpha = 0.5f)),
-                                    modifier = Modifier.weight(1f).testTag("summary_tts_queue_${res.id}")
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Default.PlaylistAdd,
-                                        contentDescription = "Add summary to audio playlist",
-                                        tint = CyanPrimary,
-                                        modifier = Modifier.size(16.dp)
-                                    )
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text(
-                                        text = "+ Audio Queue",
-                                        color = CyanPrimary,
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 12.sp
-                                    )
-                                }
-                            }
-
-                            Spacer(modifier = Modifier.height(8.dp))
-
-                            // Action buttons: Practice questions & Spaced review on this guideline
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                Button(
-                                    onClick = { onPracticeGuideline(res.id) },
-                                    colors = ButtonDefaults.buttonColors(containerColor = CyanPrimary),
-                                    shape = RoundedCornerShape(8.dp),
-                                    modifier = Modifier.weight(1f)
-                                ) {
-                                    Icon(imageVector = Icons.Default.Quiz, contentDescription = null, tint = DeepNavyBg, modifier = Modifier.size(16.dp))
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text(
-                                        text = if (resQuestions.isNotEmpty()) "Practice (${resQuestions.size})" else "Practice",
-                                        color = DeepNavyBg,
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 12.sp
-                                    )
-                                }
-
-                                OutlinedButton(
-                                    onClick = { onRecallGuideline(res.id) },
-                                    shape = RoundedCornerShape(8.dp),
-                                    modifier = Modifier.weight(1f)
-                                ) {
-                                    Icon(imageVector = Icons.Default.Psychology, contentDescription = null, tint = TealAccent, modifier = Modifier.size(16.dp))
-                                    Spacer(modifier = Modifier.width(6.dp))
-                                    Text(
-                                        text = if (resCards.isNotEmpty()) "Recall (${resCards.size})" else "Recall Deck",
-                                        color = TealAccent,
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 12.sp
-                                    )
-                                }
-                            }
                         }
                     }
                 }
             }
         }
-
-        Spacer(modifier = Modifier.height(30.dp))
     }
 }
 
@@ -832,19 +1337,418 @@ fun SummaryBlock(
                 Text(
                     text = title,
                     color = accentColor,
-                    fontSize = 10.sp,
+                    fontSize = 10.5.sp,
                     fontWeight = FontWeight.Bold,
                     letterSpacing = 0.8.sp
                 )
             }
-            Spacer(modifier = Modifier.height(6.dp))
-            Text(
-                text = content,
-                color = TextPrimary,
-                fontSize = 12.sp,
-                lineHeight = 17.sp
-            )
+            Spacer(modifier = Modifier.height(8.dp))
+
+            when {
+                title.contains("RECOMMENDATIONS", ignoreCase = true) -> {
+                    RecommendationsFormattedList(content = content)
+                }
+                title.contains("TRAPS", ignoreCase = true) || title.contains("PITFALLS", ignoreCase = true) -> {
+                    ExamPitfallsFormattedList(content = content)
+                }
+                title.contains("CUTOFFS", ignoreCase = true) || title.contains("BIOMARKERS", ignoreCase = true) -> {
+                    CutoffsFormattedList(content = content, accentColor = accentColor)
+                }
+                title.contains("STAGING", ignoreCase = true) -> {
+                    StagingFormattedList(content = content, accentColor = accentColor)
+                }
+                else -> {
+                    DigestFormattedText(content = content, accentColor = accentColor)
+                }
+            }
         }
+    }
+}
+
+@Composable
+private fun RecommendationsFormattedList(content: String) {
+    val lines = content.lines().map { it.trim() }.filter { it.isNotEmpty() }
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        lines.forEach { line ->
+            val cleanLine = line.removePrefix("•").trim()
+
+            val gradeRegex = """\((Grade\s*[0-9A-Za-z]+|Good Practice [A-Za-z]+)\)""".toRegex(RegexOption.IGNORE_CASE)
+            val gradeMatch = gradeRegex.find(cleanLine)
+            val grade = gradeMatch?.value?.removePrefix("(")?.removeSuffix(")")
+
+            val recNumberRegex = """^(Rec\s*\d+)""".toRegex(RegexOption.IGNORE_CASE)
+            val recMatch = recNumberRegex.find(cleanLine)
+            val recLabel = recMatch?.value
+
+            var bodyText = cleanLine
+            if (gradeMatch != null) {
+                bodyText = bodyText.replace(gradeMatch.value, "")
+            }
+            if (recMatch != null) {
+                bodyText = bodyText.replaceFirst(recMatch.value, "")
+            }
+            bodyText = bodyText.trim().removePrefix(":").trim()
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(6.dp))
+                    .background(DeepNavyBg)
+                    .border(1.dp, EmeraldSuccess.copy(alpha = 0.35f), RoundedCornerShape(6.dp))
+                    .padding(10.dp)
+            ) {
+                Column {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        if (recLabel != null) {
+                            Text(
+                                text = recLabel.uppercase(),
+                                color = TextPrimary,
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        } else {
+                            Text(
+                                text = "RECOMMENDATION",
+                                color = TextPrimary,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+
+                        if (grade != null) {
+                            Box(
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(4.dp))
+                                    .background(EmeraldSuccess.copy(alpha = 0.15f))
+                                    .border(1.dp, EmeraldSuccess.copy(alpha = 0.5f), RoundedCornerShape(4.dp))
+                                    .padding(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text(
+                                    text = grade.uppercase(),
+                                    color = EmeraldSuccess,
+                                    fontSize = 9.5.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(4.dp))
+
+                    Text(
+                        text = bodyText,
+                        color = TextPrimary,
+                        fontSize = 12.sp,
+                        lineHeight = 17.sp
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ExamPitfallsFormattedList(content: String) {
+    val lines = content.lines().map { it.trim() }.filter { it.isNotEmpty() }
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        lines.forEachIndexed { index, line ->
+            val cleanLine = line.removePrefix("•").trim()
+            val pitfallRegex = """^(EXAM PITFALL\s*\d*):?\s*""".toRegex(RegexOption.IGNORE_CASE)
+            val match = pitfallRegex.find(cleanLine)
+            val label = match?.value?.trim()?.removeSuffix(":") ?: "EXAM TRAP ${index + 1}"
+            val bodyText = if (match != null) cleanLine.removePrefix(match.value).trim() else cleanLine
+
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(6.dp))
+                    .background(Color(0xFF221E14))
+                    .border(1.dp, AmberWarning.copy(alpha = 0.35f), RoundedCornerShape(6.dp))
+                    .padding(10.dp)
+            ) {
+                Column {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Default.Warning,
+                            contentDescription = null,
+                            tint = AmberWarning,
+                            modifier = Modifier.size(13.dp)
+                        )
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Text(
+                            text = label.uppercase(),
+                            color = AmberWarning,
+                            fontSize = 10.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 0.5.sp
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        text = bodyText,
+                        color = TextPrimary,
+                        fontSize = 12.sp,
+                        lineHeight = 17.sp
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun CutoffsFormattedList(content: String, accentColor: androidx.compose.ui.graphics.Color) {
+    val lines = content.lines().map { it.trim() }.filter { it.isNotEmpty() }
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        lines.forEach { rawLine ->
+            val isSubItem = rawLine.startsWith("-") || rawLine.startsWith("  -") || rawLine.startsWith("•   -")
+            val cleanLine = rawLine.removePrefix("•").removePrefix("-").trim()
+
+            if (isSubItem) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 14.dp),
+                    verticalAlignment = Alignment.Top
+                ) {
+                    Text(
+                        text = "–",
+                        color = accentColor.copy(alpha = 0.7f),
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(end = 6.dp)
+                    )
+                    Text(
+                        text = cleanLine,
+                        color = TextSecondary,
+                        fontSize = 11.5.sp,
+                        lineHeight = 16.sp
+                    )
+                }
+            } else {
+                val colonIndex = cleanLine.indexOf(':')
+                if (colonIndex in 1..40) {
+                    val key = cleanLine.substring(0, colonIndex + 1).trim()
+                    val value = cleanLine.substring(colonIndex + 1).trim()
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.Top
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .padding(top = 5.dp, end = 7.dp)
+                                .size(5.dp)
+                                .clip(CircleShape)
+                                .background(accentColor)
+                        )
+                        Text(
+                            text = buildAnnotatedString {
+                                withStyle(SpanStyle(color = accentColor, fontWeight = FontWeight.Bold, fontSize = 12.sp)) {
+                                    append("$key ")
+                                }
+                                withStyle(SpanStyle(color = TextPrimary, fontSize = 12.sp)) {
+                                    append(value)
+                                }
+                            },
+                            lineHeight = 17.sp
+                        )
+                    }
+                } else {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.Top
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .padding(top = 5.dp, end = 7.dp)
+                                .size(5.dp)
+                                .clip(CircleShape)
+                                .background(accentColor)
+                        )
+                        Text(
+                            text = cleanLine,
+                            color = TextPrimary,
+                            fontSize = 12.sp,
+                            lineHeight = 17.sp
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun StagingFormattedList(content: String, accentColor: androidx.compose.ui.graphics.Color) {
+    val lines = content.lines().map { it.trim() }.filter { it.isNotEmpty() }
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        lines.forEach { rawLine ->
+            val isHeading = (rawLine.endsWith(":") && !rawLine.startsWith("•") && !rawLine.startsWith("-")) ||
+                    rawLine.startsWith("PALM-COEIN", ignoreCase = true) ||
+                    rawLine.startsWith("Target Populations", ignoreCase = true) ||
+                    rawLine.startsWith("ISO 15189", ignoreCase = true) ||
+                    rawLine.startsWith("TTP Laboratory Testing", ignoreCase = true) ||
+                    rawLine.startsWith("Genotype categories", ignoreCase = true) ||
+                    rawLine.startsWith("Indications for", ignoreCase = true)
+
+            val isNumbered = rawLine.matches("""^\d+\..*""".toRegex())
+            val isSubItem = rawLine.startsWith("-") || rawLine.startsWith("  -")
+            val cleanLine = rawLine.removePrefix("•").removePrefix("-").trim()
+
+            when {
+                isHeading -> {
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(4.dp))
+                            .background(accentColor.copy(alpha = 0.12f))
+                            .padding(horizontal = 8.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = rawLine.removeSuffix(":").uppercase(),
+                            color = accentColor,
+                            fontSize = 10.5.sp,
+                            fontWeight = FontWeight.Bold,
+                            letterSpacing = 0.5.sp
+                        )
+                    }
+                }
+                isNumbered -> {
+                    val numPrefix = rawLine.substringBefore(".")
+                    val body = rawLine.substringAfter(".").trim()
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.Top
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(18.dp)
+                                .clip(CircleShape)
+                                .background(accentColor.copy(alpha = 0.2f))
+                                .border(1.dp, accentColor.copy(alpha = 0.5f), CircleShape),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = numPrefix,
+                                color = accentColor,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(7.dp))
+                        Text(
+                            text = body,
+                            color = TextPrimary,
+                            fontSize = 12.sp,
+                            lineHeight = 17.sp
+                        )
+                    }
+                }
+                isSubItem -> {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(start = 14.dp),
+                        verticalAlignment = Alignment.Top
+                    ) {
+                        Text(
+                            text = "–",
+                            color = accentColor.copy(alpha = 0.7f),
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.padding(end = 6.dp)
+                        )
+                        Text(
+                            text = cleanLine,
+                            color = TextSecondary,
+                            fontSize = 11.5.sp,
+                            lineHeight = 16.sp
+                        )
+                    }
+                }
+                else -> {
+                    val colonIndex = cleanLine.indexOf(':')
+                    if (colonIndex in 1..40) {
+                        val key = cleanLine.substring(0, colonIndex + 1).trim()
+                        val value = cleanLine.substring(colonIndex + 1).trim()
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.Top
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .padding(top = 5.dp, end = 7.dp)
+                                    .size(5.dp)
+                                    .clip(CircleShape)
+                                    .background(accentColor)
+                            )
+                            Text(
+                                text = buildAnnotatedString {
+                                    withStyle(SpanStyle(color = accentColor, fontWeight = FontWeight.Bold, fontSize = 12.sp)) {
+                                        append("$key ")
+                                    }
+                                    withStyle(SpanStyle(color = TextPrimary, fontSize = 12.sp)) {
+                                        append(value)
+                                    }
+                                },
+                                lineHeight = 17.sp
+                            )
+                        }
+                    } else {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.Top
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .padding(top = 5.dp, end = 7.dp)
+                                    .size(5.dp)
+                                    .clip(CircleShape)
+                                    .background(accentColor)
+                            )
+                            Text(
+                                text = cleanLine,
+                                color = TextPrimary,
+                                fontSize = 12.sp,
+                                lineHeight = 17.sp
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun DigestFormattedText(content: String, accentColor: androidx.compose.ui.graphics.Color) {
+    val clean = content.trim()
+    val focusPrefix = "FRCPath Exam Focus:"
+    if (clean.startsWith(focusPrefix, ignoreCase = true)) {
+        val rest = clean.substring(focusPrefix.length).trim()
+        Text(
+            text = buildAnnotatedString {
+                withStyle(SpanStyle(color = accentColor, fontWeight = FontWeight.Bold, fontSize = 12.sp)) {
+                    append("$focusPrefix ")
+                }
+                withStyle(SpanStyle(color = TextPrimary, fontSize = 12.sp)) {
+                    append(rest)
+                }
+            },
+            lineHeight = 17.5.sp
+        )
+    } else {
+        Text(
+            text = clean,
+            color = TextPrimary,
+            fontSize = 12.sp,
+            lineHeight = 17.5.sp
+        )
     }
 }
 

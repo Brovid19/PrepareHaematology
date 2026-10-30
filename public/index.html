@@ -386,6 +386,81 @@
       line-height: 1;
     }
 
+    /* Domain Subheadings & Structured Cards */
+    .domain-subheading-bar {
+      margin-top: 28px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(214, 99, 113, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .domain-subheading-bar:first-child {
+      margin-top: 8px;
+    }
+    .domain-subheading-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .domain-subheading-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+    .recommendation-card {
+      background: #141720;
+      border: 1px solid rgba(72, 187, 120, 0.35);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+    }
+    .recommendation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .grade-badge {
+      background: rgba(72, 187, 120, 0.15);
+      border: 1px solid rgba(72, 187, 120, 0.5);
+      color: var(--accent-green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .hero-focus-banner {
+      background: #171B24;
+      border: 1px solid rgba(72, 187, 120, 0.5);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .exam-trap-card {
+      background: #221E14;
+      border: 1px solid rgba(236, 201, 75, 0.4);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 8px;
+    }
+    .exam-trap-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-amber);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
     /* Flashcard View */
     .flashcard-container {
       max-width: 650px;
@@ -829,12 +904,36 @@
 
     <!-- TAB 2: GUIDELINE SUMMARIES -->
     <div id="tab-summaries" class="tab-panel">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
-        <h3 style="font-size:1.1rem; color:#FFF;">Approved BSH Guideline Digests</h3>
+      <!-- High-Yield Digest Banner -->
+      <div style="display:flex; align-items:center; gap:12px; padding:12px 14px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:10px; margin-bottom:14px;">
+        <span style="font-size:1.4rem;">📖</span>
+        <div>
+          <div style="font-size:0.95rem; font-weight:700; color:#FFF;">High-Yield Clinical Guideline Digests</div>
+          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Collapsible accordion view of diagnostic cutoffs, staging systems, and Grade 1A/1B recommendations for the FRCPath syllabus.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
         <div style="display:flex; gap:8px;">
           <button class="btn btn-secondary" onclick="toggleAllAccordions()">Expand / Collapse All</button>
           <button class="btn btn-primary" onclick="queueAllSummariesAudio()">Queue All to Audio</button>
         </div>
+      </div>
+
+      <!-- Search Filter Bar -->
+      <div style="margin-bottom:12px;">
+        <input type="text" id="summary-search-input" placeholder="Filter summaries (e.g. NT-proBNP, Fludarabine, 4Ts, APL, TTP)..." 
+               oninput="onSummarySearch(this.value)"
+               style="width:100%; padding:10px 14px; background:#181C26; border:1px solid var(--card-border); border-radius:8px; color:#FFF; font-size:0.88rem; outline:none;" />
+      </div>
+
+      <!-- Category Filter Chips -->
+      <div style="display:flex; gap:8px; margin-bottom:16px; overflow-x:auto; padding-bottom:4px;" id="summary-cat-filters">
+        <button class="btn btn-primary summary-cat-btn" data-cat="All" onclick="filterSummaryCat('All')">All</button>
+        <button class="btn btn-secondary summary-cat-btn" data-cat="Haemostasis & Thrombosis" onclick="filterSummaryCat('Haemostasis & Thrombosis')">Haemostasis & Thrombosis</button>
+        <button class="btn btn-secondary summary-cat-btn" data-cat="Malignant Haematology" onclick="filterSummaryCat('Malignant Haematology')">Malignant Haematology</button>
+        <button class="btn btn-secondary summary-cat-btn" data-cat="Transfusion Medicine" onclick="filterSummaryCat('Transfusion Medicine')">Transfusion Medicine</button>
+        <button class="btn btn-secondary summary-cat-btn" data-cat="General Haematology" onclick="filterSummaryCat('General Haematology')">General Haematology</button>
       </div>
 
       <div id="summaries-accordion-container"></div>
@@ -2077,53 +2176,181 @@
       document.getElementById('dash-goal-count').innerText = dailyGoal;
     }
 
-    // Summaries Accordion
-    function renderSummaries() {
-      const container = document.getElementById('summaries-accordion-container');
-      container.innerHTML = approvedGuidelines.map((g, idx) => `
+    // Summaries State & Filtering
+    let currentSummaryCategory = 'All';
+    let currentSummarySearch = '';
+
+    function filterSummaryCat(cat) {
+      currentSummaryCategory = cat;
+      document.querySelectorAll('.summary-cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'btn btn-primary summary-cat-btn';
+        } else {
+          btn.className = 'btn btn-secondary summary-cat-btn';
+        }
+      });
+      renderSummaries();
+    }
+
+    function onSummarySearch(query) {
+      currentSummarySearch = (query || '').trim().toLowerCase();
+      renderSummaries();
+    }
+
+    function formatRecommendationHtml(recStr) {
+      const clean = recStr.replace(/^•\s*/, '').trim();
+      const gradeMatch = clean.match(/\((Grade\s*[0-9A-Za-z]+|Good Practice [A-Za-z]+)\)/i);
+      const grade = gradeMatch ? gradeMatch[1] : null;
+      const recMatch = clean.match(/^(Rec\s*\d+)/i);
+      const recLabel = recMatch ? recMatch[1] : 'RECOMMENDATION';
+      let body = clean;
+      if (gradeMatch) body = body.replace(gradeMatch[0], '');
+      if (recMatch) body = body.replace(recMatch[0], '');
+      body = body.trim().replace(/^:\s*/, '').trim();
+
+      return `
+        <div class="recommendation-card">
+          <div class="recommendation-header">
+            <span style="font-size:0.75rem; font-weight:800; color:#FFF; letter-spacing:0.5px;">${recLabel.toUpperCase()}</span>
+            ${grade ? `<span class="grade-badge">${grade.toUpperCase()}</span>` : ''}
+          </div>
+          <div style="font-size:0.85rem; line-height:1.5; color:#E2E8F0;">${body}</div>
+        </div>
+      `;
+    }
+
+    function formatPitfallsHtml(pitfallText) {
+      if (!pitfallText) return '';
+      const lines = pitfallText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+      return `
+        <div style="margin-bottom:12px;">
+          <strong style="color:var(--accent-amber); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Exam Traps & High-Yield SBA Pearls:</strong>
+          <div style="margin-top:6px; display:flex; flex-direction:column; gap:6px;">
+            ${lines.map((line, idx) => {
+              const cleanLine = line.replace(/^•\s*/, '').trim();
+              const match = cleanLine.match(/^(EXAM PITFALL\s*\d*):?\s*/i);
+              const label = match ? match[1].trim() : `EXAM TRAP ${idx + 1}`;
+              const body = match ? cleanLine.substring(match[0].length).trim() : cleanLine;
+              return `
+                <div class="exam-trap-card">
+                  <div class="exam-trap-header">⚠️ ${label.toUpperCase()}</div>
+                  <div style="font-size:0.85rem; line-height:1.45; color:#E2E8F0;">${body}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function getDomainMeta(category) {
+      const cat = category.toLowerCase();
+      if (cat.includes('haemostasis')) {
+        return {
+          icon: '💧',
+          color: '#34D399',
+          desc: 'Anticoagulation, TTP & ADAMTS13, Antiphospholipid Syndrome & Bleeding in Gynaecology'
+        };
+      } else if (cat.includes('malignant')) {
+        return {
+          icon: '🔬',
+          color: '#38BDF8',
+          desc: 'Myeloma (IMWG/BSH), AL Amyloidosis (2026), PMBCL & Acute Leukaemias (WHO 5th / ELN)'
+        };
+      } else if (cat.includes('transfusion')) {
+        return {
+          icon: '🩸',
+          color: '#E57373',
+          desc: 'Blood Components, Reversal Strategies, TA-GVHD, SHOT & Sickle Cell Transfusion'
+        };
+      } else {
+        return {
+          icon: '📊',
+          color: '#2DD4BF',
+          desc: 'Diagnostic Laboratory Medicine, Point-of-Care Testing (ISO 15189:2022) & Iron Overload'
+        };
+      }
+    }
+
+    function renderHaemostasisHeroBanner(count) {
+      return `
+        <div class="hero-focus-banner" id="haemostasis-hero-banner">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <span style="font-size:1.6rem; background:rgba(52,211,153,0.15); border:1px solid rgba(52,211,153,0.4); border-radius:8px; padding:4px 8px;">💧</span>
+              <div>
+                <div style="font-size:1.05rem; font-weight:800; color:#FFF; letter-spacing:0.5px;">HAEMOSTASIS & THROMBOSIS</div>
+                <div style="font-size:0.8rem; color:#34D399; font-weight:600;">BSH & UKHCDO Core Curriculum • FRCPath High-Yield</div>
+              </div>
+            </div>
+            <span class="badge" style="background:rgba(52,211,153,0.15); border:1px solid rgba(52,211,153,0.5); color:#34D399; font-weight:700;">${count} Guidelines</span>
+          </div>
+          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:10px; line-height:1.45;">
+            Key high-yield exam algorithms covering TTP laboratory guidance (2026), multidisciplinary gynaecology haemostasis (2026), Antiphospholipid Syndrome (APS), Heparin-Induced Thrombocytopenia (HIT), and Acquired Haemophilia A.
+          </p>
+          <div style="background:#0E1118; border:1px solid rgba(52,211,153,0.25); border-radius:8px; padding:12px; margin-top:10px;">
+            <div style="font-size:0.75rem; font-weight:800; color:#34D399; letter-spacing:0.5px; margin-bottom:6px;">CRITICAL EXAM TAKEAWAYS (DO NOT MISS IN SBA/VIVA):</div>
+            <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0; margin-bottom:6px;">• <strong>TTP (2026):</strong> Diagnostic threshold ADAMTS13 &lt;10 IU/dL (&lt;10%). Sodium citrate sample tube mandatory; EDTA is STRICTLY CONTRAINDICATED. Never delay TPE + Caplacizumab + Steroids.</div>
+            <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0; margin-bottom:6px;">• <strong>HIT (4Ts &gt;=4):</strong> Discontinue all heparin immediately; switch to Argatroban, Fondaparinux, or Danaparoid. Do NOT start Warfarin acutely until platelets &gt;150 x 10^9/L.</div>
+            <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0; margin-bottom:6px;">• <strong>Antiphospholipid Syndrome:</strong> DOACs are CONTRAINDICATED in triple-positive APS due to high arterial thrombosis risk; Warfarin remains standard (target INR 2-3).</div>
+            <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0;">• <strong>Gynae Haemostasis (2026):</strong> In anticoagulant-induced persistent HMB, switch Rivaroxaban to Apixaban or Dabigatran; Tranexamic acid is first-line non-hormonal therapy.</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSingleGuidelineAccordion(g, idx) {
+      const cleanIssuer = g.issuingBody
+        .replace("British Society for Haematology", "BSH")
+        .replace("United Kingdom Haemophilia Centre Doctors' Organisation", "UKHCDO")
+        .replace("World Health Organization", "WHO")
+        .replace("International Myeloma Working Group", "IMWG");
+      const shortDomain = g.domain.includes('Haemostasis') ? 'Haemostasis' : (g.domain.includes('Malignant') ? 'Malignant' : (g.domain.includes('Transfusion') ? 'Transfusion' : 'General'));
+
+      return `
         <div class="accordion-item ${idx === 0 ? 'open' : ''}" id="guide-${idx}">
           <div class="accordion-header" onclick="toggleAccordion('guide-${idx}')">
-            <div>
-              <div class="accordion-title">${g.title}</div>
-              <div class="accordion-meta">${g.issuingBody} • ${g.year} • ${g.domain} • <span class="badge badge-primary">${g.grade}</span></div>
-              <div style="font-size:0.75rem; color:var(--primary); margin-top:3px;">Tap to expand diagnostic cutoffs, staging & final recommendations ▾</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px; flex-wrap:wrap;">
+                <span class="badge" style="background:rgba(56,189,248,0.15); border:1px solid rgba(56,189,248,0.4); color:#38BDF8; font-weight:700; font-size:0.72rem; padding:2px 8px;">${cleanIssuer} • ${g.year}</span>
+                <span class="badge badge-primary" style="font-size:0.72rem; padding:2px 8px;">${shortDomain.toUpperCase()}</span>
+                <span class="badge" style="background:rgba(52,211,153,0.15); border:1px solid rgba(52,211,153,0.4); color:#34D399; font-size:0.72rem; padding:2px 8px;">${g.grade}</span>
+              </div>
+              <div class="accordion-title" style="font-size:0.95rem; font-weight:700; color:#FFF; line-height:1.4;">${g.title}</div>
+              <div style="font-size:0.75rem; color:var(--text-muted); font-style:italic; margin-top:3px;">${g.citation}</div>
+              <div style="font-size:0.75rem; color:var(--primary); margin-top:4px;">Tap to expand diagnostic cutoffs, staging & final recommendations ▾</div>
             </div>
-            <div style="display:flex; align-items:center; gap:8px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
               <button class="btn btn-secondary" style="padding:4px 10px; font-size:0.75rem;" onclick="event.stopPropagation(); playSpecificSummary(${idx});">🔊 Audio</button>
               <span class="accordion-chevron">▼</span>
             </div>
           </div>
           <div class="accordion-body">
-            <div style="padding:10px; background:#12151C; border-radius:6px; border-left:3px solid var(--primary); margin-bottom:10px;">
+            <div style="padding:10px 14px; background:#12151C; border-radius:6px; border-left:3px solid var(--primary); margin-bottom:10px;">
               <strong style="color:var(--primary); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Executive Clinical Digest & FRCPath Exam Focus:</strong>
-              <p style="margin-top:4px; font-size:0.88rem; line-height:1.45;">${g.summary}</p>
+              <p style="margin-top:4px; font-size:0.88rem; line-height:1.5;">${g.summary}</p>
             </div>
 
-            <div style="padding:10px; background:#12151C; border-radius:6px; border-left:3px solid var(--accent-green); margin-bottom:10px;">
+            <div style="padding:10px 14px; background:#12151C; border-radius:6px; border-left:3px solid var(--accent-green); margin-bottom:10px;">
               <strong style="color:var(--accent-green); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Key Diagnostic Cutoffs & Biomarkers:</strong>
-              <p style="margin-top:4px; font-size:0.85rem; line-height:1.45; white-space:pre-line;">${g.cutoffs}</p>
+              <p style="margin-top:4px; font-size:0.85rem; line-height:1.5; white-space:pre-line;">${g.cutoffs}</p>
             </div>
 
             ${g.staging ? `
-            <div style="padding:10px; background:#12151C; border-radius:6px; border-left:3px solid var(--accent-blue); margin-bottom:10px;">
+            <div style="padding:10px 14px; background:#12151C; border-radius:6px; border-left:3px solid var(--accent-blue); margin-bottom:10px;">
               <strong style="color:var(--accent-blue); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Staging Systems & Risk Stratification:</strong>
-              <p style="margin-top:4px; font-size:0.85rem; line-height:1.45; white-space:pre-line;">${g.staging}</p>
+              <p style="margin-top:4px; font-size:0.85rem; line-height:1.5; white-space:pre-line;">${g.staging}</p>
             </div>
             ` : ''}
 
             <div style="margin-bottom:10px;">
               <strong style="color:var(--accent-green); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Final Official Recommendations (with Evidence Grades):</strong>
-              <ul class="key-points-list" style="margin-top:6px;">
-                ${g.recommendations.map(r => `<li>${r}</li>`).join('')}
-              </ul>
+              <div style="margin-top:8px;">
+                ${g.recommendations.map(r => formatRecommendationHtml(r)).join('')}
+              </div>
             </div>
 
-            ${g.pitfalls ? `
-            <div style="padding:10px; background:rgba(236,201,75,0.08); border-radius:6px; border:1px solid rgba(236,201,75,0.3); margin-bottom:12px;">
-              <strong style="color:var(--accent-amber); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Exam Traps & High-Yield SBA Pearls:</strong>
-              <p style="margin-top:4px; font-size:0.85rem; line-height:1.45; color:#E2E8F0; white-space:pre-line;">${g.pitfalls}</p>
-            </div>
-            ` : ''}
+            ${g.pitfalls ? formatPitfallsHtml(g.pitfalls) : ''}
 
             <div style="display:flex; gap:8px; margin-top:16px; flex-wrap:wrap;">
               <a href="${g.pdfUrl}" target="_blank" class="btn btn-secondary" style="font-size:0.8rem;">📄 View PDF</a>
@@ -2134,7 +2361,119 @@
             </div>
           </div>
         </div>
-      `).join('');
+      `;
+    }
+
+    // Summaries Accordion
+    function renderSummaries() {
+      const container = document.getElementById('summaries-accordion-container');
+      if (!container) return;
+
+      const filtered = approvedGuidelines.filter(g => {
+        const matchesCat = (currentSummaryCategory === 'All') || (g.domain.toLowerCase() === currentSummaryCategory.toLowerCase());
+        const matchesSearch = !currentSummarySearch || 
+          g.title.toLowerCase().includes(currentSummarySearch) ||
+          g.summary.toLowerCase().includes(currentSummarySearch) ||
+          g.cutoffs.toLowerCase().includes(currentSummarySearch) ||
+          (g.staging && g.staging.toLowerCase().includes(currentSummarySearch)) ||
+          (g.recommendations && g.recommendations.some(r => r.toLowerCase().includes(currentSummarySearch))) ||
+          (g.pitfalls && g.pitfalls.toLowerCase().includes(currentSummarySearch));
+        return matchesCat && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:32px 16px; background:#171B24; border:1px solid var(--card-border); border-radius:10px; color:var(--text-muted);">
+            <div style="font-size:2rem; margin-bottom:8px;">🔍</div>
+            <div style="font-weight:700; color:#FFF; margin-bottom:4px;">No guidelines found</div>
+            <div style="font-size:0.85rem;">Try adjusting your search query or filter category.</div>
+          </div>
+        `;
+        return;
+      }
+
+      const domainOrder = [
+        "Haemostasis & Thrombosis",
+        "Malignant Haematology",
+        "Transfusion Medicine",
+        "General Haematology"
+      ];
+
+      let html = '';
+
+      if (currentSummarySearch) {
+        html += `
+          <div style="padding:10px 14px; background:#181C26; border:1px solid rgba(56,189,248,0.4); border-radius:8px; margin-bottom:14px; font-size:0.85rem; color:#38BDF8; font-weight:700;">
+            🔍 FILTER RESULTS: ${filtered.length} GUIDELINES MATCHING "${currentSummarySearch.toUpperCase()}"
+          </div>
+        `;
+      }
+
+      if (currentSummaryCategory === 'All' && !currentSummarySearch) {
+        domainOrder.forEach((domainName) => {
+          const domainItems = filtered.filter(g => g.domain.toLowerCase() === domainName.toLowerCase());
+          if (domainItems.length > 0) {
+            const meta = getDomainMeta(domainName);
+            
+            html += `
+              <div class="domain-subheading-bar" style="border-bottom-color:${meta.color};">
+                <div>
+                  <div class="domain-subheading-title">
+                    <span style="font-size:1.2rem;">${meta.icon}</span>
+                    <span style="color:${meta.color};">${domainName.toUpperCase()}</span>
+                  </div>
+                  <div class="domain-subheading-desc">${meta.desc}</div>
+                </div>
+                <span class="badge" style="background:${meta.color}22; border:1px solid ${meta.color}88; color:${meta.color}; font-weight:700;">
+                  ${domainItems.length} ${domainItems.length === 1 ? 'Guideline' : 'Guidelines'}
+                </span>
+              </div>
+            `;
+
+            if (domainName.includes('Haemostasis')) {
+              html += renderHaemostasisHeroBanner(domainItems.length);
+            }
+
+            domainItems.forEach(g => {
+              const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
+              html += renderSingleGuidelineAccordion(g, globalIdx);
+            });
+          }
+        });
+      } else if (currentSummaryCategory === 'Haemostasis & Thrombosis' && !currentSummarySearch) {
+        html += renderHaemostasisHeroBanner(filtered.length);
+        filtered.forEach(g => {
+          const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
+          html += renderSingleGuidelineAccordion(g, globalIdx);
+        });
+      } else if (!currentSummarySearch) {
+        const meta = getDomainMeta(currentSummaryCategory);
+        html += `
+          <div class="domain-subheading-bar" style="border-bottom-color:${meta.color};">
+            <div>
+              <div class="domain-subheading-title">
+                <span style="font-size:1.2rem;">${meta.icon}</span>
+                <span style="color:${meta.color};">${currentSummaryCategory.toUpperCase()}</span>
+              </div>
+              <div class="domain-subheading-desc">${meta.desc}</div>
+            </div>
+            <span class="badge" style="background:${meta.color}22; border:1px solid ${meta.color}88; color:${meta.color}; font-weight:700;">
+              ${filtered.length} Guidelines
+            </span>
+          </div>
+        `;
+        filtered.forEach(g => {
+          const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
+          html += renderSingleGuidelineAccordion(g, globalIdx);
+        });
+      } else {
+        filtered.forEach(g => {
+          const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
+          html += renderSingleGuidelineAccordion(g, globalIdx);
+        });
+      }
+
+      container.innerHTML = html;
     }
 
     function toggleAccordion(id) {
