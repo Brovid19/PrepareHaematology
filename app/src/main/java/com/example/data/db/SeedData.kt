@@ -16,22 +16,24 @@ object SeedData {
             category = "Malignant Haematology",
             summary = "FRCPath Exam Focus: Early AL amyloidosis screening in monoclonal gammopathies, differentiating AL from ATTR, cardiac biomarker thresholds (NT-proBNP 332 ng/L), non-invasive tissue biopsy sequence to avoid renal biopsy, and the 2026 AL-ISS staging system. Early diagnosis yields ~80% 5-year survival vs <30% in advanced disease.",
             keyCutoffs = "• Renal: 24h proteinuria >0.5g/24h OR urine PCR >50 mg/mmol with concordant urine ACR >30 mg/mmol\n• Cardiac: NT-proBNP >332 ng/L (or unexplained progressive rise in paraproteinaemia)\n• Hepatic: Alkaline Phosphatase (ALP) >1.5x institutional ULN (raised in 86% of liver AL)\n• Neuropathy: Sustained BP fall >=20/10 mmHg by 3 min with blunted HR rise\n• Urgent Referral Triggers: Serum Albumin <25 g/L, eGFR <50 mL/min, all cardiac amyloidosis, postural drop >20 mmHg, Bilirubin >2x ULN, Factor X deficiency bleeding",
-            stagingCriteria = "AL-ISS 2026 Cardiac Staging (Khwaja et al. 2026):\n• Stage I: NT-proBNP <332 ng/L & TnT <0.035 ng/L (Median survival: Not reached at 5 yr)\n• Stage II: NT-proBNP >332 but <8500 ng/L OR TnT >=0.035 ng/L (Not reached at 5 yr)\n• Stage IIIA: NT-proBNP <8500 ng/L & TnT >=0.035 ng/L (76 months)\n• Stage IIIB: NT-proBNP >8500 ng/L & TnT >=0.035 ng/L (26 months)\n• Stage IIIC: NT-proBNP >8500 ng/L, TnT >=0.035 ng/L & Global Longitudinal Strain (GLS) >-9% (4 months)\n\nRenal Staging (Palladini et al.):\n• Stage 1: Proteinuria <=5 g/24h & eGFR >=50 (0% dialysis at 2 yr)\n• Stage 2: Either proteinuria >5 g/24h OR eGFR <50 (11-25% dialysis at 2 yr)\n• Stage 3: Both proteinuria >5 g/24h & eGFR <50 (60-75% dialysis at 2 yr)",
-            recommendations = "• Rec 1 (Grade 1A): Urine PCR, ACR, and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS.\n• Rec 2 (Grade 1A): Falling serum albumin levels and raised alkaline phosphatase should be investigated promptly.\n• Rec 3 (Grade 1A): Patients can progress to AL amyloidosis with minimal or no increase in clonal light chains.\n• Rec 4 (Grade 1B): Amyloid should be screened in unexplained HFpEF, low ECG voltage with LVH, bilateral carpal tunnel, or hypotension post ACE-I/ARBs.\n• Rec 5 (Grade 2B): Bone marrow or abdominal fat pad biopsy with Congo red should precede renal biopsy; renal biopsy avoided if AL confirmed elsewhere.",
-            url = "https://doi.org/10.1111/bjh.20173"
+            stagingCriteria = "AL-ISS 2026 Cardiac Staging (Khwaja et al. 2026; Garg 2026 Table 2). Note: the guideline table prints troponin T in 'ng/L'; the conventional threshold is 0.035 µg/L (= 35 ng/L):\n• Stage I: NT-proBNP <332 ng/L & TnT <0.035 ng/L (Median survival: Not reached at 5 yr)\n• Stage II: NT-proBNP >332 but <8500 ng/L OR TnT >=0.035 ng/L (Not reached at 5 yr)\n• Stage IIIA: NT-proBNP <8500 ng/L & TnT >=0.035 ng/L (76 months)\n• Stage IIIB: NT-proBNP >8500 ng/L & TnT >=0.035 ng/L (26 months)\n• Stage IIIC: NT-proBNP >8500 ng/L, TnT >=0.035 ng/L & Global Longitudinal Strain (GLS) >-9% (4 months)\n\nRenal Staging (Palladini et al.):\n• Stage 1: Proteinuria <=5 g/24h & eGFR >=50 (0% dialysis at 2 yr)\n• Stage 2: Either proteinuria >5 g/24h OR eGFR <50 (11-25% dialysis at 2 yr)\n• Stage 3: Both proteinuria >5 g/24h & eGFR <50 (60-75% dialysis at 2 yr)",
+            recommendations = "• Rec 1 (Grade 1A): Urine PCR, ACR, and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS.\n• Rec 2 (Grade 1A): Falling serum albumin levels and raised alkaline phosphatase should be noted and, if persistent, investigated further.\n• Rec 3 (Grade 1A): Patients can progress to AL amyloidosis with minimal or no increase in clonal light chains.\n• Rec 4 (Grade 1B): Amyloid should be considered in unexplained cardiac failure, and screening for AL undertaken in all unexplained cardiac failure, especially HFpEF (red flags: low-voltage ECG with 'LVH', bilateral carpal tunnel, hypotension after ACE-I/ARB).\n• Rec 5 (Grade 2B): Bone marrow or abdominal fat pad biopsy with Congo red should precede renal biopsy; renal biopsy avoided if AL confirmed elsewhere.",
+            url = "https://doi.org/10.1111/bjh.70472"
         ),
         ApprovedResource(
             id = "imwg_myeloma_2021",
             title = "International Myeloma Working Group (IMWG) Criteria for the Diagnosis and Staging of Multiple Myeloma",
             issuingBody = "International Myeloma Working Group",
-            year = 2021,
-            citation = "Rajkumar SV, Dimopoulos MA, Palumbo A, et al. Lancet Oncol. 2014;15(12):e538-e548; updated IMWG consensus.",
+            year = 2014,
+            citation = "Rajkumar SV, Dimopoulos MA, Palumbo A, et al. International Myeloma Working Group updated criteria for the diagnosis of multiple myeloma. Lancet Oncol. 2014;15(12):e538-e548. Management points draw on BSH/UK myeloma practice.",
             category = "Malignant Haematology",
             summary = "FRCPath Exam Focus: Distinction between MGUS, Smouldering Multiple Myeloma (SMM), and symptomatic Multiple Myeloma requiring treatment. Core SBA themes include SLiM-CRAB criteria, Whole-Body Low-Dose CT (WBLDCT) superiority over skeletal survey, emergency management of spinal cord compression, and renal impairment induction without bortezomib dose adjustment.",
             keyCutoffs = "• SLiM Biomarkers (>=80% risk of progression in 2 yr):\n  - S: Sixty percent clonal bone marrow plasma cells (>=60%)\n  - Li: Light chain ratio (involved/uninvolved sFLC ratio >=100 with involved >=100 mg/L)\n  - M: MRI >1 focal bone lesion (>=5 mm in size)\n• CRAB Criteria:\n  - C: Calcium >2.75 mmol/L (or >0.25 mmol/L above ULN)\n  - R: Renal insufficiency (CrCl <40 mL/min or creatinine >177 umol/L)\n  - A: Anaemia (Hb <100 g/L or >20 g/L below normal)\n  - B: Bone lesions (>=1 osteolytic lesions on WBLDCT/PET-CT/skeletal survey)",
             stagingCriteria = "R-ISS Staging System:\n• Stage I: ISS I (beta-2 microglobulin <3.5 mg/L & albumin >=35 g/L), normal LDH, standard risk FISH\n• Stage III: ISS III (beta-2 microglobulin >=5.5 mg/L) with high-risk FISH [del(17p), t(4;14), t(14;16)] OR high LDH\n• Stage II: Neither Stage I nor Stage III",
-            recommendations = "• Rec 1 (Grade 1A): Whole-body low-dose CT (WBLDCT) is the preferred initial imaging modality over plain skeletal surveys; plain skeletal survey misses ~30% of lytic lesions.\n• Rec 2 (Grade 1A): In suspected myeloma with acute renal failure, immediately initiate vigorous hydration, avoid nephrotoxic drugs/radiocontrast, and commence Bortezomib + Dexamethasone (Bortezomib requires no renal dose modification).\n• Rec 3 (Grade 1A): Suspected spinal cord compression is a haematological emergency requiring whole-spine MRI within 24 hours and emergency dexamethasone 16 mg daily.\n• Rec 4 (Grade 1A): SLiM criteria (>=60% bone marrow plasma cells, involved/uninvolved sFLC ratio >=100, >1 focal MRI lesion >=5mm) define myeloma requiring immediate anti-myeloma therapy regardless of CRAB symptoms.\n• Rec 5 (Grade 1B): Bisphosphonates (Zoledronic acid or Pamidronate) should be administered to all patients requiring frontline therapy to prevent skeletal-related events.",
-            url = "https://doi.org/10.1016/S1470-2045(14)70442-5"
+            recommendations = "• Rec 1: Whole-body low-dose CT (WBLDCT) is the preferred initial imaging modality over plain skeletal surveys; plain skeletal survey misses ~30% of lytic lesions.\n• Rec 2: In suspected myeloma with acute renal failure, immediately initiate vigorous hydration, avoid nephrotoxic drugs/radiocontrast, and commence Bortezomib + Dexamethasone (Bortezomib requires no renal dose modification).\n• Rec 3: Suspected spinal cord compression is a haematological emergency requiring whole-spine MRI within 24 hours and emergency dexamethasone 16 mg daily.\n• Rec 4: SLiM criteria (>=60% bone marrow plasma cells, involved/uninvolved sFLC ratio >=100, >1 focal MRI lesion >=5mm) define myeloma requiring immediate anti-myeloma therapy regardless of CRAB symptoms.\n• Rec 5: Bisphosphonates (Zoledronic acid or Pamidronate) should be administered to all patients requiring frontline therapy to prevent skeletal-related events.",
+            url = "https://doi.org/10.1016/S1470-2045(14)70442-5",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "who_haem_5th",
@@ -41,101 +43,117 @@ object SeedData {
             citation = "Alaggio R, Amador C, Anagnostopoulos I, et al. Leukemia. 2022;36:1720–1748.",
             category = "Malignant Haematology",
             summary = "FRCPath Exam Focus: Diagnostic criteria for acute leukaemias, myelodysplastic neoplasms, and mature lymphoid neoplasms. Essential SBA concepts include cytogenetic exceptions to the 20% blast threshold in AML (PML-RARA, RUNX1-RUNX1T1, CBFB-MYH11), sequential flow cytometry immunophenotyping of B-ALL differentiation, and distinguishing Pre-B ALL from Mature B-ALL.",
-            keyCutoffs = "• AML: >=20% blasts in bone marrow or blood (or <20% if defining genetics: PML-RARA, RUNX1-RUNX1T1, CBFB-MYH11, KMT2A-rearranged, DEK-NUP214)\n• B-ALL Differentiation Stages:\n  - Pro-B: CD19+, HLA-DR+, TdT+, CD10-, Cyt Ig-, SmIg-\n  - Common ALL: CD19+, CD10+ (CALLA), TdT+, Cyt Ig-, SmIg-\n  - Pre-B ALL: CD19+, CD10+, TdT+, Cytoplasmic mu heavy chain (Cyt Ig)+, SmIg-\n  - Mature B-ALL (Burkitt): SmIg+, CD19+, CD20+, CD10+, BCL6+, TdT- (t(8;14) MYC-IGH)",
+            keyCutoffs = "• AML: >=20% blasts in bone marrow or blood, EXCEPT AML with defining genetic abnormalities, which WHO-HAEM5 diagnoses at any blast count (e.g. PML::RARA, RUNX1::RUNX1T1, CBFB::MYH11, KMT2A rearrangement, DEK::NUP214, MECOM rearrangement, NUP98 rearrangement, NPM1). BCR::ABL1 and CEBPA-mutated AML still require >=20%. (The ICC 2022 uses >=10% for most of these.)\n• B-ALL Differentiation Stages (EGIL-style subgroups):\n  - Pro-B: CD19+, HLA-DR+, TdT+, CD10-, Cyt Ig-, SmIg-\n  - Common ALL: CD19+, CD10+ (CALLA), TdT+, Cyt Ig-, SmIg-\n  - Pre-B ALL: CD19+, CD10+, TdT+, Cytoplasmic mu heavy chain (Cyt Ig)+, SmIg-\n  - SmIg+, TdT- with CD10+/BCL6+ and MYC::IGH t(8;14): Burkitt lymphoma/leukaemia, a MATURE B-cell neoplasm in WHO-HAEM5 (the old FAB 'L3 / mature B-ALL' label is obsolete)",
             stagingCriteria = "Subclassification of acute leukaemias by defining recurrent genetic abnormalities vs. differentiation.",
-            recommendations = "• Rec 1 (Grade 1A): Multiparameter flow cytometry, conventional karyotyping, and rapid molecular genetics (FISH/RT-PCR) are mandatory at baseline for all acute leukaemias.\n• Rec 2 (Grade 1A): In AML with defining cytogenetic rearrangements [t(15;17)(q22;q21.2) PML-RARA, t(8;21)(q22;q22.1) RUNX1-RUNX1T1, inv(16)(p13.1q22) CBFB-MYH11], the diagnosis of AML is established regardless of bone marrow or blood blast percentage (even if <20%).\n• Rec 3 (Grade 1A): Emergency clinical suspicion of Acute Promyelocytic Leukaemia (APL) mandates immediate administration of All-Trans Retinoic Acid (ATRA) prior to genetic confirmation.\n• Rec 4 (Grade 1B): In B-ALL, distinction between Pro-B (CD10-), Common ALL (CD10+), Pre-B ALL (Cytoplasmic mu heavy chain+), and Mature B-ALL (Surface Ig+) dictates risk stratification and targeted therapy.\n• Rec 5 (Grade 1B): Paroxysmal Nocturnal Haemoglobinuria (PNH) clone evaluation requires high-sensitivity flow cytometry assessing CD55, CD59, and FLAER on granulocytes and monocytes.",
-            url = "https://doi.org/10.1038/s41375-022-01620-2"
+            recommendations = "The WHO classification defines diagnostic criteria; it does not issue graded recommendations.\n• Criterion 1: Integrated diagnosis requires morphology, multiparameter flow cytometry, cytogenetics and molecular genetics (FISH/RT-PCR/NGS).\n• Criterion 2: AML with a defining genetic abnormality [e.g. t(15;17) PML::RARA, t(8;21) RUNX1::RUNX1T1, inv(16)/t(16;16) CBFB::MYH11] is diagnosed regardless of blast percentage (BCR::ABL1 and CEBPA excepted).\n• Criterion 3: In B-ALL, Pro-B (CD10-), Common (CD10+), and Pre-B (cytoplasmic mu+) subgroups are immunophenotypic stages; genetic subtype (e.g. BCR::ABL1, KMT2A, hyperdiploidy) drives risk.\n• Clinical note (ELN, not WHO): suspected APL warrants immediate ATRA before genetic confirmation.\n• PNH testing (ICCS guidance, not WHO): high-sensitivity flow using FLAER with CD24 on neutrophils and FLAER with CD14 on monocytes; CD59 on red cells for clone typing. CD55 alone is not recommended.",
+            url = "https://doi.org/10.1038/s41375-022-01620-2",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_transfusion_components",
             title = "British Society for Haematology: Guidelines on the use of blood components & prevention of Transfusion-Associated Graft-versus-Host Disease",
             issuingBody = "British Society for Haematology",
             year = 2020,
-            citation = "BSH Transfusion Task Force: Guidelines for the clinical use of red cell, platelet, plasma and cryoprecipitate components.",
+            citation = "BSH guidelines: Estcourt LJ et al. Guidelines for the use of platelet transfusions. Br J Haematol. 2017;176:365-394; Foukaneli T et al. Guidelines on the use of irradiated blood components. Br J Haematol. 2020;191:704-724; plus BSH plasma/cryoprecipitate and warfarin-reversal guidance.",
             category = "Transfusion Medicine",
             summary = "FRCPath Exam Focus: Evidence-based selection of blood components, specific indications for cellular irradiation to prevent Transfusion-Associated Graft-versus-Host Disease (TA-GVHD), platelet transfusion thresholds across clinical scenarios, and emergency management of acute coagulopathies and life-threatening warfarin bleeding.",
-            keyCutoffs = "• Platelet transfusion thresholds: <10x10^9/L for stable marrow failure; <20x10^9/L with sepsis/fever; <50x10^9/L for moderate surgery/invasive procedure; <100x10^9/L for neurosurgery\n• Fibrinogen threshold: <1.5 g/L in major bleeding or obstetric haemorrhage (target >2.0 g/L in PPH)\n• Warfarin emergency reversal: Prothrombin Complex Concentrate (PCC 25-50 IU/kg) + IV Vitamin K 5-10 mg; avoid FFP unless PCC unavailable",
+            keyCutoffs = "• Platelet transfusion thresholds (BSH 2017): prophylaxis <10x10^9/L in reversible marrow failure (consider 10-20 with additional risk factors e.g. sepsis); CVC insertion 20; lumbar puncture 40; major surgery / percutaneous liver biopsy 50; epidural 80; neurosurgery or posterior eye surgery 100\n• Fibrinogen threshold: <1.5 g/L in major bleeding or obstetric haemorrhage (target >2.0 g/L in PPH)\n• Warfarin emergency reversal: Prothrombin Complex Concentrate (PCC 25-50 IU/kg) + IV Vitamin K 5-10 mg; avoid FFP unless PCC unavailable",
             stagingCriteria = "Mandatory indications for irradiated cellular components:\n• Treatment with purine analogues (fludarabine, cladribine, pentostatin) - lifelong\n• Treatment with bendamustine, clofarabine\n• Autologous and allogeneic stem cell transplant recipients\n• Hodgkin lymphoma (all stages, lifelong)\n• Intrauterine and exchange transfusions",
-            recommendations = "• Rec 1 (Grade 1A): Patients treated with purine analogues (Fludarabine, Cladribine, Pentostatin), Bendamustine, or Clofarabine MUST receive irradiated cellular components (red cells and platelets) LIFELONG to prevent fatal TA-GVHD.\n• Rec 2 (Grade 1A): In major life-threatening bleeding or intracranial haemorrhage on Warfarin, administer 4-factor Prothrombin Complex Concentrate (PCC 25–50 IU/kg) plus IV Vitamin K 5–10 mg immediately; FFP is NOT recommended unless PCC is unavailable.\n• Rec 3 (Grade 1A): Prophylactic platelet transfusion threshold is <10 x 10^9/L in stable bone marrow failure; <20 x 10^9/L in sepsis or mucositis; <50 x 10^9/L for moderate invasive procedures/lumbar puncture; and <100 x 10^9/L for neurosurgery or critical closed-space surgery.\n• Rec 4 (Grade 1A): Prophylactic platelet transfusions are CONTRAINDICATED in TTP, HIT, and post-transfusion purpura unless life-threatening hemorrhage is present.\n• Rec 5 (Grade 1A): Fibrinogen threshold in major obstetric or trauma haemorrhage is <1.5–2.0 g/L, requiring replacement with Cryoprecipitate (two 5-unit pools) or Fibrinogen Concentrate.",
-            url = "https://b-s-h.org.uk/guidelines/guidelines/the-administration-of-blood-components"
+            recommendations = "• Rec 1: Patients treated with purine analogues (Fludarabine, Cladribine, Pentostatin), Bendamustine, or Clofarabine MUST receive irradiated cellular components (red cells and platelets) LIFELONG to prevent fatal TA-GVHD.\n• Rec 2: In major life-threatening bleeding or intracranial haemorrhage on Warfarin, administer 4-factor Prothrombin Complex Concentrate (PCC 25–50 IU/kg) plus IV Vitamin K 5–10 mg immediately; FFP is NOT recommended unless PCC is unavailable.\n• Rec 3: Prophylactic platelet transfusion threshold is <10 x 10^9/L in reversible bone marrow failure (consider 10-20 x 10^9/L with additional bleeding risk such as sepsis); procedure thresholds: CVC 20, lumbar puncture 40, major surgery 50, epidural 80, neurosurgery/posterior eye 100 x 10^9/L.\n• Rec 4: Platelet transfusion is relatively contraindicated in TTP and HIT (and generally avoided in post-transfusion purpura) unless there is life-threatening haemorrhage.\n• Rec 5: Fibrinogen threshold in major obstetric or trauma haemorrhage is <1.5–2.0 g/L, requiring replacement with Cryoprecipitate (two 5-unit pools) or Fibrinogen Concentrate.",
+            url = "https://b-s-h.org.uk/guidelines/guidelines/the-administration-of-blood-components",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "ukhcdo_haemostasis_2022",
-            title = "UKHCDO Guidelines: Diagnosis and Management of Heparin-Induced Thrombocytopenia (HIT) and Acquired Haemophilia A",
-            issuingBody = "United Kingdom Haemophilia Centre Doctors' Organisation",
-            year = 2022,
-            citation = "UKHCDO Working Party Guidelines for acquired coagulation disorders, HIT, and factor inhibitors.",
+            title = "BSH Guideline on Heparin-Induced Thrombocytopenia (HIT) and UKHCDO Guideline on Acquired Haemophilia A",
+            issuingBody = "British Society for Haematology (HIT) / UKHCDO (acquired haemophilia)",
+            year = 2013,
+            citation = "Watson H, Davidson S, Keeling D. Guidelines on the diagnosis and management of heparin-induced thrombocytopenia: second edition. Br J Haematol. 2012;159:528-540. Collins P et al. Diagnosis and management of acquired coagulation inhibitors: a guideline from UKHCDO. Br J Haematol. 2013;162:758-773.",
             category = "Haemostasis & Thrombosis",
             summary = "FRCPath Exam Focus: Rapid assessment and management of suspected Heparin-Induced Thrombocytopenia (HIT), calculating and interpreting the 4Ts score, ordering appropriate screening and functional assays, and distinguishing acquired Factor VIII inhibitors from Lupus Anticoagulants in unexplained prolonged APTT.",
-            keyCutoffs = "• 4Ts Score: High probability (6-8), Intermediate (4-5), Low (0-3)\n• Platelet count drop >50% and nadir >=20x10^9/L 5-10 days after heparin exposure (or <1 day if heparin in past 30 days)\n• Acquired Haemophilia A vs Lupus Anticoagulant:\n  - Isolated prolonged APTT with normal PT\n  - 50:50 mixing test fails to correct in both, but FVIII inhibitor is time- and temperature-dependent (progressive prolongation after 2h at 37°C)\n  - DRVVT with platelet neutralization procedure (PNP) corrects with excess phospholipid in Lupus Anticoagulant, NOT in FVIII inhibitor",
+            keyCutoffs = "• 4Ts Score: High probability (6-8), Intermediate (4-5), Low (0-3)\n• Platelet count drop >50% and nadir >=20x10^9/L 5-10 days after heparin exposure (or <1 day if heparin in past 30 days)\n• Acquired Haemophilia A vs Lupus Anticoagulant:\n  - Isolated prolonged APTT with normal PT\n  - 50:50 mix: a lupus anticoagulant typically fails to correct immediately; an acquired FVIII inhibitor may correct (or nearly) immediately, then prolongs after 1-2 h incubation at 37°C (time- and temperature-dependent)\n  - DRVVT with platelet neutralization procedure (PNP) corrects with excess phospholipid in Lupus Anticoagulant, NOT in FVIII inhibitor",
             stagingCriteria = "Bethesda inhibitor assay: <5 Bethesda Units (BU) low-titre; >=5 BU high-titre inhibitor.",
-            recommendations = "• Rec 1 (Grade 1A): In suspected HIT with an intermediate or high 4Ts score (>=4), immediately stop ALL forms of heparin (including catheter line flushes) and start therapeutic non-heparin anticoagulation (Argatroban, Fondaparinux, Danaparoid).\n• Rec 2 (Grade 1A): Do NOT administer Warfarin in acute HIT until platelets have recovered to >150 x 10^9/L, due to the severe risk of microvascular thrombosis and venous limb gangrene caused by early Protein C depletion.\n• Rec 3 (Grade 1A): Do NOT give prophylactic platelet transfusions in HIT as they may fuel arterial and venous thrombotic events.\n• Rec 4 (Grade 1A): In Acquired Haemophilia A with active bleeding, initiate bypassing therapy immediately with recombinant activated Factor VII (rFVIIa 90 mcg/kg) or Activated Prothrombin Complex Concentrate (FEIBA 50–100 U/kg); avoid standard FVIII in high-titre inhibitors.\n• Rec 5 (Grade 1A): Diagnostic workup of unexplained isolated prolonged APTT must include 50:50 mixing test with 2-hour incubation at 37°C (to detect time-dependent FVIII inhibitors) and DRVVT with platelet neutralization procedure (to confirm lupus anticoagulant).",
-            url = "https://www.ukhcdo.org/guidelines/"
+            recommendations = "• Rec 1: In suspected HIT with an intermediate or high 4Ts score (>=4), immediately stop ALL forms of heparin (including catheter line flushes) and start therapeutic-dose non-heparin anticoagulation (argatroban or danaparoid; fondaparinux is used off-label).\n• Rec 2: Do NOT administer Warfarin in acute HIT until platelets have recovered to >150 x 10^9/L, due to the severe risk of microvascular thrombosis and venous limb gangrene caused by early Protein C depletion.\n• Rec 3: Do NOT give prophylactic platelet transfusions in HIT as they may fuel arterial and venous thrombotic events.\n• Rec 4: In Acquired Haemophilia A with active bleeding, initiate bypassing therapy immediately with recombinant activated Factor VII (rFVIIa 90 mcg/kg) or Activated Prothrombin Complex Concentrate (FEIBA 50–100 U/kg); avoid standard FVIII in high-titre inhibitors.\n• Rec 5: Diagnostic workup of unexplained isolated prolonged APTT must include 50:50 mixing test with 2-hour incubation at 37°C (to detect time-dependent FVIII inhibitors) and DRVVT with platelet neutralization procedure (to confirm lupus anticoagulant).",
+            url = "https://pubmed.ncbi.nlm.nih.gov/?term=Watson+2012+heparin-induced+thrombocytopenia+second+edition+British+Journal+of+Haematology",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_iron_haemochromatosis",
             title = "BSH Guideline: Diagnosis and management of genetic haemochromatosis and iron overload",
             issuingBody = "British Society for Haematology",
-            year = 2021,
-            citation = "Fitzsimons EJ, Cullis JO, Thomas DW, et al. Br J Haematol. 2018;181(4):444-455; updated 2021.",
+            year = 2018,
+            citation = "Fitzsimons EJ, Cullis JO, Thomas DW, et al. Diagnosis and therapy of genetic haemochromatosis (review and 2017 update). Br J Haematol. 2018;181(3):293-303.",
             category = "General Haematology",
             summary = "FRCPath Exam Focus: Investigation of hyperferritinaemia, HFE genotyping (C282Y homozygotes vs C282Y/H63D compound heterozygotes), evaluating hepatic fibrosis risk with non-invasive biomarkers or FibroScan, and monitoring induction vs maintenance venesection endpoints.",
             keyCutoffs = "• Transferrin saturation >50% in men, >45% in women indicates iron overload\n• Induction Venesection target: Serum ferritin <50 mcg/L\n• Maintenance phase target: Serum ferritin 50-100 mcg/L\n• Ferritin >1000 mcg/L, AST/ALT elevation, or platelets <200x10^9/L requires evaluation for hepatic fibrosis/cirrhosis (FibroScan or liver biopsy)",
             stagingCriteria = "Genotype categories: Type 1 HFE (C282Y/C282Y or C282Y/H63D), Type 2 Juvenile (HJV, HAMP), Type 3 TFR2, Type 4 Ferroportin.",
-            recommendations = "• Rec 1 (Grade 1A): Serum ferritin is the primary laboratory biomarker for monitoring induction venesection, with a target endpoint of <50 mcg/L (transferrin saturation fluctuates with diet and normalises late).\n• Rec 2 (Grade 1B): Measure haemoglobin prior to each venesection session; defer venesection if Hb falls below 110 g/L.\n• Rec 3 (Grade 1A): In patients with C282Y homozygosity, serum ferritin >1000 mcg/L, elevated transaminases, or platelets <200 x 10^9/L warrants evaluation for liver cirrhosis by FibroScan (transient elastography) or liver biopsy.\n• Rec 4 (Grade 1B): Maintenance venesection should aim to keep serum ferritin between 50 and 100 mcg/L, typically requiring 3–4 venesections annually.\n• Rec 5 (Grade 1A): First-degree adult relatives (siblings, parents, adult children) of confirmed C282Y homozygotes should be offered genetic counselling and cascade testing (HFE genotype and iron studies).",
-            url = "https://doi.org/10.1111/bjh.15164"
+            recommendations = "• Rec 1: Serum ferritin is the primary laboratory biomarker for monitoring induction venesection, with a target endpoint of <50 mcg/L (transferrin saturation fluctuates with diet and normalises late).\n• Rec 2: Measure haemoglobin prior to each venesection session; defer venesection if Hb falls below 110 g/L.\n• Rec 3: In patients with C282Y homozygosity, serum ferritin >1000 mcg/L, elevated transaminases, or platelets <200 x 10^9/L warrants evaluation for liver cirrhosis by FibroScan (transient elastography) or liver biopsy.\n• Rec 4: Maintenance venesection should aim to keep serum ferritin between 50 and 100 mcg/L, typically requiring 3–4 venesections annually.\n• Rec 5: First-degree adult relatives (siblings, parents, adult children) of confirmed C282Y homozygotes should be offered genetic counselling and cascade testing (HFE genotype and iron studies).",
+            url = "https://doi.org/10.1111/bjh.15164",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_sickle_transfusion",
             title = "BSH Guideline: Red cell transfusion in sickle cell disease and management of alloimmunisation",
             issuingBody = "British Society for Haematology",
-            year = 2021,
-            citation = "Davis BA, Allard S, Qureshi A, et al. Br J Haematol. 2017;176(2):179-191; updated 2021.",
+            year = 2017,
+            citation = "Davis BA, Allard S, Qureshi A, et al. Guidelines on red cell transfusion in sickle cell disease. Part I: principles and laboratory aspects; Part II: indications for transfusion. Br J Haematol. 2017;176:179-191 and 192-209.",
             category = "Transfusion Medicine",
             summary = "FRCPath Exam Focus: Pre-operative transfusion strategies in Sickle Cell Disease (SCD), management of Acute Chest Syndrome (ACS) with automated red cell exchange, preventing and identifying delayed haemolytic transfusion reactions (DHTR) and hyperhaemolysis, and mandatory extended phenotyping.",
-            keyCutoffs = "• Pre-op Hb S target: <30% for major/orthopaedic/cardiothoracic surgery (reduces post-op ACS from 30% to <3%)\n• Maximum post-transfusion Hb: 100 - 110 g/L (never exceed 110 g/L to avoid life-threatening hyperviscosity)\n• Extended matching: Mandatory Rh (D, C, c, E, e) and Kell (K) matching for all SCD patients",
-            stagingCriteria = "Indications for automated red cell exchange vs top-up: Exchange preferred for ACS with hypoxaemia, acute stroke, pre-op when baseline Hb >90 g/L.",
-            recommendations = "• Rec 1 (Grade 1A): Extended Rh (D, C, c, E, e) and Kell (K) antigen-matched, HbS-negative, leucodepleted red cells must be provided for all sickle cell patients to prevent alloimmunization.\n• Rec 2 (Grade 1A): Prior to major surgery (orthopaedic, cardiothoracic, major abdominal), target a pre-operative Hb S level of <30% using top-up transfusion (if baseline Hb <90 g/L) or automated red cell exchange (if baseline Hb >=90 g/L).\n• Rec 3 (Grade 1A): The maximum post-transfusion haemoglobin must NOT exceed 100–110 g/L to avoid precipitating life-threatening hyperviscosity and vaso-occlusive crisis.\n• Rec 4 (Grade 1A): In Acute Chest Syndrome with falling PaO2 (<9 kPa / 70 mmHg), progressive lung infiltrates, or haemodynamic instability, automated red cell exchange apheresis is life-saving and should be instituted urgently.\n• Rec 5 (Grade 1A): If hyperhaemolysis occurs (severe anaemia with Hb lower than pre-transfusion level, reticulocytopenia, and positive DAT/delayed reaction): stop all transfusions immediately; treat with high-dose intravenous methylprednisolone and IVIG +/- eculizumab.",
-            url = "https://doi.org/10.1111/bjh.14346"
+            keyCutoffs = "• Pre-op (HbSS/HbSbeta0): top-up transfusion to Hb ~100 g/L before medium-risk surgery (TAPS trial: fewer peri-operative complications); exchange transfusion (target HbS <30%) considered for high-risk surgery or when baseline Hb is too high for top-up\n• Avoid post-transfusion Hb above ~100-110 g/L (hyperviscosity)\n• Extended matching: Mandatory Rh (D, C, c, E, e) and Kell (K) matching for all SCD patients",
+            stagingCriteria = "Indications for automated red cell exchange vs top-up: Exchange preferred for severe/progressive ACS, acute stroke, and pre-op when baseline Hb is too high for top-up.",
+            recommendations = "• Rec 1: Extended Rh (D, C, c, E, e) and Kell (K) antigen-matched, HbS-negative, leucodepleted red cells must be provided for all sickle cell patients to prevent alloimmunization.\n• Rec 2: Before medium-risk surgery in HbSS/HbSbeta0, give pre-operative top-up transfusion to Hb ~100 g/L; consider exchange transfusion (HbS <30%) for high-risk surgery or when baseline Hb is high (e.g. >=90 g/L) so that top-up would exceed the Hb ceiling.\n• Rec 3: The maximum post-transfusion haemoglobin must NOT exceed 100–110 g/L to avoid precipitating life-threatening hyperviscosity and vaso-occlusive crisis.\n• Rec 4: In Acute Chest Syndrome with falling PaO2 (<9 kPa / 70 mmHg), progressive lung infiltrates, or haemodynamic instability, automated red cell exchange apheresis is life-saving and should be instituted urgently.\n• Rec 5: If hyperhaemolysis occurs (severe anaemia with Hb lower than pre-transfusion level, reticulocytopenia, and positive DAT/delayed reaction): stop all transfusions immediately; treat with high-dose intravenous methylprednisolone and IVIG +/- eculizumab.",
+            url = "https://doi.org/10.1111/bjh.14346",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_apl_guidelines",
-            title = "BSH & ELN Guidelines for the Diagnosis and Management of Acute Promyelocytic Leukaemia",
-            issuingBody = "British Society for Haematology / ELN",
-            year = 2020,
-            citation = "Sanz MA, Fenaux P, Tallman MS, et al. Blood. 2019;133(7):645-664; adapted BSH Guidance.",
+            title = "European LeukemiaNet (ELN) Recommendations for the Management of Acute Promyelocytic Leukaemia",
+            issuingBody = "European LeukemiaNet",
+            year = 2019,
+            citation = "Sanz MA, Fenaux P, Tallman MS, et al. Management of acute promyelocytic leukemia: updated recommendations from an expert panel of the European LeukemiaNet. Blood. 2019;133(15):1630-1643.",
             category = "Malignant Haematology",
             summary = "FRCPath Exam Focus: Emergency management of suspected Acute Promyelocytic Leukaemia (APL) with t(15;17) PML-RARA, immediate coagulopathy resuscitation, Differentiation Syndrome prophylaxis and treatment, chemotherapy-free frontline regimens (ATRA + Arsenic Trioxide), and molecular MRD monitoring.",
-            keyCutoffs = "• High-risk APL: WBC >10x10^9/L (risk of fatal early intracranial haemorrhage and differentiation syndrome)\n• Standard/Low-risk: WBC <=10x10^9/L\n• Platelet transfusion threshold: maintain >50x10^9/L\n• Fibrinogen threshold: maintain >1.5 g/L with cryoprecipitate or fibrinogen concentrate",
+            keyCutoffs = "• High-risk APL: WBC >10x10^9/L (risk of fatal early intracranial haemorrhage and differentiation syndrome)\n• Standard/Low-risk: WBC <=10x10^9/L\n• Platelet transfusion threshold: maintain >30-50x10^9/L\n• Fibrinogen threshold: maintain >1.0-1.5 g/L with cryoprecipitate or fibrinogen concentrate",
             stagingCriteria = "Sanz Risk Score (Low, Intermediate, High based on WBC and Platelet count).",
-            recommendations = "• Rec 1 (Grade 1A): Administer All-Trans Retinoic Acid (ATRA 45 mg/m²/day in divided doses) IMMEDIATELY upon morphological suspicion of APL; do NOT await cytogenetic or molecular confirmation of PML-RARA.\n• Rec 2 (Grade 1A): Aggressively correct coagulopathy to prevent early fatal intracranial hemorrhage: maintain platelets >50 x 10^9/L and fibrinogen >1.5 g/L with regular cryoprecipitate or fibrinogen concentrate until coagulopathy resolves.\n• Rec 3 (Grade 1A): In Differentiation Syndrome (unexplained fever, weight gain >5 kg, dyspnoea, pulmonary infiltrates, pericardial effusion): immediately start IV Dexamethasone 10 mg BD at first sign; temporarily pause ATRA/ATO only if severe respiratory compromise occurs.\n• Rec 4 (Grade 1A): In standard/low-risk APL (WBC <=10 x 10^9/L), frontline chemotherapy-free treatment with ATRA plus Arsenic Trioxide (ATO) is the standard of care, achieving >95% cure rates without anthracyclines.\n• Rec 5 (Grade 1A): High-risk APL (WBC >10 x 10^9/L) requires cytoreductive therapy (Gemtuzumab ozogamicin or Idarubicin) added to ATRA + ATO, with high vigilance for fatal early coagulopathic death.",
-            url = "https://doi.org/10.1182/blood-2018-04-808006"
+            recommendations = "• Rec 1: Administer All-Trans Retinoic Acid (ATRA 45 mg/m²/day in divided doses) IMMEDIATELY upon morphological suspicion of APL; do NOT await cytogenetic or molecular confirmation of PML-RARA.\n• Rec 2: Aggressively correct coagulopathy to prevent early fatal intracranial hemorrhage: maintain platelets >30-50 x 10^9/L and fibrinogen >1.0-1.5 g/L with regular cryoprecipitate or fibrinogen concentrate until coagulopathy resolves.\n• Rec 3: In Differentiation Syndrome (unexplained fever, weight gain >5 kg, dyspnoea, pulmonary infiltrates, pericardial effusion): immediately start IV Dexamethasone 10 mg BD at first sign; temporarily pause ATRA/ATO only if severe respiratory compromise occurs.\n• Rec 4: In standard/low-risk APL (WBC <=10 x 10^9/L), frontline chemotherapy-free treatment with ATRA plus Arsenic Trioxide (ATO) is the standard of care, achieving >95% cure rates without anthracyclines.\n• Rec 5: High-risk APL (WBC >10 x 10^9/L) requires cytoreductive therapy (Gemtuzumab ozogamicin or Idarubicin) added to ATRA + ATO, with high vigilance for fatal early coagulopathic death.",
+            url = "https://pubmed.ncbi.nlm.nih.gov/?term=Sanz+2019+management+of+acute+promyelocytic+leukemia+European+LeukemiaNet",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_antiphospholipid",
             title = "BSH Guideline on Investigation and Management of Antiphospholipid Syndrome (APS)",
             issuingBody = "British Society for Haematology",
-            year = 2022,
-            citation = "Keeling D, Mackie I, Moore GW, Greer IA, Greaves M. Br J Haematol. 2012;157(1):47-58; updated Sydney criteria consensus.",
+            year = 2012,
+            citation = "Keeling D, Mackie I, Moore GW, Greer IA, Greaves M. Guidelines on the investigation and management of antiphospholipid syndrome. Br J Haematol. 2012;157(1):47-58. Classification: revised Sapporo (Sydney) criteria 2006, superseded for research classification by the 2023 ACR/EULAR APS criteria.",
             category = "Haemostasis & Thrombosis",
-            summary = "FRCPath Exam Focus: Diagnostic criteria for Antiphospholipid Syndrome (APS) per Sydney consensus, interpreting the persistent triple-positive profile (LA, aCL, anti-beta2GPI), the critical contraindication of DOACs in arterial/triple-positive APS, obstetric APS regimens, and Catastrophic APS (CAPS) salvage.",
+            summary = "FRCPath Exam Focus: Diagnostic criteria for Antiphospholipid Syndrome (APS) per Sydney consensus (and the 2023 ACR/EULAR classification criteria), interpreting the persistent triple-positive profile (LA, aCL, anti-beta2GPI), why DOACs should be avoided in arterial/triple-positive APS, obstetric APS regimens, and Catastrophic APS (CAPS) salvage.",
             keyCutoffs = "• Laboratory criteria: Positive on 2 or more occasions at least 12 weeks apart:\n  1. Lupus Anticoagulant (LA) detected per ISTH criteria (screening, mixing, confirmation)\n  2. Anticardiolipin IgG/IgM (>40 GPL/MPL or >99th centile)\n  3. Anti-beta-2-glycoprotein-I IgG/IgM (>99th centile)\n• Obstetric criteria: >=3 consecutive early miscarriages (<10w), >=1 fetal death (>=10w), or premature birth <34w with severe pre-eclampsia/placental insufficiency",
-            stagingCriteria = "Triple-positive APS carries the highest thrombotic risk; DOACs are contraindicated in triple-positive arterial/venous APS.",
-            recommendations = "• Rec 1 (Grade 1A): In patients with thrombotic APS, Warfarin (target INR 2.0–3.0) remains the standard of care; Direct Oral Anticoagulants (DOACs) are CONTRAINDICATED in patients with triple-positive APS due to significantly increased risk of recurrent arterial thromboembolism.\n• Rec 2 (Grade 1A): Laboratory criteria require demonstration of Lupus Anticoagulant, Anticardiolipin IgG/IgM (>40 GPL/MPL or >99th centile), or Anti-beta-2-glycoprotein-I on two or more occasions at least 12 weeks apart.\n• Rec 3 (Grade 1A): In obstetric APS (recurrent miscarriage or late fetal loss): treatment with Low-Dose Aspirin (75–150 mg daily) plus prophylactic LMWH throughout pregnancy and 6 weeks postpartum significantly improves live birth rates.\n• Rec 4 (Grade 1A): In Catastrophic APS (CAPS): emergency multimodal treatment must be initiated immediately with therapeutic anticoagulation + high-dose corticosteroids + plasma exchange +/- intravenous immunoglobulin (IVIG) or eculizumab.\n• Rec 5 (Grade 1B): Asymptomatic individuals with incidental persistent triple-positive antiphospholipid antibodies should receive primary thromboprophylaxis with low-dose aspirin (75 mg daily) and venous thromboprophylaxis during high-risk periods.",
-            url = "https://doi.org/10.1111/bjh.18386"
+            stagingCriteria = "Triple-positive APS carries the highest thrombotic risk; DOACs are not recommended (avoid) in triple-positive APS and in arterial APS.",
+            recommendations = "• Rec 1: In patients with thrombotic APS, warfarin (target INR 2.0–3.0) remains the standard of care; DOACs should be avoided in triple-positive APS (TRAPS trial: excess arterial events with rivaroxaban) and in arterial APS.\n• Rec 2: Laboratory criteria require demonstration of Lupus Anticoagulant, Anticardiolipin IgG/IgM (>40 GPL/MPL or >99th centile), or Anti-beta-2-glycoprotein-I on two or more occasions at least 12 weeks apart.\n• Rec 3: In obstetric APS (recurrent miscarriage or late fetal loss): treatment with Low-Dose Aspirin (75–150 mg daily) plus prophylactic LMWH throughout pregnancy and 6 weeks postpartum significantly improves live birth rates.\n• Rec 4: In Catastrophic APS (CAPS): emergency multimodal treatment must be initiated immediately with therapeutic anticoagulation + high-dose corticosteroids + plasma exchange +/- intravenous immunoglobulin (IVIG) or eculizumab.\n• Rec 5: Asymptomatic individuals with incidental persistent triple-positive antiphospholipid antibodies should receive primary thromboprophylaxis with low-dose aspirin (75 mg daily) and venous thromboprophylaxis during high-risk periods.",
+            url = "https://pubmed.ncbi.nlm.nih.gov/?term=Keeling+2012+guidelines+investigation+management+antiphospholipid+syndrome",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_ttp_guidelines",
-            title = "BSH Guidelines on the Diagnosis and Management of Thrombotic Thrombocytopenic Purpura (TTP)",
-            issuingBody = "British Society for Haematology",
-            year = 2023,
-            citation = "Scully M, Cataland S, Coppo P, et al. J Thromb Haemost. 2020;18(10):2485-2495; BSH TTP guidelines.",
+            title = "Diagnosis and Management of Thrombotic Thrombocytopenic Purpura (TTP): BSH Guideline and ISTH Guidance",
+            issuingBody = "British Society for Haematology / ISTH",
+            year = 2020,
+            citation = "Scully M, Hunt BJ, Benjamin S, et al. Guidelines on the diagnosis and management of TTP and other thrombotic microangiopathies. Br J Haematol. 2012;158:323-335. Zheng XL, Vesely SK, Cataland SR, et al. ISTH guidelines for the diagnosis and treatment of TTP. J Thromb Haemost. 2020;18:2486-2502.",
             category = "Haemostasis & Thrombosis",
             summary = "FRCPath Exam Focus: Emergency recognition and management of immune Thrombotic Thrombocytopenic Purpura (iTTP), PLASMIC score stratification, initiation of Therapeutic Plasma Exchange (TPE) with solvent-detergent FFP, Caplacizumab anti-vWF nanobody, Rituximab, and strict avoidance of platelet transfusions.",
             keyCutoffs = "• Diagnostic criteria: Severe microangiopathic haemolytic anaemia (MAHA) + thrombocytopenia without other evident cause\n• ADAMTS13 activity <10% confirms TTP diagnosis\n• PLASMIC score 6-7 predicts high probability of severe ADAMTS13 deficiency",
             stagingCriteria = "Acute presentation vs Relapse; Congenital TTP (Upshaw-Schulman) vs Immune TTP.",
-            recommendations = "• Rec 1 (Grade 1A): Suspected TTP is an extreme medical emergency: initiate Therapeutic Plasma Exchange (TPE) with solvent-detergent FFP (SD-FFP, 1.5 plasma volume) within 4–8 hours of presentation without waiting for ADAMTS13 results.\n• Rec 2 (Grade 1A): Platelet transfusions are STRICTLY CONTRAINDICATED in TTP as they fuel widespread microvascular thrombosis; platelets are only permitted in life-threatening intracranial or catastrophic hemorrhage.\n• Rec 3 (Grade 1A): Administer high-dose corticosteroids (IV Methylprednisolone 1 g/day for 3 days followed by oral prednisolone 1 mg/kg/day) immediately alongside TPE.\n• Rec 4 (Grade 1A): Caplacizumab (anti-vWF nanobody 10 mg IV stat before TPE, then 10 mg SC daily post-TPE) should be added to upfront therapy to rapidly block platelet-vWF microthrombi and prevent early death.\n• Rec 5 (Grade 1A): Rituximab (375 mg/m² weekly x4 or 1000 mg days 1 and 15) should be administered in the first week to suppress anti-ADAMTS13 antibody production, reduce refractory disease, and prevent relapse.",
-            url = "https://doi.org/10.1111/jth.15006"
+            recommendations = "• Rec 1: Suspected TTP is an extreme medical emergency: initiate Therapeutic Plasma Exchange (TPE) with solvent-detergent FFP (SD-FFP, 1.5 plasma volume) within 4–8 hours of presentation without waiting for ADAMTS13 results.\n• Rec 2: Platelet transfusion is relatively contraindicated in TTP (risk of worsening microvascular thrombosis); reserve for life-threatening haemorrhage.\n• Rec 3: Administer high-dose corticosteroids (IV Methylprednisolone 1 g/day for 3 days followed by oral prednisolone 1 mg/kg/day) immediately alongside TPE.\n• Rec 4: Caplacizumab (anti-vWF nanobody 10 mg IV stat before TPE, then 10 mg SC daily post-TPE) should be added to upfront therapy to rapidly block platelet-vWF microthrombi and prevent early death.\n• Rec 5: Rituximab (375 mg/m² weekly x4 or 1000 mg days 1 and 15) should be administered in the first week to suppress anti-ADAMTS13 antibody production, reduce refractory disease, and prevent relapse.",
+            url = "https://doi.org/10.1111/jth.15006",
+            // Not yet checked against a primary source in this repo; needs consultant sign-off.
+            isVerified = false
         ),
         ApprovedResource(
             id = "bsh_haem_gynae_2026",
@@ -144,10 +162,10 @@ object SeedData {
             year = 2026,
             citation = "Biss T, Millen E, Warren C, Raheja P, Garside S, Motwani J, et al. Br J Haematol. 2026;209(3):919–927.",
             category = "Haemostasis & Thrombosis",
-            summary = "FRCPath Exam Focus: 2026 BSH & UKHCDO Good Practice Paper on multidisciplinary haematology-gynaecology care. Key SBA points: heavy menstrual bleeding (HMB) prevalence in bleeding disorders (up to 33% in adolescents), switching Rivaroxaban to Apixaban/Dabigatran for anticoagulant-induced HMB, and managing IUS expulsion risk.",
-            keyCutoffs = "• HMB prevalence: affects up to 25% of women; >=10% have an inherited bleeding disorder (IBD), rising to 33% in adolescents\n• 55% of GWBD report HMB; up to 70% of menstruating females on anticoagulants experience HMB\n• Only 15% of gynaecologists consider an IBD at initial consultation for HMB\n• GWBD require a median of 3 strategies for optimal response\n• Anticoagulant switches: Apixaban and Dabigatran have significantly lower incidence of HMB compared to Rivaroxaban\n• Peri-operative: Pre-op iron infusion and Hb optimization; liaison regarding neuraxial anaesthesia in anticoagulated women and IBDs",
+            summary = "FRCPath Exam Focus: 2026 BSH & UKHCDO Good Practice Paper on multidisciplinary haematology-gynaecology care. Key SBA points: >=10% of those presenting with heavy menstrual bleeding (HMB) have an inherited bleeding disorder (up to 33% of adolescents), anticoagulant-associated HMB (apixaban/dabigatran have a lower HMB incidence), and LNG-IUS expulsion risk.",
+            keyCutoffs = "• HMB prevalence: affects up to 25% of women; >=10% have an inherited bleeding disorder (IBD), rising to 33% in adolescents\n• 55% of GWBD report HMB; up to 70% of menstruating females on anticoagulants experience HMB\n• Only 15% of gynaecologists consider an IBD at initial consultation for HMB\n• GWBD require a median of 3 strategies for optimal response\n• Good-practice point (ungraded): in treatment-resistant HMB on anticoagulation, switching to apixaban or dabigatran may help, as they have a lower incidence of HMB (vs rivaroxaban)\n• Good-practice point (ungraded): LNG-IUS expulsion rates are reportedly higher in inherited bleeding disorders; menstrual suppression may reduce this\n• Peri-operative: Pre-op iron infusion and Hb optimization; liaison regarding neuraxial anaesthesia in anticoagulated women and IBDs",
             stagingCriteria = "PALM-COEIN Classification for Abnormal Uterine Bleeding (AUB):\n• Structural: Polyp, Adenomyosis, Leiomyoma (fibroids), Malignancy and hyperplasia\n• Non-structural: Coagulopathy, Ovulatory dysfunction, Endometrial, Iatrogenic, Not yet classified\n\nTarget Populations for MDT:\n1. Inherited or acquired bleeding disorder (including ITP) with HMB\n2. Pre-pubescent females with IBD in whom HMB is anticipated at menarche\n3. Adolescent females presenting with HMB from menarche (high prevalence of underlying IBD)\n4. Individuals receiving anticoagulants/antiplatelet therapy experiencing HMB\n5. Complex thrombotic risk requiring discussion of contraceptive choice, HMB, or HRT",
-            recommendations = "• Rec 1 (Grade 2C): Women and girls with bleeding/thrombotic disorders or requiring anticoagulation may benefit from a multidisciplinary haematology and gynaecology service.\n• Rec 2 (Grade 2D): Documented referral criteria shared with referrers; joint consultations with haematologist, gynaecologist, and clinical nurse specialist (CNS).\n• Rec 3 (Grade 2D): Clear communication of peri-procedural haemostatic planning and medication changes to GP and patient.\n• Rec 4 (Grade 2D): Extended use of COCP or progesterone-only preparations; Levonorgestrel-releasing IUS (Mirena) has higher expulsion rates in IBD—menstrual suppression reduces expulsion risk.\n• Rec 5 (Grade 2D): In anticoagulant-induced HMB, switch to Apixaban or Dabigatran which have a significantly lower incidence of HMB compared to Rivaroxaban.",
+            recommendations = "• Rec 1 (Grade 2C): Women and girls with bleeding/thrombotic disorders or requiring anticoagulant therapy may benefit from a multidisciplinary haematology and gynaecology service.\n• Rec 2 (Grade 2D): Eligibility criteria for referral should be clear, documented and shared with potential referrers.\n• Rec 3 (Grade 2D): Patients should be seen jointly by a haematologist and gynaecologist, supported by a clinical nurse specialist.\n• Rec 4 (Grade 2D): Management decisions and peri-procedural planning should be communicated clearly to other healthcare providers, with patients receiving copies of all correspondence.\n• Rec 5 (Grade 2D): Patient health outcomes and satisfaction should be monitored.\n• Rec 6 (Grade 2D): Opportunities for data collection and research should be optimised.\nNote: advice on DOAC switching and LNG-IUS use appears in the text as ungraded good practice, not as formal recommendations.",
             url = "https://doi.org/10.1111/bjh.70717"
         ),
         ApprovedResource(
@@ -157,10 +175,10 @@ object SeedData {
             year = 2026,
             citation = "Tam J, De la Salle B, Kapuya P, Reilly-Stitt C, Smith-Straney T, Cambridge T, et al. Br J Haematol. 2026;209(4):1489–1504.",
             category = "General Haematology",
-            summary = "FRCPath Exam Focus: 2026 BSH guidance update on point-of-care testing (POCT) in secondary care under ISO 15189:2022 standards. High-yield SBA concepts: handheld PT/INR meter inaccuracy above 4.0 and in APS, blood gas analyser (BGA) systematic Hb underestimation, and requiring quantitative high-sensitivity D-dimer matching STA or ELISA.",
-            keyCutoffs = "• POCT PT/INR: Comparable to central lab at INR <=4.0 (stable window INR 2–4); marked discrepancies in antiphospholipid syndrome (APS); analytical strip lot bias at INR >=4.0\n• POCT D-dimer: Only high-sensitivity quantitative assays matching STA Liatest or ELISA should be used (Grade 1B); qualitative assays must NOT be used for DVT/PE rule-out\n• Blood Gas Analysers (BGA): Systematically underestimate Hb/Hct compared to central lab (21% would be transfused by central lab that wouldn't on BGA; mean 8 g/L discrepancy); not interchangeable with central lab (Grade 1C)\n• Activated Clotting Time (ACT): Device-specific thresholds must be established due to high inter-device variability (Grade 2B)\n• Data Retention: Patient POCT results retained permanently (at least 8 years); QC logs, calibration, and competency records for at least 5 years",
+            summary = "FRCPath Exam Focus: 2026 BSH guidance update on point-of-care testing (POCT) in secondary care under ISO 15189:2022 standards. High-yield SBA concepts: handheld PT/INR meter inaccuracy above 4.0 and in APS, blood gas analyser (BGA) Hb disagreement with the central laboratory, and requiring quantitative high-sensitivity D-dimer matching STA or ELISA.",
+            keyCutoffs = "• POCT PT/INR: Comparable to central lab at INR <=4.0 (stable window INR 2–4); marked discrepancies in antiphospholipid syndrome (APS); analytical strip lot bias at INR >=4.0\n• POCT D-dimer: Only high-sensitivity quantitative assays matching STA Liatest or ELISA should be used (Grade 1B); qualitative assays must NOT be used for DVT/PE rule-out\n• Blood Gas Analysers (BGA): results disagree with the central lab in BOTH directions. Some studies show BGA underestimation (risking unnecessary transfusion); one found 21% of patients who would be transfused on the lab Hct would NOT be on the BGA Hct; another found systematic overestimation (mean 8 g/L). BGAs are not interchangeable with lab analysers (CLIA criteria) and cannot detect haemolysis. Rec (1C): do not substitute for lab Hb/Hct; may aid trends/immediate judgement\n• Activated Clotting Time (ACT): Device-specific thresholds must be established due to high inter-device variability (Grade 2B)\n• Data Retention: Patient POCT results retained permanently (at least 8 years); QC logs, calibration, and competency records for at least 5 years",
             stagingCriteria = "ISO 15189:2022 Quality Management System & Governance Framework:\n• Internal Quality Control (IQC) at decision-making thresholds + External Quality Assessment (EQA / UK NEQAS)\n• Standard Operating Procedures (SOPs) covering sample collection, analytical limitations, error flags, and reflex testing (e.g. HemoCue Hb <80 g/L reflexes to lab FBC & ferritin)\n• Adverse Incident Reporting: Mandatory reporting of transfusion-related POCT errors to the Serious Hazards of Transfusion (SHOT) haemovigilance scheme (e.g. BGA sample clotting/mixing error causing inappropriate transfusion and TACO)",
-            recommendations = "• Rec 1 (Grade 1A): Formal POCT policy detailing governance, quality assurance, risk management, and mandatory training/competency before device use.\n• Rec 2 (Grade 1B): Only high-sensitivity D-dimer matching STA or ELISA should be used; validation of viscoelastic clinical algorithms and reference ranges; QA framework with IQC and EQA.\n• Rec 3 (Grade 1C): Blood gas analysers should not substitute laboratory-based Hb/Hct testing; real-time LIMS interfacing to prevent transcription errors.\n• Rec 4 (Grade 1A): A no-blame incident reporting culture and mandatory reporting of adverse transfusion events to SHOT.\n• Rec 5 (Grade 2B): Device-specific thresholds should be established for ACT tests given inter-device variability.",
+            recommendations = "• Rec 1 (Grade 1A): Formal POCT policy detailing governance, quality assurance, risk management, and mandatory training/competency before device use.\n• Rec 2 (Grade 1B): Only high-sensitivity D-dimer matching STA or ELISA should be used; validation of viscoelastic clinical algorithms and reference ranges; QA framework with IQC and EQA.\n• Rec 3 (Grade 1C): Blood gas analysers should not substitute laboratory-based Hb/Hct testing; real-time LIMS interfacing to prevent transcription errors.\n• Rec 4 (Grade 1B): A no-blame incident reporting culture; transfusion-related POCT errors must be reported to SHOT.\n• Rec 5 (Grade 2B): Device-specific thresholds should be established for ACT tests given inter-device variability.",
             url = "https://doi.org/10.1111/bjh.70758"
         ),
         ApprovedResource(
@@ -170,10 +188,10 @@ object SeedData {
             year = 2026,
             citation = "MacDonald S, Pitchford T, Singh D, Fretwell R, Jenkins PV, Lawrence C, et al. Br J Haematol. 2026;209(3):928–938.",
             category = "Haemostasis & Thrombosis",
-            summary = "FRCPath Exam Focus: 2026 BSH laboratory guidance for suspected TTP. Vital SBA targets: pre-treatment 0.109 M (3.2%) sodium citrate tube, strict contraindication of EDTA tubes, blood film review within 60 minutes for platelets <30 x 10^9/L, ADAMTS13 turnaround standards, and anti-ADAMTS13 antibody ELISA within 72h.",
-            keyCutoffs = "• Diagnostic Threshold: Severe ADAMTS13 activity <10 IU/dL (<10%) confirms TTP (93% of acute iTTP present with <1 IU/dL)\n• Equivocal / Grey Zone: 10–20 IU/dL (requires clinical correlation, exclusion of other TMAs, anti-ADAMTS13 antibody testing, and consideration of alternative assay)\n• Blood Film Trigger: Platelet count <30 x 10^9/L with microangiopathic haemolytic anaemia (MAHA) mandates blood film review within 60 minutes and immediate clinical haematologist escalation (Grade 1C)\n• Turnaround Times: Preliminary results within 1 hour of sample receipt for rapid automated assays (HemosIL AcuStar CLEIA, Ceveron FRET); within 6 hours for ELISA (Grade 1C)\n• Sample Tube: 0.109 M (3.2%) Sodium Citrate tube filled >=90% collected BEFORE treatment (Grade 1B). EDTA is strictly contraindicated (chelates zinc/calcium, causing artifactually low ADAMTS13 activity)\n• Anti-ADAMTS13 Antibodies: Mandatory within 72 hours when ADAMTS13 activity <10 IU/dL (Grade 1B)",
-            stagingCriteria = "TTP Laboratory Testing & Staging Algorithm:\n• Severe Deficiency: ADAMTS13 activity <10 IU/dL -> Confirms TTP (93% of iTTP present with <1 IU/dL)\n• Equivocal / Grey Zone: ADAMTS13 activity 10–20 IU/dL -> Correlate clinically, consider other TMAs, anti-ADAMTS13 antibodies, and alternative assay\n• TTP Highly Unlikely: ADAMTS13 activity >20 IU/dL\n• Autoantibody Stratification: Positive anti-ADAMTS13 IgG confirms iTTP; negative antibody suggests cTTP (Upshaw-Schulman), requiring genomic analysis of ADAMTS13 gene\n• Surveillance: Longitudinal monitoring must use the same analytical platform; open conformation index predicts relapse (46% open vs 9% closed at 1 year)",
-            recommendations = "• Rec 1 (Grade 1B): Suspected TTP is an emergency; do NOT wait for ADAMTS13 results before initiating plasma exchange, corticosteroids, and caplacizumab.\n• Rec 2 (Grade 1B): Pre-treatment sample in sodium citrate sent immediately to regional TTP centre; anti-ADAMTS13 antibody assay must be performed within 72h when ADAMTS13 <10 IU/dL.\n• Rec 3 (Grade 1C): Blood film examination within 60 minutes for platelets <30x10^9/L; preliminary ADAMTS13 activity within 1 hour for rapid automated assays or 6 hours for ELISA.\n• Rec 4 (Grade 1C): The same analytical method should be used in any single patient during monitoring to retain sensitivity for remission and relapse.\n• Rec 5 (Grade 2D): An ELISA is recommended over Bethesda-style inhibitor assays for anti-ADAMTS13 antibody detection.",
+            summary = "FRCPath Exam Focus: 2026 BSH laboratory guidance for suspected TTP. Vital SBA targets: pre-treatment 0.109 M (3.2%) sodium citrate tube, EDTA unsuitable, blood film review (ideally within 60 minutes) for platelets <30 x 10^9/L, ADAMTS13 turnaround standards, assay-specific grey zones, and anti-ADAMTS13 antibody testing within 72h.",
+            keyCutoffs = "• Diagnostic Threshold: Severe ADAMTS13 activity <10 IU/dL (<10%) confirms TTP (93% of acute iTTP present with <1 IU/dL)\n• Equivocal / Grey Zone: 10–20 IU/dL for manual FRET and ELISA assays (requires clinical correlation, exclusion of other TMAs, anti-ADAMTS13 antibody testing, and an alternative assay). A comparable grey zone has NOT been established for automated platforms\n• Blood Film Trigger: Platelet count <30 x 10^9/L with microangiopathic haemolytic anaemia (MAHA) mandates blood film review within 60 minutes and immediate clinical haematologist escalation (Grade 1C)\n• Turnaround Times: Preliminary results ideally within 1 hour of sample receipt for rapid automated assays; within 6 hours for ELISA (Grade 1C). Caution: HemosIL CLEIA has been reported to give erroneously low (<10 IU/dL) results; confirm discordant results on an alternative assay\n• Sample Tube: 0.109 M (3.2%) sodium citrate collected BEFORE treatment (Grade 1B), filled to at least 90%. EDTA cannot be used (falsely low ADAMTS13 activity; EDTA chelates the zinc/calcium the metalloprotease needs)\n• Anti-ADAMTS13 Antibodies: Mandatory within 72 hours when ADAMTS13 activity <10 IU/dL (Grade 1B)",
+            stagingCriteria = "TTP Laboratory Testing & Staging Algorithm:\n• Severe Deficiency: ADAMTS13 activity <10 IU/dL -> Confirms TTP (93% of iTTP present with <1 IU/dL)\n• Equivocal / Grey Zone (manual FRET/ELISA): ADAMTS13 activity 10–20 IU/dL -> Correlate clinically, consider other TMAs, anti-ADAMTS13 antibodies, and alternative assay\n• Autoantibody Stratification: Positive anti-ADAMTS13 IgG confirms iTTP; negative antibody suggests cTTP (Upshaw-Schulman), requiring genomic analysis of ADAMTS13 gene\n• Surveillance: Longitudinal monitoring must use the same analytical platform; open conformation predicted relapse (1-year 46% vs 9%), but conformation assays are NOT recommended for routine clinical use (2C)",
+            recommendations = "• Context (ungraded): Suspected TTP is a medical emergency; availability of an ADAMTS13 result is not a prerequisite for immediate management or treatment.\n• Rec 2 (Grade 1B): Samples collected into 0.109 M sodium citrate; with strong suspicion, send immediately to a regional TTP centre; anti-ADAMTS13 antibody assay must be performed within 72h when ADAMTS13 <10 IU/dL.\n• Rec 3 (Grade 1C): Documented processes so thrombocytopenic samples (especially platelets <30x10^9/L) are examined microscopically for haemolysis (ideally within 60 minutes) and escalated rapidly; preliminary ADAMTS13 activity within 1 hour for rapid automated assays or 6 hours for ELISA.\n• Rec 4 (Grade 1C): The same analytical method should be used in any single patient during monitoring to retain sensitivity for remission and relapse.\n• Rec 5 (Grade 2D): An ELISA is recommended over Bethesda-style inhibitor assays for anti-ADAMTS13 antibody detection.",
             url = "https://doi.org/10.1111/bjh.70727"
         ),
         ApprovedResource(
@@ -183,9 +201,9 @@ object SeedData {
             year = 2026,
             citation = "Osborne W, Bielby H, Cwynarski K, El-Sharkawi D, Petrides G, Illidge T, et al. Br J Haematol. 2026;209(4):1505–1517.",
             category = "Malignant Haematology",
-            summary = "FRCPath Exam Focus: 2026 BSH clinical guideline for PMBCL. Top SBA pearls: Safe omission of radiotherapy in Complete Metabolic Response (Deauville 1–3) based on the IELSG37 phase III trial (Grade 1A), dose-intensive induction (R-CHOP-14 or DA-R-EPOCH) over R-CHOP-21, thromboprophylaxis for 28% VTE rate, and CD19 CAR T-cell therapy (liso-cel) for early relapse.",
-            keyCutoffs = "• Thrombosis Rate: High incidence of venous thromboembolism (28%) -> Prophylactic anticoagulation recommended in all patients with platelets >50 x 10^9/L (Grade 1C)\n• Immunophenotype: CD20+, CD19+, CD79a+, CD30+ (weak/heterogeneous), CD23+, IRF4+, CD15- (distinguishes from classic Hodgkin), EBER- (negative for EBV), PDL1/PDL2+\n• Genetics: 9p24.1 copy gain (PDL1/PDL2 and JAK2 amplification); mutations in SOCS1 (60–91%), GNA13 (47–53%), STAT6 (33–58%), NFKBIE, TNFAIP3\n• Deauville Criteria at End-of-Treatment (EOT) PET-CT (6 weeks post cycle 6):\n  - DS 1–3: Complete Metabolic Response (CMR)\n  - DS 4: Uptake above liver. Re-biopsy recommended if feasible (Grade 1B); personalized decision between serial surveillance PET (in 4–6 weeks) and consolidative RT\n  - DS 5: Uptake >2–3x liver. Re-biopsy and systemic salvage therapy as for relapsed disease (Grade 1B)",
-            stagingCriteria = "PET-CT Response Assessment (Lugano / Deauville Criteria at 6 weeks post-treatment):\n• DS 1–3: Complete Metabolic Response (CMR) -> Omit consolidative radiotherapy (IELSG37 trial: 5-year OS 99% with no survival detriment)\n• DS 4: Uptake above liver -> Heterogeneous. MDT review; re-biopsy recommended if feasible; serial surveillance PET in 4-6 weeks or personalized consolidative RT\n• DS 5: Uptake >2-3x liver -> High failure rate. Re-biopsy and systemic salvage therapy for relapsed disease\n• Salvage CAR-T: Lisocabtagene maraleucel (Liso-cel) licensed second-line for relapse within 12 months; Axi-cel or Liso-cel third-line",
+            summary = "FRCPath Exam Focus: 2026 BSH clinical guideline for PMBCL. Top SBA pearls: Safe omission of radiotherapy in Complete Metabolic Response (Deauville 1–3) based on the IELSG37 phase III trial (Grade 1A), dose-intensive induction (R-CHOP-14 or DA-R-EPOCH) over R-CHOP-21, thromboprophylaxis given a 28% thrombosis rate, and CD19 CAR T-cell therapy (liso-cel) for early relapse.",
+            keyCutoffs = "• Thrombosis Rate: thrombotic complications in 28% of patients (retrospective series, n=156; most common at presentation) -> prophylactic anticoagulation recommended for patients with platelets >50 x 10^9/L (Grade 1C)\n• Immunophenotype: CD19+, CD20+, CD22+, CD79a+; CD30 usually + (weak/heterogeneous vs cHL); usually CD23+ and IRF4+; CD10+ in only 20-30%; usually CD15- (occasional cases CD15+); EBER- (EBV negative); PDL1 and especially PDL2 expressed\n• Genetics: 9p24.1 copy gain (PDL1/PDL2 and JAK2 amplification); mutations in SOCS1 (60–91%), GNA13 (47–53%), STAT6 (33–58%), NFKBIE, TNFAIP3\n• Deauville Criteria at End-of-Treatment (EOT) PET-CT (6 weeks post cycle 6):\n  - DS 1–3: Complete Metabolic Response (CMR)\n  - DS 4: Uptake above liver. Re-biopsy recommended if feasible (Grade 1B); personalized decision between serial surveillance PET (in 4–6 weeks) and consolidative RT\n  - DS 5: Uptake markedly above liver (>3x liver in many centres). Re-biopsy and systemic treatment as for relapsed disease (Grade 1B)",
+            stagingCriteria = "PET-CT Response Assessment (Lugano / Deauville Criteria at 6 weeks post-treatment):\n• DS 1–3: Complete Metabolic Response (CMR) -> Omit consolidative radiotherapy (IELSG37 trial: 5-year OS 99% with no survival detriment)\n• DS 4: Uptake above liver -> Heterogeneous. MDT review; re-biopsy recommended if feasible; serial surveillance PET in 4-6 weeks or personalized consolidative RT\n• DS 5: Uptake markedly above liver (>3x in many centres) -> High failure rate. Re-biopsy and systemic salvage therapy for relapsed disease\n• Salvage CAR-T: Lisocabtagene maraleucel (Liso-cel) licensed second-line for relapse within 12 months; Axi-cel or Liso-cel third-line",
             recommendations = "• Rec 1 (Grade 1A): Do NOT offer consolidative radiotherapy for patients with Deauville Score 1–3 (CMR) following chemoimmunotherapy (IELSG37 trial: 5-year OS 99%).\n• Rec 2 (Grade 1B): Offer R-CHOP-14 x6 or DA-R-EPOCH x6; R-CHOP-21 is NOT recommended due to significantly higher DS 5 failure and inferior EFS.\n• Rec 3 (Grade 1B): Re-biopsy is recommended if feasible for all DS 4 and DS 5 patients at end of treatment.\n• Rec 4 (Grade 1C): Thromboprophylaxis is recommended in view of the high thrombotic risk (28%) in patients with platelets >50x10^9/L.\n• Rec 5 (Grade 1C): Offer CD19 CAR T-cell therapy (liso-cel) as second-line treatment if patient relapses within 12 months.",
             url = "https://doi.org/10.1111/bjh.70768"
         )
@@ -199,7 +217,7 @@ object SeedData {
             questionType = "MCQ",
             title = "Cardiac AL Amyloidosis Staging (AL-ISS 2026)",
             stem = "A 68-year-old female with newly confirmed systemic AL amyloidosis undergoes baseline staging. Echocardiography demonstrates concentric ventricular thickening with 'apical sparing' and an abnormal global longitudinal strain (GLS) of -7%. Laboratory investigations are shown below.\n\nAccording to the AL International Staging System (AL-ISS) adopted in the 2026 BSH Guideline, what is the patient's cardiac stage and projected median survival?",
-            labData = "NT-proBNP: 9,450 ng/L (NR <332)\nHigh-sensitivity Troponin T: 0.052 ng/L (NR <0.035)\neGFR: 62 mL/min/1.73m²\nUrine Albumin:Creatinine Ratio: 45 mg/mmol",
+            labData = "NT-proBNP: 9,450 ng/L (NR <332)\nTroponin T: 0.052 µg/L (= 52 ng/L; staging threshold 0.035 µg/L)\neGFR: 62 mL/min/1.73m²\nUrine Albumin:Creatinine Ratio: 45 mg/mmol",
             options = listOf(
                 "Stage II; Median survival not reached at 5 years",
                 "Stage IIIA; Median survival approximately 76 months",
@@ -208,10 +226,10 @@ object SeedData {
                 "Stage IV; Median survival less than 1 month"
             ),
             correctIndex = 3,
-            rationale = "According to the 2026 BSH AL Amyloidosis Guideline (Garg et al., Table 2) and the newly adopted AL-ISS system (Khwaja et al. 2026):\n• Stage IIIB is defined by NT-proBNP >8500 ng/L and Troponin T >=0.035 ng/L (median survival 26 months).\n• Stage IIIC defines ultra-poor risk, requiring NT-proBNP >8500 ng/L, Troponin T >=0.035 ng/L AND abnormal global longitudinal strain (GLS) >-9% (median survival 4 months).\nBecause this patient has NT-proBNP 9450, TnT 0.052, and GLS -7% (which is >-9%), she fulfills Stage IIIC criteria.",
+            rationale = "According to the 2026 BSH AL Amyloidosis Guideline (Garg et al., Table 2) and the newly adopted AL-ISS system (Khwaja et al. 2026):\n• Stage IIIB is defined by NT-proBNP >8500 ng/L and Troponin T >=0.035 µg/L (median survival 26 months).\n• Stage IIIC defines ultra-poor risk, requiring NT-proBNP >8500 ng/L, Troponin T >=0.035 µg/L AND abnormal global longitudinal strain (GLS) >-9% (median survival 4 months).\n(The guideline table prints the troponin unit as 'ng/L'; 0.035 µg/L = 35 ng/L.)\nBecause this patient has NT-proBNP 9450, TnT 0.052, and GLS -7% (which is >-9%), she fulfills Stage IIIC criteria.",
             sourceResourceId = "bsh_amyloidosis_2026",
             guidelineSection = "Table 2: Staging of cardiac amyloidosis (AL-ISS 2026)",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Prognostic staging table (ungraded)",
             yearPaper = "BSH 2026 Core Curriculum"
         ),
 
@@ -254,7 +272,7 @@ object SeedData {
                 "Pro-B ALL"
             ),
             correctIndex = 3,
-            rationale = "According to the WHO 5th Edition Classification and RCPath official marking scheme:\n• Pro-B ALL: CD19+, HLA-DR+, TdT+, CD10-, Cyt Ig-, SmIg-\n• Common ALL: CD19+, CD10+ (CALLA), TdT+, Cyt Ig negative, SmIg-\n• Pre-B ALL: Characterized by presence of cytoplasmic mu heavy chains (Cytoplasmic Ig positive), CD19+, CD10+, with surface Ig (SmIg) negative.\n• Mature B-ALL (Burkitt type): Characterized by surface immunoglobulin (SmIg) positivity and TdT negativity.\nTherefore, the expression of Cyt Ig with negative SmIg defines Pre-B ALL.",
+            rationale = "Answer key: author consensus (the RCPath sample paper does not publish answers). Standard immunophenotypic staging:\n• Pro-B ALL: CD19+, HLA-DR+, TdT+, CD10-, Cyt Ig-, SmIg-\n• Common ALL: CD19+, CD10+ (CALLA), TdT+, Cyt Ig negative, SmIg-\n• Pre-B ALL: Characterized by presence of cytoplasmic mu heavy chains (Cytoplasmic Ig positive), CD19+, CD10+, with surface Ig (SmIg) negative.\n• SmIg-positive, TdT-negative blasts indicate a mature B-cell neoplasm (e.g. Burkitt), which WHO-HAEM5 does not classify as B-ALL (the old 'mature B-ALL / FAB L3' term).\nTherefore, the expression of Cyt Ig with negative SmIg defines Pre-B ALL.",
             sourceResourceId = "who_haem_5th",
             guidelineSection = "Chapter: B-lymphoblastic leukaemia/lymphoma",
             evidenceGrade = "Consensus",
@@ -277,10 +295,10 @@ object SeedData {
                 "Normalisation of serum ferritin and serum iron"
             ),
             correctIndex = 2,
-            rationale = "According to the BSH Guideline on Genetic Haemochromatosis and RCPath sample key:\n• The target for induction venesection is reduction of serum ferritin to <50 mcg/L (ng/mL).\n• Serum transferrin saturation normalises late in the course of de-ironing and fluctuates substantially with dietary intake; it is not a reliable endpoint for venesection frequency during induction.\n• Liver MRI is useful for quantifying iron overload at baseline but is not required to monitor routine venesection.\nHence, optimal venesection is assessed by normalisation of serum ferritin.",
+            rationale = "Answer key: author consensus (the RCPath sample paper does not publish answers). Per the BSH haemochromatosis guideline:\n• The target for induction venesection is reduction of serum ferritin to <50 mcg/L (ng/mL).\n• Serum transferrin saturation normalises late in the course of de-ironing and fluctuates substantially with dietary intake; it is not a reliable endpoint for venesection frequency during induction.\n• Liver MRI is useful for quantifying iron overload at baseline but is not required to monitor routine venesection.\nHence, optimal venesection is assessed by normalisation of serum ferritin.",
             sourceResourceId = "bsh_iron_haemochromatosis",
             guidelineSection = "Section: Monitoring of venesection therapy",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Part 1 Sample MCQ 2"
         ),
 
@@ -300,10 +318,10 @@ object SeedData {
                 "Von Willebrand factor activity"
             ),
             correctIndex = 1,
-            rationale = "According to UKHCDO Guidelines on Acquired Bleeding Disorders and RCPath sample key:\n• Both lupus anticoagulant and acquired factor VIII inhibitors cause an isolated prolonged APTT that fails to correct immediately on standard 50:50 mixing tests.\n• The DRVVT with platelet neutralisation procedure (or confirmatory high-phospholipid reagent) directly demonstrates phospholipid dependence: excess freeze-thawed platelets or hexagonal phase phosphatidylethanolamine will neutralize the lupus anticoagulant and shorten the clotting time, but will NOT neutralize a factor VIII inhibitor.\n• While a one-stage Factor VIII assay will show low FVIII in acquired haemophilia, lupus anticoagulant can also cause artifactual low FVIII levels due to inhibitor interference in one-stage clotting assays (requiring chromogenic assay or multiple dilutions).",
+            rationale = "Answer key: author consensus (the RCPath sample paper does not publish answers). Per UKHCDO guidance on acquired coagulation inhibitors:\n• Both lupus anticoagulant and acquired factor VIII inhibitors cause an isolated prolonged APTT that fails to correct immediately on standard 50:50 mixing tests.\n• The DRVVT with platelet neutralisation procedure (or confirmatory high-phospholipid reagent) directly demonstrates phospholipid dependence: excess freeze-thawed platelets or hexagonal phase phosphatidylethanolamine will neutralize the lupus anticoagulant and shorten the clotting time, but will NOT neutralize a factor VIII inhibitor.\n• While a one-stage Factor VIII assay will show low FVIII in acquired haemophilia, lupus anticoagulant can also cause artifactual low FVIII levels due to inhibitor interference in one-stage clotting assays (requiring chromogenic assay or multiple dilutions).",
             sourceResourceId = "ukhcdo_haemostasis_2022",
             guidelineSection = "Laboratory Differential: Lupus Anticoagulant vs Specific Inhibitors",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Part 1 Sample MCQ 3"
         ),
 
@@ -328,10 +346,10 @@ object SeedData {
                 "Solvent detergent virally-inactivated fresh frozen plasma"
             ),
             correctIndex = 8,
-            rationale = "According to BSH Guidelines on Transfusion & Management of Bleeding on Antithrombotic Agents:\n• For immediate reversal of life-threatening bleeding (such as intracranial haemorrhage) in patients on Warfarin, Prothrombin Complex Concentrate (PCC 25-50 IU/kg) plus intravenous Vitamin K (5-10 mg) is the treatment of choice (Grade 1A).\n• PCC rapidly normalises clotting factor levels within 10-15 minutes without causing circulatory volume overload, whereas FFP takes hours to infuse and achieves sub-therapeutic factor recovery.",
+            rationale = "According to BSH Guidelines on Transfusion & Management of Bleeding on Antithrombotic Agents:\n• For immediate reversal of life-threatening bleeding (such as intracranial haemorrhage) in patients on Warfarin, Prothrombin Complex Concentrate (PCC 25-50 IU/kg) plus intravenous Vitamin K (5-10 mg) is the treatment of choice.\n• PCC rapidly normalises clotting factor levels within 10-15 minutes without causing circulatory volume overload, whereas FFP takes hours to infuse and achieves sub-therapeutic factor recovery.",
             sourceResourceId = "bsh_transfusion_components",
             guidelineSection = "Emergency Warfarin Reversal Protocol",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Sample EMQ Q4"
         ),
 
@@ -356,10 +374,10 @@ object SeedData {
                 "Solvent detergent virally-inactivated fresh frozen plasma"
             ),
             correctIndex = 4,
-            rationale = "According to BSH Guidelines on the Prevention of Transfusion-Associated Graft-versus-Host Disease (TA-GVHD):\n• All patients treated with purine analogues (e.g., Fludarabine, Cladribine, Pentostatin) must receive irradiated cellular blood components (red cells and platelets) indefinitely to prevent fatal TA-GVHD (Grade 1A).\n• Leucocyte depletion alone does not prevent TA-GVHD; gamma or X-ray irradiation (25 Gy) is essential to inactivate donor T-lymphocytes.\n• CMV testing is not routinely required for an immunocompromised elderly adult on purine analogues in the UK unless undergoing allogeneic BMT.",
+            rationale = "According to BSH Guidelines on the Prevention of Transfusion-Associated Graft-versus-Host Disease (TA-GVHD):\n• All patients treated with purine analogues (e.g., Fludarabine, Cladribine, Pentostatin) must receive irradiated cellular blood components (red cells and platelets) indefinitely to prevent fatal TA-GVHD.\n• Leucocyte depletion alone does not prevent TA-GVHD; gamma or X-ray irradiation (25 Gy) is essential to inactivate donor T-lymphocytes.\n• CMV testing is not routinely required for an immunocompromised elderly adult on purine analogues in the UK unless undergoing allogeneic BMT.",
             sourceResourceId = "bsh_transfusion_components",
             guidelineSection = "Indications for Irradiated Cellular Components",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Sample EMQ Q5"
         ),
 
@@ -384,10 +402,10 @@ object SeedData {
                 "Solvent detergent virally-inactivated fresh frozen plasma"
             ),
             correctIndex = 2,
-            rationale = "According to UKHCDO and BSH Guidelines for von Willebrand Disease:\n• Patients with severe Type 3 VWD lack both VWF and Factor VIII. Desmopressin (DDAVP) is ineffective due to lack of endogenous stores.\n• Replacement therapy requires a plasma-derived intermediate-purity Factor VIII concentrate that contains high amounts of functional von Willebrand factor (e.g., Haemate-P, Wilate) (Grade 1A).\n• Cryoprecipitate is reserved only for situations where virally-inactivated factor concentrates are unavailable.",
+            rationale = "According to UKHCDO and BSH Guidelines for von Willebrand Disease:\n• Patients with severe Type 3 VWD lack both VWF and Factor VIII. Desmopressin (DDAVP) is ineffective due to lack of endogenous stores.\n• Replacement therapy requires a plasma-derived intermediate-purity Factor VIII concentrate that contains high amounts of functional von Willebrand factor (e.g., Haemate-P, Wilate).\n• Cryoprecipitate is reserved only for situations where virally-inactivated factor concentrates are unavailable.",
             sourceResourceId = "bsh_transfusion_components",
             guidelineSection = "Management of von Willebrand Disease in Obstetrics",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Sample EMQ Q6"
         ),
 
@@ -397,8 +415,8 @@ object SeedData {
             domain = "Transfusion Medicine",
             questionType = "EMQ",
             title = "Blood Product Selection: Post-Partum Microangiopathic Haemolytic Anaemia",
-            stem = "A 35-year-old woman develops microangiopathic haemolytic anaemia at 40 weeks gestation. The platelet count continues to fall 24 hours after delivery to 18x10^9/L. Her coagulation screen is completely normal. Blood film reveals prominent schistocytes (red cell fragments) and polychromasia. Therapeutic plasma exchange is urgently commenced.\n\nFrom the standard blood component options, select the most suitable replacement fluid for plasma exchange.",
-            labData = "Platelets: 18x10^9/L\nHb: 76 g/L\nLDH: 1450 IU/L\nPT/APTT: Normal\nBlood Film: Abundant red cell fragments (schistocytes)",
+            stem = "A 35-year-old woman develops microangiopathic haemolytic anaemia at 40 weeks gestation. The platelet count continues to fall 24 hours after delivery to 18x10^9/L. Her coagulation screen is completely normal. Spherocytes and red cell fragments are present in the peripheral blood film. Therapeutic plasma exchange is urgently commenced.\n\nFrom the standard blood component options, select the most suitable replacement fluid for plasma exchange.",
+            labData = "Platelets: 18x10^9/L\nHb: 76 g/L\nLDH: 1450 IU/L\nPT/APTT: Normal\nBlood Film: Spherocytes and red cell fragments",
             options = listOf(
                 "Cryoprecipitate",
                 "Fibrinogen concentrate",
@@ -412,10 +430,10 @@ object SeedData {
                 "Solvent detergent virally-inactivated fresh frozen plasma"
             ),
             correctIndex = 9,
-            rationale = "According to BSH Guidelines on the Diagnosis and Management of Thrombotic Thrombocytopenic Purpura (TTP):\n• Therapeutic Plasma Exchange (TPE) with Solvent Detergent Fresh Frozen Plasma (SD-FFP, Octaplas) is the gold-standard treatment of choice for TTP (Grade 1A).\n• SD-FFP replenishes functional ADAMTS13 protease while removing ADAMTS13 autoantibodies and ultra-large VWF multimers.\n• In the UK, SD-FFP is preferred over standard single-donor FFP due to its reduced risk of pathogen transmission and lower incidence of allergic/TRALI reactions.\n• Platelet transfusions are contraindicated in TTP unless life-threatening haemorrhage is present.",
-            sourceResourceId = "bsh_transfusion_components",
+            rationale = "According to BSH Guidelines on the Diagnosis and Management of Thrombotic Thrombocytopenic Purpura (TTP):\n• Therapeutic Plasma Exchange (TPE) with Solvent Detergent Fresh Frozen Plasma (SD-FFP, Octaplas) is the gold-standard treatment of choice for TTP.\n• SD-FFP replenishes functional ADAMTS13 protease while removing ADAMTS13 autoantibodies and ultra-large VWF multimers.\n• In the UK, SD-FFP is preferred over standard single-donor FFP due to its reduced risk of pathogen transmission and lower incidence of allergic/TRALI reactions.\n• Platelet transfusions are contraindicated in TTP unless life-threatening haemorrhage is present.",
+            sourceResourceId = "bsh_ttp_guidelines",
             guidelineSection = "TTP Therapeutic Plasma Exchange Replacement Fluids",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Sample EMQ Q7"
         ),
 
@@ -425,7 +443,7 @@ object SeedData {
             domain = "Transfusion Medicine",
             questionType = "EMQ",
             title = "Blood Product Selection: Hypofibrinogenaemia Elective Surgery",
-            stem = "A 28-year-old man with inherited hypofibrinogenaemia requires an elective mastoidectomy. Baseline fibrinogen level is 0.6 g/L.\n\nFrom the standard blood component options, select the most suitable product to achieve surgical hemostasis.",
+            stem = "A 28-year-old man with inherited hypo/dysfibrinogenaemia requires an elective mastoidectomy. Baseline fibrinogen level is 0.6 g/L.\n\nFrom the standard blood component options, select the most suitable product to achieve surgical hemostasis.",
             labData = "Clauss Fibrinogen: 0.6 g/L (NR 1.5 - 4.5)\nPT: 16s (slight prolongation due to low substrate)\nAPTT: 39s\nPlatelets: 210x10^9/L",
             options = listOf(
                 "Cryoprecipitate",
@@ -440,10 +458,10 @@ object SeedData {
                 "Solvent detergent virally-inactivated fresh frozen plasma"
             ),
             correctIndex = 1,
-            rationale = "According to BSH & UKHCDO Guidelines on the Management of Rare Inherited Bleeding Disorders:\n• In congenital hypo- or afibrinogenaemia requiring prophylaxis for elective surgery, pasteurized virally-inactivated Fibrinogen Concentrate (e.g., Riastap / Fibryga) is the treatment of choice (Grade 1A).\n• Target fibrinogen trough level is typically >=1.5 g/L to 2.0 g/L for major surgery.\n• Fibrinogen concentrate provides precise dosing with minimal volume and carries a vastly lower risk of viral transmission and allergic reactions compared to cryoprecipitate.",
+            rationale = "According to BSH & UKHCDO Guidelines on the Management of Rare Inherited Bleeding Disorders:\n• In congenital hypo- or afibrinogenaemia requiring prophylaxis for elective surgery, pasteurized virally-inactivated Fibrinogen Concentrate (e.g., Riastap / Fibryga) is the treatment of choice.\n• Target fibrinogen trough level is typically >=1.5 g/L to 2.0 g/L for major surgery.\n• Fibrinogen concentrate provides precise dosing with minimal volume and carries a vastly lower risk of viral transmission and allergic reactions compared to cryoprecipitate.",
             sourceResourceId = "bsh_transfusion_components",
             guidelineSection = "Treatment of Congenital Fibrinogen Disorders",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Sample EMQ Q8"
         ),
 
@@ -453,14 +471,14 @@ object SeedData {
             domain = "Haemato-Oncology",
             questionType = "ESSAY",
             title = "Multiple Myeloma Presentation, Acute Renal Injury & Cord Compression",
-            stem = "A previously fit and healthy 62-year-old man presents with fatigue and back pain. Laboratory testing reveals Hb 82 g/L, Creatinine 350 umol/L, Calcium 2.85 mmol/L. Multiple myeloma is suspected.\n\n[RCPath 2019 Paper 1, Question 2 - 25 Marks Total]",
-            labData = "Hb: 82 g/L\nCreatinine: 350 umol/L (eGFR 16 mL/min)\nCalcium: 2.85 mmol/L\nSerum Albumin: 31 g/L\nTotal Protein: 98 g/L",
+            stem = "A previously fit and healthy 62-year-old man presents with fatigue and back pain and is found to have a Hb of 82 g/L and creatinine of 350 umol/L. A diagnosis of multiple myeloma is suspected.\n\n(a) Discuss the initial investigations and urgent acute management that is required. (10 marks)\n(b) What are the recommended options for imaging in newly diagnosed patients with myeloma? (4 marks)\n(c) Discuss the options for therapy for this man and the factors that would guide your decisions. (6 marks)\n(d) 28 months later, he presents with rapid onset pain and weakness in his left leg associated with urinary incontinence. Discuss the likely diagnosis and initial plans for management. (5 marks)\n\n[RCPath Paper 1, September 2019, Question 2 - 25 marks]",
+            labData = "Hb: 82 g/L\nCreatinine: 350 umol/L",
             options = emptyList(),
             correctIndex = -1,
             rationale = "This is a past FRCPath Part 1 essay question examining urgent acute myeloma management, imaging modalities, frontline therapy, and metastatic spinal cord compression (MSCC). Grounded in BSH Myeloma and IMWG guidelines.",
             sourceResourceId = "imwg_myeloma_2021",
             guidelineSection = "Section: Myeloma Emergencies & SLiM-CRAB Criteria",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Paper 1 September 2019 (Q2)",
             essayModelAnswer = """
 PART (a): Initial Investigations and Urgent Acute Management (10 marks)
@@ -517,14 +535,14 @@ PART (d): Sudden Left Leg Weakness and Urinary Incontinence (5 marks)
             domain = "Transfusion Medicine",
             questionType = "ESSAY",
             title = "Sickle Cell Disease Orthopaedic Surgery, Transfusion & Jehovah's Witness Counseling",
-            stem = "A 54-year-old male with Hb SS, recurrent crises, history of acute chest syndrome, and pulmonary hypertension is admitted following a mechanical fall with a fractured neck of femur. He needs urgent orthopaedic surgery. He is blood group B RhD negative. Hb S was 84% 4 months ago, and Hb at admission is 90 g/L. He is reluctant to accept transfusion due to blood safety concerns and his wife is a Jehovah's Witness.\n\n[RCPath 2019 Paper 1, Question 1 - 25 Marks Total]",
+            stem = "A 54-year-old male with Hb SS, recurrent crises, history of acute chest syndrome, and pulmonary hypertension is admitted following a mechanical fall with a fractured neck of femur. He needs urgent orthopaedic surgery. He is blood group B RhD negative. Hb S was 84% 4 months ago, and Hb at admission is 90 g/L. He is reluctant to accept transfusion due to blood safety concerns and his wife is a Jehovah's Witness.\n\n(a) Discuss how you will manage his concerns and what you need to do to optimise him for surgery. Discuss potential complications in this patient including those related to treatment. (20 marks)\n(b) Describe the specification of blood components, volume required for exchange transfusion and targets for treatment. (5 marks)\n\n[RCPath Paper 1, September 2019, Question 1 - 25 marks]",
             labData = "Hb: 90 g/L\nHb S: 84%\nBlood Group: B RhD Negative\nDiagnosis: Right neck of femur fracture; pulmonary hypertension",
             options = emptyList(),
             correctIndex = -1,
             rationale = "FRCPath Part 1 essay testing haemoglobinopathy peri-operative optimization, red cell exchange vs simple transfusion, blood safety ethics, extended red cell phenotyping, and transfusion targets per BSH Sickle Cell Guidelines.",
-            sourceResourceId = "bsh_transfusion_components",
+            sourceResourceId = "bsh_sickle_transfusion",
             guidelineSection = "BSH Guidelines: Transfusion in Sickle Cell Disease",
-            evidenceGrade = "Grade 1A",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Paper 1 September 2019 (Q1)",
             essayModelAnswer = """
 PART (a): Managing Concerns, Optimization, and Complications (20 marks)
@@ -572,14 +590,14 @@ PART (b): Blood Component Specification, Volume, and Targets (5 marks)
             domain = "Haemato-Oncology",
             questionType = "ESSAY",
             title = "Acute Promyelocytic Leukaemia Management, Differentiation Syndrome & Molecular Relapse",
-            stem = "A 22-year-old woman presents with a 2-week history of bruising on her limbs and epistaxis. Full blood count reveals Hb 96 g/L, WBC 135x10^9/L, Platelets 20x10^9/L. Blood film demonstrates numerous immature myeloid cells with folded nuclei, heavy granulation, and infrequent Auer rods. FISH confirms PML-RARA rearrangement.\n\n[RCPath 2018 Paper 1, Question 1 - 25 Marks Total]",
+            stem = "A 22-year-old woman presents with a 2-week history of bruising on her limbs and epistaxis. Full blood count reveals Hb 96 g/L, WBC 135x10^9/L, Platelets 20x10^9/L. Blood film demonstrates numerous immature myeloid cells with folded nuclei, heavy granulation, and infrequent Auer rods. FISH confirms PML-RARA rearrangement.\n\nPart 1: What is the diagnosis? What immediate additional tests are required? Describe your initial management. What complications of treatment would you advise the patient about? (12 marks)\nPart 2: 5 days after starting treatment she is increasingly breathless, has gained 5 kg, and CXR shows patchy bilateral opacification. What is the differential diagnosis, and how would you manage each cause? (8 marks)\nPart 3: She achieved CR; 18 months after finishing treatment there is molecular relapse (Hb 112 g/L, WCC 1.3, platelets 60). How would you manage her now? (5 marks)\n\n[RCPath Paper 1, September 2018, Question 1 - 25 marks]",
             labData = "WBC: 135x10^9/L (Hyperleukocytic)\nHb: 96 g/L\nPlatelets: 20x10^9/L\nGenetics: PML-RARA positive",
             options = emptyList(),
             correctIndex = -1,
             rationale = "High-yield FRCPath Part 1 essay covering oncologic emergency management of high-risk APL, differentiation syndrome diagnostic criteria and treatment, and molecular relapse salvage.",
-            sourceResourceId = "who_haem_5th",
-            guidelineSection = "BSH & ELN Guidelines: Acute Promyelocytic Leukaemia",
-            evidenceGrade = "Grade 1A",
+            sourceResourceId = "bsh_apl_guidelines",
+            guidelineSection = "ELN 2019 Recommendations: Acute Promyelocytic Leukaemia",
+            evidenceGrade = "Not verified",
             yearPaper = "RCPath Paper 1 September 2018 (Q1)",
             essayModelAnswer = """
 PART 1: Diagnosis, Immediate Tests, Management & Complications (12 marks)
@@ -595,8 +613,8 @@ PART 1: Diagnosis, Immediate Tests, Management & Complications (12 marks)
   - Start All-Trans Retinoic Acid (ATRA, 45 mg/m²/day in divided doses) IMMEDIATELY upon suspicion, without waiting for molecular confirmation.
   - Because WBC >10x10^9/L (High Risk), add chemotherapy/Arsenic Trioxide (ATO) prompt induction: Anthracycline (Idarubicin or Daunorubicin) + ATRA OR ATO + ATRA with cytoreductive chemotherapy (Idarubicin or Gemtuzumab Ozogamicin).
   - Aggressive supportive management for coagulopathy:
-    * Transfuse platelets to maintain count >50x10^9/L (even without active bleeding).
-    * Cryoprecipitate or fibrinogen concentrate to maintain fibrinogen >1.5 g/L.
+    * Transfuse platelets to maintain count >30-50x10^9/L (even without active bleeding).
+    * Cryoprecipitate or fibrinogen concentrate to maintain fibrinogen >1.0-1.5 g/L.
     * Fresh frozen plasma to correct prolonged PT/APTT.
     * Monitor coags 2-3 times daily until coagulopathy resolves.
   - Allopurinol or rasburicase with IV hydration for TLS.
@@ -606,7 +624,7 @@ PART 1: Diagnosis, Immediate Tests, Management & Complications (12 marks)
   - Severe bleeding / catastrophic fatal intracranial haemorrhage.
   - Hyperleukocytosis.
   - Pseudotumor cerebri (headache, papilloedema from ATRA).
-  - Hepatotoxicity and hypermagnesaemia/hypokalaemia.
+  - Hepatotoxicity; ATO-associated hypokalaemia and hypomagnesaemia, which increase QTc/arrhythmia risk (keep K+ and Mg2+ replete; monitor ECG).
 
 PART 2: Day 5 Breathlessness, Weight Gain 5 kg, Bilateral Infiltrates (8 marks)
 • Differential Diagnosis:
@@ -645,8 +663,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             domain = "Haemostasis & Thrombosis",
             questionType = "MCQ",
             title = "Autonomic Neuropathy & Coagulopathy in Amyloidosis",
-            stem = "A 65-year-old male presents with lightheadedness on standing, chronic nocturnal diarrhoea, and extensive spontaneous periorbital ecchymoses ('raccoon eyes'). Lying BP is 138/84 mmHg, which falls to 102/64 mmHg at 3 minutes of standing with a heart rate change from 68 to 72 bpm. Coagulation screen shows an isolated prolongation of PT (19s) with normal fibrinogen and platelets.\n\nAccording to the 2026 BSH AL Amyloidosis Guideline, what is the underlying mechanism of the ecchymoses and postural hypotension?",
-            labData = "Lying BP: 138/84 mmHg\nStanding BP (3 min): 102/64 mmHg (HR 72 bpm)\nPT: 19s (Control 12s)\nAPTT: 32s\nPlatelets: 215x10^9/L",
+            stem = "A 65-year-old male presents with lightheadedness on standing, chronic nocturnal diarrhoea, and extensive spontaneous periorbital ecchymoses ('raccoon eyes'). Lying BP is 138/84 mmHg, which falls to 102/64 mmHg at 3 minutes of standing with a heart rate change from 68 to 72 bpm. Coagulation screen shows prolongation of both PT (19s) and APTT (46s) with normal fibrinogen and platelets; Factor X activity is 18%.\n\nAccording to the 2026 BSH AL Amyloidosis Guideline, what is the underlying mechanism of the ecchymoses and postural hypotension?",
+            labData = "Lying BP: 138/84 mmHg\nStanding BP (3 min): 102/64 mmHg (HR 72 bpm)\nPT: 19s (Control 12s)\nAPTT: 46s (Control 30s)\nFactor X activity: 18%\nPlatelets: 215x10^9/L",
             options = listOf(
                 "Primary idiopathic thrombocytopenic purpura with vasovagal syncope",
                 "Factor X deficiency due to binding by amyloid fibrils and neurogenic orthostatic hypotension from autonomic neuropathy",
@@ -655,7 +673,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "Severe Von Willebrand disease with sympathetic hyperreactivity"
             ),
             correctIndex = 1,
-            rationale = "According to the 2026 BSH Guideline on AL Amyloidosis (Garg et al.):\n• Periorbital ecchymoses (purpura) and bleeding in AL amyloidosis are classic hallmark signs caused by vascular amyloid fragility and acquired Factor X deficiency (caused by rapid clearance and adsorption of circulating Factor X onto amyloid fibrils in tissues).\n• Neurogenic orthostatic hypotension is defined as a sustained fall in blood pressure >=20/10 mmHg within 3 minutes of standing with blunted compensatory heart rate elevation (<10 bpm), characteristic of autonomic amyloid infiltration.\n• Both bleeding due to Factor X deficiency and postural drop >20 mmHg are explicit criteria for urgent haematology clinic referral.",
+            rationale = "According to the 2026 BSH Guideline on AL Amyloidosis (Garg et al.):\n• Periorbital ecchymoses (purpura) and bleeding in AL amyloidosis are classic hallmark signs caused by vascular amyloid fragility and acquired Factor X deficiency (caused by rapid clearance and adsorption of circulating Factor X onto amyloid fibrils in tissues). Factor X sits in the common pathway, so its deficiency prolongs BOTH the PT and the APTT.\n• Neurogenic orthostatic hypotension is defined as a sustained fall in blood pressure >=20/10 mmHg within 3 minutes of standing with blunted compensatory heart rate elevation (<10 bpm), characteristic of autonomic amyloid infiltration.\n• Both bleeding due to Factor X deficiency and postural drop >20 mmHg are explicit criteria for urgent haematology clinic referral.",
             sourceResourceId = "bsh_amyloidosis_2026",
             guidelineSection = "Section: When to Refer Urgently to a Haematology Clinic / Figure 1",
             evidenceGrade = "Grade 1A",
@@ -668,7 +686,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             domain = "Haemostasis & Thrombosis",
             questionType = "MCQ",
             title = "Management of Suspected Heparin-Induced Thrombocytopenia",
-            stem = "A 71-year-old woman develops a fall in platelet count from 240x10^9/L to 65x10^9/L on post-operative day 7 following hip replacement surgery while receiving prophylactic Low-Molecular-Weight Heparin (enoxaparin). Ultrasound confirms a new extensive femoral deep vein thrombosis. Her calculated 4Ts score is 7 (High Probability).\n\nAccording to UKHCDO and BSH Guidelines, what is the most appropriate immediate management?",
+            stem = "A 71-year-old woman develops a fall in platelet count from 240x10^9/L to 65x10^9/L on post-operative day 7 following hip replacement surgery while receiving prophylactic Low-Molecular-Weight Heparin (enoxaparin). Ultrasound confirms a new extensive femoral deep vein thrombosis. Her calculated 4Ts score is 7 (High Probability).\n\nAccording to BSH guidance, what is the most appropriate immediate management?",
             labData = "Pre-op Platelets: 240x10^9/L\nDay 7 Platelets: 65x10^9/L (drop >50%)\nCoagulation Screen: Normal\nDoppler: Acute right femoral DVT",
             options = listOf(
                 "Switch enoxaparin to therapeutic unfractionated heparin infusion and recheck platelets in 24 hours",
@@ -678,11 +696,11 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "Discontinue enoxaparin and observe without any anticoagulation until antibody results return"
             ),
             correctIndex = 1,
-            rationale = "According to UKHCDO Guidelines on Heparin-Induced Thrombocytopenia:\n• In patients with intermediate or high 4Ts scores (score >=4), ALL heparin products must be discontinued immediately.\n• HIT is a paradoxical prothrombotic emergency; therapeutic alternative non-heparin anticoagulation (Argatroban, Fondaparinux, or Danaparoid) must be initiated immediately without waiting for laboratory confirmation.\n• Platelet transfusions are contraindicated because they can fuel further thrombosis.\n• Warfarin is strictly contraindicated in the acute phase of HIT due to the risk of microvascular thrombosis and coumarin-induced skin necrosis/limb gangrene resulting from rapid protein C depletion.",
+            rationale = "According to the BSH HIT guideline (Watson et al. 2012):\n• In patients with intermediate or high 4Ts scores (score >=4), ALL heparin products must be discontinued immediately.\n• HIT is a paradoxical prothrombotic emergency; therapeutic-dose non-heparin anticoagulation (argatroban or danaparoid; fondaparinux off-label) should be started immediately without waiting for laboratory confirmation.\n• Platelet transfusions are contraindicated because they can fuel further thrombosis.\n• Warfarin is strictly contraindicated in the acute phase of HIT due to the risk of microvascular thrombosis and coumarin-induced skin necrosis/limb gangrene resulting from rapid protein C depletion.",
             sourceResourceId = "ukhcdo_haemostasis_2022",
             guidelineSection = "Section: Immediate Management of Suspected HIT",
-            evidenceGrade = "Grade 1A",
-            yearPaper = "RCPath Past Papers & UKHCDO Guidelines"
+            evidenceGrade = "Not verified",
+            yearPaper = "Theme: RCPath Paper 1 March 2018 Q4 (HIT)"
         ),
 
         // Question 16: Transfusion - Positive DAT at 2 AM
@@ -704,8 +722,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             rationale = "According to BSH Guidelines for Pre-transfusion Compatibility Procedures:\n• When a warm autoantibody causes pan-reactivity on the antibody panel, the primary risk is that underlying clinically significant red cell alloantibodies (e.g., anti-Rh, Kell, Duffy, Kidd) may be masked by the autoantibody.\n• Adsorption techniques (patient red cell autoadsorption if not recently transfused, or differential alloadsorption using matched phenotyped cells) must be performed to adsorb the autoantibody from the serum, leaving any alloantibodies in the adsorbed serum for identification.\n• In extreme life-or-death emergencies where blood cannot wait for completed adsorption, 'least incompatible' units or extended phenotypically matched units (ABO, Rh, and Kell matched) are issued with senior haematologist authorization.",
             sourceResourceId = "bsh_transfusion_components",
             guidelineSection = "Section: Warm Autoimmune Haemolytic Anaemia and Pan-reactive Serology",
-            evidenceGrade = "Grade 1A",
-            yearPaper = "RCPath Paper 1 2019 Q4"
+            evidenceGrade = "Not verified",
+            yearPaper = "Adapted from RCPath Paper 1 March 2019 Q4 (essay)"
         ),
 
         // Questions for Biss et al. (2026) - Gynaecology & Bleeding Disorders
@@ -714,16 +732,16 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             domain = "Haemostasis & Thrombosis",
             questionType = "MCQ",
             title = "Biss 2026: Anticoagulation-Induced Heavy Menstrual Bleeding",
-            stem = "A 28-year-old woman receiving therapeutic anticoagulation with rivaroxaban for unprovoked deep vein thrombosis develops severe heavy menstrual bleeding requiring repeated hospital attendance. According to the 2026 BSH/UKHCDO Good Practice Paper on multidisciplinary haematology-gynaecology care, which anticoagulant modification is recommended to reduce HMB while maintaining therapeutic anticoagulation?",
+            stem = "A 28-year-old woman receiving therapeutic anticoagulation with rivaroxaban for unprovoked deep vein thrombosis develops severe heavy menstrual bleeding requiring repeated hospital attendance despite first-line measures. According to the 2026 BSH/UKHCDO Good Practice Paper on multidisciplinary haematology-gynaecology care, which anticoagulant modification is recommended to reduce HMB while maintaining therapeutic anticoagulation?",
             options = listOf(
-                "Switch anticoagulation to apixaban or dabigatran, which have a significantly lower incidence of HMB",
+                "Switch anticoagulation to apixaban or dabigatran, which have a lower incidence of HMB",
                 "Permanently discontinue all anticoagulation without haematological review",
                 "Increase the rivaroxaban dose during menses to promote clot stabilization",
                 "Switch to low-dose unfractionated heparin without monitoring",
                 "Add high-dose aspirin alongside rivaroxaban"
             ),
             correctIndex = 0,
-            rationale = "According to the BSH/UKHCDO 2026 Good Practice Paper (Biss et al., Section on Individuals receiving anti-coagulant therapy), oral anticoagulant agents may need to be changed in treatment-resistant HMB. Apixaban or dabigatran have a demonstrated lower incidence of heavy menstrual bleeding compared to rivaroxaban. Complete cessation of anticoagulation carries unacceptable risk of recurrent VTE.",
+            rationale = "According to the BSH/UKHCDO 2026 Good Practice Paper (Biss et al., Section on Individuals receiving anti-coagulant therapy), oral anticoagulant agents may need to be changed in treatment-resistant HMB. Apixaban or dabigatran have a lower incidence of heavy menstrual bleeding compared to rivaroxaban (an ungraded good-practice point in the text, not a formal recommendation). Complete cessation of anticoagulation carries unacceptable risk of recurrent VTE.",
             sourceResourceId = "bsh_haem_gynae_2026",
             guidelineSection = "Section: Individuals receiving anti-coagulant therapy",
             evidenceGrade = "Consensus"
@@ -801,7 +819,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "Centrifugal BGA methods consistently overestimate haemoglobin compared to central laboratories"
             ),
             correctIndex = 0,
-            rationale = "The BSH 2026 guideline explicitly recommends that blood gas analysers should not substitute laboratory-based testing of Hb/Hct (Grade 1C). Studies show that underestimation of Hb/Hct by BGAs compared to central laboratory methods can trigger inappropriate transfusions (up to 21% discordant transfusion decisions).",
+            rationale = "The BSH 2026 guideline explicitly recommends that blood gas analysers should not substitute laboratory-based testing of Hb/Hct (Grade 1C). Studies disagree in both directions: BGA underestimation can trigger unnecessary transfusion, while one study found 21% of patients who would be transfused on the lab Hct would not be on the BGA Hct, and another found systematic BGA overestimation (mean 8 g/L). BGAs are therefore not interchangeable with lab analysers.",
             sourceResourceId = "bsh_poct_haematology_2026",
             guidelineSection = "Recommendations: Blood gas Hb/haematocrit measurement",
             evidenceGrade = "Grade 1C"
@@ -841,7 +859,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "An ADAMTS13 activity of 25 IU/dL confirms acute immune-mediated TTP"
             ),
             correctIndex = 0,
-            rationale = "The BSH 2026 guideline emphasizes that suspected TTP is a medical emergency where availability of ADAMTS13 activity is NOT a prerequisite for immediate treatment (Grade 1B). Samples must be collected into 0.109 M (3.2%) sodium citrate BEFORE treatment. EDTA is strictly contraindicated because it chelates divalent cations (zinc and calcium), causing falsely low ADAMTS13 activity.",
+            rationale = "The BSH 2026 guideline emphasizes that suspected TTP is a medical emergency where availability of ADAMTS13 activity is NOT a prerequisite for immediate treatment (stated as context, ungraded). Samples should be collected into 0.109 M (3.2%) sodium citrate BEFORE treatment (Grade 1B). EDTA cannot be used because it chelates divalent cations (zinc and calcium), causing falsely low ADAMTS13 activity.",
             sourceResourceId = "bsh_ttp_laboratory_2026",
             guidelineSection = "Section: Laboratory Investigation for TTP & Pre-analytical considerations",
             evidenceGrade = "Grade 1B"
@@ -860,7 +878,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "ADAMTS13 activity <20 IU/dL confirms TTP; turnaround times of up to 48 hours are acceptable"
             ),
             correctIndex = 0,
-            rationale = "The 2026 BSH guideline states that ADAMTS13 activity <10 IU/dL confirms the diagnosis of TTP (10–20 IU/dL represents an equivocal grey zone). In suspected TTP, preliminary results should be available as soon as possible, ideally within 1 hour of sample receipt for rapid automated assays, or 6 hours for ELISA (Grade 1C).",
+            rationale = "The 2026 BSH guideline states that ADAMTS13 activity <10 IU/dL is the diagnostic cut-off for TTP (10–20 IU/dL is an equivocal grey zone for manual FRET/ELISA assays; not established for automated platforms). In suspected TTP, preliminary results should be available as soon as possible, ideally within 1 hour of sample receipt for rapid automated assays, or 6 hours for ELISA (Grade 1C).",
             sourceResourceId = "bsh_ttp_laboratory_2026",
             guidelineSection = "Section: Turnaround Times & Testing for ADAMTS13 Activity",
             evidenceGrade = "Grade 1C"
@@ -888,7 +906,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
         // Questions for Osborne et al. (2026) - PMBCL
         Question(
             id = "q_pmbcl_01",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             questionType = "MCQ",
             title = "Osborne 2026: Omission of Radiotherapy in Complete Metabolic Response",
             stem = "A 26-year-old woman with newly diagnosed bulky Primary Mediastinal B-cell Lymphoma (PMBCL) completes 6 cycles of DA-R-EPOCH. An end-of-treatment PET-CT scan performed at 6 weeks demonstrates Deauville Score 2 (Complete Metabolic Response). According to the 2026 BSH guideline (Osborne et al.) and the IELSG37 prospective trial, what is the recommended management?",
@@ -907,7 +925,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
         ),
         Question(
             id = "q_pmbcl_02",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             questionType = "MCQ",
             title = "Osborne 2026: First-Line Chemoimmunotherapy Regimens",
             stem = "A 32-year-old man is diagnosed with anterior mediastinal PMBCL with superior vena cava compression. Which first-line chemotherapy approach is recommended by the 2026 BSH guideline?",
@@ -919,14 +937,14 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "Immediate upfront CAR T-cell therapy without prior chemoimmunotherapy"
             ),
             correctIndex = 0,
-            rationale = "The 2026 BSH guideline recommends dose-intensive chemoimmunotherapy: offer R-CHOP-14 x6 or DA-R-EPOCH x6 (Grade 1B). Multiple large studies (including LYSA and IELSG37) demonstrated that R-CHOP-21 has significantly inferior event-free survival and a significantly higher rate of Deauville 5 treatment failure (23.8% vs 8.2%), and is therefore not recommended (Grade 1B).",
+            rationale = "The 2026 BSH guideline recommends dose-intensive chemoimmunotherapy: offer R-CHOP-14 x6 or DA-R-EPOCH x6 (Grade 1B). In the IELSG37 trial (not powered to compare induction regimens), patients given R-CHOP-21 had a significantly higher rate of Deauville 5 response (23.8% vs 8.2%) and inferior EFS compared with dose-intensive regimens; R-CHOP-21 is therefore not recommended (Grade 1B). A LYSA study found no efficacy difference between R-CHOP-14 and DA-R-EPOCH but more toxicity with DA-R-EPOCH.",
             sourceResourceId = "bsh_pmbcl_lymphoma_2026",
             guidelineSection = "Recommendations: First-Line Treatment",
             evidenceGrade = "Grade 1B"
         ),
         Question(
             id = "q_pmbcl_03",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             questionType = "MCQ",
             title = "Osborne 2026: Thromboprophylaxis & Second-Line CAR T-Cell Therapy",
             stem = "Which pair of recommendations is explicitly supported in the 2026 BSH PMBCL guideline?",
@@ -938,7 +956,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
                 "R-CHOP-21 is superior to DA-R-EPOCH in women under 40"
             ),
             correctIndex = 0,
-            rationale = "The 2026 BSH PMBCL guideline emphasizes two crucial points: (1) Venous thromboembolism occurs in 28% of patients at presentation; thromboprophylaxis is recommended if platelets >50 x 10^9/L (Grade 1C). (2) In patients with relapsed or refractory disease within 12 months, second-line high-dose chemotherapy has very poor outcomes; CD19 CAR T-cell therapy (liso-cel, TRANSFORM trial) is licensed and recommended second-line (Grade 1C). Routine surveillance imaging in asymptomatic patients in remission is not recommended (Grade 1B).",
+            rationale = "The 2026 BSH PMBCL guideline emphasizes two crucial points: (1) Thrombotic complications occur in 28% of patients (most often around presentation); thromboprophylaxis is recommended if platelets >50 x 10^9/L (Grade 1C). (2) In patients with relapsed or refractory disease within 12 months, second-line high-dose chemotherapy has very poor outcomes; CD19 CAR T-cell therapy (liso-cel, TRANSFORM trial) is licensed and recommended second-line (Grade 1C). Routine surveillance imaging in asymptomatic patients in remission is not recommended (Grade 1B).",
             sourceResourceId = "bsh_pmbcl_lymphoma_2026",
             guidelineSection = "Recommendations: Presentation & Relapsed PMBCL",
             evidenceGrade = "Grade 1C"
@@ -952,7 +970,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "AL Amyloidosis Staging",
             sourceResourceId = "bsh_amyloidosis_2026",
             front = "What defines AL-ISS Stage IIIC cardiac amyloidosis and what is its median survival?",
-            back = "• NT-proBNP >8500 ng/L\n• High-sensitivity Troponin T >=0.035 ng/L\n• Global Longitudinal Strain (GLS) >-9%\n\nMedian Survival: Approximately 4 months (Ultra-poor risk group).",
+            back = "• NT-proBNP >8500 ng/L\n• Troponin T >=0.035 µg/L (35 ng/L; printed as 'ng/L' in the guideline table)\n• Global Longitudinal Strain (GLS) >-9%\n\nMedian Survival: Approximately 4 months (Ultra-poor risk group).",
             guidelineRef = "BSH 2026 AL Amyloidosis Guideline (Table 2; Khwaja et al.)"
         ),
         Flashcard(
@@ -1005,18 +1023,18 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             domain = "Haemato-Oncology",
             topic = "B-ALL Immunophenotyping",
             sourceResourceId = "who_haem_5th",
-            front = "How do you distinguish Common ALL from Pre-B ALL and Mature B-ALL on flow cytometry?",
-            back = "• Common ALL: CD10+ (CALLA), CD19+, TdT+, Cytoplasmic Ig negative, SmIg negative\n• Pre-B ALL: CD10+, CD19+, TdT+, Cytoplasmic Ig (mu heavy chain) POSITIVE, SmIg negative\n• Mature B-ALL: Surface Ig (SmIg) POSITIVE, TdT negative",
+            front = "How do you distinguish Common ALL from Pre-B ALL, and both from a mature B-cell (Burkitt) leukaemia, on flow cytometry?",
+            back = "• Common ALL: CD10+ (CALLA), CD19+, TdT+, Cytoplasmic Ig negative, SmIg negative\n• Pre-B ALL: CD10+, CD19+, TdT+, Cytoplasmic Ig (mu heavy chain) POSITIVE, SmIg negative\n• Surface Ig POSITIVE, TdT negative: mature B-cell neoplasm (e.g. Burkitt). WHO-HAEM5 does not call this B-ALL; 'mature B-ALL / FAB L3' is obsolete.",
             guidelineRef = "WHO 5th Edition Haematolymphoid Tumours"
         ),
         Flashcard(
             id = "fc_08",
             domain = "Haemato-Oncology",
             topic = "APL Differentiation Syndrome",
-            sourceResourceId = "who_haem_5th",
+            sourceResourceId = "bsh_apl_guidelines",
             front = "What is the clinical hallmark and immediate treatment of APL Differentiation Syndrome?",
             back = "• Hallmarks: Unexplained fever, weight gain (>5 kg), dyspnoea, bilateral pulmonary infiltrates, pleural/pericardial effusions.\n• Treatment: Dexamethasone 10 mg IV twice daily IMMEDIATELY at the earliest sign. Temporarily hold ATRA/ATO if severe.",
-            guidelineRef = "BSH & ELN Guidelines for Acute Promyelocytic Leukaemia"
+            guidelineRef = "ELN 2019 APL Recommendations"
         ),
         Flashcard(
             id = "fc_09",
@@ -1040,9 +1058,9 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             id = "fc_11",
             domain = "Transfusion Medicine",
             topic = "Sickle Cell Transfusion Targets",
-            sourceResourceId = "bsh_transfusion_components",
-            front = "What are the target pre-operative Hb S% and maximum total Hb in Sickle Cell Disease?",
-            back = "• Target Hb S: <30% prior to major/orthopaedic surgery\n• Target total Hb: 100 - 110 g/L (Never exceed 110 g/L due to dangerous hyperviscosity crisis risk)",
+            sourceResourceId = "bsh_sickle_transfusion",
+            front = "What is the BSH approach to pre-operative transfusion in HbSS/HbSbeta0 sickle cell disease?",
+            back = "• Medium-risk surgery: top-up transfusion to Hb ~100 g/L (TAPS trial)\n• High-risk surgery, or baseline Hb too high for top-up: consider exchange transfusion, target HbS <30%\n• Avoid post-transfusion Hb above ~100-110 g/L (hyperviscosity)",
             guidelineRef = "BSH Sickle Cell Disease Transfusion Guidelines"
         ),
         Flashcard(
@@ -1051,8 +1069,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "HIT 4Ts Score & Anticoagulation",
             sourceResourceId = "ukhcdo_haemostasis_2022",
             front = "In suspected HIT (4Ts >=4), what 3 key drug rules must be followed immediately?",
-            back = "1. Stop ALL heparin immediately (including catheter line flushes).\n2. Start a therapeutic non-heparin anticoagulant immediately (Argatroban, Fondaparinux, Danaparoid).\n3. Do NOT start Warfarin until platelet count has recovered >150x10^9/L (risk of venous limb gangrene from protein C depletion).",
-            guidelineRef = "UKHCDO Guidelines on Heparin-Induced Thrombocytopenia"
+            back = "1. Stop ALL heparin immediately (including catheter line flushes).\n2. Start a therapeutic-dose non-heparin anticoagulant immediately (argatroban or danaparoid; fondaparinux off-label).\n3. Do NOT start Warfarin until platelet count has recovered >150x10^9/L (risk of venous limb gangrene from protein C depletion).",
+            guidelineRef = "BSH HIT Guideline (Watson et al. 2012)"
         ),
         Flashcard(
             id = "fc_13",
@@ -1060,8 +1078,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "Factor VIII Inhibitor vs Lupus Anticoagulant",
             sourceResourceId = "ukhcdo_haemostasis_2022",
             front = "How do you distinguish an acquired Factor VIII inhibitor from a Lupus Anticoagulant on mixing studies?",
-            back = "• Both cause isolated prolonged APTT that does not correct immediately.\n• FVIII inhibitor is time- and temperature-dependent: progressively prolongs after 2-hour incubation at 37°C.\n• Lupus Anticoagulant is immediate-acting and corrects with excess phospholipid in confirmatory testing (DRVVT / PNP).",
-            guidelineRef = "UKHCDO Guidelines on Acquired Bleeding Disorders"
+            back = "• Both cause an isolated prolonged APTT.\n• Lupus anticoagulant: immediate-acting, usually fails to correct on the immediate 50:50 mix; phospholipid-dependent, so the clotting time shortens with excess phospholipid (DRVVT confirm / platelet neutralisation).\n• FVIII inhibitor: time- and temperature-dependent; may correct immediately, then prolongs after 1-2 h incubation at 37°C; low FVIII on chromogenic or multi-dilution assay.",
+            guidelineRef = "UKHCDO Guideline on Acquired Coagulation Inhibitors (Collins et al. 2013)"
         ),
         Flashcard(
             id = "fc_14",
@@ -1078,8 +1096,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "Paroxysmal Nocturnal Haemoglobinuria (PNH)",
             sourceResourceId = "who_haem_5th",
             front = "What is the definitive diagnostic test for Paroxysmal Nocturnal Haemoglobinuria (PNH)?",
-            back = "High-sensitivity multiparameter flow cytometry demonstrating deficiency of GPI-anchored proteins (CD55, CD59) and FLAER (fluorescent aerolysin) on granulocytes and monocytes.",
-            guidelineRef = "BSH & International PNH Guidelines"
+            back = "High-sensitivity multiparameter flow cytometry showing loss of GPI-anchored markers: FLAER + CD24 on neutrophils and FLAER + CD14 on monocytes, with CD59 on red cells to type the RBC clone (CD55 alone is not recommended).",
+            guidelineRef = "ICCS high-sensitivity PNH flow cytometry guidance"
         ),
 
         // Flashcards for Biss et al. (2026) - Gynaecology & Bleeding Disorders
@@ -1097,8 +1115,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             domain = "Haemostasis & Thrombosis",
             topic = "Anticoagulants & HMB",
             sourceResourceId = "bsh_haem_gynae_2026",
-            front = "In females receiving therapeutic anticoagulation who develop persistent heavy menstrual bleeding, which DOAC switch is supported in BSH/UKHCDO 2026?",
-            back = "Switch to Apixaban or Dabigatran:\n• Both apixaban and dabigatran have a significantly lower incidence of heavy menstrual bleeding compared to rivaroxaban.\n• Avoid complete interruption of anticoagulation without haematological risk-benefit appraisal due to recurrent VTE hazard.",
+            front = "In females on therapeutic anticoagulation with treatment-resistant heavy menstrual bleeding, which anticoagulant switch does BSH/UKHCDO 2026 describe?",
+            back = "Switch to Apixaban or Dabigatran:\n• Both apixaban and dabigatran have a lower incidence of heavy menstrual bleeding compared to rivaroxaban (ungraded good-practice point).\n• Avoid complete interruption of anticoagulation without haematological risk-benefit appraisal due to recurrent VTE hazard.",
             guidelineRef = "Biss 2026 (Section: Anticoagulants)"
         ),
         Flashcard(
@@ -1107,7 +1125,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "GWBD & Intrauterine Systems",
             sourceResourceId = "bsh_haem_gynae_2026",
             front = "What key complication occurs with levonorgestrel-releasing intrauterine systems (LNS-IUS / Mirena) in women with bleeding disorders, and how is it mitigated?",
-            back = "Key issue: Increased device expulsion rates in women with inherited bleeding disorders (IBDs).\n\nMitigation: Short-term medical menstrual suppression around insertion reduces the risk of expulsion. Insertion may require sedation/anaesthesia and specialist technique in younger/adolescent patients.",
+            back = "Key issue: Increased device expulsion rates in women with inherited bleeding disorders (IBDs).\n\nMitigation: Menstrual suppression has been described as reducing expulsion risk. Insertion may require sedation/anaesthesia and specialist technique in younger/adolescent patients.",
             guidelineRef = "Biss 2026 (Section: IBD Management)"
         ),
 
@@ -1127,7 +1145,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "Blood Gas Analysers & Transfusion Triggers",
             sourceResourceId = "bsh_poct_haematology_2026",
             front = "Why are blood gas analysers (BGAs) not interchangeable with central laboratory analysers for Hb/Hct measurement?",
-            back = "BGA vs Central Lab:\n• BGAs systematically underestimate Hb/Hct compared to central lab (leading to unnecessary transfusions in up to 21% of patients; or mean ~8 g/L discrepancy).\n• BGAs cannot detect haemolysis in whole blood.\n• BSH Rec (Grade 1C): Blood gas analysers should not substitute laboratory-based Hb/Hct testing, but may aid in monitoring trends.",
+            back = "BGA vs Central Lab:\n• Disagreement runs in BOTH directions: some studies show BGA underestimation (unnecessary transfusion risk); one found 21% of patients who would be transfused on the lab Hct would not be on the BGA Hct; another found systematic overestimation (mean 8 g/L).\n• Not interchangeable under CLIA criteria; BGAs usually cannot detect haemolysis in whole blood.\n• BSH Rec (Grade 1C): Blood gas analysers should not substitute laboratory-based Hb/Hct testing, but may aid in monitoring trends.",
             guidelineRef = "Tam 2026 (Grade 1C)"
         ),
         Flashcard(
@@ -1147,8 +1165,8 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "ADAMTS13 Thresholds & Emergency Rule",
             sourceResourceId = "bsh_ttp_laboratory_2026",
             front = "What is the diagnostic threshold for ADAMTS13 activity in TTP, and what is the emergency rule regarding treatment initiation?",
-            back = "Diagnostic Cutoffs:\n• ADAMTS13 activity <10 IU/dL confirms TTP (93% of acute iTTP present with <1 IU/dL).\n• 10–20 IU/dL is an equivocal grey zone.\n• >20 IU/dL makes TTP highly unlikely.\n\nEmergency Rule (Grade 1B): Availability of ADAMTS13 activity is NOT a prerequisite for starting treatment. In suspected TTP, start plasma exchange, steroids, and caplacizumab immediately without waiting for laboratory results.",
-            guidelineRef = "MacDonald 2026 (Grade 1B)"
+            back = "Diagnostic Cutoffs:\n• ADAMTS13 activity <10 IU/dL is the diagnostic cut-off (93% of iTTP in the UK registry presented with <1 IU/dL).\n• 10–20 IU/dL is an equivocal grey zone for manual FRET/ELISA assays (not established for automated platforms; HemosIL CLEIA can read falsely low).\n\nEmergency Rule (context, ungraded): Availability of ADAMTS13 activity is NOT a prerequisite for starting treatment. In suspected TTP, start plasma exchange, steroids, and caplacizumab immediately without waiting for laboratory results.",
+            guidelineRef = "MacDonald 2026"
         ),
         Flashcard(
             id = "fc_ttp_02",
@@ -1156,7 +1174,7 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "Pre-analytical Tube & Turnaround Standards",
             sourceResourceId = "bsh_ttp_laboratory_2026",
             front = "What sample tube is mandatory for ADAMTS13 testing, which tube is strictly forbidden, and what are the required turnaround times?",
-            back = "Sample Requirements:\n• Tube: 0.109 M (3.2%) Sodium Citrate filled >=90% (Grade 1B).\n• FORBIDDEN: EDTA tubes cannot be used (EDTA chelates zinc and calcium, causing falsely low ADAMTS13 activity).\n\nTurnaround Times (Grade 1C):\n• Rapid automated assays: within 1 hour of sample receipt.\n• ELISA assays: within 6 hours of sample receipt.\n• Platelet count <30 x 10^9/L with MAHA mandates film review within 60 minutes.",
+            back = "Sample Requirements:\n• Tube: 0.109 M (3.2%) Sodium Citrate filled >=90% (Grade 1B).\n• FORBIDDEN: EDTA tubes cannot be used (EDTA chelates zinc and calcium, causing falsely low ADAMTS13 activity).\n\nTurnaround Times (Grade 1C):\n• Rapid automated assays: within 1 hour of sample receipt.\n• ELISA assays: within 6 hours of sample receipt.\n• Platelet count <30 x 10^9/L: blood film examined for haemolysis, ideally within 60 minutes, with rapid escalation (1C).",
             guidelineRef = "MacDonald 2026 (Grade 1B/1C)"
         ),
         Flashcard(
@@ -1165,14 +1183,14 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "Anti-ADAMTS13 Antibodies & Surveillance",
             sourceResourceId = "bsh_ttp_laboratory_2026",
             front = "What is the timing for anti-ADAMTS13 antibody testing, and how does the open ADAMTS13 conformation index predict relapse?",
-            back = "Antibody Assay Timing:\n• Must be performed within 72 hours of presentation when ADAMTS13 activity <10 IU/dL (Grade 1B).\n• ELISA is recommended over Bethesda assays (detects neutralizing and non-neutralizing IgG).\n\nOpen Conformation Index:\n• Predicts clinical relapse before activity drops.\n• At peak activity (>60%), patients with open conformation had 46% 1-year relapse vs 9% with closed conformation.",
+            back = "Antibody Assay Timing:\n• Must be performed within 72 hours of presentation when ADAMTS13 activity <10 IU/dL (Grade 1B).\n• ELISA is recommended over Bethesda assays (detects neutralizing and non-neutralizing IgG).\n\nOpen Conformation Index:\n• Predicts clinical relapse before activity drops.\n• At peak activity (>60%), patients with open conformation had 46% 1-year relapse vs 9% with closed conformation.\n• BUT: conformation assays are NOT recommended for routine clinical use (2C); regional TTP centres only.",
             guidelineRef = "MacDonald 2026 (Section: Conformation)"
         ),
 
         // Flashcards for Osborne et al. (2026) - PMBCL
         Flashcard(
             id = "fc_pmbcl_01",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "IELSG37 Trial & RT Omission",
             sourceResourceId = "bsh_pmbcl_lymphoma_2026",
             front = "What is the landmark Grade 1A recommendation from BSH 2026 regarding radiotherapy in PMBCL patients in Complete Metabolic Response (DS 1–3)?",
@@ -1181,68 +1199,68 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
         ),
         Flashcard(
             id = "fc_pmbcl_02",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "First-Line Induction & Why R-CHOP-21 is NOT Recommended",
             sourceResourceId = "bsh_pmbcl_lymphoma_2026",
             front = "Which first-line regimens are recommended for PMBCL in BSH 2026, and why is standard R-CHOP-21 explicitly not recommended?",
-            back = "First-line Regimens (Grade 1B):\n• Recommended: Dose-intensive R-CHOP-14 x6 or DA-R-EPOCH x6.\n• NOT Recommended: R-CHOP-21 is not recommended.\n\nRationale: In the IELSG37 and LYSA studies, R-CHOP-21 had significantly inferior EFS and a 3-fold higher rate of Deauville 5 failure (23.8% vs 8.2% with dose-intensive regimens).",
+            back = "First-line Regimens (Grade 1B):\n• Recommended: Dose-intensive R-CHOP-14 x6 or DA-R-EPOCH x6.\n• NOT Recommended: R-CHOP-21 is not recommended.\n\nRationale: In IELSG37 (not powered to compare regimens), R-CHOP-21 had inferior EFS and roughly 3-fold more Deauville 5 responses (23.8% vs 8.2% with other regimens).",
             guidelineRef = "Osborne 2026 (Grade 1B)"
         ),
         Flashcard(
             id = "fc_pmbcl_03",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "Thrombosis & CAR T-Cell Salvage",
             sourceResourceId = "bsh_pmbcl_lymphoma_2026",
             front = "What are the specific BSH 2026 recommendations for (1) thrombosis prophylaxis and (2) relapsed PMBCL within 12 months?",
-            back = "1. Thromboprophylaxis (Grade 1C):\n• PMBCL has a 28% incidence of VTE at presentation.\n• Prophylactic anticoagulation is recommended if platelet count >50 x 10^9/L.\n\n2. Early Relapse Salvage (Grade 1C):\n• Second-line high-dose chemotherapy has poor response in PMBCL.\n• CD19 CAR T-cell therapy with Lisocabtagene maraleucel (Liso-cel) is licensed and recommended second-line for relapse within 12 months (TRANSFORM trial).",
+            back = "1. Thromboprophylaxis (Grade 1C):\n• Thrombotic complications in 28% of PMBCL patients (most often around presentation).\n• Prophylactic anticoagulation is recommended if platelet count >50 x 10^9/L.\n\n2. Early Relapse Salvage (Grade 1C):\n• Second-line high-dose chemotherapy has poor response in PMBCL.\n• CD19 CAR T-cell therapy with Lisocabtagene maraleucel (Liso-cel) is licensed and recommended second-line for relapse within 12 months (TRANSFORM trial).",
             guidelineRef = "Osborne 2026 (Grade 1C)"
         ),
 
         // Dedicated Guideline-Highlighting Flashcards across Core Guidelines
         Flashcard(
             id = "fc_guideline_apl_emergency",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "BSH/ELN APL Guideline: Emergency Treatment",
             sourceResourceId = "bsh_apl_guidelines",
-            front = "BSH Guideline Recommendation: What is the Grade 1A emergency recommendation for suspected Acute Promyelocytic Leukaemia (APL)?",
-            back = "1. Start All-Trans Retinoic Acid (ATRA 45 mg/m²/day) IMMEDIATELY upon morphological suspicion; do NOT await cytogenetics or PML-RARA PCR (Grade 1A).\n2. Coagulopathy targets: Maintain platelets >50x10^9/L and fibrinogen >1.5 g/L with cryoprecipitate or fibrinogen concentrate (Grade 1A).\n3. Differentiation syndrome: Start IV Dexamethasone 10 mg BD immediately at first sign (Grade 1A).",
-            guidelineRef = "BSH & ELN APL Guidelines (Rec 1A)"
+            front = "ELN recommendation: What are the emergency steps for suspected Acute Promyelocytic Leukaemia (APL)?",
+            back = "1. Start All-Trans Retinoic Acid (ATRA 45 mg/m²/day) IMMEDIATELY upon morphological suspicion; do NOT await cytogenetics or PML-RARA PCR.\n2. Coagulopathy targets: platelets >30-50x10^9/L and fibrinogen >1.0-1.5 g/L with cryoprecipitate or fibrinogen concentrate.\n3. Differentiation syndrome: start IV dexamethasone 10 mg BD at the first sign.",
+            guidelineRef = "ELN 2019 APL Recommendations (Sanz et al.)"
         ),
         Flashcard(
             id = "fc_guideline_aps_doac",
             domain = "Haemostasis & Thrombosis",
             topic = "BSH Antiphospholipid Guideline: Anticoagulation Choice",
             sourceResourceId = "bsh_antiphospholipid",
-            front = "BSH Guideline Recommendation: Why are Direct Oral Anticoagulants (DOACs) contraindicated in triple-positive Antiphospholipid Syndrome (APS)?",
-            back = "DOAC Contraindication (Grade 1A):\n• Landmark trials (TRAPS) demonstrated a significantly increased risk of recurrent arterial thromboembolic events (especially ischemic stroke) with DOACs compared to Warfarin.\n• Standard of Care: Warfarin (target INR 2.0–3.0) remains mandatory first-line therapy for thrombotic APS.",
-            guidelineRef = "BSH Antiphospholipid Guideline (Rec 1A)"
+            front = "Why should Direct Oral Anticoagulants (DOACs) be avoided in triple-positive Antiphospholipid Syndrome (APS)?",
+            back = "• The TRAPS trial (rivaroxaban vs warfarin in triple-positive APS) was stopped early for excess arterial events (notably stroke) with rivaroxaban.\n• Warfarin (target INR 2.0–3.0) remains first-line for thrombotic APS; DOACs are not recommended in triple-positive or arterial APS.",
+            guidelineRef = "BSH APS guidance / TRAPS trial"
         ),
         Flashcard(
             id = "fc_guideline_ttp_emergency_tpe",
             domain = "Haemostasis & Thrombosis",
             topic = "BSH TTP Guideline: Emergency Management & Platelets",
             sourceResourceId = "bsh_ttp_guidelines",
-            front = "BSH Guideline Recommendation: What are the two vital emergency rules regarding (1) TPE initiation and (2) platelet transfusions in suspected TTP?",
-            back = "1. TPE Initiation (Grade 1A): Commence Therapeutic Plasma Exchange (TPE) with SD-FFP (1.5 plasma volume) within 4–8 hours of presentation without waiting for ADAMTS13 results.\n2. Platelet Transfusion (Grade 1A): Platelets are STRICTLY CONTRAINDICATED as they exacerbate widespread microvascular occlusion. Only permitted for life-threatening intracranial hemorrhage.",
-            guidelineRef = "BSH TTP Guidelines (Rec 1A)"
+            front = "BSH guidance: What are the two emergency rules regarding (1) TPE initiation and (2) platelet transfusions in suspected TTP?",
+            back = "1. TPE: start therapeutic plasma exchange with SD-FFP (initially 1.5 plasma volumes) ideally within 4–8 hours of presentation, without waiting for ADAMTS13 results.\n2. Platelets: relatively contraindicated (may worsen microvascular thrombosis); reserve for life-threatening haemorrhage.",
+            guidelineRef = "BSH TTP Guideline (Scully et al. 2012)"
         ),
         Flashcard(
             id = "fc_guideline_vwd_type3",
             domain = "Transfusion Medicine",
             topic = "BSH Transfusion Guideline: Type 3 VWD in Emergency Bleeding",
             sourceResourceId = "bsh_transfusion_components",
-            front = "BSH Guideline Recommendation: What product is indicated for acute major haemorrhage or surgery in Type 3 Von Willebrand Disease (VWD), and why is DDAVP contraindicated?",
-            back = "Product of Choice (Grade 1A):\n• Intermediate-purity plasma-derived Factor VIII/VWF concentrate (e.g., Haemate-P, Wilate).\n\nWhy DDAVP is Ineffective:\n• Type 3 VWD represents complete absence of VWF synthesis and storage; Desmopressin (DDAVP) cannot release endogenous VWF and provides zero haemostatic benefit.",
-            guidelineRef = "BSH & UKHCDO Transfusion Guidelines (Rec 1A)"
+            front = "What product is indicated for major haemorrhage or surgery in Type 3 Von Willebrand Disease (VWD), and why is DDAVP ineffective?",
+            back = "Product of Choice:\n• Intermediate-purity plasma-derived Factor VIII/VWF concentrate (e.g., Haemate-P, Wilate).\n\nWhy DDAVP is Ineffective:\n• Type 3 VWD represents complete absence of VWF synthesis and storage; Desmopressin (DDAVP) cannot release endogenous VWF and provides zero haemostatic benefit.",
+            guidelineRef = "UKHCDO VWD guidance"
         ),
         Flashcard(
             id = "fc_guideline_who_aml_genetics",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "WHO 5th Edition: AML Blast Threshold Exceptions",
             sourceResourceId = "who_haem_5th",
-            front = "WHO 5th Edition Guideline: Which recurring genetic rearrangements establish a diagnosis of AML regardless of blast percentage (even if <20%)?",
-            back = "AML-Defining Cytogenetic Abnormalities (Grade 1A):\n1. t(15;17)(q22;q21.2) PML-RARA\n2. t(8;21)(q22;q22.1) RUNX1-RUNX1T1\n3. inv(16)(p13.1q22) or t(16;16)(p13.1;q22) CBFB-MYH11\n4. KMT2A rearrangements\n5. DEK-NUP214\n\nIn each of these, diagnosis is AML even if marrow or blood blast count is <20%.",
-            guidelineRef = "WHO Classification 5th Edition (Rec 1A)"
+            front = "WHO-HAEM5: Which AML types still need >=20% blasts, and which defining genetic abnormalities allow an AML diagnosis below 20%?",
+            back = "Below 20% blasts is allowed for AML with defining genetic abnormalities, e.g.:\n• PML::RARA, RUNX1::RUNX1T1, CBFB::MYH11\n• KMT2A rearrangement, DEK::NUP214, MECOM rearrangement, NUP98 rearrangement, NPM1 mutation\n\nStill require >=20%: AML with BCR::ABL1 and AML with CEBPA mutation.\n\nContrast: the ICC 2022 uses a >=10% threshold for most of these.",
+            guidelineRef = "WHO Classification 5th Edition (Khoury et al. 2022)"
         ),
         Flashcard(
             id = "fc_guideline_sickle_hyperhaemolysis",
@@ -1250,26 +1268,26 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "BSH Sickle Cell Guideline: Hyperhaemolysis Syndrome",
             sourceResourceId = "bsh_sickle_transfusion",
             front = "BSH Guideline Recommendation: What is the clinical presentation and mandatory immediate management of Hyperhaemolysis Syndrome in Sickle Cell Disease?",
-            back = "Clinical Hallmarks:\n• Severe post-transfusion drop in Hb to lower than pre-transfusion baseline.\n• Severe reticulocytopenia with destruction of both donor and autologous red cells.\n\nMandatory Management (Grade 1A):\n1. STOP ALL further blood transfusions immediately (further blood triggers catastrophic hemolysis).\n2. Initiate high-dose IV methylprednisolone + IVIG (1 g/kg/day for 2 days).\n3. Consider Eculizumab for refractory hyperhaemolysis.",
-            guidelineRef = "BSH Sickle Cell Transfusion Guideline (Rec 1A)"
+            back = "Clinical Hallmarks:\n• Severe post-transfusion drop in Hb to lower than pre-transfusion baseline.\n• Severe reticulocytopenia with destruction of both donor and autologous red cells.\n\nManagement:\n1. STOP ALL further blood transfusions where possible immediately (further blood triggers catastrophic hemolysis).\n2. Initiate high-dose IV methylprednisolone + IVIG (1 g/kg/day for 2 days).\n3. Consider Eculizumab for refractory hyperhaemolysis.",
+            guidelineRef = "BSH Sickle Cell Transfusion Guideline (Davis et al. 2017)"
         ),
         Flashcard(
             id = "fc_guideline_myeloma_imaging",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "IMWG / BSH Multiple Myeloma Guideline: Primary Imaging",
             sourceResourceId = "imwg_myeloma_2021",
-            front = "IMWG & BSH Guideline Recommendation: What is the first-line imaging modality for suspected Multiple Myeloma, and why?",
-            back = "First-Line Imaging (Grade 1A):\n• Whole-Body Low-Dose CT (WBLDCT) is the primary recommendation.\n\nClinical Rationale:\n• Conventional skeletal survey requires >30–50% trabecular bone loss to visualize a lesion, missing osteolytic disease in up to 30% of patients.\n• Whole-spine MRI is required if spinal cord compression is suspected.",
-            guidelineRef = "IMWG Consensus & BSH Myeloma Guidelines (Rec 1A)"
+            front = "What is the first-line imaging modality for suspected Multiple Myeloma, and why?",
+            back = "First-Line Imaging:\n• Whole-Body Low-Dose CT (WBLDCT) is the primary recommendation.\n\nClinical Rationale:\n• Conventional skeletal survey requires >30–50% trabecular bone loss to visualize a lesion, missing osteolytic disease in up to 30% of patients.\n• Whole-spine MRI is required if spinal cord compression is suspected.",
+            guidelineRef = "IMWG / BSH / NICE myeloma imaging guidance"
         ),
         Flashcard(
             id = "fc_guideline_gynae_anticoag_switch",
             domain = "Haemostasis & Thrombosis",
             topic = "BSH/UKHCDO 2026: DOAC Switch for Heavy Menstrual Bleeding",
             sourceResourceId = "bsh_haem_gynae_2026",
-            front = "BSH/UKHCDO 2026 Guideline Recommendation: In females receiving therapeutic anticoagulation who develop persistent heavy menstrual bleeding, what is the recommended medication adjustment?",
-            back = "Guideline Recommendation (Grade 2D):\n• Switch from Rivaroxaban to Apixaban or Dabigatran.\n\nClinical Pearl:\n• Both Apixaban and Dabigatran demonstrate significantly lower incidence of heavy menstrual bleeding compared to Rivaroxaban.\n• Anticoagulation should not be stopped completely without hematological review due to high recurrent VTE risk.",
-            guidelineRef = "BSH/UKHCDO 2026 Gynaecology & Haematology Guideline (Rec 5)"
+            front = "BSH/UKHCDO 2026: In females on therapeutic anticoagulation with treatment-resistant heavy menstrual bleeding, what medication adjustment does the paper suggest?",
+            back = "Good-practice point (ungraded, in the text; not a formal recommendation):\n• Consider changing the anticoagulant, e.g. to apixaban or dabigatran, which have a lower incidence of HMB (vs rivaroxaban).\n\nClinical Pearl:\n• Do not stop anticoagulation without haematology review (recurrent VTE risk).",
+            guidelineRef = "Biss 2026 (Section: Individuals receiving anti-coagulant therapy)"
         ),
         Flashcard(
             id = "fc_guideline_poct_iso15189",
@@ -1277,12 +1295,12 @@ PART 3: Molecular Relapse at 18 Months (5 marks)
             topic = "BSH 2026 POCT Guideline: ISO 15189 Governance & SHOT Reporting",
             sourceResourceId = "bsh_poct_haematology_2026",
             front = "BSH 2026 Guideline Recommendation: What are the hospital laboratory governance and incident reporting requirements for Point-of-Care Testing (POCT)?",
-            back = "Guideline Governance Standards (Grade 1A):\n1. Hospital Central Laboratory Oversight: All POCT devices must operate under a formal hospital POCT policy and ISO 15189:2022 quality framework.\n2. Internal & External QA: Regular IQC at decision thresholds and enrollment in UK NEQAS/EQA schemes.\n3. Mandatory SHOT Reporting: All transfusion-related POCT adverse events (e.g. incorrect BGA Hb causing inappropriate transfusion) must be reported to SHOT.",
-            guidelineRef = "BSH 2026 POCT Guideline (Rec 1A & 4)"
+            back = "Guideline Governance Standards (Grades 1A-1B):\n1. Hospital Central Laboratory Oversight: All POCT devices must operate under a formal hospital POCT policy and ISO 15189:2022 quality framework.\n2. Internal & External QA: Regular IQC at decision thresholds and enrollment in UK NEQAS/EQA schemes.\n3. Mandatory SHOT Reporting: All transfusion-related POCT adverse events (e.g. incorrect BGA Hb causing inappropriate transfusion) must be reported to SHOT.",
+            guidelineRef = "Tam 2026 POCT Guideline"
         ),
         Flashcard(
             id = "fc_guideline_pmbcl_ielsg37",
-            domain = "Malignant Haematology",
+            domain = "Haemato-Oncology",
             topic = "BSH 2026 PMBCL Guideline: Omission of Radiotherapy",
             sourceResourceId = "bsh_pmbcl_lymphoma_2026",
             front = "BSH 2026 Guideline Recommendation: What is the Grade 1A recommendation regarding consolidative mediastinal radiotherapy in PMBCL?",

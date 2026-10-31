@@ -22,7 +22,7 @@ data class ApprovedResource(
     fun getOnlineUrl(): String {
         if (url.isNotBlank()) return url
         return when (id) {
-            "bsh_amyloidosis_2026" -> "https://doi.org/10.1111/bjh.20173"
+            "bsh_amyloidosis_2026" -> "https://doi.org/10.1111/bjh.70472"
             "imwg_myeloma_2021" -> "https://doi.org/10.1016/S1470-2045(14)70442-5"
             "who_haem_5th" -> "https://doi.org/10.1038/s41375-022-01620-2"
             "bsh_transfusion_components" -> "https://b-s-h.org.uk/guidelines/guidelines/the-administration-of-blood-components"
