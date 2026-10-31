@@ -1,0 +1,22 @@
+name: Content integrity
+
+on:
+  push:
+    paths:
+      - "app/src/main/java/com/example/data/db/SeedData.kt"
+      - "app/src/main/java/com/example/ui/screens/SummarisedGuidelinesScreen.kt"
+      - "public/content.js"
+      - "scripts/build_web_content.py"
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Fails if SeedData.kt has integrity problems (unknown sources, bad answer
+      # indexes, mixed domain names) or if public/content.js was not regenerated.
+      - run: python3 scripts/build_web_content.py --check
