@@ -5,6 +5,7 @@
     "issuingBody": "British Society for Haematology",
     "year": 2026,
     "category": "General Haematology",
+    "order": 10,
     "citation": "Tam J, De la Salle B, Kapuya P, Reilly-Stitt C, Smith-Straney T, Cambridge T, et al. Br J Haematol. 2026;209(4):1489–1504.",
     "url": "https://doi.org/10.1111/bjh.70758",
     "isVerified": true,
@@ -12,64 +13,379 @@
     "overview": "This update to the 2019 BSH POCT guideline covers point-of-care testing in secondary care. Community POCT will be addressed separately. It has two halves: the analytical strengths and limits of each device class (FBC/Hb, PT/INR, ACT, D-dimer, viscoelastic, DOAC, blood gas Hb, platelet function, fibrinogen, haemoglobinopathy and G6PD), and the service framework. That framework covers QA (IQC and EQA), ISO 15189:2022 accreditation (which now absorbs ISO 22870), governance, training, finance, device selection, health and safety, reflex testing, incident reporting (including SHOT), data protection and record retention. Device-specific thresholds are needed wherever devices vary from one another."
   },
   "recommendations": [
-    { "id": "clin-1", "group": "Clinical utility of POCT", "grade": "2B", "page": 6, "text": "Device-specific thresholds should be established for ACT tests, given the variability between tests." },
-    { "id": "clin-2", "group": "Clinical utility of POCT", "grade": "1B", "page": 6, "text": "Only high-sensitivity D-dimer tests with performance matching STA® or ELISA laboratory assays should be used." },
-    { "id": "clin-3", "group": "Clinical utility of POCT", "grade": "1B", "page": 6, "text": "Validation of viscoelastic assays should involve establishment of clinical decision-making algorithms and reference ranges." },
-    { "id": "clin-4", "group": "Clinical utility of POCT", "grade": "1C", "page": 6, "text": "Blood gas analysers should not substitute laboratory-based testing of Hb/Hct but may aid in monitoring trends or making immediate clinical judgements." },
-    { "id": "clin-5", "group": "Clinical utility of POCT", "grade": "1C", "page": 6, "text": "Where interfacing of results from POCT to a laboratory information management system (LIMS) exists, this should be utilised in real time to prevent transcription errors." },
-    { "id": "qa-1", "group": "Quality assurance in POCT", "grade": "1B", "page": 7, "text": "The POCT QA framework should include: oversight and monitoring by a laboratory professional or quality manager; internal quality control (IQC) and external quality assessment (EQA) processes; an internal audit schedule; accreditation to ISO 15189 by the appointed national accreditation bodies; document control including standard operating procedures (SOPs); regular review of the service by senior management for continual improvement." },
-    { "id": "gov-1", "group": "Management and governance", "grade": "1A", "page": 8, "text": "The POCT policy must describe governance, quality assurance and risk management arrangements for the implementation of a new test or device." },
-    { "id": "gov-2", "group": "Management and governance", "grade": "1B", "page": 8, "text": "Where devices or tests may not meet traditional quality and governance requirements (e.g. emerging technologies or methodologies, absence of a laboratory comparator), formal risk assessment must be undertaken. Identified risk must be mitigated where reasonably practicable." },
-    { "id": "train-1", "group": "Training and development", "grade": "1A", "page": 8, "text": "A structured training programme (theoretical and practical) for all POCT personnel and end users must be developed and maintained by the POCT manager or training and development coordinator." },
-    { "id": "train-2", "group": "Training and development", "grade": "1A", "page": 8, "text": "All training materials (structured syllabi) must be alongside a competency assessment, to be completed and passed before first use. A training manual may ensure a structured approach." },
-    { "id": "train-3", "group": "Training and development", "grade": "1B", "page": 8, "text": "Before training or assessing end users, POCT personnel must first demonstrate a higher level of understanding of the test process, application and performance." },
-    { "id": "train-4", "group": "Training and development", "grade": "1A", "page": 9, "text": "A separate training and competency document must be maintained and updated whenever a point-of-care test or device changes." },
-    { "id": "train-5", "group": "Training and development", "grade": "1B", "page": 9, "text": "Training complexity and competency is proportional to the clinical application of the test or process." },
-    { "id": "train-6", "group": "Training and development", "grade": "1A", "page": 9, "text": "Training and competency assessment should cover expertise required to safely provide results for patient care." },
-    { "id": "train-7", "group": "Training and development", "grade": "1A", "page": 9, "text": "Users must demonstrate competence in device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity." },
-    { "id": "fin-1", "group": "Finance and cost–benefit analysis", "grade": "1B", "page": 9, "text": "A financial framework should detail the cost-effectiveness and financial value in POCT provision as an alternative or complementary to the medical laboratory." },
-    { "id": "fin-2", "group": "Finance and cost–benefit analysis", "grade": "1B", "page": 9, "text": "Recruitment should cover the necessary business skills to manage and develop the service as a business unit, or these skills should be developed internally." },
-    { "id": "equip-1", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Clinical and medical effectiveness: Devices must demonstrate clear clinical utility by supporting diagnosis, treatment and patient management, ideally within established care pathways." },
-    { "id": "equip-2", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Economic evaluation: Economic impacts of devices should be assessed before adoption, including cost-effectiveness (per diagnosis or outcome), LOS reduction and workforce improvements, including productivity and satisfaction." },
-    { "id": "equip-3", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Patient safety and blood conservation: Devices should minimise blood volume requirements." },
-    { "id": "equip-4", "group": "Equipment selection and verification", "grade": "1C", "page": 10, "text": "Safety and ergonomics: Devices must incorporate biohazard containment, safe disposal (sharps and waste), user-friendly design and risk reduction mechanisms." },
-    { "id": "equip-5", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Technical quality and reliability: Devices should have proven technical robustness and be amenable to automated calibration, reliable throughput, reagent stability, minimal pre- and post-analytical steps (where possible), accreditation and user training." },
-    { "id": "equip-6", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Analytical performance verification: Each device must be verified for accuracy, level of imprecision compared to the 'gold standard' method, reproducibility, linearity and stability across the measurement range. Results must be comparable with CL standards and include error detection, interference warnings and specimen flagging capabilities." },
-    { "id": "equip-7", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Data management and systems integration: Devices must support secure, long-term, interoperable data management and storage, for example, bidirectional connectivity, remote access, automated critical result alerts, EHR integration." },
-    { "id": "equip-8", "group": "Equipment selection and verification", "grade": "1B", "page": 10, "text": "Device qualification: An ISO 15189:2022-compliant acceptance process must include verification protocols, method comparisons and training and competency requirements." },
-    { "id": "hs-1", "group": "Health and safety", "grade": "1A", "page": 10, "text": "Staff must have up-to-date training and competency assessments and participate in risk assessments and audits." },
-    { "id": "hs-2", "group": "Health and safety", "grade": "1A", "page": 10, "text": "Needle-stick injuries must be reported, for example, via Datix reporting system." },
-    { "id": "hs-3", "group": "Health and safety", "grade": "1A", "page": 10, "text": "There must be disposal procedures for sharps, blood-stained material, reagents and electronic waste." },
-    { "id": "inc-1", "group": "Adverse incident reporting", "grade": "1B", "page": 11, "text": "A no-blame reporting culture to encourage incident reporting without fear of reprisal, supporting transparency and safety improvement." },
-    { "id": "inc-2", "group": "Adverse incident reporting", "grade": "1B", "page": 11, "text": "Regular training on incident reporting (focusing on 'how' and 'when'), for all POCT users, to support clarity and confidence in the reporting system." },
-    { "id": "inc-3", "group": "Adverse incident reporting", "grade": "1B", "page": 11, "text": "Clear reporting responsibilities embedded in SOPs specifying who should report, what should be reported and how to escalate concerns." },
-    { "id": "inc-4", "group": "Adverse incident reporting", "grade": "1B", "page": 11, "text": "Proactive reporting to inform service improvements and targeted retraining, to prevent recurrence." },
-    { "id": "inc-5", "group": "Adverse incident reporting", "grade": "1B", "page": 11, "text": "Routine audits of incident data to identify trends, share organisation-wide learnings and strengthen governance." },
-    { "id": "inc-6", "group": "Adverse incident reporting", "grade": null, "page": 12, "text": "Incidents that impact on transfusion practice should be reported to the Serious Hazards of Transfusion (SHOT) haemovigilance scheme." },
-    { "id": "dp-1", "group": "Data protection", "grade": "1B", "page": 12, "text": "Secure, traceable, auditable digital documentation using centralised POCT management software, to reduce the risk of data loss or unauthorised access." },
-    { "id": "dp-2", "group": "Data protection", "grade": "1B", "page": 12, "text": "A document control system to ensure that only current, approved versions of policies, logs and reports are in use, precluding outdated versions." },
-    { "id": "dp-3", "group": "Data protection", "grade": "1A", "page": 12, "text": "Training for all POCT users to cover data protection, confidentiality, GDPR requirements and NHS DSP Toolkit standards." },
-    { "id": "dp-4", "group": "Data protection", "grade": "1B", "page": 12, "text": "Data access logs, audited at defined intervals to monitor inappropriate access or breaches and demonstrate data governance compliance." },
-    { "id": "dp-5", "group": "Data protection", "grade": "1B", "page": 12, "text": "Secure destruction of expired paper records (e.g. cross-cut shredding, approved confidential waste disposal) in line with the NHS Records Management Code of Practice." },
-    { "id": "dp-6", "group": "Data protection", "grade": "1B", "page": 12, "text": "Compliance with GDPR, NHS DSP Toolkit and local information security policies should be overseen by an information governance lead or POCT data controller." },
-    { "id": "store-1", "group": "Document storage and archiving", "grade": "1B", "page": 12, "text": "Patient test results should be retained for at least 8 years after the last patient contact, in line with NHS record-keeping requirements." },
-    { "id": "store-2", "group": "Document storage and archiving", "grade": "1B", "page": 12, "text": "Calibration records, QC logs and equipment maintenance reports are kept for a locally documented period (usually at least 5 years) to support audits, accreditation and incident investigations." },
-    { "id": "store-3", "group": "Document storage and archiving", "grade": "1B", "page": 12, "text": "Training and competency records should be retained for at least 5 years to evidence staff authorisation and compliance." },
-    { "id": "key-1", "group": "Key recommendations", "grade": "1B", "page": 12, "text": "Device-specific analytical and clinical thresholds should be established where interdevice variability is demonstrated." },
-    { "id": "key-2", "group": "Key recommendations", "grade": "1B", "page": 12, "text": "POCT services must operate a QA programme that includes IQC and participation in EQA." },
-    { "id": "key-3", "group": "Key recommendations", "grade": "1A", "page": 12, "text": "SOPs must be made available to and followed by all POCT staff." },
-    { "id": "key-4", "group": "Key recommendations", "grade": "1B", "page": 12, "text": "POCT patient results must be retained permanently (electronic or paper records) and clearly identified as a POCT result in the patient record." },
-    { "id": "key-5", "group": "Key recommendations", "grade": "1A", "page": 12, "text": "A structured programme of training, competency assessment and re-certification must be implemented for all POCT users." },
-    { "id": "key-6", "group": "Key recommendations", "grade": "1B", "page": 12, "text": "A financial framework must be developed to demonstrate cost-effectiveness and financial value of POCT services." },
-    { "id": "key-7", "group": "Key recommendations", "grade": "1A", "page": 12, "text": "Adverse incidents must always be reported, including near misses and events not resulting in patient harm." },
-    { "id": "key-8", "group": "Key recommendations", "grade": "1B", "page": 12, "text": "Centralised POCT management software should be implemented to ensure secure, traceable, auditable digital documentation." },
-    { "id": "key-9", "group": "Key recommendations", "grade": "1B", "page": 12, "text": "POCT records must be stored securely and retained for defined, policy-compliant retention periods." }
+    {
+      "id": "clin-1",
+      "group": "Clinical utility of POCT",
+      "grade": "2B",
+      "page": 6,
+      "text": "Device-specific thresholds should be established for ACT tests, given the variability between tests."
+    },
+    {
+      "id": "clin-2",
+      "group": "Clinical utility of POCT",
+      "grade": "1B",
+      "page": 6,
+      "text": "Only high-sensitivity D-dimer tests with performance matching STA® or ELISA laboratory assays should be used."
+    },
+    {
+      "id": "clin-3",
+      "group": "Clinical utility of POCT",
+      "grade": "1B",
+      "page": 6,
+      "text": "Validation of viscoelastic assays should involve establishment of clinical decision-making algorithms and reference ranges."
+    },
+    {
+      "id": "clin-4",
+      "group": "Clinical utility of POCT",
+      "grade": "1C",
+      "page": 6,
+      "text": "Blood gas analysers should not substitute laboratory-based testing of Hb/Hct but may aid in monitoring trends or making immediate clinical judgements."
+    },
+    {
+      "id": "clin-5",
+      "group": "Clinical utility of POCT",
+      "grade": "1C",
+      "page": 6,
+      "text": "Where interfacing of results from POCT to a laboratory information management system (LIMS) exists, this should be utilised in real time to prevent transcription errors."
+    },
+    {
+      "id": "qa-1",
+      "group": "Quality assurance in POCT",
+      "grade": "1B",
+      "page": 7,
+      "text": "The POCT QA framework should include: oversight and monitoring by a laboratory professional or quality manager; internal quality control (IQC) and external quality assessment (EQA) processes; an internal audit schedule; accreditation to ISO 15189 by the appointed national accreditation bodies; document control including standard operating procedures (SOPs); regular review of the service by senior management for continual improvement."
+    },
+    {
+      "id": "gov-1",
+      "group": "Management and governance",
+      "grade": "1A",
+      "page": 8,
+      "text": "The POCT policy must describe governance, quality assurance and risk management arrangements for the implementation of a new test or device."
+    },
+    {
+      "id": "gov-2",
+      "group": "Management and governance",
+      "grade": "1B",
+      "page": 8,
+      "text": "Where devices or tests may not meet traditional quality and governance requirements (e.g. emerging technologies or methodologies, absence of a laboratory comparator), formal risk assessment must be undertaken. Identified risk must be mitigated where reasonably practicable."
+    },
+    {
+      "id": "train-1",
+      "group": "Training and development",
+      "grade": "1A",
+      "page": 8,
+      "text": "A structured training programme (theoretical and practical) for all POCT personnel and end users must be developed and maintained by the POCT manager or training and development coordinator."
+    },
+    {
+      "id": "train-2",
+      "group": "Training and development",
+      "grade": "1A",
+      "page": 8,
+      "text": "All training materials (structured syllabi) must be alongside a competency assessment, to be completed and passed before first use. A training manual may ensure a structured approach."
+    },
+    {
+      "id": "train-3",
+      "group": "Training and development",
+      "grade": "1B",
+      "page": 8,
+      "text": "Before training or assessing end users, POCT personnel must first demonstrate a higher level of understanding of the test process, application and performance."
+    },
+    {
+      "id": "train-4",
+      "group": "Training and development",
+      "grade": "1A",
+      "page": 9,
+      "text": "A separate training and competency document must be maintained and updated whenever a point-of-care test or device changes."
+    },
+    {
+      "id": "train-5",
+      "group": "Training and development",
+      "grade": "1B",
+      "page": 9,
+      "text": "Training complexity and competency is proportional to the clinical application of the test or process."
+    },
+    {
+      "id": "train-6",
+      "group": "Training and development",
+      "grade": "1A",
+      "page": 9,
+      "text": "Training and competency assessment should cover expertise required to safely provide results for patient care."
+    },
+    {
+      "id": "train-7",
+      "group": "Training and development",
+      "grade": "1A",
+      "page": 9,
+      "text": "Users must demonstrate competence in device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity."
+    },
+    {
+      "id": "fin-1",
+      "group": "Finance and cost–benefit analysis",
+      "grade": "1B",
+      "page": 9,
+      "text": "A financial framework should detail the cost-effectiveness and financial value in POCT provision as an alternative or complementary to the medical laboratory."
+    },
+    {
+      "id": "fin-2",
+      "group": "Finance and cost–benefit analysis",
+      "grade": "1B",
+      "page": 9,
+      "text": "Recruitment should cover the necessary business skills to manage and develop the service as a business unit, or these skills should be developed internally."
+    },
+    {
+      "id": "equip-1",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Clinical and medical effectiveness: Devices must demonstrate clear clinical utility by supporting diagnosis, treatment and patient management, ideally within established care pathways."
+    },
+    {
+      "id": "equip-2",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Economic evaluation: Economic impacts of devices should be assessed before adoption, including cost-effectiveness (per diagnosis or outcome), LOS reduction and workforce improvements, including productivity and satisfaction."
+    },
+    {
+      "id": "equip-3",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Patient safety and blood conservation: Devices should minimise blood volume requirements."
+    },
+    {
+      "id": "equip-4",
+      "group": "Equipment selection and verification",
+      "grade": "1C",
+      "page": 10,
+      "text": "Safety and ergonomics: Devices must incorporate biohazard containment, safe disposal (sharps and waste), user-friendly design and risk reduction mechanisms."
+    },
+    {
+      "id": "equip-5",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Technical quality and reliability: Devices should have proven technical robustness and be amenable to automated calibration, reliable throughput, reagent stability, minimal pre- and post-analytical steps (where possible), accreditation and user training."
+    },
+    {
+      "id": "equip-6",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Analytical performance verification: Each device must be verified for accuracy, level of imprecision compared to the 'gold standard' method, reproducibility, linearity and stability across the measurement range. Results must be comparable with CL standards and include error detection, interference warnings and specimen flagging capabilities."
+    },
+    {
+      "id": "equip-7",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Data management and systems integration: Devices must support secure, long-term, interoperable data management and storage, for example, bidirectional connectivity, remote access, automated critical result alerts, EHR integration."
+    },
+    {
+      "id": "equip-8",
+      "group": "Equipment selection and verification",
+      "grade": "1B",
+      "page": 10,
+      "text": "Device qualification: An ISO 15189:2022-compliant acceptance process must include verification protocols, method comparisons and training and competency requirements."
+    },
+    {
+      "id": "hs-1",
+      "group": "Health and safety",
+      "grade": "1A",
+      "page": 10,
+      "text": "Staff must have up-to-date training and competency assessments and participate in risk assessments and audits."
+    },
+    {
+      "id": "hs-2",
+      "group": "Health and safety",
+      "grade": "1A",
+      "page": 10,
+      "text": "Needle-stick injuries must be reported, for example, via Datix reporting system."
+    },
+    {
+      "id": "hs-3",
+      "group": "Health and safety",
+      "grade": "1A",
+      "page": 10,
+      "text": "There must be disposal procedures for sharps, blood-stained material, reagents and electronic waste."
+    },
+    {
+      "id": "inc-1",
+      "group": "Adverse incident reporting",
+      "grade": "1B",
+      "page": 11,
+      "text": "A no-blame reporting culture to encourage incident reporting without fear of reprisal, supporting transparency and safety improvement."
+    },
+    {
+      "id": "inc-2",
+      "group": "Adverse incident reporting",
+      "grade": "1B",
+      "page": 11,
+      "text": "Regular training on incident reporting (focusing on 'how' and 'when'), for all POCT users, to support clarity and confidence in the reporting system."
+    },
+    {
+      "id": "inc-3",
+      "group": "Adverse incident reporting",
+      "grade": "1B",
+      "page": 11,
+      "text": "Clear reporting responsibilities embedded in SOPs specifying who should report, what should be reported and how to escalate concerns."
+    },
+    {
+      "id": "inc-4",
+      "group": "Adverse incident reporting",
+      "grade": "1B",
+      "page": 11,
+      "text": "Proactive reporting to inform service improvements and targeted retraining, to prevent recurrence."
+    },
+    {
+      "id": "inc-5",
+      "group": "Adverse incident reporting",
+      "grade": "1B",
+      "page": 11,
+      "text": "Routine audits of incident data to identify trends, share organisation-wide learnings and strengthen governance."
+    },
+    {
+      "id": "inc-6",
+      "group": "Adverse incident reporting",
+      "grade": null,
+      "page": 12,
+      "text": "Incidents that impact on transfusion practice should be reported to the Serious Hazards of Transfusion (SHOT) haemovigilance scheme."
+    },
+    {
+      "id": "dp-1",
+      "group": "Data protection",
+      "grade": "1B",
+      "page": 12,
+      "text": "Secure, traceable, auditable digital documentation using centralised POCT management software, to reduce the risk of data loss or unauthorised access."
+    },
+    {
+      "id": "dp-2",
+      "group": "Data protection",
+      "grade": "1B",
+      "page": 12,
+      "text": "A document control system to ensure that only current, approved versions of policies, logs and reports are in use, precluding outdated versions."
+    },
+    {
+      "id": "dp-3",
+      "group": "Data protection",
+      "grade": "1A",
+      "page": 12,
+      "text": "Training for all POCT users to cover data protection, confidentiality, GDPR requirements and NHS DSP Toolkit standards."
+    },
+    {
+      "id": "dp-4",
+      "group": "Data protection",
+      "grade": "1B",
+      "page": 12,
+      "text": "Data access logs, audited at defined intervals to monitor inappropriate access or breaches and demonstrate data governance compliance."
+    },
+    {
+      "id": "dp-5",
+      "group": "Data protection",
+      "grade": "1B",
+      "page": 12,
+      "text": "Secure destruction of expired paper records (e.g. cross-cut shredding, approved confidential waste disposal) in line with the NHS Records Management Code of Practice."
+    },
+    {
+      "id": "dp-6",
+      "group": "Data protection",
+      "grade": "1B",
+      "page": 12,
+      "text": "Compliance with GDPR, NHS DSP Toolkit and local information security policies should be overseen by an information governance lead or POCT data controller."
+    },
+    {
+      "id": "store-1",
+      "group": "Document storage and archiving",
+      "grade": "1B",
+      "page": 12,
+      "text": "Patient test results should be retained for at least 8 years after the last patient contact, in line with NHS record-keeping requirements."
+    },
+    {
+      "id": "store-2",
+      "group": "Document storage and archiving",
+      "grade": "1B",
+      "page": 12,
+      "text": "Calibration records, QC logs and equipment maintenance reports are kept for a locally documented period (usually at least 5 years) to support audits, accreditation and incident investigations."
+    },
+    {
+      "id": "store-3",
+      "group": "Document storage and archiving",
+      "grade": "1B",
+      "page": 12,
+      "text": "Training and competency records should be retained for at least 5 years to evidence staff authorisation and compliance."
+    },
+    {
+      "id": "key-1",
+      "group": "Key recommendations",
+      "grade": "1B",
+      "page": 12,
+      "text": "Device-specific analytical and clinical thresholds should be established where interdevice variability is demonstrated."
+    },
+    {
+      "id": "key-2",
+      "group": "Key recommendations",
+      "grade": "1B",
+      "page": 12,
+      "text": "POCT services must operate a QA programme that includes IQC and participation in EQA."
+    },
+    {
+      "id": "key-3",
+      "group": "Key recommendations",
+      "grade": "1A",
+      "page": 12,
+      "text": "SOPs must be made available to and followed by all POCT staff."
+    },
+    {
+      "id": "key-4",
+      "group": "Key recommendations",
+      "grade": "1B",
+      "page": 12,
+      "text": "POCT patient results must be retained permanently (electronic or paper records) and clearly identified as a POCT result in the patient record."
+    },
+    {
+      "id": "key-5",
+      "group": "Key recommendations",
+      "grade": "1A",
+      "page": 12,
+      "text": "A structured programme of training, competency assessment and re-certification must be implemented for all POCT users."
+    },
+    {
+      "id": "key-6",
+      "group": "Key recommendations",
+      "grade": "1B",
+      "page": 12,
+      "text": "A financial framework must be developed to demonstrate cost-effectiveness and financial value of POCT services."
+    },
+    {
+      "id": "key-7",
+      "group": "Key recommendations",
+      "grade": "1A",
+      "page": 12,
+      "text": "Adverse incidents must always be reported, including near misses and events not resulting in patient harm."
+    },
+    {
+      "id": "key-8",
+      "group": "Key recommendations",
+      "grade": "1B",
+      "page": 12,
+      "text": "Centralised POCT management software should be implemented to ensure secure, traceable, auditable digital documentation."
+    },
+    {
+      "id": "key-9",
+      "group": "Key recommendations",
+      "grade": "1B",
+      "page": 12,
+      "text": "POCT records must be stored securely and retained for defined, policy-compliant retention periods."
+    }
   ],
   "topics": [
     {
       "id": "poct-overview",
       "name": "What POCT is, scope and ISO 15189:2022",
-      "pages": [1, 2],
+      "pages": [
+        1,
+        2
+      ],
       "why": "The definition, the scope (secondary care only) and the standards change (ISO 22870 absorbed into ISO 15189:2022) are basic exam facts.",
       "keyPoints": [
         "**POCT** is diagnostic testing **outside the hospital laboratory, close to the patient**, with results available quickly enough to **influence immediate clinical management**.",
@@ -80,23 +396,42 @@
         "Literature: PubMed searches in **January 2025**, covering Aug 2019 to Jan 2025, plus 2009–2025 for fibrinogen, ROTEM/TEG and EQA. **683 articles** were identified. Sickle cell, malaria, HIV, HbA1c, hCG and TB were **excluded** from the searches."
       ],
       "numbers": [
-        ["ISO 15189:2022", "current standard (includes POCT)"],
-        ["ISO 22870:2016", "superseded POCT standard"],
-        ["683", "articles identified"]
+        [
+          "ISO 15189:2022",
+          "current standard (includes POCT)"
+        ],
+        [
+          "ISO 22870:2016",
+          "superseded POCT standard"
+        ],
+        [
+          "683",
+          "articles identified"
+        ]
       ],
       "pitfalls": [
         "ISO 22870 is no longer the POCT standard. POCT is now accredited under ISO 15189:2022 as part of the laboratory (by UKAS in the UK)."
       ],
       "hook": "22870 lives on inside 15189.",
       "selfTest": [
-        { "q": "Which standard now covers POCT requirements, and which did it replace?", "a": "ISO 15189:2022, which incorporates and supersedes ISO 22870:2016." },
-        { "q": "Is community POCT covered by this paper?", "a": "No. It covers secondary care, and community POCT will be addressed separately." }
+        {
+          "q": "Which standard now covers POCT requirements, and which did it replace?",
+          "a": "ISO 15189:2022, which incorporates and supersedes ISO 22870:2016."
+        },
+        {
+          "q": "Is community POCT covered by this paper?",
+          "a": "No. It covers secondary care, and community POCT will be addressed separately."
+        }
       ]
     },
     {
       "id": "poct-devices",
       "name": "Device classes: FBC, Hb, haemoglobinopathy and G6PD (Table 1)",
-      "pages": [2, 3, 4],
+      "pages": [
+        2,
+        3,
+        4
+      ],
       "why": "Table 1 sets out the principle, use and main limitation of each POCT technology, and these are often examined as matching items.",
       "keyPoints": [
         "**Portable Hb analysers** (i-STAT, **HemoCue Hb 201+**, EKF DiaSpect) use **spectrophotometry**. Results come in **1–3 minutes** and are highly reproducible, but they are **affected by lipaemia and icterus**. **HemoCue cannot measure Hct directly** (it estimates it from Hb). Uses: virtual wards, theatres, clinics, GP surgeries, blood donation.",
@@ -113,28 +448,93 @@
         {
           "title": "Table 1 (condensed): POCT technologies",
           "page": 3,
-          "columns": ["Assay", "Principle", "Key limitation"],
+          "columns": [
+            "Assay",
+            "Principle",
+            "Key limitation"
+          ],
           "rows": [
-            ["Spectrophotometric Hb", "Light absorbance at specific wavelengths", "Lipaemia and icterus interfere"],
-            ["Impedance FBC", "Coulter principle", "Limited differential"],
-            ["5-part + microfluidics + AI", "Impedance + imaging + AI classification", "Cost per test; cartridge supply"],
-            ["PT/INR", "Electrochemical/electromechanical clot detection", "Unsuitable with lupus anticoagulant or very high INR"],
-            ["Multiplate (impedance aggregometry)", "Platelet aggregation increases impedance", "Skilled interpretation; reagent cost"],
-            ["ACT (i-STAT ACTk, Hemochron)", "Kaolin-activated clotting time", "Hypothermia, haemodilution, platelets dissociate it from heparin effect"],
-            ["PFA-100/200", "Closure time of a collagen/ADP or collagen/epinephrine membrane", "Non-selective screening does not predict bleeding or transfusion"],
-            ["TEG/ROTEM/Quantra", "Clot strength (pin/cup) or ultrasound stiffness", "Costly; complex set-up; TAT 10–15 min"],
-            ["ClotPro", "Rotating cup, ECA/RVV tests", "Cannot always separate anticoagulant classes"],
-            ["D-dimer/fibrinogen immunoassay", "Turbidimetric/latex agglutination", "See D-dimer sensitivity caveats"],
-            ["HemoTypeSC", "Lateral flow (HbA/S/C)", "Misses other variants"],
-            ["Gazelle", "Microchip electrophoresis", "Needs confirmation; poor quantitation"],
-            ["G6PD", "NADPH at 340 nm / Hb", "Sex and reticulocytes confound; inter-lab variability"]
+            [
+              "Spectrophotometric Hb",
+              "Light absorbance at specific wavelengths",
+              "Lipaemia and icterus interfere"
+            ],
+            [
+              "Impedance FBC",
+              "Coulter principle",
+              "Limited differential"
+            ],
+            [
+              "5-part + microfluidics + AI",
+              "Impedance + imaging + AI classification",
+              "Cost per test; cartridge supply"
+            ],
+            [
+              "PT/INR",
+              "Electrochemical/electromechanical clot detection",
+              "Unsuitable with lupus anticoagulant or very high INR"
+            ],
+            [
+              "Multiplate (impedance aggregometry)",
+              "Platelet aggregation increases impedance",
+              "Skilled interpretation; reagent cost"
+            ],
+            [
+              "ACT (i-STAT ACTk, Hemochron)",
+              "Kaolin-activated clotting time",
+              "Hypothermia, haemodilution, platelets dissociate it from heparin effect"
+            ],
+            [
+              "PFA-100/200",
+              "Closure time of a collagen/ADP or collagen/epinephrine membrane",
+              "Non-selective screening does not predict bleeding or transfusion"
+            ],
+            [
+              "TEG/ROTEM/Quantra",
+              "Clot strength (pin/cup) or ultrasound stiffness",
+              "Costly; complex set-up; TAT 10–15 min"
+            ],
+            [
+              "ClotPro",
+              "Rotating cup, ECA/RVV tests",
+              "Cannot always separate anticoagulant classes"
+            ],
+            [
+              "D-dimer/fibrinogen immunoassay",
+              "Turbidimetric/latex agglutination",
+              "See D-dimer sensitivity caveats"
+            ],
+            [
+              "HemoTypeSC",
+              "Lateral flow (HbA/S/C)",
+              "Misses other variants"
+            ],
+            [
+              "Gazelle",
+              "Microchip electrophoresis",
+              "Needs confirmation; poor quantitation"
+            ],
+            [
+              "G6PD",
+              "NADPH at 340 nm / Hb",
+              "Sex and reticulocytes confound; inter-lab variability"
+            ]
           ]
         }
       ],
       "numbers": [
-        ["1–3 min", "portable Hb result time"],
-        ["10–15 min", "viscoelastic TAT"],
-        ["340 nm", "NADPH absorbance in the G6PD assay"]
+        [
+          "1–3 min",
+          "portable Hb result time"
+        ],
+        [
+          "10–15 min",
+          "viscoelastic TAT"
+        ],
+        [
+          "340 nm",
+          "NADPH absorbance in the G6PD assay"
+        ]
       ],
       "pitfalls": [
         "HemoTypeSC will miss HbD, HbE, β-thalassaemia and other variants. It only detects A, S and C.",
@@ -142,15 +542,28 @@
       ],
       "hook": "Hb is light, FBC is resistance, HemoTypeSC is a strip, Gazelle is a gel, G6PD is 340 nm.",
       "selfTest": [
-        { "q": "Which interferences affect portable spectrophotometric Hb analysers?", "a": "Lipaemia and icterus (high lipids or bilirubin)." },
-        { "q": "What does the Gazelle device screen for, and what is its limitation?", "a": "β-thalassaemia trait, by microchip cellulose acetate electrophoresis. Confirmatory testing is required, and cellulose acetate is not reliable for quantitation." },
-        { "q": "Which factors confound POCT G6PD activity?", "a": "Sex (gender) and reticulocyte count. Inter-laboratory variability also means harmonisation is needed." }
+        {
+          "q": "Which interferences affect portable spectrophotometric Hb analysers?",
+          "a": "Lipaemia and icterus (high lipids or bilirubin)."
+        },
+        {
+          "q": "What does the Gazelle device screen for, and what is its limitation?",
+          "a": "β-thalassaemia trait, by microchip cellulose acetate electrophoresis. Confirmatory testing is required, and cellulose acetate is not reliable for quantitation."
+        },
+        {
+          "q": "Which factors confound POCT G6PD activity?",
+          "a": "Sex (gender) and reticulocyte count. Inter-laboratory variability also means harmonisation is needed."
+        }
       ]
     },
     {
       "id": "poct-coagulation",
       "name": "Coagulation POCT: INR, ACT, D-dimer and DOACs",
-      "pages": [2, 5, 6],
+      "pages": [
+        2,
+        5,
+        6
+      ],
       "why": "Each coagulation POCT has a specific failure mode, such as APS on warfarin, ACT confounders, low-sensitivity D-dimers and DOACs that can be ruled out but not measured.",
       "keyPoints": [
         "**PT/INR POCT** (CoaguChek Pro II/XS, Xprecia Prime, i-STAT, microINR, LumiraDx, and smartphone-based devices) uses **thromboplastin activation with electrochemical or electromechanical detection**. It is quick and needs a small volume.",
@@ -162,13 +575,31 @@
         "**DTM test card:** 95–97% sensitivity for dabigatran >30 and >50 ng/mL. **DOASENSE urine dipstick:** sensitivity **100% for dabigatran** and **97% for anti-Xa agents** at ≥30 ng/mL. **CoaguChek INR:** >95% specificity for edoxaban >30 and >50 ng/mL. **TEG 6S DOAC algorithm:** 98–100% sensitivity for Xa and IIa inhibitors, 100% specificity."
       ],
       "numbers": [
-        ["≥4", "INR at which strip-to-strip bias must be monitored"],
-        ["2–4", "stable INR window where POCT is comparable to the laboratory"],
-        ["<1.4%", "false-negative rate of several POCT D-dimer platforms"],
-        ["30–50 ng/mL", "DOAC levels POCT can help rule out"],
-        ["100% / 97%", "DOASENSE sensitivity: dabigatran / anti-Xa at ≥30 ng/mL"]
+        [
+          "≥4",
+          "INR at which strip-to-strip bias must be monitored"
+        ],
+        [
+          "2–4",
+          "stable INR window where POCT is comparable to the laboratory"
+        ],
+        [
+          "<1.4%",
+          "false-negative rate of several POCT D-dimer platforms"
+        ],
+        [
+          "30–50 ng/mL",
+          "DOAC levels POCT can help rule out"
+        ],
+        [
+          "100% / 97%",
+          "DOASENSE sensitivity: dabigatran / anti-Xa at ≥30 ng/mL"
+        ]
       ],
-      "recs": ["clin-1", "clin-2"],
+      "recs": [
+        "clin-1",
+        "clin-2"
+      ],
       "pitfalls": [
         "Do not use POCT INR in antiphospholipid syndrome or with lupus anticoagulant. Use the laboratory INR.",
         "A qualitative POCT D-dimer is not suitable for excluding VTE. Use only high-sensitivity assays that match STA or ELISA performance (1B).",
@@ -176,15 +607,28 @@
       ],
       "hook": "INR fails in APS and at INR ≥4. ACT is fooled by Cold, Dilution and Platelets. A D-dimer must be High-sensitivity. A DOAC can be ruled out but not measured.",
       "selfTest": [
-        { "q": "In which patients is POCT INR unreliable?", "a": "APS or lupus anticoagulant, and very high INRs (monitor strip bias at INR ≥4)." },
-        { "q": "Which factors dissociate ACT from the anticoagulant effect of UFH?", "a": "Hypothermia, haemodilution, and platelet count and function. On bypass, also lupus anticoagulant or raised heparin–VWF." },
-        { "q": "What can POCT DOAC tests do, and what can they not do?", "a": "They cannot quantify DOACs, but they can rule out clinically relevant levels (<30–50 ng/mL)." }
+        {
+          "q": "In which patients is POCT INR unreliable?",
+          "a": "APS or lupus anticoagulant, and very high INRs (monitor strip bias at INR ≥4)."
+        },
+        {
+          "q": "Which factors dissociate ACT from the anticoagulant effect of UFH?",
+          "a": "Hypothermia, haemodilution, and platelet count and function. On bypass, also lupus anticoagulant or raised heparin–VWF."
+        },
+        {
+          "q": "What can POCT DOAC tests do, and what can they not do?",
+          "a": "They cannot quantify DOACs, but they can rule out clinically relevant levels (<30–50 ng/mL)."
+        }
       ]
     },
     {
       "id": "poct-viscoelastic-platelets",
       "name": "Viscoelastic, platelet function and fibrinogen POCT",
-      "pages": [3, 5, 6],
+      "pages": [
+        3,
+        5,
+        6
+      ],
       "why": "These devices guide transfusion in bleeding. Know which predict bleeding (Multiplate) and which do not (PFA screening).",
       "keyPoints": [
         "**Viscoelastic assays** are vital in bleeding from **trauma, cardiac surgery and obstetrics**, and are also used in liver disease, ED and **ECMO**. Devices: **TEG, ROTEM, Quantra (ultrasound), Sonoclot, ClotChip, ClotPro**. Designs: cup and pin, ultrasonic, cartridge.",
@@ -197,25 +641,44 @@
         "**TEG CFF and ROTEM FIBTEM** detect hypofibrinogenaemia and may guide treatment in **postpartum and surgical bleeding**."
       ],
       "numbers": [
-        ["39 studies, n=4101", "meta-analysis supporting Multiplate in cardiac surgery"],
-        ["§7.3.5", "ISO 15189:2022 section requiring viscoelastic algorithms and ranges"]
+        [
+          "39 studies, n=4101",
+          "meta-analysis supporting Multiplate in cardiac surgery"
+        ],
+        [
+          "§7.3.5",
+          "ISO 15189:2022 section requiring viscoelastic algorithms and ranges"
+        ]
       ],
-      "recs": ["clin-3"],
+      "recs": [
+        "clin-3"
+      ],
       "pitfalls": [
         "A prolonged PFA closure time cannot tell VWD from a platelet defect, and routine pre-operative PFA screening does not predict bleeding.",
         "Viscoelastic thresholds are device-specific. Do not apply ROTEM cut-offs to TEG."
       ],
       "hook": "Multiplate Predicts, PFA Fails to predict. FIBTEM and CFF find low fibrinogen.",
       "selfTest": [
-        { "q": "Which POCT platelet test best predicts bleeding after cardiac surgery?", "a": "Multiplate (multiple electrode impedance aggregometry). It outperformed TEG in CABG." },
-        { "q": "What does NICE say about viscoelastic devices?", "a": "TEG and ROTEM are recommended in cardiac surgery. Sonoclot is recommended only in research." },
-        { "q": "What must viscoelastic validation include?", "a": "Clinical decision-making algorithms and reference ranges (1B; ISO 15189:2022 §7.3.5)." }
+        {
+          "q": "Which POCT platelet test best predicts bleeding after cardiac surgery?",
+          "a": "Multiplate (multiple electrode impedance aggregometry). It outperformed TEG in CABG."
+        },
+        {
+          "q": "What does NICE say about viscoelastic devices?",
+          "a": "TEG and ROTEM are recommended in cardiac surgery. Sonoclot is recommended only in research."
+        },
+        {
+          "q": "What must viscoelastic validation include?",
+          "a": "Clinical decision-making algorithms and reference ranges (1B; ISO 15189:2022 §7.3.5)."
+        }
       ]
     },
     {
       "id": "poct-blood-gas",
       "name": "Blood gas Hb/Hct and LIMS interfacing",
-      "pages": [6],
+      "pages": [
+        6
+      ],
       "why": "Blood gas Hb is used all the time to decide on transfusion, but it is not interchangeable with laboratory Hb.",
       "keyPoints": [
         "Blood gas analysers measure **Hb spectrophotometrically** and **Hct by conductivity or calculation**.",
@@ -226,24 +689,43 @@
         "Where POCT results can be **interfaced to the LIMS**, use the interface **in real time** to **prevent transcription errors**."
       ],
       "numbers": [
-        ["21%", "patients whose transfusion decision differed between laboratory and blood gas Hct"],
-        ["8 g/L", "mean overestimation of Hb by blood gas in one study"]
+        [
+          "21%",
+          "patients whose transfusion decision differed between laboratory and blood gas Hct"
+        ],
+        [
+          "8 g/L",
+          "mean overestimation of Hb by blood gas in one study"
+        ]
       ],
-      "recs": ["clin-4", "clin-5"],
+      "recs": [
+        "clin-4",
+        "clin-5"
+      ],
       "pitfalls": [
         "Blood gas Hb can be wrong in either direction. Confirm in the laboratory before a non-urgent transfusion.",
         "Poor mixing or partial clotting of blood gas samples causes inaccurate Hb. SHOT has reported inappropriate transfusions and TACO from this."
       ],
       "hook": "Gas for trends, laboratory for transfusion.",
       "selfTest": [
-        { "q": "Can blood gas Hb replace laboratory Hb?", "a": "No (1C). Blood gas analysers are not interchangeable with laboratory analysers under CLIA criteria. Use them for trends and immediate judgements." },
-        { "q": "Why can haemolysis be missed on a blood gas Hb?", "a": "Blood gas analysers test whole blood, so there is no plasma to inspect for haemolysis." }
+        {
+          "q": "Can blood gas Hb replace laboratory Hb?",
+          "a": "No (1C). Blood gas analysers are not interchangeable with laboratory analysers under CLIA criteria. Use them for trends and immediate judgements."
+        },
+        {
+          "q": "Why can haemolysis be missed on a blood gas Hb?",
+          "a": "Blood gas analysers test whole blood, so there is no plasma to inspect for haemolysis."
+        }
       ]
     },
     {
       "id": "poct-quality",
       "name": "Quality assurance: IQC, EQA, audit and SOPs",
-      "pages": [6, 7, 8],
+      "pages": [
+        6,
+        7,
+        8
+      ],
       "why": "The QA framework is the core of a safe POCT service. Know the six elements and how IQC differs from EQA.",
       "keyPoints": [
         "QA covers **pre-analytical, analytical and post-analytical** stages, and includes training, personnel, equipment and **appropriateness of testing**.",
@@ -257,21 +739,36 @@
         "**Audit:** an internal audit schedule covering all aspects, with corrective and preventive actions fed into policy. In the UK, hospital POCT is **accredited by UKAS as part of the clinical laboratory**.",
         "**SOPs** must meet **ISO 15189** structure and content (Figure 1). File results **permanently**, **clearly identified as POCT**."
       ],
-      "recs": ["qa-1", "key-2", "key-3", "key-4"],
+      "recs": [
+        "qa-1",
+        "key-2",
+        "key-3",
+        "key-4"
+      ],
       "pitfalls": [
         "EQA does not replace IQC. You need both.",
         "Out-of-consensus does not always mean clinically wrong. Assess clinical significance and long-term performance."
       ],
       "hook": "IQC = every day, inside, catches drift. EQA = periodic, outside, compares you with peers.",
       "selfTest": [
-        { "q": "List the six elements of the POCT QA framework (1B).", "a": "Oversight by a laboratory professional or quality manager; IQC and EQA; an internal audit schedule; ISO 15189 accreditation; document control including SOPs; senior management review for continual improvement." },
-        { "q": "What alternatives exist when no EQA scheme is available for a device?", "a": "Interlaboratory exchange of blinded samples within the trust, and simultaneous venous and capillary sampling across devices, with locally set limits of agreement." }
+        {
+          "q": "List the six elements of the POCT QA framework (1B).",
+          "a": "Oversight by a laboratory professional or quality manager; IQC and EQA; an internal audit schedule; ISO 15189 accreditation; document control including SOPs; senior management review for continual improvement."
+        },
+        {
+          "q": "What alternatives exist when no EQA scheme is available for a device?",
+          "a": "Interlaboratory exchange of blinded samples within the trust, and simultaneous venous and capillary sampling across devices, with locally set limits of agreement."
+        }
       ]
     },
     {
       "id": "poct-governance",
       "name": "Governance and training",
-      "pages": [7, 8, 9],
+      "pages": [
+        7,
+        8,
+        9
+      ],
       "why": "No POCT device should be adopted without governance, and training and competency carry many of the strongest (1A) recommendations.",
       "keyPoints": [
         "**POCT devices must not be adopted without a well-defined governance structure** and clear accountability for every element of the service.",
@@ -283,23 +780,46 @@
         "Competency must be **passed before first use**. Trainers must show a **higher level of understanding** first. Update documentation **whenever a test or device changes**. Training complexity should be **proportional** to the clinical application."
       ],
       "numbers": [
-        ["≥ annually", "minimum audit frequency for training and competency"]
+        [
+          "≥ annually",
+          "minimum audit frequency for training and competency"
+        ]
       ],
-      "recs": ["gov-1", "gov-2", "train-1", "train-2", "train-3", "train-4", "train-5", "train-6", "train-7", "key-5"],
+      "recs": [
+        "gov-1",
+        "gov-2",
+        "train-1",
+        "train-2",
+        "train-3",
+        "train-4",
+        "train-5",
+        "train-6",
+        "train-7",
+        "key-5"
+      ],
       "pitfalls": [
         "A POCT committee is not mandatory under ISO 15189:2022, but governance, accountability and a POCT policy are.",
         "New technologies without a laboratory comparator still need a formal risk assessment (1B)."
       ],
       "hook": "No governance, no gadget. Train, test, then use.",
       "selfTest": [
-        { "q": "Is a POCT committee mandatory under ISO 15189:2022?", "a": "No. But governance must be demonstrated through the POCT policy, with clear accountability." },
-        { "q": "What must users demonstrate competence in (1A)?", "a": "Device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity." }
+        {
+          "q": "Is a POCT committee mandatory under ISO 15189:2022?",
+          "a": "No. But governance must be demonstrated through the POCT policy, with clear accountability."
+        },
+        {
+          "q": "What must users demonstrate competence in (1A)?",
+          "a": "Device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity."
+        }
       ]
     },
     {
       "id": "poct-finance-equipment",
       "name": "Finance and choosing devices",
-      "pages": [9, 10],
+      "pages": [
+        9,
+        10
+      ],
       "why": "Business cases and the device selection criteria (Menendez-Botet) are less familiar, but they are recommended at 1B.",
       "keyPoints": [
         "POCT was once seen as more expensive, but analyses suggest an **overall financial benefit**. Count **costs avoided** as well: cancellations, unnecessary appointments, readmissions, **length of stay**, imaging and theatre time. A **major driver of savings is staff time**.",
@@ -308,20 +828,42 @@
         "Device selection: review the product literature and specifications, with **on-site demonstration and evaluation**. **Minimise blood loss** (neonates and anaemic patients), because frequent sampling causes **iatrogenic anaemia** and transfusion.",
         "Selection and verification follow the **Menendez-Botet criteria**: clinical effectiveness; economic evaluation; blood conservation; safety and ergonomics; technical quality; analytical verification (accuracy, imprecision vs gold standard, reproducibility, linearity, stability, error detection, interference warnings, flagging); data management (bidirectional connectivity, remote access, critical result alerts, EHR); and **ISO 15189:2022-compliant acceptance**."
       ],
-      "recs": ["fin-1", "fin-2", "equip-1", "equip-2", "equip-3", "equip-4", "equip-5", "equip-6", "equip-7", "equip-8", "key-6"],
+      "recs": [
+        "fin-1",
+        "fin-2",
+        "equip-1",
+        "equip-2",
+        "equip-3",
+        "equip-4",
+        "equip-5",
+        "equip-6",
+        "equip-7",
+        "equip-8",
+        "key-6"
+      ],
       "pitfalls": [
         "Comparing cost per test alone undervalues POCT. Include avoided costs such as length of stay and staff time."
       ],
       "hook": "Menendez-Botet's 8: Clinical, Economic, Blood-saving, Safe, Technical, Analytical, Data, Qualification.",
       "selfTest": [
-        { "q": "Whose criteria guide selection and verification of POCT devices?", "a": "Menendez-Botet." },
-        { "q": "What is a major driver of cost savings from POCT?", "a": "Optimising staff time, along with avoided costs such as reduced length of stay and fewer cancellations." }
+        {
+          "q": "Whose criteria guide selection and verification of POCT devices?",
+          "a": "Menendez-Botet."
+        },
+        {
+          "q": "What is a major driver of cost savings from POCT?",
+          "a": "Optimising staff time, along with avoided costs such as reduced length of stay and fewer cancellations."
+        }
       ]
     },
     {
       "id": "poct-safety-incidents",
       "name": "Health and safety, reflex testing and incident reporting",
-      "pages": [10, 11, 12],
+      "pages": [
+        10,
+        11,
+        12
+      ],
       "why": "POCT errors are a recognised cause of inappropriate transfusion, and SHOT reporting is a frequent exam point.",
       "keyPoints": [
         "**Table 2, health and safety:** **biological** (PPE, sharps, treat all blood as infectious); **infection control** (hand hygiene, disinfect between patients, clean and dirty zones, single-use consumables); **chemical** (COSHH, storage, spill kits); **electrical** (**annual PAT testing**, keep devices dry and clean, servicing, remove damaged devices).",
@@ -336,38 +878,90 @@
         {
           "title": "Table 3: Examples of POCT adverse incidents",
           "page": 11,
-          "columns": ["Category", "Example"],
+          "columns": [
+            "Category",
+            "Example"
+          ],
           "rows": [
-            ["Device malfunction", "False high or low Hb or INR"],
-            ["Operator error", "Insufficient volume, expired reagents, SOP not followed"],
-            ["QC failure", "Testing continues despite out-of-range QC"],
-            ["Data or connectivity", "Results fail to upload to the EHR"],
-            ["Infection", "Cross-contamination between patients"],
-            ["Delayed action", "Missed reflex test, critical value not escalated"],
-            ["Misidentification", "Wrong patient, no identity check"],
-            ["Transfusion error (report to SHOT)", "Poor blood gas practice leading to an inappropriate transfusion decision"]
+            [
+              "Device malfunction",
+              "False high or low Hb or INR"
+            ],
+            [
+              "Operator error",
+              "Insufficient volume, expired reagents, SOP not followed"
+            ],
+            [
+              "QC failure",
+              "Testing continues despite out-of-range QC"
+            ],
+            [
+              "Data or connectivity",
+              "Results fail to upload to the EHR"
+            ],
+            [
+              "Infection",
+              "Cross-contamination between patients"
+            ],
+            [
+              "Delayed action",
+              "Missed reflex test, critical value not escalated"
+            ],
+            [
+              "Misidentification",
+              "Wrong patient, no identity check"
+            ],
+            [
+              "Transfusion error (report to SHOT)",
+              "Poor blood gas practice leading to an inappropriate transfusion decision"
+            ]
           ]
         }
       ],
       "numbers": [
-        ["<80 g/L", "example HemoCue Hb that triggers reflex FBC and ferritin"],
-        ["annual", "PAT testing of devices"]
+        [
+          "<80 g/L",
+          "example HemoCue Hb that triggers reflex FBC and ferritin"
+        ],
+        [
+          "annual",
+          "PAT testing of devices"
+        ]
       ],
-      "recs": ["hs-1", "hs-2", "hs-3", "inc-1", "inc-2", "inc-3", "inc-4", "inc-5", "inc-6", "key-7"],
+      "recs": [
+        "hs-1",
+        "hs-2",
+        "hs-3",
+        "inc-1",
+        "inc-2",
+        "inc-3",
+        "inc-4",
+        "inc-5",
+        "inc-6",
+        "key-7"
+      ],
       "pitfalls": [
         "Near misses and no-harm events must still be reported (1A).",
         "Transfusion-related POCT errors go to SHOT, not just the local incident system."
       ],
       "hook": "No harm still means report. Transfusion harm means report to SHOT.",
       "selfTest": [
-        { "q": "Give an example of reflex testing from the paper.", "a": "A HemoCue Hb below 80 g/L automatically triggers an FBC and ferritin in the central laboratory." },
-        { "q": "Which blood gas sampling errors has SHOT highlighted, and what harm can follow?", "a": "Inadequate mixing and partial clotting, giving inaccurate Hb. This can lead to inappropriate transfusion and TACO." }
+        {
+          "q": "Give an example of reflex testing from the paper.",
+          "a": "A HemoCue Hb below 80 g/L automatically triggers an FBC and ferritin in the central laboratory."
+        },
+        {
+          "q": "Which blood gas sampling errors has SHOT highlighted, and what harm can follow?",
+          "a": "Inadequate mixing and partial clotting, giving inaccurate Hb. This can lead to inappropriate transfusion and TACO."
+        }
       ]
     },
     {
       "id": "poct-data-records",
       "name": "Data protection and record retention",
-      "pages": [12],
+      "pages": [
+        12
+      ],
       "why": "The retention periods (8 years for results, 5 years for QC and training records) are specific, testable numbers.",
       "keyPoints": [
         "POCT data must comply with **GDPR** and the **NHS Data Security and Protection (DSP) Toolkit**. Keep it confidential, protect its integrity, collect the **minimum necessary**, store it securely, archive it and destroy it eventually. Use encryption, passwords, firewalls and audit trails.",
@@ -376,19 +970,47 @@
         "**Summary:** a high-quality service depends on technology, leadership, defined pathways, training and QA, **embedded in an accredited framework** to the **same standards as laboratory testing**. The **Infected Blood Inquiry's** safety culture informed the guideline."
       ],
       "numbers": [
-        ["≥8 years", "after last patient contact: patient results"],
-        ["≥5 years", "QC, calibration and maintenance records (usual local period)"],
-        ["≥5 years", "training and competency records"]
+        [
+          "≥8 years",
+          "after last patient contact: patient results"
+        ],
+        [
+          "≥5 years",
+          "QC, calibration and maintenance records (usual local period)"
+        ],
+        [
+          "≥5 years",
+          "training and competency records"
+        ]
       ],
-      "recs": ["dp-1", "dp-2", "dp-3", "dp-4", "dp-5", "dp-6", "store-1", "store-2", "store-3", "key-1", "key-8", "key-9"],
+      "recs": [
+        "dp-1",
+        "dp-2",
+        "dp-3",
+        "dp-4",
+        "dp-5",
+        "dp-6",
+        "store-1",
+        "store-2",
+        "store-3",
+        "key-1",
+        "key-8",
+        "key-9"
+      ],
       "pitfalls": [
         "The 8-year period runs from the last patient contact, not from the date of the test.",
         "The paper is internally inconsistent here. The storage section says results are kept for at least 8 years (store-1), but the key recommendations say POCT results must be 'retained permanently' in the record and labelled as POCT (key-4). Know both, and quote whichever fits the question."
       ],
       "hook": "Patients 8, paperwork 5.",
       "selfTest": [
-        { "q": "How long should POCT patient results be retained?", "a": "At least 8 years after the last patient contact (1B)." },
-        { "q": "How long should training and competency records be kept?", "a": "At least 5 years (1B)." }
+        {
+          "q": "How long should POCT patient results be retained?",
+          "a": "At least 8 years after the last patient contact (1B)."
+        },
+        {
+          "q": "How long should training and competency records be kept?",
+          "a": "At least 5 years (1B)."
+        }
       ]
     }
   ]

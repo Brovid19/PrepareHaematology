@@ -5,6 +5,7 @@
     "issuingBody": "British Society for Haematology",
     "year": 2026,
     "category": "Malignant Haematology",
+    "order": 20,
     "citation": "Osborne W, Bielby H, Cwynarski K, El-Sharkawi D, Petrides G, Illidge T, et al. Br J Haematol. 2026;209(4):1505–1517.",
     "url": "https://doi.org/10.1111/bjh.70768",
     "isVerified": true,

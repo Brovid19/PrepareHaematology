@@ -180,5 +180,421 @@
     "front": "BSH 2026 Guideline Recommendation: What is the Grade 1A recommendation regarding consolidative mediastinal radiotherapy in PMBCL?",
     "back": "Guideline Recommendation (Grade 1A):\n• Do NOT offer consolidative mediastinal radiotherapy for PMBCL patients with Deauville Score 1–3 (Complete Metabolic Response) on end-of-treatment PET-CT at 6 weeks.\n\nEvidence Base:\n• IELSG37 phase III trial showed 5-year Overall Survival of 99% in both observation and RT arms, sparing young patients long-term radiation-induced cardiovascular and secondary malignancy morbidity.",
     "guidelineRef": "BSH 2026 PMBCL Guideline (Rec 1A; IELSG37 Trial)"
+  },
+  {
+    "id": "fc_amlp_01",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-diagnosis",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "front": "How common is leukaemia in pregnancy, and what share of acute leukaemia in pregnancy is AML?",
+    "back": "About 1 in 75 000 to 1 in 100 000 pregnancies.\nAML ≈ two-thirds; ALL ≈ one-third.\n(APL in pregnancy is excluded from this guideline.)",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_02",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-diagnosis",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "dx-1",
+    "front": "Who should be in the MDT for AML in pregnancy, and which classification is used for diagnosis?",
+    "back": "Haematologists, obstetricians, neonatologists and anaesthetists (1C).\nDiagnose with the WHO classification, as for non-pregnant patients (1A).",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_03",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-gestation",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "front": "AML in pregnancy: what does the guideline advise at each stage of gestation?",
+    "back": "• 1st trimester: discuss elective termination (2C)\n• 2nd trimester (13–24 wk): consider induction and continue the pregnancy (2C)\n• 24–32 wk: balance fetal chemotherapy exposure against prematurity (1C)\n• >32 wk: may be reasonable to deliver before chemotherapy (2C)\n• ≥36 wk: avoid chemotherapy; elective delivery (1C)",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_04",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-gestation",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "front": "Survival of a well fetus delivered at ≥28 weeks and at ≥32 weeks?",
+    "back": ">90% at ≥28 weeks; >95% at ≥32 weeks (most large centres).\nMinor neurocognitive impairment rises linearly as gestation falls below 36 weeks.",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_05",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-chemo",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "chemo-2",
+    "front": "What induction regimen and dosing basis are recommended for AML in pregnancy?",
+    "back": "Standard daunorubicin + cytarabine '3 + 10' (1B):\n• Daunorubicin 60 mg/m² IV d1, 3, 5\n• Cytarabine 100 mg/m² 12-hourly IV d1–10\nDose on actual body weight, adjusting for weight change (1C). Daunorubicin 90 mg/m² is not recommended.",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_06",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-chemo",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "front": "Which anthracycline should be avoided in pregnancy, and why?",
+    "back": "Idarubicin. It is more lipophilic (more placental transfer), and transient neonatal cardiomyopathy has been reported with it. Prefer daunorubicin or doxorubicin.\nMalformation risk is highest with exposure at 2–8 weeks.",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_07",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-supportive",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "sup-1",
+    "front": "Which antibiotics should be avoided during pregnancy in AML?",
+    "back": "Quinolones, Augmentin (co-amoxiclav), tetracyclines and sulphonamides (1B).\nCo-amoxiclav: risk of neonatal necrotising enterocolitis.\nSafe: penicillins, erythromycin, metronidazole, cephalosporins. If septic: clindamycin, piperacillin–tazobactam, carbapenems, gentamicin.",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_08",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-supportive",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "sup-3",
+    "front": "Antifungal and blood product choices for a pregnant woman receiving AML chemotherapy?",
+    "back": "Antifungal: amphotericin B, preferably liposomal or lipid formulations (2C). Azoles are teratogenic in animals.\nBlood: CMV-negative products whatever her CMV serostatus (1B), but not needed during labour. In an emergency, standard leucodepleted products.",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_09",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-delivery",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "del-3",
+    "front": "When should delivery be planned after AML chemotherapy, and why?",
+    "back": "≥3 weeks after chemotherapy (1C), avoiding the maternal nadir (usually 2–3 weeks). This lets maternal counts recover and the fetus clear drugs via the placenta, reducing neonatal myelosuppression.\nInduction of labour is usually advised (2C). Caesarean section for obstetric indications only (2C).",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_10",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-delivery",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "del-5",
+    "front": "Platelet and white cell thresholds for anaesthesia and injections at delivery in AML?",
+    "back": "• No epidural: platelets <80 × 10⁹/l and/or WBC <1 × 10⁹/l (1C)\n• No IM injections: platelets <50 × 10⁹/l\n• Caesarean section with platelets <50: consultant haematologist involved; use general anaesthesia if neutropenic or thrombocytopenic\n• Anti-D SC or IV if platelets <30 × 10⁹/l",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_11",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-delivery",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "recId": "del-1",
+    "front": "Antenatal corticosteroids and magnesium sulphate: when?",
+    "back": "Corticosteroids (dexamethasone or betamethasone) if delivery is expected at 24–35 weeks, given over 48 h in the week before delivery (1A).\nMagnesium sulphate in the 24 h before delivery if before 30 weeks, to reduce cerebral palsy (1A).",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amlp_12",
+    "domain": "Haemato-Oncology",
+    "topicId": "amlp-postdelivery",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "front": "Postnatal thromboprophylaxis and breastfeeding advice after AML in pregnancy?",
+    "back": "LMWH 4 h after delivery if platelets >50 × 10⁹/l, for 10 days or 6 weeks depending on risk (RCOG).\nNo breastfeeding during chemotherapy or until ≥2 weeks after it finishes.",
+    "guidelineRef": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "fc_amllab_01",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-context",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "front": "Which three NICE-approved drugs are used in first-line intensive AML treatment, and which laboratory result does each need?",
+    "back": "• Midostaurin: FLT3 mutation (fast turnaround)\n• CPX-351: myelodysplasia-related cytogenetics (or therapy-related history)\n• Gemtuzumab ozogamicin: CD33-positive, non-adverse karyotype",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_02",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-morphology",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "front": "Blast thresholds: WHO 2022 vs ICC 2022.",
+    "back": "WHO 2022: ≥20% needed only for AML without defining genetic abnormalities (DGA). No set cut-off for AML with DGA (except BCR::ABL1 and CEBPA).\nICC 2022: ≥10% for AML with DGA; MDS/AML for 10–19% blasts without DGA.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_03",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-morphology",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "recId": "morph-1",
+    "front": "How many cells should be counted on blood and marrow films for AML (BSH Table 2)?",
+    "back": "≥200 leucocytes on blood films; 500 nucleated cells on marrow films.\n(The morphology recommendation itself says \"at least 200 nucleated cells examined\".)\nCount promonocytes as blast equivalents, but not abnormal monocytes.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_04",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-flow",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "front": "Typical flow immunophenotype of APL (t(15;17))?",
+    "back": "High side scatter; CD33+, CD13+, CD117+, MPO+; CD34−, HLA-DR−, CD11b−.\nNPM1-mutated AML can also be CD34−/HLA-DR− but usually has lower side scatter and may be monocytic.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_05",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-flow",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "recId": "flow-3",
+    "front": "BPDCN: key flow markers and what helps distinguish it from AML?",
+    "back": "Always CD123, CD4 and HLA-DR positive, often CD56. CD34 and CD13 negative in almost all cases.\nAML subtyping by flow should consider BPDCN (flow recommendation 3). CD123 is relevant for tagraxofusp.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_06",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-flow",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "front": "Flow cytometry turnaround times in AML (BSH)?",
+    "back": "Urgent: same working day if received before 3:30 pm.\nNon-urgent (including remission and MRD): processed same day or next morning, results in <2–3 working days.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_07",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-genetics",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "recId": "gen-2",
+    "front": "AML genetics turnaround targets (BSH 2023)?",
+    "back": "• PML::RARA: 24 h when APL is suspected (cryptic cases by molecular testing in 72 h)\n• CBF lesions: 72 h\n• FLT3-ITD/TKD, NPM1, CBF FISH/PCR: 3 days\n• Full karyotype: 7 days\n• KMT2A FISH and NGS panel: 14 days",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_08",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-genetics",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "front": "What should be done if AML karyotyping fails?",
+    "back": "SNP microarray, or FISH for del(5q), del(7q), monosomy 7 and del17p (TP53), to detect most myelodysplasia-related abnormalities.\nNote: FISH alone can miss multiple rare abnormalities and complex karyotype.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_09",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-germline-mrd",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "recId": "gen-6",
+    "front": "Which germline predisposition genes are \"high actionability\" in AML testing (BSH)?",
+    "back": "RUNX1, CEBPA, DDX41, ANKRD26, ETV6 and GATA2.\nFlag a suspected germline finding clearly in the report (gen-6). Confirm on cultured skin fibroblasts.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_amllab_10",
+    "domain": "Haemato-Oncology",
+    "topicId": "amllab-germline-mrd",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "recId": "gen-5",
+    "front": "Molecular MRD in AML (BSH): which targets, and which sample is urgent?",
+    "back": "qPCR targets: NPM1, PML::RARA, CBF fusions and KMT2A fusions (turnaround 3–14 days).\nUrgent (3–7 days): NPM1 after course 2 (blood essential), a repeat after a concerning result, or suspected relapse.\nStore RNA at diagnosis; follow-up samples must reach the laboratory within 2 days.",
+    "guidelineRef": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "fc_eln_01",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-classification",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "ICC 2022: blast threshold for AML with recurrent genetic abnormalities, and the exception?",
+    "back": "≥10% blasts in marrow or blood. Exception: BCR::ABL1 needs ≥20% (10–19% = CML in accelerated phase).\nOther categories need ≥20%; 10–19% = MDS/AML.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_02",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-classification",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "What is the ICC hierarchy for AML without a recurrent genetic abnormality?",
+    "back": "AML with mutated TP53 (VAF ≥10%) > AML with myelodysplasia-related gene mutations (ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2) > AML with MR cytogenetic abnormalities > AML NOS.\nTherapy-related, prior MDS and germline predisposition are qualifiers.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_03",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-classification",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "How is CEBPA-mutated AML defined in ICC and ELN 2022?",
+    "back": "An in-frame mutation in the bZIP domain, mono- or biallelic. The biallelic requirement was dropped.\nIn-frame bZIP is present in 90% of biallelic and 35% of monoallelic cases. It is favourable risk.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_04",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-therapy-related-germline",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Alkylator vs topoisomerase II inhibitor therapy-related AML?",
+    "back": "Alkylator or radiation (≈75%): 5–7 year latency, MDS phase, −5/−7, complex karyotype, TP53.\nTopo II: 1–3 years, rarely MDS, balanced KMT2A (11q23.3), RUNX1 (21q22.1) or RARA (17q21.2) translocations.\nTherapy-related AML is 10–15% of AML; >90% have an abnormal karyotype.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_05",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-therapy-related-germline",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "dx-2",
+    "front": "Why test early for germline predisposition in AML, and which carriers must not donate?",
+    "back": "Allo-HCT is often planned and relatives are preferred donors. Carriers of deleterious RUNX1 or CEBPA variants must not donate.\nConsider germline testing at any age (DDX41 causes AML in older adults).",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_06",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-workup",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "tx-1",
+    "front": "ELN diagnostic counting and karyotype standards?",
+    "back": "200 nucleated cells on blood smears; 500 on marrow smears.\n≥20 marrow metaphases to call a normal karyotype.\nCytogenetics in 5–7 days; actionable mutations (FLT3, IDH1/2, NPM1…) ideally in 3–5 days.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_07",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-risk",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "2022 ELN favourable-risk genetics?",
+    "back": "• t(8;21) RUNX1::RUNX1T1\n• inv(16)/t(16;16) CBFB::MYH11\n• Mutated NPM1 without FLT3-ITD\n• In-frame bZIP CEBPA\nConcurrent KIT or FLT3 does not change CBF risk. NPM1 with adverse cytogenetics is adverse.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_08",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-risk",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "2022 ELN intermediate-risk genetics?",
+    "back": "• Mutated NPM1 with FLT3-ITD\n• Wild-type NPM1 with FLT3-ITD (no adverse lesions)\n• t(9;11) MLLT3::KMT2A\n• Anything not favourable or adverse\nThe FLT3-ITD allelic ratio is no longer considered.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_09",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-risk",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Name the six main changes in ELN 2022 risk.",
+    "back": "1. FLT3-ITD allelic ratio dropped (all ITD intermediate)\n2. MR gene mutations now adverse\n3. NPM1 + adverse cytogenetics = adverse\n4. In-frame bZIP CEBPA (mono or bi) = favourable\n5. New adverse: t(3q26.2;v) MECOM and t(8;16) KAT6A::CREBBP\n6. Hyperdiploid karyotypes with trisomies only are no longer \"complex\"",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_10",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-mrd",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "tx-2",
+    "front": "ELN MRD positivity thresholds: MFC, qPCR, MRD-LL and MRD relapse?",
+    "back": "• MFC: ≥0.1% of CD45+ cells with the target phenotype\n• qPCR: Ct <40 (negative if Ct ≥40 in ≥2 of 3 replicates)\n• MRD-LL <2% (NPM1 and CBF only) counts as negative\n• MRD relapse: negative → positive, or a ≥1 log10 rise from MRD-LL; confirm on a second sample",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_11",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-mrd",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Which mutations should not be used as NGS-MRD markers?",
+    "back": "Clonal haematopoiesis mutations (DNMT3A, TET2, ASXL1) and germline variants.\nNGS-MRD positivity is provisionally ≥0.1% VAF and is exploratory, not yet standardised.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_12",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-response",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Define CR, CRh and CRi (ELN 2022).",
+    "back": "All: marrow blasts <5%, no circulating blasts, no extramedullary disease.\n• CR: ANC ≥1.0, platelets ≥100 (× 10⁹/L)\n• CRh: ANC ≥0.5 and platelets ≥50\n• CRi: CR criteria except residual neutropenia (<1.0) or thrombocytopenia (<100), excluding patients who meet CRh\nNo G-CSF or platelet transfusion within 7 days. The Auer rod criterion was removed.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_13",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-response",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "ELN definitions of refractory and relapsed AML?",
+    "back": "Refractory: no CR, CRh or CRi after 2 courses of intensive induction (or a landmark such as 180 days of less-intensive therapy).\nRelapse: marrow blasts ≥5%, blasts in ≥2 blood samples ≥1 week apart, or new extramedullary disease.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_14",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-intensive",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Who gets CPX-351, and what was its 5-year survival benefit?",
+    "back": "Patients aged 60–75 with therapy-related AML, AML after MDS or CMML, or AML with MR cytogenetics.\n5-year OS 18% vs 10% with 7 + 3. Count recovery about 7 days slower; 30-day mortality 5.9% vs 10.6%.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_15",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-intensive",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Gemtuzumab ozogamicin: indication, dose and main caution?",
+    "back": "CD33-positive AML with favourable or intermediate cytogenetics (greatest benefit in CBF AML).\n3 mg/m² (max 5 mg) d1, 4, 7 with 7 + 3 (or day 1 only).\nCaution: VOD/SOS. Consider omitting if allo-HCT is planned.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_16",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-intensive",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "hct-1",
+    "front": "ELN consolidation cytarabine dose, and the place of HiDAC?",
+    "back": "IDAC 1000–1500 mg/m² (500–1000 if ≥60 years) every 12 h d1–3, 3–4 cycles.\nHigh-dose 3000 mg/m² is discouraged: more toxic, with no survival gain.\nAllo-HCT if predicted relapse risk is >35–40%.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_17",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-nonintensive",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "Azacitidine + venetoclax vs azacitidine alone: key results?",
+    "back": "CR/CRi 66.4% vs 28.3%; median OS 14.7 vs 9.6 months. This is the standard for unfit or older patients.\nDecitabine + venetoclax appears similar. LDAC + venetoclax if an HMA cannot be given.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_18",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-nonintensive",
+    "sourceResourceId": "eln_aml_2022",
+    "front": "How is venetoclax adjusted with posaconazole and with ciprofloxacin?",
+    "back": "Strong CYP3A inhibitor (posaconazole): 10 → 20 → 50 mg, then 100 mg or less daily (VIALE used 50 mg).\nModerate CYP3A inhibitor (ciprofloxacin): reduce by at least 50% (ramp 50 → 100 → 200 mg).",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_19",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-relapse-hct",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "tx-4",
+    "front": "Gilteritinib in relapsed or refractory FLT3-mutated AML: key results?",
+    "back": "CR 21.1% vs 10.5%; median OS 9.3 vs 5.6 months vs salvage chemotherapy.\nAlso the preferred option for post-HCT relapse with an emergent FLT3 clone.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_20",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-relapse-hct",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "hct-2",
+    "front": "ELN allo-HCT in CR1: who and who not?",
+    "back": "Consider if relapse risk is >35–40%: adverse risk and most intermediate risk.\nFavourable risk: generally not, unless MRD clearance is inadequate.\nMAC beats RIC in patients aged 18–65 (BMT CTN 0901). Sorafenib maintenance for FLT3-mutated AML; SC azacitidine maintenance not recommended.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_21",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-supportive",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "sc-1",
+    "front": "Hyperleukocytosis in AML: definition and management (ELN)?",
+    "back": "WBC >100 × 10⁹/L. Hydroxyurea up to 50–60 mg/kg/day to reach <25 × 10⁹/L (especially before HMA or venetoclax).\nLeukostasis is an emergency: rapid cytoreduction, restrictive red cell transfusion, possibly dexamethasone. No leukapheresis for asymptomatic patients.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "fc_eln_22",
+    "domain": "Haemato-Oncology",
+    "topicId": "eln-supportive",
+    "sourceResourceId": "eln_aml_2022",
+    "recId": "sc-5",
+    "front": "ELN supportive care: prophylaxis and transfusion thresholds?",
+    "back": "Posaconazole antifungal prophylaxis during induction. Insufficient evidence for HSV prophylaxis; none for PJP.\nInfluenza and COVID-19 vaccination for all. G-CSF not routine.\nHb >8 g/dL; prophylactic platelets at <10 × 10⁹/L.",
+    "guidelineRef": "ELN 2022 AML recommendations (Döhner et al.)"
   }
 ]

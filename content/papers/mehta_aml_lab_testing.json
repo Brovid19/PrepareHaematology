@@ -1,0 +1,659 @@
+{
+  "guideline": {
+    "id": "bsh_aml_lab_testing_2023",
+    "title": "Recommendations for laboratory testing of UK patients with acute myeloid leukaemia",
+    "issuingBody": "British Society for Haematology",
+    "year": 2023,
+    "category": "Malignant Haematology",
+    "order": 40,
+    "citation": "Mehta P, Telford N, Wragg C, Dillon R, Freeman S, Finnegan D, Hamblin A, Copland M, Knapper S. Br J Haematol. 2023;200(2):150–159.",
+    "url": "https://doi.org/10.1111/bjh.18516",
+    "isVerified": true,
+    "pdf": "BJH_2023_Mehta_AML_laboratory_testing.pdf",
+    "overview": "This BSH good practice paper sets out best practice for laboratory work-up of AML in the UK at diagnosis and relapse: sampling, morphology, flow cytometry (including CD33 for gemtuzumab and MFC-MRD), cytogenetics, molecular genetics (FLT3, NPM1, CBF, PML::RARA, KMT2A, the mandatory NGS gene list), germline predisposition and molecular MRD. It gives turnaround times so that genetically targeted drugs (midostaurin, CPX-351, gemtuzumab ozogamicin) can be started promptly. It reflects WHO 2022, ICC 2022 and ELN 2022. As a good practice paper, its recommendations are ungraded."
+  },
+  "recommendations": [
+    {
+      "id": "morph-1",
+      "group": "Morphology recommendations",
+      "grade": null,
+      "page": 3,
+      "text": "Bone marrow aspirate and trephine biopsy should be performed and at least 200 nucleated cells examined to make a diagnosis of AML."
+    },
+    {
+      "id": "morph-2",
+      "group": "Morphology recommendations",
+      "grade": null,
+      "page": 3,
+      "text": "Communicating morphological findings rapidly to specialised laboratory personnel is important to aid further testing, especially if suspecting APL or core-binding factor (CBF) AML - cases with t(8;21), t(16;16) or inv(16)."
+    },
+    {
+      "id": "flow-1",
+      "group": "Flow cytometry recommendations",
+      "grade": null,
+      "page": 5,
+      "text": "Flow cytometric analyses are critical for diagnosis and remission assessment and require rapid reporting."
+    },
+    {
+      "id": "flow-2",
+      "group": "Flow cytometry recommendations",
+      "grade": null,
+      "page": 5,
+      "text": "Diagnostic reports should record whether AML cells are CD33 positive."
+    },
+    {
+      "id": "flow-3",
+      "group": "Flow cytometry recommendations",
+      "grade": null,
+      "page": 5,
+      "text": "Diagnostic AML subtyping by flow cytometry should include consideration of blastic plasmacytoid dendritic cell neoplasm (BPDCN)"
+    },
+    {
+      "id": "flow-4",
+      "group": "Flow cytometry recommendations",
+      "grade": null,
+      "page": 5,
+      "text": "For flow cytometric MRD monitoring, a diagnostic sample is preferred to identify trackable MRD targets"
+    },
+    {
+      "id": "gen-1",
+      "group": "Genetics recommendations",
+      "grade": null,
+      "page": 8,
+      "text": "Cytogenetic and molecular genetic analyses are critical at diagnosis and relapse"
+    },
+    {
+      "id": "gen-2",
+      "group": "Genetics recommendations",
+      "grade": null,
+      "page": 8,
+      "text": "Where indicated, PML::RARA testing must be completed within 24 hours of sample receipt"
+    },
+    {
+      "id": "gen-3",
+      "group": "Genetics recommendations",
+      "grade": null,
+      "page": 8,
+      "text": "Rapid identification of core binding factor leukaemia, FLT3 internal tandem duplication (ITD) and tyrosine kinase domain (TKD) mutations is essential"
+    },
+    {
+      "id": "gen-4",
+      "group": "Genetics recommendations",
+      "grade": null,
+      "page": 8,
+      "text": "A complete conventional cytogenetic analysis is required within 7 days of sample receipt"
+    },
+    {
+      "id": "gen-5",
+      "group": "Genetics recommendations",
+      "grade": null,
+      "page": 8,
+      "text": "Molecular MRD assessment should be performed for patients with an NPM1 mutation, CBFB::MYH11, RUNX1::RUNX1T1 and PML::RARA fusions, and considered for other fusion genes."
+    },
+    {
+      "id": "gen-6",
+      "group": "Genetics recommendations",
+      "grade": null,
+      "page": 8,
+      "text": "Where a suspected germline finding in a cancer susceptibility gene is identified, it should be clearly highlighted in the genetic report."
+    }
+  ],
+  "topics": [
+    {
+      "id": "amllab-context",
+      "name": "Why lab work-up changed: classification, new drugs and sampling",
+      "pages": [
+        1,
+        2,
+        3
+      ],
+      "why": "Several NICE-approved first-line drugs now depend on genetic or phenotypic results, so turnaround and sampling decisions directly change treatment.",
+      "keyPoints": [
+        "AML diagnosis is multi-faceted: clinical features plus **morphology, immunophenotyping and genetics** of blood, marrow and, where relevant, **CSF**.",
+        "**WHO 2022** splits AML into **AML with defining genetic abnormalities (DGA)** and **AML defined by differentiation**. A key change is **removal of the 20% blast requirement for AML with DGA**, except **BCR::ABL1 and CEBPA**. A new category, 'AML with other defined genetic alterations', covers emerging subtypes. The **ICC** classified AML separately.",
+        "**ELN 2022** is the current standard for genetic risk and requires **multi-platform** testing, including **NGS** for CEBPA, TP53 and the secondary-type mutations **ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1 and ZRSR2**.",
+        "Since 2018, **ten new AML drugs** have been FDA-approved, six of them NICE-approved. **Three are now in first-line intensive treatment**: **midostaurin** (needs fast FLT3 results), **CPX-351** (needs myelodysplasia-related cytogenetics) and **gemtuzumab ozogamicin** (needs CD33-positive, non-adverse karyotype). Early identification of **TP53** mutation is also increasingly relevant.",
+        "**Sampling:** bone marrow **aspirate and trephine**. With a **high WBC**, or in **older or frail patients** for whom best supportive care is likely, the work-up can be done on **peripheral blood instead**.",
+        "Also at diagnosis: samples for **trials and biobanking**; samples to define an MRD marker (**storing DNA and RNA is mandatory**, and a **LAIP sample is strongly recommended**); **consent**; and transport logistics.",
+        "Integrated reporting by a **Specialist Integrated Haematological Malignancy Diagnostic Service (SIHMDS)** was recommended by **NICE NG47 (2016)**. Reports should state **which classification** was used."
+      ],
+      "tables": [
+        {
+          "title": "Table 1 (condensed): New AML drugs, 2018–21, and NICE status",
+          "page": 3,
+          "columns": [
+            "Drug",
+            "Class",
+            "Indication (as listed)",
+            "NICE"
+          ],
+          "rows": [
+            [
+              "Midostaurin",
+              "Multi-targeted kinase inhibitor",
+              "New FLT3-mutated AML with intensive chemo, then maintenance",
+              "Recommended (Jun 2018)"
+            ],
+            [
+              "Arsenic trioxide",
+              "Inorganic compound",
+              "APL: low/intermediate risk with ATRA; relapsed/refractory",
+              "Recommended (Jun 2018)"
+            ],
+            [
+              "Gemtuzumab ozogamicin",
+              "Anti-CD33 antibody–drug conjugate",
+              "Untreated de novo CD33+ AML; favourable/intermediate/failed cytogenetics",
+              "Recommended (Oct 2018)"
+            ],
+            [
+              "CPX-351",
+              "Liposomal daunorubicin/cytarabine",
+              "Untreated therapy-related AML or AML-MRC",
+              "Recommended (Nov 2018)"
+            ],
+            [
+              "Gilteritinib",
+              "FLT3 inhibitor",
+              "Relapsed/refractory FLT3-mutated AML",
+              "Recommended (Aug 2020)"
+            ],
+            [
+              "Enasidenib / Ivosidenib",
+              "IDH2 / IDH1 inhibitor",
+              "Relapsed/refractory IDH2 / IDH1-mutated AML",
+              "Not assessed"
+            ],
+            [
+              "Venetoclax",
+              "BCL2 inhibitor",
+              "With azacitidine, unfit for intensive chemo",
+              "Recommended (Feb 2022)"
+            ],
+            [
+              "Glasdegib",
+              "Smoothened inhibitor",
+              "With LDAC, unfit for intensive chemo",
+              "Not assessed"
+            ],
+            [
+              "CC-486",
+              "Oral hypomethylating agent",
+              "Maintenance in CR/CRi after intensive induction, not proceeding to SCT",
+              "Under assessment"
+            ]
+          ],
+          "note": "For arsenic trioxide, the PDF prints the low/intermediate-risk threshold as 'WBC < 10x10⁹/ml'. This is presumably meant to read /l."
+        }
+      ],
+      "numbers": [
+        [
+          "10 / 6 / 3",
+          "new FDA-approved AML drugs / NICE-approved / used first line with intensive chemotherapy"
+        ],
+        [
+          "NG47 (2016)",
+          "NICE guidance recommending integrated SIHMDS reporting"
+        ]
+      ],
+      "pitfalls": [
+        "Under WHO 2022, BCR::ABL1 and CEBPA are the exceptions that still need ≥20% blasts among AML with DGA.",
+        "Storing DNA and RNA at diagnosis is mandatory. A LAIP sample is 'strongly recommended'."
+      ],
+      "hook": "Three drugs, three tests: midostaurin needs FLT3, CPX-351 needs MR cytogenetics, GO needs CD33.",
+      "selfTest": [
+        {
+          "q": "Which three NICE-approved agents are now in first-line intensive AML treatment, and what test does each depend on?",
+          "a": "Midostaurin needs FLT3 mutation status, CPX-351 needs myelodysplasia-related cytogenetics (or therapy-related history), and gemtuzumab ozogamicin needs CD33 positivity and a non-adverse karyotype."
+        },
+        {
+          "q": "When can the diagnostic work-up be done on peripheral blood rather than marrow?",
+          "a": "With a high white cell count, or in older or frail patients for whom best supportive care is likely."
+        }
+      ]
+    },
+    {
+      "id": "amllab-morphology",
+      "name": "Morphology, blast thresholds and AML-MR",
+      "pages": [
+        2,
+        3,
+        4,
+        10
+      ],
+      "why": "Blast thresholds now differ by genetic category and by classification (WHO vs ICC), which makes them a frequent exam trap.",
+      "keyPoints": [
+        "**WHO 2022:** **≥20% blasts** (blood or marrow) is needed only for **AML without DGA**. For AML with DGA there is **no set blast cut-off**, and the emphasis is on correlating morphology with genetics.",
+        "**ICC 2022:** **≥10% blasts** for AML with DGA, plus a new category of **MDS/AML for 10–19% blasts** without DGA, subdivided into MDS-related gene mutations and MDS-related cytogenetic abnormalities.",
+        "**AML-MRC is replaced by AML-myelodysplasia related (AML-MR)**. **Morphology alone can no longer make the diagnosis**. Cytogenetic criteria are updated, and **mutation-based criteria** are added. AML transformed from MDS or MDS/MPN stays in AML-MR.",
+        "**Blast count:** myeloblasts, monoblasts and megakaryoblasts. In monocytic or myelomonocytic AML, **promonocytes** are blast equivalents, but **abnormal monocytes are not**.",
+        "**Acute erythroid leukaemia:** erythroid predominance, usually **>80% of marrow elements**, of which **>30% are proerythroblasts**.",
+        "Table 2 counting standards: **≥200 leucocytes in blood films** and **500 nucleated cells in marrow films** (at diagnosis, follow-up and suspected relapse). The **trephine** gives the blast count, immunohistochemistry, and evidence of other conditions such as fibrosis or mast cells.",
+        "Communicate morphology **rapidly** to specialised laboratory staff, especially if **APL or CBF AML** (t(8;21), t(16;16), inv(16)) is suspected.",
+        "Drug access in the UK is still based on the **older classification and definitions**, so refer to funding approval criteria when accessing these drugs."
+      ],
+      "tables": [
+        {
+          "title": "WHO 2022 classification of AML (Appendix A)",
+          "page": 10,
+          "columns": [
+            "Group",
+            "Entities"
+          ],
+          "rows": [
+            [
+              "AML with defining genetic abnormalities",
+              "APL with PML::RARA; RUNX1::RUNX1T1; CBFB::MYH11; DEK::NUP214; RBM15::MRTFA; BCR::ABL1; KMT2A rearrangement; MECOM rearrangement; NUP98 rearrangement; NPM1 mutation; CEBPA mutation; AML, myelodysplasia-related; AML with other defined genetic alterations"
+            ],
+            [
+              "AML defined by differentiation",
+              "Minimal differentiation; without maturation; with maturation; acute basophilic; acute myelomonocytic; acute monocytic; acute erythroid; acute megakaryoblastic"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "≥20%",
+          "blasts needed for WHO 2022 AML without DGA"
+        ],
+        [
+          "≥10%",
+          "ICC blast threshold for AML with DGA"
+        ],
+        [
+          "10–19%",
+          "ICC MDS/AML"
+        ],
+        [
+          "200 / 500",
+          "cells counted in blood / marrow films (Table 2)"
+        ],
+        [
+          ">80% / >30%",
+          "erythroid elements / of which proerythroblasts in acute erythroid leukaemia"
+        ]
+      ],
+      "recs": [
+        "morph-1",
+        "morph-2"
+      ],
+      "pitfalls": [
+        "The morphology recommendation says 'at least 200 nucleated cells examined', but Table 2 says 500 nucleated cells should be counted in marrow films and 200 leucocytes in blood films. Know both figures.",
+        "Abnormal monocytes are not blast equivalents. Promonocytes are.",
+        "AML-MR cannot be diagnosed on dysplastic morphology alone."
+      ],
+      "hook": "WHO says 20% unless genetics defines it; ICC says 10% with defining genetics, and 10–19% without is MDS/AML.",
+      "selfTest": [
+        {
+          "q": "Under WHO 2022, which AML needs ≥20% blasts?",
+          "a": "Only AML without defining genetic abnormalities (AML defined by differentiation). For AML with DGA there is no set cut-off, except BCR::ABL1 and CEBPA."
+        },
+        {
+          "q": "What are the morphological criteria for acute erythroid leukaemia in this paper?",
+          "a": "Erythroid predominance, usually >80% of marrow elements, of which >30% are proerythroblasts."
+        }
+      ]
+    },
+    {
+      "id": "amllab-flow",
+      "name": "Flow cytometry: panels, CD33, BPDCN and MFC-MRD",
+      "pages": [
+        3,
+        4,
+        5
+      ],
+      "why": "Flow cytometry gives the lineage, the CD33 status that decides gemtuzumab eligibility, and the LAIP needed for MRD later.",
+      "keyPoints": [
+        "MFC is **essential at diagnosis, remission assessment and suspected relapse**. **CSF** testing if CNS involvement is suspected. **8-colour panels are standard**, and 10-colour is expected.",
+        "**MFC-MRD** after induction and **pre-transplant** adds prognostic information. Each SIHMDS should have a **named reference laboratory** for MFC-MRD.",
+        "**Turnaround times:** urgent samples **same working day if received before 3:30 pm**. Non-urgent (including remission/MRD) processed same day or next morning, with results in **under 2–3 working days**.",
+        "**Two-stage panel:** an acute leukaemia screen (e.g. **EuroFlow ALOT**) for lineage, then an AML-specific panel. Extended testing may be needed for **BPDCN**, ambiguous lineage, or **acute megakaryoblastic** leukaemia.",
+        "**MPO positivity** for myeloid lineage: **≥20% of leukaemic cells** above a lymphocyte-based threshold.",
+        "**APL and t(8;21)** have typical immunophenotypes (Table 3), so report them promptly with morphology to speed confirmatory genetics.",
+        "The diagnostic **LAIP** must be characterised with an **ELN MRD minimum marker set**, so diagnostic samples may need to go routinely to the reference MFC-MRD laboratory.",
+        "**GO requires CD33 positivity**, so every diagnostic and relapse report should state whether blasts are **CD33 positive**. GO can work with **partial or weak CD33** (as in CBF AML). Laboratories need validated thresholds and **UK NEQAS Leukaemia Immunophenotyping Part 1** EQA. **CD123** matters for **tagraxofusp in BPDCN**.",
+        "If a sample is **inadequate** for remission or MRD assessment (poor viability, haemodilution, too few leucocytes), say so and give the cause. Report the blast %, the markers defining blasts, and the **denominator** (leucocytes or nucleated cells).",
+        "If a patient is **refractory by morphology but MFC-MRD negative**, the **MFC result appears more reliable for prognosis**.",
+        "**Samples (Table 2):** fresh leucocytes at room temperature, sent immediately. **First-pull marrow** is preferred, and clots compromise results. Diagnosis: BM 2–5 ml or PB 10–20 ml in EDTA. Blood can confirm lineage and blast % ≥20%. **CSF: <2 ml is uninformative** unless heavily infiltrated, and must be processed **within a few hours** (or collected into Transfix). **FISH on a CSF cytospin** is preferred when there is a cytogenetic marker."
+      ],
+      "tables": [
+        {
+          "title": "Table 3: Antibody markers for subtyping and MRD",
+          "page": 5,
+          "columns": [
+            "Entity",
+            "Markers",
+            "Key points"
+          ],
+          "rows": [
+            [
+              "Acute megakaryoblastic",
+              "CD41, CD61 (CD36, CD9 helpful)",
+              "Platelet attachment confounds CD41/CD61; CD42 on platelets, not usually blasts"
+            ],
+            [
+              "BPDCN",
+              "CD123, CD4, CD56",
+              "Always CD123, CD4, HLA-DR, often CD56; CD34 and CD13 negative in almost all; consider AML with pDC expansion (RUNX1)"
+            ],
+            [
+              "t(8;21)",
+              "CD19, CD56, CD34, CD33",
+              "Aberrant CD19 (not stable for MRD), sometimes CD56, high CD34, weak CD33, MPO+"
+            ],
+            [
+              "t(15;17) APL",
+              "CD117, CD34, CD11b, HLA-DR, CD33, CD13",
+              "High side scatter; CD33, CD13, CD117 positive; CD34, HLA-DR, CD11b negative; MPO+"
+            ],
+            [
+              "MRD panel",
+              "CD45 CD33 CD13 CD34 CD117 HLA-DR CD56 CD7",
+              "ELN 8-colour set; add maturation/monocytic markers; LSC markers (CD34/CD38 with CLL-1, CD45RA, CD123…)"
+            ]
+          ],
+          "note": "NPM1-mutated AML can also be CD34, HLA-DR and CD11b negative and CD117 positive, but usually has lower side scatter and may have a monocytic component."
+        }
+      ],
+      "numbers": [
+        [
+          "3:30 pm",
+          "urgent samples received before this are reported the same working day"
+        ],
+        [
+          "<2–3 working days",
+          "non-urgent results, including MRD"
+        ],
+        [
+          "≥20%",
+          "MPO-positive leukaemic cells to assign myeloid lineage"
+        ],
+        [
+          "<2 ml",
+          "CSF volume usually uninformative"
+        ],
+        [
+          "8-colour",
+          "current standard MFC panel (10-colour expected)"
+        ]
+      ],
+      "recs": [
+        "flow-1",
+        "flow-2",
+        "flow-3",
+        "flow-4"
+      ],
+      "pitfalls": [
+        "APL vs NPM1-mutated AML: both can be CD34−/HLA-DR−. APL has high side scatter, while NPM1 has lower side scatter and may be monocytic.",
+        "CD19 on t(8;21) blasts is aberrant but not a stable MRD marker.",
+        "Weak CD33 does not exclude benefit from gemtuzumab ozogamicin."
+      ],
+      "hook": "APL on flow: big granular cells (high side scatter) that have lost CD34, HLA-DR and CD11b.",
+      "selfTest": [
+        {
+          "q": "Give the typical APL immunophenotype.",
+          "a": "High side scatter; CD33, CD13, CD117 and MPO positive; CD34, HLA-DR and CD11b negative."
+        },
+        {
+          "q": "Why must diagnostic AML flow reports state CD33 status?",
+          "a": "Gemtuzumab ozogamicin is authorised only for CD33-positive AML (flow recommendation 2)."
+        },
+        {
+          "q": "A patient looks refractory on morphology but is MFC-MRD negative. Which result is more reliable for prognosis?",
+          "a": "The MFC-MRD negative result."
+        }
+      ]
+    },
+    {
+      "id": "amllab-genetics",
+      "name": "Cytogenetics, FISH and molecular tests at diagnosis",
+      "pages": [
+        4,
+        6,
+        7
+      ],
+      "why": "Turnaround targets (24 h PML::RARA, 72 h CBF, 3 days FLT3/NPM1, 7 days karyotype) are what make targeted first-line treatment possible.",
+      "keyPoints": [
+        "Comprehensive cytogenetic and molecular profiling is **integral to diagnosis and classification**. If **high-risk MDS** (e.g. high blast count) is found, test as for the AML pathway. **Store cells, DNA and RNA**, with consent, at diagnosis and relapse.",
+        "**Cytogenetics is mandatory at diagnosis and relapse.** Rapid FISH can find cardinal lesions, but without a diagnostic finding **FISH must always be supplemented by a rapid karyotype**. If karyotyping fails, a **SNP array or FISH for del(5q), del(7q), monosomy 7 and del17p (TP53)** finds most MR abnormalities, but multiple rare abnormalities and complex karyotype can be missed by FISH alone.",
+        "Monitoring by FISH or karyotype is **not routinely recommended**, but helps with atypical or discordant results or suspected relapse.",
+        "**PML::RARA** is not mandatory in every case, but when APL is suspected it **must be available within 24 h**. Some rearrangements are **cryptic to both karyotype and FISH**, so offer molecular characterisation if suspicion persists, with results **within 72 h**.",
+        "**CBF leukaemia** (CBFB::MYH11, RUNX1::RUNX1T1) must be identified **within 72 h** by FISH, molecular testing or rapid karyotype. **Cryptic CBFB rearrangements** must be excluded by FISH or molecular testing if CBF is suspected.",
+        "**KMT2A** testing is essential but **less time-critical**. Rearrangements can be cryptic and are **disease-defining**, so test whenever no other DGA is found, using a **partner-agnostic break-apart FISH**, optionally with an RNA NGS fusion panel. Once found, **identify the partner** for risk assignment (e.g. t(9;11) is intermediate).",
+        "**FLT3-ITD and TKD** need rapid identification for FLT3 inhibitors. The **FLT3-ITD allelic ratio is no longer needed for ELN risk**, but it is recommended to report it if the assay is standardised and validated, because it adds prognostic information.",
+        "**NPM1 exon 11** rapid testing is **not mandated**, but it is often done with FLT3 and helps in suspected APL without PML::RARA and in cases with dysplasia.",
+        "**NGS is mandatory** for CEBPA, TP53, FLT3, IDH1, IDH2, ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, DNMT3A, WT1 and ZRSR2. There is no standard UK panel; laboratories must meet the **National Genomic Test Directory** standards. **CEBPA** is hard to sequence and **FLT3-ITD** hard to quantify by NGS, so alternative quality-assured single-target tests may be needed."
+      ],
+      "tables": [
+        {
+          "title": "Table 4: Tests at diagnosis (all patients)",
+          "page": 6,
+          "columns": [
+            "Test",
+            "TAT (days)"
+          ],
+          "rows": [
+            [
+              "FLT3-ITD*",
+              "3"
+            ],
+            [
+              "NPM1 exon 11",
+              "3"
+            ],
+            [
+              "FLT3 TKD hotspot*",
+              "3"
+            ],
+            [
+              "FISH/PCR or karyotype CBFB::MYH11 [inv16]",
+              "3"
+            ],
+            [
+              "FISH/PCR or karyotype RUNX1::RUNX1T1 [t(8;21)]",
+              "3"
+            ],
+            [
+              "AML karyotype*",
+              "7"
+            ],
+            [
+              "KMT2A::R FISH",
+              "14"
+            ],
+            [
+              "AML NGS panel*",
+              "14"
+            ],
+            [
+              "WGS germline and tumour",
+              "42"
+            ]
+          ],
+          "note": "* Must be repeated at relapse. Cryptic CBF should be excluded where suspicion persists. WGS may supplement standard care and is considered when germline predisposition is suspected."
+        },
+        {
+          "title": "Table 2 (genetics): Sample requirements",
+          "page": 4,
+          "columns": [
+            "Test",
+            "Sample",
+            "Deadline to reach the laboratory"
+          ],
+          "rows": [
+            [
+              "Cytogenetics and FISH",
+              "BM in heparinised transport medium or lithium heparin (PB if involved)",
+              "24 h"
+            ],
+            [
+              "Rapid single-target and myeloid panel",
+              "BM 2–3 ml and/or PB 4 ml EDTA",
+              "—"
+            ],
+            [
+              "Fusion detection and molecular MRD",
+              "BM 5 ml (preferred for RNA) and/or PB 20 ml EDTA",
+              "48 h"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "24 h",
+          "PML::RARA result when APL is suspected"
+        ],
+        [
+          "72 h",
+          "CBF identification; cryptic PML::RARA molecular results"
+        ],
+        [
+          "3 days",
+          "FLT3-ITD, FLT3-TKD, NPM1, CBF FISH/PCR"
+        ],
+        [
+          "7 days",
+          "complete conventional karyotype"
+        ],
+        [
+          "14 days",
+          "KMT2A FISH and AML NGS panel"
+        ]
+      ],
+      "recs": [
+        "gen-1",
+        "gen-2",
+        "gen-3",
+        "gen-4"
+      ],
+      "pitfalls": [
+        "A negative FISH screen is not enough. It must be backed by a rapid karyotype, because complex karyotype and rare abnormalities are missed.",
+        "PML::RARA and CBFB rearrangements can be cryptic to both karyotype and FISH. Use molecular testing if suspicion remains.",
+        "The FLT3-ITD allelic ratio no longer changes ELN risk, but the paper still recommends reporting it with a validated assay."
+      ],
+      "hook": "1–3–7: APL in 1 day, FLT3/NPM1/CBF in 3, karyotype in 7.",
+      "selfTest": [
+        {
+          "q": "What is the turnaround target for PML::RARA testing in suspected APL?",
+          "a": "Within 24 hours of sample receipt (genetics recommendation 2)."
+        },
+        {
+          "q": "Karyotyping fails. Which tests detect most myelodysplasia-related abnormalities?",
+          "a": "SNP microarray, or FISH for del(5q), del(7q), monosomy 7 and del17p (TP53)."
+        },
+        {
+          "q": "How should KMT2A rearrangement be tested for, and why?",
+          "a": "With partner-agnostic (break-apart) FISH, optionally with an RNA NGS fusion panel, because many partners exist and some rearrangements are cryptic. Once found, identify the partner for risk assignment."
+        }
+      ]
+    },
+    {
+      "id": "amllab-germline-mrd",
+      "name": "Germline predisposition and molecular MRD",
+      "pages": [
+        7,
+        8
+      ],
+      "why": "A somatic panel can reveal an inherited variant that changes donor choice. Molecular MRD after course 2 decides transplant in NPM1-mutated AML.",
+      "keyPoints": [
+        "Driver variants found by somatic-only testing **may be germline**. Laboratories need processes to identify and report possible germline findings in **high-actionability genes: RUNX1, CEBPA, DDX41, ANKRD26, ETV6 and GATA2**.",
+        "If a germline variant is suspected, take a **detailed clinical and family history**. Confirmation needs **cultured skin fibroblasts** from a **skin biopsy**. Consider referral to **Clinical Genetics**.",
+        "Familial predisposition matters especially when considering a **related transplant donor**. Ask about family **MDS, acute leukaemia or aplastic anaemia**, early-onset cancers, and multiple affected relatives.",
+        "Personal or family features to elicit: **cytopenias, abnormal bleeding, skin or nail abnormalities, idiopathic liver disease, immune defects, atypical infections, lymphoedema, limb abnormalities, pulmonary fibrosis**.",
+        "If a predisposition or **inherited marrow failure** syndrome is suspected clinically, consider up-front germline testing with a constitutional NGS panel. For suspected **Fanconi anaemia**, use **chromosome breakage studies (DEB or mitomycin C)**.",
+        "**WGS** can currently supplement standard care, and is likely to replace some tests as turnaround improves.",
+        "**Molecular MRD by qPCR** is suitable for **NPM1, PML::RARA, CBF and KMT2A fusions**, with turnaround of **3–14 days**. Urgent (3–7 days): **NPM1 after course 2 (blood sample essential for risk stratification)**, a repeat after a concerning result, and suspected relapse.",
+        "Because these assays are RNA-based, **store RNA at diagnosis** as a baseline. Follow-up samples must reach the MRD laboratory **within 2 days** of sampling.",
+        "**Digital droplet PCR and NGS MRD** are under investigation and **not yet recommended** for routine care."
+      ],
+      "tables": [
+        {
+          "title": "Table 5: Tests for specific indications",
+          "page": 7,
+          "columns": [
+            "Test",
+            "Indication",
+            "TAT (days)"
+          ],
+          "rows": [
+            [
+              "FISH PML::RARA [t(15;17)]",
+              "Suspected APL (morphology or flow)",
+              "1"
+            ],
+            [
+              "RT-PCR PML::RARA",
+              "Suspected APL",
+              "3"
+            ],
+            [
+              "MyeChild01 FISH panel",
+              "Children and young adults with no other primary genetic change",
+              "7"
+            ],
+            [
+              "MLDS NGS panel (GATA1)",
+              "Children with known trisomy 21",
+              "21"
+            ],
+            [
+              "Fanconi breakage testing",
+              "Suspected Fanconi anaemia pre-transplant",
+              "14"
+            ],
+            [
+              "Inherited marrow failure panel",
+              "Suspected familial predisposition",
+              "84"
+            ]
+          ],
+          "note": "MyeChild01 FISH targets: t(5;11) NUP98::NSD1, t(7;12) MNX1::ETV6, inv(16)(p13.3q24.3) CBFA2T3::GLIS2."
+        }
+      ],
+      "numbers": [
+        [
+          "6 genes",
+          "RUNX1, CEBPA, DDX41, ANKRD26, ETV6, GATA2: high-actionability germline genes"
+        ],
+        [
+          "3–14 days",
+          "molecular MRD turnaround (urgent 3–7)"
+        ],
+        [
+          "2 days",
+          "follow-up MRD sample must reach the laboratory"
+        ],
+        [
+          "84 days",
+          "inherited marrow failure panel turnaround"
+        ]
+      ],
+      "recs": [
+        "gen-5",
+        "gen-6"
+      ],
+      "pitfalls": [
+        "A blood or marrow sample cannot prove a variant is germline. Use cultured skin fibroblasts.",
+        "NPM1 MRD after course 2 should be on peripheral blood. The paper calls a blood sample essential for risk stratification.",
+        "ddPCR and NGS-based MRD are not yet for routine use in this guidance."
+      ],
+      "hook": "Germline six to flag: 'Really Can't Do Any Easy Genetics' (RUNX1, CEBPA, DDX41, ANKRD26, ETV6, GATA2).",
+      "selfTest": [
+        {
+          "q": "Which genetic lesions are suitable for qPCR molecular MRD in UK practice?",
+          "a": "NPM1 mutation, PML::RARA, CBF fusions (CBFB::MYH11, RUNX1::RUNX1T1) and KMT2A fusions."
+        },
+        {
+          "q": "How is a suspected germline variant confirmed?",
+          "a": "By testing DNA from cultured skin fibroblasts (skin biopsy), with clinical and family history and Clinical Genetics referral."
+        },
+        {
+          "q": "Which NPM1 MRD sample is treated as urgent?",
+          "a": "The peripheral blood sample after course 2, which is essential for risk stratification (3–7 day turnaround)."
+        }
+      ]
+    }
+  ]
+}

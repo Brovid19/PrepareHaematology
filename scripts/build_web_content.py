@@ -48,11 +48,14 @@ def load(name):
 def load_papers():
     """content/papers/*.json -> (guidelines, recommendations by paper, topics) in file order."""
     guidelines, topics = [], []
-    for path in sorted(PAPERS.glob("*.json")):
-        data = json.loads(path.read_text(encoding="utf-8"))
+    loaded = [(path, json.loads(path.read_text(encoding="utf-8"))) for path in sorted(PAPERS.glob("*.json"))]
+    # Within a domain, papers appear in guideline "order" (then file name).
+    loaded.sort(key=lambda pd: (pd[1]["guideline"].get("order", 999), pd[0].name))
+    for path, data in loaded:
         g = dict(data["guideline"])
         g["recommendations"] = data.get("recommendations", [])
         g["_file"] = path.name
+        g.pop("order", None)
         guidelines.append(g)
         domain = PRACTICE_DOMAIN_FOR_CATEGORY.get(g.get("category"), g.get("category"))
         for i, t in enumerate(data.get("topics", [])):

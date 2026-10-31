@@ -760,7 +760,7 @@
           <button class="action-row" onclick="switchTab('flashcards')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></svg></span><span><span class="t">Flashcards</span><br><span class="s"><span id="row-due-text">Cards due today</span></span></span><span class="chev" aria-hidden="true">›</span></button>
           <button class="action-row" onclick="switchTab('practice')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></span><span><span class="t">Practice questions</span><br><span class="s"><span id="row-q-text">One at a time, with explanations</span></span></span><span class="chev" aria-hidden="true">›</span></button>
           <button class="action-row" onclick="switchTab('mock')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><span><span class="t">Timed mock exam</span><br><span class="s">10 questions under exam conditions</span></span><span class="chev" aria-hidden="true">›</span></button>
-          <button class="action-row" onclick="switchTab('summaries')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zm0 0A2 2 0 0 0 6 22h13"/></svg></span><span><span class="t">Guideline summaries</span><br><span class="s">Verified 2026 BSH digests</span></span><span class="chev" aria-hidden="true">›</span></button>
+          <button class="action-row" onclick="switchTab('summaries')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zm0 0A2 2 0 0 0 6 22h13"/></svg></span><span><span class="t">Learn by topic</span><br><span class="s">Guidelines checked against their PDFs</span></span><span class="chev" aria-hidden="true">›</span></button>
         </div>
       </div>
 
@@ -926,54 +926,16 @@
       </div>
     </div>
 
-    <!-- TAB 8: 2026 PDF LIBRARY -->
+    <!-- TAB 8: SOURCE PDF LIBRARY (papers are listed from the content; RCPath papers below) -->
     <div id="tab-library" class="tab-panel">
-      <nav class="sub-nav" aria-label="Learn"><button data-tab="summaries" onclick="switchTab('summaries')">Guideline summaries</button><button data-tab="library" onclick="switchTab('library')">Source PDFs</button></nav>
+      <nav class="sub-nav" aria-label="Learn"><button data-tab="summaries" onclick="switchTab('summaries'); openLearnHome();">Topics</button><button data-tab="library" onclick="switchTab('library')">Source PDFs</button></nav>
       <div style="max-width:850px; margin:0 auto;">
-        <h3 style="color:var(--text-strong); margin-bottom:12px;">2026 BSH Guidelines &amp; RCPath Papers</h3>
-        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:12px;">Source documents behind the verified study content. Each PDF is kept for offline reading once opened.</p>
+        <h3 style="color:var(--text-strong); margin-bottom:12px;">Source guidelines &amp; RCPath papers</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:12px;">The source documents behind the study content. Each PDF is kept for offline reading once opened.</p>
         <button class="btn btn-secondary" style="margin-bottom:20px;" onclick="savePdfsForOffline()">Save all for offline</button>
+        <div id="library-list"></div>
 
-        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <div>
-            <h4 style="color:var(--text-strong);">Multidisciplinary Haematology and Gynaecology Service (2026)</h4>
-            <p style="color:var(--text-muted); font-size:0.8rem;">Biss et al. • British Journal of Haematology</p>
-          </div>
-          <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value_of_providing_a_multidisciplinary_haematology_and_gynaecology_service_4743a72b.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
-        </div>
-
-        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <div>
-            <h4 style="color:var(--text-strong);">Point of Care Testing in General Haematology (2026 Update)</h4>
-            <p style="color:var(--text-muted); font-size:0.8rem;">Tam et al. • British Journal of Haematology</p>
-          </div>
-          <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
-        </div>
-
-        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <div>
-            <h4 style="color:var(--text-strong);">Diagnosis and Monitoring of TTP in Clinical Laboratories (2026)</h4>
-            <p style="color:var(--text-muted); font-size:0.8rem;">MacDonald et al. • British Journal of Haematology</p>
-          </div>
-          <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_thrombotic_thrombocytopenic_purpura_Guidance_for_c719170c.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
-        </div>
-
-        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <div>
-            <h4 style="color:var(--text-strong);">Diagnosis and Management of Primary Mediastinal B-Cell Lymphoma (2026)</h4>
-            <p style="color:var(--text-muted); font-size:0.8rem;">Osborne et al. • British Journal of Haematology</p>
-          </div>
-          <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Osborne_-_The_diagnosis_and_management_of_primary_mediastinal_B_cell_lymphoma_A_British_Society_for_3361c436.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
-        </div>
-
-        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-          <div>
-            <h4 style="color:var(--text-strong);">Early Diagnosis of AL Amyloidosis (2026)</h4>
-            <p style="color:var(--text-muted); font-size:0.8rem;">Garg et al. • British Journal of Haematology</p>
-          </div>
-          <a href="/assets/aistudio/Br_J_Haematol_-_2026_-_Garg_-_Early_diagnosis_of_AL_amyloidosis_in_haematology_cardiology_neurology_renal_and_general_b50657c2.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
-        </div>
-
+        <h4 style="color:var(--text-strong); margin:20px 0 10px;">RCPath examination papers</h4>
         <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
           <div>
             <h4 style="color:var(--text-strong);">Haematology Paper 1 Past Papers Collection</h4>
@@ -1831,7 +1793,7 @@
     // (domain, then paper, then the paper's topic order) defines previous/next navigation.
     const DOMAIN_ORDER = ['Haemato-Oncology', 'Haemostasis & Thrombosis', 'Transfusion Medicine', 'General Haematology'];
     const DOMAIN_META = {
-      'Haemato-Oncology': { icon: '🔬', blurb: 'Plasma cell disorders and lymphoma' },
+      'Haemato-Oncology': { icon: '🔬', blurb: 'AML, plasma cell disorders and lymphoma' },
       'Haemostasis & Thrombosis': { icon: '💧', blurb: 'Bleeding, thrombosis and TTP' },
       'Transfusion Medicine': { icon: '🩸', blurb: 'Blood components and haemovigilance' },
       'General Haematology': { icon: '📊', blurb: 'Laboratory practice and point-of-care testing' }
@@ -1991,7 +1953,7 @@
       return `
         <div class="page-head">
           <h2>Learn</h2>
-          <p>Choose a domain, then work through its topics in order. Each topic summarises one part of a checked 2026 BSH paper, with every recommendation quoted in full and links to the PDF page it comes from.</p>
+          <p>Choose a domain, then work through its topics in order. Each topic summarises one part of a guideline that has been checked against its PDF. Recommendations are quoted in full, and every topic links to the PDF page it comes from.</p>
         </div>
         <div style="margin-bottom:16px;">
           <label for="learn-search" class="form-label">Search all topics</label>
@@ -2124,6 +2086,27 @@
           <nav class="topic-nav" aria-label="Topic navigation">${navBtn(prev, -1)}${navBtn(next, 1)}</nav>
           <p class="t-note swipe-hint">Tip: swipe left or right, or use the ← → keys, to move between topics.</p>
         </article>`;
+    }
+
+    // Source PDF library, generated from the content so new papers appear automatically.
+    function renderLibrary() {
+      const root = document.getElementById('library-list');
+      if (!root) return;
+      root.innerHTML = learnDomains.map(d => {
+        const papers = approvedGuidelines.filter(g => g.practiceDomain === d && !g.draftId);
+        if (!papers.length) return '';
+        return `<h4 style="color:var(--text-strong); margin:16px 0 10px;">${esc(d)}</h4>` + papers.map(g => `
+          <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div style="min-width:0; flex:1;">
+              <h5 style="color:var(--text-strong); font-size:var(--fs-md);">${esc(g.title.split(':')[0])} (${esc(g.year)})</h5>
+              <p style="color:var(--text-muted); font-size:0.8rem;">${esc(g.shortRef)} · ${esc(g.issuingBody)} · ${g.topicIds.length} topics</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button class="btn btn-secondary" onclick="openPaper('${esc(g.id)}')">Topics</button>
+              ${g.pdfUrl ? `<a href="${esc(g.pdfUrl)}" target="_blank" rel="noopener" class="btn btn-primary">Open PDF</a>` : ''}
+            </div>
+          </div>`).join('');
+      }).join('');
     }
 
     // Practise only the questions linked to one topic.
@@ -3693,7 +3676,8 @@
 
     async function savePdfsForOffline() {
       const status = document.getElementById('offline-pdf-status');
-      const urls = Array.from(document.querySelectorAll('a[href^="/assets/"]')).map(a => a.getAttribute('href'));
+      const urls = [...approvedGuidelines.map(g => g.pdfUrl).filter(u => u && u.startsWith('/assets/')),
+        ...Array.from(document.querySelectorAll('a[href^="/assets/"]')).map(a => a.getAttribute('href').split('#')[0])];
       const unique = Array.from(new Set(urls));
       if (!('caches' in window)) {
         if (status) status.innerText = 'Offline storage is not available in this browser.';
@@ -3909,6 +3893,7 @@
         }
       } catch(e) {}
 
+      renderLibrary();
       attachDraftPdfs();
       try {
         const openDraft = sessionStorage.getItem('prepare_haem_openDraft');

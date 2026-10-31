@@ -330,5 +330,382 @@
     "recId": "rel-2",
     "guidelineSection": "Recommendations: Presentation & Relapsed PMBCL",
     "evidenceGrade": "Grade 1C"
+  },
+  {
+    "id": "q_amlp_01",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "AML presenting in the late second trimester",
+    "stem": "A 29-year-old woman at 26 weeks gestation is diagnosed with AML (normal karyotype, NPM1-mutated). She is clinically well. She asks whether she should be delivered before starting treatment.\n\nAccording to the BCSH guideline on AML in pregnancy, what is the most appropriate approach?",
+    "options": [
+      "Deliver by caesarean section now, then start induction chemotherapy",
+      "Delay chemotherapy until 32 weeks, then deliver and treat",
+      "Recommend termination of pregnancy before chemotherapy",
+      "Start induction chemotherapy without delay and continue the pregnancy, with any change in delivery timing decided by the MDT",
+      "Give hydroxycarbamide until 36 weeks, then deliver and give definitive treatment"
+    ],
+    "correctIndex": 3,
+    "rationale": "Between 24 and 28 weeks the fetal risks of prematurity are high, and chemotherapy appears to carry a low fetal risk. Delivery is therefore not usually advised and treatment should not be delayed (treat without delay, 1B). Between 24 and 32 weeks, the risks of chemotherapy exposure must be balanced against prematurity (1C), and decisions to delay delivery to a critical gestation (e.g. 26 weeks) should be taken by the MDT. Termination is discussed for first-trimester diagnoses. Delivery before chemotherapy is considered beyond 32 weeks. Hydroxycarbamide is avoided except with WBC >100 × 10⁹/l.",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "topicId": "amlp-gestation",
+    "recId": "dx-6",
+    "guidelineSection": "Issues of management in the second and third trimesters",
+    "evidenceGrade": "1B/1C",
+    "yearPaper": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "q_amlp_02",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Choice of induction regimen in pregnancy",
+    "stem": "A woman at 20 weeks gestation is starting induction for newly diagnosed AML. She has gained 6 kg since booking.\n\nWhich induction plan is recommended?",
+    "options": [
+      "Daunorubicin 60 mg/m² d1,3,5 with cytarabine 100 mg/m² 12-hourly d1–10, dosed on current actual body weight",
+      "Idarubicin 12 mg/m² d1–3 with cytarabine 100 mg/m² CI d1–7, dosed on ideal body weight",
+      "Daunorubicin 90 mg/m² d1,3,5 with cytarabine, dosed on booking weight",
+      "Azacitidine plus venetoclax to avoid anthracycline exposure",
+      "Single-agent cytarabine until delivery"
+    ],
+    "correctIndex": 0,
+    "rationale": "The BCSH guideline recommends standard daunorubicin and cytarabine '3 + 10' (daunorubicin 60 mg/m² d1,3,5; cytarabine 100 mg/m² 12-hourly d1–10) (1B), dosed on actual body weight with adjustments for weight change (1C). There are no data supporting daunorubicin 90 mg/m² in pregnancy. Idarubicin is more lipophilic, crosses the placenta more readily, and has been associated with transient neonatal cardiomyopathy.",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "topicId": "amlp-chemo",
+    "recId": "chemo-2",
+    "guidelineSection": "Chemotherapy and complications",
+    "evidenceGrade": "1B",
+    "yearPaper": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "q_amlp_03",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Neutropenic fever in pregnancy",
+    "stem": "A woman at 23 weeks gestation develops neutropenic fever after induction for AML. She is haemodynamically stable. The ward pharmacist asks which empirical antibiotic plan avoids drugs the BCSH guideline advises against in pregnancy.",
+    "options": [
+      "Co-amoxiclav plus gentamicin",
+      "Ciprofloxacin plus metronidazole",
+      "Levofloxacin monotherapy",
+      "Doxycycline plus co-trimoxazole",
+      "Piperacillin–tazobactam (with gentamicin if needed)"
+    ],
+    "correctIndex": 4,
+    "rationale": "Penicillins, erythromycin, metronidazole and cephalosporins are safe. If sepsis is suspected, clindamycin, piperacillin–tazobactam, carbapenems and gentamicin can all be used (relatively limited data for aminoglycosides). Quinolones, Augmentin (co-amoxiclav, because of neonatal necrotising enterocolitis), tetracyclines and sulphonamides should be avoided (1B).",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "topicId": "amlp-supportive",
+    "recId": "sup-1",
+    "guidelineSection": "Supportive therapies in pregnancy: antibiotics",
+    "evidenceGrade": "1B",
+    "yearPaper": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "q_amlp_04",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Analgesia for labour in AML",
+    "stem": "A woman with AML in remission after two cycles of chemotherapy is being induced at 37 weeks. Her counts are shown below.\n\nWhich statement about her intrapartum care is correct?",
+    "labData": [
+      "Hb 92 g/L",
+      "WBC 2.4 × 10⁹/l (neutrophils 1.1)",
+      "Platelets 45 × 10⁹/l"
+    ],
+    "options": [
+      "Epidural analgesia is appropriate because her neutrophils are recovering",
+      "Caesarean section is indicated because of the leukaemia",
+      "Epidural analgesia should be avoided; pethidine or diamorphine can be used",
+      "Fetal scalp electrodes and forceps are contraindicated",
+      "Intramuscular injections are safe at this platelet count"
+    ],
+    "correctIndex": 2,
+    "rationale": "Epidural analgesia should be avoided if platelets are <80 × 10⁹/l and/or WBC <1 × 10⁹/l (1C). Here the platelets are 45 × 10⁹/l, so use alternatives such as pethidine or diamorphine. IM injections should be avoided if platelets are <50 × 10⁹/l. Elective caesarean section is only for obstetric indications (2C). Because neonatal myelosuppression risk is low, fetal scalp sampling and electrodes, ventouse and forceps are not contraindicated.",
+    "sourceResourceId": "bcsh_aml_pregnancy_2015",
+    "topicId": "amlp-delivery",
+    "recId": "del-5",
+    "guidelineSection": "Preparation for and management of delivery",
+    "evidenceGrade": "1C",
+    "yearPaper": "BCSH 2015 AML in pregnancy (Ali et al.)"
+  },
+  {
+    "id": "q_amllab_01",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Turnaround standard for suspected APL",
+    "stem": "A 41-year-old man presents with pancytopenia, a coagulopathy, and abundant hypergranular promyelocytes with multiple Auer rods on the film.\n\nAccording to the BSH good practice paper on AML laboratory testing, what is the turnaround standard for PML::RARA testing?",
+    "options": [
+      "Within 24 hours of sample receipt",
+      "Within 72 hours of sample receipt",
+      "Within 3 working days with the NGS panel",
+      "Within 7 days with the full karyotype",
+      "Within 14 days with the AML NGS panel"
+    ],
+    "correctIndex": 0,
+    "rationale": "Where indicated, PML::RARA testing must be completed within 24 hours of sample receipt (FISH turnaround 1 day; RT-PCR 3 days). Rearrangements cryptic to both karyotype and FISH need molecular characterisation within 72 h if suspicion persists. CBF lesions are 72 h, FLT3 and NPM1 3 days, karyotype 7 days, and NGS 14 days.",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "topicId": "amllab-genetics",
+    "recId": "gen-2",
+    "guidelineSection": "Genetics recommendations",
+    "evidenceGrade": "Good practice (ungraded)",
+    "yearPaper": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "q_amllab_02",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Interpreting a diagnostic AML flow report",
+    "stem": "A new AML diagnosis has favourable-risk cytogenetics. The team are considering 7 + 3 with gemtuzumab ozogamicin. The flow report gives the blast percentage and lineage but no comment on CD33.\n\nWhat does the BSH guidance say?",
+    "options": [
+      "CD33 status is only needed at relapse",
+      "Diagnostic reports should record whether AML cells are CD33 positive; GO can work even with weak or partial CD33",
+      "GO is contraindicated unless >90% of blasts are strongly CD33 positive",
+      "CD33 should be inferred from the karyotype",
+      "CD123 rather than CD33 determines GO eligibility"
+    ],
+    "correctIndex": 1,
+    "rationale": "Treatment authorisation for GO requires CD33 positivity, so all diagnostic and relapse reports should state clearly whether blasts are CD33 positive (flow recommendation 2). GO can be effective with partial or weak CD33 positivity, as seen in CBF AML. Laboratories need validated thresholds and should take part in EQA (UK NEQAS Leukaemia Immunophenotyping Part 1). CD123 is relevant for tagraxofusp in BPDCN.",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "topicId": "amllab-flow",
+    "recId": "flow-2",
+    "guidelineSection": "Flow cytometry recommendations",
+    "evidenceGrade": "Good practice (ungraded)",
+    "yearPaper": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "q_amllab_03",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Blast thresholds under different classifications",
+    "stem": "A marrow shows 14% myeloblasts with an NPM1 mutation and no other abnormality.\n\nWhich statement is correct?",
+    "options": [
+      "This is MDS under both WHO 2022 and ICC 2022",
+      "MDS/AML under ICC because blasts are 10–19%",
+      "AML under WHO only if blasts reach 20%",
+      "AML under WHO 2022 (no blast cut-off for AML with defining genetic abnormalities) and AML under ICC 2022 (≥10% blasts)",
+      "AML only if CD34 is positive"
+    ],
+    "correctIndex": 3,
+    "rationale": "In WHO 2022, a ≥20% blast count is required only for AML without defining genetic abnormalities (DGA). AML with DGA (e.g. NPM1) has no specific cut-off, except BCR::ABL1 and CEBPA. The ICC uses ≥10% for AML with DGA and reserves MDS/AML (10–19%) for cases without DGA.",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "topicId": "amllab-morphology",
+    "guidelineSection": "Morphology",
+    "evidenceGrade": "Classification",
+    "yearPaper": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "q_amllab_04",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Suspected germline variant on a somatic panel",
+    "stem": "A 38-year-old woman with AML has a RUNX1 variant at 48% VAF on the diagnostic NGS panel. Her mother had \"low platelets\" and her uncle died of MDS. Her sibling is being HLA-typed as a potential donor.\n\nWhat is the most appropriate next step?",
+    "options": [
+      "Report the variant as somatic and proceed with the sibling donor",
+      "Repeat NGS on peripheral blood in remission and proceed if the variant persists",
+      "Test the sibling's marrow for AML",
+      "Ignore it: RUNX1 is not a germline predisposition gene",
+      "Highlight a suspected germline finding in the report and confirm on cultured skin fibroblasts, with Clinical Genetics input, before using a related donor"
+    ],
+    "correctIndex": 4,
+    "rationale": "Driver variants found by somatic-only testing may be germline. RUNX1 is one of the high-actionability genes (with CEBPA, DDX41, ANKRD26, ETV6 and GATA2). A suspected germline finding must be clearly highlighted in the report (gen-6). Confirmation needs cultured skin fibroblasts from a skin biopsy, with a detailed family history and Clinical Genetics referral. Familial predisposition matters especially when choosing a related donor. A remission blood sample cannot prove germline status.",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "topicId": "amllab-germline-mrd",
+    "recId": "gen-6",
+    "guidelineSection": "Genetics: germline predisposition",
+    "evidenceGrade": "Good practice (ungraded)",
+    "yearPaper": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "q_amllab_05",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "KMT2A testing strategy",
+    "stem": "A diagnostic AML sample has a normal-looking karyotype, and FLT3, NPM1 and CBF tests are negative.\n\nWhich approach to KMT2A testing does the BSH recommend?",
+    "options": [
+      "KMT2A testing is unnecessary if the karyotype is normal",
+      "Partner-agnostic break-apart FISH, optionally with an RNA NGS fusion panel, then identification of the partner if positive",
+      "RT-PCR for MLLT3::KMT2A only",
+      "NGS DNA panel for KMT2A point mutations",
+      "Wait for whole genome sequencing at 42 days"
+    ],
+    "correctIndex": 1,
+    "rationale": "KMT2A rearrangements may be cryptic and are disease-defining, so testing is mandatory when no other defining genetic abnormality is found. Given the many fusion partners, a partner-agnostic approach (break-apart FISH) is essential, and an RNA NGS fusion panel may help. If a rearrangement is found, further testing should identify the partner for risk assignment (e.g. t(9;11) is intermediate, other KMT2A rearrangements adverse).",
+    "sourceResourceId": "bsh_aml_lab_testing_2023",
+    "topicId": "amllab-genetics",
+    "guidelineSection": "Genetics",
+    "evidenceGrade": "Good practice (ungraded)",
+    "yearPaper": "BSH 2023 AML laboratory testing (Mehta et al.)"
+  },
+  {
+    "id": "q_eln_01",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "2022 ELN risk: NPM1 and FLT3-ITD",
+    "stem": "A 52-year-old man has AML with a normal karyotype, an NPM1 mutation and a FLT3-ITD with an allelic ratio of 0.3.\n\nWhat is his 2022 ELN genetic risk group?",
+    "options": [
+      "Favourable, because the FLT3-ITD allelic ratio is low",
+      "Adverse",
+      "Intermediate",
+      "Favourable if he receives midostaurin",
+      "Cannot be assigned without IDH1/2 status"
+    ],
+    "correctIndex": 2,
+    "rationale": "In ELN 2022 the FLT3-ITD allelic ratio is no longer considered. Mutated NPM1 with FLT3-ITD is intermediate risk, whatever the ratio. The reasons are difficulty standardising the assay, the effect of midostaurin, and the growing role of MRD. (NPM1 without FLT3-ITD is favourable; NPM1 with adverse cytogenetics is adverse.) IDH1/IDH2 are not assigned a risk group.",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-risk",
+    "guidelineSection": "Table 6: 2022 ELN risk classification",
+    "evidenceGrade": "Consensus classification",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_02",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "ICC hierarchy",
+    "stem": "A 67-year-old with no prior haematological history has 32% blasts, a complex karyotype, a TP53 mutation (VAF 41%) and an SRSF2 mutation.\n\nWhat is the ICC 2022 diagnosis?",
+    "options": [
+      "AML with myelodysplasia-related gene mutations",
+      "AML with myelodysplasia-related cytogenetic abnormalities",
+      "MDS/AML with mutated TP53",
+      "AML, not otherwise specified",
+      "AML with mutated TP53"
+    ],
+    "correctIndex": 4,
+    "rationale": "The ICC is hierarchical. With no AML-defining recurrent genetic abnormality, AML with mutated TP53 (pathogenic TP53 at VAF ≥10%) outranks AML with myelodysplasia-related gene mutations (e.g. SRSF2), which outranks MR cytogenetics. With ≥20% blasts this is AML, not MDS/AML (10–19%).",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-classification",
+    "guidelineSection": "Classification (Figure 1, Table 1)",
+    "evidenceGrade": "Consensus classification",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_03",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Response category after induction",
+    "stem": "A patient with AML has a marrow on day 35 after 7 + 3 showing 2% blasts with no circulating blasts. No G-CSF or transfusions have been given in the past 10 days.\n\nWhat is the ELN 2022 response category?",
+    "labData": [
+      "ANC 0.7 × 10⁹/L",
+      "Platelets 62 × 10⁹/L",
+      "Hb 92 g/L (no transfusion)"
+    ],
+    "options": [
+      "CR",
+      "CRh",
+      "CRi",
+      "MLFS",
+      "PR"
+    ],
+    "correctIndex": 1,
+    "rationale": "All of CR, CRh and CRi need marrow blasts <5%, no circulating blasts and no extramedullary disease. CR needs ANC ≥1.0 and platelets ≥100 × 10⁹/L. CRh needs partial recovery: ANC ≥0.5 and platelets ≥50. With ANC 0.7 and platelets 62, this meets CRh. If CRh is used, CRi is reserved for patients who do not meet CRh. Counts must be assessed without G-CSF or platelet transfusion in the preceding 7 days.",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-response",
+    "guidelineSection": "Table 8: Response criteria",
+    "evidenceGrade": "Consensus definitions",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_04",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "NPM1 MRD after induction",
+    "stem": "A 45-year-old with NPM1-mutated AML (no FLT3-ITD, normal karyotype) is in CR after 2 cycles of intensive chemotherapy.\n\nAccording to ELN, which MRD finding would most support treatment modification such as allo-HCT?",
+    "options": [
+      "NPM1 transcripts detectable at <2% at the end of consolidation, stable on repeat",
+      "Persistent DNMT3A mutation at 8% VAF on NGS",
+      "MFC-MRD 0.05% after cycle 2",
+      "NPM1 MRD ≥2%, or failure to achieve a 3–4 log reduction after consolidation",
+      "A qPCR Ct of 41 in all 3 replicates"
+    ],
+    "correctIndex": 3,
+    "rationale": "Per ELN (Figure 2), molecular MRD ≥2% or failure to reduce mutant transcripts by 3–4 log after consolidation may prompt treatment changes such as allo-HCT. CR with MRD at low level (<2%) in NPM1 and CBF AML is treated as MRD negative. DNMT3A persistence reflects clonal haematopoiesis and is not MRD. MFC positivity is ≥0.1%. qPCR is negative if Ct ≥40 in ≥2 of 3 replicates.",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-mrd",
+    "recId": "tx-2",
+    "guidelineSection": "Monitoring of measurable residual disease",
+    "evidenceGrade": "Consensus",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_05",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Choosing an intensive regimen by genotype",
+    "stem": "A 66-year-old fit man has AML 4 years after chemoradiotherapy for a head and neck cancer. Cytogenetics show −7 and del(5q). FLT3 and NPM1 are wild type.\n\nWhich induction is best supported by ELN 2022?",
+    "options": [
+      "7 + 3 with midostaurin",
+      "7 + 3 with gemtuzumab ozogamicin",
+      "CPX-351",
+      "Single-agent oral azacitidine",
+      "High-dose cytarabine 3 g/m² monotherapy"
+    ],
+    "correctIndex": 2,
+    "rationale": "CPX-351 (liposomal daunorubicin and cytarabine) improved response and OS (5-year 18% vs 10%) over 7 + 3 in patients aged 60–75 with therapy-related AML, AML after MDS or CMML, or de novo AML with MR cytogenetics. Midostaurin is for FLT3-mutated AML. GO benefit is limited to favourable or intermediate cytogenetics. Oral azacitidine is maintenance, not induction.",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-intensive",
+    "guidelineSection": "Therapy: patients fit for intensive therapy",
+    "evidenceGrade": "Consensus (randomised phase 3 evidence)",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_06",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Venetoclax with azole prophylaxis",
+    "stem": "A 78-year-old is starting azacitidine plus venetoclax and will take posaconazole prophylaxis. Her WBC is 38 × 10⁹/L.\n\nWhich is correct?",
+    "options": [
+      "Start venetoclax 400 mg daily immediately; posaconazole has no interaction",
+      "Avoid antifungal prophylaxis altogether",
+      "Halve the azacitidine dose instead of adjusting venetoclax",
+      "Use venetoclax 600 mg because azacitidine induces CYP3A",
+      "Cytoreduce to WBC <25 × 10⁹/L, give TLS prophylaxis, and ramp venetoclax 10 → 20 → 50 → ≤100 mg because posaconazole is a strong CYP3A inhibitor"
+    ],
+    "correctIndex": 4,
+    "rationale": "Before venetoclax-based therapy, reduce the WBC to <25 × 10⁹/L (e.g. hydroxyurea) with hydration, urate-lowering drugs and electrolyte monitoring, because of tumour lysis risk. Posaconazole is a strong CYP3A inhibitor: ramp venetoclax 10 mg d1, 20 mg d2, 50 mg d3, then 100 mg or less (VIALE used 50 mg). Moderate inhibitors such as ciprofloxacin need at least a 50% reduction. ELN also recommends posaconazole prophylaxis during induction.",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-nonintensive",
+    "guidelineSection": "Table 11 and Table 12",
+    "evidenceGrade": "Consensus",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_07",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Transplant in first remission",
+    "stem": "A 40-year-old with AML with inv(16) CBFB::MYH11 and a KIT mutation is in CR after induction. Serial qPCR shows a good molecular response, with MRD-negative status at end of consolidation.\n\nWhat is the ELN recommendation on allo-HCT in CR1?",
+    "options": [
+      "Allo-HCT in CR1, because the KIT mutation makes this adverse risk",
+      "Allo-HCT generally not recommended in CR1, because this is favourable risk with adequate MRD clearance",
+      "Allo-HCT in CR1 for all CBF AML",
+      "Autologous HCT is mandatory",
+      "Allo-HCT after 2 more cycles of HiDAC to deepen MRD"
+    ],
+    "correctIndex": 1,
+    "rationale": "Concurrent KIT and/or FLT3 mutations do not alter the favourable risk of CBF AML. For favourable-risk disease, allogeneic HCT in CR1 is generally not recommended except with inadequate MRD clearance. Allo-HCT is considered when predicted relapse risk exceeds 35–40% (adverse risk, or non-adverse with MRD persistence).",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-relapse-hct",
+    "recId": "hct-2",
+    "guidelineSection": "Allogeneic HCT: indications",
+    "evidenceGrade": "Consensus",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
+  },
+  {
+    "id": "q_eln_08",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Hyperleukocytosis",
+    "stem": "A 70-year-old with newly diagnosed monocytic AML has a WBC of 162 × 10⁹/L. He is alert, with normal oxygen saturations and no visual or neurological symptoms. Venetoclax-based therapy is planned.\n\nWhat is the most appropriate initial management?",
+    "options": [
+      "Hydroxyurea (up to 50–60 mg/kg/day) to bring the WBC below 25 × 10⁹/L, with TLS prophylaxis and a restrictive red cell transfusion policy",
+      "Urgent leukapheresis",
+      "Transfuse 2 units of red cells to correct Hb 78 g/L before cytoreduction",
+      "Start venetoclax 400 mg immediately",
+      "No action until symptoms of leukostasis appear"
+    ],
+    "correctIndex": 0,
+    "rationale": "Hyperleukocytosis (WBC >100 × 10⁹/L) raises induction mortality through haemorrhage, TLS and leukostasis. Hydroxyurea up to 50–60 mg/kg/day is most commonly used to lower the WBC below 25 × 10⁹/L, particularly before HMA or venetoclax. Current evidence does not support leukapheresis in asymptomatic hyperleukocytosis. A restrictive red cell transfusion policy is advised.",
+    "sourceResourceId": "eln_aml_2022",
+    "topicId": "eln-supportive",
+    "recId": "sc-1",
+    "guidelineSection": "Management of special situations",
+    "evidenceGrade": "Consensus",
+    "yearPaper": "ELN 2022 AML recommendations (Döhner et al.)"
   }
 ]

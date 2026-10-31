@@ -179,6 +179,398 @@ window.PREPARE_CONTENT = {
    "shortRef": "Garg et al. 2026"
   },
   {
+   "id": "bsh_poct_haematology_2026",
+   "title": "Point-of-care testing in general haematology: An update to the British Society for Haematology good practice paper",
+   "issuingBody": "British Society for Haematology",
+   "year": 2026,
+   "domain": "General Haematology",
+   "practiceDomain": "General Haematology",
+   "isVerified": true,
+   "citation": "Tam J, De la Salle B, Kapuya P, Reilly-Stitt C, Smith-Straney T, Cambridge T, et al. Br J Haematol. 2026;209(4):1489–1504.",
+   "pdfUrl": "/assets/aistudio/Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf",
+   "onlineUrl": "https://doi.org/10.1111/bjh.70758",
+   "overview": "This update to the 2019 BSH POCT guideline covers point-of-care testing in secondary care. Community POCT will be addressed separately. It has two halves: the analytical strengths and limits of each device class (FBC/Hb, PT/INR, ACT, D-dimer, viscoelastic, DOAC, blood gas Hb, platelet function, fibrinogen, haemoglobinopathy and G6PD), and the service framework. That framework covers QA (IQC and EQA), ISO 15189:2022 accreditation (which now absorbs ISO 22870), governance, training, finance, device selection, health and safety, reflex testing, incident reporting (including SHOT), data protection and record retention. Device-specific thresholds are needed wherever devices vary from one another.",
+   "recommendations": [
+    {
+     "id": "clin-1",
+     "group": "Clinical utility of POCT",
+     "grade": "2B",
+     "text": "Device-specific thresholds should be established for ACT tests, given the variability between tests.",
+     "page": 6
+    },
+    {
+     "id": "clin-2",
+     "group": "Clinical utility of POCT",
+     "grade": "1B",
+     "text": "Only high-sensitivity D-dimer tests with performance matching STA® or ELISA laboratory assays should be used.",
+     "page": 6
+    },
+    {
+     "id": "clin-3",
+     "group": "Clinical utility of POCT",
+     "grade": "1B",
+     "text": "Validation of viscoelastic assays should involve establishment of clinical decision-making algorithms and reference ranges.",
+     "page": 6
+    },
+    {
+     "id": "clin-4",
+     "group": "Clinical utility of POCT",
+     "grade": "1C",
+     "text": "Blood gas analysers should not substitute laboratory-based testing of Hb/Hct but may aid in monitoring trends or making immediate clinical judgements.",
+     "page": 6
+    },
+    {
+     "id": "clin-5",
+     "group": "Clinical utility of POCT",
+     "grade": "1C",
+     "text": "Where interfacing of results from POCT to a laboratory information management system (LIMS) exists, this should be utilised in real time to prevent transcription errors.",
+     "page": 6
+    },
+    {
+     "id": "qa-1",
+     "group": "Quality assurance in POCT",
+     "grade": "1B",
+     "text": "The POCT QA framework should include: oversight and monitoring by a laboratory professional or quality manager; internal quality control (IQC) and external quality assessment (EQA) processes; an internal audit schedule; accreditation to ISO 15189 by the appointed national accreditation bodies; document control including standard operating procedures (SOPs); regular review of the service by senior management for continual improvement.",
+     "page": 7
+    },
+    {
+     "id": "gov-1",
+     "group": "Management and governance",
+     "grade": "1A",
+     "text": "The POCT policy must describe governance, quality assurance and risk management arrangements for the implementation of a new test or device.",
+     "page": 8
+    },
+    {
+     "id": "gov-2",
+     "group": "Management and governance",
+     "grade": "1B",
+     "text": "Where devices or tests may not meet traditional quality and governance requirements (e.g. emerging technologies or methodologies, absence of a laboratory comparator), formal risk assessment must be undertaken. Identified risk must be mitigated where reasonably practicable.",
+     "page": 8
+    },
+    {
+     "id": "train-1",
+     "group": "Training and development",
+     "grade": "1A",
+     "text": "A structured training programme (theoretical and practical) for all POCT personnel and end users must be developed and maintained by the POCT manager or training and development coordinator.",
+     "page": 8
+    },
+    {
+     "id": "train-2",
+     "group": "Training and development",
+     "grade": "1A",
+     "text": "All training materials (structured syllabi) must be alongside a competency assessment, to be completed and passed before first use. A training manual may ensure a structured approach.",
+     "page": 8
+    },
+    {
+     "id": "train-3",
+     "group": "Training and development",
+     "grade": "1B",
+     "text": "Before training or assessing end users, POCT personnel must first demonstrate a higher level of understanding of the test process, application and performance.",
+     "page": 8
+    },
+    {
+     "id": "train-4",
+     "group": "Training and development",
+     "grade": "1A",
+     "text": "A separate training and competency document must be maintained and updated whenever a point-of-care test or device changes.",
+     "page": 9
+    },
+    {
+     "id": "train-5",
+     "group": "Training and development",
+     "grade": "1B",
+     "text": "Training complexity and competency is proportional to the clinical application of the test or process.",
+     "page": 9
+    },
+    {
+     "id": "train-6",
+     "group": "Training and development",
+     "grade": "1A",
+     "text": "Training and competency assessment should cover expertise required to safely provide results for patient care.",
+     "page": 9
+    },
+    {
+     "id": "train-7",
+     "group": "Training and development",
+     "grade": "1A",
+     "text": "Users must demonstrate competence in device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity.",
+     "page": 9
+    },
+    {
+     "id": "fin-1",
+     "group": "Finance and cost–benefit analysis",
+     "grade": "1B",
+     "text": "A financial framework should detail the cost-effectiveness and financial value in POCT provision as an alternative or complementary to the medical laboratory.",
+     "page": 9
+    },
+    {
+     "id": "fin-2",
+     "group": "Finance and cost–benefit analysis",
+     "grade": "1B",
+     "text": "Recruitment should cover the necessary business skills to manage and develop the service as a business unit, or these skills should be developed internally.",
+     "page": 9
+    },
+    {
+     "id": "equip-1",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Clinical and medical effectiveness: Devices must demonstrate clear clinical utility by supporting diagnosis, treatment and patient management, ideally within established care pathways.",
+     "page": 10
+    },
+    {
+     "id": "equip-2",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Economic evaluation: Economic impacts of devices should be assessed before adoption, including cost-effectiveness (per diagnosis or outcome), LOS reduction and workforce improvements, including productivity and satisfaction.",
+     "page": 10
+    },
+    {
+     "id": "equip-3",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Patient safety and blood conservation: Devices should minimise blood volume requirements.",
+     "page": 10
+    },
+    {
+     "id": "equip-4",
+     "group": "Equipment selection and verification",
+     "grade": "1C",
+     "text": "Safety and ergonomics: Devices must incorporate biohazard containment, safe disposal (sharps and waste), user-friendly design and risk reduction mechanisms.",
+     "page": 10
+    },
+    {
+     "id": "equip-5",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Technical quality and reliability: Devices should have proven technical robustness and be amenable to automated calibration, reliable throughput, reagent stability, minimal pre- and post-analytical steps (where possible), accreditation and user training.",
+     "page": 10
+    },
+    {
+     "id": "equip-6",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Analytical performance verification: Each device must be verified for accuracy, level of imprecision compared to the 'gold standard' method, reproducibility, linearity and stability across the measurement range. Results must be comparable with CL standards and include error detection, interference warnings and specimen flagging capabilities.",
+     "page": 10
+    },
+    {
+     "id": "equip-7",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Data management and systems integration: Devices must support secure, long-term, interoperable data management and storage, for example, bidirectional connectivity, remote access, automated critical result alerts, EHR integration.",
+     "page": 10
+    },
+    {
+     "id": "equip-8",
+     "group": "Equipment selection and verification",
+     "grade": "1B",
+     "text": "Device qualification: An ISO 15189:2022-compliant acceptance process must include verification protocols, method comparisons and training and competency requirements.",
+     "page": 10
+    },
+    {
+     "id": "hs-1",
+     "group": "Health and safety",
+     "grade": "1A",
+     "text": "Staff must have up-to-date training and competency assessments and participate in risk assessments and audits.",
+     "page": 10
+    },
+    {
+     "id": "hs-2",
+     "group": "Health and safety",
+     "grade": "1A",
+     "text": "Needle-stick injuries must be reported, for example, via Datix reporting system.",
+     "page": 10
+    },
+    {
+     "id": "hs-3",
+     "group": "Health and safety",
+     "grade": "1A",
+     "text": "There must be disposal procedures for sharps, blood-stained material, reagents and electronic waste.",
+     "page": 10
+    },
+    {
+     "id": "inc-1",
+     "group": "Adverse incident reporting",
+     "grade": "1B",
+     "text": "A no-blame reporting culture to encourage incident reporting without fear of reprisal, supporting transparency and safety improvement.",
+     "page": 11
+    },
+    {
+     "id": "inc-2",
+     "group": "Adverse incident reporting",
+     "grade": "1B",
+     "text": "Regular training on incident reporting (focusing on 'how' and 'when'), for all POCT users, to support clarity and confidence in the reporting system.",
+     "page": 11
+    },
+    {
+     "id": "inc-3",
+     "group": "Adverse incident reporting",
+     "grade": "1B",
+     "text": "Clear reporting responsibilities embedded in SOPs specifying who should report, what should be reported and how to escalate concerns.",
+     "page": 11
+    },
+    {
+     "id": "inc-4",
+     "group": "Adverse incident reporting",
+     "grade": "1B",
+     "text": "Proactive reporting to inform service improvements and targeted retraining, to prevent recurrence.",
+     "page": 11
+    },
+    {
+     "id": "inc-5",
+     "group": "Adverse incident reporting",
+     "grade": "1B",
+     "text": "Routine audits of incident data to identify trends, share organisation-wide learnings and strengthen governance.",
+     "page": 11
+    },
+    {
+     "id": "inc-6",
+     "group": "Adverse incident reporting",
+     "grade": null,
+     "text": "Incidents that impact on transfusion practice should be reported to the Serious Hazards of Transfusion (SHOT) haemovigilance scheme.",
+     "page": 12
+    },
+    {
+     "id": "dp-1",
+     "group": "Data protection",
+     "grade": "1B",
+     "text": "Secure, traceable, auditable digital documentation using centralised POCT management software, to reduce the risk of data loss or unauthorised access.",
+     "page": 12
+    },
+    {
+     "id": "dp-2",
+     "group": "Data protection",
+     "grade": "1B",
+     "text": "A document control system to ensure that only current, approved versions of policies, logs and reports are in use, precluding outdated versions.",
+     "page": 12
+    },
+    {
+     "id": "dp-3",
+     "group": "Data protection",
+     "grade": "1A",
+     "text": "Training for all POCT users to cover data protection, confidentiality, GDPR requirements and NHS DSP Toolkit standards.",
+     "page": 12
+    },
+    {
+     "id": "dp-4",
+     "group": "Data protection",
+     "grade": "1B",
+     "text": "Data access logs, audited at defined intervals to monitor inappropriate access or breaches and demonstrate data governance compliance.",
+     "page": 12
+    },
+    {
+     "id": "dp-5",
+     "group": "Data protection",
+     "grade": "1B",
+     "text": "Secure destruction of expired paper records (e.g. cross-cut shredding, approved confidential waste disposal) in line with the NHS Records Management Code of Practice.",
+     "page": 12
+    },
+    {
+     "id": "dp-6",
+     "group": "Data protection",
+     "grade": "1B",
+     "text": "Compliance with GDPR, NHS DSP Toolkit and local information security policies should be overseen by an information governance lead or POCT data controller.",
+     "page": 12
+    },
+    {
+     "id": "store-1",
+     "group": "Document storage and archiving",
+     "grade": "1B",
+     "text": "Patient test results should be retained for at least 8 years after the last patient contact, in line with NHS record-keeping requirements.",
+     "page": 12
+    },
+    {
+     "id": "store-2",
+     "group": "Document storage and archiving",
+     "grade": "1B",
+     "text": "Calibration records, QC logs and equipment maintenance reports are kept for a locally documented period (usually at least 5 years) to support audits, accreditation and incident investigations.",
+     "page": 12
+    },
+    {
+     "id": "store-3",
+     "group": "Document storage and archiving",
+     "grade": "1B",
+     "text": "Training and competency records should be retained for at least 5 years to evidence staff authorisation and compliance.",
+     "page": 12
+    },
+    {
+     "id": "key-1",
+     "group": "Key recommendations",
+     "grade": "1B",
+     "text": "Device-specific analytical and clinical thresholds should be established where interdevice variability is demonstrated.",
+     "page": 12
+    },
+    {
+     "id": "key-2",
+     "group": "Key recommendations",
+     "grade": "1B",
+     "text": "POCT services must operate a QA programme that includes IQC and participation in EQA.",
+     "page": 12
+    },
+    {
+     "id": "key-3",
+     "group": "Key recommendations",
+     "grade": "1A",
+     "text": "SOPs must be made available to and followed by all POCT staff.",
+     "page": 12
+    },
+    {
+     "id": "key-4",
+     "group": "Key recommendations",
+     "grade": "1B",
+     "text": "POCT patient results must be retained permanently (electronic or paper records) and clearly identified as a POCT result in the patient record.",
+     "page": 12
+    },
+    {
+     "id": "key-5",
+     "group": "Key recommendations",
+     "grade": "1A",
+     "text": "A structured programme of training, competency assessment and re-certification must be implemented for all POCT users.",
+     "page": 12
+    },
+    {
+     "id": "key-6",
+     "group": "Key recommendations",
+     "grade": "1B",
+     "text": "A financial framework must be developed to demonstrate cost-effectiveness and financial value of POCT services.",
+     "page": 12
+    },
+    {
+     "id": "key-7",
+     "group": "Key recommendations",
+     "grade": "1A",
+     "text": "Adverse incidents must always be reported, including near misses and events not resulting in patient harm.",
+     "page": 12
+    },
+    {
+     "id": "key-8",
+     "group": "Key recommendations",
+     "grade": "1B",
+     "text": "Centralised POCT management software should be implemented to ensure secure, traceable, auditable digital documentation.",
+     "page": 12
+    },
+    {
+     "id": "key-9",
+     "group": "Key recommendations",
+     "grade": "1B",
+     "text": "POCT records must be stored securely and retained for defined, policy-compliant retention periods.",
+     "page": 12
+    }
+   ],
+   "topicIds": [
+    "poct-overview",
+    "poct-devices",
+    "poct-coagulation",
+    "poct-viscoelastic-platelets",
+    "poct-blood-gas",
+    "poct-quality",
+    "poct-governance",
+    "poct-finance-equipment",
+    "poct-safety-incidents",
+    "poct-data-records"
+   ],
+   "shortRef": "Tam et al. 2026"
+  },
+  {
    "id": "bsh_ttp_laboratory_2026",
    "title": "Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for laboratories from the British Society for Haematology",
    "issuingBody": "British Society for Haematology",
@@ -580,396 +972,429 @@ window.PREPARE_CONTENT = {
    "shortRef": "Osborne et al. 2026"
   },
   {
-   "id": "bsh_poct_haematology_2026",
-   "title": "Point-of-care testing in general haematology: An update to the British Society for Haematology good practice paper",
-   "issuingBody": "British Society for Haematology",
-   "year": 2026,
-   "domain": "General Haematology",
-   "practiceDomain": "General Haematology",
+   "id": "eln_aml_2022",
+   "title": "Diagnosis and management of AML in adults: 2022 recommendations from an international expert panel on behalf of the ELN",
+   "issuingBody": "European LeukemiaNet",
+   "year": 2022,
+   "domain": "Malignant Haematology",
+   "practiceDomain": "Haemato-Oncology",
    "isVerified": true,
-   "citation": "Tam J, De la Salle B, Kapuya P, Reilly-Stitt C, Smith-Straney T, Cambridge T, et al. Br J Haematol. 2026;209(4):1489–1504.",
-   "pdfUrl": "/assets/aistudio/Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf",
-   "onlineUrl": "https://doi.org/10.1111/bjh.70758",
-   "overview": "This update to the 2019 BSH POCT guideline covers point-of-care testing in secondary care. Community POCT will be addressed separately. It has two halves: the analytical strengths and limits of each device class (FBC/Hb, PT/INR, ACT, D-dimer, viscoelastic, DOAC, blood gas Hb, platelet function, fibrinogen, haemoglobinopathy and G6PD), and the service framework. That framework covers QA (IQC and EQA), ISO 15189:2022 accreditation (which now absorbs ISO 22870), governance, training, finance, device selection, health and safety, reflex testing, incident reporting (including SHOT), data protection and record retention. Device-specific thresholds are needed wherever devices vary from one another.",
+   "citation": "Döhner H, Wei AH, Appelbaum FR, Craddock C, DiNardo CD, Dombret H, et al. Blood. 2022;140(12):1345–1377.",
+   "pdfUrl": "/assets/aistudio/Blood_2022_Dohner_ELN_AML_recommendations.pdf",
+   "onlineUrl": "https://doi.org/10.1182/blood.2022016867",
+   "overview": "The 2022 European LeukemiaNet update covers AML in adults (APL excluded). It adopts the International Consensus Classification (≥10% blasts for genetically defined AML, the new MDS/AML category, and TP53 > myelodysplasia-related gene mutations > myelodysplasia-related cytogenetics). It revises the genetic risk groups (FLT3-ITD allelic ratio dropped; myelodysplasia-related gene mutations now adverse; in-frame bZIP CEBPA favourable). It also adds CRh and MRD-based response categories, gives MRD time points, and summarises intensive, non-intensive, relapse, transplant and supportive care. The panel's statements are expert consensus and are not graded. The 'recommendations' below are quoted directly from the text.",
    "recommendations": [
     {
-     "id": "clin-1",
-     "group": "Clinical utility of POCT",
-     "grade": "2B",
-     "text": "Device-specific thresholds should be established for ACT tests, given the variability between tests.",
-     "page": 6
-    },
-    {
-     "id": "clin-2",
-     "group": "Clinical utility of POCT",
-     "grade": "1B",
-     "text": "Only high-sensitivity D-dimer tests with performance matching STA® or ELISA laboratory assays should be used.",
-     "page": 6
-    },
-    {
-     "id": "clin-3",
-     "group": "Clinical utility of POCT",
-     "grade": "1B",
-     "text": "Validation of viscoelastic assays should involve establishment of clinical decision-making algorithms and reference ranges.",
-     "page": 6
-    },
-    {
-     "id": "clin-4",
-     "group": "Clinical utility of POCT",
-     "grade": "1C",
-     "text": "Blood gas analysers should not substitute laboratory-based testing of Hb/Hct but may aid in monitoring trends or making immediate clinical judgements.",
-     "page": 6
-    },
-    {
-     "id": "clin-5",
-     "group": "Clinical utility of POCT",
-     "grade": "1C",
-     "text": "Where interfacing of results from POCT to a laboratory information management system (LIMS) exists, this should be utilised in real time to prevent transcription errors.",
-     "page": 6
-    },
-    {
-     "id": "qa-1",
-     "group": "Quality assurance in POCT",
-     "grade": "1B",
-     "text": "The POCT QA framework should include: oversight and monitoring by a laboratory professional or quality manager; internal quality control (IQC) and external quality assessment (EQA) processes; an internal audit schedule; accreditation to ISO 15189 by the appointed national accreditation bodies; document control including standard operating procedures (SOPs); regular review of the service by senior management for continual improvement.",
-     "page": 7
-    },
-    {
-     "id": "gov-1",
-     "group": "Management and governance",
-     "grade": "1A",
-     "text": "The POCT policy must describe governance, quality assurance and risk management arrangements for the implementation of a new test or device.",
-     "page": 8
-    },
-    {
-     "id": "gov-2",
-     "group": "Management and governance",
-     "grade": "1B",
-     "text": "Where devices or tests may not meet traditional quality and governance requirements (e.g. emerging technologies or methodologies, absence of a laboratory comparator), formal risk assessment must be undertaken. Identified risk must be mitigated where reasonably practicable.",
-     "page": 8
-    },
-    {
-     "id": "train-1",
-     "group": "Training and development",
-     "grade": "1A",
-     "text": "A structured training programme (theoretical and practical) for all POCT personnel and end users must be developed and maintained by the POCT manager or training and development coordinator.",
-     "page": 8
-    },
-    {
-     "id": "train-2",
-     "group": "Training and development",
-     "grade": "1A",
-     "text": "All training materials (structured syllabi) must be alongside a competency assessment, to be completed and passed before first use. A training manual may ensure a structured approach.",
-     "page": 8
-    },
-    {
-     "id": "train-3",
-     "group": "Training and development",
-     "grade": "1B",
-     "text": "Before training or assessing end users, POCT personnel must first demonstrate a higher level of understanding of the test process, application and performance.",
-     "page": 8
-    },
-    {
-     "id": "train-4",
-     "group": "Training and development",
-     "grade": "1A",
-     "text": "A separate training and competency document must be maintained and updated whenever a point-of-care test or device changes.",
-     "page": 9
-    },
-    {
-     "id": "train-5",
-     "group": "Training and development",
-     "grade": "1B",
-     "text": "Training complexity and competency is proportional to the clinical application of the test or process.",
-     "page": 9
-    },
-    {
-     "id": "train-6",
-     "group": "Training and development",
-     "grade": "1A",
-     "text": "Training and competency assessment should cover expertise required to safely provide results for patient care.",
-     "page": 9
-    },
-    {
-     "id": "train-7",
-     "group": "Training and development",
-     "grade": "1A",
-     "text": "Users must demonstrate competence in device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity.",
-     "page": 9
-    },
-    {
-     "id": "fin-1",
-     "group": "Finance and cost–benefit analysis",
-     "grade": "1B",
-     "text": "A financial framework should detail the cost-effectiveness and financial value in POCT provision as an alternative or complementary to the medical laboratory.",
-     "page": 9
-    },
-    {
-     "id": "fin-2",
-     "group": "Finance and cost–benefit analysis",
-     "grade": "1B",
-     "text": "Recruitment should cover the necessary business skills to manage and develop the service as a business unit, or these skills should be developed internally.",
-     "page": 9
-    },
-    {
-     "id": "equip-1",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Clinical and medical effectiveness: Devices must demonstrate clear clinical utility by supporting diagnosis, treatment and patient management, ideally within established care pathways.",
-     "page": 10
-    },
-    {
-     "id": "equip-2",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Economic evaluation: Economic impacts of devices should be assessed before adoption, including cost-effectiveness (per diagnosis or outcome), LOS reduction and workforce improvements, including productivity and satisfaction.",
-     "page": 10
-    },
-    {
-     "id": "equip-3",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Patient safety and blood conservation: Devices should minimise blood volume requirements.",
-     "page": 10
-    },
-    {
-     "id": "equip-4",
-     "group": "Equipment selection and verification",
-     "grade": "1C",
-     "text": "Safety and ergonomics: Devices must incorporate biohazard containment, safe disposal (sharps and waste), user-friendly design and risk reduction mechanisms.",
-     "page": 10
-    },
-    {
-     "id": "equip-5",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Technical quality and reliability: Devices should have proven technical robustness and be amenable to automated calibration, reliable throughput, reagent stability, minimal pre- and post-analytical steps (where possible), accreditation and user training.",
-     "page": 10
-    },
-    {
-     "id": "equip-6",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Analytical performance verification: Each device must be verified for accuracy, level of imprecision compared to the 'gold standard' method, reproducibility, linearity and stability across the measurement range. Results must be comparable with CL standards and include error detection, interference warnings and specimen flagging capabilities.",
-     "page": 10
-    },
-    {
-     "id": "equip-7",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Data management and systems integration: Devices must support secure, long-term, interoperable data management and storage, for example, bidirectional connectivity, remote access, automated critical result alerts, EHR integration.",
-     "page": 10
-    },
-    {
-     "id": "equip-8",
-     "group": "Equipment selection and verification",
-     "grade": "1B",
-     "text": "Device qualification: An ISO 15189:2022-compliant acceptance process must include verification protocols, method comparisons and training and competency requirements.",
-     "page": 10
-    },
-    {
-     "id": "hs-1",
-     "group": "Health and safety",
-     "grade": "1A",
-     "text": "Staff must have up-to-date training and competency assessments and participate in risk assessments and audits.",
-     "page": 10
-    },
-    {
-     "id": "hs-2",
-     "group": "Health and safety",
-     "grade": "1A",
-     "text": "Needle-stick injuries must be reported, for example, via Datix reporting system.",
-     "page": 10
-    },
-    {
-     "id": "hs-3",
-     "group": "Health and safety",
-     "grade": "1A",
-     "text": "There must be disposal procedures for sharps, blood-stained material, reagents and electronic waste.",
-     "page": 10
-    },
-    {
-     "id": "inc-1",
-     "group": "Adverse incident reporting",
-     "grade": "1B",
-     "text": "A no-blame reporting culture to encourage incident reporting without fear of reprisal, supporting transparency and safety improvement.",
-     "page": 11
-    },
-    {
-     "id": "inc-2",
-     "group": "Adverse incident reporting",
-     "grade": "1B",
-     "text": "Regular training on incident reporting (focusing on 'how' and 'when'), for all POCT users, to support clarity and confidence in the reporting system.",
-     "page": 11
-    },
-    {
-     "id": "inc-3",
-     "group": "Adverse incident reporting",
-     "grade": "1B",
-     "text": "Clear reporting responsibilities embedded in SOPs specifying who should report, what should be reported and how to escalate concerns.",
-     "page": 11
-    },
-    {
-     "id": "inc-4",
-     "group": "Adverse incident reporting",
-     "grade": "1B",
-     "text": "Proactive reporting to inform service improvements and targeted retraining, to prevent recurrence.",
-     "page": 11
-    },
-    {
-     "id": "inc-5",
-     "group": "Adverse incident reporting",
-     "grade": "1B",
-     "text": "Routine audits of incident data to identify trends, share organisation-wide learnings and strengthen governance.",
-     "page": 11
-    },
-    {
-     "id": "inc-6",
-     "group": "Adverse incident reporting",
+     "id": "dx-1",
+     "group": "Diagnosis (quoted; ungraded consensus)",
      "grade": null,
-     "text": "Incidents that impact on transfusion practice should be reported to the Serious Hazards of Transfusion (SHOT) haemovigilance scheme.",
-     "page": 12
+     "text": "Conventional cytogenetic analysis is mandatory in the evaluation of AML.",
+     "page": 5
     },
     {
-     "id": "dp-1",
-     "group": "Data protection",
-     "grade": "1B",
-     "text": "Secure, traceable, auditable digital documentation using centralised POCT management software, to reduce the risk of data loss or unauthorised access.",
-     "page": 12
+     "id": "dx-2",
+     "group": "Diagnosis (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Germline predisposition risk should be considered for all patients diagnosed with a hematopoietic malignancy regardless of age, because some germline predisposition alleles, like those in DDX41, can drive hematopoietic malignancies in older age.",
+     "page": 5
     },
     {
-     "id": "dp-2",
-     "group": "Data protection",
-     "grade": "1B",
-     "text": "A document control system to ensure that only current, approved versions of policies, logs and reports are in use, precluding outdated versions.",
-     "page": 12
+     "id": "dx-3",
+     "group": "Diagnosis (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "For patients with mutant NPM1 and core-binding factor (CBF)AML, it is recommended to perform baseline molecular assessment by quantitative polymerase chain reaction (qPCR) or droplet digital PCR (dPCR) to facilitate MRD monitoring after treatment.",
+     "page": 5
     },
     {
-     "id": "dp-3",
-     "group": "Data protection",
-     "grade": "1A",
-     "text": "Training for all POCT users to cover data protection, confidentiality, GDPR requirements and NHS DSP Toolkit standards.",
-     "page": 12
+     "id": "tx-1",
+     "group": "Therapy (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Results of genetic analyses should be available as rapidly as possible, preferably within 3 to 5 days, to identify therapeutically actionable targets (Table 4).",
+     "page": 15
     },
     {
-     "id": "dp-4",
-     "group": "Data protection",
-     "grade": "1B",
-     "text": "Data access logs, audited at defined intervals to monitor inappropriate access or breaches and demonstrate data governance compliance.",
-     "page": 12
+     "id": "tx-2",
+     "group": "Therapy (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "In addition to baseline risk factors, assessment of MRD in CR (or CRh/CRi) is recommended for patients with nonadverse risk in first remission to inform consolidation treatment choice.",
+     "page": 16
     },
     {
-     "id": "dp-5",
-     "group": "Data protection",
-     "grade": "1B",
-     "text": "Secure destruction of expired paper records (e.g. cross-cut shredding, approved confidential waste disposal) in line with the NHS Records Management Code of Practice.",
-     "page": 12
+     "id": "tx-3",
+     "group": "Therapy (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "To identify patients suitable for ivosidenib at initial diagnosis, rapid IDH1 mutation screening in older patients with AML is recommended.",
+     "page": 19
     },
     {
-     "id": "dp-6",
-     "group": "Data protection",
-     "grade": "1B",
-     "text": "Compliance with GDPR, NHS DSP Toolkit and local information security policies should be overseen by an information governance lead or POCT data controller.",
-     "page": 12
+     "id": "tx-4",
+     "group": "Therapy (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Therefore, molecular re-evaluation at relapse is important to identify patients who may be suitable for targeted salvage options.",
+     "page": 19
     },
     {
-     "id": "store-1",
-     "group": "Document storage and archiving",
-     "grade": "1B",
-     "text": "Patient test results should be retained for at least 8 years after the last patient contact, in line with NHS record-keeping requirements.",
-     "page": 12
+     "id": "hct-1",
+     "group": "Allogeneic HCT (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Allogeneic HCT should be considered when the relapse probability without the procedure is predicted to be >35% to 40%.",
+     "page": 21
     },
     {
-     "id": "store-2",
-     "group": "Document storage and archiving",
-     "grade": "1B",
-     "text": "Calibration records, QC logs and equipment maintenance reports are kept for a locally documented period (usually at least 5 years) to support audits, accreditation and incident investigations.",
-     "page": 12
+     "id": "hct-2",
+     "group": "Allogeneic HCT (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "For patients with favorable-risk disease, allogeneic HCT in CR1 is generally not recommended except for those with inadequate clearance of MRD.",
+     "page": 21
     },
     {
-     "id": "store-3",
-     "group": "Document storage and archiving",
-     "grade": "1B",
-     "text": "Training and competency records should be retained for at least 5 years to evidence staff authorisation and compliance.",
-     "page": 12
+     "id": "hct-3",
+     "group": "Allogeneic HCT (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "A randomized study of maintenance using subcutaneous azacitidine showed no benefit and is not recommended based on available evidence",
+     "page": 21
     },
     {
-     "id": "key-1",
-     "group": "Key recommendations",
-     "grade": "1B",
-     "text": "Device-specific analytical and clinical thresholds should be established where interdevice variability is demonstrated.",
-     "page": 12
+     "id": "trial-1",
+     "group": "Response and trials (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "We recommend broadening the definition of EFS to include CRh or CRi in response.",
+     "page": 14
     },
     {
-     "id": "key-2",
-     "group": "Key recommendations",
-     "grade": "1B",
-     "text": "POCT services must operate a QA programme that includes IQC and participation in EQA.",
-     "page": 12
+     "id": "trial-2",
+     "group": "Response and trials (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "It is recommended to enroll patients with AML onto clinical trials whenever a suitable trial opportunity is available.",
+     "page": 23
     },
     {
-     "id": "key-3",
-     "group": "Key recommendations",
-     "grade": "1A",
-     "text": "SOPs must be made available to and followed by all POCT staff.",
-     "page": 12
+     "id": "sc-1",
+     "group": "Special situations and supportive care (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Although leukapheresis may be performed in parallel with chemotherapy in patients with leukostasis syndrome, current evidence does not support the use of leukapheresis in asymptomatic patients with hyperleukocytosis.",
+     "page": 26
     },
     {
-     "id": "key-4",
-     "group": "Key recommendations",
-     "grade": "1B",
-     "text": "POCT patient results must be retained permanently (electronic or paper records) and clearly identified as a POCT result in the patient record.",
-     "page": 12
+     "id": "sc-2",
+     "group": "Special situations and supportive care (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "There is good evidence to recommend antifungal prophylaxis with posaconazole during remission induction therapy, whereas there is not enough evidence from randomized trials on antiviral prophylaxis for herpes simplex virus in patients with acute leukemia, and no evidence for a beneficial effect of Pneumocystis jirovecii pneumonia prophylaxis.",
+     "page": 26
     },
     {
-     "id": "key-5",
-     "group": "Key recommendations",
-     "grade": "1A",
-     "text": "A structured programme of training, competency assessment and re-certification must be implemented for all POCT users.",
-     "page": 12
+     "id": "sc-3",
+     "group": "Special situations and supportive care (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Vaccination for influenza and COVID-19 viral infections is recommended for all patients to reduce the risk of severe infections.",
+     "page": 26
     },
     {
-     "id": "key-6",
-     "group": "Key recommendations",
-     "grade": "1B",
-     "text": "A financial framework must be developed to demonstrate cost-effectiveness and financial value of POCT services.",
-     "page": 12
+     "id": "sc-4",
+     "group": "Special situations and supportive care (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "The use of growth factors is not routinely recommended unless in individual patients (eg, in case of severe infections) or particular treatment settings (eg, to reduce the hematologic recovery times in consolidation cycles).",
+     "page": 26
     },
     {
-     "id": "key-7",
-     "group": "Key recommendations",
-     "grade": "1A",
-     "text": "Adverse incidents must always be reported, including near misses and events not resulting in patient harm.",
-     "page": 12
-    },
-    {
-     "id": "key-8",
-     "group": "Key recommendations",
-     "grade": "1B",
-     "text": "Centralised POCT management software should be implemented to ensure secure, traceable, auditable digital documentation.",
-     "page": 12
-    },
-    {
-     "id": "key-9",
-     "group": "Key recommendations",
-     "grade": "1B",
-     "text": "POCT records must be stored securely and retained for defined, policy-compliant retention periods.",
-     "page": 12
+     "id": "sc-5",
+     "group": "Special situations and supportive care (quoted; ungraded consensus)",
+     "grade": null,
+     "text": "Otherwise, it is generally accepted to keep the hemoglobin level above 8 g/dL, and a platelet count of <10 × 10⁹/L remains the trigger for prophylactic platelet transfusions.",
+     "page": 26
     }
    ],
    "topicIds": [
-    "poct-overview",
-    "poct-devices",
-    "poct-coagulation",
-    "poct-viscoelastic-platelets",
-    "poct-blood-gas",
-    "poct-quality",
-    "poct-governance",
-    "poct-finance-equipment",
-    "poct-safety-incidents",
-    "poct-data-records"
+    "eln-classification",
+    "eln-therapy-related-germline",
+    "eln-workup",
+    "eln-risk",
+    "eln-mrd",
+    "eln-response",
+    "eln-intensive",
+    "eln-nonintensive",
+    "eln-relapse-hct",
+    "eln-supportive"
    ],
-   "shortRef": "Tam et al. 2026"
+   "shortRef": "Döhner et al. 2022"
+  },
+  {
+   "id": "bsh_aml_lab_testing_2023",
+   "title": "Recommendations for laboratory testing of UK patients with acute myeloid leukaemia",
+   "issuingBody": "British Society for Haematology",
+   "year": 2023,
+   "domain": "Malignant Haematology",
+   "practiceDomain": "Haemato-Oncology",
+   "isVerified": true,
+   "citation": "Mehta P, Telford N, Wragg C, Dillon R, Freeman S, Finnegan D, Hamblin A, Copland M, Knapper S. Br J Haematol. 2023;200(2):150–159.",
+   "pdfUrl": "/assets/aistudio/BJH_2023_Mehta_AML_laboratory_testing.pdf",
+   "onlineUrl": "https://doi.org/10.1111/bjh.18516",
+   "overview": "This BSH good practice paper sets out best practice for laboratory work-up of AML in the UK at diagnosis and relapse: sampling, morphology, flow cytometry (including CD33 for gemtuzumab and MFC-MRD), cytogenetics, molecular genetics (FLT3, NPM1, CBF, PML::RARA, KMT2A, the mandatory NGS gene list), germline predisposition and molecular MRD. It gives turnaround times so that genetically targeted drugs (midostaurin, CPX-351, gemtuzumab ozogamicin) can be started promptly. It reflects WHO 2022, ICC 2022 and ELN 2022. As a good practice paper, its recommendations are ungraded.",
+   "recommendations": [
+    {
+     "id": "morph-1",
+     "group": "Morphology recommendations",
+     "grade": null,
+     "text": "Bone marrow aspirate and trephine biopsy should be performed and at least 200 nucleated cells examined to make a diagnosis of AML.",
+     "page": 3
+    },
+    {
+     "id": "morph-2",
+     "group": "Morphology recommendations",
+     "grade": null,
+     "text": "Communicating morphological findings rapidly to specialised laboratory personnel is important to aid further testing, especially if suspecting APL or core-binding factor (CBF) AML - cases with t(8;21), t(16;16) or inv(16).",
+     "page": 3
+    },
+    {
+     "id": "flow-1",
+     "group": "Flow cytometry recommendations",
+     "grade": null,
+     "text": "Flow cytometric analyses are critical for diagnosis and remission assessment and require rapid reporting.",
+     "page": 5
+    },
+    {
+     "id": "flow-2",
+     "group": "Flow cytometry recommendations",
+     "grade": null,
+     "text": "Diagnostic reports should record whether AML cells are CD33 positive.",
+     "page": 5
+    },
+    {
+     "id": "flow-3",
+     "group": "Flow cytometry recommendations",
+     "grade": null,
+     "text": "Diagnostic AML subtyping by flow cytometry should include consideration of blastic plasmacytoid dendritic cell neoplasm (BPDCN)",
+     "page": 5
+    },
+    {
+     "id": "flow-4",
+     "group": "Flow cytometry recommendations",
+     "grade": null,
+     "text": "For flow cytometric MRD monitoring, a diagnostic sample is preferred to identify trackable MRD targets",
+     "page": 5
+    },
+    {
+     "id": "gen-1",
+     "group": "Genetics recommendations",
+     "grade": null,
+     "text": "Cytogenetic and molecular genetic analyses are critical at diagnosis and relapse",
+     "page": 8
+    },
+    {
+     "id": "gen-2",
+     "group": "Genetics recommendations",
+     "grade": null,
+     "text": "Where indicated, PML::RARA testing must be completed within 24 hours of sample receipt",
+     "page": 8
+    },
+    {
+     "id": "gen-3",
+     "group": "Genetics recommendations",
+     "grade": null,
+     "text": "Rapid identification of core binding factor leukaemia, FLT3 internal tandem duplication (ITD) and tyrosine kinase domain (TKD) mutations is essential",
+     "page": 8
+    },
+    {
+     "id": "gen-4",
+     "group": "Genetics recommendations",
+     "grade": null,
+     "text": "A complete conventional cytogenetic analysis is required within 7 days of sample receipt",
+     "page": 8
+    },
+    {
+     "id": "gen-5",
+     "group": "Genetics recommendations",
+     "grade": null,
+     "text": "Molecular MRD assessment should be performed for patients with an NPM1 mutation, CBFB::MYH11, RUNX1::RUNX1T1 and PML::RARA fusions, and considered for other fusion genes.",
+     "page": 8
+    },
+    {
+     "id": "gen-6",
+     "group": "Genetics recommendations",
+     "grade": null,
+     "text": "Where a suspected germline finding in a cancer susceptibility gene is identified, it should be clearly highlighted in the genetic report.",
+     "page": 8
+    }
+   ],
+   "topicIds": [
+    "amllab-context",
+    "amllab-morphology",
+    "amllab-flow",
+    "amllab-genetics",
+    "amllab-germline-mrd"
+   ],
+   "shortRef": "Mehta et al. 2023"
+  },
+  {
+   "id": "bcsh_aml_pregnancy_2015",
+   "title": "Guidelines for the diagnosis and management of acute myeloid leukaemia in pregnancy",
+   "issuingBody": "British Committee for Standards in Haematology",
+   "year": 2015,
+   "domain": "Malignant Haematology",
+   "practiceDomain": "Haemato-Oncology",
+   "isVerified": true,
+   "citation": "Ali S, Jones GL, Culligan DJ, Marsden PJ, Russell N, Embleton ND, Craddock C. Br J Haematol. 2015;170(4):487–495.",
+   "pdfUrl": "/assets/aistudio/BJH_2015_Ali_AML_in_pregnancy.pdf",
+   "onlineUrl": "https://doi.org/10.1111/bjh.13554",
+   "overview": "AML in pregnancy is rare (about 1 in 75 000 to 1 in 100 000 pregnancies), but delaying treatment harms the mother without helping the fetus. This BCSH guideline sets out diagnosis by WHO criteria, decisions by gestation (consider termination in the first trimester, treat in the second, and weigh prematurity against chemotherapy exposure from 24 to 36 weeks), use of standard daunorubicin and cytarabine '3 + 10' dosed on actual body weight, safe antibiotics, antifungals and antiemetics, CMV-negative blood, and planning delivery for at least 3 weeks after chemotherapy. Most of the evidence is observational, so many recommendations are grade C. APL in pregnancy is excluded and covered by European guidance.",
+   "recommendations": [
+    {
+     "id": "dx-1",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "1C",
+     "text": "Pregnant women should be managed by a multidisciplinary team that includes haematologists, obstetricians, neonatologists and anaesthetists.",
+     "page": 3
+    },
+    {
+     "id": "dx-2",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "1A",
+     "text": "As for non-pregnant patients, AML should be diagnosed using the WHO classification.",
+     "page": 3
+    },
+    {
+     "id": "dx-3",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "1B",
+     "text": "Women diagnosed with AML in pregnancy should be treated without delay after full and frank discussion with the patient.",
+     "page": 4
+    },
+    {
+     "id": "dx-4",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "2C",
+     "text": "When the diagnosis of AML is made in the first trimester, a successful pregnancy outcome is unlikely and spontaneous pregnancy loss in this situation carries considerable risks for the mother. The reasons for and against elective termination should be discussed with the patient.",
+     "page": 4
+    },
+    {
+     "id": "dx-5",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "2C",
+     "text": "In the second trimester (13–24 weeks), consideration should be given to commencing induction chemotherapy and allowing the pregnancy to proceed, after careful discussion with patient and obstetric specialists.",
+     "page": 4
+    },
+    {
+     "id": "dx-6",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "1C",
+     "text": "Between 24 and 32 weeks, risks of foetal chemotherapy exposure must be balanced against risks of prematurity following elective delivery at that stage of gestation.",
+     "page": 4
+    },
+    {
+     "id": "dx-7",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "2C",
+     "text": "When presentation is beyond 32 weeks gestation, it may be reasonable to deliver the foetus prior to commencement of chemotherapy.",
+     "page": 4
+    },
+    {
+     "id": "dx-8",
+     "group": "Diagnosis and management at diagnosis",
+     "grade": "1C",
+     "text": "Chemotherapy should be avoided at or beyond 36 weeks gestation and elective delivery is recommended.",
+     "page": 4
+    },
+    {
+     "id": "chemo-1",
+     "group": "Chemotherapy and complications",
+     "grade": "1C",
+     "text": "The risk-benefit ratio must be carefully considered before using any drugs in pregnancy.",
+     "page": 4
+    },
+    {
+     "id": "chemo-2",
+     "group": "Chemotherapy and complications",
+     "grade": "1B",
+     "text": "Where AML induction chemotherapy is delivered, a standard daunorubicin, cytarabine 3 + 10 schedule should be used.",
+     "page": 5
+    },
+    {
+     "id": "chemo-3",
+     "group": "Chemotherapy and complications",
+     "grade": "1C",
+     "text": "Chemotherapy should be dosed according to actual body weight and adjustments made for weight changes during treatment.",
+     "page": 5
+    },
+    {
+     "id": "sup-1",
+     "group": "Supportive therapies in pregnancy",
+     "grade": "1B",
+     "text": "Quinolones, Augmentin, tetracyclines and sulphonamides use should be avoided in pregnancy.",
+     "page": 6
+    },
+    {
+     "id": "sup-2",
+     "group": "Supportive therapies in pregnancy",
+     "grade": "2C",
+     "text": "Amphotericin B or lipid derivatives are antifungal agents of choice in pregnancy.",
+     "page": 6
+    },
+    {
+     "id": "sup-3",
+     "group": "Supportive therapies in pregnancy",
+     "grade": "1B",
+     "text": "CMV-negative blood products should be administered during pregnancy regardless of CMV serostatus.",
+     "page": 6
+    },
+    {
+     "id": "del-1",
+     "group": "Preparation for and management of delivery",
+     "grade": "1A",
+     "text": "A course of corticosteroids should be considered if delivery is anticipated between 24 and 35 weeks gestation, given over a 48 h period during the week prior to delivery.",
+     "page": 7
+    },
+    {
+     "id": "del-2",
+     "group": "Preparation for and management of delivery",
+     "grade": "1A",
+     "text": "Use of magnesium sulphate should be considered in the 24 h prior to delivery if this is before 30 weeks gestation.",
+     "page": 7
+    },
+    {
+     "id": "del-3",
+     "group": "Preparation for and management of delivery",
+     "grade": "1C",
+     "text": "Where possible, delivery should be planned for a time when the woman is at least 3 weeks post-chemotherapy to minimize risk of neonatal myelosuppression.",
+     "page": 7
+    },
+    {
+     "id": "del-4",
+     "group": "Preparation for and management of delivery",
+     "grade": "2C",
+     "text": "Planned delivery is easier to manage than spontaneous labour: induction of labour is usually advised.",
+     "page": 7
+    },
+    {
+     "id": "del-5",
+     "group": "Preparation for and management of delivery",
+     "grade": "1C",
+     "text": "Epidural analgesia should be avoided in a woman who is significantly thrombocytopenic (platelet count <80 × 10⁹/l) and/or neutropenic (white blood cell count <1 × 10⁹/l).",
+     "page": 7
+    },
+    {
+     "id": "del-6",
+     "group": "Preparation for and management of delivery",
+     "grade": "2C",
+     "text": "Elective caesarean section should only be recommended for obstetric indications.",
+     "page": 7
+    },
+    {
+     "id": "del-7",
+     "group": "Preparation for and management of delivery",
+     "grade": "1C",
+     "text": "Antibiotics should be administered during and after premature rupture of membranes and delivery.",
+     "page": 7
+    }
+   ],
+   "topicIds": [
+    "amlp-diagnosis",
+    "amlp-gestation",
+    "amlp-chemo",
+    "amlp-supportive",
+    "amlp-delivery",
+    "amlp-postdelivery"
+   ],
+   "shortRef": "Ali et al. 2015"
   }
  ],
  "topics": [
@@ -1828,6 +2253,670 @@ window.PREPARE_CONTENT = {
     {
      "q": "Where should all newly diagnosed AL patients be referred?",
      "a": "To an experienced MDT and to the National Amyloidosis Centre, for confirmation of diagnosis, treatment advice, trials and data collection."
+    }
+   ]
+  },
+  {
+   "id": "poct-overview",
+   "domain": "General Haematology",
+   "name": "What POCT is, scope and ISO 15189:2022",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 0,
+   "pages": [
+    1,
+    2
+   ],
+   "why": "The definition, the scope (secondary care only) and the standards change (ISO 22870 absorbed into ISO 15189:2022) are basic exam facts.",
+   "keyPoints": [
+    "**POCT** is diagnostic testing **outside the hospital laboratory, close to the patient**, with results available quickly enough to **influence immediate clinical management**.",
+    "Recent drivers: innovation, **stronger frameworks**, and **digital integration and connectivity** (devices linked to LIMS and EHRs, allowing data transfer and remote monitoring). **COVID-19 accelerated decentralised testing.**",
+    "**ISO 15189:2022** sets requirements for quality, governance and risk in medical laboratories, and **now includes POCT requirements** previously covered by **ISO 22870:2016**, which is **superseded** (a few organisations may still hold ISO 22870 accreditation).",
+    "**Scope:** a framework for high-quality POCT in **secondary care**. **Community POCT is out of scope** and will be addressed separately.",
+    "POCT can speed patient flow and inform immediate treatment in life-threatening situations. It may sit within a wider operational efficiency strategy, **with the approval of a POCT committee**.",
+    "Literature: PubMed searches in **January 2025**, covering Aug 2019 to Jan 2025, plus 2009–2025 for fibrinogen, ROTEM/TEG and EQA. **683 articles** were identified. Sickle cell, malaria, HIV, HbA1c, hCG and TB were **excluded** from the searches."
+   ],
+   "numbers": [
+    [
+     "ISO 15189:2022",
+     "current standard (includes POCT)"
+    ],
+    [
+     "ISO 22870:2016",
+     "superseded POCT standard"
+    ],
+    [
+     "683",
+     "articles identified"
+    ]
+   ],
+   "pitfalls": [
+    "ISO 22870 is no longer the POCT standard. POCT is now accredited under ISO 15189:2022 as part of the laboratory (by UKAS in the UK)."
+   ],
+   "hook": "22870 lives on inside 15189.",
+   "selfTest": [
+    {
+     "q": "Which standard now covers POCT requirements, and which did it replace?",
+     "a": "ISO 15189:2022, which incorporates and supersedes ISO 22870:2016."
+    },
+    {
+     "q": "Is community POCT covered by this paper?",
+     "a": "No. It covers secondary care, and community POCT will be addressed separately."
+    }
+   ]
+  },
+  {
+   "id": "poct-devices",
+   "domain": "General Haematology",
+   "name": "Device classes: FBC, Hb, haemoglobinopathy and G6PD (Table 1)",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 1,
+   "pages": [
+    2,
+    3,
+    4
+   ],
+   "why": "Table 1 sets out the principle, use and main limitation of each POCT technology, and these are often examined as matching items.",
+   "keyPoints": [
+    "**Portable Hb analysers** (i-STAT, **HemoCue Hb 201+**, EKF DiaSpect) use **spectrophotometry**. Results come in **1–3 minutes** and are highly reproducible, but they are **affected by lipaemia and icterus**. **HemoCue cannot measure Hct directly** (it estimates it from Hb). Uses: virtual wards, theatres, clinics, GP surgeries, blood donation.",
+    "**Impedance FBC** (Coulter principle, e.g. Sysmex pocH-100i, PixCell HemoScreen) uses simple, established hardware but gives only a **limited differential** (3- or 5-part). Uses: virtual wards, ED, theatres, GP surgeries, community and **clozapine clinics**.",
+    "**Five-part impedance with microfluidics plus AI imaging** (e.g. PixCell HemoScreen, Sysmex XN-L) gives high resolution with minimal user input and can be **interfaced bidirectionally** (technical validation in the central laboratory and real-time reporting). Drawbacks are **higher cost per test** and dependence on **cartridge supply**. These can detect cell abnormalities and are **recommended for haematology clinics**.",
+    "FBC POCT analysers have been shown to give **accurate, reproducible results** against central laboratory instruments in venous and capillary samples.",
+    "**HemoTypeSC** is a **lateral flow** immunoassay with antibodies to **HbA, HbS and HbC**. It detects **HbSS and HbSC**, but **not other significant variants**.",
+    "**Gazelle (Hemex)** is **microchip cellulose acetate electrophoresis**, used to screen for **β-thalassaemia trait**. Sensitivity and specificity are high, but **confirmatory testing is required**, and **cellulose acetate is not reliable for quantitation**. Cation-exchange HPLC identifies variants by retention time.",
+    "**G6PD POCT** (e.g. STANDARD G6PD) is **quantitative and enzymatic**, measuring NADPH production at **340 nm normalised to Hb**. It is **confounded by sex and reticulocyte count**, and results vary between laboratories, so **harmonisation** is needed.",
+    "**D-dimer and fibrinogen** POCT use **turbidimetric or latex agglutination** immunoassays (light scattering from antigen–antibody complexes), e.g. Radiometer AQT90, i-STAT, LumiraDx, Exdia TRF, Cobas h232, Triage.",
+    "**ClotPro** is a viscoelastic device in which the **cup rotates and the pin is still**. With the **ECA** test it detects **dabigatran and argatroban**, and with the **RVV** test it detects **enoxaparin, rivaroxaban and apixaban**. It is limited in decentralised settings and **cannot always separate anticoagulant classes**."
+   ],
+   "numbers": [
+    [
+     "1–3 min",
+     "portable Hb result time"
+    ],
+    [
+     "10–15 min",
+     "viscoelastic TAT"
+    ],
+    [
+     "340 nm",
+     "NADPH absorbance in the G6PD assay"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 1 (condensed): POCT technologies",
+     "page": 3,
+     "columns": [
+      "Assay",
+      "Principle",
+      "Key limitation"
+     ],
+     "rows": [
+      [
+       "Spectrophotometric Hb",
+       "Light absorbance at specific wavelengths",
+       "Lipaemia and icterus interfere"
+      ],
+      [
+       "Impedance FBC",
+       "Coulter principle",
+       "Limited differential"
+      ],
+      [
+       "5-part + microfluidics + AI",
+       "Impedance + imaging + AI classification",
+       "Cost per test; cartridge supply"
+      ],
+      [
+       "PT/INR",
+       "Electrochemical/electromechanical clot detection",
+       "Unsuitable with lupus anticoagulant or very high INR"
+      ],
+      [
+       "Multiplate (impedance aggregometry)",
+       "Platelet aggregation increases impedance",
+       "Skilled interpretation; reagent cost"
+      ],
+      [
+       "ACT (i-STAT ACTk, Hemochron)",
+       "Kaolin-activated clotting time",
+       "Hypothermia, haemodilution, platelets dissociate it from heparin effect"
+      ],
+      [
+       "PFA-100/200",
+       "Closure time of a collagen/ADP or collagen/epinephrine membrane",
+       "Non-selective screening does not predict bleeding or transfusion"
+      ],
+      [
+       "TEG/ROTEM/Quantra",
+       "Clot strength (pin/cup) or ultrasound stiffness",
+       "Costly; complex set-up; TAT 10–15 min"
+      ],
+      [
+       "ClotPro",
+       "Rotating cup, ECA/RVV tests",
+       "Cannot always separate anticoagulant classes"
+      ],
+      [
+       "D-dimer/fibrinogen immunoassay",
+       "Turbidimetric/latex agglutination",
+       "See D-dimer sensitivity caveats"
+      ],
+      [
+       "HemoTypeSC",
+       "Lateral flow (HbA/S/C)",
+       "Misses other variants"
+      ],
+      [
+       "Gazelle",
+       "Microchip electrophoresis",
+       "Needs confirmation; poor quantitation"
+      ],
+      [
+       "G6PD",
+       "NADPH at 340 nm / Hb",
+       "Sex and reticulocytes confound; inter-lab variability"
+      ]
+     ]
+    }
+   ],
+   "pitfalls": [
+    "HemoTypeSC will miss HbD, HbE, β-thalassaemia and other variants. It only detects A, S and C.",
+    "A normal G6PD POCT result during reticulocytosis (e.g. after haemolysis) may be falsely reassuring, because reticulocytes have higher G6PD activity."
+   ],
+   "hook": "Hb is light, FBC is resistance, HemoTypeSC is a strip, Gazelle is a gel, G6PD is 340 nm.",
+   "selfTest": [
+    {
+     "q": "Which interferences affect portable spectrophotometric Hb analysers?",
+     "a": "Lipaemia and icterus (high lipids or bilirubin)."
+    },
+    {
+     "q": "What does the Gazelle device screen for, and what is its limitation?",
+     "a": "β-thalassaemia trait, by microchip cellulose acetate electrophoresis. Confirmatory testing is required, and cellulose acetate is not reliable for quantitation."
+    },
+    {
+     "q": "Which factors confound POCT G6PD activity?",
+     "a": "Sex (gender) and reticulocyte count. Inter-laboratory variability also means harmonisation is needed."
+    }
+   ]
+  },
+  {
+   "id": "poct-coagulation",
+   "domain": "General Haematology",
+   "name": "Coagulation POCT: INR, ACT, D-dimer and DOACs",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 2,
+   "pages": [
+    2,
+    5,
+    6
+   ],
+   "why": "Each coagulation POCT has a specific failure mode, such as APS on warfarin, ACT confounders, low-sensitivity D-dimers and DOACs that can be ruled out but not measured.",
+   "keyPoints": [
+    "**PT/INR POCT** (CoaguChek Pro II/XS, Xprecia Prime, i-STAT, microINR, LumiraDx, and smartphone-based devices) uses **thromboplastin activation with electrochemical or electromechanical detection**. It is quick and needs a small volume.",
+    "INR limits: **clinically significant discrepancies in APS patients on warfarin**; **monitor bias between test strips at INR ≥4**; within a **stable INR of 2–4**, POCT is comparable to laboratory INR up to 4. **Unsuitable with lupus anticoagulant or very high INR.**",
+    "**ACT** (i-STAT ACTk, Hemochron) monitors **UFH in cardiac surgery and ECMO**. It correlates with anti-Xa in non-cardiac arterial procedures and with incomplete protamine reversal. But **hypothermia, haemodilution and platelet count and function** dissociate ACT from heparin effect. On bypass it correlates poorly with anti-Xa if there is **lupus anticoagulant (prolonged APTT)** or **raised heparin–VWF**. i-STAT is more reproducible than Hemochron, so **device-specific thresholds** are needed.",
+    "**D-dimer** is used with a **clinical probability score** (Wells, Geneva, PERC) and **age-adjusted** ranges to rule out DVT and PE. Laboratory assays are latex or ELISA (VIDAS).",
+    "POCT D-dimers (Cobas, Triage, AFIAS-1, Standard F200, LumiraDx, HP-AFS/1, Exdia TRF Plus): **Triage is comparable to VIDAS**, and several had **false-negative rates <1.4%** against STA-Liatest. But a meta-analysis found **slightly lower sensitivity** than laboratory assays, so use them **only in low-risk populations**. **Qualitative assays have limited utility** because of low sensitivity and quality issues.",
+    "**DOAC POCT:** routine monitoring is unnecessary, but levels help in **stroke, bleeding, urgent surgery and before thrombolysis**. **DTM, DOASENSE, CoaguChek and TEG 6S cannot quantify DOACs**, but may **rule out clinically relevant levels (<30–50 ng/mL)**.",
+    "**DTM test card:** 95–97% sensitivity for dabigatran >30 and >50 ng/mL. **DOASENSE urine dipstick:** sensitivity **100% for dabigatran** and **97% for anti-Xa agents** at ≥30 ng/mL. **CoaguChek INR:** >95% specificity for edoxaban >30 and >50 ng/mL. **TEG 6S DOAC algorithm:** 98–100% sensitivity for Xa and IIa inhibitors, 100% specificity."
+   ],
+   "numbers": [
+    [
+     "≥4",
+     "INR at which strip-to-strip bias must be monitored"
+    ],
+    [
+     "2–4",
+     "stable INR window where POCT is comparable to the laboratory"
+    ],
+    [
+     "<1.4%",
+     "false-negative rate of several POCT D-dimer platforms"
+    ],
+    [
+     "30–50 ng/mL",
+     "DOAC levels POCT can help rule out"
+    ],
+    [
+     "100% / 97%",
+     "DOASENSE sensitivity: dabigatran / anti-Xa at ≥30 ng/mL"
+    ]
+   ],
+   "recs": [
+    "clin-1",
+    "clin-2"
+   ],
+   "pitfalls": [
+    "Do not use POCT INR in antiphospholipid syndrome or with lupus anticoagulant. Use the laboratory INR.",
+    "A qualitative POCT D-dimer is not suitable for excluding VTE. Use only high-sensitivity assays that match STA or ELISA performance (1B).",
+    "A cold, haemodiluted bypass patient may have a prolonged ACT that reflects hypothermia and dilution, not heparin."
+   ],
+   "hook": "INR fails in APS and at INR ≥4. ACT is fooled by Cold, Dilution and Platelets. A D-dimer must be High-sensitivity. A DOAC can be ruled out but not measured.",
+   "selfTest": [
+    {
+     "q": "In which patients is POCT INR unreliable?",
+     "a": "APS or lupus anticoagulant, and very high INRs (monitor strip bias at INR ≥4)."
+    },
+    {
+     "q": "Which factors dissociate ACT from the anticoagulant effect of UFH?",
+     "a": "Hypothermia, haemodilution, and platelet count and function. On bypass, also lupus anticoagulant or raised heparin–VWF."
+    },
+    {
+     "q": "What can POCT DOAC tests do, and what can they not do?",
+     "a": "They cannot quantify DOACs, but they can rule out clinically relevant levels (<30–50 ng/mL)."
+    }
+   ]
+  },
+  {
+   "id": "poct-viscoelastic-platelets",
+   "domain": "General Haematology",
+   "name": "Viscoelastic, platelet function and fibrinogen POCT",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 3,
+   "pages": [
+    3,
+    5,
+    6
+   ],
+   "why": "These devices guide transfusion in bleeding. Know which predict bleeding (Multiplate) and which do not (PFA screening).",
+   "keyPoints": [
+    "**Viscoelastic assays** are vital in bleeding from **trauma, cardiac surgery and obstetrics**, and are also used in liver disease, ED and **ECMO**. Devices: **TEG, ROTEM, Quantra (ultrasound), Sonoclot, ClotChip, ClotPro**. Designs: cup and pin, ultrasonic, cartridge.",
+    "Quantra, TEG 6S and ROTEM Sigma **correlate strongly** with laboratory platelet and fibrinogen tests. Quantra and ROTEM perform similarly in trauma-induced coagulopathy, **ROTEM is better for hypofibrinogenaemia**, and **Quantra is faster**. Viscoelastic algorithms give **modest outcome improvements** in bleeding.",
+    "**NICE** recommends **TEG and ROTEM in cardiac surgery**, and **Sonoclot only in research**. **ISO 15189:2022 (section 7.3.5)** requires **device-specific algorithms and reference ranges** for viscoelastic tests.",
+    "**Platelet function POCT:** PFA-100/200, **VerifyNow**, **Multiplate**, PL-11, PlateletWorks, Smart Clot, and TEG platelet mapping.",
+    "**PFA screening is non-specific**: it **cannot distinguish VWD from platelet function defects**, and **non-selective screening does not predict bleeding or transfusion** before invasive procedures.",
+    "**Multiplate predicts perioperative bleeding and transfusion in cardiac surgery** and **outperformed TEG in CABG** (bleeding, transfusion, re-exploration). A meta-analysis (**39 studies, n=4101**) supports it but notes **inter-device variability**, which makes common decision limits difficult. The PL-11 comparison showed marked inter-device variability.",
+    "**Fibrinogen POCT:** **qLabs FIB** (electrical impedance), **FibCare and F-Point** (light scattering) are **comparable to Clauss**. They are useful in transfusion, haemorrhage and gynaecological surgery.",
+    "**TEG CFF and ROTEM FIBTEM** detect hypofibrinogenaemia and may guide treatment in **postpartum and surgical bleeding**."
+   ],
+   "numbers": [
+    [
+     "39 studies, n=4101",
+     "meta-analysis supporting Multiplate in cardiac surgery"
+    ],
+    [
+     "§7.3.5",
+     "ISO 15189:2022 section requiring viscoelastic algorithms and ranges"
+    ]
+   ],
+   "recs": [
+    "clin-3"
+   ],
+   "pitfalls": [
+    "A prolonged PFA closure time cannot tell VWD from a platelet defect, and routine pre-operative PFA screening does not predict bleeding.",
+    "Viscoelastic thresholds are device-specific. Do not apply ROTEM cut-offs to TEG."
+   ],
+   "hook": "Multiplate Predicts, PFA Fails to predict. FIBTEM and CFF find low fibrinogen.",
+   "selfTest": [
+    {
+     "q": "Which POCT platelet test best predicts bleeding after cardiac surgery?",
+     "a": "Multiplate (multiple electrode impedance aggregometry). It outperformed TEG in CABG."
+    },
+    {
+     "q": "What does NICE say about viscoelastic devices?",
+     "a": "TEG and ROTEM are recommended in cardiac surgery. Sonoclot is recommended only in research."
+    },
+    {
+     "q": "What must viscoelastic validation include?",
+     "a": "Clinical decision-making algorithms and reference ranges (1B; ISO 15189:2022 §7.3.5)."
+    }
+   ]
+  },
+  {
+   "id": "poct-blood-gas",
+   "domain": "General Haematology",
+   "name": "Blood gas Hb/Hct and LIMS interfacing",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 4,
+   "pages": [
+    6
+   ],
+   "why": "Blood gas Hb is used all the time to decide on transfusion, but it is not interchangeable with laboratory Hb.",
+   "keyPoints": [
+    "Blood gas analysers measure **Hb spectrophotometrically** and **Hct by conductivity or calculation**.",
+    "They analyse **whole blood**, so **haemolysis usually cannot be detected**. Consider it when results are unexpected or discordant.",
+    "Some studies show agreement with laboratory Hb, but **underestimation** of Hb/Hct can trigger **unnecessary transfusion**. In one study, **21%** of patients who would have been transfused on laboratory Hct would **not** have been on blood gas Hct. **Systematic overestimation** (mean **8 g/L**) has also been reported.",
+    "By **CLIA interchangeability criteria**, blood gas analysers are **not interchangeable** with laboratory analysers for Hb.",
+    "Use blood gas Hb for **trends and immediate decisions**, **not as a substitute** for laboratory Hb/Hct.",
+    "Where POCT results can be **interfaced to the LIMS**, use the interface **in real time** to **prevent transcription errors**."
+   ],
+   "numbers": [
+    [
+     "21%",
+     "patients whose transfusion decision differed between laboratory and blood gas Hct"
+    ],
+    [
+     "8 g/L",
+     "mean overestimation of Hb by blood gas in one study"
+    ]
+   ],
+   "recs": [
+    "clin-4",
+    "clin-5"
+   ],
+   "pitfalls": [
+    "Blood gas Hb can be wrong in either direction. Confirm in the laboratory before a non-urgent transfusion.",
+    "Poor mixing or partial clotting of blood gas samples causes inaccurate Hb. SHOT has reported inappropriate transfusions and TACO from this."
+   ],
+   "hook": "Gas for trends, laboratory for transfusion.",
+   "selfTest": [
+    {
+     "q": "Can blood gas Hb replace laboratory Hb?",
+     "a": "No (1C). Blood gas analysers are not interchangeable with laboratory analysers under CLIA criteria. Use them for trends and immediate judgements."
+    },
+    {
+     "q": "Why can haemolysis be missed on a blood gas Hb?",
+     "a": "Blood gas analysers test whole blood, so there is no plasma to inspect for haemolysis."
+    }
+   ]
+  },
+  {
+   "id": "poct-quality",
+   "domain": "General Haematology",
+   "name": "Quality assurance: IQC, EQA, audit and SOPs",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 5,
+   "pages": [
+    6,
+    7,
+    8
+   ],
+   "why": "The QA framework is the core of a safe POCT service. Know the six elements and how IQC differs from EQA.",
+   "keyPoints": [
+    "QA covers **pre-analytical, analytical and post-analytical** stages, and includes training, personnel, equipment and **appropriateness of testing**.",
+    "POCT should be **integrated into the central laboratory quality management system**, with the same standards of leadership, training, competency, IT, procurement and governance. A **quality manual** is not essential for accreditation but is helpful.",
+    "**IQC** controls **accuracy, within- and between-day variability, drift and bias**, using controls near **clinical decision thresholds**. Base frequency on testing activity, analyse drift at locally defined intervals, and make lot numbers, targets and results **fully traceable**.",
+    "Use **third-party QC** where possible. Run IQC **after maintenance or calibration** and for **new reagent lots (batch acceptance)**. Have an **IQC failure policy** and a **contingency plan** for system failure.",
+    "**EQA** provides samples of **known but undisclosed** concentration, at decision levels and across linearity. It **complements but does not replace IQC**. It gives peer comparison (by device or method), a long-term retrospective view, and supports **post-market surveillance**.",
+    "Document EQA results and the response to **out-of-consensus** results. A statistically out-of-consensus result **may not be clinically significant**: interpret it in context.",
+    "If no EQA exists: **interlaboratory exchange of blinded samples** within a trust, or **simultaneous venous and capillary sampling** across devices, with limits of agreement that reflect **physiological differences**. Periodic comparison with central laboratory methods is good practice.",
+    "**POCT users are not laboratory scientists.** Encourage regular users (not just experienced or laboratory staff) to run IQC and EQA. EQA material often differs from clinical samples, which causes errors. Training mitigates this.",
+    "**Audit:** an internal audit schedule covering all aspects, with corrective and preventive actions fed into policy. In the UK, hospital POCT is **accredited by UKAS as part of the clinical laboratory**.",
+    "**SOPs** must meet **ISO 15189** structure and content (Figure 1). File results **permanently**, **clearly identified as POCT**."
+   ],
+   "recs": [
+    "qa-1",
+    "key-2",
+    "key-3",
+    "key-4"
+   ],
+   "pitfalls": [
+    "EQA does not replace IQC. You need both.",
+    "Out-of-consensus does not always mean clinically wrong. Assess clinical significance and long-term performance."
+   ],
+   "hook": "IQC = every day, inside, catches drift. EQA = periodic, outside, compares you with peers.",
+   "selfTest": [
+    {
+     "q": "List the six elements of the POCT QA framework (1B).",
+     "a": "Oversight by a laboratory professional or quality manager; IQC and EQA; an internal audit schedule; ISO 15189 accreditation; document control including SOPs; senior management review for continual improvement."
+    },
+    {
+     "q": "What alternatives exist when no EQA scheme is available for a device?",
+     "a": "Interlaboratory exchange of blinded samples within the trust, and simultaneous venous and capillary sampling across devices, with locally set limits of agreement."
+    }
+   ]
+  },
+  {
+   "id": "poct-governance",
+   "domain": "General Haematology",
+   "name": "Governance and training",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 6,
+   "pages": [
+    7,
+    8,
+    9
+   ],
+   "why": "No POCT device should be adopted without governance, and training and competency carry many of the strongest (1A) recommendations.",
+   "keyPoints": [
+    "**POCT devices must not be adopted without a well-defined governance structure** and clear accountability for every element of the service.",
+    "Most POCT is part of an **accredited pathology laboratory** under clinical directorship. Day-to-day running may be delegated to a **POCT coordinator or manager**.",
+    "A multidisciplinary **POCT committee** is helpful but **not mandatory under ISO 15189:2022**. Members: clinicians, laboratory scientists, nurses, support staff, management, the POCT coordinator, **IT, Estates and Clinical Engineering**, with finance and procurement advice. It is accountable to a higher governance group. If POCT extends to the community, include **community representation** (pharmacist, GP or practice nurse).",
+    "If no committee is feasible, effectiveness must still be shown through the **POCT policy** and its evidence. Services outside an accredited organisation need a **Service Level Agreement**.",
+    "**Training (Figure 2):** **mandatory retraining intervals** must be stated in a policy that is **signed off at a high level** and is enforceable on all users.",
+    "Training must be **auditable**, with audits **at least annually** and more often for higher-risk tests or poor-performance trends. Improvement draws on feedback, audit, trends and incident reports.",
+    "Competency must be **passed before first use**. Trainers must show a **higher level of understanding** first. Update documentation **whenever a test or device changes**. Training complexity should be **proportional** to the clinical application."
+   ],
+   "numbers": [
+    [
+     "≥ annually",
+     "minimum audit frequency for training and competency"
+    ]
+   ],
+   "recs": [
+    "gov-1",
+    "gov-2",
+    "train-1",
+    "train-2",
+    "train-3",
+    "train-4",
+    "train-5",
+    "train-6",
+    "train-7",
+    "key-5"
+   ],
+   "pitfalls": [
+    "A POCT committee is not mandatory under ISO 15189:2022, but governance, accountability and a POCT policy are.",
+    "New technologies without a laboratory comparator still need a formal risk assessment (1B)."
+   ],
+   "hook": "No governance, no gadget. Train, test, then use.",
+   "selfTest": [
+    {
+     "q": "Is a POCT committee mandatory under ISO 15189:2022?",
+     "a": "No. But governance must be demonstrated through the POCT policy, with clear accountability."
+    },
+    {
+     "q": "What must users demonstrate competence in (1A)?",
+     "a": "Device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity."
+    }
+   ]
+  },
+  {
+   "id": "poct-finance-equipment",
+   "domain": "General Haematology",
+   "name": "Finance and choosing devices",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 7,
+   "pages": [
+    9,
+    10
+   ],
+   "why": "Business cases and the device selection criteria (Menendez-Botet) are less familiar, but they are recommended at 1B.",
+   "keyPoints": [
+    "POCT was once seen as more expensive, but analyses suggest an **overall financial benefit**. Count **costs avoided** as well: cancellations, unnecessary appointments, readmissions, **length of stay**, imaging and theatre time. A **major driver of savings is staff time**.",
+    "Know the **true cost** (Figure 3), and work with procurement and performance teams. Leads need **business acumen** and must produce **business cases** that quantify risk to patient care and the benefit of POCT.",
+    "**Managed service partnerships** with industry can reduce risk, but efficiencies must be weighed against **patient outcomes**.",
+    "Device selection: review the product literature and specifications, with **on-site demonstration and evaluation**. **Minimise blood loss** (neonates and anaemic patients), because frequent sampling causes **iatrogenic anaemia** and transfusion.",
+    "Selection and verification follow the **Menendez-Botet criteria**: clinical effectiveness; economic evaluation; blood conservation; safety and ergonomics; technical quality; analytical verification (accuracy, imprecision vs gold standard, reproducibility, linearity, stability, error detection, interference warnings, flagging); data management (bidirectional connectivity, remote access, critical result alerts, EHR); and **ISO 15189:2022-compliant acceptance**."
+   ],
+   "recs": [
+    "fin-1",
+    "fin-2",
+    "equip-1",
+    "equip-2",
+    "equip-3",
+    "equip-4",
+    "equip-5",
+    "equip-6",
+    "equip-7",
+    "equip-8",
+    "key-6"
+   ],
+   "pitfalls": [
+    "Comparing cost per test alone undervalues POCT. Include avoided costs such as length of stay and staff time."
+   ],
+   "hook": "Menendez-Botet's 8: Clinical, Economic, Blood-saving, Safe, Technical, Analytical, Data, Qualification.",
+   "selfTest": [
+    {
+     "q": "Whose criteria guide selection and verification of POCT devices?",
+     "a": "Menendez-Botet."
+    },
+    {
+     "q": "What is a major driver of cost savings from POCT?",
+     "a": "Optimising staff time, along with avoided costs such as reduced length of stay and fewer cancellations."
+    }
+   ]
+  },
+  {
+   "id": "poct-safety-incidents",
+   "domain": "General Haematology",
+   "name": "Health and safety, reflex testing and incident reporting",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 8,
+   "pages": [
+    10,
+    11,
+    12
+   ],
+   "why": "POCT errors are a recognised cause of inappropriate transfusion, and SHOT reporting is a frequent exam point.",
+   "keyPoints": [
+    "**Table 2, health and safety:** **biological** (PPE, sharps, treat all blood as infectious); **infection control** (hand hygiene, disinfect between patients, clean and dirty zones, single-use consumables); **chemical** (COSHH, storage, spill kits); **electrical** (**annual PAT testing**, keep devices dry and clean, servicing, remove damaged devices).",
+    "Documentation (SOPs, risk and COSHH assessments, QC logs, service records) must align with **MHRA**, **ISO 15189:2022** and **CQC** requirements.",
+    "**Reflex testing** is a protocol-driven follow-up test without a separate order. Example: **HemoCue Hb <80 g/L** leads to automatic **FBC and ferritin** in the central laboratory. Benefits: fewer delays, protocol adherence, better flow, fewer missed diagnoses (e.g. thrombocytopenia, sepsis). It needs governance, SOPs, and **training for escalation and override**.",
+    "**Adverse incidents (Table 3):** device malfunction (false Hb or INR); operator error (low volume, expired reagents, not following SOPs); **testing despite out-of-range QC**; connectivity failures; cross-contamination; **missed reflex testing or failure to escalate critical values**; **sample misidentification**; and **errors causing avoidable, delayed or inappropriate transfusion**.",
+    "Report promptly for trend analysis and for compliance with the **MHRA Yellow Card scheme**, ISO 15189:2022 and CQC.",
+    "**SHOT** reports include poor blood gas sample preparation (**inadequate mixing, partial clotting**) leading to wrong Hb, **inappropriate transfusion and TACO**. Transfusion-related POCT errors **must be reported to SHOT**.",
+    "Reporting is **everyone's responsibility** (clinicians, BMS, laboratory assistants, pharmacists). **Report even if there is no harm.** Ongoing risks go on the **Risk Register**, which may lead to business cases."
+   ],
+   "numbers": [
+    [
+     "<80 g/L",
+     "example HemoCue Hb that triggers reflex FBC and ferritin"
+    ],
+    [
+     "annual",
+     "PAT testing of devices"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 3: Examples of POCT adverse incidents",
+     "page": 11,
+     "columns": [
+      "Category",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Device malfunction",
+       "False high or low Hb or INR"
+      ],
+      [
+       "Operator error",
+       "Insufficient volume, expired reagents, SOP not followed"
+      ],
+      [
+       "QC failure",
+       "Testing continues despite out-of-range QC"
+      ],
+      [
+       "Data or connectivity",
+       "Results fail to upload to the EHR"
+      ],
+      [
+       "Infection",
+       "Cross-contamination between patients"
+      ],
+      [
+       "Delayed action",
+       "Missed reflex test, critical value not escalated"
+      ],
+      [
+       "Misidentification",
+       "Wrong patient, no identity check"
+      ],
+      [
+       "Transfusion error (report to SHOT)",
+       "Poor blood gas practice leading to an inappropriate transfusion decision"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "hs-1",
+    "hs-2",
+    "hs-3",
+    "inc-1",
+    "inc-2",
+    "inc-3",
+    "inc-4",
+    "inc-5",
+    "inc-6",
+    "key-7"
+   ],
+   "pitfalls": [
+    "Near misses and no-harm events must still be reported (1A).",
+    "Transfusion-related POCT errors go to SHOT, not just the local incident system."
+   ],
+   "hook": "No harm still means report. Transfusion harm means report to SHOT.",
+   "selfTest": [
+    {
+     "q": "Give an example of reflex testing from the paper.",
+     "a": "A HemoCue Hb below 80 g/L automatically triggers an FBC and ferritin in the central laboratory."
+    },
+    {
+     "q": "Which blood gas sampling errors has SHOT highlighted, and what harm can follow?",
+     "a": "Inadequate mixing and partial clotting, giving inaccurate Hb. This can lead to inappropriate transfusion and TACO."
+    }
+   ]
+  },
+  {
+   "id": "poct-data-records",
+   "domain": "General Haematology",
+   "name": "Data protection and record retention",
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "order": 9,
+   "pages": [
+    12
+   ],
+   "why": "The retention periods (8 years for results, 5 years for QC and training records) are specific, testable numbers.",
+   "keyPoints": [
+    "POCT data must comply with **GDPR** and the **NHS Data Security and Protection (DSP) Toolkit**. Keep it confidential, protect its integrity, collect the **minimum necessary**, store it securely, archive it and destroy it eventually. Use encryption, passwords, firewalls and audit trails.",
+    "Maintain: **centralised POCT management software** (secure, traceable, auditable); **document control**; **data protection training** for all users (1A); **audited access logs**; **secure destruction** of paper (cross-cut shredding) per the **NHS Records Management Code of Practice**; and oversight by an **information governance lead or POCT data controller**.",
+    "**Retention:** patient results for **at least 8 years after the last patient contact**; calibration, QC and maintenance records for a local period, **usually at least 5 years**; **training and competency records at least 5 years**.",
+    "**Summary:** a high-quality service depends on technology, leadership, defined pathways, training and QA, **embedded in an accredited framework** to the **same standards as laboratory testing**. The **Infected Blood Inquiry's** safety culture informed the guideline."
+   ],
+   "numbers": [
+    [
+     "≥8 years",
+     "after last patient contact: patient results"
+    ],
+    [
+     "≥5 years",
+     "QC, calibration and maintenance records (usual local period)"
+    ],
+    [
+     "≥5 years",
+     "training and competency records"
+    ]
+   ],
+   "recs": [
+    "dp-1",
+    "dp-2",
+    "dp-3",
+    "dp-4",
+    "dp-5",
+    "dp-6",
+    "store-1",
+    "store-2",
+    "store-3",
+    "key-1",
+    "key-8",
+    "key-9"
+   ],
+   "pitfalls": [
+    "The 8-year period runs from the last patient contact, not from the date of the test.",
+    "The paper is internally inconsistent here. The storage section says results are kept for at least 8 years (store-1), but the key recommendations say POCT results must be 'retained permanently' in the record and labelled as POCT (key-4). Know both, and quote whichever fits the question."
+   ],
+   "hook": "Patients 8, paperwork 5.",
+   "selfTest": [
+    {
+     "q": "How long should POCT patient results be retained?",
+     "a": "At least 8 years after the last patient contact (1B)."
+    },
+    {
+     "q": "How long should training and competency records be kept?",
+     "a": "At least 5 years (1B)."
     }
    ]
   },
@@ -2888,666 +3977,1968 @@ window.PREPARE_CONTENT = {
    ]
   },
   {
-   "id": "poct-overview",
-   "domain": "General Haematology",
-   "name": "What POCT is, scope and ISO 15189:2022",
-   "sourceResourceId": "bsh_poct_haematology_2026",
+   "id": "eln-classification",
+   "domain": "Haemato-Oncology",
+   "name": "ICC classification: blast thresholds and the genetic hierarchy",
+   "sourceResourceId": "eln_aml_2022",
    "order": 0,
-   "pages": [
-    1,
-    2
-   ],
-   "why": "The definition, the scope (secondary care only) and the standards change (ISO 22870 absorbed into ISO 15189:2022) are basic exam facts.",
-   "keyPoints": [
-    "**POCT** is diagnostic testing **outside the hospital laboratory, close to the patient**, with results available quickly enough to **influence immediate clinical management**.",
-    "Recent drivers: innovation, **stronger frameworks**, and **digital integration and connectivity** (devices linked to LIMS and EHRs, allowing data transfer and remote monitoring). **COVID-19 accelerated decentralised testing.**",
-    "**ISO 15189:2022** sets requirements for quality, governance and risk in medical laboratories, and **now includes POCT requirements** previously covered by **ISO 22870:2016**, which is **superseded** (a few organisations may still hold ISO 22870 accreditation).",
-    "**Scope:** a framework for high-quality POCT in **secondary care**. **Community POCT is out of scope** and will be addressed separately.",
-    "POCT can speed patient flow and inform immediate treatment in life-threatening situations. It may sit within a wider operational efficiency strategy, **with the approval of a POCT committee**.",
-    "Literature: PubMed searches in **January 2025**, covering Aug 2019 to Jan 2025, plus 2009–2025 for fibrinogen, ROTEM/TEG and EQA. **683 articles** were identified. Sickle cell, malaria, HIV, HbA1c, hCG and TB were **excluded** from the searches."
-   ],
-   "numbers": [
-    [
-     "ISO 15189:2022",
-     "current standard (includes POCT)"
-    ],
-    [
-     "ISO 22870:2016",
-     "superseded POCT standard"
-    ],
-    [
-     "683",
-     "articles identified"
-    ]
-   ],
-   "pitfalls": [
-    "ISO 22870 is no longer the POCT standard. POCT is now accredited under ISO 15189:2022 as part of the laboratory (by UKAS in the UK)."
-   ],
-   "hook": "22870 lives on inside 15189.",
-   "selfTest": [
-    {
-     "q": "Which standard now covers POCT requirements, and which did it replace?",
-     "a": "ISO 15189:2022, which incorporates and supersedes ISO 22870:2016."
-    },
-    {
-     "q": "Is community POCT covered by this paper?",
-     "a": "No. It covers secondary care, and community POCT will be addressed separately."
-    }
-   ]
-  },
-  {
-   "id": "poct-devices",
-   "domain": "General Haematology",
-   "name": "Device classes: FBC, Hb, haemoglobinopathy and G6PD (Table 1)",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 1,
    "pages": [
     2,
     3,
     4
    ],
-   "why": "Table 1 sets out the principle, use and main limitation of each POCT technology, and these are often examined as matching items.",
+   "why": "Classification is now genetics-first. Knowing which genetic lesion 'wins' and which blast threshold applies is core FRCPath material.",
    "keyPoints": [
-    "**Portable Hb analysers** (i-STAT, **HemoCue Hb 201+**, EKF DiaSpect) use **spectrophotometry**. Results come in **1–3 minutes** and are highly reproducible, but they are **affected by lipaemia and icterus**. **HemoCue cannot measure Hct directly** (it estimates it from Hb). Uses: virtual wards, theatres, clinics, GP surgeries, blood donation.",
-    "**Impedance FBC** (Coulter principle, e.g. Sysmex pocH-100i, PixCell HemoScreen) uses simple, established hardware but gives only a **limited differential** (3- or 5-part). Uses: virtual wards, ED, theatres, GP surgeries, community and **clozapine clinics**.",
-    "**Five-part impedance with microfluidics plus AI imaging** (e.g. PixCell HemoScreen, Sysmex XN-L) gives high resolution with minimal user input and can be **interfaced bidirectionally** (technical validation in the central laboratory and real-time reporting). Drawbacks are **higher cost per test** and dependence on **cartridge supply**. These can detect cell abnormalities and are **recommended for haematology clinics**.",
-    "FBC POCT analysers have been shown to give **accurate, reproducible results** against central laboratory instruments in venous and capillary samples.",
-    "**HemoTypeSC** is a **lateral flow** immunoassay with antibodies to **HbA, HbS and HbC**. It detects **HbSS and HbSC**, but **not other significant variants**.",
-    "**Gazelle (Hemex)** is **microchip cellulose acetate electrophoresis**, used to screen for **β-thalassaemia trait**. Sensitivity and specificity are high, but **confirmatory testing is required**, and **cellulose acetate is not reliable for quantitation**. Cation-exchange HPLC identifies variants by retention time.",
-    "**G6PD POCT** (e.g. STANDARD G6PD) is **quantitative and enzymatic**, measuring NADPH production at **340 nm normalised to Hb**. It is **confounded by sex and reticulocyte count**, and results vary between laboratories, so **harmonisation** is needed.",
-    "**D-dimer and fibrinogen** POCT use **turbidimetric or latex agglutination** immunoassays (light scattering from antigen–antibody complexes), e.g. Radiometer AQT90, i-STAT, LumiraDx, Exdia TRF, Cobas h232, Triage.",
-    "**ClotPro** is a viscoelastic device in which the **cup rotates and the pin is still**. With the **ECA** test it detects **dabigatran and argatroban**, and with the **RVV** test it detects **enoxaparin, rivaroxaban and apixaban**. It is limited in decentralised settings and **cannot always separate anticoagulant classes**."
+    "AML arises from **serial acquisition of somatic mutations** in stem and progenitor cells. **Clonal haematopoiesis** is a common pre-malignant state that increases with age. **DNMT3A, TET2 and ASXL1** mutations tend to be early events, and **FLT3, NRAS and RUNX1** later ones.",
+    "**ICC 2022:** all recurrent genetic abnormalities define AML at **≥10% blasts** in marrow or blood, **except BCR::ABL1, which still needs ≥20%** to avoid overlap with CML in accelerated phase.",
+    "Other AML categories need **≥20%**. A new **MDS/AML** category covers **10–19% blasts** with defined genomic abnormalities. These patients should be eligible for MDS or AML trials and treatments.",
+    "**Hierarchy:** AML with recurrent genetic abnormalities first. Then **AML with mutated TP53** > **AML with myelodysplasia-related gene mutations** > **AML with myelodysplasia-related cytogenetic abnormalities** > AML NOS.",
+    "**AML with mutated TP53:** a pathogenic TP53 mutation at **VAF ≥10%**, with or without loss of the wild-type allele. Most have complex karyotypes, about half have no other AML mutations, and prognosis is very poor.",
+    "**Myelodysplasia-related genes (9):** **ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2**. These define the category **irrespective of prior MDS** and are adverse even in de novo AML. The category absorbs the former provisional 'AML with mutated RUNX1'.",
+    "**CEBPA:** only an **in-frame bZIP mutation** is required (mono- or biallelic). In-frame bZIP variants occur in **90% of biallelic** and **35% of monoallelic** cases.",
+    "**AML-MRC and therapy-related myeloid neoplasms are removed as entities.** **Dysplastic morphology lacks independent prognostic significance.** 'Therapy-related', 'progressed from MDS or MDS/MPN' (confirmed **>3 months** before) and 'germline predisposition' are now **diagnostic qualifiers**.",
+    "**Blast equivalents:** monoblasts and promonocytes (not abnormal monocytes) in monocytic AML, and **promyelocytes in APL** (PML::RARA or variant RARA).",
+    "A case with both a defining genetic abnormality and TP53 or MR mutations is classified by the **defining genetic abnormality**. Co-mutations affect risk, not diagnosis.",
+    "A history of **MPN** means accelerated (10–19%) or blast phase (≥20%) MPN, not AML. With prior **MDS/MPN (e.g. CMML)**, keep the MDS/MPN diagnosis until ≥20% blasts, but give **AML-type therapy** once an AML-defining abnormality is present with ≥10% blasts.",
+    "MR cytogenetic abnormalities include **complex karyotype (≥3 unrelated abnormalities**, excluding hyperdiploid karyotypes with only trisomies), del(5q)/t(5q)/add(5q), −7/del(7q), +8, del(12p), i(17q), −17/del(17p), del(20q) and idic(X)(q13)."
    ],
    "numbers": [
     [
-     "1–3 min",
-     "portable Hb result time"
+     "≥10%",
+     "blasts for AML with recurrent genetic abnormalities (ICC)"
     ],
     [
-     "10–15 min",
-     "viscoelastic TAT"
+     "≥20%",
+     "BCR::ABL1 AML and all other AML categories"
     ],
     [
-     "340 nm",
-     "NADPH absorbance in the G6PD assay"
+     "10–19%",
+     "MDS/AML"
+    ],
+    [
+     "VAF ≥10%",
+     "TP53 mutation defining AML with mutated TP53"
+    ],
+    [
+     "90% / 35%",
+     "biallelic / monoallelic CEBPA cases with in-frame bZIP mutation"
     ]
    ],
    "tables": [
     {
-     "title": "Table 1 (condensed): POCT technologies",
-     "page": 3,
+     "title": "Table 1 (condensed): AML-defining recurrent genetic abnormalities (≥10% blasts)",
+     "page": 4,
      "columns": [
-      "Assay",
-      "Principle",
-      "Key limitation"
+      "Entity",
+      "Note"
      ],
      "rows": [
       [
-       "Spectrophotometric Hb",
-       "Light absorbance at specific wavelengths",
-       "Lipaemia and icterus interfere"
+       "APL with t(15;17) PML::RARA",
+       "Variant RARA partners reported by name"
       ],
       [
-       "Impedance FBC",
-       "Coulter principle",
-       "Limited differential"
+       "t(8;21) RUNX1::RUNX1T1; inv(16)/t(16;16) CBFB::MYH11",
+       "Core-binding factor AML"
       ],
       [
-       "5-part + microfluidics + AI",
-       "Impedance + imaging + AI classification",
-       "Cost per test; cartridge supply"
+       "t(9;11) MLLT3::KMT2A",
+       "Other KMT2A partners reported by name"
       ],
       [
-       "PT/INR",
-       "Electrochemical/electromechanical clot detection",
-       "Unsuitable with lupus anticoagulant or very high INR"
+       "t(6;9) DEK::NUP214; inv(3)/t(3;3) GATA2, MECOM",
+       "Other MECOM rearrangements also defining"
       ],
       [
-       "Multiplate (impedance aggregometry)",
-       "Platelet aggregation increases impedance",
-       "Skilled interpretation; reagent cost"
+       "Mutated NPM1; in-frame bZIP CEBPA",
+       "Mono- or biallelic CEBPA"
       ],
       [
-       "ACT (i-STAT ACTk, Hemochron)",
-       "Kaolin-activated clotting time",
-       "Hypothermia, haemodilution, platelets dissociate it from heparin effect"
+       "t(9;22) BCR::ABL1",
+       "Exception: needs ≥20% blasts"
       ],
       [
-       "PFA-100/200",
-       "Closure time of a collagen/ADP or collagen/epinephrine membrane",
-       "Non-selective screening does not predict bleeding or transfusion"
-      ],
-      [
-       "TEG/ROTEM/Quantra",
-       "Clot strength (pin/cup) or ultrasound stiffness",
-       "Costly; complex set-up; TAT 10–15 min"
-      ],
-      [
-       "ClotPro",
-       "Rotating cup, ECA/RVV tests",
-       "Cannot always separate anticoagulant classes"
-      ],
-      [
-       "D-dimer/fibrinogen immunoassay",
-       "Turbidimetric/latex agglutination",
-       "See D-dimer sensitivity caveats"
-      ],
-      [
-       "HemoTypeSC",
-       "Lateral flow (HbA/S/C)",
-       "Misses other variants"
-      ],
-      [
-       "Gazelle",
-       "Microchip electrophoresis",
-       "Needs confirmation; poor quantitation"
-      ],
-      [
-       "G6PD",
-       "NADPH at 340 nm / Hb",
-       "Sex and reticulocytes confound; inter-lab variability"
+       "Other rare translocations",
+       "e.g. NUP98::NSD1, RBM15::MRTFA, CBFA2T3::GLIS2"
       ]
      ]
     }
    ],
+   "recs": [],
    "pitfalls": [
-    "HemoTypeSC will miss HbD, HbE, β-thalassaemia and other variants. It only detects A, S and C.",
-    "A normal G6PD POCT result during reticulocytosis (e.g. after haemolysis) may be falsely reassuring, because reticulocytes have higher G6PD activity."
+    "BCR::ABL1 is the one recurrent abnormality still needing ≥20% blasts. With 10–19% it is CML in accelerated phase.",
+    "Prior MDS or therapy exposure no longer defines the entity. It is appended as a qualifier, e.g. 'AML with myelodysplasia-related gene mutation, therapy-related'.",
+    "TP53 outranks MR gene mutations, which outrank MR cytogenetics. A recurrent genetic abnormality outranks all three."
    ],
-   "hook": "Hb is light, FBC is resistance, HemoTypeSC is a strip, Gazelle is a gel, G6PD is 340 nm.",
+   "hook": "Genetics before blasts: 10% if a defining lesion is present (20% for BCR::ABL1), and TP53 beats MR genes, which beat MR karyotype.",
    "selfTest": [
     {
-     "q": "Which interferences affect portable spectrophotometric Hb analysers?",
-     "a": "Lipaemia and icterus (high lipids or bilirubin)."
+     "q": "Which recurrent genetic abnormality still needs ≥20% blasts to diagnose AML under ICC, and why?",
+     "a": "BCR::ABL1, to avoid overlap with CML in accelerated phase."
     },
     {
-     "q": "What does the Gazelle device screen for, and what is its limitation?",
-     "a": "β-thalassaemia trait, by microchip cellulose acetate electrophoresis. Confirmatory testing is required, and cellulose acetate is not reliable for quantitation."
+     "q": "List the nine myelodysplasia-related genes.",
+     "a": "ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1 and ZRSR2."
     },
     {
-     "q": "Which factors confound POCT G6PD activity?",
-     "a": "Sex (gender) and reticulocyte count. Inter-laboratory variability also means harmonisation is needed."
+     "q": "What defines AML with mutated TP53?",
+     "a": "A pathogenic somatic TP53 mutation at VAF ≥10%, with or without loss of the wild-type allele, and ≥20% blasts (10–19% is MDS/AML with mutated TP53)."
     }
    ]
   },
   {
-   "id": "poct-coagulation",
-   "domain": "General Haematology",
-   "name": "Coagulation POCT: INR, ACT, D-dimer and DOACs",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 2,
-   "pages": [
-    2,
-    5,
-    6
-   ],
-   "why": "Each coagulation POCT has a specific failure mode, such as APS on warfarin, ACT confounders, low-sensitivity D-dimers and DOACs that can be ruled out but not measured.",
-   "keyPoints": [
-    "**PT/INR POCT** (CoaguChek Pro II/XS, Xprecia Prime, i-STAT, microINR, LumiraDx, and smartphone-based devices) uses **thromboplastin activation with electrochemical or electromechanical detection**. It is quick and needs a small volume.",
-    "INR limits: **clinically significant discrepancies in APS patients on warfarin**; **monitor bias between test strips at INR ≥4**; within a **stable INR of 2–4**, POCT is comparable to laboratory INR up to 4. **Unsuitable with lupus anticoagulant or very high INR.**",
-    "**ACT** (i-STAT ACTk, Hemochron) monitors **UFH in cardiac surgery and ECMO**. It correlates with anti-Xa in non-cardiac arterial procedures and with incomplete protamine reversal. But **hypothermia, haemodilution and platelet count and function** dissociate ACT from heparin effect. On bypass it correlates poorly with anti-Xa if there is **lupus anticoagulant (prolonged APTT)** or **raised heparin–VWF**. i-STAT is more reproducible than Hemochron, so **device-specific thresholds** are needed.",
-    "**D-dimer** is used with a **clinical probability score** (Wells, Geneva, PERC) and **age-adjusted** ranges to rule out DVT and PE. Laboratory assays are latex or ELISA (VIDAS).",
-    "POCT D-dimers (Cobas, Triage, AFIAS-1, Standard F200, LumiraDx, HP-AFS/1, Exdia TRF Plus): **Triage is comparable to VIDAS**, and several had **false-negative rates <1.4%** against STA-Liatest. But a meta-analysis found **slightly lower sensitivity** than laboratory assays, so use them **only in low-risk populations**. **Qualitative assays have limited utility** because of low sensitivity and quality issues.",
-    "**DOAC POCT:** routine monitoring is unnecessary, but levels help in **stroke, bleeding, urgent surgery and before thrombolysis**. **DTM, DOASENSE, CoaguChek and TEG 6S cannot quantify DOACs**, but may **rule out clinically relevant levels (<30–50 ng/mL)**.",
-    "**DTM test card:** 95–97% sensitivity for dabigatran >30 and >50 ng/mL. **DOASENSE urine dipstick:** sensitivity **100% for dabigatran** and **97% for anti-Xa agents** at ≥30 ng/mL. **CoaguChek INR:** >95% specificity for edoxaban >30 and >50 ng/mL. **TEG 6S DOAC algorithm:** 98–100% sensitivity for Xa and IIa inhibitors, 100% specificity."
-   ],
-   "numbers": [
-    [
-     "≥4",
-     "INR at which strip-to-strip bias must be monitored"
-    ],
-    [
-     "2–4",
-     "stable INR window where POCT is comparable to the laboratory"
-    ],
-    [
-     "<1.4%",
-     "false-negative rate of several POCT D-dimer platforms"
-    ],
-    [
-     "30–50 ng/mL",
-     "DOAC levels POCT can help rule out"
-    ],
-    [
-     "100% / 97%",
-     "DOASENSE sensitivity: dabigatran / anti-Xa at ≥30 ng/mL"
-    ]
-   ],
-   "recs": [
-    "clin-1",
-    "clin-2"
-   ],
-   "pitfalls": [
-    "Do not use POCT INR in antiphospholipid syndrome or with lupus anticoagulant. Use the laboratory INR.",
-    "A qualitative POCT D-dimer is not suitable for excluding VTE. Use only high-sensitivity assays that match STA or ELISA performance (1B).",
-    "A cold, haemodiluted bypass patient may have a prolonged ACT that reflects hypothermia and dilution, not heparin."
-   ],
-   "hook": "INR fails in APS and at INR ≥4. ACT is fooled by Cold, Dilution and Platelets. A D-dimer must be High-sensitivity. A DOAC can be ruled out but not measured.",
-   "selfTest": [
-    {
-     "q": "In which patients is POCT INR unreliable?",
-     "a": "APS or lupus anticoagulant, and very high INRs (monitor strip bias at INR ≥4)."
-    },
-    {
-     "q": "Which factors dissociate ACT from the anticoagulant effect of UFH?",
-     "a": "Hypothermia, haemodilution, and platelet count and function. On bypass, also lupus anticoagulant or raised heparin–VWF."
-    },
-    {
-     "q": "What can POCT DOAC tests do, and what can they not do?",
-     "a": "They cannot quantify DOACs, but they can rule out clinically relevant levels (<30–50 ng/mL)."
-    }
-   ]
-  },
-  {
-   "id": "poct-viscoelastic-platelets",
-   "domain": "General Haematology",
-   "name": "Viscoelastic, platelet function and fibrinogen POCT",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 3,
+   "id": "eln-therapy-related-germline",
+   "domain": "Haemato-Oncology",
+   "name": "Therapy-related AML and germline predisposition",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 1,
    "pages": [
     3,
+    4,
     5,
-    6
+    11
    ],
-   "why": "These devices guide transfusion in bleeding. Know which predict bleeding (Multiplate) and which do not (PFA screening).",
+   "why": "Recognising therapy-related and germline AML changes prognosis, donor selection and family counselling.",
    "keyPoints": [
-    "**Viscoelastic assays** are vital in bleeding from **trauma, cardiac surgery and obstetrics**, and are also used in liver disease, ED and **ECMO**. Devices: **TEG, ROTEM, Quantra (ultrasound), Sonoclot, ClotChip, ClotPro**. Designs: cup and pin, ultrasonic, cartridge.",
-    "Quantra, TEG 6S and ROTEM Sigma **correlate strongly** with laboratory platelet and fibrinogen tests. Quantra and ROTEM perform similarly in trauma-induced coagulopathy, **ROTEM is better for hypofibrinogenaemia**, and **Quantra is faster**. Viscoelastic algorithms give **modest outcome improvements** in bleeding.",
-    "**NICE** recommends **TEG and ROTEM in cardiac surgery**, and **Sonoclot only in research**. **ISO 15189:2022 (section 7.3.5)** requires **device-specific algorithms and reference ranges** for viscoelastic tests.",
-    "**Platelet function POCT:** PFA-100/200, **VerifyNow**, **Multiplate**, PL-11, PlateletWorks, Smart Clot, and TEG platelet mapping.",
-    "**PFA screening is non-specific**: it **cannot distinguish VWD from platelet function defects**, and **non-selective screening does not predict bleeding or transfusion** before invasive procedures.",
-    "**Multiplate predicts perioperative bleeding and transfusion in cardiac surgery** and **outperformed TEG in CABG** (bleeding, transfusion, re-exploration). A meta-analysis (**39 studies, n=4101**) supports it but notes **inter-device variability**, which makes common decision limits difficult. The PL-11 comparison showed marked inter-device variability.",
-    "**Fibrinogen POCT:** **qLabs FIB** (electrical impedance), **FibCare and F-Point** (light scattering) are **comparable to Clauss**. They are useful in transfusion, haemorrhage and gynaecological surgery.",
-    "**TEG CFF and ROTEM FIBTEM** detect hypofibrinogenaemia and may guide treatment in **postpartum and surgical bleeding**."
+    "Therapy-related AML is **10–15% of new AML** and rising. **>90% have an abnormal karyotype.**",
+    "**Alkylator or radiation type (75%):** presents **5–7 years** after exposure, is often preceded by MDS, and has **chromosome 5/7 abnormalities, complex karyotype and TP53 mutations**.",
+    "**Topoisomerase II inhibitor type:** latency **1–3 years**, MDS rare, with **balanced translocations of KMT2A (11q23.3), RUNX1 (21q22.1) or RARA (17q21.2)**.",
+    "Another pathway is **selection of a pre-existing resistant clone**. TP53 or **PPM1D**-mutant stem cells, sometimes detectable years earlier, are positively selected by cytotoxic therapy.",
+    "In therapy-related cases, **deleterious HR-pathway germline mutations (BRCA1, BRCA2, PALB2, TP53, CHEK2) are seen in 20%**.",
+    "Consider **germline predisposition in every patient regardless of age**: **DDX41** variants can cause malignancy in **older age**. Apply germline predisposition as a **diagnostic qualifier**.",
+    "Clues: **platelet defects** with ANKRD26, ETV6, RUNX1. **GATA2** with immunodeficiency. **Shwachman–Diamond** with exocrine pancreatic insufficiency and skeletal dysplasia. **Fanconi anaemia** with facial dysmorphism, squamous cell carcinoma and liver tumours. **Dyskeratosis congenita** with pulmonary fibrosis, cirrhosis and vascular anomalies. **CEBPA** predisposes to myeloid disease only.",
+    "Test **early**, because relatives are preferred donors. **Donor cells from carriers of deleterious RUNX1 or CEBPA variants should not be used.**",
+    "Tumour-based panels can mislead: **somatic reversion** gives false negatives, and **germline copy number variants** are often missed. Use **cultured skin fibroblasts** or hair follicles to confirm germline status.",
+    "Germline status is supported by VAF in a non-haematopoietic tissue **consistent with germline (generally 30–60%)**, or by presence in **two relatives**. **CHEK2 I200T and truncating DDX41 variants** are overwhelmingly likely to be germline, even when seen once.",
+    "**Table 3 triggers for germline testing:** ≥2 cancers, one haematopoietic; a haematopoietic malignancy plus a relative within two generations with a haematopoietic malignancy, a **solid tumour at ≤50 years** or another haematopoietic abnormality; a possible germline variant persisting in remission; or unusually early onset (e.g. **MDS at ≤40 years**).",
+    "Only **pathogenic or likely pathogenic** variants are acted on in families. VUS classifications can change over time."
    ],
    "numbers": [
     [
-     "39 studies, n=4101",
-     "meta-analysis supporting Multiplate in cardiac surgery"
+     "10–15%",
+     "of new AML that is therapy-related"
     ],
     [
-     "§7.3.5",
-     "ISO 15189:2022 section requiring viscoelastic algorithms and ranges"
+     ">90%",
+     "therapy-related AML with an abnormal karyotype"
+    ],
+    [
+     "5–7 y vs 1–3 y",
+     "latency: alkylator/radiation vs topoisomerase II inhibitor"
+    ],
+    [
+     "20%",
+     "therapy-related cases with HR-pathway germline mutations"
+    ],
+    [
+     "30–60%",
+     "VAF consistent with germline in non-haematopoietic tissue"
+    ],
+    [
+     "≤50 y / ≤40 y",
+     "relative's solid tumour age / MDS onset age prompting testing"
     ]
    ],
    "recs": [
-    "clin-3"
+    "dx-2"
    ],
    "pitfalls": [
-    "A prolonged PFA closure time cannot tell VWD from a platelet defect, and routine pre-operative PFA screening does not predict bleeding.",
-    "Viscoelastic thresholds are device-specific. Do not apply ROTEM cut-offs to TEG."
+    "Germline testing is not only for young patients. DDX41 drives AML in older adults.",
+    "Testing germline status on blood or marrow is unreliable. Use skin fibroblasts or hair follicles.",
+    "A sibling carrying the same RUNX1 or CEBPA germline variant must not be the transplant donor."
    ],
-   "hook": "Multiplate Predicts, PFA Fails to predict. FIBTEM and CFF find low fibrinogen.",
+   "hook": "Alkylators: late (5–7 y), chromosomes 5/7 lost, TP53. Topo II: early (1–3 y), balanced KMT2A.",
    "selfTest": [
     {
-     "q": "Which POCT platelet test best predicts bleeding after cardiac surgery?",
-     "a": "Multiplate (multiple electrode impedance aggregometry). It outperformed TEG in CABG."
+     "q": "Contrast alkylator-related and topoisomerase II inhibitor-related AML.",
+     "a": "Alkylator/radiation: 5–7 year latency, often preceded by MDS, −5/−7, complex karyotype, TP53. Topo II: 1–3 year latency, rarely MDS, balanced translocations of KMT2A, RUNX1 or RARA."
     },
     {
-     "q": "What does NICE say about viscoelastic devices?",
-     "a": "TEG and ROTEM are recommended in cardiac surgery. Sonoclot is recommended only in research."
-    },
-    {
-     "q": "What must viscoelastic validation include?",
-     "a": "Clinical decision-making algorithms and reference ranges (1B; ISO 15189:2022 §7.3.5)."
+     "q": "Why should germline testing happen early in AML management?",
+     "a": "Allogeneic HCT is often planned and relatives are preferred donors. Carriers of deleterious RUNX1 or CEBPA variants must not donate."
     }
    ]
   },
   {
-   "id": "poct-blood-gas",
-   "domain": "General Haematology",
-   "name": "Blood gas Hb/Hct and LIMS interfacing",
-   "sourceResourceId": "bsh_poct_haematology_2026",
+   "id": "eln-workup",
+   "domain": "Haemato-Oncology",
+   "name": "Diagnostic work-up: Table 4, immunophenotype and biobanking",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 2,
+   "pages": [
+    5,
+    12,
+    13,
+    14
+   ],
+   "why": "Table 4 sets the minimum tests at diagnosis, the 3–5 day target for actionable genetics, and the counting standards.",
+   "keyPoints": [
+    "Count **200 nucleated cells on blood smears** and **500 on marrow smears**. Do a **trephine** for a dry tap (with touch preparations).",
+    "**At least 20 marrow metaphases** are needed to define a **normal karyotype**. Cytogenetics in **5–7 days**. If no metaphases, FISH for RUNX1::RUNX1T1, CBFB::MYH11, KMT2A, MECOM, or loss of 5q, 7q or 17p.",
+    "Mutations needed for diagnosis and treatment targets, ideally in **3–5 days**: **FLT3 (ITD and TKD), IDH1, IDH2, NPM1**, then CEBPA, **DDX41**, TP53 and the 9 MR genes.",
+    "**Long FLT3-ITDs can be missed by NGS**, so keep using **capillary electrophoresis**. Report the CEBPA mutation type (only in-frame bZIP is favourable).",
+    "Screen for gene rearrangements (PML::RARA, CBFB::MYH11, RUNX1::RUNX1T1, KMT2A, BCR::ABL1) when rapid results are needed, chromosome morphology is poor, or the morphology is typical but the expected abnormality is missing.",
+    "Additional genes (e.g. ANKRD26, ETV6, GATA2, KIT, NRAS, WT1, TET2, DNMT3A) are not needed for diagnosis but may help later NGS monitoring. **Exclude clonal haematopoiesis mutations (DNMT3A, TET2, ASXL1).**",
+    "Other work-up: performance status, optional geriatric assessment, biochemistry and coagulation (watch for **tumour lysis**), virology (hepatitis A, B, C, HIV, CMV, EBV, HSV, VZV), **pregnancy test**, **HLA typing and CMV** in transplant candidates (start a donor search at diagnosis), ECG and echo/MUGA as indicated, **LP only if CNS symptoms** (after imaging), and information on **oocyte and sperm cryopreservation**.",
+    "**Immunophenotyping by MFC is required**. No single marker is in every case. Identify the **LAIP** for MRD. If no aspirate and no circulating blasts, confirm myeloid phenotype on the **core biopsy by IHC**.",
+    "**Myeloid lineage (MPAL):** MPO, or monocytic differentiation (≥2 of NSE, CD11c, CD14, CD64, lysozyme). **T lineage:** strong cytoplasmic or surface CD3. **B lineage:** strong CD19 with one of strong CD79a, cCD22 or CD10, or weak CD19 with two of them.",
+    "**Core MRD markers:** CD34, CD117, CD45, CD33, CD13, CD56, CD7, HLA-DR (plus CD64, CD11b, CD4 if monocytic).",
+    "**Biobanking:** marrow and blood at diagnosis, remission and relapse. Store **DNA and RNA at −80 °C** and **viable cells at −196 °C**. Store a **normal tissue** sample to separate germline from somatic variants. Get broad consent.",
+    "Baseline **qPCR or dPCR for NPM1 and CBF AML** to allow MRD monitoring."
+   ],
+   "numbers": [
+    [
+     "200 / 500",
+     "cells counted on blood / marrow smears"
+    ],
+    [
+     "≥20",
+     "metaphases to call a normal karyotype"
+    ],
+    [
+     "3–5 days",
+     "target for actionable mutation results"
+    ],
+    [
+     "5–7 days",
+     "cytogenetics"
+    ],
+    [
+     "−80 °C / −196 °C",
+     "storage of DNA and RNA / viable cells"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 5: Marker panels",
+     "page": 14,
+     "columns": [
+      "Group",
+      "Markers"
+     ],
+     "rows": [
+      [
+       "Precursor",
+       "CD34, CD117, HLA-DR"
+      ],
+      [
+       "Myeloid",
+       "Cytoplasmic MPO, CD33, CD13"
+      ],
+      [
+       "Myeloid maturation",
+       "CD11b, CD15, CD64, CD65"
+      ],
+      [
+       "Monocytic",
+       "CD14, CD36, CD64, CD4, CD38, CD11c"
+      ],
+      [
+       "Megakaryocytic",
+       "CD41, CD61, CD36"
+      ],
+      [
+       "Erythroid",
+       "CD235a, CD71, CD36"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "dx-1",
+    "dx-3",
+    "tx-1"
+   ],
+   "pitfalls": [
+    "NGS can miss long FLT3-ITDs. Use capillary electrophoresis.",
+    "A lumbar puncture is not routine. Do it for CNS symptoms (after imaging) and consider it optionally in other settings, such as a high WBC."
+   ],
+   "hook": "Twenty metaphases, two hundred blood cells, five hundred marrow cells, and genetics back in three to five days.",
+   "selfTest": [
+    {
+     "q": "How many marrow metaphases are needed to call a normal karyotype?",
+     "a": "At least 20."
+    },
+    {
+     "q": "Why does ELN recommend capillary electrophoresis for FLT3-ITD?",
+     "a": "Longer FLT3-ITDs may be missed by NGS."
+    }
+   ]
+  },
+  {
+   "id": "eln-risk",
+   "domain": "Haemato-Oncology",
+   "name": "2022 ELN genetic risk classification",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 3,
+   "pages": [
+    11,
+    15
+   ],
+   "why": "The favourable, intermediate and adverse groups drive transplant decisions, and the 2022 changes are a frequent exam topic.",
+   "keyPoints": [
+    "**Favourable:** t(8;21) **RUNX1::RUNX1T1**; inv(16)/t(16;16) **CBFB::MYH11**; **mutated NPM1 without FLT3-ITD**; **in-frame bZIP CEBPA**. Concurrent **KIT or FLT3** mutation does **not** change CBF risk.",
+    "**Intermediate:** **mutated NPM1 with FLT3-ITD**; **wild-type NPM1 with FLT3-ITD** (without adverse lesions); **t(9;11) MLLT3::KMT2A**, which outranks rare adverse co-mutations; and anything not classed as favourable or adverse.",
+    "**Adverse:** t(6;9) DEK::NUP214; t(v;11q23.3) **KMT2A-rearranged** (excluding KMT2A-PTD); t(9;22) BCR::ABL1; **t(8;16) KAT6A::CREBBP**; inv(3)/t(3;3) GATA2, MECOM; **t(3q26.2;v) MECOM-rearranged**; −5 or del(5q), −7, −17/abn(17p); **complex karyotype** and **monosomal karyotype**; **the 9 MR gene mutations**; **mutated TP53** (VAF ≥10%).",
+    "**Change 1:** the **FLT3-ITD allelic ratio is dropped**, so all FLT3-ITD AML (without adverse lesions) is intermediate. Reasons: assay standardisation, the effect of **midostaurin**, and the growing role of MRD.",
+    "**Change 2:** **MR gene mutations are now adverse**. Previously only ASXL1 and RUNX1 counted.",
+    "**Change 3:** **NPM1-mutated AML with adverse cytogenetics is adverse**.",
+    "**Change 4:** **in-frame bZIP CEBPA** (mono- or biallelic) is favourable.",
+    "**Change 5:** new adverse rearrangements: **t(3q26.2;v) MECOM** and **t(8;16) KAT6A::CREBBP**.",
+    "**Change 6:** **hyperdiploid karyotypes with multiple trisomies are no longer 'complex'**, so not adverse.",
+    "**Monosomal karyotype:** ≥2 distinct autosomal monosomies, or one monosomy plus ≥1 structural abnormality (excluding loss of X/Y and CBF AML).",
+    "For now, **MR gene mutations should not be used as adverse markers if they co-occur with favourable-risk subtypes**. **IDH1/IDH2 and DNMT3A** are **not assigned** a risk group.",
+    "The classification is based mainly on **intensively treated** patients. **MRD can reclassify** risk, e.g. favourable to intermediate if MRD persists, particularly in NPM1-mutated AML."
+   ],
+   "numbers": [
+    [
+     "6",
+     "main changes from ELN 2017"
+    ],
+    [
+     "≥3",
+     "unrelated abnormalities for complex karyotype"
+    ],
+    [
+     "VAF ≥10%",
+     "TP53 for adverse risk, mono- or biallelic"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 6: 2022 ELN risk by genetics at diagnosis",
+     "page": 15,
+     "columns": [
+      "Risk",
+      "Genetic abnormality"
+     ],
+     "rows": [
+      [
+       "Favourable",
+       "t(8;21) RUNX1::RUNX1T1; inv(16)/t(16;16) CBFB::MYH11; mutated NPM1 without FLT3-ITD; bZIP in-frame mutated CEBPA"
+      ],
+      [
+       "Intermediate",
+       "Mutated NPM1 with FLT3-ITD; wild-type NPM1 with FLT3-ITD; t(9;11) MLLT3::KMT2A; abnormalities not classed as favourable or adverse"
+      ],
+      [
+       "Adverse",
+       "t(6;9) DEK::NUP214; t(v;11q23.3) KMT2A-r; t(9;22) BCR::ABL1; t(8;16) KAT6A::CREBBP; inv(3)/t(3;3) GATA2,MECOM; t(3q26.2;v) MECOM-r; −5/del(5q), −7, −17/abn(17p); complex or monosomal karyotype; mutated ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2; mutated TP53"
+      ]
+     ],
+     "note": "NPM1 mutation with adverse cytogenetics is adverse. Concurrent KIT or FLT3 mutations do not alter CBF risk. KMT2A-PTD is excluded from 'KMT2A-rearranged'."
+    }
+   ],
+   "recs": [],
+   "pitfalls": [
+    "NPM1-mutated with FLT3-ITD is intermediate in 2022, whatever the allelic ratio. A low allelic ratio no longer makes it favourable.",
+    "t(9;11) is intermediate, while other KMT2A rearrangements are adverse.",
+    "CBF AML with a KIT mutation is still favourable.",
+    "A hyperdiploid karyotype made up only of trisomies is not a complex karyotype."
+   ],
+   "hook": "Favourable = CBF + NPM1 without ITD + bZIP CEBPA. Any ITD makes it intermediate. MR genes, TP53, and chromosomes 3, 5, 7 and 17 are adverse.",
+   "selfTest": [
+    {
+     "q": "What is the 2022 ELN risk of NPM1-mutated AML with FLT3-ITD at a low allelic ratio?",
+     "a": "Intermediate. The allelic ratio is no longer considered."
+    },
+    {
+     "q": "What is the risk of t(8;21) AML with a KIT mutation?",
+     "a": "Favourable. Concurrent KIT and/or FLT3 mutations do not alter CBF risk."
+    },
+    {
+     "q": "Name the two new adverse-risk rearrangements in ELN 2022.",
+     "a": "t(3q26.2;v) involving MECOM, and t(8;16)(p11.2;p13.3) KAT6A::CREBBP."
+    }
+   ]
+  },
+  {
+   "id": "eln-mrd",
+   "domain": "Haemato-Oncology",
+   "name": "Measurable residual disease: methods, thresholds and time points",
+   "sourceResourceId": "eln_aml_2022",
    "order": 4,
    "pages": [
-    6
+    11,
+    13,
+    16,
+    17,
+    18,
+    19
    ],
-   "why": "Blood gas Hb is used all the time to decide on transfusion, but it is not interchangeable with laboratory Hb.",
+   "why": "MRD now refines risk and drives the transplant decision. Thresholds such as 0.1%, 2% and a 1-log rise are highly testable.",
    "keyPoints": [
-    "Blood gas analysers measure **Hb spectrophotometrically** and **Hct by conductivity or calculation**.",
-    "They analyse **whole blood**, so **haemolysis usually cannot be detected**. Consider it when results are unexpected or discordant.",
-    "Some studies show agreement with laboratory Hb, but **underestimation** of Hb/Hct can trigger **unnecessary transfusion**. In one study, **21%** of patients who would have been transfused on laboratory Hct would **not** have been on blood gas Hct. **Systematic overestimation** (mean **8 g/L**) has also been reported.",
-    "By **CLIA interchangeability criteria**, blood gas analysers are **not interchangeable** with laboratory analysers for Hb.",
-    "Use blood gas Hb for **trends and immediate decisions**, **not as a substitute** for laboratory Hb/Hct.",
-    "Where POCT results can be **interfaced to the LIMS**, use the interface **in real time** to **prevent transcription errors**."
+    "MRD is used to: (1) define a deeper remission; (2) refine relapse risk; (3) detect impending relapse; (4) act as a surrogate end point for drug approval.",
+    "**MFC-MRD** uses the **LAIP or different-from-normal (DfN)** approach. **MFC positivity is ≥0.1% of CD45-expressing cells** with the target phenotype. **Leukaemic stem cell (CD34+/CD38low** plus an aberrant marker such as CD45RA, CLL-1 or CD123) MRD is investigational.",
+    "**Molecular MRD:** the limit of detection should be **at least 10⁻³**. **Blood is about 1 log less sensitive than marrow.** Targets: **NPM1, CBFB::MYH11, RUNX1::RUNX1T1** (best validated), plus KMT2A::MLLT3, DEK::NUP214, BCR::ABL1 and WT1. **qPCR positive = Ct <40; negative = Ct ≥40 in ≥2 of 3 replicates.**",
+    "**NGS-MRD** is exploratory. Positivity is provisionally **≥0.1% VAF**, and must exclude **clonal haematopoiesis mutations (DNMT3A, TET2, ASXL1)** and germline variants.",
+    "**CR MRD-LL** (low-level, **<2%**) in **NPM1-mutated and CBF AML** counts as **MRD negative**, because persistent low-level transcripts at the end of consolidation carry a very low relapse risk.",
+    "**MRD relapse:** conversion from MRD negative to positive by any method, or a **≥1 log10 rise** between two positive samples in CR MRD-LL. **Confirm in a second sample** from the same tissue source.",
+    "**Time points (Figure 2): NPM1:** diagnosis; **blood after 2 cycles**; marrow at end of treatment; then follow-up for 24 months (**marrow every 3 months or blood every 4–6 weeks**). Consider changing treatment (e.g. allo-HCT) if MRD is **≥2%** or there is **<3–4 log reduction** after consolidation. **MFC:** after 2 cycles and at end of treatment.",
+    "Prognostic value is shown in a **meta-analysis of 81 publications**, but MRD is imperfect: some MRD-negative patients relapse and not all MRD-positive patients do.",
+    "**Pre-transplant MRD** independently predicts worse post-transplant outcome. There is **no evidence that extra chemotherapy cycles help** MRD-positive CR1 patients. Consider **myeloablative conditioning** or **early taper of immunosuppression**.",
+    "MRD in CR or CRh/CRi is recommended in **non-adverse** risk patients in CR1 **to choose consolidation**."
    ],
    "numbers": [
     [
-     "21%",
-     "patients whose transfusion decision differed between laboratory and blood gas Hct"
+     "≥0.1%",
+     "MFC-MRD positive (of CD45+ cells); NGS-MRD provisional VAF"
     ],
     [
-     "8 g/L",
-     "mean overestimation of Hb by blood gas in one study"
+     "Ct <40",
+     "qPCR MRD positive (negative if ≥40 in ≥2 of 3 replicates)"
+    ],
+    [
+     "<2%",
+     "MRD-LL in NPM1 and CBF AML, treated as negative"
+    ],
+    [
+     "≥1 log10",
+     "rise that defines molecular MRD relapse from MRD-LL"
+    ],
+    [
+     "10⁻³",
+     "minimum molecular MRD limit of detection"
+    ],
+    [
+     "3–4 log",
+     "expected NPM1 reduction after consolidation"
     ]
    ],
+   "tables": [
+    {
+     "title": "Table 7: MRD methods",
+     "page": 16,
+     "columns": [
+      "Method",
+      "Sensitivity",
+      "Applicable",
+      "TAT (days)"
+     ],
+     "rows": [
+      [
+       "MFC (LAIP or DfN)",
+       "10⁻³–10⁻⁴",
+       "85–90%",
+       "2"
+      ],
+      [
+       "RT-qPCR (NPM1, CBF; others less validated)",
+       "10⁻⁴–10⁻⁵",
+       "40–50%",
+       "3–5"
+      ],
+      [
+       "NGS (exploratory)",
+       "10⁻²–10⁻⁴",
+       "~100%",
+       "5–10"
+      ],
+      [
+       "Digital PCR (exploratory)",
+       "10⁻³–10⁻⁴",
+       "~70%",
+       "3–5"
+      ]
+     ]
+    }
+   ],
    "recs": [
-    "clin-4",
-    "clin-5"
+    "tx-2"
    ],
    "pitfalls": [
-    "Blood gas Hb can be wrong in either direction. Confirm in the laboratory before a non-urgent transfusion.",
-    "Poor mixing or partial clotting of blood gas samples causes inaccurate Hb. SHOT has reported inappropriate transfusions and TACO from this."
+    "DNMT3A, TET2 and ASXL1 persisting in remission may be clonal haematopoiesis. Do not count them as MRD.",
+    "Low-level NPM1 or CBF transcripts below 2% at the end of consolidation count as MRD negative.",
+    "Extra chemotherapy before transplant for MRD-positive CR1 patients is not supported by evidence."
    ],
-   "hook": "Gas for trends, laboratory for transfusion.",
+   "hook": "Flow 0.1%, qPCR Ct 40, NPM1 or CBF under 2% counts as negative, and a 1-log rise is MRD relapse.",
    "selfTest": [
     {
-     "q": "Can blood gas Hb replace laboratory Hb?",
-     "a": "No (1C). Blood gas analysers are not interchangeable with laboratory analysers under CLIA criteria. Use them for trends and immediate judgements."
+     "q": "How is MFC-MRD positivity defined?",
+     "a": "≥0.1% of CD45-expressing cells with the target (LAIP or DfN) immunophenotype."
     },
     {
-     "q": "Why can haemolysis be missed on a blood gas Hb?",
-     "a": "Blood gas analysers test whole blood, so there is no plasma to inspect for haemolysis."
+     "q": "Define molecular MRD relapse.",
+     "a": "Conversion from MRD negative to positive, or a ≥1 log10 increase between two positive samples in a patient with CR MRD-LL, confirmed in a second consecutive sample."
+    },
+    {
+     "q": "When should NPM1 MRD be measured in blood, and what result prompts a treatment change?",
+     "a": "After 2 cycles (blood). MRD ≥2% or failure to achieve a 3–4 log reduction after consolidation may prompt changes such as allogeneic HCT."
     }
    ]
   },
   {
-   "id": "poct-quality",
-   "domain": "General Haematology",
-   "name": "Quality assurance: IQC, EQA, audit and SOPs",
-   "sourceResourceId": "bsh_poct_haematology_2026",
+   "id": "eln-response",
+   "domain": "Haemato-Oncology",
+   "name": "Response criteria and trial outcome measures",
+   "sourceResourceId": "eln_aml_2022",
    "order": 5,
    "pages": [
+    13,
+    14,
+    17,
+    18,
+    20
+   ],
+   "why": "CR, CRh, CRi, MLFS, refractory disease and relapse have precise definitions. The 2022 update added CRh and MRD-based categories.",
+   "keyPoints": [
+    "**CR:** marrow blasts **<5%**; no circulating blasts; no extramedullary disease; **ANC ≥1.0 × 10⁹/L** and **platelets ≥100 × 10⁹/L**.",
+    "**CRh (new):** CR criteria with partial recovery of **ANC ≥0.5 × 10⁹/L and platelets ≥50 × 10⁹/L**. So far used mainly in trials of less-intensive therapy.",
+    "**CRi:** all CR criteria except residual neutropenia (<1.0) or thrombocytopenia (<100). If CRh is used, **CRi includes only patients not meeting CRh**.",
+    "**MLFS:** marrow blasts <5%, with no haematological recovery required. The marrow must not be merely aplastic: **spicules must be present**, with **≥200 cells counted** or **≥10% cellularity**.",
+    "**PR:** haematological CR criteria plus marrow blasts **5–25%** and a **≥50% fall** from baseline. Mainly used in phase 1–2 trials.",
+    "**The 'absence of blasts with Auer rods' criterion was eliminated.**",
+    "**No G-CSF or platelet transfusions within 7 days** before assessing haematological response. A few circulating blasts may reflect a **regenerating marrow** and usually clear within a week.",
+    "**Refractory disease:** no CR, CRh or CRi at the landmark, i.e. **after 2 courses of intensive induction** or a set point such as **180 days** of less-intensive therapy. If there is no response to the first **7 + 3**, use a **higher-dose cytarabine** regimen.",
+    "**Relapse:** **marrow blasts ≥5%**, blasts reappearing in **≥2 blood samples at least 1 week apart**, or new extramedullary disease.",
+    "**Response without MRD** must be **confirmed at least 4 weeks apart**.",
+    "**Non-evaluable patients** (early death, withdrawal, suboptimal marrow) stay in the denominator (intention to treat). 'Death in aplasia' is now 'non-evaluable'.",
+    "**Outcomes:** report **early death at 30 and 60 days**. **EFS** may be preferred to OS because post-study treatments confound OS. In an FDA analysis, EFS with strict CR correlated with OS at **R² 0.87**, falling to **0.59** when CRi was included. ELN recommends including **CRh/CRi in EFS** for myelosuppressive drugs. New MRD-based end points: EFS-MRD, RFS-MRD, CIR-MRD (molecular MRD relapse only for NPM1, RUNX1::RUNX1T1 and CBFB::MYH11 by qPCR)."
+   ],
+   "numbers": [
+    [
+     "<5%",
+     "marrow blasts for CR, CRh, CRi and MLFS"
+    ],
+    [
+     "≥1.0 / ≥100",
+     "ANC / platelets (× 10⁹/L) for CR"
+    ],
+    [
+     "≥0.5 / ≥50",
+     "ANC / platelets (× 10⁹/L) for CRh"
+    ],
+    [
+     "5–25% and ≥50% fall",
+     "partial remission"
+    ],
+    [
+     "7 days",
+     "free of G-CSF and platelet transfusion before response assessment"
+    ],
+    [
+     "2 cycles / 180 days",
+     "landmarks for refractory disease (intensive / less intensive)"
+    ],
+    [
+     "≥5%; 2 samples ≥1 week apart",
+     "relapse definitions"
+    ]
+   ],
+   "recs": [
+    "trial-1"
+   ],
+   "pitfalls": [
+    "Auer rods are no longer part of the CR definition.",
+    "A response assessed within 7 days of G-CSF or a platelet transfusion is not valid.",
+    "Isolated low-level circulating blasts during count recovery are not relapse. They usually clear within a week."
+   ],
+   "hook": "CR 1 and 100; CRh half and half (0.5 and 50); anything below that is CRi.",
+   "selfTest": [
+    {
+     "q": "Define CRh.",
+     "a": "Marrow blasts <5%, no circulating blasts or extramedullary disease, with partial count recovery: ANC ≥0.5 × 10⁹/L and platelets ≥50 × 10⁹/L."
+    },
+    {
+     "q": "When is AML defined as refractory?",
+     "a": "No CR, CRh or CRi at the response landmark: after 2 courses of intensive induction, or a defined point such as 180 days of less-intensive therapy."
+    },
+    {
+     "q": "What is the ELN definition of relapse?",
+     "a": "Marrow blasts ≥5%, blasts reappearing in ≥2 blood samples at least 1 week apart, or new extramedullary disease."
+    }
+   ]
+  },
+  {
+   "id": "eln-intensive",
+   "domain": "Haemato-Oncology",
+   "name": "Fit patients: induction, consolidation and maintenance",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 6,
+   "pages": [
+    15,
+    16,
+    18,
+    22
+   ],
+   "why": "Matching the intensive regimen to genotype (midostaurin, GO, CPX-351) and choosing consolidation by risk and MRD are core management questions.",
+   "keyPoints": [
+    "Aim for actionable genetics within **3–5 days**. A **short delay to stabilise and identify the best option** is recommended. Cytoreduce immediately if there is **hyperleukocytosis**.",
+    "**Induction backbone '7 + 3':** **daunorubicin 60 mg/m² d1–3** (or idarubicin 12 mg/m², or mitoxantrone 12 mg/m²) with **cytarabine 100–200 mg/m²/day continuous IV d1–7**. Alternatives: FLAG-IDA and mitoxantrone-based regimens.",
+    "**FLT3-mutated: add midostaurin 50 mg twice daily d8–21.** In patients aged **18–59**, **4-year OS improved from 44.3% to 51.4% (+7.1%)**. A non-randomised study suggests benefit up to **70 years**. The value of **12 cycles of maintenance is uncertain**. **Quizartinib** for FLT3-ITD (aged 18–75, 539 patients) prolonged OS in a preliminary report.",
+    "**Gemtuzumab ozogamicin** (anti-CD33 with a calicheamicin payload) is for **CD33-positive, favourable or intermediate cytogenetic risk** AML. Dose **3 mg/m² (max 5 mg) on d1, 4 and 7**, or a single dose on day 1. A meta-analysis showed benefit, **especially in CBF AML**. Consider **omitting GO if allo-HCT is planned**, because of veno-occlusive disease risk.",
+    "**CPX-351** (liposomal cytarabine and daunorubicin, **5:1 molar ratio**) is for **therapy-related AML, prior MDS or CMML, or MR cytogenetics in patients aged 60–75**. **5-year OS 18% vs 10%** with 7 + 3. Count recovery is **about 7 days slower** and bleeding risk is higher, but 30-day mortality was not higher (**5.9% vs 10.6%**). Dose 100 U/m² d1, 3, 5 (re-induction d1, 3). There are no randomised data under 60 years or after MPN, and **no benefit after prior hypomethylating agent therapy for MDS**.",
+    "**Consolidation:** **intermediate-dose cytarabine (IDAC) 1000–1500 mg/m²** (500–1000 if ≥60 years) every 12 h on **d1–3**, for 3–4 cycles. Giving it on consecutive days (rather than d1, 3, 5) may speed recovery. **High-dose cytarabine (3000 mg/m²) is discouraged**: more toxic, with no survival gain.",
+    "**Allo-HCT** if the predicted relapse risk is **>35–40%**: adverse risk, or non-adverse with **MRD persistence**. **Autologous HCT** is an option for favourable or intermediate risk with a good MRD response, or if allo-HCT is not available.",
+    "**Maintenance:** **oral azacitidine (CC-486) 300 mg d1–14 every 28 days** in patients **≥55 years** in CR/CRi after intensive induction who are **not proceeding to allo-HCT**. Median **OS 14.8 → 24.7 months**, independent of MFC-MRD status. Limitations: few young, CBF or adverse-karyotype (14%) patients, and variable prior consolidation.",
+    "Patients who received **midostaurin** in induction and consolidation may continue it as maintenance.",
+    "**Therapy-related AML** has a poor outcome, mainly from adverse genetics. Use the same principles, and CPX-351 is an option."
+   ],
+   "numbers": [
+    [
+     "60 mg/m² d1–3",
+     "daunorubicin in 7 + 3"
+    ],
+    [
+     "44.3% → 51.4%",
+     "4-year OS with midostaurin (aged 18–59)"
+    ],
+    [
+     "3 mg/m² (max 5 mg) d1,4,7",
+     "gemtuzumab ozogamicin"
+    ],
+    [
+     "10% → 18%",
+     "5-year OS with CPX-351 vs 7 + 3 (aged 60–75)"
+    ],
+    [
+     "1000–1500 mg/m²",
+     "IDAC consolidation (500–1000 if ≥60)"
+    ],
+    [
+     ">35–40%",
+     "relapse risk at which allo-HCT is preferred"
+    ],
+    [
+     "14.8 → 24.7 months",
+     "median OS with oral azacitidine maintenance"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 10 (condensed): Fit for intensive chemotherapy",
+     "page": 22,
+     "columns": [
+      "Setting",
+      "Induction",
+      "Consolidation / maintenance"
+     ],
+     "rows": [
+      [
+       "FLT3-mutated",
+       "7 + 3 + midostaurin 50 mg bd d8–21",
+       "IDAC 3–4 cycles + midostaurin; midostaurin maintenance (value uncertain)"
+      ],
+      [
+       "Non-FLT3",
+       "Dauno 60 / ida 12 / mitox 12 d1–3 + cytarabine 100–200 CIV d1–7",
+       "IDAC 3–4 cycles; oral azacitidine maintenance"
+      ],
+      [
+       "CD33+ favourable/intermediate",
+       "7 + 3 + GO 3 mg/m² (max 5 mg) d1,4,7",
+       "IDAC 2–4 cycles ± GO d1 (up to 2 cycles)"
+      ],
+      [
+       "MR changes or therapy-related",
+       "CPX-351 100 U/m² d1,3,5",
+       "CPX-351 65 U/m² d1,3 for 1–2 cycles"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "tx-1",
+    "tx-2"
+   ],
+   "pitfalls": [
+    "High-dose cytarabine 3 g/m² consolidation is no longer favoured. IDAC 1–1.5 g/m² is standard.",
+    "GO benefit is limited to favourable or intermediate cytogenetic risk. Consider omitting it if allo-HCT is planned (VOD).",
+    "Oral azacitidine is for patients not proceeding to allogeneic HCT. Data in under-55s and CBF AML are lacking."
+   ],
+   "hook": "FLT3 gets Midostaurin, CD33 gets GO, MR or therapy-related gets CPX-351, and IDAC (not HiDAC) consolidates.",
+   "selfTest": [
+    {
+     "q": "Which patients benefit from CPX-351, and what was the 5-year OS gain?",
+     "a": "Patients aged 60–75 with therapy-related AML, AML after MDS or CMML, or AML with MR cytogenetics. 5-year OS rose from 10% to 18% vs 7 + 3."
+    },
+    {
+     "q": "What was the survival benefit of adding midostaurin to intensive chemotherapy in patients aged 18–59?",
+     "a": "4-year OS improved by 7.1%, from 44.3% to 51.4%."
+    },
+    {
+     "q": "Who is suitable for oral azacitidine maintenance?",
+     "a": "Patients ≥55 years in CR/CRi after intensive induction who are not proceeding to allogeneic HCT (median OS 14.8 → 24.7 months)."
+    }
+   ]
+  },
+  {
+   "id": "eln-nonintensive",
+   "domain": "Haemato-Oncology",
+   "name": "Unfit patients: venetoclax, HMAs and ivosidenib",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 7,
+   "pages": [
+    18,
+    19,
+    24,
+    25
+   ],
+   "why": "HMA plus venetoclax is the standard for older or unfit patients. Dose adjustments for CYP3A inhibitors and myelosuppression are practical exam points.",
+   "keyPoints": [
+    "There are **no validated criteria** for unfitness. Trial examples: **age ≥75** (not absolute), **ECOG >2**, **EF ≤50%**, **DLCO or FEV1 ≤65%**, **CrCl <45 ml/min**, **bilirubin >1.5 × ULN**.",
+    "**Azacitidine + venetoclax vs azacitidine (VIALE-A):** CR/CRi **66.4% vs 28.3%**; median OS **14.7 vs 9.6 months**. This is the new standard of care. **Decitabine + venetoclax** appears similar (phase 1b/2).",
+    "If an HMA cannot be given, use **low-dose cytarabine + venetoclax**. **Glasdegib + LDAC** improved survival, but its **CR/CRi of 24%** does not favour it.",
+    "Prognosis after **failure of venetoclax-based therapy** is very poor.",
+    "**IDH1-mutated: azacitidine + ivosidenib** vs aza + placebo: EFS **HR 0.33**; CR/CRh **52.8% vs 17.6%**; median OS **24.0 vs 7.9 months**. So **screen for IDH1 rapidly in older patients**. Very frail IDH1/2-mutated patients can have IDH-inhibitor monotherapy or best supportive care.",
+    "**Venetoclax dosing:** ramp **100 → 200 → 400 mg** with aza or decitabine (**600 mg** with LDAC). With **strong CYP3A inhibitors (e.g. posaconazole)**: 10, 20, 50, then **100 mg or less** (VIALE used 50 mg). With **moderate CYP3A inhibitors (e.g. ciprofloxacin)**: reduce by at least 50%.",
+    "**TLS prevention:** dose ramp-up, hydration, urate-lowering drugs, electrolyte monitoring, and **WBC <25 × 10⁹/L** before starting.",
+    "**Assess early** (day 14–21 of cycle 1). If marrow blasts are <5%, **stop venetoclax for up to 14 days** to allow count recovery to CRh. Add **G-CSF** if neutropenia has not recovered within 7 days. Later cycles may shorten venetoclax to **21 or 14 days** if there are prolonged grade 4 cytopenias.",
+    "Reassess after 3 cycles, then every 3 cycles. Non-intensive therapy usually continues until progression (no data favour a fixed duration).",
+    "**Table 12 adverse effects:** midostaurin QT prolongation; gilteritinib transaminase rise (81%) and **PRES** (1%); **IDH inhibitors cause differentiation syndrome** (treat with dexamethasone, plus hydroxyurea if leucocytosis); enasidenib raises bilirubin (81%); **GO causes VOD/SOS** (2.9–4.6%); CPX-351 causes prolonged myelosuppression; oral azacitidine causes GI toxicity and cytopenias; glasdegib causes muscle spasms."
+   ],
+   "numbers": [
+    [
+     "66.4% vs 28.3%",
+     "CR/CRi with aza + venetoclax vs aza"
+    ],
+    [
+     "14.7 vs 9.6 months",
+     "median OS with aza + venetoclax vs aza"
+    ],
+    [
+     "24.0 vs 7.9 months",
+     "median OS with aza + ivosidenib vs aza (IDH1)"
+    ],
+    [
+     "<25 × 10⁹/L",
+     "WBC target before starting venetoclax"
+    ],
+    [
+     "day 14–21",
+     "early marrow in cycle 1 of HMA combinations"
+    ],
+    [
+     "10/20/50/100 mg",
+     "venetoclax ramp with strong CYP3A inhibitors"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 11 (condensed): Not suitable for intensive chemotherapy",
+     "page": 24,
+     "columns": [
+      "Regimen",
+      "Dosing"
+     ],
+     "rows": [
+      [
+       "Aza or decitabine + venetoclax",
+       "Aza 75 mg/m² d1–7 (or d1–5 + d8–9) or decitabine 20 mg/m² d1–5; venetoclax ramp 100/200/400 mg"
+      ],
+      [
+       "LDAC + venetoclax",
+       "Cytarabine 20 mg/m² SC d1–10; venetoclax ramp to 600 mg"
+      ],
+      [
+       "Aza + ivosidenib (IDH1)",
+       "Ivosidenib 500 mg daily d1–28"
+      ],
+      [
+       "Ivosidenib monotherapy",
+       "Very frail IDH1-mutated"
+      ],
+      [
+       "Best supportive care",
+       "Including hydroxyurea"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "tx-3"
+   ],
+   "pitfalls": [
+    "Age alone is not an absolute bar to intensive chemotherapy.",
+    "Posaconazole is a strong CYP3A4 inhibitor, so venetoclax must be markedly reduced (to 100 mg or less, and 50 mg in VIALE).",
+    "Cytopenias in a leukaemia-free marrow after cycle 1 call for interrupting venetoclax, not escalating treatment."
+   ],
+   "hook": "VIALE-A: 66 vs 28% response, 14.7 vs 9.6 months survival. With posaconazole, venetoclax drops to about 100 mg.",
+   "selfTest": [
+    {
+     "q": "What were the response and survival gains of azacitidine + venetoclax over azacitidine alone?",
+     "a": "CR/CRi 66.4% vs 28.3%; median OS 14.7 vs 9.6 months."
+    },
+    {
+     "q": "How is venetoclax dosed with posaconazole?",
+     "a": "Ramp 10 mg d1, 20 mg d2, 50 mg d3, then 100 mg or less daily (50 mg was used in VIALE trials)."
+    },
+    {
+     "q": "What should happen if the day 14–21 marrow shows <5% blasts but the patient is cytopenic?",
+     "a": "Stop venetoclax for up to 14 days to allow recovery to at least CRh. Add G-CSF if neutropenia persists 7 days after stopping. Shorten venetoclax duration in later cycles if needed."
+    }
+   ]
+  },
+  {
+   "id": "eln-relapse-hct",
+   "domain": "Haemato-Oncology",
+   "name": "Relapsed and refractory AML and allogeneic HCT",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 8,
+   "pages": [
+    19,
+    20,
+    21,
+    23
+   ],
+   "why": "Relapse calls for molecular re-testing and targeted salvage, and allo-HCT is the main curative option. The indications and the timing of relapse matter.",
+   "keyPoints": [
+    "At relapse, **re-test genetics**: new or expanded **IDH1/IDH2 or FLT3** clones may now be targetable. Enter trials whenever possible.",
+    "**Primary refractory:** no remission after **2 induction cycles (including ≥1 of intermediate-dose cytarabine)**. Further conventional chemotherapy is unlikely to help, so refer for allo-HCT or a trial.",
+    "Poor features at relapse: **RFS <6–12 months**, non-favourable karyotype, age **>45–55**, or prior HCT. After cytoreduction, **allo-HCT** is recommended. If HCT is not realistic, use HMA ± venetoclax.",
+    "**Gilteritinib** for relapsed or refractory FLT3-mutated AML: CR **21.1% vs 10.5%**, median OS **9.3 vs 5.6 months** vs salvage chemotherapy. Only **5.7%** had prior midostaurin. **Quizartinib** improved OS but was **not approved** by FDA or EMA.",
+    "**Ivosidenib or enasidenib** for R/R IDH1/IDH2: CR about **20%**, overall response about **40%**. Median time to CR is **3–4 months**, with 80% of responses by **6 cycles**. Enasidenib did not improve OS in a randomised trial of patients aged ≥60 after 2–3 prior lines.",
+    "**Salvage regimens:** IDAC ± anthracycline, **FLAG-IDA** (or FLAG-MITO/AMSA), MEC, CLAG-M. Do **not use single-agent IDAC for relapse within 6 months** of higher-dose cytarabine consolidation.",
+    "**Allo-HCT** is the most frequent indication in AML. It is possible **up to age 80** with RIC at experienced centres. Relapse is now the main cause of failure, and HCT is underused.",
+    "Indications: relapse risk **>35–40%**; **adverse** and most **intermediate** risk; **not favourable risk in CR1 unless MRD clearance is inadequate**. Over 60, offer it for intermediate or adverse risk if fit. It is the **only cure for primary refractory** disease.",
+    "Scores: **HCT-CI** (with age) predicts NRM. The **disease risk index** predicts relapse. The **modified EBMT score** predicts OS.",
+    "**Conditioning:** **MAC beats RIC in patients aged 18–65 (BMT CTN 0901)**, through less relapse, with the greatest benefit when pre-transplant NGS shows residual disease.",
+    "**Donors:** matched sibling or well-matched unrelated donors are preferred, with roughly equivalent outcomes. **Post-transplant cyclophosphamide** widens access to haploidentical and mismatched donors. Cord blood is another option. **Avoid relatives with deleterious germline variants.**",
+    "**Post-transplant maintenance:** **sorafenib** reduces relapse in FLT3-mutated AML. **SC azacitidine maintenance is not recommended.**",
+    "**Relapse after HCT:** **90% occur within 2 years**. Morphological relapse within 12 months has a very poor outcome. Immunosuppression taper or **DLI** may salvage early molecular relapse. **Gilteritinib is preferred** if a FLT3 clone emerges. Second CR can still be cured with DLI or a second graft."
+   ],
+   "numbers": [
+    [
+     "21.1% vs 10.5%",
+     "CR with gilteritinib vs salvage chemotherapy"
+    ],
+    [
+     "9.3 vs 5.6 months",
+     "median OS with gilteritinib vs salvage chemotherapy"
+    ],
+    [
+     "~20% / ~40%",
+     "CR / overall response with IDH inhibitors in R/R disease"
+    ],
+    [
+     "2 cycles",
+     "of induction (≥1 IDAC) without remission = primary refractory"
+    ],
+    [
+     "90% within 2 years",
+     "of relapses after allo-HCT"
+    ],
+    [
+     "18–65 y",
+     "age range where MAC beat RIC (BMT CTN 0901)"
+    ]
+   ],
+   "recs": [
+    "tx-4",
+    "hct-1",
+    "hct-2",
+    "hct-3",
+    "trial-2"
+   ],
+   "pitfalls": [
+    "Favourable-risk AML in CR1 does not routinely go to transplant. Inadequate MRD clearance is the exception.",
+    "Do not give extra chemotherapy to 'clear MRD' before transplant in CR1. There is no evidence of benefit.",
+    "Single-agent IDAC is not suitable for relapse within 6 months of higher-dose cytarabine."
+   ],
+   "hook": "Relapse? Re-sequence. FLT3 → gilteritinib; IDH → ivosidenib or enasidenib. Then transplant if possible.",
+   "selfTest": [
+    {
+     "q": "Define primary refractory AML.",
+     "a": "Failure to achieve remission after 2 cycles of induction, including at least 1 cycle of intermediate-dose cytarabine."
+    },
+    {
+     "q": "When is allo-HCT in CR1 recommended for favourable-risk AML?",
+     "a": "Generally not, except with inadequate MRD clearance."
+    },
+    {
+     "q": "Which post-transplant maintenance is supported for FLT3-mutated AML, and which is not recommended?",
+     "a": "Sorafenib (FLT3 inhibitor) reduces relapse. Subcutaneous azacitidine maintenance showed no benefit and is not recommended."
+    }
+   ]
+  },
+  {
+   "id": "eln-supportive",
+   "domain": "Haemato-Oncology",
+   "name": "Hyperleukocytosis, DIC, differentiation syndrome and supportive care",
+   "sourceResourceId": "eln_aml_2022",
+   "order": 9,
+   "pages": [
+    26
+   ],
+   "why": "These emergencies and supportive care thresholds come up in both MCQs and clinical scenarios.",
+   "keyPoints": [
+    "**Hyperleukocytosis = WBC >100 × 10⁹/L**. It raises induction mortality through **haemorrhage, tumour lysis and leukostasis**.",
+    "**Hydroxyurea up to 50–60 mg/kg/day** to bring the **WBC below 25 × 10⁹/L**, especially before HMA or venetoclax.",
+    "**Clinical leukostasis is an emergency.** Lower the WBC promptly (hydroxyurea or induction) and use a **restrictive red cell transfusion** policy. **Dexamethasone** may help. **Leukapheresis** can run alongside chemotherapy in symptomatic leukostasis, but is **not supported in asymptomatic hyperleukocytosis**.",
+    "**DIC** is present in **8.5–25%** of non-APL AML, and develops in another **15%** soon after chemotherapy starts. Screen with a scoring system.",
+    "Watch for **tumour lysis** with hyperleukocytosis or venetoclax. **Differentiation syndrome** presents with unexplained fever, pulmonary oedema or infiltrates, weight gain, hypoxia and dyspnoea, especially on **IDH inhibitors**.",
+    "**Infection:** base choices on local organisms and resistance. **Posaconazole prophylaxis during induction** has good evidence. There is **insufficient** evidence for HSV prophylaxis and **none for PJP** prophylaxis.",
+    "**Influenza and COVID-19 vaccination for all patients.**",
+    "**G-CSF is not routine**: use it only for individuals (e.g. severe infection) or to speed recovery in consolidation.",
+    "**Transfusion:** keep **Hb above 8 g/dL**. The prophylactic platelet trigger is **<10 × 10⁹/L**. Raise thresholds for mucosal bleeding, infection, severe mucositis or fever, and for outpatients who cannot have regular counts."
+   ],
+   "numbers": [
+    [
+     ">100 × 10⁹/L",
+     "hyperleukocytosis"
+    ],
+    [
+     "50–60 mg/kg/day",
+     "maximum hydroxyurea for cytoreduction"
+    ],
+    [
+     "<25 × 10⁹/L",
+     "WBC target before HMA or venetoclax"
+    ],
+    [
+     "8.5–25% (+15%)",
+     "DIC at presentation (plus after starting chemotherapy) in non-APL AML"
+    ],
+    [
+     "8 g/dL",
+     "haemoglobin threshold"
+    ],
+    [
+     "<10 × 10⁹/L",
+     "prophylactic platelet trigger"
+    ]
+   ],
+   "recs": [
+    "sc-1",
+    "sc-2",
+    "sc-3",
+    "sc-4",
+    "sc-5"
+   ],
+   "pitfalls": [
+    "Leukapheresis is not indicated for asymptomatic hyperleukocytosis.",
+    "Avoid liberal red cell transfusion in leukostasis, because it increases viscosity.",
+    "ELN finds no evidence of benefit for PJP prophylaxis and insufficient randomised evidence for HSV prophylaxis in AML."
+   ],
+   "hook": "Over 100 is an emergency. Hydroxyurea brings it under 25. Transfuse at Hb 8 and platelets 10.",
+   "selfTest": [
+    {
+     "q": "How is asymptomatic hyperleukocytosis managed before venetoclax?",
+     "a": "Hydroxyurea (up to 50–60 mg/kg/day) to bring the WBC below 25 × 10⁹/L. Leukapheresis is not supported in asymptomatic patients."
+    },
+    {
+     "q": "Which antifungal prophylaxis has good evidence during AML induction?",
+     "a": "Posaconazole."
+    }
+   ]
+  },
+  {
+   "id": "amllab-context",
+   "domain": "Haemato-Oncology",
+   "name": "Why lab work-up changed: classification, new drugs and sampling",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "order": 0,
+   "pages": [
+    1,
+    2,
+    3
+   ],
+   "why": "Several NICE-approved first-line drugs now depend on genetic or phenotypic results, so turnaround and sampling decisions directly change treatment.",
+   "keyPoints": [
+    "AML diagnosis is multi-faceted: clinical features plus **morphology, immunophenotyping and genetics** of blood, marrow and, where relevant, **CSF**.",
+    "**WHO 2022** splits AML into **AML with defining genetic abnormalities (DGA)** and **AML defined by differentiation**. A key change is **removal of the 20% blast requirement for AML with DGA**, except **BCR::ABL1 and CEBPA**. A new category, 'AML with other defined genetic alterations', covers emerging subtypes. The **ICC** classified AML separately.",
+    "**ELN 2022** is the current standard for genetic risk and requires **multi-platform** testing, including **NGS** for CEBPA, TP53 and the secondary-type mutations **ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1 and ZRSR2**.",
+    "Since 2018, **ten new AML drugs** have been FDA-approved, six of them NICE-approved. **Three are now in first-line intensive treatment**: **midostaurin** (needs fast FLT3 results), **CPX-351** (needs myelodysplasia-related cytogenetics) and **gemtuzumab ozogamicin** (needs CD33-positive, non-adverse karyotype). Early identification of **TP53** mutation is also increasingly relevant.",
+    "**Sampling:** bone marrow **aspirate and trephine**. With a **high WBC**, or in **older or frail patients** for whom best supportive care is likely, the work-up can be done on **peripheral blood instead**.",
+    "Also at diagnosis: samples for **trials and biobanking**; samples to define an MRD marker (**storing DNA and RNA is mandatory**, and a **LAIP sample is strongly recommended**); **consent**; and transport logistics.",
+    "Integrated reporting by a **Specialist Integrated Haematological Malignancy Diagnostic Service (SIHMDS)** was recommended by **NICE NG47 (2016)**. Reports should state **which classification** was used."
+   ],
+   "numbers": [
+    [
+     "10 / 6 / 3",
+     "new FDA-approved AML drugs / NICE-approved / used first line with intensive chemotherapy"
+    ],
+    [
+     "NG47 (2016)",
+     "NICE guidance recommending integrated SIHMDS reporting"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 1 (condensed): New AML drugs, 2018–21, and NICE status",
+     "page": 3,
+     "columns": [
+      "Drug",
+      "Class",
+      "Indication (as listed)",
+      "NICE"
+     ],
+     "rows": [
+      [
+       "Midostaurin",
+       "Multi-targeted kinase inhibitor",
+       "New FLT3-mutated AML with intensive chemo, then maintenance",
+       "Recommended (Jun 2018)"
+      ],
+      [
+       "Arsenic trioxide",
+       "Inorganic compound",
+       "APL: low/intermediate risk with ATRA; relapsed/refractory",
+       "Recommended (Jun 2018)"
+      ],
+      [
+       "Gemtuzumab ozogamicin",
+       "Anti-CD33 antibody–drug conjugate",
+       "Untreated de novo CD33+ AML; favourable/intermediate/failed cytogenetics",
+       "Recommended (Oct 2018)"
+      ],
+      [
+       "CPX-351",
+       "Liposomal daunorubicin/cytarabine",
+       "Untreated therapy-related AML or AML-MRC",
+       "Recommended (Nov 2018)"
+      ],
+      [
+       "Gilteritinib",
+       "FLT3 inhibitor",
+       "Relapsed/refractory FLT3-mutated AML",
+       "Recommended (Aug 2020)"
+      ],
+      [
+       "Enasidenib / Ivosidenib",
+       "IDH2 / IDH1 inhibitor",
+       "Relapsed/refractory IDH2 / IDH1-mutated AML",
+       "Not assessed"
+      ],
+      [
+       "Venetoclax",
+       "BCL2 inhibitor",
+       "With azacitidine, unfit for intensive chemo",
+       "Recommended (Feb 2022)"
+      ],
+      [
+       "Glasdegib",
+       "Smoothened inhibitor",
+       "With LDAC, unfit for intensive chemo",
+       "Not assessed"
+      ],
+      [
+       "CC-486",
+       "Oral hypomethylating agent",
+       "Maintenance in CR/CRi after intensive induction, not proceeding to SCT",
+       "Under assessment"
+      ]
+     ],
+     "note": "For arsenic trioxide, the PDF prints the low/intermediate-risk threshold as 'WBC < 10x10⁹/ml'. This is presumably meant to read /l."
+    }
+   ],
+   "pitfalls": [
+    "Under WHO 2022, BCR::ABL1 and CEBPA are the exceptions that still need ≥20% blasts among AML with DGA.",
+    "Storing DNA and RNA at diagnosis is mandatory. A LAIP sample is 'strongly recommended'."
+   ],
+   "hook": "Three drugs, three tests: midostaurin needs FLT3, CPX-351 needs MR cytogenetics, GO needs CD33.",
+   "selfTest": [
+    {
+     "q": "Which three NICE-approved agents are now in first-line intensive AML treatment, and what test does each depend on?",
+     "a": "Midostaurin needs FLT3 mutation status, CPX-351 needs myelodysplasia-related cytogenetics (or therapy-related history), and gemtuzumab ozogamicin needs CD33 positivity and a non-adverse karyotype."
+    },
+    {
+     "q": "When can the diagnostic work-up be done on peripheral blood rather than marrow?",
+     "a": "With a high white cell count, or in older or frail patients for whom best supportive care is likely."
+    }
+   ]
+  },
+  {
+   "id": "amllab-morphology",
+   "domain": "Haemato-Oncology",
+   "name": "Morphology, blast thresholds and AML-MR",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "order": 1,
+   "pages": [
+    2,
+    3,
+    4,
+    10
+   ],
+   "why": "Blast thresholds now differ by genetic category and by classification (WHO vs ICC), which makes them a frequent exam trap.",
+   "keyPoints": [
+    "**WHO 2022:** **≥20% blasts** (blood or marrow) is needed only for **AML without DGA**. For AML with DGA there is **no set blast cut-off**, and the emphasis is on correlating morphology with genetics.",
+    "**ICC 2022:** **≥10% blasts** for AML with DGA, plus a new category of **MDS/AML for 10–19% blasts** without DGA, subdivided into MDS-related gene mutations and MDS-related cytogenetic abnormalities.",
+    "**AML-MRC is replaced by AML-myelodysplasia related (AML-MR)**. **Morphology alone can no longer make the diagnosis**. Cytogenetic criteria are updated, and **mutation-based criteria** are added. AML transformed from MDS or MDS/MPN stays in AML-MR.",
+    "**Blast count:** myeloblasts, monoblasts and megakaryoblasts. In monocytic or myelomonocytic AML, **promonocytes** are blast equivalents, but **abnormal monocytes are not**.",
+    "**Acute erythroid leukaemia:** erythroid predominance, usually **>80% of marrow elements**, of which **>30% are proerythroblasts**.",
+    "Table 2 counting standards: **≥200 leucocytes in blood films** and **500 nucleated cells in marrow films** (at diagnosis, follow-up and suspected relapse). The **trephine** gives the blast count, immunohistochemistry, and evidence of other conditions such as fibrosis or mast cells.",
+    "Communicate morphology **rapidly** to specialised laboratory staff, especially if **APL or CBF AML** (t(8;21), t(16;16), inv(16)) is suspected.",
+    "Drug access in the UK is still based on the **older classification and definitions**, so refer to funding approval criteria when accessing these drugs."
+   ],
+   "numbers": [
+    [
+     "≥20%",
+     "blasts needed for WHO 2022 AML without DGA"
+    ],
+    [
+     "≥10%",
+     "ICC blast threshold for AML with DGA"
+    ],
+    [
+     "10–19%",
+     "ICC MDS/AML"
+    ],
+    [
+     "200 / 500",
+     "cells counted in blood / marrow films (Table 2)"
+    ],
+    [
+     ">80% / >30%",
+     "erythroid elements / of which proerythroblasts in acute erythroid leukaemia"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "WHO 2022 classification of AML (Appendix A)",
+     "page": 10,
+     "columns": [
+      "Group",
+      "Entities"
+     ],
+     "rows": [
+      [
+       "AML with defining genetic abnormalities",
+       "APL with PML::RARA; RUNX1::RUNX1T1; CBFB::MYH11; DEK::NUP214; RBM15::MRTFA; BCR::ABL1; KMT2A rearrangement; MECOM rearrangement; NUP98 rearrangement; NPM1 mutation; CEBPA mutation; AML, myelodysplasia-related; AML with other defined genetic alterations"
+      ],
+      [
+       "AML defined by differentiation",
+       "Minimal differentiation; without maturation; with maturation; acute basophilic; acute myelomonocytic; acute monocytic; acute erythroid; acute megakaryoblastic"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "morph-1",
+    "morph-2"
+   ],
+   "pitfalls": [
+    "The morphology recommendation says 'at least 200 nucleated cells examined', but Table 2 says 500 nucleated cells should be counted in marrow films and 200 leucocytes in blood films. Know both figures.",
+    "Abnormal monocytes are not blast equivalents. Promonocytes are.",
+    "AML-MR cannot be diagnosed on dysplastic morphology alone."
+   ],
+   "hook": "WHO says 20% unless genetics defines it; ICC says 10% with defining genetics, and 10–19% without is MDS/AML.",
+   "selfTest": [
+    {
+     "q": "Under WHO 2022, which AML needs ≥20% blasts?",
+     "a": "Only AML without defining genetic abnormalities (AML defined by differentiation). For AML with DGA there is no set cut-off, except BCR::ABL1 and CEBPA."
+    },
+    {
+     "q": "What are the morphological criteria for acute erythroid leukaemia in this paper?",
+     "a": "Erythroid predominance, usually >80% of marrow elements, of which >30% are proerythroblasts."
+    }
+   ]
+  },
+  {
+   "id": "amllab-flow",
+   "domain": "Haemato-Oncology",
+   "name": "Flow cytometry: panels, CD33, BPDCN and MFC-MRD",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "order": 2,
+   "pages": [
+    3,
+    4,
+    5
+   ],
+   "why": "Flow cytometry gives the lineage, the CD33 status that decides gemtuzumab eligibility, and the LAIP needed for MRD later.",
+   "keyPoints": [
+    "MFC is **essential at diagnosis, remission assessment and suspected relapse**. **CSF** testing if CNS involvement is suspected. **8-colour panels are standard**, and 10-colour is expected.",
+    "**MFC-MRD** after induction and **pre-transplant** adds prognostic information. Each SIHMDS should have a **named reference laboratory** for MFC-MRD.",
+    "**Turnaround times:** urgent samples **same working day if received before 3:30 pm**. Non-urgent (including remission/MRD) processed same day or next morning, with results in **under 2–3 working days**.",
+    "**Two-stage panel:** an acute leukaemia screen (e.g. **EuroFlow ALOT**) for lineage, then an AML-specific panel. Extended testing may be needed for **BPDCN**, ambiguous lineage, or **acute megakaryoblastic** leukaemia.",
+    "**MPO positivity** for myeloid lineage: **≥20% of leukaemic cells** above a lymphocyte-based threshold.",
+    "**APL and t(8;21)** have typical immunophenotypes (Table 3), so report them promptly with morphology to speed confirmatory genetics.",
+    "The diagnostic **LAIP** must be characterised with an **ELN MRD minimum marker set**, so diagnostic samples may need to go routinely to the reference MFC-MRD laboratory.",
+    "**GO requires CD33 positivity**, so every diagnostic and relapse report should state whether blasts are **CD33 positive**. GO can work with **partial or weak CD33** (as in CBF AML). Laboratories need validated thresholds and **UK NEQAS Leukaemia Immunophenotyping Part 1** EQA. **CD123** matters for **tagraxofusp in BPDCN**.",
+    "If a sample is **inadequate** for remission or MRD assessment (poor viability, haemodilution, too few leucocytes), say so and give the cause. Report the blast %, the markers defining blasts, and the **denominator** (leucocytes or nucleated cells).",
+    "If a patient is **refractory by morphology but MFC-MRD negative**, the **MFC result appears more reliable for prognosis**.",
+    "**Samples (Table 2):** fresh leucocytes at room temperature, sent immediately. **First-pull marrow** is preferred, and clots compromise results. Diagnosis: BM 2–5 ml or PB 10–20 ml in EDTA. Blood can confirm lineage and blast % ≥20%. **CSF: <2 ml is uninformative** unless heavily infiltrated, and must be processed **within a few hours** (or collected into Transfix). **FISH on a CSF cytospin** is preferred when there is a cytogenetic marker."
+   ],
+   "numbers": [
+    [
+     "3:30 pm",
+     "urgent samples received before this are reported the same working day"
+    ],
+    [
+     "<2–3 working days",
+     "non-urgent results, including MRD"
+    ],
+    [
+     "≥20%",
+     "MPO-positive leukaemic cells to assign myeloid lineage"
+    ],
+    [
+     "<2 ml",
+     "CSF volume usually uninformative"
+    ],
+    [
+     "8-colour",
+     "current standard MFC panel (10-colour expected)"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 3: Antibody markers for subtyping and MRD",
+     "page": 5,
+     "columns": [
+      "Entity",
+      "Markers",
+      "Key points"
+     ],
+     "rows": [
+      [
+       "Acute megakaryoblastic",
+       "CD41, CD61 (CD36, CD9 helpful)",
+       "Platelet attachment confounds CD41/CD61; CD42 on platelets, not usually blasts"
+      ],
+      [
+       "BPDCN",
+       "CD123, CD4, CD56",
+       "Always CD123, CD4, HLA-DR, often CD56; CD34 and CD13 negative in almost all; consider AML with pDC expansion (RUNX1)"
+      ],
+      [
+       "t(8;21)",
+       "CD19, CD56, CD34, CD33",
+       "Aberrant CD19 (not stable for MRD), sometimes CD56, high CD34, weak CD33, MPO+"
+      ],
+      [
+       "t(15;17) APL",
+       "CD117, CD34, CD11b, HLA-DR, CD33, CD13",
+       "High side scatter; CD33, CD13, CD117 positive; CD34, HLA-DR, CD11b negative; MPO+"
+      ],
+      [
+       "MRD panel",
+       "CD45 CD33 CD13 CD34 CD117 HLA-DR CD56 CD7",
+       "ELN 8-colour set; add maturation/monocytic markers; LSC markers (CD34/CD38 with CLL-1, CD45RA, CD123…)"
+      ]
+     ],
+     "note": "NPM1-mutated AML can also be CD34, HLA-DR and CD11b negative and CD117 positive, but usually has lower side scatter and may have a monocytic component."
+    }
+   ],
+   "recs": [
+    "flow-1",
+    "flow-2",
+    "flow-3",
+    "flow-4"
+   ],
+   "pitfalls": [
+    "APL vs NPM1-mutated AML: both can be CD34−/HLA-DR−. APL has high side scatter, while NPM1 has lower side scatter and may be monocytic.",
+    "CD19 on t(8;21) blasts is aberrant but not a stable MRD marker.",
+    "Weak CD33 does not exclude benefit from gemtuzumab ozogamicin."
+   ],
+   "hook": "APL on flow: big granular cells (high side scatter) that have lost CD34, HLA-DR and CD11b.",
+   "selfTest": [
+    {
+     "q": "Give the typical APL immunophenotype.",
+     "a": "High side scatter; CD33, CD13, CD117 and MPO positive; CD34, HLA-DR and CD11b negative."
+    },
+    {
+     "q": "Why must diagnostic AML flow reports state CD33 status?",
+     "a": "Gemtuzumab ozogamicin is authorised only for CD33-positive AML (flow recommendation 2)."
+    },
+    {
+     "q": "A patient looks refractory on morphology but is MFC-MRD negative. Which result is more reliable for prognosis?",
+     "a": "The MFC-MRD negative result."
+    }
+   ]
+  },
+  {
+   "id": "amllab-genetics",
+   "domain": "Haemato-Oncology",
+   "name": "Cytogenetics, FISH and molecular tests at diagnosis",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "order": 3,
+   "pages": [
+    4,
     6,
+    7
+   ],
+   "why": "Turnaround targets (24 h PML::RARA, 72 h CBF, 3 days FLT3/NPM1, 7 days karyotype) are what make targeted first-line treatment possible.",
+   "keyPoints": [
+    "Comprehensive cytogenetic and molecular profiling is **integral to diagnosis and classification**. If **high-risk MDS** (e.g. high blast count) is found, test as for the AML pathway. **Store cells, DNA and RNA**, with consent, at diagnosis and relapse.",
+    "**Cytogenetics is mandatory at diagnosis and relapse.** Rapid FISH can find cardinal lesions, but without a diagnostic finding **FISH must always be supplemented by a rapid karyotype**. If karyotyping fails, a **SNP array or FISH for del(5q), del(7q), monosomy 7 and del17p (TP53)** finds most MR abnormalities, but multiple rare abnormalities and complex karyotype can be missed by FISH alone.",
+    "Monitoring by FISH or karyotype is **not routinely recommended**, but helps with atypical or discordant results or suspected relapse.",
+    "**PML::RARA** is not mandatory in every case, but when APL is suspected it **must be available within 24 h**. Some rearrangements are **cryptic to both karyotype and FISH**, so offer molecular characterisation if suspicion persists, with results **within 72 h**.",
+    "**CBF leukaemia** (CBFB::MYH11, RUNX1::RUNX1T1) must be identified **within 72 h** by FISH, molecular testing or rapid karyotype. **Cryptic CBFB rearrangements** must be excluded by FISH or molecular testing if CBF is suspected.",
+    "**KMT2A** testing is essential but **less time-critical**. Rearrangements can be cryptic and are **disease-defining**, so test whenever no other DGA is found, using a **partner-agnostic break-apart FISH**, optionally with an RNA NGS fusion panel. Once found, **identify the partner** for risk assignment (e.g. t(9;11) is intermediate).",
+    "**FLT3-ITD and TKD** need rapid identification for FLT3 inhibitors. The **FLT3-ITD allelic ratio is no longer needed for ELN risk**, but it is recommended to report it if the assay is standardised and validated, because it adds prognostic information.",
+    "**NPM1 exon 11** rapid testing is **not mandated**, but it is often done with FLT3 and helps in suspected APL without PML::RARA and in cases with dysplasia.",
+    "**NGS is mandatory** for CEBPA, TP53, FLT3, IDH1, IDH2, ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, DNMT3A, WT1 and ZRSR2. There is no standard UK panel; laboratories must meet the **National Genomic Test Directory** standards. **CEBPA** is hard to sequence and **FLT3-ITD** hard to quantify by NGS, so alternative quality-assured single-target tests may be needed."
+   ],
+   "numbers": [
+    [
+     "24 h",
+     "PML::RARA result when APL is suspected"
+    ],
+    [
+     "72 h",
+     "CBF identification; cryptic PML::RARA molecular results"
+    ],
+    [
+     "3 days",
+     "FLT3-ITD, FLT3-TKD, NPM1, CBF FISH/PCR"
+    ],
+    [
+     "7 days",
+     "complete conventional karyotype"
+    ],
+    [
+     "14 days",
+     "KMT2A FISH and AML NGS panel"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table 4: Tests at diagnosis (all patients)",
+     "page": 6,
+     "columns": [
+      "Test",
+      "TAT (days)"
+     ],
+     "rows": [
+      [
+       "FLT3-ITD*",
+       "3"
+      ],
+      [
+       "NPM1 exon 11",
+       "3"
+      ],
+      [
+       "FLT3 TKD hotspot*",
+       "3"
+      ],
+      [
+       "FISH/PCR or karyotype CBFB::MYH11 [inv16]",
+       "3"
+      ],
+      [
+       "FISH/PCR or karyotype RUNX1::RUNX1T1 [t(8;21)]",
+       "3"
+      ],
+      [
+       "AML karyotype*",
+       "7"
+      ],
+      [
+       "KMT2A::R FISH",
+       "14"
+      ],
+      [
+       "AML NGS panel*",
+       "14"
+      ],
+      [
+       "WGS germline and tumour",
+       "42"
+      ]
+     ],
+     "note": "* Must be repeated at relapse. Cryptic CBF should be excluded where suspicion persists. WGS may supplement standard care and is considered when germline predisposition is suspected."
+    },
+    {
+     "title": "Table 2 (genetics): Sample requirements",
+     "page": 4,
+     "columns": [
+      "Test",
+      "Sample",
+      "Deadline to reach the laboratory"
+     ],
+     "rows": [
+      [
+       "Cytogenetics and FISH",
+       "BM in heparinised transport medium or lithium heparin (PB if involved)",
+       "24 h"
+      ],
+      [
+       "Rapid single-target and myeloid panel",
+       "BM 2–3 ml and/or PB 4 ml EDTA",
+       "—"
+      ],
+      [
+       "Fusion detection and molecular MRD",
+       "BM 5 ml (preferred for RNA) and/or PB 20 ml EDTA",
+       "48 h"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "gen-1",
+    "gen-2",
+    "gen-3",
+    "gen-4"
+   ],
+   "pitfalls": [
+    "A negative FISH screen is not enough. It must be backed by a rapid karyotype, because complex karyotype and rare abnormalities are missed.",
+    "PML::RARA and CBFB rearrangements can be cryptic to both karyotype and FISH. Use molecular testing if suspicion remains.",
+    "The FLT3-ITD allelic ratio no longer changes ELN risk, but the paper still recommends reporting it with a validated assay."
+   ],
+   "hook": "1–3–7: APL in 1 day, FLT3/NPM1/CBF in 3, karyotype in 7.",
+   "selfTest": [
+    {
+     "q": "What is the turnaround target for PML::RARA testing in suspected APL?",
+     "a": "Within 24 hours of sample receipt (genetics recommendation 2)."
+    },
+    {
+     "q": "Karyotyping fails. Which tests detect most myelodysplasia-related abnormalities?",
+     "a": "SNP microarray, or FISH for del(5q), del(7q), monosomy 7 and del17p (TP53)."
+    },
+    {
+     "q": "How should KMT2A rearrangement be tested for, and why?",
+     "a": "With partner-agnostic (break-apart) FISH, optionally with an RNA NGS fusion panel, because many partners exist and some rearrangements are cryptic. Once found, identify the partner for risk assignment."
+    }
+   ]
+  },
+  {
+   "id": "amllab-germline-mrd",
+   "domain": "Haemato-Oncology",
+   "name": "Germline predisposition and molecular MRD",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "order": 4,
+   "pages": [
     7,
     8
    ],
-   "why": "The QA framework is the core of a safe POCT service. Know the six elements and how IQC differs from EQA.",
+   "why": "A somatic panel can reveal an inherited variant that changes donor choice. Molecular MRD after course 2 decides transplant in NPM1-mutated AML.",
    "keyPoints": [
-    "QA covers **pre-analytical, analytical and post-analytical** stages, and includes training, personnel, equipment and **appropriateness of testing**.",
-    "POCT should be **integrated into the central laboratory quality management system**, with the same standards of leadership, training, competency, IT, procurement and governance. A **quality manual** is not essential for accreditation but is helpful.",
-    "**IQC** controls **accuracy, within- and between-day variability, drift and bias**, using controls near **clinical decision thresholds**. Base frequency on testing activity, analyse drift at locally defined intervals, and make lot numbers, targets and results **fully traceable**.",
-    "Use **third-party QC** where possible. Run IQC **after maintenance or calibration** and for **new reagent lots (batch acceptance)**. Have an **IQC failure policy** and a **contingency plan** for system failure.",
-    "**EQA** provides samples of **known but undisclosed** concentration, at decision levels and across linearity. It **complements but does not replace IQC**. It gives peer comparison (by device or method), a long-term retrospective view, and supports **post-market surveillance**.",
-    "Document EQA results and the response to **out-of-consensus** results. A statistically out-of-consensus result **may not be clinically significant**: interpret it in context.",
-    "If no EQA exists: **interlaboratory exchange of blinded samples** within a trust, or **simultaneous venous and capillary sampling** across devices, with limits of agreement that reflect **physiological differences**. Periodic comparison with central laboratory methods is good practice.",
-    "**POCT users are not laboratory scientists.** Encourage regular users (not just experienced or laboratory staff) to run IQC and EQA. EQA material often differs from clinical samples, which causes errors. Training mitigates this.",
-    "**Audit:** an internal audit schedule covering all aspects, with corrective and preventive actions fed into policy. In the UK, hospital POCT is **accredited by UKAS as part of the clinical laboratory**.",
-    "**SOPs** must meet **ISO 15189** structure and content (Figure 1). File results **permanently**, **clearly identified as POCT**."
-   ],
-   "recs": [
-    "qa-1",
-    "key-2",
-    "key-3",
-    "key-4"
-   ],
-   "pitfalls": [
-    "EQA does not replace IQC. You need both.",
-    "Out-of-consensus does not always mean clinically wrong. Assess clinical significance and long-term performance."
-   ],
-   "hook": "IQC = every day, inside, catches drift. EQA = periodic, outside, compares you with peers.",
-   "selfTest": [
-    {
-     "q": "List the six elements of the POCT QA framework (1B).",
-     "a": "Oversight by a laboratory professional or quality manager; IQC and EQA; an internal audit schedule; ISO 15189 accreditation; document control including SOPs; senior management review for continual improvement."
-    },
-    {
-     "q": "What alternatives exist when no EQA scheme is available for a device?",
-     "a": "Interlaboratory exchange of blinded samples within the trust, and simultaneous venous and capillary sampling across devices, with locally set limits of agreement."
-    }
-   ]
-  },
-  {
-   "id": "poct-governance",
-   "domain": "General Haematology",
-   "name": "Governance and training",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 6,
-   "pages": [
-    7,
-    8,
-    9
-   ],
-   "why": "No POCT device should be adopted without governance, and training and competency carry many of the strongest (1A) recommendations.",
-   "keyPoints": [
-    "**POCT devices must not be adopted without a well-defined governance structure** and clear accountability for every element of the service.",
-    "Most POCT is part of an **accredited pathology laboratory** under clinical directorship. Day-to-day running may be delegated to a **POCT coordinator or manager**.",
-    "A multidisciplinary **POCT committee** is helpful but **not mandatory under ISO 15189:2022**. Members: clinicians, laboratory scientists, nurses, support staff, management, the POCT coordinator, **IT, Estates and Clinical Engineering**, with finance and procurement advice. It is accountable to a higher governance group. If POCT extends to the community, include **community representation** (pharmacist, GP or practice nurse).",
-    "If no committee is feasible, effectiveness must still be shown through the **POCT policy** and its evidence. Services outside an accredited organisation need a **Service Level Agreement**.",
-    "**Training (Figure 2):** **mandatory retraining intervals** must be stated in a policy that is **signed off at a high level** and is enforceable on all users.",
-    "Training must be **auditable**, with audits **at least annually** and more often for higher-risk tests or poor-performance trends. Improvement draws on feedback, audit, trends and incident reports.",
-    "Competency must be **passed before first use**. Trainers must show a **higher level of understanding** first. Update documentation **whenever a test or device changes**. Training complexity should be **proportional** to the clinical application."
+    "Driver variants found by somatic-only testing **may be germline**. Laboratories need processes to identify and report possible germline findings in **high-actionability genes: RUNX1, CEBPA, DDX41, ANKRD26, ETV6 and GATA2**.",
+    "If a germline variant is suspected, take a **detailed clinical and family history**. Confirmation needs **cultured skin fibroblasts** from a **skin biopsy**. Consider referral to **Clinical Genetics**.",
+    "Familial predisposition matters especially when considering a **related transplant donor**. Ask about family **MDS, acute leukaemia or aplastic anaemia**, early-onset cancers, and multiple affected relatives.",
+    "Personal or family features to elicit: **cytopenias, abnormal bleeding, skin or nail abnormalities, idiopathic liver disease, immune defects, atypical infections, lymphoedema, limb abnormalities, pulmonary fibrosis**.",
+    "If a predisposition or **inherited marrow failure** syndrome is suspected clinically, consider up-front germline testing with a constitutional NGS panel. For suspected **Fanconi anaemia**, use **chromosome breakage studies (DEB or mitomycin C)**.",
+    "**WGS** can currently supplement standard care, and is likely to replace some tests as turnaround improves.",
+    "**Molecular MRD by qPCR** is suitable for **NPM1, PML::RARA, CBF and KMT2A fusions**, with turnaround of **3–14 days**. Urgent (3–7 days): **NPM1 after course 2 (blood sample essential for risk stratification)**, a repeat after a concerning result, and suspected relapse.",
+    "Because these assays are RNA-based, **store RNA at diagnosis** as a baseline. Follow-up samples must reach the MRD laboratory **within 2 days** of sampling.",
+    "**Digital droplet PCR and NGS MRD** are under investigation and **not yet recommended** for routine care."
    ],
    "numbers": [
     [
-     "≥ annually",
-     "minimum audit frequency for training and competency"
-    ]
-   ],
-   "recs": [
-    "gov-1",
-    "gov-2",
-    "train-1",
-    "train-2",
-    "train-3",
-    "train-4",
-    "train-5",
-    "train-6",
-    "train-7",
-    "key-5"
-   ],
-   "pitfalls": [
-    "A POCT committee is not mandatory under ISO 15189:2022, but governance, accountability and a POCT policy are.",
-    "New technologies without a laboratory comparator still need a formal risk assessment (1B)."
-   ],
-   "hook": "No governance, no gadget. Train, test, then use.",
-   "selfTest": [
-    {
-     "q": "Is a POCT committee mandatory under ISO 15189:2022?",
-     "a": "No. But governance must be demonstrated through the POCT policy, with clear accountability."
-    },
-    {
-     "q": "What must users demonstrate competence in (1A)?",
-     "a": "Device operation, methodological theory, pre-analytical, analytical and post-analytical factors, and result validity."
-    }
-   ]
-  },
-  {
-   "id": "poct-finance-equipment",
-   "domain": "General Haematology",
-   "name": "Finance and choosing devices",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 7,
-   "pages": [
-    9,
-    10
-   ],
-   "why": "Business cases and the device selection criteria (Menendez-Botet) are less familiar, but they are recommended at 1B.",
-   "keyPoints": [
-    "POCT was once seen as more expensive, but analyses suggest an **overall financial benefit**. Count **costs avoided** as well: cancellations, unnecessary appointments, readmissions, **length of stay**, imaging and theatre time. A **major driver of savings is staff time**.",
-    "Know the **true cost** (Figure 3), and work with procurement and performance teams. Leads need **business acumen** and must produce **business cases** that quantify risk to patient care and the benefit of POCT.",
-    "**Managed service partnerships** with industry can reduce risk, but efficiencies must be weighed against **patient outcomes**.",
-    "Device selection: review the product literature and specifications, with **on-site demonstration and evaluation**. **Minimise blood loss** (neonates and anaemic patients), because frequent sampling causes **iatrogenic anaemia** and transfusion.",
-    "Selection and verification follow the **Menendez-Botet criteria**: clinical effectiveness; economic evaluation; blood conservation; safety and ergonomics; technical quality; analytical verification (accuracy, imprecision vs gold standard, reproducibility, linearity, stability, error detection, interference warnings, flagging); data management (bidirectional connectivity, remote access, critical result alerts, EHR); and **ISO 15189:2022-compliant acceptance**."
-   ],
-   "recs": [
-    "fin-1",
-    "fin-2",
-    "equip-1",
-    "equip-2",
-    "equip-3",
-    "equip-4",
-    "equip-5",
-    "equip-6",
-    "equip-7",
-    "equip-8",
-    "key-6"
-   ],
-   "pitfalls": [
-    "Comparing cost per test alone undervalues POCT. Include avoided costs such as length of stay and staff time."
-   ],
-   "hook": "Menendez-Botet's 8: Clinical, Economic, Blood-saving, Safe, Technical, Analytical, Data, Qualification.",
-   "selfTest": [
-    {
-     "q": "Whose criteria guide selection and verification of POCT devices?",
-     "a": "Menendez-Botet."
-    },
-    {
-     "q": "What is a major driver of cost savings from POCT?",
-     "a": "Optimising staff time, along with avoided costs such as reduced length of stay and fewer cancellations."
-    }
-   ]
-  },
-  {
-   "id": "poct-safety-incidents",
-   "domain": "General Haematology",
-   "name": "Health and safety, reflex testing and incident reporting",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 8,
-   "pages": [
-    10,
-    11,
-    12
-   ],
-   "why": "POCT errors are a recognised cause of inappropriate transfusion, and SHOT reporting is a frequent exam point.",
-   "keyPoints": [
-    "**Table 2, health and safety:** **biological** (PPE, sharps, treat all blood as infectious); **infection control** (hand hygiene, disinfect between patients, clean and dirty zones, single-use consumables); **chemical** (COSHH, storage, spill kits); **electrical** (**annual PAT testing**, keep devices dry and clean, servicing, remove damaged devices).",
-    "Documentation (SOPs, risk and COSHH assessments, QC logs, service records) must align with **MHRA**, **ISO 15189:2022** and **CQC** requirements.",
-    "**Reflex testing** is a protocol-driven follow-up test without a separate order. Example: **HemoCue Hb <80 g/L** leads to automatic **FBC and ferritin** in the central laboratory. Benefits: fewer delays, protocol adherence, better flow, fewer missed diagnoses (e.g. thrombocytopenia, sepsis). It needs governance, SOPs, and **training for escalation and override**.",
-    "**Adverse incidents (Table 3):** device malfunction (false Hb or INR); operator error (low volume, expired reagents, not following SOPs); **testing despite out-of-range QC**; connectivity failures; cross-contamination; **missed reflex testing or failure to escalate critical values**; **sample misidentification**; and **errors causing avoidable, delayed or inappropriate transfusion**.",
-    "Report promptly for trend analysis and for compliance with the **MHRA Yellow Card scheme**, ISO 15189:2022 and CQC.",
-    "**SHOT** reports include poor blood gas sample preparation (**inadequate mixing, partial clotting**) leading to wrong Hb, **inappropriate transfusion and TACO**. Transfusion-related POCT errors **must be reported to SHOT**.",
-    "Reporting is **everyone's responsibility** (clinicians, BMS, laboratory assistants, pharmacists). **Report even if there is no harm.** Ongoing risks go on the **Risk Register**, which may lead to business cases."
-   ],
-   "numbers": [
-    [
-     "<80 g/L",
-     "example HemoCue Hb that triggers reflex FBC and ferritin"
+     "6 genes",
+     "RUNX1, CEBPA, DDX41, ANKRD26, ETV6, GATA2: high-actionability germline genes"
     ],
     [
-     "annual",
-     "PAT testing of devices"
+     "3–14 days",
+     "molecular MRD turnaround (urgent 3–7)"
+    ],
+    [
+     "2 days",
+     "follow-up MRD sample must reach the laboratory"
+    ],
+    [
+     "84 days",
+     "inherited marrow failure panel turnaround"
     ]
    ],
    "tables": [
     {
-     "title": "Table 3: Examples of POCT adverse incidents",
-     "page": 11,
+     "title": "Table 5: Tests for specific indications",
+     "page": 7,
      "columns": [
-      "Category",
-      "Example"
+      "Test",
+      "Indication",
+      "TAT (days)"
      ],
      "rows": [
       [
-       "Device malfunction",
-       "False high or low Hb or INR"
+       "FISH PML::RARA [t(15;17)]",
+       "Suspected APL (morphology or flow)",
+       "1"
       ],
       [
-       "Operator error",
-       "Insufficient volume, expired reagents, SOP not followed"
+       "RT-PCR PML::RARA",
+       "Suspected APL",
+       "3"
       ],
       [
-       "QC failure",
-       "Testing continues despite out-of-range QC"
+       "MyeChild01 FISH panel",
+       "Children and young adults with no other primary genetic change",
+       "7"
       ],
       [
-       "Data or connectivity",
-       "Results fail to upload to the EHR"
+       "MLDS NGS panel (GATA1)",
+       "Children with known trisomy 21",
+       "21"
       ],
       [
-       "Infection",
-       "Cross-contamination between patients"
+       "Fanconi breakage testing",
+       "Suspected Fanconi anaemia pre-transplant",
+       "14"
       ],
       [
-       "Delayed action",
-       "Missed reflex test, critical value not escalated"
+       "Inherited marrow failure panel",
+       "Suspected familial predisposition",
+       "84"
+      ]
+     ],
+     "note": "MyeChild01 FISH targets: t(5;11) NUP98::NSD1, t(7;12) MNX1::ETV6, inv(16)(p13.3q24.3) CBFA2T3::GLIS2."
+    }
+   ],
+   "recs": [
+    "gen-5",
+    "gen-6"
+   ],
+   "pitfalls": [
+    "A blood or marrow sample cannot prove a variant is germline. Use cultured skin fibroblasts.",
+    "NPM1 MRD after course 2 should be on peripheral blood. The paper calls a blood sample essential for risk stratification.",
+    "ddPCR and NGS-based MRD are not yet for routine use in this guidance."
+   ],
+   "hook": "Germline six to flag: 'Really Can't Do Any Easy Genetics' (RUNX1, CEBPA, DDX41, ANKRD26, ETV6, GATA2).",
+   "selfTest": [
+    {
+     "q": "Which genetic lesions are suitable for qPCR molecular MRD in UK practice?",
+     "a": "NPM1 mutation, PML::RARA, CBF fusions (CBFB::MYH11, RUNX1::RUNX1T1) and KMT2A fusions."
+    },
+    {
+     "q": "How is a suspected germline variant confirmed?",
+     "a": "By testing DNA from cultured skin fibroblasts (skin biopsy), with clinical and family history and Clinical Genetics referral."
+    },
+    {
+     "q": "Which NPM1 MRD sample is treated as urgent?",
+     "a": "The peripheral blood sample after course 2, which is essential for risk stratification (3–7 day turnaround)."
+    }
+   ]
+  },
+  {
+   "id": "amlp-diagnosis",
+   "domain": "Haemato-Oncology",
+   "name": "Epidemiology, diagnosis and the MDT",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "order": 0,
+   "pages": [
+    2,
+    3
+   ],
+   "why": "Anaemia and thrombocytopenia are common in pregnancy, so leukaemia is easily missed. Diagnosis uses the same WHO criteria as outside pregnancy.",
+   "keyPoints": [
+    "Leukaemia in pregnancy is uncommon: about **1 in 75 000 to 1 in 100 000 pregnancies**. Acute leukaemia accounts for the vast majority, with **AML about two-thirds** and ALL about one-third.",
+    "**APL in pregnancy is excluded** from this guideline. It is covered by European (Sanz 2009) recommendations.",
+    "Anaemia is common and multifactorial in pregnancy, and thrombocytopenia is also relatively common. **Neutropenia is rarer** and merits investigation or close monitoring.",
+    "**Circulating blasts** on the film suggest a haematological malignancy and are an indication for **bone marrow biopsy**.",
+    "Table I lists the essential investigations to do before marrow biopsy: **FBC and film; B12, folate and ferritin; coagulation screen; renal and liver function**.",
+    "Diagnostic criteria are **the same as in non-pregnant women (WHO classification)**. Send marrow for **immunophenotyping, cytogenetics and molecular analysis** to allow accurate subtyping and prognostic assessment.",
+    "Manage jointly: **consultant haematologists, obstetricians, anaesthetists and neonatologists**. Consider the health of both mother and baby and the mother's informed wishes.",
+    "Delay harms both: **untreated, maternal death can occur within weeks or months**. Leukaemia in pregnancy also raises the risk of **miscarriage, fetal growth restriction and perinatal mortality**, and the earlier the gestation, the higher these risks.",
+    "Suspected causes of fetal death: **maternal anaemia, DIC, and leukaemic cells affecting blood flow, nutrient exchange and oxygen delivery in the intervillous spaces of the placenta**."
+   ],
+   "numbers": [
+    [
+     "1 in 75 000–100 000",
+     "pregnancies affected by leukaemia"
+    ],
+    [
+     "~2/3",
+     "of acute leukaemia in pregnancy that is AML (1/3 ALL)"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table I: Essential investigations",
+     "page": 2,
+     "columns": [
+      "Investigation"
+     ],
+     "rows": [
+      [
+       "Full blood count and blood film examination"
       ],
       [
-       "Misidentification",
-       "Wrong patient, no identity check"
+       "Vitamin B12, folate and ferritin measurement"
       ],
       [
-       "Transfusion error (report to SHOT)",
-       "Poor blood gas practice leading to an inappropriate transfusion decision"
+       "Coagulation screen"
+      ],
+      [
+       "Renal and liver function tests"
       ]
      ]
     }
    ],
    "recs": [
-    "hs-1",
-    "hs-2",
-    "hs-3",
-    "inc-1",
-    "inc-2",
-    "inc-3",
-    "inc-4",
-    "inc-5",
-    "inc-6",
-    "key-7"
+    "dx-1",
+    "dx-2"
    ],
    "pitfalls": [
-    "Near misses and no-harm events must still be reported (1A).",
-    "Transfusion-related POCT errors go to SHOT, not just the local incident system."
+    "Do not attribute unexplained neutropenia in pregnancy to gestational change. It is uncommon and needs a film or closer monitoring.",
+    "Treatment delay worsens outcomes for mother and fetus. It is not a neutral 'wait until delivery' option before late gestation."
    ],
-   "hook": "No harm still means report. Transfusion harm means report to SHOT.",
+   "hook": "Same WHO rules, four specialists: haematology, obstetrics, anaesthetics, neonatology.",
    "selfTest": [
     {
-     "q": "Give an example of reflex testing from the paper.",
-     "a": "A HemoCue Hb below 80 g/L automatically triggers an FBC and ferritin in the central laboratory."
+     "q": "How common is leukaemia in pregnancy, and what proportion is AML?",
+     "a": "About 1 in 75 000 to 1 in 100 000 pregnancies. AML is about two-thirds of acute leukaemias (ALL about one-third)."
     },
     {
-     "q": "Which blood gas sampling errors has SHOT highlighted, and what harm can follow?",
-     "a": "Inadequate mixing and partial clotting, giving inaccurate Hb. This can lead to inappropriate transfusion and TACO."
+     "q": "Which four specialties make up the recommended MDT?",
+     "a": "Haematology, obstetrics, neonatology and anaesthetics (1C)."
     }
    ]
   },
   {
-   "id": "poct-data-records",
-   "domain": "General Haematology",
-   "name": "Data protection and record retention",
-   "sourceResourceId": "bsh_poct_haematology_2026",
-   "order": 9,
+   "id": "amlp-gestation",
+   "domain": "Haemato-Oncology",
+   "name": "Decisions by gestation: termination, treatment or delivery",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "order": 1,
    "pages": [
-    12
+    3,
+    4
    ],
-   "why": "The retention periods (8 years for results, 5 years for QC and training records) are specific, testable numbers.",
+   "why": "Management depends on gestation. The cut-offs (first trimester, 24, 28, 32 and 36 weeks) are classic exam material.",
    "keyPoints": [
-    "POCT data must comply with **GDPR** and the **NHS Data Security and Protection (DSP) Toolkit**. Keep it confidential, protect its integrity, collect the **minimum necessary**, store it securely, archive it and destroy it eventually. Use encryption, passwords, firewalls and audit trails.",
-    "Maintain: **centralised POCT management software** (secure, traceable, auditable); **document control**; **data protection training** for all users (1A); **audited access logs**; **secure destruction** of paper (cross-cut shredding) per the **NHS Records Management Code of Practice**; and oversight by an **information governance lead or POCT data controller**.",
-    "**Retention:** patient results for **at least 8 years after the last patient contact**; calibration, QC and maintenance records for a local period, **usually at least 5 years**; **training and competency records at least 5 years**.",
-    "**Summary:** a high-quality service depends on technology, leadership, defined pathways, training and QA, **embedded in an accredited framework** to the **same standards as laboratory testing**. The **Infected Blood Inquiry's** safety culture informed the guideline."
+    "**First trimester:** spontaneous abortion before 12 weeks occurs in **20%** of confirmed pregnancies in healthy women, and more often in AML. Because of the high risk of miscarriage, malformation and fetal death, **consider elective termination** (2C).",
+    "Elective termination is **safer for the mother than spontaneous miscarriage**, because platelets and coagulation can be controlled. **Medical termination is preferable to surgical**, but both are manageable with tight haemostatic control.",
+    "**Second and third trimesters:** chemotherapy **rarely causes congenital malformation** but increases **late miscarriage, prematurity, fetal growth restriction, neonatal neutropenia and sepsis**. A healthy, non-malformed baby is still the most likely outcome, so usually **continue the pregnancy and start chemotherapy**.",
+    "Survival of a 'well' fetus delivered at **≥28 weeks is >90%**, and at **≥32 weeks >95%**. Delivery before chemotherapy is reasonable if presenting at **30–32 weeks**.",
+    "There is a **linear relationship**: the rate of minor neurocognitive impairment rises as gestation falls below **36 weeks**.",
+    "**No chemotherapy after 36 weeks**, because spontaneous delivery is increasingly likely before the marrow recovers. Deliver electively instead.",
+    "**24–28 weeks:** prematurity risks are high and chemotherapy appears to carry a low fetal risk, so delivery is not usually advised and **treatment should not be delayed**.",
+    "Delaying delivery by a week or two to reach a critical gestation (e.g. **26 weeks**) should only be decided **within the MDT**.",
+    "At every gestation below 36 weeks, offer a discussion with an **experienced neonatologist** about prematurity-related mortality and morbidity."
    ],
    "numbers": [
     [
-     "≥8 years",
-     "after last patient contact: patient results"
+     "20%",
+     "spontaneous abortion before 12 weeks in healthy women"
     ],
     [
-     "≥5 years",
-     "QC, calibration and maintenance records (usual local period)"
+     ">90% / >95%",
+     "survival of a well fetus delivered at ≥28 / ≥32 weeks"
     ],
     [
-     "≥5 years",
-     "training and competency records"
+     "30–32 weeks",
+     "presentation at which delivering before chemotherapy is reasonable"
+    ],
+    [
+     "36 weeks",
+     "no chemotherapy at or after this; deliver electively"
+    ],
+    [
+     "13–24 weeks",
+     "second trimester as defined in the recommendation"
     ]
    ],
    "recs": [
-    "dp-1",
-    "dp-2",
-    "dp-3",
-    "dp-4",
-    "dp-5",
-    "dp-6",
-    "store-1",
-    "store-2",
-    "store-3",
-    "key-1",
-    "key-8",
-    "key-9"
+    "dx-3",
+    "dx-4",
+    "dx-5",
+    "dx-6",
+    "dx-7",
+    "dx-8"
    ],
    "pitfalls": [
-    "The 8-year period runs from the last patient contact, not from the date of the test.",
-    "The paper is internally inconsistent here. The storage section says results are kept for at least 8 years (store-1), but the key recommendations say POCT results must be 'retained permanently' in the record and labelled as POCT (key-4). Know both, and quote whichever fits the question."
+    "The first-trimester recommendation is to discuss termination (2C), not to mandate it.",
+    "Beyond 32 weeks the guideline says delivery before chemotherapy 'may be reasonable' (2C). At or beyond 36 weeks, avoiding chemotherapy and delivering electively is 1C."
    ],
-   "hook": "Patients 8, paperwork 5.",
+   "hook": "1st: discuss termination. 2nd: treat. 24–32: weigh it up. >32: consider delivering first. ≥36: no chemo, deliver.",
    "selfTest": [
     {
-     "q": "How long should POCT patient results be retained?",
-     "a": "At least 8 years after the last patient contact (1B)."
+     "q": "A woman presents with AML at 34 weeks. What does the guideline suggest?",
+     "a": "It may be reasonable to deliver before starting chemotherapy (beyond 32 weeks, 2C)."
     },
     {
-     "q": "How long should training and competency records be kept?",
-     "a": "At least 5 years (1B)."
+     "q": "Why should chemotherapy be avoided at or after 36 weeks?",
+     "a": "Spontaneous delivery is increasingly likely before marrow recovery. Elective delivery is recommended instead (1C)."
+    },
+    {
+     "q": "What is fetal survival after delivery at ≥28 and ≥32 weeks?",
+     "a": "More than 90% and more than 95% respectively, in most large centres."
+    }
+   ]
+  },
+  {
+   "id": "amlp-chemo",
+   "domain": "Haemato-Oncology",
+   "name": "Chemotherapy, teratogenicity and drug choice",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "order": 2,
+   "pages": [
+    4,
+    5
+   ],
+   "why": "Which anthracycline, which schedule and how to dose are the practical decisions, and teratogenic risk is what worries patients most.",
+   "keyPoints": [
+    "If induction of labour is not yet possible, offer **daunorubicin 60 mg/m²/day IV on days 1, 3 and 5** plus **cytarabine 100 mg/m² 12-hourly IV push on days 1–10** (the UK '3 + 10').",
+    "There are **no data to support higher-dose daunorubicin (90 mg/m²)** in pregnancy, so it is **not recommended**.",
+    "Dose on **actual body weight**, adjusting for weight gain. The increased blood volume and renal clearance in pregnancy may reduce drug exposure (AUC).",
+    "Teratogenic risk is **lower than predicted from animal data**. **First-trimester** chemotherapy carries a **10–20% risk of major malformation**, lower with a **single agent** than with combinations.",
+    "**Anthracyclines:** most malformations follow first-trimester exposure, **especially weeks 2–8**. Prefer **daunorubicin or doxorubicin over idarubicin**, which is **more lipophilic** and crosses the placenta more. **Transient neonatal cardiomyopathy** has been reported with idarubicin, but not doxorubicin. Serial fetal echo may help monitor for cardiotoxicity.",
+    "**Cytarabine** is an antimetabolite. **Limb malformations** have followed first-trimester use. Transient cytopenias, intrauterine death, growth restriction and neonatal death from sepsis have been reported in all trimesters, but the risk is relatively small.",
+    "**Hydroxycarbamide:** avoid, except with **WBC >100 × 10⁹/l** where early count control may improve outcome.",
+    "General chemotherapy toxicities (e.g. sepsis) are similar to those outside pregnancy. Teratogenicity is the specific concern."
+   ],
+   "numbers": [
+    [
+     "60 mg/m² d1,3,5",
+     "daunorubicin in 3 + 10"
+    ],
+    [
+     "100 mg/m² 12-hourly d1–10",
+     "cytarabine in 3 + 10"
+    ],
+    [
+     "10–20%",
+     "major malformation risk with first-trimester chemotherapy"
+    ],
+    [
+     "weeks 2–8",
+     "highest-risk window for anthracycline malformation"
+    ],
+    [
+     ">100 × 10⁹/l",
+     "WBC at which hydroxycarbamide may be justified"
+    ]
+   ],
+   "tables": [
+    {
+     "title": "Table II (condensed): Pregnancy outcomes after chemotherapy",
+     "page": 5,
+     "columns": [
+      "Study",
+      "Cases",
+      "Key outcome"
+     ],
+     "rows": [
+      [
+       "Cheghoum 2005",
+       "37 (AML 31)",
+       "15 spontaneous or therapeutic abortions; 23 healthy babies"
+      ],
+      [
+       "Turchi & Villasis 1988",
+       "28",
+       "24 infants (4 with reversible pathology); 2 materno-fetal deaths"
+      ],
+      [
+       "Avilés & Niz 1988",
+       "23",
+       "5 mothers and fetuses died during induction; no malformations"
+      ],
+      [
+       "Reynoso 1987",
+       "58",
+       "50 live infants, 28 premature; 1 congenital anomaly"
+      ],
+      [
+       "Van Calsteren 2010",
+       "180 (18% haematological)",
+       "More preterm labour (11.8%) and small-for-gestational-age (24.2%); no rise in malformations"
+      ]
+     ]
+    }
+   ],
+   "recs": [
+    "chemo-1",
+    "chemo-2",
+    "chemo-3"
+   ],
+   "pitfalls": [
+    "Idarubicin is the anthracycline to avoid in pregnancy: it is more lipophilic and has been linked to transient neonatal cardiomyopathy.",
+    "Daunorubicin 90 mg/m² is not recommended in pregnancy.",
+    "Dose on actual, not ideal, body weight, and re-adjust as weight changes."
+   ],
+   "hook": "Dauno not Ida, 60 not 90, real weight not ideal.",
+   "selfTest": [
+    {
+     "q": "Why is daunorubicin preferred to idarubicin in pregnancy?",
+     "a": "Idarubicin is more lipophilic, so more crosses the placenta, and transient neonatal cardiomyopathy has been reported with it."
+    },
+    {
+     "q": "What is the major malformation risk from first-trimester chemotherapy?",
+     "a": "About 10–20%, lower with a single agent than with a combination."
+    }
+   ]
+  },
+  {
+   "id": "amlp-supportive",
+   "domain": "Haemato-Oncology",
+   "name": "Monitoring, sepsis and supportive care",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "order": 3,
+   "pages": [
+    5,
+    6
+   ],
+   "why": "Sepsis is the leading direct cause of maternal death, and many usual neutropenic drugs are unsafe in pregnancy.",
+   "keyPoints": [
+    "During chemotherapy: regular obstetric haematology review with **fortnightly ultrasound scans** for growth and fetal wellbeing, and an **antenatal anaesthetic review**.",
+    "In 2006–08, **sepsis became the leading cause of direct maternal death in the UK**, with group A streptococcus causing up to 13 deaths a year. Severe sepsis with organ dysfunction has **20–40% mortality, rising to 60% with septic shock**. Signs can be atypical in pregnancy.",
+    "**PPROM with myelosuppression: expedite delivery**, whatever the gestation, because of maternal sepsis risk. At **28–34 weeks without myelosuppression**, delivery is still preferred, but a **48-hour delay for corticosteroids** may be considered.",
+    "**Antiemetics:** first line is **cyclizine or promethazine** (antihistamines, UKTIS). Second line is prochlorperazine or metoclopramide (risk of maternal dystonia). Use **ondansetron** if both fail.",
+    "**Safe antibiotics:** penicillins, erythromycin, metronidazole and cephalosporins. **If sepsis is suspected**, clindamycin, piperacillin–tazobactam, carbapenems and gentamicin can all be used (limited data on aminoglycosides).",
+    "**Avoid:** **co-amoxiclav (Augmentin)**, because of the risk of **neonatal necrotising enterocolitis**, and **quinolones, tetracyclines and sulphonamides**.",
+    "**Antifungals:** **amphotericin B** has the most experience, with no reported teratogenicity. **Liposomal or lipid-complex** forms are preferred (less nephrotoxicity and fewer infusion reactions). Azoles are teratogenic in animals: posaconazole, caspofungin and itraconazole are FDA category C, and fluconazole is category D, although fluconazole is used at <150 mg/day.",
+    "**Blood products:** **CMV-negative irrespective of CMV serostatus**, to prevent congenital CMV, but **not needed during labour**. In an emergency, use standard leucodepleted products."
+   ],
+   "numbers": [
+    [
+     "fortnightly",
+     "growth and wellbeing ultrasound during chemotherapy"
+    ],
+    [
+     "20–40% → 60%",
+     "mortality of severe sepsis → septic shock in pregnancy"
+    ],
+    [
+     "28–34 weeks",
+     "PPROM without myelosuppression: deliver, but steroids may justify a 48 h delay"
+    ],
+    [
+     "<150 mg/day",
+     "fluconazole dose at which it is reasonably widely used"
+    ]
+   ],
+   "recs": [
+    "sup-1",
+    "sup-2",
+    "sup-3"
+   ],
+   "pitfalls": [
+    "Co-amoxiclav (Augmentin) is avoided because of neonatal necrotising enterocolitis, even though amoxicillin itself is safe.",
+    "CMV-negative products are recommended even for CMV-seropositive women, but are not required during labour.",
+    "The summary on the first page omits Augmentin from the drugs to avoid, but the full recommendation (p6) includes it."
+   ],
+   "hook": "Antibiotics to avoid in pregnancy: no 'QATS' (Quinolones, Augmentin, Tetracyclines, Sulphonamides).",
+   "selfTest": [
+    {
+     "q": "Which antibiotics should be avoided in pregnant women with AML, and why is co-amoxiclav on the list?",
+     "a": "Quinolones, co-amoxiclav (Augmentin), tetracyclines and sulphonamides (1B). Co-amoxiclav raises the risk of neonatal necrotising enterocolitis."
+    },
+    {
+     "q": "What is the antifungal of choice in pregnancy?",
+     "a": "Amphotericin B, preferably a liposomal or lipid formulation (2C)."
+    },
+    {
+     "q": "A neutropenic pregnant woman on chemotherapy has PPROM at 30 weeks. What should happen?",
+     "a": "Expedite delivery because of the maternal sepsis risk, and give antibiotics during and after membrane rupture and delivery."
+    }
+   ]
+  },
+  {
+   "id": "amlp-delivery",
+   "domain": "Haemato-Oncology",
+   "name": "Planning delivery, anaesthesia and the third stage",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "order": 4,
+   "pages": [
+    6,
+    7
+   ],
+   "why": "Timing delivery around the nadir and choosing anaesthesia by the blood count prevents neonatal myelosuppression, maternal bleeding and infection.",
+   "keyPoints": [
+    "**Plan delivery** as soon as fetal maturity allows, but **avoid the maternal nadir (usually 2–3 weeks after treatment)**. Aim for **≥3 weeks after chemotherapy**, so maternal counts are rising and the fetus has had time to clear drugs via the placenta. Preterm babies clear drugs poorly.",
+    "**Vaginal delivery is preferred** (less infection, quicker recovery), so **induction of labour** is usually advised. **Caesarean section only for obstetric indications.** If prostin fails, a rest period and then repeat induction can be considered.",
+    "The risk of neonatal myelosuppression is low, so **fetal scalp sampling, scalp electrodes, ventouse and forceps are not contraindicated**.",
+    "**No epidural** if **WBC <1 × 10⁹/l or platelets <80 × 10⁹/l** (risk of haematoma and infection). Use pethidine or diamorphine instead. **Avoid IM injections if platelets <50 × 10⁹/l.**",
+    "Caesarean section in a neutropenic or thrombocytopenic woman should be under **general anaesthesia**, not a regional block. If **platelets <50 × 10⁹/l**, consultant haematology involvement is essential. Give IV access and **antibiotic prophylaxis** during and after membrane rupture and delivery.",
+    "**Dexamethasone or betamethasone** if preterm delivery is anticipated at **24–35 weeks**: give over **48 h within the week before delivery**. This reduces respiratory distress syndrome, intraventricular haemorrhage, necrotising enterocolitis and cerebral palsy.",
+    "**Magnesium sulphate** in the **24 h before delivery if before 30 weeks** reduces cerebral palsy.",
+    "**Postpartum haemorrhage risk is increased.** Use active management of the third stage: **oxytocin 10 iu** with the anterior shoulder or after birth, before cord clamping. Consider a **Syntocinon infusion of 20 iu in 500 ml over 4 h**. Escalate early to carboprost, theatre, balloon tamponade or a B-Lynch suture.",
+    "**RhD-negative women:** standard anti-D. If **platelets <30 × 10⁹/l**, give anti-D **SC or IV** where a suitable product exists. Follow BCSH guidance if RhD-positive platelets are given."
+   ],
+   "numbers": [
+    [
+     "≥3 weeks",
+     "after chemotherapy for planned delivery"
+    ],
+    [
+     "2–3 weeks",
+     "usual maternal nadir after treatment"
+    ],
+    [
+     "<80 × 10⁹/l plt or <1 × 10⁹/l WBC",
+     "no epidural"
+    ],
+    [
+     "<50 × 10⁹/l",
+     "platelets: avoid IM injections; consultant haematologist for caesarean section"
+    ],
+    [
+     "24–35 weeks, over 48 h",
+     "antenatal corticosteroids"
+    ],
+    [
+     "<30 weeks, 24 h before",
+     "magnesium sulphate"
+    ],
+    [
+     "10 iu; 20 iu/500 ml over 4 h",
+     "oxytocin bolus; Syntocinon infusion"
+    ],
+    [
+     "<30 × 10⁹/l",
+     "platelets: give anti-D SC or IV, not IM"
+    ]
+   ],
+   "recs": [
+    "del-1",
+    "del-2",
+    "del-3",
+    "del-4",
+    "del-5",
+    "del-6",
+    "del-7"
+   ],
+   "pitfalls": [
+    "Caesarean section is not the default in leukaemia. It is reserved for obstetric indications (2C).",
+    "Instrumental delivery and fetal scalp sampling are not contraindicated.",
+    "Keep the platelet thresholds apart: 80 for epidural, 50 for IM injections and caesarean section planning, 30 for the anti-D route."
+   ],
+   "hook": "Deliver three weeks after chemotherapy. Platelet cut-offs: 80 for an epidural, 50 for an IM injection, 30 for the anti-D route.",
+   "selfTest": [
+    {
+     "q": "When should delivery ideally be timed after chemotherapy, and why?",
+     "a": "At least 3 weeks afterwards (1C), to avoid the maternal nadir and allow fetal drug clearance via the placenta, minimising neonatal myelosuppression."
+    },
+    {
+     "q": "Below what counts should epidural analgesia be avoided?",
+     "a": "Platelets <80 × 10⁹/l and/or WBC <1 × 10⁹/l (1C)."
+    },
+    {
+     "q": "When is magnesium sulphate given, and for what benefit?",
+     "a": "In the 24 h before delivery if before 30 weeks (1A), to reduce cerebral palsy."
+    }
+   ]
+  },
+  {
+   "id": "amlp-postdelivery",
+   "domain": "Haemato-Oncology",
+   "name": "After delivery: consolidation, VTE, breastfeeding and the baby",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "order": 5,
+   "pages": [
+    7,
+    8
+   ],
+   "why": "After delivery, AML treatment continues as for any patient, but the postnatal period brings VTE risk and breastfeeding questions.",
+   "keyPoints": [
+    "Plan **consolidation as soon as feasible**, as for non-pregnant patients, based on remission status, prognostic risk and cycles already given.",
+    "**Avoid separating mother and baby**, especially in the first postnatal days. This may influence the timing of chemotherapy.",
+    "**VTE risk is high**, especially in the **first 10 days** after delivery. Assess risk at delivery. Start **LMWH 4 h after delivery if platelets >50 × 10⁹/l**, and continue for **10 days or 6 weeks** depending on risk (RCOG).",
+    "**Breastfeeding is not recommended** during chemotherapy and for **at least 2 weeks after** it finishes. Follow local policies on lactation suppression, menstrual suppression and contraception.",
+    "**Neonatal follow-up:** most babies are born at or near term with little morbidity. Consider a **postnatal echocardiogram** if cardiotoxic drugs were given (reassuring, though unproven). Long-term growth problems are unlikely, but neurocognitive effects cannot be quantified, so offer follow-up in early infancy."
+   ],
+   "numbers": [
+    [
+     "4 h",
+     "after delivery: start LMWH (if platelets >50 × 10⁹/l)"
+    ],
+    [
+     "10 days or 6 weeks",
+     "LMWH duration by risk"
+    ],
+    [
+     "≥2 weeks",
+     "after finishing chemotherapy before breastfeeding"
+    ]
+   ],
+   "pitfalls": [
+    "LMWH needs platelets >50 × 10⁹/l.",
+    "The 2-week breastfeeding restriction runs from the end of chemotherapy, not from delivery."
+   ],
+   "hook": "4 hours, 50 platelets, 10 days or 6 weeks. And no breastfeeding until 2 weeks after the last chemo.",
+   "selfTest": [
+    {
+     "q": "When should postnatal LMWH start, and with what platelet threshold?",
+     "a": "4 h after delivery, provided platelets are >50 × 10⁹/l, for 10 days or 6 weeks depending on risk."
+    },
+    {
+     "q": "When can a woman treated for AML breastfeed?",
+     "a": "Not during chemotherapy, and not until at least 2 weeks after it finishes."
     }
    ]
   }
@@ -3867,6 +6258,363 @@ window.PREPARE_CONTENT = {
    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
    "topicId": "pmbcl-relapse",
    "recId": "rel-2"
+  },
+  {
+   "id": "q_amlp_01",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "AML presenting in the late second trimester",
+   "stem": "A 29-year-old woman at 26 weeks gestation is diagnosed with AML (normal karyotype, NPM1-mutated). She is clinically well. She asks whether she should be delivered before starting treatment.\n\nAccording to the BCSH guideline on AML in pregnancy, what is the most appropriate approach?",
+   "options": [
+    "Deliver by caesarean section now, then start induction chemotherapy",
+    "Delay chemotherapy until 32 weeks, then deliver and treat",
+    "Recommend termination of pregnancy before chemotherapy",
+    "Start induction chemotherapy without delay and continue the pregnancy, with any change in delivery timing decided by the MDT",
+    "Give hydroxycarbamide until 36 weeks, then deliver and give definitive treatment"
+   ],
+   "correct": 3,
+   "explanation": "Between 24 and 28 weeks the fetal risks of prematurity are high, and chemotherapy appears to carry a low fetal risk. Delivery is therefore not usually advised and treatment should not be delayed (treat without delay, 1B). Between 24 and 32 weeks, the risks of chemotherapy exposure must be balanced against prematurity (1C), and decisions to delay delivery to a critical gestation (e.g. 26 weeks) should be taken by the MDT. Termination is discussed for first-trimester diagnoses. Delivery before chemotherapy is considered beyond 32 weeks. Hydroxycarbamide is avoided except with WBC >100 × 10⁹/l.",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.) • Issues of management in the second and third trimesters",
+   "evidenceGrade": "1B/1C",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "topicId": "amlp-gestation",
+   "recId": "dx-6"
+  },
+  {
+   "id": "q_amlp_02",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Choice of induction regimen in pregnancy",
+   "stem": "A woman at 20 weeks gestation is starting induction for newly diagnosed AML. She has gained 6 kg since booking.\n\nWhich induction plan is recommended?",
+   "options": [
+    "Daunorubicin 60 mg/m² d1,3,5 with cytarabine 100 mg/m² 12-hourly d1–10, dosed on current actual body weight",
+    "Idarubicin 12 mg/m² d1–3 with cytarabine 100 mg/m² CI d1–7, dosed on ideal body weight",
+    "Daunorubicin 90 mg/m² d1,3,5 with cytarabine, dosed on booking weight",
+    "Azacitidine plus venetoclax to avoid anthracycline exposure",
+    "Single-agent cytarabine until delivery"
+   ],
+   "correct": 0,
+   "explanation": "The BCSH guideline recommends standard daunorubicin and cytarabine '3 + 10' (daunorubicin 60 mg/m² d1,3,5; cytarabine 100 mg/m² 12-hourly d1–10) (1B), dosed on actual body weight with adjustments for weight change (1C). There are no data supporting daunorubicin 90 mg/m² in pregnancy. Idarubicin is more lipophilic, crosses the placenta more readily, and has been associated with transient neonatal cardiomyopathy.",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.) • Chemotherapy and complications",
+   "evidenceGrade": "1B",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "topicId": "amlp-chemo",
+   "recId": "chemo-2"
+  },
+  {
+   "id": "q_amlp_03",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Neutropenic fever in pregnancy",
+   "stem": "A woman at 23 weeks gestation develops neutropenic fever after induction for AML. She is haemodynamically stable. The ward pharmacist asks which empirical antibiotic plan avoids drugs the BCSH guideline advises against in pregnancy.",
+   "options": [
+    "Co-amoxiclav plus gentamicin",
+    "Ciprofloxacin plus metronidazole",
+    "Levofloxacin monotherapy",
+    "Doxycycline plus co-trimoxazole",
+    "Piperacillin–tazobactam (with gentamicin if needed)"
+   ],
+   "correct": 4,
+   "explanation": "Penicillins, erythromycin, metronidazole and cephalosporins are safe. If sepsis is suspected, clindamycin, piperacillin–tazobactam, carbapenems and gentamicin can all be used (relatively limited data for aminoglycosides). Quinolones, Augmentin (co-amoxiclav, because of neonatal necrotising enterocolitis), tetracyclines and sulphonamides should be avoided (1B).",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.) • Supportive therapies in pregnancy: antibiotics",
+   "evidenceGrade": "1B",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "topicId": "amlp-supportive",
+   "recId": "sup-1"
+  },
+  {
+   "id": "q_amlp_04",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Analgesia for labour in AML",
+   "stem": "A woman with AML in remission after two cycles of chemotherapy is being induced at 37 weeks. Her counts are shown below.\n\nWhich statement about her intrapartum care is correct?\n\nInvestigations:\nHb 92 g/L\nWBC 2.4 × 10⁹/l (neutrophils 1.1)\nPlatelets 45 × 10⁹/l",
+   "options": [
+    "Epidural analgesia is appropriate because her neutrophils are recovering",
+    "Caesarean section is indicated because of the leukaemia",
+    "Epidural analgesia should be avoided; pethidine or diamorphine can be used",
+    "Fetal scalp electrodes and forceps are contraindicated",
+    "Intramuscular injections are safe at this platelet count"
+   ],
+   "correct": 2,
+   "explanation": "Epidural analgesia should be avoided if platelets are <80 × 10⁹/l and/or WBC <1 × 10⁹/l (1C). Here the platelets are 45 × 10⁹/l, so use alternatives such as pethidine or diamorphine. IM injections should be avoided if platelets are <50 × 10⁹/l. Elective caesarean section is only for obstetric indications (2C). Because neonatal myelosuppression risk is low, fetal scalp sampling and electrodes, ventouse and forceps are not contraindicated.",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.) • Preparation for and management of delivery",
+   "evidenceGrade": "1C",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "topicId": "amlp-delivery",
+   "recId": "del-5"
+  },
+  {
+   "id": "q_amllab_01",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Turnaround standard for suspected APL",
+   "stem": "A 41-year-old man presents with pancytopenia, a coagulopathy, and abundant hypergranular promyelocytes with multiple Auer rods on the film.\n\nAccording to the BSH good practice paper on AML laboratory testing, what is the turnaround standard for PML::RARA testing?",
+   "options": [
+    "Within 24 hours of sample receipt",
+    "Within 72 hours of sample receipt",
+    "Within 3 working days with the NGS panel",
+    "Within 7 days with the full karyotype",
+    "Within 14 days with the AML NGS panel"
+   ],
+   "correct": 0,
+   "explanation": "Where indicated, PML::RARA testing must be completed within 24 hours of sample receipt (FISH turnaround 1 day; RT-PCR 3 days). Rearrangements cryptic to both karyotype and FISH need molecular characterisation within 72 h if suspicion persists. CBF lesions are 72 h, FLT3 and NPM1 3 days, karyotype 7 days, and NGS 14 days.",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.) • Genetics recommendations",
+   "evidenceGrade": "Good practice (ungraded)",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "topicId": "amllab-genetics",
+   "recId": "gen-2"
+  },
+  {
+   "id": "q_amllab_02",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Interpreting a diagnostic AML flow report",
+   "stem": "A new AML diagnosis has favourable-risk cytogenetics. The team are considering 7 + 3 with gemtuzumab ozogamicin. The flow report gives the blast percentage and lineage but no comment on CD33.\n\nWhat does the BSH guidance say?",
+   "options": [
+    "CD33 status is only needed at relapse",
+    "Diagnostic reports should record whether AML cells are CD33 positive; GO can work even with weak or partial CD33",
+    "GO is contraindicated unless >90% of blasts are strongly CD33 positive",
+    "CD33 should be inferred from the karyotype",
+    "CD123 rather than CD33 determines GO eligibility"
+   ],
+   "correct": 1,
+   "explanation": "Treatment authorisation for GO requires CD33 positivity, so all diagnostic and relapse reports should state clearly whether blasts are CD33 positive (flow recommendation 2). GO can be effective with partial or weak CD33 positivity, as seen in CBF AML. Laboratories need validated thresholds and should take part in EQA (UK NEQAS Leukaemia Immunophenotyping Part 1). CD123 is relevant for tagraxofusp in BPDCN.",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.) • Flow cytometry recommendations",
+   "evidenceGrade": "Good practice (ungraded)",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "topicId": "amllab-flow",
+   "recId": "flow-2"
+  },
+  {
+   "id": "q_amllab_03",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Blast thresholds under different classifications",
+   "stem": "A marrow shows 14% myeloblasts with an NPM1 mutation and no other abnormality.\n\nWhich statement is correct?",
+   "options": [
+    "This is MDS under both WHO 2022 and ICC 2022",
+    "MDS/AML under ICC because blasts are 10–19%",
+    "AML under WHO only if blasts reach 20%",
+    "AML under WHO 2022 (no blast cut-off for AML with defining genetic abnormalities) and AML under ICC 2022 (≥10% blasts)",
+    "AML only if CD34 is positive"
+   ],
+   "correct": 3,
+   "explanation": "In WHO 2022, a ≥20% blast count is required only for AML without defining genetic abnormalities (DGA). AML with DGA (e.g. NPM1) has no specific cut-off, except BCR::ABL1 and CEBPA. The ICC uses ≥10% for AML with DGA and reserves MDS/AML (10–19%) for cases without DGA.",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.) • Morphology",
+   "evidenceGrade": "Classification",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "topicId": "amllab-morphology",
+   "recId": null
+  },
+  {
+   "id": "q_amllab_04",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Suspected germline variant on a somatic panel",
+   "stem": "A 38-year-old woman with AML has a RUNX1 variant at 48% VAF on the diagnostic NGS panel. Her mother had \"low platelets\" and her uncle died of MDS. Her sibling is being HLA-typed as a potential donor.\n\nWhat is the most appropriate next step?",
+   "options": [
+    "Report the variant as somatic and proceed with the sibling donor",
+    "Repeat NGS on peripheral blood in remission and proceed if the variant persists",
+    "Test the sibling's marrow for AML",
+    "Ignore it: RUNX1 is not a germline predisposition gene",
+    "Highlight a suspected germline finding in the report and confirm on cultured skin fibroblasts, with Clinical Genetics input, before using a related donor"
+   ],
+   "correct": 4,
+   "explanation": "Driver variants found by somatic-only testing may be germline. RUNX1 is one of the high-actionability genes (with CEBPA, DDX41, ANKRD26, ETV6 and GATA2). A suspected germline finding must be clearly highlighted in the report (gen-6). Confirmation needs cultured skin fibroblasts from a skin biopsy, with a detailed family history and Clinical Genetics referral. Familial predisposition matters especially when choosing a related donor. A remission blood sample cannot prove germline status.",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.) • Genetics: germline predisposition",
+   "evidenceGrade": "Good practice (ungraded)",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "topicId": "amllab-germline-mrd",
+   "recId": "gen-6"
+  },
+  {
+   "id": "q_amllab_05",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "KMT2A testing strategy",
+   "stem": "A diagnostic AML sample has a normal-looking karyotype, and FLT3, NPM1 and CBF tests are negative.\n\nWhich approach to KMT2A testing does the BSH recommend?",
+   "options": [
+    "KMT2A testing is unnecessary if the karyotype is normal",
+    "Partner-agnostic break-apart FISH, optionally with an RNA NGS fusion panel, then identification of the partner if positive",
+    "RT-PCR for MLLT3::KMT2A only",
+    "NGS DNA panel for KMT2A point mutations",
+    "Wait for whole genome sequencing at 42 days"
+   ],
+   "correct": 1,
+   "explanation": "KMT2A rearrangements may be cryptic and are disease-defining, so testing is mandatory when no other defining genetic abnormality is found. Given the many fusion partners, a partner-agnostic approach (break-apart FISH) is essential, and an RNA NGS fusion panel may help. If a rearrangement is found, further testing should identify the partner for risk assignment (e.g. t(9;11) is intermediate, other KMT2A rearrangements adverse).",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.) • Genetics",
+   "evidenceGrade": "Good practice (ungraded)",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "topicId": "amllab-genetics",
+   "recId": null
+  },
+  {
+   "id": "q_eln_01",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "2022 ELN risk: NPM1 and FLT3-ITD",
+   "stem": "A 52-year-old man has AML with a normal karyotype, an NPM1 mutation and a FLT3-ITD with an allelic ratio of 0.3.\n\nWhat is his 2022 ELN genetic risk group?",
+   "options": [
+    "Favourable, because the FLT3-ITD allelic ratio is low",
+    "Adverse",
+    "Intermediate",
+    "Favourable if he receives midostaurin",
+    "Cannot be assigned without IDH1/2 status"
+   ],
+   "correct": 2,
+   "explanation": "In ELN 2022 the FLT3-ITD allelic ratio is no longer considered. Mutated NPM1 with FLT3-ITD is intermediate risk, whatever the ratio. The reasons are difficulty standardising the assay, the effect of midostaurin, and the growing role of MRD. (NPM1 without FLT3-ITD is favourable; NPM1 with adverse cytogenetics is adverse.) IDH1/IDH2 are not assigned a risk group.",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Table 6: 2022 ELN risk classification",
+   "evidenceGrade": "Consensus classification",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-risk",
+   "recId": null
+  },
+  {
+   "id": "q_eln_02",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "ICC hierarchy",
+   "stem": "A 67-year-old with no prior haematological history has 32% blasts, a complex karyotype, a TP53 mutation (VAF 41%) and an SRSF2 mutation.\n\nWhat is the ICC 2022 diagnosis?",
+   "options": [
+    "AML with myelodysplasia-related gene mutations",
+    "AML with myelodysplasia-related cytogenetic abnormalities",
+    "MDS/AML with mutated TP53",
+    "AML, not otherwise specified",
+    "AML with mutated TP53"
+   ],
+   "correct": 4,
+   "explanation": "The ICC is hierarchical. With no AML-defining recurrent genetic abnormality, AML with mutated TP53 (pathogenic TP53 at VAF ≥10%) outranks AML with myelodysplasia-related gene mutations (e.g. SRSF2), which outranks MR cytogenetics. With ≥20% blasts this is AML, not MDS/AML (10–19%).",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Classification (Figure 1, Table 1)",
+   "evidenceGrade": "Consensus classification",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-classification",
+   "recId": null
+  },
+  {
+   "id": "q_eln_03",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Response category after induction",
+   "stem": "A patient with AML has a marrow on day 35 after 7 + 3 showing 2% blasts with no circulating blasts. No G-CSF or transfusions have been given in the past 10 days.\n\nWhat is the ELN 2022 response category?\n\nInvestigations:\nANC 0.7 × 10⁹/L\nPlatelets 62 × 10⁹/L\nHb 92 g/L (no transfusion)",
+   "options": [
+    "CR",
+    "CRh",
+    "CRi",
+    "MLFS",
+    "PR"
+   ],
+   "correct": 1,
+   "explanation": "All of CR, CRh and CRi need marrow blasts <5%, no circulating blasts and no extramedullary disease. CR needs ANC ≥1.0 and platelets ≥100 × 10⁹/L. CRh needs partial recovery: ANC ≥0.5 and platelets ≥50. With ANC 0.7 and platelets 62, this meets CRh. If CRh is used, CRi is reserved for patients who do not meet CRh. Counts must be assessed without G-CSF or platelet transfusion in the preceding 7 days.",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Table 8: Response criteria",
+   "evidenceGrade": "Consensus definitions",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-response",
+   "recId": null
+  },
+  {
+   "id": "q_eln_04",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "NPM1 MRD after induction",
+   "stem": "A 45-year-old with NPM1-mutated AML (no FLT3-ITD, normal karyotype) is in CR after 2 cycles of intensive chemotherapy.\n\nAccording to ELN, which MRD finding would most support treatment modification such as allo-HCT?",
+   "options": [
+    "NPM1 transcripts detectable at <2% at the end of consolidation, stable on repeat",
+    "Persistent DNMT3A mutation at 8% VAF on NGS",
+    "MFC-MRD 0.05% after cycle 2",
+    "NPM1 MRD ≥2%, or failure to achieve a 3–4 log reduction after consolidation",
+    "A qPCR Ct of 41 in all 3 replicates"
+   ],
+   "correct": 3,
+   "explanation": "Per ELN (Figure 2), molecular MRD ≥2% or failure to reduce mutant transcripts by 3–4 log after consolidation may prompt treatment changes such as allo-HCT. CR with MRD at low level (<2%) in NPM1 and CBF AML is treated as MRD negative. DNMT3A persistence reflects clonal haematopoiesis and is not MRD. MFC positivity is ≥0.1%. qPCR is negative if Ct ≥40 in ≥2 of 3 replicates.",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Monitoring of measurable residual disease",
+   "evidenceGrade": "Consensus",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-mrd",
+   "recId": "tx-2"
+  },
+  {
+   "id": "q_eln_05",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Choosing an intensive regimen by genotype",
+   "stem": "A 66-year-old fit man has AML 4 years after chemoradiotherapy for a head and neck cancer. Cytogenetics show −7 and del(5q). FLT3 and NPM1 are wild type.\n\nWhich induction is best supported by ELN 2022?",
+   "options": [
+    "7 + 3 with midostaurin",
+    "7 + 3 with gemtuzumab ozogamicin",
+    "CPX-351",
+    "Single-agent oral azacitidine",
+    "High-dose cytarabine 3 g/m² monotherapy"
+   ],
+   "correct": 2,
+   "explanation": "CPX-351 (liposomal daunorubicin and cytarabine) improved response and OS (5-year 18% vs 10%) over 7 + 3 in patients aged 60–75 with therapy-related AML, AML after MDS or CMML, or de novo AML with MR cytogenetics. Midostaurin is for FLT3-mutated AML. GO benefit is limited to favourable or intermediate cytogenetics. Oral azacitidine is maintenance, not induction.",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Therapy: patients fit for intensive therapy",
+   "evidenceGrade": "Consensus (randomised phase 3 evidence)",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-intensive",
+   "recId": null
+  },
+  {
+   "id": "q_eln_06",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Venetoclax with azole prophylaxis",
+   "stem": "A 78-year-old is starting azacitidine plus venetoclax and will take posaconazole prophylaxis. Her WBC is 38 × 10⁹/L.\n\nWhich is correct?",
+   "options": [
+    "Start venetoclax 400 mg daily immediately; posaconazole has no interaction",
+    "Avoid antifungal prophylaxis altogether",
+    "Halve the azacitidine dose instead of adjusting venetoclax",
+    "Use venetoclax 600 mg because azacitidine induces CYP3A",
+    "Cytoreduce to WBC <25 × 10⁹/L, give TLS prophylaxis, and ramp venetoclax 10 → 20 → 50 → ≤100 mg because posaconazole is a strong CYP3A inhibitor"
+   ],
+   "correct": 4,
+   "explanation": "Before venetoclax-based therapy, reduce the WBC to <25 × 10⁹/L (e.g. hydroxyurea) with hydration, urate-lowering drugs and electrolyte monitoring, because of tumour lysis risk. Posaconazole is a strong CYP3A inhibitor: ramp venetoclax 10 mg d1, 20 mg d2, 50 mg d3, then 100 mg or less (VIALE used 50 mg). Moderate inhibitors such as ciprofloxacin need at least a 50% reduction. ELN also recommends posaconazole prophylaxis during induction.",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Table 11 and Table 12",
+   "evidenceGrade": "Consensus",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-nonintensive",
+   "recId": null
+  },
+  {
+   "id": "q_eln_07",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Transplant in first remission",
+   "stem": "A 40-year-old with AML with inv(16) CBFB::MYH11 and a KIT mutation is in CR after induction. Serial qPCR shows a good molecular response, with MRD-negative status at end of consolidation.\n\nWhat is the ELN recommendation on allo-HCT in CR1?",
+   "options": [
+    "Allo-HCT in CR1, because the KIT mutation makes this adverse risk",
+    "Allo-HCT generally not recommended in CR1, because this is favourable risk with adequate MRD clearance",
+    "Allo-HCT in CR1 for all CBF AML",
+    "Autologous HCT is mandatory",
+    "Allo-HCT after 2 more cycles of HiDAC to deepen MRD"
+   ],
+   "correct": 1,
+   "explanation": "Concurrent KIT and/or FLT3 mutations do not alter the favourable risk of CBF AML. For favourable-risk disease, allogeneic HCT in CR1 is generally not recommended except with inadequate MRD clearance. Allo-HCT is considered when predicted relapse risk exceeds 35–40% (adverse risk, or non-adverse with MRD persistence).",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Allogeneic HCT: indications",
+   "evidenceGrade": "Consensus",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-relapse-hct",
+   "recId": "hct-2"
+  },
+  {
+   "id": "q_eln_08",
+   "domain": "Haemato-Oncology",
+   "questionType": "MCQ",
+   "title": "Hyperleukocytosis",
+   "stem": "A 70-year-old with newly diagnosed monocytic AML has a WBC of 162 × 10⁹/L. He is alert, with normal oxygen saturations and no visual or neurological symptoms. Venetoclax-based therapy is planned.\n\nWhat is the most appropriate initial management?",
+   "options": [
+    "Hydroxyurea (up to 50–60 mg/kg/day) to bring the WBC below 25 × 10⁹/L, with TLS prophylaxis and a restrictive red cell transfusion policy",
+    "Urgent leukapheresis",
+    "Transfuse 2 units of red cells to correct Hb 78 g/L before cytoreduction",
+    "Start venetoclax 400 mg immediately",
+    "No action until symptoms of leukostasis appear"
+   ],
+   "correct": 0,
+   "explanation": "Hyperleukocytosis (WBC >100 × 10⁹/L) raises induction mortality through haemorrhage, TLS and leukostasis. Hydroxyurea up to 50–60 mg/kg/day is most commonly used to lower the WBC below 25 × 10⁹/L, particularly before HMA or venetoclax. Current evidence does not support leukapheresis in asymptomatic hyperleukocytosis. A restrictive red cell transfusion policy is advised.",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.) • Management of special situations",
+   "evidenceGrade": "Consensus",
+   "sourceResourceId": "eln_aml_2022",
+   "topicId": "eln-supportive",
+   "recId": "sc-1"
   }
  ],
  "flashcards": [
@@ -4078,6 +6826,490 @@ window.PREPARE_CONTENT = {
    "back": "Guideline Recommendation (Grade 1A):\n• Do NOT offer consolidative mediastinal radiotherapy for PMBCL patients with Deauville Score 1–3 (Complete Metabolic Response) on end-of-treatment PET-CT at 6 weeks.\n\nEvidence Base:\n• IELSG37 phase III trial showed 5-year Overall Survival of 99% in both observation and RT arms, sparing young patients long-term radiation-induced cardiovascular and secondary malignancy morbidity.",
    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
    "recId": "rt-1"
+  },
+  {
+   "id": "fc_amlp_01",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-diagnosis",
+   "topic": "Epidemiology, diagnosis and the MDT",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "How common is leukaemia in pregnancy, and what share of acute leukaemia in pregnancy is AML?",
+   "back": "About 1 in 75 000 to 1 in 100 000 pregnancies.\nAML ≈ two-thirds; ALL ≈ one-third.\n(APL in pregnancy is excluded from this guideline.)",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": null
+  },
+  {
+   "id": "fc_amlp_02",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-diagnosis",
+   "topic": "Epidemiology, diagnosis and the MDT",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Who should be in the MDT for AML in pregnancy, and which classification is used for diagnosis?",
+   "back": "Haematologists, obstetricians, neonatologists and anaesthetists (1C).\nDiagnose with the WHO classification, as for non-pregnant patients (1A).",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "dx-1"
+  },
+  {
+   "id": "fc_amlp_03",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-gestation",
+   "topic": "Decisions by gestation: termination, treatment or delivery",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "AML in pregnancy: what does the guideline advise at each stage of gestation?",
+   "back": "• 1st trimester: discuss elective termination (2C)\n• 2nd trimester (13–24 wk): consider induction and continue the pregnancy (2C)\n• 24–32 wk: balance fetal chemotherapy exposure against prematurity (1C)\n• >32 wk: may be reasonable to deliver before chemotherapy (2C)\n• ≥36 wk: avoid chemotherapy; elective delivery (1C)",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": null
+  },
+  {
+   "id": "fc_amlp_04",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-gestation",
+   "topic": "Decisions by gestation: termination, treatment or delivery",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Survival of a well fetus delivered at ≥28 weeks and at ≥32 weeks?",
+   "back": ">90% at ≥28 weeks; >95% at ≥32 weeks (most large centres).\nMinor neurocognitive impairment rises linearly as gestation falls below 36 weeks.",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": null
+  },
+  {
+   "id": "fc_amlp_05",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-chemo",
+   "topic": "Chemotherapy, teratogenicity and drug choice",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "What induction regimen and dosing basis are recommended for AML in pregnancy?",
+   "back": "Standard daunorubicin + cytarabine '3 + 10' (1B):\n• Daunorubicin 60 mg/m² IV d1, 3, 5\n• Cytarabine 100 mg/m² 12-hourly IV d1–10\nDose on actual body weight, adjusting for weight change (1C). Daunorubicin 90 mg/m² is not recommended.",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "chemo-2"
+  },
+  {
+   "id": "fc_amlp_06",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-chemo",
+   "topic": "Chemotherapy, teratogenicity and drug choice",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Which anthracycline should be avoided in pregnancy, and why?",
+   "back": "Idarubicin. It is more lipophilic (more placental transfer), and transient neonatal cardiomyopathy has been reported with it. Prefer daunorubicin or doxorubicin.\nMalformation risk is highest with exposure at 2–8 weeks.",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": null
+  },
+  {
+   "id": "fc_amlp_07",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-supportive",
+   "topic": "Monitoring, sepsis and supportive care",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Which antibiotics should be avoided during pregnancy in AML?",
+   "back": "Quinolones, Augmentin (co-amoxiclav), tetracyclines and sulphonamides (1B).\nCo-amoxiclav: risk of neonatal necrotising enterocolitis.\nSafe: penicillins, erythromycin, metronidazole, cephalosporins. If septic: clindamycin, piperacillin–tazobactam, carbapenems, gentamicin.",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "sup-1"
+  },
+  {
+   "id": "fc_amlp_08",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-supportive",
+   "topic": "Monitoring, sepsis and supportive care",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Antifungal and blood product choices for a pregnant woman receiving AML chemotherapy?",
+   "back": "Antifungal: amphotericin B, preferably liposomal or lipid formulations (2C). Azoles are teratogenic in animals.\nBlood: CMV-negative products whatever her CMV serostatus (1B), but not needed during labour. In an emergency, standard leucodepleted products.",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "sup-3"
+  },
+  {
+   "id": "fc_amlp_09",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-delivery",
+   "topic": "Planning delivery, anaesthesia and the third stage",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "When should delivery be planned after AML chemotherapy, and why?",
+   "back": "≥3 weeks after chemotherapy (1C), avoiding the maternal nadir (usually 2–3 weeks). This lets maternal counts recover and the fetus clear drugs via the placenta, reducing neonatal myelosuppression.\nInduction of labour is usually advised (2C). Caesarean section for obstetric indications only (2C).",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "del-3"
+  },
+  {
+   "id": "fc_amlp_10",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-delivery",
+   "topic": "Planning delivery, anaesthesia and the third stage",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Platelet and white cell thresholds for anaesthesia and injections at delivery in AML?",
+   "back": "• No epidural: platelets <80 × 10⁹/l and/or WBC <1 × 10⁹/l (1C)\n• No IM injections: platelets <50 × 10⁹/l\n• Caesarean section with platelets <50: consultant haematologist involved; use general anaesthesia if neutropenic or thrombocytopenic\n• Anti-D SC or IV if platelets <30 × 10⁹/l",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "del-5"
+  },
+  {
+   "id": "fc_amlp_11",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-delivery",
+   "topic": "Planning delivery, anaesthesia and the third stage",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Antenatal corticosteroids and magnesium sulphate: when?",
+   "back": "Corticosteroids (dexamethasone or betamethasone) if delivery is expected at 24–35 weeks, given over 48 h in the week before delivery (1A).\nMagnesium sulphate in the 24 h before delivery if before 30 weeks, to reduce cerebral palsy (1A).",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": "del-1"
+  },
+  {
+   "id": "fc_amlp_12",
+   "domain": "Haemato-Oncology",
+   "topicId": "amlp-postdelivery",
+   "topic": "After delivery: consolidation, VTE, breastfeeding and the baby",
+   "ref": "BCSH 2015 AML in pregnancy (Ali et al.)",
+   "front": "Postnatal thromboprophylaxis and breastfeeding advice after AML in pregnancy?",
+   "back": "LMWH 4 h after delivery if platelets >50 × 10⁹/l, for 10 days or 6 weeks depending on risk (RCOG).\nNo breastfeeding during chemotherapy or until ≥2 weeks after it finishes.",
+   "sourceResourceId": "bcsh_aml_pregnancy_2015",
+   "recId": null
+  },
+  {
+   "id": "fc_amllab_01",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-context",
+   "topic": "Why lab work-up changed: classification, new drugs and sampling",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "Which three NICE-approved drugs are used in first-line intensive AML treatment, and which laboratory result does each need?",
+   "back": "• Midostaurin: FLT3 mutation (fast turnaround)\n• CPX-351: myelodysplasia-related cytogenetics (or therapy-related history)\n• Gemtuzumab ozogamicin: CD33-positive, non-adverse karyotype",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": null
+  },
+  {
+   "id": "fc_amllab_02",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-morphology",
+   "topic": "Morphology, blast thresholds and AML-MR",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "Blast thresholds: WHO 2022 vs ICC 2022.",
+   "back": "WHO 2022: ≥20% needed only for AML without defining genetic abnormalities (DGA). No set cut-off for AML with DGA (except BCR::ABL1 and CEBPA).\nICC 2022: ≥10% for AML with DGA; MDS/AML for 10–19% blasts without DGA.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": null
+  },
+  {
+   "id": "fc_amllab_03",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-morphology",
+   "topic": "Morphology, blast thresholds and AML-MR",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "How many cells should be counted on blood and marrow films for AML (BSH Table 2)?",
+   "back": "≥200 leucocytes on blood films; 500 nucleated cells on marrow films.\n(The morphology recommendation itself says \"at least 200 nucleated cells examined\".)\nCount promonocytes as blast equivalents, but not abnormal monocytes.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": "morph-1"
+  },
+  {
+   "id": "fc_amllab_04",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-flow",
+   "topic": "Flow cytometry: panels, CD33, BPDCN and MFC-MRD",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "Typical flow immunophenotype of APL (t(15;17))?",
+   "back": "High side scatter; CD33+, CD13+, CD117+, MPO+; CD34−, HLA-DR−, CD11b−.\nNPM1-mutated AML can also be CD34−/HLA-DR− but usually has lower side scatter and may be monocytic.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": null
+  },
+  {
+   "id": "fc_amllab_05",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-flow",
+   "topic": "Flow cytometry: panels, CD33, BPDCN and MFC-MRD",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "BPDCN: key flow markers and what helps distinguish it from AML?",
+   "back": "Always CD123, CD4 and HLA-DR positive, often CD56. CD34 and CD13 negative in almost all cases.\nAML subtyping by flow should consider BPDCN (flow recommendation 3). CD123 is relevant for tagraxofusp.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": "flow-3"
+  },
+  {
+   "id": "fc_amllab_06",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-flow",
+   "topic": "Flow cytometry: panels, CD33, BPDCN and MFC-MRD",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "Flow cytometry turnaround times in AML (BSH)?",
+   "back": "Urgent: same working day if received before 3:30 pm.\nNon-urgent (including remission and MRD): processed same day or next morning, results in <2–3 working days.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": null
+  },
+  {
+   "id": "fc_amllab_07",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-genetics",
+   "topic": "Cytogenetics, FISH and molecular tests at diagnosis",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "AML genetics turnaround targets (BSH 2023)?",
+   "back": "• PML::RARA: 24 h when APL is suspected (cryptic cases by molecular testing in 72 h)\n• CBF lesions: 72 h\n• FLT3-ITD/TKD, NPM1, CBF FISH/PCR: 3 days\n• Full karyotype: 7 days\n• KMT2A FISH and NGS panel: 14 days",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": "gen-2"
+  },
+  {
+   "id": "fc_amllab_08",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-genetics",
+   "topic": "Cytogenetics, FISH and molecular tests at diagnosis",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "What should be done if AML karyotyping fails?",
+   "back": "SNP microarray, or FISH for del(5q), del(7q), monosomy 7 and del17p (TP53), to detect most myelodysplasia-related abnormalities.\nNote: FISH alone can miss multiple rare abnormalities and complex karyotype.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": null
+  },
+  {
+   "id": "fc_amllab_09",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-germline-mrd",
+   "topic": "Germline predisposition and molecular MRD",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "Which germline predisposition genes are \"high actionability\" in AML testing (BSH)?",
+   "back": "RUNX1, CEBPA, DDX41, ANKRD26, ETV6 and GATA2.\nFlag a suspected germline finding clearly in the report (gen-6). Confirm on cultured skin fibroblasts.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": "gen-6"
+  },
+  {
+   "id": "fc_amllab_10",
+   "domain": "Haemato-Oncology",
+   "topicId": "amllab-germline-mrd",
+   "topic": "Germline predisposition and molecular MRD",
+   "ref": "BSH 2023 AML laboratory testing (Mehta et al.)",
+   "front": "Molecular MRD in AML (BSH): which targets, and which sample is urgent?",
+   "back": "qPCR targets: NPM1, PML::RARA, CBF fusions and KMT2A fusions (turnaround 3–14 days).\nUrgent (3–7 days): NPM1 after course 2 (blood essential), a repeat after a concerning result, or suspected relapse.\nStore RNA at diagnosis; follow-up samples must reach the laboratory within 2 days.",
+   "sourceResourceId": "bsh_aml_lab_testing_2023",
+   "recId": "gen-5"
+  },
+  {
+   "id": "fc_eln_01",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-classification",
+   "topic": "ICC classification: blast thresholds and the genetic hierarchy",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ICC 2022: blast threshold for AML with recurrent genetic abnormalities, and the exception?",
+   "back": "≥10% blasts in marrow or blood. Exception: BCR::ABL1 needs ≥20% (10–19% = CML in accelerated phase).\nOther categories need ≥20%; 10–19% = MDS/AML.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_02",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-classification",
+   "topic": "ICC classification: blast thresholds and the genetic hierarchy",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "What is the ICC hierarchy for AML without a recurrent genetic abnormality?",
+   "back": "AML with mutated TP53 (VAF ≥10%) > AML with myelodysplasia-related gene mutations (ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2) > AML with MR cytogenetic abnormalities > AML NOS.\nTherapy-related, prior MDS and germline predisposition are qualifiers.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_03",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-classification",
+   "topic": "ICC classification: blast thresholds and the genetic hierarchy",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "How is CEBPA-mutated AML defined in ICC and ELN 2022?",
+   "back": "An in-frame mutation in the bZIP domain, mono- or biallelic. The biallelic requirement was dropped.\nIn-frame bZIP is present in 90% of biallelic and 35% of monoallelic cases. It is favourable risk.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_04",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-therapy-related-germline",
+   "topic": "Therapy-related AML and germline predisposition",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Alkylator vs topoisomerase II inhibitor therapy-related AML?",
+   "back": "Alkylator or radiation (≈75%): 5–7 year latency, MDS phase, −5/−7, complex karyotype, TP53.\nTopo II: 1–3 years, rarely MDS, balanced KMT2A (11q23.3), RUNX1 (21q22.1) or RARA (17q21.2) translocations.\nTherapy-related AML is 10–15% of AML; >90% have an abnormal karyotype.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_05",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-therapy-related-germline",
+   "topic": "Therapy-related AML and germline predisposition",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Why test early for germline predisposition in AML, and which carriers must not donate?",
+   "back": "Allo-HCT is often planned and relatives are preferred donors. Carriers of deleterious RUNX1 or CEBPA variants must not donate.\nConsider germline testing at any age (DDX41 causes AML in older adults).",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "dx-2"
+  },
+  {
+   "id": "fc_eln_06",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-workup",
+   "topic": "Diagnostic work-up: Table 4, immunophenotype and biobanking",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ELN diagnostic counting and karyotype standards?",
+   "back": "200 nucleated cells on blood smears; 500 on marrow smears.\n≥20 marrow metaphases to call a normal karyotype.\nCytogenetics in 5–7 days; actionable mutations (FLT3, IDH1/2, NPM1…) ideally in 3–5 days.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "tx-1"
+  },
+  {
+   "id": "fc_eln_07",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-risk",
+   "topic": "2022 ELN genetic risk classification",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "2022 ELN favourable-risk genetics?",
+   "back": "• t(8;21) RUNX1::RUNX1T1\n• inv(16)/t(16;16) CBFB::MYH11\n• Mutated NPM1 without FLT3-ITD\n• In-frame bZIP CEBPA\nConcurrent KIT or FLT3 does not change CBF risk. NPM1 with adverse cytogenetics is adverse.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_08",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-risk",
+   "topic": "2022 ELN genetic risk classification",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "2022 ELN intermediate-risk genetics?",
+   "back": "• Mutated NPM1 with FLT3-ITD\n• Wild-type NPM1 with FLT3-ITD (no adverse lesions)\n• t(9;11) MLLT3::KMT2A\n• Anything not favourable or adverse\nThe FLT3-ITD allelic ratio is no longer considered.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_09",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-risk",
+   "topic": "2022 ELN genetic risk classification",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Name the six main changes in ELN 2022 risk.",
+   "back": "1. FLT3-ITD allelic ratio dropped (all ITD intermediate)\n2. MR gene mutations now adverse\n3. NPM1 + adverse cytogenetics = adverse\n4. In-frame bZIP CEBPA (mono or bi) = favourable\n5. New adverse: t(3q26.2;v) MECOM and t(8;16) KAT6A::CREBBP\n6. Hyperdiploid karyotypes with trisomies only are no longer \"complex\"",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_10",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-mrd",
+   "topic": "Measurable residual disease: methods, thresholds and time points",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ELN MRD positivity thresholds: MFC, qPCR, MRD-LL and MRD relapse?",
+   "back": "• MFC: ≥0.1% of CD45+ cells with the target phenotype\n• qPCR: Ct <40 (negative if Ct ≥40 in ≥2 of 3 replicates)\n• MRD-LL <2% (NPM1 and CBF only) counts as negative\n• MRD relapse: negative → positive, or a ≥1 log10 rise from MRD-LL; confirm on a second sample",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "tx-2"
+  },
+  {
+   "id": "fc_eln_11",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-mrd",
+   "topic": "Measurable residual disease: methods, thresholds and time points",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Which mutations should not be used as NGS-MRD markers?",
+   "back": "Clonal haematopoiesis mutations (DNMT3A, TET2, ASXL1) and germline variants.\nNGS-MRD positivity is provisionally ≥0.1% VAF and is exploratory, not yet standardised.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_12",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-response",
+   "topic": "Response criteria and trial outcome measures",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Define CR, CRh and CRi (ELN 2022).",
+   "back": "All: marrow blasts <5%, no circulating blasts, no extramedullary disease.\n• CR: ANC ≥1.0, platelets ≥100 (× 10⁹/L)\n• CRh: ANC ≥0.5 and platelets ≥50\n• CRi: CR criteria except residual neutropenia (<1.0) or thrombocytopenia (<100), excluding patients who meet CRh\nNo G-CSF or platelet transfusion within 7 days. The Auer rod criterion was removed.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_13",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-response",
+   "topic": "Response criteria and trial outcome measures",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ELN definitions of refractory and relapsed AML?",
+   "back": "Refractory: no CR, CRh or CRi after 2 courses of intensive induction (or a landmark such as 180 days of less-intensive therapy).\nRelapse: marrow blasts ≥5%, blasts in ≥2 blood samples ≥1 week apart, or new extramedullary disease.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_14",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-intensive",
+   "topic": "Fit patients: induction, consolidation and maintenance",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Who gets CPX-351, and what was its 5-year survival benefit?",
+   "back": "Patients aged 60–75 with therapy-related AML, AML after MDS or CMML, or AML with MR cytogenetics.\n5-year OS 18% vs 10% with 7 + 3. Count recovery about 7 days slower; 30-day mortality 5.9% vs 10.6%.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_15",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-intensive",
+   "topic": "Fit patients: induction, consolidation and maintenance",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Gemtuzumab ozogamicin: indication, dose and main caution?",
+   "back": "CD33-positive AML with favourable or intermediate cytogenetics (greatest benefit in CBF AML).\n3 mg/m² (max 5 mg) d1, 4, 7 with 7 + 3 (or day 1 only).\nCaution: VOD/SOS. Consider omitting if allo-HCT is planned.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_16",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-intensive",
+   "topic": "Fit patients: induction, consolidation and maintenance",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ELN consolidation cytarabine dose, and the place of HiDAC?",
+   "back": "IDAC 1000–1500 mg/m² (500–1000 if ≥60 years) every 12 h d1–3, 3–4 cycles.\nHigh-dose 3000 mg/m² is discouraged: more toxic, with no survival gain.\nAllo-HCT if predicted relapse risk is >35–40%.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "hct-1"
+  },
+  {
+   "id": "fc_eln_17",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-nonintensive",
+   "topic": "Unfit patients: venetoclax, HMAs and ivosidenib",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Azacitidine + venetoclax vs azacitidine alone: key results?",
+   "back": "CR/CRi 66.4% vs 28.3%; median OS 14.7 vs 9.6 months. This is the standard for unfit or older patients.\nDecitabine + venetoclax appears similar. LDAC + venetoclax if an HMA cannot be given.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_18",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-nonintensive",
+   "topic": "Unfit patients: venetoclax, HMAs and ivosidenib",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "How is venetoclax adjusted with posaconazole and with ciprofloxacin?",
+   "back": "Strong CYP3A inhibitor (posaconazole): 10 → 20 → 50 mg, then 100 mg or less daily (VIALE used 50 mg).\nModerate CYP3A inhibitor (ciprofloxacin): reduce by at least 50% (ramp 50 → 100 → 200 mg).",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": null
+  },
+  {
+   "id": "fc_eln_19",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-relapse-hct",
+   "topic": "Relapsed and refractory AML and allogeneic HCT",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Gilteritinib in relapsed or refractory FLT3-mutated AML: key results?",
+   "back": "CR 21.1% vs 10.5%; median OS 9.3 vs 5.6 months vs salvage chemotherapy.\nAlso the preferred option for post-HCT relapse with an emergent FLT3 clone.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "tx-4"
+  },
+  {
+   "id": "fc_eln_20",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-relapse-hct",
+   "topic": "Relapsed and refractory AML and allogeneic HCT",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ELN allo-HCT in CR1: who and who not?",
+   "back": "Consider if relapse risk is >35–40%: adverse risk and most intermediate risk.\nFavourable risk: generally not, unless MRD clearance is inadequate.\nMAC beats RIC in patients aged 18–65 (BMT CTN 0901). Sorafenib maintenance for FLT3-mutated AML; SC azacitidine maintenance not recommended.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "hct-2"
+  },
+  {
+   "id": "fc_eln_21",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-supportive",
+   "topic": "Hyperleukocytosis, DIC, differentiation syndrome and supportive care",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "Hyperleukocytosis in AML: definition and management (ELN)?",
+   "back": "WBC >100 × 10⁹/L. Hydroxyurea up to 50–60 mg/kg/day to reach <25 × 10⁹/L (especially before HMA or venetoclax).\nLeukostasis is an emergency: rapid cytoreduction, restrictive red cell transfusion, possibly dexamethasone. No leukapheresis for asymptomatic patients.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "sc-1"
+  },
+  {
+   "id": "fc_eln_22",
+   "domain": "Haemato-Oncology",
+   "topicId": "eln-supportive",
+   "topic": "Hyperleukocytosis, DIC, differentiation syndrome and supportive care",
+   "ref": "ELN 2022 AML recommendations (Döhner et al.)",
+   "front": "ELN supportive care: prophylaxis and transfusion thresholds?",
+   "back": "Posaconazole antifungal prophylaxis during induction. Insufficient evidence for HSV prophylaxis; none for PJP.\nInfluenza and COVID-19 vaccination for all. G-CSF not routine.\nHb >8 g/dL; prophylactic platelets at <10 × 10⁹/L.",
+   "sourceResourceId": "eln_aml_2022",
+   "recId": "sc-5"
   }
  ]
 };

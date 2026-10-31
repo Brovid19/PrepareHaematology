@@ -1,0 +1,1054 @@
+{
+  "guideline": {
+    "id": "eln_aml_2022",
+    "title": "Diagnosis and management of AML in adults: 2022 recommendations from an international expert panel on behalf of the ELN",
+    "issuingBody": "European LeukemiaNet",
+    "year": 2022,
+    "category": "Malignant Haematology",
+    "order": 30,
+    "citation": "Döhner H, Wei AH, Appelbaum FR, Craddock C, DiNardo CD, Dombret H, et al. Blood. 2022;140(12):1345–1377.",
+    "url": "https://doi.org/10.1182/blood.2022016867",
+    "isVerified": true,
+    "pdf": "Blood_2022_Dohner_ELN_AML_recommendations.pdf",
+    "overview": "The 2022 European LeukemiaNet update covers AML in adults (APL excluded). It adopts the International Consensus Classification (≥10% blasts for genetically defined AML, the new MDS/AML category, and TP53 > myelodysplasia-related gene mutations > myelodysplasia-related cytogenetics). It revises the genetic risk groups (FLT3-ITD allelic ratio dropped; myelodysplasia-related gene mutations now adverse; in-frame bZIP CEBPA favourable). It also adds CRh and MRD-based response categories, gives MRD time points, and summarises intensive, non-intensive, relapse, transplant and supportive care. The panel's statements are expert consensus and are not graded. The 'recommendations' below are quoted directly from the text."
+  },
+  "recommendations": [
+    {
+      "id": "dx-1",
+      "group": "Diagnosis (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 5,
+      "text": "Conventional cytogenetic analysis is mandatory in the evaluation of AML."
+    },
+    {
+      "id": "dx-2",
+      "group": "Diagnosis (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 5,
+      "text": "Germline predisposition risk should be considered for all patients diagnosed with a hematopoietic malignancy regardless of age, because some germline predisposition alleles, like those in DDX41, can drive hematopoietic malignancies in older age."
+    },
+    {
+      "id": "dx-3",
+      "group": "Diagnosis (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 5,
+      "text": "For patients with mutant NPM1 and core-binding factor (CBF)AML, it is recommended to perform baseline molecular assessment by quantitative polymerase chain reaction (qPCR) or droplet digital PCR (dPCR) to facilitate MRD monitoring after treatment."
+    },
+    {
+      "id": "tx-1",
+      "group": "Therapy (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 15,
+      "text": "Results of genetic analyses should be available as rapidly as possible, preferably within 3 to 5 days, to identify therapeutically actionable targets (Table 4)."
+    },
+    {
+      "id": "tx-2",
+      "group": "Therapy (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 16,
+      "text": "In addition to baseline risk factors, assessment of MRD in CR (or CRh/CRi) is recommended for patients with nonadverse risk in first remission to inform consolidation treatment choice."
+    },
+    {
+      "id": "tx-3",
+      "group": "Therapy (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 19,
+      "text": "To identify patients suitable for ivosidenib at initial diagnosis, rapid IDH1 mutation screening in older patients with AML is recommended."
+    },
+    {
+      "id": "tx-4",
+      "group": "Therapy (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 19,
+      "text": "Therefore, molecular re-evaluation at relapse is important to identify patients who may be suitable for targeted salvage options."
+    },
+    {
+      "id": "hct-1",
+      "group": "Allogeneic HCT (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 21,
+      "text": "Allogeneic HCT should be considered when the relapse probability without the procedure is predicted to be >35% to 40%."
+    },
+    {
+      "id": "hct-2",
+      "group": "Allogeneic HCT (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 21,
+      "text": "For patients with favorable-risk disease, allogeneic HCT in CR1 is generally not recommended except for those with inadequate clearance of MRD."
+    },
+    {
+      "id": "hct-3",
+      "group": "Allogeneic HCT (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 21,
+      "text": "A randomized study of maintenance using subcutaneous azacitidine showed no benefit and is not recommended based on available evidence"
+    },
+    {
+      "id": "trial-1",
+      "group": "Response and trials (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 14,
+      "text": "We recommend broadening the definition of EFS to include CRh or CRi in response."
+    },
+    {
+      "id": "trial-2",
+      "group": "Response and trials (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 23,
+      "text": "It is recommended to enroll patients with AML onto clinical trials whenever a suitable trial opportunity is available."
+    },
+    {
+      "id": "sc-1",
+      "group": "Special situations and supportive care (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 26,
+      "text": "Although leukapheresis may be performed in parallel with chemotherapy in patients with leukostasis syndrome, current evidence does not support the use of leukapheresis in asymptomatic patients with hyperleukocytosis."
+    },
+    {
+      "id": "sc-2",
+      "group": "Special situations and supportive care (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 26,
+      "text": "There is good evidence to recommend antifungal prophylaxis with posaconazole during remission induction therapy, whereas there is not enough evidence from randomized trials on antiviral prophylaxis for herpes simplex virus in patients with acute leukemia, and no evidence for a beneficial effect of Pneumocystis jirovecii pneumonia prophylaxis."
+    },
+    {
+      "id": "sc-3",
+      "group": "Special situations and supportive care (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 26,
+      "text": "Vaccination for influenza and COVID-19 viral infections is recommended for all patients to reduce the risk of severe infections."
+    },
+    {
+      "id": "sc-4",
+      "group": "Special situations and supportive care (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 26,
+      "text": "The use of growth factors is not routinely recommended unless in individual patients (eg, in case of severe infections) or particular treatment settings (eg, to reduce the hematologic recovery times in consolidation cycles)."
+    },
+    {
+      "id": "sc-5",
+      "group": "Special situations and supportive care (quoted; ungraded consensus)",
+      "grade": null,
+      "page": 26,
+      "text": "Otherwise, it is generally accepted to keep the hemoglobin level above 8 g/dL, and a platelet count of <10 × 10⁹/L remains the trigger for prophylactic platelet transfusions."
+    }
+  ],
+  "topics": [
+    {
+      "id": "eln-classification",
+      "name": "ICC classification: blast thresholds and the genetic hierarchy",
+      "pages": [
+        2,
+        3,
+        4
+      ],
+      "why": "Classification is now genetics-first. Knowing which genetic lesion 'wins' and which blast threshold applies is core FRCPath material.",
+      "keyPoints": [
+        "AML arises from **serial acquisition of somatic mutations** in stem and progenitor cells. **Clonal haematopoiesis** is a common pre-malignant state that increases with age. **DNMT3A, TET2 and ASXL1** mutations tend to be early events, and **FLT3, NRAS and RUNX1** later ones.",
+        "**ICC 2022:** all recurrent genetic abnormalities define AML at **≥10% blasts** in marrow or blood, **except BCR::ABL1, which still needs ≥20%** to avoid overlap with CML in accelerated phase.",
+        "Other AML categories need **≥20%**. A new **MDS/AML** category covers **10–19% blasts** with defined genomic abnormalities. These patients should be eligible for MDS or AML trials and treatments.",
+        "**Hierarchy:** AML with recurrent genetic abnormalities first. Then **AML with mutated TP53** > **AML with myelodysplasia-related gene mutations** > **AML with myelodysplasia-related cytogenetic abnormalities** > AML NOS.",
+        "**AML with mutated TP53:** a pathogenic TP53 mutation at **VAF ≥10%**, with or without loss of the wild-type allele. Most have complex karyotypes, about half have no other AML mutations, and prognosis is very poor.",
+        "**Myelodysplasia-related genes (9):** **ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2**. These define the category **irrespective of prior MDS** and are adverse even in de novo AML. The category absorbs the former provisional 'AML with mutated RUNX1'.",
+        "**CEBPA:** only an **in-frame bZIP mutation** is required (mono- or biallelic). In-frame bZIP variants occur in **90% of biallelic** and **35% of monoallelic** cases.",
+        "**AML-MRC and therapy-related myeloid neoplasms are removed as entities.** **Dysplastic morphology lacks independent prognostic significance.** 'Therapy-related', 'progressed from MDS or MDS/MPN' (confirmed **>3 months** before) and 'germline predisposition' are now **diagnostic qualifiers**.",
+        "**Blast equivalents:** monoblasts and promonocytes (not abnormal monocytes) in monocytic AML, and **promyelocytes in APL** (PML::RARA or variant RARA).",
+        "A case with both a defining genetic abnormality and TP53 or MR mutations is classified by the **defining genetic abnormality**. Co-mutations affect risk, not diagnosis.",
+        "A history of **MPN** means accelerated (10–19%) or blast phase (≥20%) MPN, not AML. With prior **MDS/MPN (e.g. CMML)**, keep the MDS/MPN diagnosis until ≥20% blasts, but give **AML-type therapy** once an AML-defining abnormality is present with ≥10% blasts.",
+        "MR cytogenetic abnormalities include **complex karyotype (≥3 unrelated abnormalities**, excluding hyperdiploid karyotypes with only trisomies), del(5q)/t(5q)/add(5q), −7/del(7q), +8, del(12p), i(17q), −17/del(17p), del(20q) and idic(X)(q13)."
+      ],
+      "tables": [
+        {
+          "title": "Table 1 (condensed): AML-defining recurrent genetic abnormalities (≥10% blasts)",
+          "page": 4,
+          "columns": [
+            "Entity",
+            "Note"
+          ],
+          "rows": [
+            [
+              "APL with t(15;17) PML::RARA",
+              "Variant RARA partners reported by name"
+            ],
+            [
+              "t(8;21) RUNX1::RUNX1T1; inv(16)/t(16;16) CBFB::MYH11",
+              "Core-binding factor AML"
+            ],
+            [
+              "t(9;11) MLLT3::KMT2A",
+              "Other KMT2A partners reported by name"
+            ],
+            [
+              "t(6;9) DEK::NUP214; inv(3)/t(3;3) GATA2, MECOM",
+              "Other MECOM rearrangements also defining"
+            ],
+            [
+              "Mutated NPM1; in-frame bZIP CEBPA",
+              "Mono- or biallelic CEBPA"
+            ],
+            [
+              "t(9;22) BCR::ABL1",
+              "Exception: needs ≥20% blasts"
+            ],
+            [
+              "Other rare translocations",
+              "e.g. NUP98::NSD1, RBM15::MRTFA, CBFA2T3::GLIS2"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "≥10%",
+          "blasts for AML with recurrent genetic abnormalities (ICC)"
+        ],
+        [
+          "≥20%",
+          "BCR::ABL1 AML and all other AML categories"
+        ],
+        [
+          "10–19%",
+          "MDS/AML"
+        ],
+        [
+          "VAF ≥10%",
+          "TP53 mutation defining AML with mutated TP53"
+        ],
+        [
+          "90% / 35%",
+          "biallelic / monoallelic CEBPA cases with in-frame bZIP mutation"
+        ]
+      ],
+      "recs": [],
+      "pitfalls": [
+        "BCR::ABL1 is the one recurrent abnormality still needing ≥20% blasts. With 10–19% it is CML in accelerated phase.",
+        "Prior MDS or therapy exposure no longer defines the entity. It is appended as a qualifier, e.g. 'AML with myelodysplasia-related gene mutation, therapy-related'.",
+        "TP53 outranks MR gene mutations, which outrank MR cytogenetics. A recurrent genetic abnormality outranks all three."
+      ],
+      "hook": "Genetics before blasts: 10% if a defining lesion is present (20% for BCR::ABL1), and TP53 beats MR genes, which beat MR karyotype.",
+      "selfTest": [
+        {
+          "q": "Which recurrent genetic abnormality still needs ≥20% blasts to diagnose AML under ICC, and why?",
+          "a": "BCR::ABL1, to avoid overlap with CML in accelerated phase."
+        },
+        {
+          "q": "List the nine myelodysplasia-related genes.",
+          "a": "ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1 and ZRSR2."
+        },
+        {
+          "q": "What defines AML with mutated TP53?",
+          "a": "A pathogenic somatic TP53 mutation at VAF ≥10%, with or without loss of the wild-type allele, and ≥20% blasts (10–19% is MDS/AML with mutated TP53)."
+        }
+      ]
+    },
+    {
+      "id": "eln-therapy-related-germline",
+      "name": "Therapy-related AML and germline predisposition",
+      "pages": [
+        3,
+        4,
+        5,
+        11
+      ],
+      "why": "Recognising therapy-related and germline AML changes prognosis, donor selection and family counselling.",
+      "keyPoints": [
+        "Therapy-related AML is **10–15% of new AML** and rising. **>90% have an abnormal karyotype.**",
+        "**Alkylator or radiation type (75%):** presents **5–7 years** after exposure, is often preceded by MDS, and has **chromosome 5/7 abnormalities, complex karyotype and TP53 mutations**.",
+        "**Topoisomerase II inhibitor type:** latency **1–3 years**, MDS rare, with **balanced translocations of KMT2A (11q23.3), RUNX1 (21q22.1) or RARA (17q21.2)**.",
+        "Another pathway is **selection of a pre-existing resistant clone**. TP53 or **PPM1D**-mutant stem cells, sometimes detectable years earlier, are positively selected by cytotoxic therapy.",
+        "In therapy-related cases, **deleterious HR-pathway germline mutations (BRCA1, BRCA2, PALB2, TP53, CHEK2) are seen in 20%**.",
+        "Consider **germline predisposition in every patient regardless of age**: **DDX41** variants can cause malignancy in **older age**. Apply germline predisposition as a **diagnostic qualifier**.",
+        "Clues: **platelet defects** with ANKRD26, ETV6, RUNX1. **GATA2** with immunodeficiency. **Shwachman–Diamond** with exocrine pancreatic insufficiency and skeletal dysplasia. **Fanconi anaemia** with facial dysmorphism, squamous cell carcinoma and liver tumours. **Dyskeratosis congenita** with pulmonary fibrosis, cirrhosis and vascular anomalies. **CEBPA** predisposes to myeloid disease only.",
+        "Test **early**, because relatives are preferred donors. **Donor cells from carriers of deleterious RUNX1 or CEBPA variants should not be used.**",
+        "Tumour-based panels can mislead: **somatic reversion** gives false negatives, and **germline copy number variants** are often missed. Use **cultured skin fibroblasts** or hair follicles to confirm germline status.",
+        "Germline status is supported by VAF in a non-haematopoietic tissue **consistent with germline (generally 30–60%)**, or by presence in **two relatives**. **CHEK2 I200T and truncating DDX41 variants** are overwhelmingly likely to be germline, even when seen once.",
+        "**Table 3 triggers for germline testing:** ≥2 cancers, one haematopoietic; a haematopoietic malignancy plus a relative within two generations with a haematopoietic malignancy, a **solid tumour at ≤50 years** or another haematopoietic abnormality; a possible germline variant persisting in remission; or unusually early onset (e.g. **MDS at ≤40 years**).",
+        "Only **pathogenic or likely pathogenic** variants are acted on in families. VUS classifications can change over time."
+      ],
+      "numbers": [
+        [
+          "10–15%",
+          "of new AML that is therapy-related"
+        ],
+        [
+          ">90%",
+          "therapy-related AML with an abnormal karyotype"
+        ],
+        [
+          "5–7 y vs 1–3 y",
+          "latency: alkylator/radiation vs topoisomerase II inhibitor"
+        ],
+        [
+          "20%",
+          "therapy-related cases with HR-pathway germline mutations"
+        ],
+        [
+          "30–60%",
+          "VAF consistent with germline in non-haematopoietic tissue"
+        ],
+        [
+          "≤50 y / ≤40 y",
+          "relative's solid tumour age / MDS onset age prompting testing"
+        ]
+      ],
+      "recs": [
+        "dx-2"
+      ],
+      "pitfalls": [
+        "Germline testing is not only for young patients. DDX41 drives AML in older adults.",
+        "Testing germline status on blood or marrow is unreliable. Use skin fibroblasts or hair follicles.",
+        "A sibling carrying the same RUNX1 or CEBPA germline variant must not be the transplant donor."
+      ],
+      "hook": "Alkylators: late (5–7 y), chromosomes 5/7 lost, TP53. Topo II: early (1–3 y), balanced KMT2A.",
+      "selfTest": [
+        {
+          "q": "Contrast alkylator-related and topoisomerase II inhibitor-related AML.",
+          "a": "Alkylator/radiation: 5–7 year latency, often preceded by MDS, −5/−7, complex karyotype, TP53. Topo II: 1–3 year latency, rarely MDS, balanced translocations of KMT2A, RUNX1 or RARA."
+        },
+        {
+          "q": "Why should germline testing happen early in AML management?",
+          "a": "Allogeneic HCT is often planned and relatives are preferred donors. Carriers of deleterious RUNX1 or CEBPA variants must not donate."
+        }
+      ]
+    },
+    {
+      "id": "eln-workup",
+      "name": "Diagnostic work-up: Table 4, immunophenotype and biobanking",
+      "pages": [
+        5,
+        12,
+        13,
+        14
+      ],
+      "why": "Table 4 sets the minimum tests at diagnosis, the 3–5 day target for actionable genetics, and the counting standards.",
+      "keyPoints": [
+        "Count **200 nucleated cells on blood smears** and **500 on marrow smears**. Do a **trephine** for a dry tap (with touch preparations).",
+        "**At least 20 marrow metaphases** are needed to define a **normal karyotype**. Cytogenetics in **5–7 days**. If no metaphases, FISH for RUNX1::RUNX1T1, CBFB::MYH11, KMT2A, MECOM, or loss of 5q, 7q or 17p.",
+        "Mutations needed for diagnosis and treatment targets, ideally in **3–5 days**: **FLT3 (ITD and TKD), IDH1, IDH2, NPM1**, then CEBPA, **DDX41**, TP53 and the 9 MR genes.",
+        "**Long FLT3-ITDs can be missed by NGS**, so keep using **capillary electrophoresis**. Report the CEBPA mutation type (only in-frame bZIP is favourable).",
+        "Screen for gene rearrangements (PML::RARA, CBFB::MYH11, RUNX1::RUNX1T1, KMT2A, BCR::ABL1) when rapid results are needed, chromosome morphology is poor, or the morphology is typical but the expected abnormality is missing.",
+        "Additional genes (e.g. ANKRD26, ETV6, GATA2, KIT, NRAS, WT1, TET2, DNMT3A) are not needed for diagnosis but may help later NGS monitoring. **Exclude clonal haematopoiesis mutations (DNMT3A, TET2, ASXL1).**",
+        "Other work-up: performance status, optional geriatric assessment, biochemistry and coagulation (watch for **tumour lysis**), virology (hepatitis A, B, C, HIV, CMV, EBV, HSV, VZV), **pregnancy test**, **HLA typing and CMV** in transplant candidates (start a donor search at diagnosis), ECG and echo/MUGA as indicated, **LP only if CNS symptoms** (after imaging), and information on **oocyte and sperm cryopreservation**.",
+        "**Immunophenotyping by MFC is required**. No single marker is in every case. Identify the **LAIP** for MRD. If no aspirate and no circulating blasts, confirm myeloid phenotype on the **core biopsy by IHC**.",
+        "**Myeloid lineage (MPAL):** MPO, or monocytic differentiation (≥2 of NSE, CD11c, CD14, CD64, lysozyme). **T lineage:** strong cytoplasmic or surface CD3. **B lineage:** strong CD19 with one of strong CD79a, cCD22 or CD10, or weak CD19 with two of them.",
+        "**Core MRD markers:** CD34, CD117, CD45, CD33, CD13, CD56, CD7, HLA-DR (plus CD64, CD11b, CD4 if monocytic).",
+        "**Biobanking:** marrow and blood at diagnosis, remission and relapse. Store **DNA and RNA at −80 °C** and **viable cells at −196 °C**. Store a **normal tissue** sample to separate germline from somatic variants. Get broad consent.",
+        "Baseline **qPCR or dPCR for NPM1 and CBF AML** to allow MRD monitoring."
+      ],
+      "tables": [
+        {
+          "title": "Table 5: Marker panels",
+          "page": 14,
+          "columns": [
+            "Group",
+            "Markers"
+          ],
+          "rows": [
+            [
+              "Precursor",
+              "CD34, CD117, HLA-DR"
+            ],
+            [
+              "Myeloid",
+              "Cytoplasmic MPO, CD33, CD13"
+            ],
+            [
+              "Myeloid maturation",
+              "CD11b, CD15, CD64, CD65"
+            ],
+            [
+              "Monocytic",
+              "CD14, CD36, CD64, CD4, CD38, CD11c"
+            ],
+            [
+              "Megakaryocytic",
+              "CD41, CD61, CD36"
+            ],
+            [
+              "Erythroid",
+              "CD235a, CD71, CD36"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "200 / 500",
+          "cells counted on blood / marrow smears"
+        ],
+        [
+          "≥20",
+          "metaphases to call a normal karyotype"
+        ],
+        [
+          "3–5 days",
+          "target for actionable mutation results"
+        ],
+        [
+          "5–7 days",
+          "cytogenetics"
+        ],
+        [
+          "−80 °C / −196 °C",
+          "storage of DNA and RNA / viable cells"
+        ]
+      ],
+      "recs": [
+        "dx-1",
+        "dx-3",
+        "tx-1"
+      ],
+      "pitfalls": [
+        "NGS can miss long FLT3-ITDs. Use capillary electrophoresis.",
+        "A lumbar puncture is not routine. Do it for CNS symptoms (after imaging) and consider it optionally in other settings, such as a high WBC."
+      ],
+      "hook": "Twenty metaphases, two hundred blood cells, five hundred marrow cells, and genetics back in three to five days.",
+      "selfTest": [
+        {
+          "q": "How many marrow metaphases are needed to call a normal karyotype?",
+          "a": "At least 20."
+        },
+        {
+          "q": "Why does ELN recommend capillary electrophoresis for FLT3-ITD?",
+          "a": "Longer FLT3-ITDs may be missed by NGS."
+        }
+      ]
+    },
+    {
+      "id": "eln-risk",
+      "name": "2022 ELN genetic risk classification",
+      "pages": [
+        11,
+        15
+      ],
+      "why": "The favourable, intermediate and adverse groups drive transplant decisions, and the 2022 changes are a frequent exam topic.",
+      "keyPoints": [
+        "**Favourable:** t(8;21) **RUNX1::RUNX1T1**; inv(16)/t(16;16) **CBFB::MYH11**; **mutated NPM1 without FLT3-ITD**; **in-frame bZIP CEBPA**. Concurrent **KIT or FLT3** mutation does **not** change CBF risk.",
+        "**Intermediate:** **mutated NPM1 with FLT3-ITD**; **wild-type NPM1 with FLT3-ITD** (without adverse lesions); **t(9;11) MLLT3::KMT2A**, which outranks rare adverse co-mutations; and anything not classed as favourable or adverse.",
+        "**Adverse:** t(6;9) DEK::NUP214; t(v;11q23.3) **KMT2A-rearranged** (excluding KMT2A-PTD); t(9;22) BCR::ABL1; **t(8;16) KAT6A::CREBBP**; inv(3)/t(3;3) GATA2, MECOM; **t(3q26.2;v) MECOM-rearranged**; −5 or del(5q), −7, −17/abn(17p); **complex karyotype** and **monosomal karyotype**; **the 9 MR gene mutations**; **mutated TP53** (VAF ≥10%).",
+        "**Change 1:** the **FLT3-ITD allelic ratio is dropped**, so all FLT3-ITD AML (without adverse lesions) is intermediate. Reasons: assay standardisation, the effect of **midostaurin**, and the growing role of MRD.",
+        "**Change 2:** **MR gene mutations are now adverse**. Previously only ASXL1 and RUNX1 counted.",
+        "**Change 3:** **NPM1-mutated AML with adverse cytogenetics is adverse**.",
+        "**Change 4:** **in-frame bZIP CEBPA** (mono- or biallelic) is favourable.",
+        "**Change 5:** new adverse rearrangements: **t(3q26.2;v) MECOM** and **t(8;16) KAT6A::CREBBP**.",
+        "**Change 6:** **hyperdiploid karyotypes with multiple trisomies are no longer 'complex'**, so not adverse.",
+        "**Monosomal karyotype:** ≥2 distinct autosomal monosomies, or one monosomy plus ≥1 structural abnormality (excluding loss of X/Y and CBF AML).",
+        "For now, **MR gene mutations should not be used as adverse markers if they co-occur with favourable-risk subtypes**. **IDH1/IDH2 and DNMT3A** are **not assigned** a risk group.",
+        "The classification is based mainly on **intensively treated** patients. **MRD can reclassify** risk, e.g. favourable to intermediate if MRD persists, particularly in NPM1-mutated AML."
+      ],
+      "tables": [
+        {
+          "title": "Table 6: 2022 ELN risk by genetics at diagnosis",
+          "page": 15,
+          "columns": [
+            "Risk",
+            "Genetic abnormality"
+          ],
+          "rows": [
+            [
+              "Favourable",
+              "t(8;21) RUNX1::RUNX1T1; inv(16)/t(16;16) CBFB::MYH11; mutated NPM1 without FLT3-ITD; bZIP in-frame mutated CEBPA"
+            ],
+            [
+              "Intermediate",
+              "Mutated NPM1 with FLT3-ITD; wild-type NPM1 with FLT3-ITD; t(9;11) MLLT3::KMT2A; abnormalities not classed as favourable or adverse"
+            ],
+            [
+              "Adverse",
+              "t(6;9) DEK::NUP214; t(v;11q23.3) KMT2A-r; t(9;22) BCR::ABL1; t(8;16) KAT6A::CREBBP; inv(3)/t(3;3) GATA2,MECOM; t(3q26.2;v) MECOM-r; −5/del(5q), −7, −17/abn(17p); complex or monosomal karyotype; mutated ASXL1, BCOR, EZH2, RUNX1, SF3B1, SRSF2, STAG2, U2AF1, ZRSR2; mutated TP53"
+            ]
+          ],
+          "note": "NPM1 mutation with adverse cytogenetics is adverse. Concurrent KIT or FLT3 mutations do not alter CBF risk. KMT2A-PTD is excluded from 'KMT2A-rearranged'."
+        }
+      ],
+      "numbers": [
+        [
+          "6",
+          "main changes from ELN 2017"
+        ],
+        [
+          "≥3",
+          "unrelated abnormalities for complex karyotype"
+        ],
+        [
+          "VAF ≥10%",
+          "TP53 for adverse risk, mono- or biallelic"
+        ]
+      ],
+      "recs": [],
+      "pitfalls": [
+        "NPM1-mutated with FLT3-ITD is intermediate in 2022, whatever the allelic ratio. A low allelic ratio no longer makes it favourable.",
+        "t(9;11) is intermediate, while other KMT2A rearrangements are adverse.",
+        "CBF AML with a KIT mutation is still favourable.",
+        "A hyperdiploid karyotype made up only of trisomies is not a complex karyotype."
+      ],
+      "hook": "Favourable = CBF + NPM1 without ITD + bZIP CEBPA. Any ITD makes it intermediate. MR genes, TP53, and chromosomes 3, 5, 7 and 17 are adverse.",
+      "selfTest": [
+        {
+          "q": "What is the 2022 ELN risk of NPM1-mutated AML with FLT3-ITD at a low allelic ratio?",
+          "a": "Intermediate. The allelic ratio is no longer considered."
+        },
+        {
+          "q": "What is the risk of t(8;21) AML with a KIT mutation?",
+          "a": "Favourable. Concurrent KIT and/or FLT3 mutations do not alter CBF risk."
+        },
+        {
+          "q": "Name the two new adverse-risk rearrangements in ELN 2022.",
+          "a": "t(3q26.2;v) involving MECOM, and t(8;16)(p11.2;p13.3) KAT6A::CREBBP."
+        }
+      ]
+    },
+    {
+      "id": "eln-mrd",
+      "name": "Measurable residual disease: methods, thresholds and time points",
+      "pages": [
+        11,
+        13,
+        16,
+        17,
+        18,
+        19
+      ],
+      "why": "MRD now refines risk and drives the transplant decision. Thresholds such as 0.1%, 2% and a 1-log rise are highly testable.",
+      "keyPoints": [
+        "MRD is used to: (1) define a deeper remission; (2) refine relapse risk; (3) detect impending relapse; (4) act as a surrogate end point for drug approval.",
+        "**MFC-MRD** uses the **LAIP or different-from-normal (DfN)** approach. **MFC positivity is ≥0.1% of CD45-expressing cells** with the target phenotype. **Leukaemic stem cell (CD34+/CD38low** plus an aberrant marker such as CD45RA, CLL-1 or CD123) MRD is investigational.",
+        "**Molecular MRD:** the limit of detection should be **at least 10⁻³**. **Blood is about 1 log less sensitive than marrow.** Targets: **NPM1, CBFB::MYH11, RUNX1::RUNX1T1** (best validated), plus KMT2A::MLLT3, DEK::NUP214, BCR::ABL1 and WT1. **qPCR positive = Ct <40; negative = Ct ≥40 in ≥2 of 3 replicates.**",
+        "**NGS-MRD** is exploratory. Positivity is provisionally **≥0.1% VAF**, and must exclude **clonal haematopoiesis mutations (DNMT3A, TET2, ASXL1)** and germline variants.",
+        "**CR MRD-LL** (low-level, **<2%**) in **NPM1-mutated and CBF AML** counts as **MRD negative**, because persistent low-level transcripts at the end of consolidation carry a very low relapse risk.",
+        "**MRD relapse:** conversion from MRD negative to positive by any method, or a **≥1 log10 rise** between two positive samples in CR MRD-LL. **Confirm in a second sample** from the same tissue source.",
+        "**Time points (Figure 2): NPM1:** diagnosis; **blood after 2 cycles**; marrow at end of treatment; then follow-up for 24 months (**marrow every 3 months or blood every 4–6 weeks**). Consider changing treatment (e.g. allo-HCT) if MRD is **≥2%** or there is **<3–4 log reduction** after consolidation. **MFC:** after 2 cycles and at end of treatment.",
+        "Prognostic value is shown in a **meta-analysis of 81 publications**, but MRD is imperfect: some MRD-negative patients relapse and not all MRD-positive patients do.",
+        "**Pre-transplant MRD** independently predicts worse post-transplant outcome. There is **no evidence that extra chemotherapy cycles help** MRD-positive CR1 patients. Consider **myeloablative conditioning** or **early taper of immunosuppression**.",
+        "MRD in CR or CRh/CRi is recommended in **non-adverse** risk patients in CR1 **to choose consolidation**."
+      ],
+      "tables": [
+        {
+          "title": "Table 7: MRD methods",
+          "page": 16,
+          "columns": [
+            "Method",
+            "Sensitivity",
+            "Applicable",
+            "TAT (days)"
+          ],
+          "rows": [
+            [
+              "MFC (LAIP or DfN)",
+              "10⁻³–10⁻⁴",
+              "85–90%",
+              "2"
+            ],
+            [
+              "RT-qPCR (NPM1, CBF; others less validated)",
+              "10⁻⁴–10⁻⁵",
+              "40–50%",
+              "3–5"
+            ],
+            [
+              "NGS (exploratory)",
+              "10⁻²–10⁻⁴",
+              "~100%",
+              "5–10"
+            ],
+            [
+              "Digital PCR (exploratory)",
+              "10⁻³–10⁻⁴",
+              "~70%",
+              "3–5"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "≥0.1%",
+          "MFC-MRD positive (of CD45+ cells); NGS-MRD provisional VAF"
+        ],
+        [
+          "Ct <40",
+          "qPCR MRD positive (negative if ≥40 in ≥2 of 3 replicates)"
+        ],
+        [
+          "<2%",
+          "MRD-LL in NPM1 and CBF AML, treated as negative"
+        ],
+        [
+          "≥1 log10",
+          "rise that defines molecular MRD relapse from MRD-LL"
+        ],
+        [
+          "10⁻³",
+          "minimum molecular MRD limit of detection"
+        ],
+        [
+          "3–4 log",
+          "expected NPM1 reduction after consolidation"
+        ]
+      ],
+      "recs": [
+        "tx-2"
+      ],
+      "pitfalls": [
+        "DNMT3A, TET2 and ASXL1 persisting in remission may be clonal haematopoiesis. Do not count them as MRD.",
+        "Low-level NPM1 or CBF transcripts below 2% at the end of consolidation count as MRD negative.",
+        "Extra chemotherapy before transplant for MRD-positive CR1 patients is not supported by evidence."
+      ],
+      "hook": "Flow 0.1%, qPCR Ct 40, NPM1 or CBF under 2% counts as negative, and a 1-log rise is MRD relapse.",
+      "selfTest": [
+        {
+          "q": "How is MFC-MRD positivity defined?",
+          "a": "≥0.1% of CD45-expressing cells with the target (LAIP or DfN) immunophenotype."
+        },
+        {
+          "q": "Define molecular MRD relapse.",
+          "a": "Conversion from MRD negative to positive, or a ≥1 log10 increase between two positive samples in a patient with CR MRD-LL, confirmed in a second consecutive sample."
+        },
+        {
+          "q": "When should NPM1 MRD be measured in blood, and what result prompts a treatment change?",
+          "a": "After 2 cycles (blood). MRD ≥2% or failure to achieve a 3–4 log reduction after consolidation may prompt changes such as allogeneic HCT."
+        }
+      ]
+    },
+    {
+      "id": "eln-response",
+      "name": "Response criteria and trial outcome measures",
+      "pages": [
+        13,
+        14,
+        17,
+        18,
+        20
+      ],
+      "why": "CR, CRh, CRi, MLFS, refractory disease and relapse have precise definitions. The 2022 update added CRh and MRD-based categories.",
+      "keyPoints": [
+        "**CR:** marrow blasts **<5%**; no circulating blasts; no extramedullary disease; **ANC ≥1.0 × 10⁹/L** and **platelets ≥100 × 10⁹/L**.",
+        "**CRh (new):** CR criteria with partial recovery of **ANC ≥0.5 × 10⁹/L and platelets ≥50 × 10⁹/L**. So far used mainly in trials of less-intensive therapy.",
+        "**CRi:** all CR criteria except residual neutropenia (<1.0) or thrombocytopenia (<100). If CRh is used, **CRi includes only patients not meeting CRh**.",
+        "**MLFS:** marrow blasts <5%, with no haematological recovery required. The marrow must not be merely aplastic: **spicules must be present**, with **≥200 cells counted** or **≥10% cellularity**.",
+        "**PR:** haematological CR criteria plus marrow blasts **5–25%** and a **≥50% fall** from baseline. Mainly used in phase 1–2 trials.",
+        "**The 'absence of blasts with Auer rods' criterion was eliminated.**",
+        "**No G-CSF or platelet transfusions within 7 days** before assessing haematological response. A few circulating blasts may reflect a **regenerating marrow** and usually clear within a week.",
+        "**Refractory disease:** no CR, CRh or CRi at the landmark, i.e. **after 2 courses of intensive induction** or a set point such as **180 days** of less-intensive therapy. If there is no response to the first **7 + 3**, use a **higher-dose cytarabine** regimen.",
+        "**Relapse:** **marrow blasts ≥5%**, blasts reappearing in **≥2 blood samples at least 1 week apart**, or new extramedullary disease.",
+        "**Response without MRD** must be **confirmed at least 4 weeks apart**.",
+        "**Non-evaluable patients** (early death, withdrawal, suboptimal marrow) stay in the denominator (intention to treat). 'Death in aplasia' is now 'non-evaluable'.",
+        "**Outcomes:** report **early death at 30 and 60 days**. **EFS** may be preferred to OS because post-study treatments confound OS. In an FDA analysis, EFS with strict CR correlated with OS at **R² 0.87**, falling to **0.59** when CRi was included. ELN recommends including **CRh/CRi in EFS** for myelosuppressive drugs. New MRD-based end points: EFS-MRD, RFS-MRD, CIR-MRD (molecular MRD relapse only for NPM1, RUNX1::RUNX1T1 and CBFB::MYH11 by qPCR)."
+      ],
+      "numbers": [
+        [
+          "<5%",
+          "marrow blasts for CR, CRh, CRi and MLFS"
+        ],
+        [
+          "≥1.0 / ≥100",
+          "ANC / platelets (× 10⁹/L) for CR"
+        ],
+        [
+          "≥0.5 / ≥50",
+          "ANC / platelets (× 10⁹/L) for CRh"
+        ],
+        [
+          "5–25% and ≥50% fall",
+          "partial remission"
+        ],
+        [
+          "7 days",
+          "free of G-CSF and platelet transfusion before response assessment"
+        ],
+        [
+          "2 cycles / 180 days",
+          "landmarks for refractory disease (intensive / less intensive)"
+        ],
+        [
+          "≥5%; 2 samples ≥1 week apart",
+          "relapse definitions"
+        ]
+      ],
+      "recs": [
+        "trial-1"
+      ],
+      "pitfalls": [
+        "Auer rods are no longer part of the CR definition.",
+        "A response assessed within 7 days of G-CSF or a platelet transfusion is not valid.",
+        "Isolated low-level circulating blasts during count recovery are not relapse. They usually clear within a week."
+      ],
+      "hook": "CR 1 and 100; CRh half and half (0.5 and 50); anything below that is CRi.",
+      "selfTest": [
+        {
+          "q": "Define CRh.",
+          "a": "Marrow blasts <5%, no circulating blasts or extramedullary disease, with partial count recovery: ANC ≥0.5 × 10⁹/L and platelets ≥50 × 10⁹/L."
+        },
+        {
+          "q": "When is AML defined as refractory?",
+          "a": "No CR, CRh or CRi at the response landmark: after 2 courses of intensive induction, or a defined point such as 180 days of less-intensive therapy."
+        },
+        {
+          "q": "What is the ELN definition of relapse?",
+          "a": "Marrow blasts ≥5%, blasts reappearing in ≥2 blood samples at least 1 week apart, or new extramedullary disease."
+        }
+      ]
+    },
+    {
+      "id": "eln-intensive",
+      "name": "Fit patients: induction, consolidation and maintenance",
+      "pages": [
+        15,
+        16,
+        18,
+        22
+      ],
+      "why": "Matching the intensive regimen to genotype (midostaurin, GO, CPX-351) and choosing consolidation by risk and MRD are core management questions.",
+      "keyPoints": [
+        "Aim for actionable genetics within **3–5 days**. A **short delay to stabilise and identify the best option** is recommended. Cytoreduce immediately if there is **hyperleukocytosis**.",
+        "**Induction backbone '7 + 3':** **daunorubicin 60 mg/m² d1–3** (or idarubicin 12 mg/m², or mitoxantrone 12 mg/m²) with **cytarabine 100–200 mg/m²/day continuous IV d1–7**. Alternatives: FLAG-IDA and mitoxantrone-based regimens.",
+        "**FLT3-mutated: add midostaurin 50 mg twice daily d8–21.** In patients aged **18–59**, **4-year OS improved from 44.3% to 51.4% (+7.1%)**. A non-randomised study suggests benefit up to **70 years**. The value of **12 cycles of maintenance is uncertain**. **Quizartinib** for FLT3-ITD (aged 18–75, 539 patients) prolonged OS in a preliminary report.",
+        "**Gemtuzumab ozogamicin** (anti-CD33 with a calicheamicin payload) is for **CD33-positive, favourable or intermediate cytogenetic risk** AML. Dose **3 mg/m² (max 5 mg) on d1, 4 and 7**, or a single dose on day 1. A meta-analysis showed benefit, **especially in CBF AML**. Consider **omitting GO if allo-HCT is planned**, because of veno-occlusive disease risk.",
+        "**CPX-351** (liposomal cytarabine and daunorubicin, **5:1 molar ratio**) is for **therapy-related AML, prior MDS or CMML, or MR cytogenetics in patients aged 60–75**. **5-year OS 18% vs 10%** with 7 + 3. Count recovery is **about 7 days slower** and bleeding risk is higher, but 30-day mortality was not higher (**5.9% vs 10.6%**). Dose 100 U/m² d1, 3, 5 (re-induction d1, 3). There are no randomised data under 60 years or after MPN, and **no benefit after prior hypomethylating agent therapy for MDS**.",
+        "**Consolidation:** **intermediate-dose cytarabine (IDAC) 1000–1500 mg/m²** (500–1000 if ≥60 years) every 12 h on **d1–3**, for 3–4 cycles. Giving it on consecutive days (rather than d1, 3, 5) may speed recovery. **High-dose cytarabine (3000 mg/m²) is discouraged**: more toxic, with no survival gain.",
+        "**Allo-HCT** if the predicted relapse risk is **>35–40%**: adverse risk, or non-adverse with **MRD persistence**. **Autologous HCT** is an option for favourable or intermediate risk with a good MRD response, or if allo-HCT is not available.",
+        "**Maintenance:** **oral azacitidine (CC-486) 300 mg d1–14 every 28 days** in patients **≥55 years** in CR/CRi after intensive induction who are **not proceeding to allo-HCT**. Median **OS 14.8 → 24.7 months**, independent of MFC-MRD status. Limitations: few young, CBF or adverse-karyotype (14%) patients, and variable prior consolidation.",
+        "Patients who received **midostaurin** in induction and consolidation may continue it as maintenance.",
+        "**Therapy-related AML** has a poor outcome, mainly from adverse genetics. Use the same principles, and CPX-351 is an option."
+      ],
+      "tables": [
+        {
+          "title": "Table 10 (condensed): Fit for intensive chemotherapy",
+          "page": 22,
+          "columns": [
+            "Setting",
+            "Induction",
+            "Consolidation / maintenance"
+          ],
+          "rows": [
+            [
+              "FLT3-mutated",
+              "7 + 3 + midostaurin 50 mg bd d8–21",
+              "IDAC 3–4 cycles + midostaurin; midostaurin maintenance (value uncertain)"
+            ],
+            [
+              "Non-FLT3",
+              "Dauno 60 / ida 12 / mitox 12 d1–3 + cytarabine 100–200 CIV d1–7",
+              "IDAC 3–4 cycles; oral azacitidine maintenance"
+            ],
+            [
+              "CD33+ favourable/intermediate",
+              "7 + 3 + GO 3 mg/m² (max 5 mg) d1,4,7",
+              "IDAC 2–4 cycles ± GO d1 (up to 2 cycles)"
+            ],
+            [
+              "MR changes or therapy-related",
+              "CPX-351 100 U/m² d1,3,5",
+              "CPX-351 65 U/m² d1,3 for 1–2 cycles"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "60 mg/m² d1–3",
+          "daunorubicin in 7 + 3"
+        ],
+        [
+          "44.3% → 51.4%",
+          "4-year OS with midostaurin (aged 18–59)"
+        ],
+        [
+          "3 mg/m² (max 5 mg) d1,4,7",
+          "gemtuzumab ozogamicin"
+        ],
+        [
+          "10% → 18%",
+          "5-year OS with CPX-351 vs 7 + 3 (aged 60–75)"
+        ],
+        [
+          "1000–1500 mg/m²",
+          "IDAC consolidation (500–1000 if ≥60)"
+        ],
+        [
+          ">35–40%",
+          "relapse risk at which allo-HCT is preferred"
+        ],
+        [
+          "14.8 → 24.7 months",
+          "median OS with oral azacitidine maintenance"
+        ]
+      ],
+      "recs": [
+        "tx-1",
+        "tx-2"
+      ],
+      "pitfalls": [
+        "High-dose cytarabine 3 g/m² consolidation is no longer favoured. IDAC 1–1.5 g/m² is standard.",
+        "GO benefit is limited to favourable or intermediate cytogenetic risk. Consider omitting it if allo-HCT is planned (VOD).",
+        "Oral azacitidine is for patients not proceeding to allogeneic HCT. Data in under-55s and CBF AML are lacking."
+      ],
+      "hook": "FLT3 gets Midostaurin, CD33 gets GO, MR or therapy-related gets CPX-351, and IDAC (not HiDAC) consolidates.",
+      "selfTest": [
+        {
+          "q": "Which patients benefit from CPX-351, and what was the 5-year OS gain?",
+          "a": "Patients aged 60–75 with therapy-related AML, AML after MDS or CMML, or AML with MR cytogenetics. 5-year OS rose from 10% to 18% vs 7 + 3."
+        },
+        {
+          "q": "What was the survival benefit of adding midostaurin to intensive chemotherapy in patients aged 18–59?",
+          "a": "4-year OS improved by 7.1%, from 44.3% to 51.4%."
+        },
+        {
+          "q": "Who is suitable for oral azacitidine maintenance?",
+          "a": "Patients ≥55 years in CR/CRi after intensive induction who are not proceeding to allogeneic HCT (median OS 14.8 → 24.7 months)."
+        }
+      ]
+    },
+    {
+      "id": "eln-nonintensive",
+      "name": "Unfit patients: venetoclax, HMAs and ivosidenib",
+      "pages": [
+        18,
+        19,
+        24,
+        25
+      ],
+      "why": "HMA plus venetoclax is the standard for older or unfit patients. Dose adjustments for CYP3A inhibitors and myelosuppression are practical exam points.",
+      "keyPoints": [
+        "There are **no validated criteria** for unfitness. Trial examples: **age ≥75** (not absolute), **ECOG >2**, **EF ≤50%**, **DLCO or FEV1 ≤65%**, **CrCl <45 ml/min**, **bilirubin >1.5 × ULN**.",
+        "**Azacitidine + venetoclax vs azacitidine (VIALE-A):** CR/CRi **66.4% vs 28.3%**; median OS **14.7 vs 9.6 months**. This is the new standard of care. **Decitabine + venetoclax** appears similar (phase 1b/2).",
+        "If an HMA cannot be given, use **low-dose cytarabine + venetoclax**. **Glasdegib + LDAC** improved survival, but its **CR/CRi of 24%** does not favour it.",
+        "Prognosis after **failure of venetoclax-based therapy** is very poor.",
+        "**IDH1-mutated: azacitidine + ivosidenib** vs aza + placebo: EFS **HR 0.33**; CR/CRh **52.8% vs 17.6%**; median OS **24.0 vs 7.9 months**. So **screen for IDH1 rapidly in older patients**. Very frail IDH1/2-mutated patients can have IDH-inhibitor monotherapy or best supportive care.",
+        "**Venetoclax dosing:** ramp **100 → 200 → 400 mg** with aza or decitabine (**600 mg** with LDAC). With **strong CYP3A inhibitors (e.g. posaconazole)**: 10, 20, 50, then **100 mg or less** (VIALE used 50 mg). With **moderate CYP3A inhibitors (e.g. ciprofloxacin)**: reduce by at least 50%.",
+        "**TLS prevention:** dose ramp-up, hydration, urate-lowering drugs, electrolyte monitoring, and **WBC <25 × 10⁹/L** before starting.",
+        "**Assess early** (day 14–21 of cycle 1). If marrow blasts are <5%, **stop venetoclax for up to 14 days** to allow count recovery to CRh. Add **G-CSF** if neutropenia has not recovered within 7 days. Later cycles may shorten venetoclax to **21 or 14 days** if there are prolonged grade 4 cytopenias.",
+        "Reassess after 3 cycles, then every 3 cycles. Non-intensive therapy usually continues until progression (no data favour a fixed duration).",
+        "**Table 12 adverse effects:** midostaurin QT prolongation; gilteritinib transaminase rise (81%) and **PRES** (1%); **IDH inhibitors cause differentiation syndrome** (treat with dexamethasone, plus hydroxyurea if leucocytosis); enasidenib raises bilirubin (81%); **GO causes VOD/SOS** (2.9–4.6%); CPX-351 causes prolonged myelosuppression; oral azacitidine causes GI toxicity and cytopenias; glasdegib causes muscle spasms."
+      ],
+      "tables": [
+        {
+          "title": "Table 11 (condensed): Not suitable for intensive chemotherapy",
+          "page": 24,
+          "columns": [
+            "Regimen",
+            "Dosing"
+          ],
+          "rows": [
+            [
+              "Aza or decitabine + venetoclax",
+              "Aza 75 mg/m² d1–7 (or d1–5 + d8–9) or decitabine 20 mg/m² d1–5; venetoclax ramp 100/200/400 mg"
+            ],
+            [
+              "LDAC + venetoclax",
+              "Cytarabine 20 mg/m² SC d1–10; venetoclax ramp to 600 mg"
+            ],
+            [
+              "Aza + ivosidenib (IDH1)",
+              "Ivosidenib 500 mg daily d1–28"
+            ],
+            [
+              "Ivosidenib monotherapy",
+              "Very frail IDH1-mutated"
+            ],
+            [
+              "Best supportive care",
+              "Including hydroxyurea"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "66.4% vs 28.3%",
+          "CR/CRi with aza + venetoclax vs aza"
+        ],
+        [
+          "14.7 vs 9.6 months",
+          "median OS with aza + venetoclax vs aza"
+        ],
+        [
+          "24.0 vs 7.9 months",
+          "median OS with aza + ivosidenib vs aza (IDH1)"
+        ],
+        [
+          "<25 × 10⁹/L",
+          "WBC target before starting venetoclax"
+        ],
+        [
+          "day 14–21",
+          "early marrow in cycle 1 of HMA combinations"
+        ],
+        [
+          "10/20/50/100 mg",
+          "venetoclax ramp with strong CYP3A inhibitors"
+        ]
+      ],
+      "recs": [
+        "tx-3"
+      ],
+      "pitfalls": [
+        "Age alone is not an absolute bar to intensive chemotherapy.",
+        "Posaconazole is a strong CYP3A4 inhibitor, so venetoclax must be markedly reduced (to 100 mg or less, and 50 mg in VIALE).",
+        "Cytopenias in a leukaemia-free marrow after cycle 1 call for interrupting venetoclax, not escalating treatment."
+      ],
+      "hook": "VIALE-A: 66 vs 28% response, 14.7 vs 9.6 months survival. With posaconazole, venetoclax drops to about 100 mg.",
+      "selfTest": [
+        {
+          "q": "What were the response and survival gains of azacitidine + venetoclax over azacitidine alone?",
+          "a": "CR/CRi 66.4% vs 28.3%; median OS 14.7 vs 9.6 months."
+        },
+        {
+          "q": "How is venetoclax dosed with posaconazole?",
+          "a": "Ramp 10 mg d1, 20 mg d2, 50 mg d3, then 100 mg or less daily (50 mg was used in VIALE trials)."
+        },
+        {
+          "q": "What should happen if the day 14–21 marrow shows <5% blasts but the patient is cytopenic?",
+          "a": "Stop venetoclax for up to 14 days to allow recovery to at least CRh. Add G-CSF if neutropenia persists 7 days after stopping. Shorten venetoclax duration in later cycles if needed."
+        }
+      ]
+    },
+    {
+      "id": "eln-relapse-hct",
+      "name": "Relapsed and refractory AML and allogeneic HCT",
+      "pages": [
+        19,
+        20,
+        21,
+        23
+      ],
+      "why": "Relapse calls for molecular re-testing and targeted salvage, and allo-HCT is the main curative option. The indications and the timing of relapse matter.",
+      "keyPoints": [
+        "At relapse, **re-test genetics**: new or expanded **IDH1/IDH2 or FLT3** clones may now be targetable. Enter trials whenever possible.",
+        "**Primary refractory:** no remission after **2 induction cycles (including ≥1 of intermediate-dose cytarabine)**. Further conventional chemotherapy is unlikely to help, so refer for allo-HCT or a trial.",
+        "Poor features at relapse: **RFS <6–12 months**, non-favourable karyotype, age **>45–55**, or prior HCT. After cytoreduction, **allo-HCT** is recommended. If HCT is not realistic, use HMA ± venetoclax.",
+        "**Gilteritinib** for relapsed or refractory FLT3-mutated AML: CR **21.1% vs 10.5%**, median OS **9.3 vs 5.6 months** vs salvage chemotherapy. Only **5.7%** had prior midostaurin. **Quizartinib** improved OS but was **not approved** by FDA or EMA.",
+        "**Ivosidenib or enasidenib** for R/R IDH1/IDH2: CR about **20%**, overall response about **40%**. Median time to CR is **3–4 months**, with 80% of responses by **6 cycles**. Enasidenib did not improve OS in a randomised trial of patients aged ≥60 after 2–3 prior lines.",
+        "**Salvage regimens:** IDAC ± anthracycline, **FLAG-IDA** (or FLAG-MITO/AMSA), MEC, CLAG-M. Do **not use single-agent IDAC for relapse within 6 months** of higher-dose cytarabine consolidation.",
+        "**Allo-HCT** is the most frequent indication in AML. It is possible **up to age 80** with RIC at experienced centres. Relapse is now the main cause of failure, and HCT is underused.",
+        "Indications: relapse risk **>35–40%**; **adverse** and most **intermediate** risk; **not favourable risk in CR1 unless MRD clearance is inadequate**. Over 60, offer it for intermediate or adverse risk if fit. It is the **only cure for primary refractory** disease.",
+        "Scores: **HCT-CI** (with age) predicts NRM. The **disease risk index** predicts relapse. The **modified EBMT score** predicts OS.",
+        "**Conditioning:** **MAC beats RIC in patients aged 18–65 (BMT CTN 0901)**, through less relapse, with the greatest benefit when pre-transplant NGS shows residual disease.",
+        "**Donors:** matched sibling or well-matched unrelated donors are preferred, with roughly equivalent outcomes. **Post-transplant cyclophosphamide** widens access to haploidentical and mismatched donors. Cord blood is another option. **Avoid relatives with deleterious germline variants.**",
+        "**Post-transplant maintenance:** **sorafenib** reduces relapse in FLT3-mutated AML. **SC azacitidine maintenance is not recommended.**",
+        "**Relapse after HCT:** **90% occur within 2 years**. Morphological relapse within 12 months has a very poor outcome. Immunosuppression taper or **DLI** may salvage early molecular relapse. **Gilteritinib is preferred** if a FLT3 clone emerges. Second CR can still be cured with DLI or a second graft."
+      ],
+      "numbers": [
+        [
+          "21.1% vs 10.5%",
+          "CR with gilteritinib vs salvage chemotherapy"
+        ],
+        [
+          "9.3 vs 5.6 months",
+          "median OS with gilteritinib vs salvage chemotherapy"
+        ],
+        [
+          "~20% / ~40%",
+          "CR / overall response with IDH inhibitors in R/R disease"
+        ],
+        [
+          "2 cycles",
+          "of induction (≥1 IDAC) without remission = primary refractory"
+        ],
+        [
+          "90% within 2 years",
+          "of relapses after allo-HCT"
+        ],
+        [
+          "18–65 y",
+          "age range where MAC beat RIC (BMT CTN 0901)"
+        ]
+      ],
+      "recs": [
+        "tx-4",
+        "hct-1",
+        "hct-2",
+        "hct-3",
+        "trial-2"
+      ],
+      "pitfalls": [
+        "Favourable-risk AML in CR1 does not routinely go to transplant. Inadequate MRD clearance is the exception.",
+        "Do not give extra chemotherapy to 'clear MRD' before transplant in CR1. There is no evidence of benefit.",
+        "Single-agent IDAC is not suitable for relapse within 6 months of higher-dose cytarabine."
+      ],
+      "hook": "Relapse? Re-sequence. FLT3 → gilteritinib; IDH → ivosidenib or enasidenib. Then transplant if possible.",
+      "selfTest": [
+        {
+          "q": "Define primary refractory AML.",
+          "a": "Failure to achieve remission after 2 cycles of induction, including at least 1 cycle of intermediate-dose cytarabine."
+        },
+        {
+          "q": "When is allo-HCT in CR1 recommended for favourable-risk AML?",
+          "a": "Generally not, except with inadequate MRD clearance."
+        },
+        {
+          "q": "Which post-transplant maintenance is supported for FLT3-mutated AML, and which is not recommended?",
+          "a": "Sorafenib (FLT3 inhibitor) reduces relapse. Subcutaneous azacitidine maintenance showed no benefit and is not recommended."
+        }
+      ]
+    },
+    {
+      "id": "eln-supportive",
+      "name": "Hyperleukocytosis, DIC, differentiation syndrome and supportive care",
+      "pages": [
+        26
+      ],
+      "why": "These emergencies and supportive care thresholds come up in both MCQs and clinical scenarios.",
+      "keyPoints": [
+        "**Hyperleukocytosis = WBC >100 × 10⁹/L**. It raises induction mortality through **haemorrhage, tumour lysis and leukostasis**.",
+        "**Hydroxyurea up to 50–60 mg/kg/day** to bring the **WBC below 25 × 10⁹/L**, especially before HMA or venetoclax.",
+        "**Clinical leukostasis is an emergency.** Lower the WBC promptly (hydroxyurea or induction) and use a **restrictive red cell transfusion** policy. **Dexamethasone** may help. **Leukapheresis** can run alongside chemotherapy in symptomatic leukostasis, but is **not supported in asymptomatic hyperleukocytosis**.",
+        "**DIC** is present in **8.5–25%** of non-APL AML, and develops in another **15%** soon after chemotherapy starts. Screen with a scoring system.",
+        "Watch for **tumour lysis** with hyperleukocytosis or venetoclax. **Differentiation syndrome** presents with unexplained fever, pulmonary oedema or infiltrates, weight gain, hypoxia and dyspnoea, especially on **IDH inhibitors**.",
+        "**Infection:** base choices on local organisms and resistance. **Posaconazole prophylaxis during induction** has good evidence. There is **insufficient** evidence for HSV prophylaxis and **none for PJP** prophylaxis.",
+        "**Influenza and COVID-19 vaccination for all patients.**",
+        "**G-CSF is not routine**: use it only for individuals (e.g. severe infection) or to speed recovery in consolidation.",
+        "**Transfusion:** keep **Hb above 8 g/dL**. The prophylactic platelet trigger is **<10 × 10⁹/L**. Raise thresholds for mucosal bleeding, infection, severe mucositis or fever, and for outpatients who cannot have regular counts."
+      ],
+      "numbers": [
+        [
+          ">100 × 10⁹/L",
+          "hyperleukocytosis"
+        ],
+        [
+          "50–60 mg/kg/day",
+          "maximum hydroxyurea for cytoreduction"
+        ],
+        [
+          "<25 × 10⁹/L",
+          "WBC target before HMA or venetoclax"
+        ],
+        [
+          "8.5–25% (+15%)",
+          "DIC at presentation (plus after starting chemotherapy) in non-APL AML"
+        ],
+        [
+          "8 g/dL",
+          "haemoglobin threshold"
+        ],
+        [
+          "<10 × 10⁹/L",
+          "prophylactic platelet trigger"
+        ]
+      ],
+      "recs": [
+        "sc-1",
+        "sc-2",
+        "sc-3",
+        "sc-4",
+        "sc-5"
+      ],
+      "pitfalls": [
+        "Leukapheresis is not indicated for asymptomatic hyperleukocytosis.",
+        "Avoid liberal red cell transfusion in leukostasis, because it increases viscosity.",
+        "ELN finds no evidence of benefit for PJP prophylaxis and insufficient randomised evidence for HSV prophylaxis in AML."
+      ],
+      "hook": "Over 100 is an emergency. Hydroxyurea brings it under 25. Transfuse at Hb 8 and platelets 10.",
+      "selfTest": [
+        {
+          "q": "How is asymptomatic hyperleukocytosis managed before venetoclax?",
+          "a": "Hydroxyurea (up to 50–60 mg/kg/day) to bring the WBC below 25 × 10⁹/L. Leukapheresis is not supported in asymptomatic patients."
+        },
+        {
+          "q": "Which antifungal prophylaxis has good evidence during AML induction?",
+          "a": "Posaconazole."
+        }
+      ]
+    }
+  ]
+}

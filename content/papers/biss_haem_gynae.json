@@ -5,6 +5,7 @@
     "issuingBody": "British Society for Haematology & UKHCDO",
     "year": 2026,
     "category": "Haemostasis & Thrombosis",
+    "order": 10,
     "citation": "Biss T, Millen E, Warren C, Raheja P, Garside S, Motwani J, et al. Br J Haematol. 2026;209(3):919–927.",
     "url": "https://doi.org/10.1111/bjh.70717",
     "isVerified": true,
@@ -12,18 +13,57 @@
     "overview": "This good practice paper covers heavy menstrual bleeding (HMB) and other abnormal uterine bleeding in people with inherited or acquired bleeding disorders, and in those on anticoagulant or antiplatelet therapy. It argues for a joint haematology and gynaecology service: who should be seen there, how to set it up (Table 1), management principles, and how to assure quality. It is a service-design paper, so its recommendations are weak (2C/2D) because published evidence is scarce. The facts most often examined are the epidemiology figures and the principles of hormonal and anticoagulant management."
   },
   "recommendations": [
-    { "id": "r1", "group": "Recommendations", "grade": "2C", "page": 7, "text": "We consider that women and girls with bleeding/thrombotic disorders or requiring anti-coagulant therapy may benefit from the development of a multidisciplinary haematology and gynaecology service." },
-    { "id": "r2", "group": "Recommendations", "grade": "2D", "page": 7, "text": "We would encourage that eligibility criteria for referral to the service are clear, documented and shared with potential referrers." },
-    { "id": "r3", "group": "Recommendations", "grade": "2D", "page": 7, "text": "We suggest that patients are seen jointly by a haematologist and gynaecologist and are supported by a clinical nurse specialist." },
-    { "id": "r4", "group": "Recommendations", "grade": "2D", "page": 7, "text": "We suggest that management decisions and peri-procedural planning are communicated clearly to other healthcare providers involved in the care of the individual, with patients receiving copies of all correspondence." },
-    { "id": "r5", "group": "Recommendations", "grade": "2D", "page": 8, "text": "Patient health outcomes and satisfaction should be monitored to ensure the quality of the service that is provided." },
-    { "id": "r6", "group": "Recommendations", "grade": "2D", "page": 8, "text": "We propose that opportunities for data collection and research are optimised in order to address the relative lack of knowledge in this clinical area." }
+    {
+      "id": "r1",
+      "group": "Recommendations",
+      "grade": "2C",
+      "page": 7,
+      "text": "We consider that women and girls with bleeding/thrombotic disorders or requiring anti-coagulant therapy may benefit from the development of a multidisciplinary haematology and gynaecology service."
+    },
+    {
+      "id": "r2",
+      "group": "Recommendations",
+      "grade": "2D",
+      "page": 7,
+      "text": "We would encourage that eligibility criteria for referral to the service are clear, documented and shared with potential referrers."
+    },
+    {
+      "id": "r3",
+      "group": "Recommendations",
+      "grade": "2D",
+      "page": 7,
+      "text": "We suggest that patients are seen jointly by a haematologist and gynaecologist and are supported by a clinical nurse specialist."
+    },
+    {
+      "id": "r4",
+      "group": "Recommendations",
+      "grade": "2D",
+      "page": 7,
+      "text": "We suggest that management decisions and peri-procedural planning are communicated clearly to other healthcare providers involved in the care of the individual, with patients receiving copies of all correspondence."
+    },
+    {
+      "id": "r5",
+      "group": "Recommendations",
+      "grade": "2D",
+      "page": 8,
+      "text": "Patient health outcomes and satisfaction should be monitored to ensure the quality of the service that is provided."
+    },
+    {
+      "id": "r6",
+      "group": "Recommendations",
+      "grade": "2D",
+      "page": 8,
+      "text": "We propose that opportunities for data collection and research are optimised in order to address the relative lack of knowledge in this clinical area."
+    }
   ],
   "topics": [
     {
       "id": "hg-why",
       "name": "Who needs a joint service, and the evidence for it",
-      "pages": [2, 3],
+      "pages": [
+        2,
+        3
+      ],
       "why": "The epidemiology figures, and the five groups who should be seen, are the most testable facts in this paper.",
       "keyPoints": [
         "Five groups are appropriate for a joint haematology and gynaecology service: **(i)** inherited or acquired bleeding disorder (**including ITP**) with HMB; **(ii)** **pre-pubescent** girls with a bleeding disorder in whom HMB is **anticipated at menarche**; **(iii)** **adolescents with HMB from menarche**, which may be the first presentation of a bleeding disorder; **(iv)** people on **anticoagulant or antiplatelet** therapy (with thrombotic risk factors or prior thrombosis) who have HMB; **(v)** people with **complex thrombotic risk** who need advice on contraception, HMB or menopausal symptoms.",
@@ -38,33 +78,77 @@
         "Policy context: **EAHAD** principles of care; the 2025 Haemophilia Society report **'Underserved–Overlooked'** (recommends gynaecologists in regional bleeding disorder MDTs and joint clinics); **UKHCDO peer review** quality standards require evidence of multidisciplinary discussion with O&G."
       ],
       "numbers": [
-        ["up to 25%", "women and girls affected by HMB"],
-        ["≥10%", "of those with HMB later diagnosed with an inherited bleeding disorder"],
-        ["up to 33%", "adolescents with HMB who have an inherited bleeding disorder (some studies)"],
-        ["15%", "gynaecologists who would consider a bleeding disorder at the first HMB consultation"],
-        ["~55%", "girls and women with bleeding disorders who report HMB"],
-        ["up to 70%", "menstruating females on anticoagulants who have HMB"],
-        ["median 3", "strategies needed to control HMB when haemostasis is abnormal"],
-        [">70%", "patients who prefer the multidisciplinary structure"],
-        ["66%", "European haemophilia centres without a joint clinic that think one would help"],
-        ["78%", "UK bleeding disorder centres with no joint bleeding/gynaecology clinic (UKHCDO survey)"]
+        [
+          "up to 25%",
+          "women and girls affected by HMB"
+        ],
+        [
+          "≥10%",
+          "of those with HMB later diagnosed with an inherited bleeding disorder"
+        ],
+        [
+          "up to 33%",
+          "adolescents with HMB who have an inherited bleeding disorder (some studies)"
+        ],
+        [
+          "15%",
+          "gynaecologists who would consider a bleeding disorder at the first HMB consultation"
+        ],
+        [
+          "~55%",
+          "girls and women with bleeding disorders who report HMB"
+        ],
+        [
+          "up to 70%",
+          "menstruating females on anticoagulants who have HMB"
+        ],
+        [
+          "median 3",
+          "strategies needed to control HMB when haemostasis is abnormal"
+        ],
+        [
+          ">70%",
+          "patients who prefer the multidisciplinary structure"
+        ],
+        [
+          "66%",
+          "European haemophilia centres without a joint clinic that think one would help"
+        ],
+        [
+          "78%",
+          "UK bleeding disorder centres with no joint bleeding/gynaecology clinic (UKHCDO survey)"
+        ]
       ],
-      "recs": ["r1"],
+      "recs": [
+        "r1"
+      ],
       "pitfalls": [
         "A normal PT/APTT does not exclude VWD or a platelet function disorder in a patient with HMB.",
         "Patients with chemotherapy-induced thrombocytopenia are deliberately excluded from this paper."
       ],
       "hook": "25-10-33: a quarter of women have HMB, a tenth of those have a bleeding disorder, and up to a third of adolescents with HMB do.",
       "selfTest": [
-        { "q": "List the five groups appropriate for a joint haematology and gynaecology service.", "a": "(i) Bleeding disorder (including ITP) with HMB; (ii) pre-pubescent girls with a bleeding disorder, before menarche; (iii) adolescents with HMB from menarche; (iv) anticoagulant or antiplatelet therapy with HMB; (v) complex thrombotic risk needing advice on contraception, HMB or menopause." },
-        { "q": "What proportion of adolescents presenting with HMB have an inherited bleeding disorder?", "a": "Up to 33% in some studies, compared with at least 10% of all those with HMB." },
-        { "q": "Why can routine coagulation tests miss the commonest bleeding disorders in HMB?", "a": "VWD and platelet function disorders, the two commonest, can both have a normal PT and APTT." }
+        {
+          "q": "List the five groups appropriate for a joint haematology and gynaecology service.",
+          "a": "(i) Bleeding disorder (including ITP) with HMB; (ii) pre-pubescent girls with a bleeding disorder, before menarche; (iii) adolescents with HMB from menarche; (iv) anticoagulant or antiplatelet therapy with HMB; (v) complex thrombotic risk needing advice on contraception, HMB or menopause."
+        },
+        {
+          "q": "What proportion of adolescents presenting with HMB have an inherited bleeding disorder?",
+          "a": "Up to 33% in some studies, compared with at least 10% of all those with HMB."
+        },
+        {
+          "q": "Why can routine coagulation tests miss the commonest bleeding disorders in HMB?",
+          "a": "VWD and platelet function disorders, the two commonest, can both have a normal PT and APTT."
+        }
       ]
     },
     {
       "id": "hg-service",
       "name": "Setting up the service (Table 1)",
-      "pages": [4, 5],
+      "pages": [
+        4,
+        5
+      ],
       "why": "Table 1 is the practical template for the service: team, environment, CNS role, supporting services and the patient pathway.",
       "keyPoints": [
         "**Clinical review models:** joint in-person clinics; joint remote (video or telephone) clinics; hybrid (e.g. remote follow-up); MDT meetings for case-based discussion.",
@@ -80,22 +164,38 @@
         "**Apps:** Talking Red (Haemophilia Society) and Know Your Flow.",
         "**Liaison:** clear, documented and shared referral criteria (a standard, ideally electronic, referral proforma); results shared with the GP; therapy changes communicated clearly and in line with the local formulary (off-licence use may need secondary care prescribing); education for referrers."
       ],
-      "recs": ["r2", "r3", "r4"],
+      "recs": [
+        "r2",
+        "r3",
+        "r4"
+      ],
       "pitfalls": [
         "Specialist haemostasis tests sent from a distant site may give false results. Doing them at the joint clinic avoids pre-analytical error.",
         "Measure the impact on quality of life, not just blood loss."
       ],
       "hook": "Three essential people: gynaecologist, haemostasis haematologist, CNS. Three things in the room: privacy, an examination couch, a portable ultrasound.",
       "selfTest": [
-        { "q": "Who are the essential members of the joint clinic team?", "a": "A gynaecologist, a haematologist with an interest in haemostasis, thrombosis and anticoagulation, and a clinical nurse specialist." },
-        { "q": "Why might a VWF screen be deferred until the joint clinic visit?", "a": "To avoid pre-analytical errors from sample storage, transport and processing delay when it is taken at the referring site." },
-        { "q": "What should the gynaecological history focus on?", "a": "Quality of life rather than bleeding severity." }
+        {
+          "q": "Who are the essential members of the joint clinic team?",
+          "a": "A gynaecologist, a haematologist with an interest in haemostasis, thrombosis and anticoagulation, and a clinical nurse specialist."
+        },
+        {
+          "q": "Why might a VWF screen be deferred until the joint clinic visit?",
+          "a": "To avoid pre-analytical errors from sample storage, transport and processing delay when it is taken at the referring site."
+        },
+        {
+          "q": "What should the gynaecological history focus on?",
+          "a": "Quality of life rather than bleeding severity."
+        }
       ]
     },
     {
       "id": "hg-aub",
       "name": "HMB: PALM-COEIN and hormonal options",
-      "pages": [3, 5],
+      "pages": [
+        3,
+        5
+      ],
       "why": "A bleeding disorder is not the whole explanation: structural causes still need finding, and hormonal choices depend on thrombotic risk.",
       "keyPoints": [
         "Women with bleeding disorders or on anticoagulants have **abnormal uterine bleeding** (heavy and/or unscheduled), and may also have **ovarian bleeding and pain**: pelvic haematoma after ovulation, haemorrhagic functional cysts, corpus luteal haemorrhage. Also manage the cyclical symptoms (pelvic pain, premenstrual symptoms).",
@@ -113,14 +213,23 @@
       ],
       "hook": "PALM you can see (structural), COEIN you can't (functional).",
       "selfTest": [
-        { "q": "Expand PALM-COEIN.", "a": "Polyp, Adenomyosis, Leiomyoma, Malignancy/hyperplasia (structural); Coagulopathy, Ovulatory dysfunction, Endometrial, Iatrogenic, Not yet classified (non-structural)." },
-        { "q": "When is caution needed with progestogen-only treatment?", "a": "High-dose oral progestogens in the medium to longer term in women with additional thrombotic risk factors." }
+        {
+          "q": "Expand PALM-COEIN.",
+          "a": "Polyp, Adenomyosis, Leiomyoma, Malignancy/hyperplasia (structural); Coagulopathy, Ovulatory dysfunction, Endometrial, Iatrogenic, Not yet classified (non-structural)."
+        },
+        {
+          "q": "When is caution needed with progestogen-only treatment?",
+          "a": "High-dose oral progestogens in the medium to longer term in women with additional thrombotic risk factors."
+        }
       ]
     },
     {
       "id": "hg-bleeding-disorders",
       "name": "Inherited bleeding disorders: menstrual management",
-      "pages": [5, 6],
+      "pages": [
+        5,
+        6
+      ],
       "why": "Hormonal suppression is the backbone of treatment. Haemostatic products are used for bleeding that does not respond to it.",
       "keyPoints": [
         "Refer to existing guidance on gynaecological management of girls and women with bleeding disorders (GWBD).",
@@ -135,14 +244,22 @@
       ],
       "hook": "Hormones first; then cyclical DDAVP, factor or platelets if hormones fail.",
       "selfTest": [
-        { "q": "What problem with the LNG-IUS is more common in women with inherited bleeding disorders, and how can it be reduced?", "a": "Higher expulsion rates. Menstrual suppression has been described to reduce the risk." },
-        { "q": "Which haemostatic treatments can be used cyclically when hormonal treatment fails?", "a": "Desmopressin, clotting factor concentrate or platelet transfusion." }
+        {
+          "q": "What problem with the LNG-IUS is more common in women with inherited bleeding disorders, and how can it be reduced?",
+          "a": "Higher expulsion rates. Menstrual suppression has been described to reduce the risk."
+        },
+        {
+          "q": "Which haemostatic treatments can be used cyclically when hormonal treatment fails?",
+          "a": "Desmopressin, clotting factor concentrate or platelet transfusion."
+        }
       ]
     },
     {
       "id": "hg-anticoagulation",
       "name": "Anticoagulation, thrombotic risk and HRT",
-      "pages": [6],
+      "pages": [
+        6
+      ],
       "why": "Up to 70% of menstruating women on anticoagulants have HMB, and many need anticoagulation long term. Choosing the agent matters.",
       "keyPoints": [
         "In treatment-resistant cases, consider **switching anticoagulant** to **apixaban or dabigatran**, which have a **lower incidence of HMB**.",
@@ -152,7 +269,10 @@
         "Details of approaches are in **Table S1**."
       ],
       "numbers": [
-        ["up to 70%", "menstruating females on anticoagulants with HMB"]
+        [
+          "up to 70%",
+          "menstruating females on anticoagulants with HMB"
+        ]
       ],
       "pitfalls": [
         "A woman continuing the COCP on anticoagulation is unprotected from oestrogen-related VTE risk once the anticoagulant stops. Stop the COCP with a crossover period first.",
@@ -160,14 +280,23 @@
       ],
       "hook": "Heavy periods on an anticoagulant? Think A–D: Apixaban or Dabigatran.",
       "selfTest": [
-        { "q": "A woman on rivaroxaban for VTE has refractory HMB. Which anticoagulant switch does the paper suggest?", "a": "Apixaban or dabigatran, which have a lower incidence of HMB." },
-        { "q": "What plan is needed if the COCP is continued during anticoagulation?", "a": "A clear plan to stop the COCP, with an appropriate crossover period, before anticoagulation is completed or interrupted." }
+        {
+          "q": "A woman on rivaroxaban for VTE has refractory HMB. Which anticoagulant switch does the paper suggest?",
+          "a": "Apixaban or dabigatran, which have a lower incidence of HMB."
+        },
+        {
+          "q": "What plan is needed if the COCP is continued during anticoagulation?",
+          "a": "A clear plan to stop the COCP, with an appropriate crossover period, before anticoagulation is completed or interrupted."
+        }
       ]
     },
     {
       "id": "hg-acute-surgery",
       "name": "Emergencies, surgery and follow-up",
-      "pages": [6, 7],
+      "pages": [
+        6,
+        7
+      ],
       "why": "Emergency and surgical settings are where unrecognised bleeding disorders or anticoagulation cause harm.",
       "keyPoints": [
         "**Emergency presentations:** HMB, genital tract trauma (vaginal tears, vulval haematoma), miscarriage, intra-abdominal bleeding from early pregnancy complications (e.g. ectopic), haemorrhagic ovarian cysts, ovulation, sexual trauma.",
@@ -187,14 +316,23 @@
       ],
       "hook": "In the ED: recognise the disorder, ring haematology.",
       "selfTest": [
-        { "q": "When might surgery proceed despite anaemia?", "a": "When uterine pathology is causing the iron deficiency and surgery offers a definitive solution. Transfusion can be considered within guidelines." },
-        { "q": "What must the peri-operative plan for an anticoagulated woman include?", "a": "When to stop and when to reintroduce anticoagulation, anaesthetic liaison on neuraxial anaesthesia, and alerting transfusion and haematology for high-risk surgery." }
+        {
+          "q": "When might surgery proceed despite anaemia?",
+          "a": "When uterine pathology is causing the iron deficiency and surgery offers a definitive solution. Transfusion can be considered within guidelines."
+        },
+        {
+          "q": "What must the peri-operative plan for an anticoagulated woman include?",
+          "a": "When to stop and when to reintroduce anticoagulation, anaesthetic liaison on neuraxial anaesthesia, and alerting transfusion and haematology for high-risk surgery."
+        }
       ]
     },
     {
       "id": "hg-quality",
       "name": "Quality, governance, audit and research",
-      "pages": [7, 8],
+      "pages": [
+        7,
+        8
+      ],
       "why": "These are the service quality elements and research gaps the paper names, and they link to recommendations r5 and r6.",
       "keyPoints": [
         "**Patient experience:** evaluate it, e.g. with an anonymised text or email survey after the appointment, such as the **NHS Friends and Family Test**.",
@@ -205,14 +343,23 @@
         "The joint service is likely to be of **greatest value in tertiary care**, because of the higher volume of complex patients and centralised bleeding disorder services.",
         "Aims: put the patient at the centre, avoid repeated visits and **duplicated investigations**, and give prompt access to expertise, so patients can return to school, work and daily activities."
       ],
-      "recs": ["r5", "r6"],
+      "recs": [
+        "r5",
+        "r6"
+      ],
       "pitfalls": [
         "All six recommendations are weak (2C/2D) because evidence is limited. Do not describe them as strong recommendations."
       ],
       "hook": "Measure what matters: Friends and Family Test, referral-criteria audit, DNA rates.",
       "selfTest": [
-        { "q": "What grades are the paper's recommendations, and why?", "a": "One 2C and five 2D. Evidence is scarce, so the paper included editorials, case reports and abstracts." },
-        { "q": "Give three audit measures suggested for the service.", "a": "Compliance with referral criteria, patient outcomes, referrer feedback, and frequency of non-attendance." }
+        {
+          "q": "What grades are the paper's recommendations, and why?",
+          "a": "One 2C and five 2D. Evidence is scarce, so the paper included editorials, case reports and abstracts."
+        },
+        {
+          "q": "Give three audit measures suggested for the service.",
+          "a": "Compliance with referral criteria, patient outcomes, referrer feedback, and frequency of non-attendance."
+        }
       ]
     }
   ]

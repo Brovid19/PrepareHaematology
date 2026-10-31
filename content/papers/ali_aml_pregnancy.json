@@ -1,0 +1,597 @@
+{
+  "guideline": {
+    "id": "bcsh_aml_pregnancy_2015",
+    "title": "Guidelines for the diagnosis and management of acute myeloid leukaemia in pregnancy",
+    "issuingBody": "British Committee for Standards in Haematology",
+    "year": 2015,
+    "category": "Malignant Haematology",
+    "order": 50,
+    "citation": "Ali S, Jones GL, Culligan DJ, Marsden PJ, Russell N, Embleton ND, Craddock C. Br J Haematol. 2015;170(4):487–495.",
+    "url": "https://doi.org/10.1111/bjh.13554",
+    "isVerified": true,
+    "pdf": "BJH_2015_Ali_AML_in_pregnancy.pdf",
+    "overview": "AML in pregnancy is rare (about 1 in 75 000 to 1 in 100 000 pregnancies), but delaying treatment harms the mother without helping the fetus. This BCSH guideline sets out diagnosis by WHO criteria, decisions by gestation (consider termination in the first trimester, treat in the second, and weigh prematurity against chemotherapy exposure from 24 to 36 weeks), use of standard daunorubicin and cytarabine '3 + 10' dosed on actual body weight, safe antibiotics, antifungals and antiemetics, CMV-negative blood, and planning delivery for at least 3 weeks after chemotherapy. Most of the evidence is observational, so many recommendations are grade C. APL in pregnancy is excluded and covered by European guidance."
+  },
+  "recommendations": [
+    {
+      "id": "dx-1",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "1C",
+      "page": 3,
+      "text": "Pregnant women should be managed by a multidisciplinary team that includes haematologists, obstetricians, neonatologists and anaesthetists."
+    },
+    {
+      "id": "dx-2",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "1A",
+      "page": 3,
+      "text": "As for non-pregnant patients, AML should be diagnosed using the WHO classification."
+    },
+    {
+      "id": "dx-3",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "1B",
+      "page": 4,
+      "text": "Women diagnosed with AML in pregnancy should be treated without delay after full and frank discussion with the patient."
+    },
+    {
+      "id": "dx-4",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "2C",
+      "page": 4,
+      "text": "When the diagnosis of AML is made in the first trimester, a successful pregnancy outcome is unlikely and spontaneous pregnancy loss in this situation carries considerable risks for the mother. The reasons for and against elective termination should be discussed with the patient."
+    },
+    {
+      "id": "dx-5",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "2C",
+      "page": 4,
+      "text": "In the second trimester (13–24 weeks), consideration should be given to commencing induction chemotherapy and allowing the pregnancy to proceed, after careful discussion with patient and obstetric specialists."
+    },
+    {
+      "id": "dx-6",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "1C",
+      "page": 4,
+      "text": "Between 24 and 32 weeks, risks of foetal chemotherapy exposure must be balanced against risks of prematurity following elective delivery at that stage of gestation."
+    },
+    {
+      "id": "dx-7",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "2C",
+      "page": 4,
+      "text": "When presentation is beyond 32 weeks gestation, it may be reasonable to deliver the foetus prior to commencement of chemotherapy."
+    },
+    {
+      "id": "dx-8",
+      "group": "Diagnosis and management at diagnosis",
+      "grade": "1C",
+      "page": 4,
+      "text": "Chemotherapy should be avoided at or beyond 36 weeks gestation and elective delivery is recommended."
+    },
+    {
+      "id": "chemo-1",
+      "group": "Chemotherapy and complications",
+      "grade": "1C",
+      "page": 4,
+      "text": "The risk-benefit ratio must be carefully considered before using any drugs in pregnancy."
+    },
+    {
+      "id": "chemo-2",
+      "group": "Chemotherapy and complications",
+      "grade": "1B",
+      "page": 5,
+      "text": "Where AML induction chemotherapy is delivered, a standard daunorubicin, cytarabine 3 + 10 schedule should be used."
+    },
+    {
+      "id": "chemo-3",
+      "group": "Chemotherapy and complications",
+      "grade": "1C",
+      "page": 5,
+      "text": "Chemotherapy should be dosed according to actual body weight and adjustments made for weight changes during treatment."
+    },
+    {
+      "id": "sup-1",
+      "group": "Supportive therapies in pregnancy",
+      "grade": "1B",
+      "page": 6,
+      "text": "Quinolones, Augmentin, tetracyclines and sulphonamides use should be avoided in pregnancy."
+    },
+    {
+      "id": "sup-2",
+      "group": "Supportive therapies in pregnancy",
+      "grade": "2C",
+      "page": 6,
+      "text": "Amphotericin B or lipid derivatives are antifungal agents of choice in pregnancy."
+    },
+    {
+      "id": "sup-3",
+      "group": "Supportive therapies in pregnancy",
+      "grade": "1B",
+      "page": 6,
+      "text": "CMV-negative blood products should be administered during pregnancy regardless of CMV serostatus."
+    },
+    {
+      "id": "del-1",
+      "group": "Preparation for and management of delivery",
+      "grade": "1A",
+      "page": 7,
+      "text": "A course of corticosteroids should be considered if delivery is anticipated between 24 and 35 weeks gestation, given over a 48 h period during the week prior to delivery."
+    },
+    {
+      "id": "del-2",
+      "group": "Preparation for and management of delivery",
+      "grade": "1A",
+      "page": 7,
+      "text": "Use of magnesium sulphate should be considered in the 24 h prior to delivery if this is before 30 weeks gestation."
+    },
+    {
+      "id": "del-3",
+      "group": "Preparation for and management of delivery",
+      "grade": "1C",
+      "page": 7,
+      "text": "Where possible, delivery should be planned for a time when the woman is at least 3 weeks post-chemotherapy to minimize risk of neonatal myelosuppression."
+    },
+    {
+      "id": "del-4",
+      "group": "Preparation for and management of delivery",
+      "grade": "2C",
+      "page": 7,
+      "text": "Planned delivery is easier to manage than spontaneous labour: induction of labour is usually advised."
+    },
+    {
+      "id": "del-5",
+      "group": "Preparation for and management of delivery",
+      "grade": "1C",
+      "page": 7,
+      "text": "Epidural analgesia should be avoided in a woman who is significantly thrombocytopenic (platelet count <80 × 10⁹/l) and/or neutropenic (white blood cell count <1 × 10⁹/l)."
+    },
+    {
+      "id": "del-6",
+      "group": "Preparation for and management of delivery",
+      "grade": "2C",
+      "page": 7,
+      "text": "Elective caesarean section should only be recommended for obstetric indications."
+    },
+    {
+      "id": "del-7",
+      "group": "Preparation for and management of delivery",
+      "grade": "1C",
+      "page": 7,
+      "text": "Antibiotics should be administered during and after premature rupture of membranes and delivery."
+    }
+  ],
+  "topics": [
+    {
+      "id": "amlp-diagnosis",
+      "name": "Epidemiology, diagnosis and the MDT",
+      "pages": [
+        2,
+        3
+      ],
+      "why": "Anaemia and thrombocytopenia are common in pregnancy, so leukaemia is easily missed. Diagnosis uses the same WHO criteria as outside pregnancy.",
+      "keyPoints": [
+        "Leukaemia in pregnancy is uncommon: about **1 in 75 000 to 1 in 100 000 pregnancies**. Acute leukaemia accounts for the vast majority, with **AML about two-thirds** and ALL about one-third.",
+        "**APL in pregnancy is excluded** from this guideline. It is covered by European (Sanz 2009) recommendations.",
+        "Anaemia is common and multifactorial in pregnancy, and thrombocytopenia is also relatively common. **Neutropenia is rarer** and merits investigation or close monitoring.",
+        "**Circulating blasts** on the film suggest a haematological malignancy and are an indication for **bone marrow biopsy**.",
+        "Table I lists the essential investigations to do before marrow biopsy: **FBC and film; B12, folate and ferritin; coagulation screen; renal and liver function**.",
+        "Diagnostic criteria are **the same as in non-pregnant women (WHO classification)**. Send marrow for **immunophenotyping, cytogenetics and molecular analysis** to allow accurate subtyping and prognostic assessment.",
+        "Manage jointly: **consultant haematologists, obstetricians, anaesthetists and neonatologists**. Consider the health of both mother and baby and the mother's informed wishes.",
+        "Delay harms both: **untreated, maternal death can occur within weeks or months**. Leukaemia in pregnancy also raises the risk of **miscarriage, fetal growth restriction and perinatal mortality**, and the earlier the gestation, the higher these risks.",
+        "Suspected causes of fetal death: **maternal anaemia, DIC, and leukaemic cells affecting blood flow, nutrient exchange and oxygen delivery in the intervillous spaces of the placenta**."
+      ],
+      "tables": [
+        {
+          "title": "Table I: Essential investigations",
+          "page": 2,
+          "columns": [
+            "Investigation"
+          ],
+          "rows": [
+            [
+              "Full blood count and blood film examination"
+            ],
+            [
+              "Vitamin B12, folate and ferritin measurement"
+            ],
+            [
+              "Coagulation screen"
+            ],
+            [
+              "Renal and liver function tests"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "1 in 75 000–100 000",
+          "pregnancies affected by leukaemia"
+        ],
+        [
+          "~2/3",
+          "of acute leukaemia in pregnancy that is AML (1/3 ALL)"
+        ]
+      ],
+      "recs": [
+        "dx-1",
+        "dx-2"
+      ],
+      "pitfalls": [
+        "Do not attribute unexplained neutropenia in pregnancy to gestational change. It is uncommon and needs a film or closer monitoring.",
+        "Treatment delay worsens outcomes for mother and fetus. It is not a neutral 'wait until delivery' option before late gestation."
+      ],
+      "hook": "Same WHO rules, four specialists: haematology, obstetrics, anaesthetics, neonatology.",
+      "selfTest": [
+        {
+          "q": "How common is leukaemia in pregnancy, and what proportion is AML?",
+          "a": "About 1 in 75 000 to 1 in 100 000 pregnancies. AML is about two-thirds of acute leukaemias (ALL about one-third)."
+        },
+        {
+          "q": "Which four specialties make up the recommended MDT?",
+          "a": "Haematology, obstetrics, neonatology and anaesthetics (1C)."
+        }
+      ]
+    },
+    {
+      "id": "amlp-gestation",
+      "name": "Decisions by gestation: termination, treatment or delivery",
+      "pages": [
+        3,
+        4
+      ],
+      "why": "Management depends on gestation. The cut-offs (first trimester, 24, 28, 32 and 36 weeks) are classic exam material.",
+      "keyPoints": [
+        "**First trimester:** spontaneous abortion before 12 weeks occurs in **20%** of confirmed pregnancies in healthy women, and more often in AML. Because of the high risk of miscarriage, malformation and fetal death, **consider elective termination** (2C).",
+        "Elective termination is **safer for the mother than spontaneous miscarriage**, because platelets and coagulation can be controlled. **Medical termination is preferable to surgical**, but both are manageable with tight haemostatic control.",
+        "**Second and third trimesters:** chemotherapy **rarely causes congenital malformation** but increases **late miscarriage, prematurity, fetal growth restriction, neonatal neutropenia and sepsis**. A healthy, non-malformed baby is still the most likely outcome, so usually **continue the pregnancy and start chemotherapy**.",
+        "Survival of a 'well' fetus delivered at **≥28 weeks is >90%**, and at **≥32 weeks >95%**. Delivery before chemotherapy is reasonable if presenting at **30–32 weeks**.",
+        "There is a **linear relationship**: the rate of minor neurocognitive impairment rises as gestation falls below **36 weeks**.",
+        "**No chemotherapy after 36 weeks**, because spontaneous delivery is increasingly likely before the marrow recovers. Deliver electively instead.",
+        "**24–28 weeks:** prematurity risks are high and chemotherapy appears to carry a low fetal risk, so delivery is not usually advised and **treatment should not be delayed**.",
+        "Delaying delivery by a week or two to reach a critical gestation (e.g. **26 weeks**) should only be decided **within the MDT**.",
+        "At every gestation below 36 weeks, offer a discussion with an **experienced neonatologist** about prematurity-related mortality and morbidity."
+      ],
+      "numbers": [
+        [
+          "20%",
+          "spontaneous abortion before 12 weeks in healthy women"
+        ],
+        [
+          ">90% / >95%",
+          "survival of a well fetus delivered at ≥28 / ≥32 weeks"
+        ],
+        [
+          "30–32 weeks",
+          "presentation at which delivering before chemotherapy is reasonable"
+        ],
+        [
+          "36 weeks",
+          "no chemotherapy at or after this; deliver electively"
+        ],
+        [
+          "13–24 weeks",
+          "second trimester as defined in the recommendation"
+        ]
+      ],
+      "recs": [
+        "dx-3",
+        "dx-4",
+        "dx-5",
+        "dx-6",
+        "dx-7",
+        "dx-8"
+      ],
+      "pitfalls": [
+        "The first-trimester recommendation is to discuss termination (2C), not to mandate it.",
+        "Beyond 32 weeks the guideline says delivery before chemotherapy 'may be reasonable' (2C). At or beyond 36 weeks, avoiding chemotherapy and delivering electively is 1C."
+      ],
+      "hook": "1st: discuss termination. 2nd: treat. 24–32: weigh it up. >32: consider delivering first. ≥36: no chemo, deliver.",
+      "selfTest": [
+        {
+          "q": "A woman presents with AML at 34 weeks. What does the guideline suggest?",
+          "a": "It may be reasonable to deliver before starting chemotherapy (beyond 32 weeks, 2C)."
+        },
+        {
+          "q": "Why should chemotherapy be avoided at or after 36 weeks?",
+          "a": "Spontaneous delivery is increasingly likely before marrow recovery. Elective delivery is recommended instead (1C)."
+        },
+        {
+          "q": "What is fetal survival after delivery at ≥28 and ≥32 weeks?",
+          "a": "More than 90% and more than 95% respectively, in most large centres."
+        }
+      ]
+    },
+    {
+      "id": "amlp-chemo",
+      "name": "Chemotherapy, teratogenicity and drug choice",
+      "pages": [
+        4,
+        5
+      ],
+      "why": "Which anthracycline, which schedule and how to dose are the practical decisions, and teratogenic risk is what worries patients most.",
+      "keyPoints": [
+        "If induction of labour is not yet possible, offer **daunorubicin 60 mg/m²/day IV on days 1, 3 and 5** plus **cytarabine 100 mg/m² 12-hourly IV push on days 1–10** (the UK '3 + 10').",
+        "There are **no data to support higher-dose daunorubicin (90 mg/m²)** in pregnancy, so it is **not recommended**.",
+        "Dose on **actual body weight**, adjusting for weight gain. The increased blood volume and renal clearance in pregnancy may reduce drug exposure (AUC).",
+        "Teratogenic risk is **lower than predicted from animal data**. **First-trimester** chemotherapy carries a **10–20% risk of major malformation**, lower with a **single agent** than with combinations.",
+        "**Anthracyclines:** most malformations follow first-trimester exposure, **especially weeks 2–8**. Prefer **daunorubicin or doxorubicin over idarubicin**, which is **more lipophilic** and crosses the placenta more. **Transient neonatal cardiomyopathy** has been reported with idarubicin, but not doxorubicin. Serial fetal echo may help monitor for cardiotoxicity.",
+        "**Cytarabine** is an antimetabolite. **Limb malformations** have followed first-trimester use. Transient cytopenias, intrauterine death, growth restriction and neonatal death from sepsis have been reported in all trimesters, but the risk is relatively small.",
+        "**Hydroxycarbamide:** avoid, except with **WBC >100 × 10⁹/l** where early count control may improve outcome.",
+        "General chemotherapy toxicities (e.g. sepsis) are similar to those outside pregnancy. Teratogenicity is the specific concern."
+      ],
+      "tables": [
+        {
+          "title": "Table II (condensed): Pregnancy outcomes after chemotherapy",
+          "page": 5,
+          "columns": [
+            "Study",
+            "Cases",
+            "Key outcome"
+          ],
+          "rows": [
+            [
+              "Cheghoum 2005",
+              "37 (AML 31)",
+              "15 spontaneous or therapeutic abortions; 23 healthy babies"
+            ],
+            [
+              "Turchi & Villasis 1988",
+              "28",
+              "24 infants (4 with reversible pathology); 2 materno-fetal deaths"
+            ],
+            [
+              "Avilés & Niz 1988",
+              "23",
+              "5 mothers and fetuses died during induction; no malformations"
+            ],
+            [
+              "Reynoso 1987",
+              "58",
+              "50 live infants, 28 premature; 1 congenital anomaly"
+            ],
+            [
+              "Van Calsteren 2010",
+              "180 (18% haematological)",
+              "More preterm labour (11.8%) and small-for-gestational-age (24.2%); no rise in malformations"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "60 mg/m² d1,3,5",
+          "daunorubicin in 3 + 10"
+        ],
+        [
+          "100 mg/m² 12-hourly d1–10",
+          "cytarabine in 3 + 10"
+        ],
+        [
+          "10–20%",
+          "major malformation risk with first-trimester chemotherapy"
+        ],
+        [
+          "weeks 2–8",
+          "highest-risk window for anthracycline malformation"
+        ],
+        [
+          ">100 × 10⁹/l",
+          "WBC at which hydroxycarbamide may be justified"
+        ]
+      ],
+      "recs": [
+        "chemo-1",
+        "chemo-2",
+        "chemo-3"
+      ],
+      "pitfalls": [
+        "Idarubicin is the anthracycline to avoid in pregnancy: it is more lipophilic and has been linked to transient neonatal cardiomyopathy.",
+        "Daunorubicin 90 mg/m² is not recommended in pregnancy.",
+        "Dose on actual, not ideal, body weight, and re-adjust as weight changes."
+      ],
+      "hook": "Dauno not Ida, 60 not 90, real weight not ideal.",
+      "selfTest": [
+        {
+          "q": "Why is daunorubicin preferred to idarubicin in pregnancy?",
+          "a": "Idarubicin is more lipophilic, so more crosses the placenta, and transient neonatal cardiomyopathy has been reported with it."
+        },
+        {
+          "q": "What is the major malformation risk from first-trimester chemotherapy?",
+          "a": "About 10–20%, lower with a single agent than with a combination."
+        }
+      ]
+    },
+    {
+      "id": "amlp-supportive",
+      "name": "Monitoring, sepsis and supportive care",
+      "pages": [
+        5,
+        6
+      ],
+      "why": "Sepsis is the leading direct cause of maternal death, and many usual neutropenic drugs are unsafe in pregnancy.",
+      "keyPoints": [
+        "During chemotherapy: regular obstetric haematology review with **fortnightly ultrasound scans** for growth and fetal wellbeing, and an **antenatal anaesthetic review**.",
+        "In 2006–08, **sepsis became the leading cause of direct maternal death in the UK**, with group A streptococcus causing up to 13 deaths a year. Severe sepsis with organ dysfunction has **20–40% mortality, rising to 60% with septic shock**. Signs can be atypical in pregnancy.",
+        "**PPROM with myelosuppression: expedite delivery**, whatever the gestation, because of maternal sepsis risk. At **28–34 weeks without myelosuppression**, delivery is still preferred, but a **48-hour delay for corticosteroids** may be considered.",
+        "**Antiemetics:** first line is **cyclizine or promethazine** (antihistamines, UKTIS). Second line is prochlorperazine or metoclopramide (risk of maternal dystonia). Use **ondansetron** if both fail.",
+        "**Safe antibiotics:** penicillins, erythromycin, metronidazole and cephalosporins. **If sepsis is suspected**, clindamycin, piperacillin–tazobactam, carbapenems and gentamicin can all be used (limited data on aminoglycosides).",
+        "**Avoid:** **co-amoxiclav (Augmentin)**, because of the risk of **neonatal necrotising enterocolitis**, and **quinolones, tetracyclines and sulphonamides**.",
+        "**Antifungals:** **amphotericin B** has the most experience, with no reported teratogenicity. **Liposomal or lipid-complex** forms are preferred (less nephrotoxicity and fewer infusion reactions). Azoles are teratogenic in animals: posaconazole, caspofungin and itraconazole are FDA category C, and fluconazole is category D, although fluconazole is used at <150 mg/day.",
+        "**Blood products:** **CMV-negative irrespective of CMV serostatus**, to prevent congenital CMV, but **not needed during labour**. In an emergency, use standard leucodepleted products."
+      ],
+      "numbers": [
+        [
+          "fortnightly",
+          "growth and wellbeing ultrasound during chemotherapy"
+        ],
+        [
+          "20–40% → 60%",
+          "mortality of severe sepsis → septic shock in pregnancy"
+        ],
+        [
+          "28–34 weeks",
+          "PPROM without myelosuppression: deliver, but steroids may justify a 48 h delay"
+        ],
+        [
+          "<150 mg/day",
+          "fluconazole dose at which it is reasonably widely used"
+        ]
+      ],
+      "recs": [
+        "sup-1",
+        "sup-2",
+        "sup-3"
+      ],
+      "pitfalls": [
+        "Co-amoxiclav (Augmentin) is avoided because of neonatal necrotising enterocolitis, even though amoxicillin itself is safe.",
+        "CMV-negative products are recommended even for CMV-seropositive women, but are not required during labour.",
+        "The summary on the first page omits Augmentin from the drugs to avoid, but the full recommendation (p6) includes it."
+      ],
+      "hook": "Antibiotics to avoid in pregnancy: no 'QATS' (Quinolones, Augmentin, Tetracyclines, Sulphonamides).",
+      "selfTest": [
+        {
+          "q": "Which antibiotics should be avoided in pregnant women with AML, and why is co-amoxiclav on the list?",
+          "a": "Quinolones, co-amoxiclav (Augmentin), tetracyclines and sulphonamides (1B). Co-amoxiclav raises the risk of neonatal necrotising enterocolitis."
+        },
+        {
+          "q": "What is the antifungal of choice in pregnancy?",
+          "a": "Amphotericin B, preferably a liposomal or lipid formulation (2C)."
+        },
+        {
+          "q": "A neutropenic pregnant woman on chemotherapy has PPROM at 30 weeks. What should happen?",
+          "a": "Expedite delivery because of the maternal sepsis risk, and give antibiotics during and after membrane rupture and delivery."
+        }
+      ]
+    },
+    {
+      "id": "amlp-delivery",
+      "name": "Planning delivery, anaesthesia and the third stage",
+      "pages": [
+        6,
+        7
+      ],
+      "why": "Timing delivery around the nadir and choosing anaesthesia by the blood count prevents neonatal myelosuppression, maternal bleeding and infection.",
+      "keyPoints": [
+        "**Plan delivery** as soon as fetal maturity allows, but **avoid the maternal nadir (usually 2–3 weeks after treatment)**. Aim for **≥3 weeks after chemotherapy**, so maternal counts are rising and the fetus has had time to clear drugs via the placenta. Preterm babies clear drugs poorly.",
+        "**Vaginal delivery is preferred** (less infection, quicker recovery), so **induction of labour** is usually advised. **Caesarean section only for obstetric indications.** If prostin fails, a rest period and then repeat induction can be considered.",
+        "The risk of neonatal myelosuppression is low, so **fetal scalp sampling, scalp electrodes, ventouse and forceps are not contraindicated**.",
+        "**No epidural** if **WBC <1 × 10⁹/l or platelets <80 × 10⁹/l** (risk of haematoma and infection). Use pethidine or diamorphine instead. **Avoid IM injections if platelets <50 × 10⁹/l.**",
+        "Caesarean section in a neutropenic or thrombocytopenic woman should be under **general anaesthesia**, not a regional block. If **platelets <50 × 10⁹/l**, consultant haematology involvement is essential. Give IV access and **antibiotic prophylaxis** during and after membrane rupture and delivery.",
+        "**Dexamethasone or betamethasone** if preterm delivery is anticipated at **24–35 weeks**: give over **48 h within the week before delivery**. This reduces respiratory distress syndrome, intraventricular haemorrhage, necrotising enterocolitis and cerebral palsy.",
+        "**Magnesium sulphate** in the **24 h before delivery if before 30 weeks** reduces cerebral palsy.",
+        "**Postpartum haemorrhage risk is increased.** Use active management of the third stage: **oxytocin 10 iu** with the anterior shoulder or after birth, before cord clamping. Consider a **Syntocinon infusion of 20 iu in 500 ml over 4 h**. Escalate early to carboprost, theatre, balloon tamponade or a B-Lynch suture.",
+        "**RhD-negative women:** standard anti-D. If **platelets <30 × 10⁹/l**, give anti-D **SC or IV** where a suitable product exists. Follow BCSH guidance if RhD-positive platelets are given."
+      ],
+      "numbers": [
+        [
+          "≥3 weeks",
+          "after chemotherapy for planned delivery"
+        ],
+        [
+          "2–3 weeks",
+          "usual maternal nadir after treatment"
+        ],
+        [
+          "<80 × 10⁹/l plt or <1 × 10⁹/l WBC",
+          "no epidural"
+        ],
+        [
+          "<50 × 10⁹/l",
+          "platelets: avoid IM injections; consultant haematologist for caesarean section"
+        ],
+        [
+          "24–35 weeks, over 48 h",
+          "antenatal corticosteroids"
+        ],
+        [
+          "<30 weeks, 24 h before",
+          "magnesium sulphate"
+        ],
+        [
+          "10 iu; 20 iu/500 ml over 4 h",
+          "oxytocin bolus; Syntocinon infusion"
+        ],
+        [
+          "<30 × 10⁹/l",
+          "platelets: give anti-D SC or IV, not IM"
+        ]
+      ],
+      "recs": [
+        "del-1",
+        "del-2",
+        "del-3",
+        "del-4",
+        "del-5",
+        "del-6",
+        "del-7"
+      ],
+      "pitfalls": [
+        "Caesarean section is not the default in leukaemia. It is reserved for obstetric indications (2C).",
+        "Instrumental delivery and fetal scalp sampling are not contraindicated.",
+        "Keep the platelet thresholds apart: 80 for epidural, 50 for IM injections and caesarean section planning, 30 for the anti-D route."
+      ],
+      "hook": "Deliver three weeks after chemotherapy. Platelet cut-offs: 80 for an epidural, 50 for an IM injection, 30 for the anti-D route.",
+      "selfTest": [
+        {
+          "q": "When should delivery ideally be timed after chemotherapy, and why?",
+          "a": "At least 3 weeks afterwards (1C), to avoid the maternal nadir and allow fetal drug clearance via the placenta, minimising neonatal myelosuppression."
+        },
+        {
+          "q": "Below what counts should epidural analgesia be avoided?",
+          "a": "Platelets <80 × 10⁹/l and/or WBC <1 × 10⁹/l (1C)."
+        },
+        {
+          "q": "When is magnesium sulphate given, and for what benefit?",
+          "a": "In the 24 h before delivery if before 30 weeks (1A), to reduce cerebral palsy."
+        }
+      ]
+    },
+    {
+      "id": "amlp-postdelivery",
+      "name": "After delivery: consolidation, VTE, breastfeeding and the baby",
+      "pages": [
+        7,
+        8
+      ],
+      "why": "After delivery, AML treatment continues as for any patient, but the postnatal period brings VTE risk and breastfeeding questions.",
+      "keyPoints": [
+        "Plan **consolidation as soon as feasible**, as for non-pregnant patients, based on remission status, prognostic risk and cycles already given.",
+        "**Avoid separating mother and baby**, especially in the first postnatal days. This may influence the timing of chemotherapy.",
+        "**VTE risk is high**, especially in the **first 10 days** after delivery. Assess risk at delivery. Start **LMWH 4 h after delivery if platelets >50 × 10⁹/l**, and continue for **10 days or 6 weeks** depending on risk (RCOG).",
+        "**Breastfeeding is not recommended** during chemotherapy and for **at least 2 weeks after** it finishes. Follow local policies on lactation suppression, menstrual suppression and contraception.",
+        "**Neonatal follow-up:** most babies are born at or near term with little morbidity. Consider a **postnatal echocardiogram** if cardiotoxic drugs were given (reassuring, though unproven). Long-term growth problems are unlikely, but neurocognitive effects cannot be quantified, so offer follow-up in early infancy."
+      ],
+      "numbers": [
+        [
+          "4 h",
+          "after delivery: start LMWH (if platelets >50 × 10⁹/l)"
+        ],
+        [
+          "10 days or 6 weeks",
+          "LMWH duration by risk"
+        ],
+        [
+          "≥2 weeks",
+          "after finishing chemotherapy before breastfeeding"
+        ]
+      ],
+      "pitfalls": [
+        "LMWH needs platelets >50 × 10⁹/l.",
+        "The 2-week breastfeeding restriction runs from the end of chemotherapy, not from delivery."
+      ],
+      "hook": "4 hours, 50 platelets, 10 days or 6 weeks. And no breastfeeding until 2 weeks after the last chemo.",
+      "selfTest": [
+        {
+          "q": "When should postnatal LMWH start, and with what platelet threshold?",
+          "a": "4 h after delivery, provided platelets are >50 × 10⁹/l, for 10 days or 6 weeks depending on risk."
+        },
+        {
+          "q": "When can a woman treated for AML breastfeed?",
+          "a": "Not during chemotherapy, and not until at least 2 weeks after it finishes."
+        }
+      ]
+    }
+  ]
+}
