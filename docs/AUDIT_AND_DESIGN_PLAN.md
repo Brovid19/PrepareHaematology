@@ -6,6 +6,45 @@ _Review date: 31 October 2026 · Scope: Android app (`app/`), website (`public/i
 
 ---
 
+## 0. Fix status (applied 31 Oct 2026)
+
+Rollback point: branch `backup/pre-fixes-2026-10-31` (commit `6b4bb40`, the state before any fixes).
+
+**Applied**
+- **Content (app + website):** every 🔴 and 🟠 item in §2 is corrected in `SeedData.kt`, the app's exam-pitfall and banner text, and the website. Unverifiable grades were removed from items tied to guidelines that have no source PDF in the repo. Those 9 resources are now flagged `isVerified = false`, shown as "Not yet verified", and their questions show "Not verified" as the evidence grade. Wrong DOIs and attributions are fixed; links I couldn't verify now point to a PubMed search instead of a guessed DOI.
+- **One source of truth:** the website's content is now generated from `SeedData.kt` by `scripts/build_web_content.py` into `public/content.js`. The script also checks content integrity: unknown sources, out-of-range answer indexes, mixed domain names and duplicate IDs fail the build. A GitHub Action (`.github/workflows/content-check.yml`) fails if the two drift.
+- **Data safety:** upserts replace REPLACE, so re-ingesting a guideline no longer cascade-deletes progress. Every launch syncs corrected content while keeping SM-2 progress. The racing double-seed is removed.
+- **Import:** the template "AI synthesizer" is replaced. Bundled guidelines return their verified content (same IDs, no duplicates). Any other file becomes an *unverified* placeholder with no generated content. Matching uses word boundaries. The UI is relabelled "experimental", with no AI claims.
+- **Learning loop:**
+  - Due-mode skip fixed.
+  - Due is now the default mode.
+  - Buttons use correct SM-2 qualities (Again 1 / Hard 3 / Good 4 / Easy 5) and show the real next interval.
+  - The Difficult drill means real lapses only.
+  - Mocks exclude essays and count unanswered questions as wrong.
+  - Weak spots clear once the latest attempt is correct.
+  - Domain names are unified.
+  - Recall filters cover every guideline.
+  - Weak-spot → Practice navigation is fixed.
+  - The mock length, shuffle, default review mode and default practice domain settings are now used.
+- **Website:**
+  - Hard-coded "88/82/75/92% mastery" and "100% retention" are replaced with real figures from the learner's own answers and reviews.
+  - The fake importer is removed.
+  - "View PDF" appears only where the real PDF exists.
+  - Content is HTML-escaped (XSS).
+  - Saved decks keep progress but pick up corrected text.
+  - "PASS" is relabelled as a practice benchmark.
+  - The service worker is network-first for HTML/content.
+- **Tests:** new Robolectric tests cover progress-preserving re-seeding, no cascade on re-ingest, honest import, domain/verification consistency, and essay-free mocks.
+
+**Not done (needs a decision, an Android SDK, or a clinician)**
+- Android build and unit tests could not run here (no Android SDK in this environment). Kotlin changes were parse-checked only. Run `./gradlew testDebugUnitTest assembleDebug` locally or in CI.
+- `public/downloads/prepare-haematology.apk` is still the **old build**; rebuild it after the tests pass.
+- Licensing of the bundled BJH/RCPath PDFs (§1 #12): still hosted pending your decision.
+- Consultant sign-off on the 9 "not yet verified" resources (§2.2), then set `isVerified = true`.
+- Remaining Phase 2–4 items: navigation rewrite, FSRS, a separate bookmarks table (needs a schema migration), real LLM extraction with review, the remaining settings, and the site restructure.
+
+---
+
 ## 1. Executive summary — the 12 things to fix first
 
 | # | Severity | Finding | Where |
