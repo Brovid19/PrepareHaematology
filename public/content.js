@@ -1,6 +1,5 @@
 // GENERATED FILE - DO NOT EDIT BY HAND.
-// Source of truth: app/src/main/java/com/example/data/db/SeedData.kt
-// Regenerate with: python3 scripts/build_web_content.py
+// Source of truth: content/*.json. Regenerate with: python3 scripts/build_web_content.py
 window.PREPARE_CONTENT = {
  "guidelines": [
   {

@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Prepare Haematology | FRCPath Part 1 Revision Platform</title>
   <meta name="description" content="Prepare Haematology - FRCPath Part 1 exam revision platform with spaced repetition, evidence-grounded questions, clinical guidelines, timed mock exams, and audio playlists.">
   <meta name="theme-color" content="#0B0C10">
+  <meta name="color-scheme" content="dark">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PrepareHaem">
   <style>
     :root {
       --bg: #0B0C10;
@@ -781,7 +789,30 @@
     .modal-close-btn:hover {
       color: #FFF;
     }
-  </style>
+  
+    /* ---------- PWA chrome: install / update / offline ---------- */
+    .brand-logo { width: 40px; height: 40px; border-radius: 10px; display: block; }
+    .pwa-banner {
+      position: fixed; left: 50%; transform: translateX(-50%);
+      bottom: calc(96px + env(safe-area-inset-bottom)); z-index: 1200;
+      display: none; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center;
+      max-width: calc(100% - 32px); padding: 12px 16px; border-radius: 10px;
+      background: var(--card-bg); border: 1px solid var(--primary); color: var(--text);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5); font-size: 0.9rem;
+    }
+    .pwa-banner.show { display: flex; }
+    .offline-pill {
+      display: none; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px;
+      background: rgba(236,201,75,0.15); border: 1px solid rgba(236,201,75,0.6); color: var(--accent-amber);
+      font-size: 0.78rem; font-weight: 700;
+    }
+    body.is-offline .offline-pill { display: inline-flex; }
+    .install-steps { margin-left: 20px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; }
+    .install-platform { text-align: left; background: var(--card-bg); padding: 18px 20px; border-radius: var(--radius); border: 1px solid var(--card-border); margin-top: 14px; }
+    .install-platform.highlight { border-color: var(--primary); }
+    @media (display-mode: standalone) { .hide-when-installed { display: none !important; } }
+    header { padding-top: env(safe-area-inset-top); }
+</style>
 </head>
 <body>
 
@@ -789,17 +820,18 @@
   <header>
     <div class="header-container">
       <div class="brand" onclick="switchTab('dashboard')">
-        <div class="brand-icon">PH</div>
+        <img class="brand-logo" src="/icons/icon-192.png" alt="" width="40" height="40">
         <div class="brand-text">
           <h1>Prepare Haematology</h1>
           <p>FRCPath Part 1 Revision Platform</p>
         </div>
       </div>
       <div class="header-actions">
-        <a href="/downloads/prepare-haematology.apk" class="btn btn-primary" download>
+        <span class="offline-pill" role="status">● Offline: progress is saved on this device</span>
+        <button class="btn btn-primary hide-when-installed" id="header-install-btn" onclick="handleInstallClick()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Get Android App
-        </a>
+          Install App
+        </button>
         <button class="btn btn-secondary" onclick="togglePlaylistModal()">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
           Audio Queue (<span id="queue-badge-count">0</span>)
@@ -823,7 +855,7 @@
       <button class="nav-tab" onclick="switchTab('weakspots', this)">Weak Spots Drill</button>
       <button class="nav-tab" onclick="switchTab('library', this)">2026 PDF Library</button>
       <button class="nav-tab" onclick="switchTab('settings', this)">Settings</button>
-      <button class="nav-tab" onclick="switchTab('download', this)">Android APK</button>
+      <button class="nav-tab" onclick="switchTab('install', this)">Install &amp; Offline</button>
     </div>
 
     <!-- TAB 1: DASHBOARD -->
@@ -1117,8 +1149,9 @@
     <!-- TAB 8: 2026 PDF LIBRARY -->
     <div id="tab-library" class="tab-panel">
       <div style="max-width:850px; margin:0 auto;">
-        <h3 style="color:#FFF; margin-bottom:12px;">Official Approved 2026 BSH Guidelines & Past Papers</h3>
-        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:20px;">Official reference PDF documents for offline reading and direct clinical review.</p>
+        <h3 style="color:#FFF; margin-bottom:12px;">2026 BSH Guidelines &amp; RCPath Papers</h3>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:12px;">Source documents behind the verified study content. Each PDF is kept for offline reading once opened.</p>
+        <button class="btn btn-secondary" style="margin-bottom:20px;" onclick="savePdfsForOffline()">Save all for offline</button>
 
         <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
           <div>
@@ -1171,7 +1204,7 @@
         <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
           <div>
             <h4 style="color:#FFF;">Sample MCQ and EMQ Examination Questions</h4>
-            <p style="color:var(--text-muted); font-size:0.8rem;">RCPath Official Practice Bank</p>
+            <p style="color:var(--text-muted); font-size:0.8rem;">RCPath sample questions (no answer key published)</p>
           </div>
           <a href="/assets/aistudio/haematology-sample-mcq-and-emq-questions_babdb595.pdf" target="_blank" class="btn btn-primary">Open PDF</a>
         </div>
@@ -1188,7 +1221,7 @@
           <h4 style="color:#FFF; margin-bottom:12px;">Audio & Text-to-Speech (TTS)</h4>
           <div class="form-group">
             <label class="form-label">Preferred Dialect</label>
-            <select class="form-select" id="setting-voice-locale" onchange="saveAppSetting('voiceLocale', this.value)">
+            <select class="form-select" id="setting-voice-locale" onchange="saveAppSetting('voiceLocale', this.value); preferredVoiceLocale = this.value;">
               <option value="en-GB">British English (en-GB) - Recommended</option>
               <option value="en-US">American English (en-US)</option>
             </select>
@@ -1204,7 +1237,7 @@
           <h4 style="color:#FFF; margin-bottom:12px;">Spaced Repetition (SM-2)</h4>
           <div class="form-group">
             <label class="form-label">Daily Flashcard Goal</label>
-            <input type="number" min="5" max="100" value="20" class="form-input" id="setting-daily-goal" onchange="saveAppSetting('dailyGoal', parseInt(this.value))">
+            <input type="number" min="5" max="100" value="20" class="form-input" id="setting-daily-goal" onchange="saveAppSetting('dailyGoal', parseInt(this.value)); updateDashboardStats();">
           </div>
           <div class="form-group">
             <label class="form-label">Default Mock Duration (Minutes)</label>
@@ -1231,7 +1264,16 @@
 
         <!-- Maintenance Card -->
         <div class="card">
-          <h4 style="color:#FFF; margin-bottom:12px;">Data & Progress Maintenance</h4>
+          <h4 style="color:#FFF; margin-bottom:12px;">Your Data &amp; Progress</h4>
+          <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:12px; line-height:1.5;">Progress is stored only on this device (no account). Back it up to a file to keep it safe or move it to another device.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+            <button class="btn btn-primary" onclick="exportProgress()">Back up progress</button>
+            <label class="btn btn-secondary" style="cursor:pointer;">
+              Restore from backup
+              <input type="file" accept="application/json,.json" style="display:none;" onchange="importProgress(event)">
+            </label>
+          </div>
+          <div id="storage-status" style="font-size:0.8rem; color:var(--text-muted); margin-bottom:12px;"></div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <button class="btn btn-secondary" onclick="resetSpacedRepetitionProgress()">Reset Spaced Repetition Progress</button>
             <button class="btn btn-secondary" onclick="resetSettingsToDefaults()">Reset All Settings</button>
@@ -1240,26 +1282,48 @@
       </div>
     </div>
 
-    <!-- TAB 10: ANDROID APK DOWNLOAD -->
-    <div id="tab-download" class="tab-panel">
+    <!-- TAB 10: INSTALL & OFFLINE (PWA) -->
+    <div id="tab-install" class="tab-panel">
       <div style="max-width:700px; margin:0 auto; text-align:center;">
-        <div class="brand-icon" style="width:72px; height:72px; font-size:36px; margin:0 auto 16px; border-radius:18px;">PH</div>
-        <h2 style="color:#FFF; margin-bottom:8px;">Install Prepare Haematology on Android</h2>
-        <p style="color:var(--text-muted); max-width:550px; margin:0 auto 24px;">The native Android application provides edge-to-edge dark UI, on-device Room SQLite database, offline SuperMemo-2 spaced repetition, and background Text-to-Speech playlist playback.</p>
+        <img src="/icons/icon-192.png" alt="" width="88" height="88" style="border-radius:20px; margin:0 auto 16px; display:block;">
+        <h2 style="color:#FFF; margin-bottom:8px;">Install Prepare Haematology</h2>
+        <p style="color:var(--text-muted); max-width:560px; margin:0 auto 18px;">Add the app to your home screen or desktop. It opens in its own window, works offline, and keeps your flashcard progress, answers and settings on this device. No app store or download needed.</p>
 
-        <a href="/downloads/prepare-haematology.apk" class="btn btn-primary" style="padding:14px 28px; font-size:1.05rem;" download>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download Native Android APK (27 MB)
-        </a>
+        <div id="install-status" style="margin-bottom:16px; font-weight:700; color:var(--accent-green);"></div>
+        <button class="btn btn-primary hide-when-installed" id="install-tab-btn" style="padding:14px 28px; font-size:1.05rem;" onclick="handleInstallClick()">Install App</button>
 
-        <div style="margin-top:32px; text-align:left; background:var(--card-bg); padding:20px; border-radius:var(--radius); border:1px solid var(--card-border);">
-          <h4 style="color:#FFF; margin-bottom:10px;">How to install on Android device:</h4>
-          <ol style="margin-left:20px; color:var(--text-muted); font-size:0.9rem; line-height:1.8;">
-            <li>Tap the <strong>Download Native Android APK</strong> button above.</li>
-            <li>When prompted, allow downloading and open the downloaded <code>prepare-haematology.apk</code>.</li>
-            <li>If Android displays an "Install unknown apps" prompt, allow installation for your browser.</li>
-            <li>Launch <strong>Prepare Haematology</strong> directly from your home screen!</li>
+        <div class="install-platform" data-platform="android">
+          <h4 style="color:#FFF; margin-bottom:8px;">Android (Chrome, Edge, Samsung Internet)</h4>
+          <ol class="install-steps">
+            <li>Tap <strong>Install App</strong> above, or open the browser menu (⋮).</li>
+            <li>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+            <li>Open <strong>PrepareHaem</strong> from your home screen. Long-press the icon for shortcuts to Review, Practice and Mock.</li>
           </ol>
+        </div>
+        <div class="install-platform" data-platform="ios">
+          <h4 style="color:#FFF; margin-bottom:8px;">iPhone and iPad (Safari)</h4>
+          <ol class="install-steps">
+            <li>Open this site in <strong>Safari</strong>.</li>
+            <li>Tap the <strong>Share</strong> button (square with an arrow).</li>
+            <li>Choose <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</li>
+          </ol>
+        </div>
+        <div class="install-platform" data-platform="desktop">
+          <h4 style="color:#FFF; margin-bottom:8px;">Desktop (Chrome or Edge)</h4>
+          <ol class="install-steps">
+            <li>Click <strong>Install App</strong> above, or the install icon at the right of the address bar.</li>
+            <li>The app opens in its own window and appears in your Start menu, Dock or Launchpad.</li>
+          </ol>
+        </div>
+
+        <div class="install-platform">
+          <h4 style="color:#FFF; margin-bottom:8px;">Offline use</h4>
+          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">Summaries, flashcards, questions and mock exams work offline after your first visit. Guideline PDFs are saved the first time you open them, or save them all now:</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; align-items:center;">
+            <button class="btn btn-secondary" onclick="savePdfsForOffline()">Save guideline PDFs for offline</button>
+            <span id="offline-pdf-status" style="font-size:0.85rem; color:var(--text-muted);"></span>
+          </div>
+          <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.6; margin-top:12px;">Your progress lives in this browser only. Use <strong>Settings → Back up progress</strong> to move it to another device.</p>
         </div>
       </div>
     </div>
@@ -1353,8 +1417,8 @@
 
   <script src="/content.js"></script>
   <script>
-    // Study content is GENERATED from the Android app's SeedData.kt (single source of truth),
-    // so the website and the app can never drift apart. See scripts/build_web_content.py.
+    // Study content is GENERATED from content/*.json (the single source of truth) by
+    // scripts/build_web_content.py. Edit the JSON, not public/content.js.
     const CONTENT = window.PREPARE_CONTENT || { guidelines: [], questions: [], flashcards: [] };
     const approvedGuidelines = CONTENT.guidelines;
     const examQuestions = CONTENT.questions;
@@ -2120,7 +2184,7 @@
         .filter(q => q.questionType !== 'ESSAY' && q.options && q.options.length > 0 && q.correct >= 0)
         .map(q => [Math.random(), q]).sort((x, y) => x[0] - y[0]).map(x => x[1])
         .slice(0, 10);
-      mockSeconds = (parseInt(localStorage.getItem('prepare_haem_mock_duration')) || 20) * 60;
+      mockSeconds = (parseInt(localStorage.getItem('prepare_haem_mockDuration')) || 20) * 60;
       mockCurrentIndex = 0;
       mockAnswers = {};
       mockFlags = {};
@@ -2274,8 +2338,8 @@
       stagedResourceId = null;
       document.getElementById('ai-summary-points').innerHTML = `<strong>${esc(file.name)}</strong>`;
       document.getElementById('ai-cards-preview').innerHTML = `
-        Importing your own documents is not available on the website, and no study content is generated from uploads.
-        Use the Android app to add a guideline as an <em>unverified</em> entry that you fill in yourself.
+        Importing your own documents is not supported, and no study content is generated from uploads.
+        You can still make your own flashcards in the Spaced Repetition tab.
       `;
       document.getElementById('ingest-package-preview').style.display = 'block';
       e.target.value = '';
@@ -2548,6 +2612,203 @@
       }
     }
 
+    // ================= Progressive Web App =================
+    let deferredInstallPrompt = null;
+    let waitingWorker = null;
+    let updateRequested = false;
+
+    function isStandalone() {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    function detectPlatform() {
+      const ua = navigator.userAgent || '';
+      if (/iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) return 'ios';
+      if (/Android/i.test(ua)) return 'android';
+      return 'desktop';
+    }
+
+    function refreshInstallUi() {
+      const installed = isStandalone();
+      const canPrompt = !!deferredInstallPrompt;
+      const platform = detectPlatform();
+      const status = document.getElementById('install-status');
+      if (status) {
+        status.innerText = installed ? '✓ Installed: you are using the app.' : '';
+      }
+      // The header button only appears when the browser can actually install (or on iOS, where we show steps).
+      const headerBtn = document.getElementById('header-install-btn');
+      if (headerBtn) headerBtn.style.display = (!installed && (canPrompt || platform === 'ios')) ? '' : 'none';
+      const tabBtn = document.getElementById('install-tab-btn');
+      if (tabBtn) {
+        tabBtn.style.display = installed ? 'none' : '';
+        tabBtn.disabled = !canPrompt && platform !== 'ios';
+        tabBtn.title = tabBtn.disabled ? 'Use your browser menu to install (see steps below)' : '';
+      }
+      document.querySelectorAll('.install-platform[data-platform]').forEach(el => {
+        el.classList.toggle('highlight', el.getAttribute('data-platform') === platform);
+      });
+    }
+
+    async function handleInstallClick() {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        try { await deferredInstallPrompt.userChoice; } catch (e) {}
+        deferredInstallPrompt = null;
+        refreshInstallUi();
+        return;
+      }
+      // iOS Safari and browsers without an install prompt: show the manual steps.
+      switchTab('install');
+    }
+
+    function showUpdateBanner(worker) {
+      waitingWorker = worker;
+      document.getElementById('update-banner').classList.add('show');
+    }
+
+    function applyAppUpdate() {
+      document.getElementById('update-banner').classList.remove('show');
+      updateRequested = true;
+      if (waitingWorker) waitingWorker.postMessage({ type: 'SKIP_WAITING' });
+      else window.location.reload();
+    }
+
+    async function savePdfsForOffline() {
+      const status = document.getElementById('offline-pdf-status');
+      const urls = Array.from(document.querySelectorAll('a[href^="/assets/"]')).map(a => a.getAttribute('href'));
+      const unique = Array.from(new Set(urls));
+      if (!('caches' in window)) {
+        if (status) status.innerText = 'Offline storage is not available in this browser.';
+        return;
+      }
+      if (status) status.innerText = `Saving ${unique.length} PDFs…`;
+      try {
+        const cache = await caches.open('prepare-haematology-pdfs');
+        let saved = 0;
+        for (const url of unique) {
+          try {
+            const res = await fetch(url);
+            if (res.ok) { await cache.put(url, res); saved++; }
+          } catch (e) {}
+        }
+        if (status) status.innerText = `Saved ${saved} of ${unique.length} PDFs for offline reading.`;
+      } catch (e) {
+        if (status) status.innerText = 'Could not save PDFs (storage may be full).';
+      }
+    }
+
+    // ---- Backup & restore (progress lives only on this device) ----
+    function exportProgress() {
+      const data = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (key && key.startsWith('prepare_haem_')) data[key] = localStorage.getItem(key);
+      }
+      const payload = { app: 'prepare-haematology', version: 1, exportedAt: new Date().toISOString(), data };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `prepare-haematology-progress-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function importProgress(event) {
+      const file = event.target.files && event.target.files[0];
+      event.target.value = '';
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const payload = JSON.parse(reader.result);
+          if (!payload || payload.app !== 'prepare-haematology' || typeof payload.data !== 'object') {
+            alert('This file is not a Prepare Haematology backup.');
+            return;
+          }
+          if (!confirm('Replace the progress on this device with the backup?')) return;
+          Object.keys(localStorage).filter(k => k.startsWith('prepare_haem_')).forEach(k => localStorage.removeItem(k));
+          Object.entries(payload.data).forEach(([k, v]) => {
+            if (k.startsWith('prepare_haem_') && typeof v === 'string') localStorage.setItem(k, v);
+          });
+          window.location.reload();
+        } catch (e) {
+          alert('Could not read the backup file.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    async function refreshStorageStatus() {
+      const el = document.getElementById('storage-status');
+      if (!el || !navigator.storage) return;
+      try {
+        const persisted = navigator.storage.persisted ? await navigator.storage.persisted() : false;
+        el.innerText = persisted
+          ? 'Storage: protected from automatic clearing by the browser.'
+          : 'Storage: the browser may clear data if the device runs low on space; back up regularly.';
+      } catch (e) {}
+    }
+
+    function updateOnlineState() {
+      document.body.classList.toggle('is-offline', !navigator.onLine);
+    }
+
+    function initPwa() {
+      // Deep links from manifest shortcuts, e.g. /?tab=flashcards
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get('tab');
+      if (tab && document.getElementById('tab-' + tab)) switchTab(tab);
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredInstallPrompt = e;
+        refreshInstallUi();
+      });
+      window.addEventListener('appinstalled', () => {
+        deferredInstallPrompt = null;
+        refreshInstallUi();
+      });
+      window.addEventListener('online', updateOnlineState);
+      window.addEventListener('offline', updateOnlineState);
+      updateOnlineState();
+      refreshInstallUi();
+
+      // Ask the browser not to evict stored progress (granted automatically for installed apps on most browsers).
+      if (navigator.storage && navigator.storage.persist) {
+        navigator.storage.persist().catch(() => {}).finally(refreshStorageStatus);
+      }
+
+      if (!('serviceWorker' in navigator)) return;
+      let reloading = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        // Reload only when the learner chose "Update now" (not when a first-time
+        // worker takes control, which would otherwise interrupt a fresh visit).
+        if (reloading || !updateRequested) return;
+        reloading = true;
+        window.location.reload();
+      });
+      navigator.serviceWorker.register('/sw.js').then((reg) => {
+        if (reg.waiting && navigator.serviceWorker.controller) showUpdateBanner(reg.waiting);
+        reg.addEventListener('updatefound', () => {
+          const worker = reg.installing;
+          if (!worker) return;
+          worker.addEventListener('statechange', () => {
+            // Only offer an update when replacing an existing version (not on first install).
+            if (worker.state === 'installed' && navigator.serviceWorker.controller) showUpdateBanner(worker);
+          });
+        });
+        // Check for new versions periodically and when the app comes back to the foreground.
+        setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') reg.update().catch(() => {});
+        });
+      }).catch(() => {});
+    }
+
     // Initialization
     window.addEventListener('DOMContentLoaded', () => {
       renderSummaries();
@@ -2565,6 +2826,22 @@
           const sel = document.getElementById('setting-theme');
           if (sel) sel.value = savedTheme;
         }
+        const savedLocale = localStorage.getItem('prepare_haem_voiceLocale');
+        if (savedLocale) {
+          preferredVoiceLocale = savedLocale;
+          const loc = document.getElementById('setting-voice-locale');
+          if (loc) loc.value = savedLocale;
+        }
+        const savedGoal = localStorage.getItem('prepare_haem_dailyGoal');
+        if (savedGoal) {
+          const goal = document.getElementById('setting-daily-goal');
+          if (goal) goal.value = savedGoal;
+        }
+        const savedMock = localStorage.getItem('prepare_haem_mockDuration');
+        if (savedMock) {
+          const mock = document.getElementById('setting-mock-duration');
+          if (mock) mock.value = savedMock;
+        }
         const savedRate = localStorage.getItem('prepare_haem_speechRate');
         if (savedRate) {
           currentSpeechRate = parseFloat(savedRate);
@@ -2574,11 +2851,13 @@
         }
       } catch(e) {}
 
-      // Register Service Worker
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      }
+      initPwa();
     });
   </script>
+  <div class="pwa-banner" id="update-banner" role="status" aria-live="polite">
+    <span>A new version of Prepare Haematology is ready.</span>
+    <button class="btn btn-primary" style="padding:6px 14px;" onclick="applyAppUpdate()">Update now</button>
+    <button class="btn btn-secondary" style="padding:6px 14px;" onclick="document.getElementById('update-banner').classList.remove('show')">Later</button>
+  </div>
 </body>
 </html>

@@ -6,6 +6,32 @@ _Review date: 31 October 2026 · Scope: Android app (`app/`), website (`public/i
 
 ---
 
+## 0a. Architecture change: Android app removed, now a PWA (31 Oct 2026)
+
+Rollback point: branch `backup/pre-pwa-2026-10-31` (the Android + web version with all content fixes).
+
+- **Removed:** the Android project (`app/`, Gradle build files), the 27 MB APK in `public/downloads/`, and every link to it.
+- **Content now lives in `content/*.json`**, converted from the former `SeedData.kt` with byte-identical output. The build script validates it and generates `public/content.js`. This finishes Phase 1 (one source of truth).
+- **Installable PWA:**
+  - Manifest with any and maskable icons, built from the existing app artwork, plus an Apple touch icon.
+  - Shortcuts for Review, Practice and Mock.
+  - A service worker with a versioned app-shell precache, network-first pages and content, and PDFs kept for offline reading.
+  - A learner-controlled "Update available" flow.
+  - An install button and per-platform install steps.
+  - An offline indicator and persistent-storage request.
+  - Progress backup and restore to a file.
+- **Verified in headless Chromium:**
+  - Chrome reports no installability or manifest errors.
+  - The service worker controls the page.
+  - A full reload works offline.
+  - Shortcut deep links work.
+  - Backup and restore round-trip correctly.
+  - All 7 PDFs cache for offline use.
+  - The update banner hands over to the new version.
+  - All earlier study-flow tests still pass.
+- **Also fixed:** two settings were saved under one key and read under another. These were mock duration and voice locale (the daily goal was not shown after reload). A first visit no longer reloads itself when the service worker takes control.
+- Sections below that refer to Kotlin files describe the codebase as audited; those files no longer exist.
+
 ## 0. Fix status (applied 31 Oct 2026)
 
 Rollback point: branch `backup/pre-fixes-2026-10-31` (commit `6b4bb40`, the state before any fixes).

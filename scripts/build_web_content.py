@@ -1,270 +1,152 @@
 #!/usr/bin/env python3
 """
-Generate the website's study content (public/content.js) from the Android app's
-single source of truth:
+Build the PWA's study content.
 
-  * app/src/main/java/com/example/data/db/SeedData.kt          (resources, questions, flashcards)
-  * app/src/main/java/com/example/ui/screens/SummarisedGuidelinesScreen.kt  (exam pitfalls)
+Source of truth (edit these):
+    content/guidelines.json   guideline digests (summary, cutoffs, staging, recommendations, pitfalls)
+    content/questions.json    MCQ / EMQ / essay questions
+    content/flashcards.json   spaced-repetition flashcards
 
-Run from the repository root:
+Generated (do not edit by hand):
+    public/content.js         the data the web app loads
+    public/sw.js              BUILD_ID line is stamped so installed apps pick up new versions
 
-    python3 scripts/build_web_content.py           # writes public/content.js
-    python3 scripts/build_web_content.py --check   # exits 1 if public/content.js is stale
+Usage (from the repository root):
+    python3 scripts/build_web_content.py           # validate + write generated files
+    python3 scripts/build_web_content.py --check   # validate + fail if generated files are stale
 
-The script also runs integrity checks and fails loudly if content is inconsistent
-(unknown sourceResourceId, out-of-range answer index, unknown domain, duplicate ids...).
+Validation fails loudly on: duplicate ids, unknown domains/categories, questions or cards that
+point at a guideline that doesn't exist, out-of-range answer indexes, duplicate options, essays
+without a model answer, non-https links, and PDFs that aren't in public/assets.
 """
+import hashlib
 import json
 import pathlib
 import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SEED = ROOT / "app/src/main/java/com/example/data/db/SeedData.kt"
-SUMMARIES = ROOT / "app/src/main/java/com/example/ui/screens/SummarisedGuidelinesScreen.kt"
-OUT = ROOT / "public/content.js"
+CONTENT = ROOT / "content"
+PUBLIC = ROOT / "public"
+OUT = PUBLIC / "content.js"
+SW = PUBLIC / "sw.js"
+PDF_DIR = PUBLIC / "assets" / "aistudio"
 
 PRACTICE_DOMAINS = {"Haemato-Oncology", "Haemostasis & Thrombosis", "Transfusion Medicine", "General Haematology"}
-RESOURCE_CATEGORIES = {"Malignant Haematology", "Haemostasis & Thrombosis", "Transfusion Medicine", "General Haematology"}
-
-# Bundled source PDFs that may be linked from the website (one per verified guideline).
-PDF_BY_RESOURCE = {
-    "bsh_amyloidosis_2026": "Br_J_Haematol_-_2026_-_Garg_-_Early_diagnosis_of_AL_amyloidosis_in_haematology_cardiology_neurology_renal_and_general_b50657c2.pdf",
-    "bsh_haem_gynae_2026": "Br_J_Haematol_-_2026_-_Biss_-_Implementation_and_value_of_providing_a_multidisciplinary_haematology_and_gynaecology_service_4743a72b.pdf",
-    "bsh_poct_haematology_2026": "Br_J_Haematol_-_2026_-_Tam_-_Point_of_care_testing_in_general_haematology_An_update_to_the_British_Society_for_Haematology_bb4e4051.pdf",
-    "bsh_ttp_laboratory_2026": "Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_thrombotic_thrombocytopenic_purpura_Guidance_for_c719170c.pdf",
-    "bsh_pmbcl_lymphoma_2026": "Br_J_Haematol_-_2026_-_Osborne_-_The_diagnosis_and_management_of_primary_mediastinal_B_cell_lymphoma_A_British_Society_for_3361c436.pdf",
-}
-
+GUIDELINE_CATEGORIES = {"Malignant Haematology", "Haemostasis & Thrombosis", "Transfusion Medicine", "General Haematology"}
+QUESTION_TYPES = {"MCQ", "EMQ", "ESSAY"}
 FALLBACK_URL = "https://b-s-h.org.uk/guidelines"
+PRACTICE_DOMAIN_FOR_CATEGORY = {"Malignant Haematology": "Haemato-Oncology"}
 
 
-# --------------------------------------------------------------------------------------
-# Minimal Kotlin literal parser (only what SeedData.kt uses)
-# --------------------------------------------------------------------------------------
-class Parser:
-    def __init__(self, text, pos=0):
-        self.t = text
-        self.i = pos
-
-    def ws(self):
-        while self.i < len(self.t):
-            if self.t.startswith("//", self.i):
-                self.i = self.t.index("\n", self.i)
-            elif self.t[self.i].isspace():
-                self.i += 1
-            else:
-                break
-
-    def peek(self, s):
-        self.ws()
-        return self.t.startswith(s, self.i)
-
-    def expect(self, s):
-        self.ws()
-        if not self.t.startswith(s, self.i):
-            raise ValueError(f"expected {s!r} at {self.i}: {self.t[self.i:self.i + 60]!r}")
-        self.i += len(s)
-
-    def ident(self):
-        self.ws()
-        m = re.compile(r"[A-Za-z_][A-Za-z0-9_]*").match(self.t, self.i)
-        if not m:
-            raise ValueError(f"identifier expected at {self.i}: {self.t[self.i:self.i + 60]!r}")
-        self.i = m.end()
-        return m.group(0)
-
-    def string(self):
-        self.ws()
-        if self.t.startswith('"""', self.i):
-            end = self.t.index('"""', self.i + 3)
-            raw = self.t[self.i + 3:end]
-            self.i = end + 3
-            if self.t.startswith(".trimIndent()", self.i):
-                self.i += len(".trimIndent()")
-                raw = trim_indent(raw)
-            return raw
-        self.expect('"')
-        out = []
-        while True:
-            c = self.t[self.i]
-            if c == "\\":
-                n = self.t[self.i + 1]
-                out.append({"n": "\n", "t": "\t", '"': '"', "\\": "\\", "$": "$", "'": "'"}.get(n, n))
-                self.i += 2
-            elif c == '"':
-                self.i += 1
-                break
-            elif c == "$":
-                raise ValueError(f"string templates are not supported in seed data (at {self.i})")
-            else:
-                out.append(c)
-                self.i += 1
-        return "".join(out)
-
-    def value(self):
-        self.ws()
-        if self.peek('"'):
-            return self.string()
-        if self.peek("listOf("):
-            self.expect("listOf(")
-            items = []
-            while not self.peek(")"):
-                items.append(self.value())
-                if self.peek(","):
-                    self.expect(",")
-            self.expect(")")
-            return items
-        if self.peek("emptyList()"):
-            self.expect("emptyList()")
-            return []
-        m = re.compile(r"-?\d+(\.\d+)?[fFL]?|true|false|null").match(self.t, self.i)
-        if m:
-            self.i = m.end()
-            tok = m.group(0)
-            if tok in ("true", "false"):
-                return tok == "true"
-            if tok == "null":
-                return None
-            tok = tok.rstrip("fFL")
-            return float(tok) if "." in tok else int(tok)
-        raise ValueError(f"unsupported value at {self.i}: {self.t[self.i:self.i + 60]!r}")
-
-    def call(self, name):
-        self.expect(name + "(")
-        args = {}
-        while not self.peek(")"):
-            key = self.ident()
-            self.expect("=")
-            args[key] = self.value()
-            if self.peek(","):
-                self.expect(",")
-        self.expect(")")
-        return args
+def load(name):
+    return json.loads((CONTENT / f"{name}.json").read_text(encoding="utf-8"))
 
 
-def trim_indent(raw):
-    lines = raw.split("\n")
-    if lines and not lines[0].strip():
-        lines = lines[1:]
-    if lines and not lines[-1].strip():
-        lines = lines[:-1]
-    indents = [len(l) - len(l.lstrip()) for l in lines if l.strip()]
-    cut = min(indents) if indents else 0
-    return "\n".join(l[cut:] for l in lines)
-
-
-def parse_list(text, fun_name, ctor):
-    start = text.index(f"fun {fun_name}()")
-    p = Parser(text, text.index("listOf(", start) + len("listOf("))
-    items = []
-    while not p.peek(")"):
-        items.append(p.call(ctor))
-        if p.peek(","):
-            p.expect(",")
-    return items
-
-
-def parse_pitfalls(text):
-    start = text.index("fun getGuidelineExamPitfall(")
-    end = text.index("else -> null", start)
-    body = text[start:end]
-    out = {}
-    for m in re.finditer(r'"([a-z0-9_]+)" -> """(.*?)"""\.trimIndent\(\)', body, re.S):
-        out[m.group(1)] = trim_indent(m.group(2))
-    return out
-
-
-# --------------------------------------------------------------------------------------
-def build():
-    seed = SEED.read_text(encoding="utf-8")
-    resources = parse_list(seed, "getApprovedResources", "ApprovedResource")
-    questions = parse_list(seed, "getQuestions", "Question")
-    flashcards = parse_list(seed, "getFlashcards", "Flashcard")
-    pitfalls = parse_pitfalls(SUMMARIES.read_text(encoding="utf-8"))
-
+def validate(guidelines, questions, flashcards):
     errors = []
-    res_ids = [r["id"] for r in resources]
-    for kind, items in (("resource", resources), ("question", questions), ("flashcard", flashcards)):
-        ids = [x["id"] for x in items]
-        dupes = {i for i in ids if ids.count(i) > 1}
+
+    def need(item, kind, keys):
+        for k in keys:
+            if k not in item or item[k] in (None, "", []):
+                errors.append(f"{kind} {item.get('id', '?')}: missing {k}")
+
+    for kind, items in (("guideline", guidelines), ("question", questions), ("flashcard", flashcards)):
+        ids = [x.get("id") for x in items]
+        dupes = sorted({i for i in ids if ids.count(i) > 1})
         if dupes:
-            errors.append(f"duplicate {kind} ids: {sorted(dupes)}")
-    for r in resources:
-        if r["category"] not in RESOURCE_CATEGORIES:
-            errors.append(f"resource {r['id']}: unknown category {r['category']!r}")
+            errors.append(f"duplicate {kind} ids: {dupes}")
+
+    guideline_ids = {g["id"] for g in guidelines}
+    for g in guidelines:
+        need(g, "guideline", ["id", "title", "issuingBody", "year", "category", "citation", "summary", "recommendations"])
+        if g.get("category") not in GUIDELINE_CATEGORIES:
+            errors.append(f"guideline {g['id']}: unknown category {g.get('category')!r}")
+        if g.get("url") and not g["url"].startswith("https://"):
+            errors.append(f"guideline {g['id']}: url must start with https://")
+        if g.get("pdf") and not (PDF_DIR / g["pdf"]).exists():
+            errors.append(f"guideline {g['id']}: pdf not found in public/assets/aistudio: {g['pdf']}")
+        if not isinstance(g.get("isVerified"), bool):
+            errors.append(f"guideline {g['id']}: isVerified must be true or false")
+
     for q in questions:
-        if q["sourceResourceId"] not in res_ids:
-            errors.append(f"question {q['id']}: unknown sourceResourceId {q['sourceResourceId']}")
-        if q["domain"] not in PRACTICE_DOMAINS:
-            errors.append(f"question {q['id']}: unknown domain {q['domain']!r}")
-        opts = q.get("options", [])
-        if q["questionType"] == "ESSAY":
-            if q["correctIndex"] != -1 or not q.get("essayModelAnswer"):
-                errors.append(f"question {q['id']}: essay needs correctIndex -1 and a model answer")
-        elif not (0 <= q["correctIndex"] < len(opts)):
-            errors.append(f"question {q['id']}: correctIndex {q['correctIndex']} out of range ({len(opts)} options)")
-        if len(set(opts)) != len(opts):
-            errors.append(f"question {q['id']}: duplicate options")
+        need(q, "question", ["id", "domain", "type", "title", "stem", "sourceResourceId"])
+        if q.get("type") not in QUESTION_TYPES:
+            errors.append(f"question {q['id']}: unknown type {q.get('type')!r}")
+        if q.get("domain") not in PRACTICE_DOMAINS:
+            errors.append(f"question {q['id']}: unknown domain {q.get('domain')!r}")
+        if q.get("sourceResourceId") not in guideline_ids:
+            errors.append(f"question {q['id']}: unknown sourceResourceId {q.get('sourceResourceId')!r}")
+        if q.get("type") == "ESSAY":
+            if not q.get("essayModelAnswer"):
+                errors.append(f"question {q['id']}: essay needs essayModelAnswer")
+        else:
+            opts = q.get("options") or []
+            if len(opts) < 2:
+                errors.append(f"question {q['id']}: needs at least 2 options")
+            if len(set(opts)) != len(opts):
+                errors.append(f"question {q['id']}: duplicate options")
+            if not isinstance(q.get("correctIndex"), int) or not (0 <= q["correctIndex"] < len(opts)):
+                errors.append(f"question {q['id']}: correctIndex out of range")
+            if not q.get("rationale"):
+                errors.append(f"question {q['id']}: missing rationale")
+
     for c in flashcards:
-        if c["sourceResourceId"] not in res_ids:
-            errors.append(f"flashcard {c['id']}: unknown sourceResourceId {c['sourceResourceId']}")
-        if c["domain"] not in PRACTICE_DOMAINS:
-            errors.append(f"flashcard {c['id']}: unknown domain {c['domain']!r}")
-    for r in resources:
-        url = r.get("url", "")
-        if url and not url.startswith("https://"):
-            errors.append(f"resource {r['id']}: url must be https")
+        need(c, "flashcard", ["id", "domain", "front", "back", "sourceResourceId"])
+        if c.get("domain") not in PRACTICE_DOMAINS:
+            errors.append(f"flashcard {c['id']}: unknown domain {c.get('domain')!r}")
+        if c.get("sourceResourceId") not in guideline_ids:
+            errors.append(f"flashcard {c['id']}: unknown sourceResourceId {c.get('sourceResourceId')!r}")
+
     if errors:
-        raise SystemExit("Content integrity check FAILED:\n  " + "\n  ".join(errors))
+        raise SystemExit("Content validation FAILED:\n  " + "\n  ".join(errors))
 
-    practice_domain_for = {"Malignant Haematology": "Haemato-Oncology"}
 
-    guidelines = []
-    for r in resources:
-        recs = [line.strip() for line in r["recommendations"].split("\n") if line.strip()]
-        pdf = PDF_BY_RESOURCE.get(r["id"])
-        guidelines.append({
-            "id": r["id"],
-            "title": r["title"],
-            "issuingBody": r["issuingBody"],
-            "year": r["year"],
-            "domain": r["category"],
-            "practiceDomain": practice_domain_for.get(r["category"], r["category"]),
-            "isVerified": r.get("isVerified", True),
-            "grade": "Checked against source PDF" if r.get("isVerified", True) else "Not yet verified",
-            "citation": r["citation"],
-            "pdfUrl": f"/assets/aistudio/{pdf}" if pdf else "",
-            "onlineUrl": r.get("url") or FALLBACK_URL,
-            "summary": r["summary"],
-            "cutoffs": r["keyCutoffs"],
-            "staging": r["stagingCriteria"],
-            "recommendations": recs,
-            "pitfalls": pitfalls.get(r["id"], ""),
-        })
+def lines(value):
+    return "\n".join(value) if isinstance(value, list) else (value or "")
+
+
+def to_web(guidelines, questions, flashcards):
+    web_guidelines = [{
+        "id": g["id"],
+        "title": g["title"],
+        "issuingBody": g["issuingBody"],
+        "year": g["year"],
+        "domain": g["category"],
+        "practiceDomain": PRACTICE_DOMAIN_FOR_CATEGORY.get(g["category"], g["category"]),
+        "isVerified": g["isVerified"],
+        "grade": "Checked against source PDF" if g["isVerified"] else "Not yet verified",
+        "citation": g["citation"],
+        "pdfUrl": f"/assets/aistudio/{g['pdf']}" if g.get("pdf") else "",
+        "onlineUrl": g.get("url") or FALLBACK_URL,
+        "summary": g["summary"],
+        "cutoffs": lines(g.get("keyCutoffs")),
+        "staging": lines(g.get("stagingCriteria")),
+        "recommendations": g["recommendations"],
+        "pitfalls": "\n".join("• " + p for p in g.get("pitfalls", [])),
+    } for g in guidelines]
 
     web_questions = []
     for q in questions:
         stem = q["stem"]
         if q.get("labData"):
-            stem += "\n\nInvestigations:\n" + q["labData"]
-        if q["questionType"] == "ESSAY":
-            explanation = q["essayModelAnswer"]
+            stem += "\n\nInvestigations:\n" + lines(q["labData"])
+        if q["type"] == "ESSAY":
+            explanation = lines(q["essayModelAnswer"])
             if q.get("markingRubric"):
-                explanation += "\n\nSuggested marking:\n" + q["markingRubric"]
+                explanation += "\n\nSuggested marking:\n" + lines(q["markingRubric"])
         else:
             explanation = q["rationale"]
-        ref_parts = [p for p in (q.get("yearPaper"), q.get("guidelineSection")) if p]
         web_questions.append({
             "id": q["id"],
             "domain": q["domain"],
-            "questionType": q["questionType"],
+            "questionType": q["type"],
             "title": q["title"],
             "stem": stem,
             "options": q.get("options", []),
-            "correct": q["correctIndex"],
+            "correct": q.get("correctIndex", -1),
             "explanation": explanation,
-            "ref": " • ".join(ref_parts),
+            "ref": " • ".join(p for p in (q.get("yearPaper"), q.get("guidelineSection")) if p),
             "evidenceGrade": q.get("evidenceGrade", ""),
             "sourceResourceId": q["sourceResourceId"],
         })
@@ -272,34 +154,56 @@ def build():
     web_cards = [{
         "id": c["id"],
         "domain": c["domain"],
-        "topic": c["topic"],
-        "ref": c["guidelineRef"],
+        "topic": c.get("topic", ""),
+        "ref": c.get("guidelineRef", ""),
         "front": c["front"],
         "back": c["back"],
         "sourceResourceId": c["sourceResourceId"],
     } for c in flashcards]
 
-    payload = {"guidelines": guidelines, "questions": web_questions, "flashcards": web_cards}
+    return {"guidelines": web_guidelines, "questions": web_questions, "flashcards": web_cards}
+
+
+def build():
+    guidelines, questions, flashcards = load("guidelines"), load("questions"), load("flashcards")
+    validate(guidelines, questions, flashcards)
+    payload = to_web(guidelines, questions, flashcards)
     js = (
         "// GENERATED FILE - DO NOT EDIT BY HAND.\n"
-        "// Source of truth: app/src/main/java/com/example/data/db/SeedData.kt\n"
-        "// Regenerate with: python3 scripts/build_web_content.py\n"
+        "// Source of truth: content/*.json. Regenerate with: python3 scripts/build_web_content.py\n"
         "window.PREPARE_CONTENT = " + json.dumps(payload, ensure_ascii=False, indent=1) + ";\n"
     )
-    return js, (len(guidelines), len(web_questions), len(web_cards))
+
+    # BUILD_ID changes whenever the app shell or content changes, so installed PWAs update.
+    digest = hashlib.sha256()
+    for path in sorted(list(PUBLIC.glob("*.html")) + list(PUBLIC.glob("*.webmanifest")) + list((PUBLIC / "icons").glob("*"))):
+        digest.update(path.read_bytes())
+    digest.update(js.encode("utf-8"))
+    build_id = digest.hexdigest()[:12]
+    sw_src = SW.read_text(encoding="utf-8")
+    sw_new, n = re.subn(r"const BUILD_ID = '[^']*';", f"const BUILD_ID = '{build_id}';", sw_src)
+    if n != 1:
+        raise SystemExit("public/sw.js must contain exactly one line: const BUILD_ID = '...';")
+    return js, sw_new, (len(guidelines), len(questions), len(flashcards)), build_id
 
 
 def main():
-    js, counts = build()
+    js, sw_new, counts, build_id = build()
+    summary = "{} guidelines, {} questions, {} flashcards".format(*counts)
     if "--check" in sys.argv:
-        current = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
-        if current != js:
-            print("public/content.js is out of date. Run: python3 scripts/build_web_content.py")
+        stale = []
+        if (OUT.read_text(encoding="utf-8") if OUT.exists() else "") != js:
+            stale.append("public/content.js")
+        if SW.read_text(encoding="utf-8") != sw_new:
+            stale.append("public/sw.js (BUILD_ID)")
+        if stale:
+            print("Out of date: " + ", ".join(stale) + ". Run: python3 scripts/build_web_content.py")
             sys.exit(1)
-        print("public/content.js is up to date ({} guidelines, {} questions, {} flashcards)".format(*counts))
+        print(f"Content valid and generated files up to date ({summary}, build {build_id})")
         return
     OUT.write_text(js, encoding="utf-8")
-    print("Wrote {} ({} guidelines, {} questions, {} flashcards)".format(OUT.relative_to(ROOT), *counts))
+    SW.write_text(sw_new, encoding="utf-8")
+    print(f"Wrote public/content.js and stamped public/sw.js ({summary}, build {build_id})")
 
 
 if __name__ == "__main__":
