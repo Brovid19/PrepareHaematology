@@ -26,14 +26,32 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="PrepareHaem">
+  <link rel="preload" href="/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    /* Source Serif 4 (SIL Open Font License, see /fonts/OFL.txt). Self-hosted so it works offline. */
+    @font-face {
+      font-family: "Source Serif 4";
+      font-style: normal;
+      font-weight: 200 900;
+      font-display: swap;
+      src: url("/fonts/source-serif-4-latin-opsz-normal.woff2") format("woff2-variations"), url("/fonts/source-serif-4-latin-opsz-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: "Source Serif 4";
+      font-style: italic;
+      font-weight: 200 900;
+      font-display: swap;
+      src: url("/fonts/source-serif-4-latin-opsz-italic.woff2") format("woff2-variations"), url("/fonts/source-serif-4-latin-opsz-italic.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
     /* =====================================================================
        Prepare Haematology design system
        - Light theme by default (follows the device), dark + OLED themes.
        - Colour roles: --primary (teal, from the logo's DNA strand) for actions;
          --brand (blood red, from the logo) for identity only; --success/--danger
          are reserved for correct/incorrect so red never means "click me".
-       - Type: system UI font, 16px base, 1.25 scale, sentence case.
+       - Type: Source Serif 4 (self-hosted, OFL), 17px base for serif legibility, sentence case.
        ===================================================================== */
     :root {
       color-scheme: light;
@@ -65,10 +83,11 @@
       --shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.14);
       --radius: 12px;
       --radius-sm: 8px;
-      --font-main: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --fs-xs: 0.8125rem;   /* 13px: meta only */
-      --fs-sm: 0.875rem;    /* 14px */
-      --fs-md: 1rem;        /* 16px body */
+      /* Serif throughout: a screen-optimised text serif, then good system serifs. */
+      --font-main: "Source Serif 4", Georgia, Charter, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Cambria, "Times New Roman", serif;
+      --fs-xs: 0.84375rem;  /* 13.5px: meta only */
+      --fs-sm: 0.9375rem;   /* 15px */
+      --fs-md: 1.0625rem;   /* 17px body (serif needs a little more size than sans) */
       --fs-lg: 1.125rem;    /* 18px lead */
       --fs-xl: 1.375rem;    /* 22px section */
       --fs-2xl: 1.75rem;    /* 28px page */
@@ -157,6 +176,10 @@
       font-family: var(--font-main);
       font-size: var(--fs-md);
       line-height: 1.6;
+      font-optical-sizing: auto;
+      font-variant-numeric: lining-nums;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
       min-height: 100vh;
       padding-bottom: calc(var(--nav-h) + 24px + env(safe-area-inset-bottom));
     }
@@ -313,7 +336,7 @@
     .stat-value { font-size: 1.75rem; font-weight: 750; color: var(--text-strong); font-variant-numeric: tabular-nums; line-height: 1.2; }
     .stat-label { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; }
 
-    .today-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .today-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px; align-items: start; }
     @media (max-width: 900px) { .today-grid { grid-template-columns: 1fr; } }
     .next-step {
       background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius);
@@ -406,7 +429,7 @@
     .btn-rating.easy { border-bottom: 3px solid var(--info); }
     .btn-rating:hover { background: var(--surface-2); }
     .kbd-hint { font-size: var(--fs-xs); color: var(--text-muted); text-align: center; margin-top: 10px; }
-    kbd { font-family: inherit; font-size: 0.8em; padding: 1px 6px; border: 1px solid var(--card-border); border-bottom-width: 2px; border-radius: 4px; background: var(--surface); }
+    kbd { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: 0.8em; padding: 1px 6px; border: 1px solid var(--card-border); border-bottom-width: 2px; border-radius: 4px; background: var(--surface); }
 
     /* ---------- Questions ---------- */
     .question-block { background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; box-shadow: var(--shadow); }
@@ -531,6 +554,43 @@
     .badge { white-space: nowrap; }
     #summary-cat-filters { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .summary-cat-btn { flex: none; white-space: nowrap; }
+    .anchor-target { scroll-margin-top: 140px; }
+    .anchor-highlight { outline: 3px solid var(--primary); outline-offset: 2px; background: var(--primary-soft) !important; border-radius: 8px; }
+    .plan-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+    .plan-days { font-size: 2rem; font-weight: 750; color: var(--text-strong); font-variant-numeric: tabular-nums; line-height: 1.1; }
+    .plan-tasks { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .plan-tasks li { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--card-border); border-radius: 10px; background: var(--surface); }
+    .plan-tasks .tick { flex: none; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 0.85rem; border: 2px solid var(--card-border); color: var(--text-muted); }
+    .plan-tasks li.done .tick { background: var(--success); border-color: var(--success); color: #fff; }
+    .plan-tasks .task-text { flex: 1; min-width: 0; }
+    .plan-tasks .task-text small { display: block; color: var(--text-muted); font-size: var(--fs-xs); }
+    .plan-tasks .btn { min-height: 38px; padding: 0 12px; }
+    .plan-date-row { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; margin-top: 8px; }
+    .topic-row { padding: 14px 0; border-bottom: 1px solid var(--card-border); }
+    .topic-row:last-of-type { border-bottom: none; }
+    .topic-row .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .topic-row .head span { color: var(--text-muted); font-size: var(--fs-sm); font-weight: 600; }
+    .trend { position: relative; margin-top: 8px; }
+    .trend svg { display: block; width: 100%; max-width: 640px; height: auto; overflow: visible; }
+    .trend .axis-label { font-size: 11px; fill: var(--text-muted); font-family: var(--font-main); }
+    .trend .grid { stroke: var(--card-border); stroke-width: 1; }
+    .trend .series { stroke: var(--primary); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .trend .dot { fill: var(--primary); stroke: var(--surface); stroke-width: 2; pointer-events: none; }
+    .trend .hit { fill: transparent; cursor: pointer; }
+    .trend .hit:focus { outline: none; }
+    .trend .hit:focus + .dot, .trend .dot.active { stroke: var(--text-strong); }
+    .trend .empty { font-size: var(--fs-sm); color: var(--text-muted); }
+    .chart-tip {
+      position: absolute; z-index: 20; pointer-events: none; transform: translate(-50%, calc(-100% - 10px));
+      background: var(--surface); border: 1px solid var(--card-border); box-shadow: var(--shadow-lg);
+      border-radius: 8px; padding: 6px 10px; font-size: var(--fs-xs); color: var(--text-muted); white-space: nowrap;
+    }
+    .chart-tip strong { display: block; font-size: var(--fs-sm); color: var(--text-strong); }
+    .insight { margin: 4px 0 6px; font-size: var(--fs-sm); color: var(--text); }
+    table.data { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); margin-top: 8px; }
+    table.data th, table.data td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--card-border); font-variant-numeric: tabular-nums; }
+    table.data th { color: var(--text-muted); font-weight: 600; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .accordion-toggle .when-open { display: none; }
     .accordion-item.open .accordion-toggle .when-open { display: inline; }
     .accordion-item.open .accordion-toggle .when-closed { display: none; }
@@ -593,22 +653,18 @@
         <div class="stat-card"><div class="stat-value" id="dash-retention-rate">—</div><div class="stat-label">Recall rate, last 50 reviews</div></div>
       </div>
 
-      <div class="card">
-        <h3 style="font-size:var(--fs-lg); margin-bottom:4px;">Progress by topic</h3>
-        <p style="color:var(--text-muted); font-size:var(--fs-sm); margin-bottom:8px;">Share of each topic's questions you got right on your latest attempt.</p>
-        <div class="domain-meter-card">
-          <div style="display:flex; justify-content:space-between;"><strong>Haemostasis &amp; thrombosis</strong><span id="dom-prof-haem">Not started</span></div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
-        </div>
-        <div class="domain-meter-card">
-          <div style="display:flex; justify-content:space-between;"><strong>Haemato-oncology</strong><span id="dom-prof-malig">Not started</span></div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
-        </div>
-        <div class="domain-meter-card">
-          <div style="display:flex; justify-content:space-between;"><strong>General haematology</strong><span id="dom-prof-gen">Not started</span></div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
-        </div>
-      </div>
+      <section class="card" id="exam-plan" aria-labelledby="exam-plan-title"></section>
+
+      <section class="card" aria-labelledby="topic-progress-title" style="position:relative;">
+        <h3 id="topic-progress-title" style="font-size:var(--fs-lg); margin-bottom:4px;">Progress by topic</h3>
+        <p style="color:var(--text-muted); font-size:var(--fs-sm);">Bar: share of each topic's questions right on your latest attempt. Chart: weekly accuracy over the last 8 weeks (practice and mocks).</p>
+        <p class="insight" id="topic-insight"></p>
+        <div id="topic-progress"></div>
+        <details style="margin-top:10px;">
+          <summary style="cursor:pointer; color:var(--primary); font-weight:600; font-size:var(--fs-sm);">Show progress as a table</summary>
+          <div id="topic-table" style="overflow-x:auto;"></div>
+        </details>
+      </section>
     </div>
 
     <!-- TAB 2: GUIDELINE SUMMARIES -->
@@ -680,6 +736,7 @@
         <div style="display:flex; justify-content:center; gap:8px; margin-top:12px; flex-wrap:wrap;">
           <button class="btn btn-ghost" onclick="speakCurrentCard()">Listen</button>
           <button class="btn btn-ghost" onclick="addCurrentCardToPlaylist()">Add to audio queue</button>
+          <button class="btn btn-ghost" id="fc-source-btn" hidden onclick="openCardSource()">Read in the guideline</button>
           <button class="btn btn-ghost" onclick="nextCard()">Skip →</button>
         </div>
       </div>
@@ -849,20 +906,34 @@
           </div>
         </div>
 
-        <!-- Spaced Repetition Settings Card -->
+        <!-- Exam date -->
         <div class="card">
-          <h4 style="color:var(--text-strong); margin-bottom:12px;">Spaced Repetition (SM-2)</h4>
+          <h4 style="margin-bottom:4px;">Exam date</h4>
+          <p style="color:var(--text-muted); font-size:var(--fs-sm); margin-bottom:12px;">Used for the countdown and daily targets on Today.</p>
+          <div class="plan-date-row">
+            <div style="flex:1; min-width:180px;">
+              <label class="form-label" for="setting-exam-date">FRCPath Part 1 exam date</label>
+              <input type="date" class="form-input" id="setting-exam-date">
+            </div>
+            <button class="btn btn-primary" onclick="setExamDate(document.getElementById('setting-exam-date').value)">Save date</button>
+            <button class="btn btn-secondary" onclick="setExamDate('')">Clear</button>
+          </div>
+        </div>
+
+        <!-- Study preferences -->
+        <div class="card">
+          <h4 style="margin-bottom:12px;">Study preferences</h4>
           <div class="form-group">
-            <label class="form-label" for="setting-daily-goal">Daily Flashcard Goal</label>
+            <label class="form-label" for="setting-daily-goal">Daily flashcard goal</label>
             <input type="number" min="5" max="100" value="20" class="form-input" id="setting-daily-goal" onchange="saveAppSetting('dailyGoal', parseInt(this.value)); updateDashboardStats();">
           </div>
           <div class="form-group">
-            <label class="form-label" for="setting-mock-duration">Default Mock Duration (Minutes)</label>
+            <label class="form-label" for="setting-mock-duration">Mock exam length</label>
             <select class="form-select" id="setting-mock-duration" onchange="saveAppSetting('mockDuration', parseInt(this.value))">
-              <option value="10">10 Minutes (Rapid Sprint)</option>
-              <option value="20" selected>20 Minutes (Standard FRCPath Drill)</option>
-              <option value="40">40 Minutes (Extended Mock)</option>
-              <option value="60">60 Minutes (Full Paper Section)</option>
+              <option value="10">10 minutes</option>
+              <option value="20" selected>20 minutes</option>
+              <option value="40">40 minutes</option>
+              <option value="60">60 minutes</option>
             </select>
           </div>
         </div>
@@ -1124,6 +1195,10 @@
       return practiceQuestions.filter(q => latest.has(q.id) && !latest.get(q.id).correct);
     }
 
+    // Mock history: [{ ts, correct, n, pct }]. Drives the exam planner.
+    let mockHistory = readJson('prepare_haem_mocks', []);
+    if (!Array.isArray(mockHistory)) mockHistory = [];
+
     // Flashcard review log: [{ id, pass, ts }]. Drives the real recall rate.
     let reviewLog = readJson('prepare_haem_reviews', []);
     if (!Array.isArray(reviewLog)) reviewLog = [];
@@ -1192,11 +1267,15 @@
     function toast(message) {
       const region = document.getElementById('toast-region');
       if (!region) return;
+      // Same message again: restart its timer instead of stacking duplicates.
+      const existing = Array.from(region.children).find(t => t.textContent === message);
+      if (existing) { clearTimeout(existing._timer); existing._timer = setTimeout(() => existing.remove(), 3200); return; }
+      while (region.children.length >= 2) region.firstElementChild.remove();
       const el = document.createElement('div');
       el.className = 'toast';
       el.textContent = message;
       region.appendChild(el);
-      setTimeout(() => el.remove(), 3200);
+      el._timer = setTimeout(() => el.remove(), 3200);
     }
 
     // Dashboard Statistics Calculation
@@ -1217,26 +1296,328 @@
         ? Math.round(100 * recent.filter(r => r.pass).length / recent.length) + '%'
         : '—';
 
-      // Domain mastery = % of each domain's questions whose latest attempt was correct.
-      const latest = latestAttempts();
-      const meters = [
-        ['dom-prof-haem', 'Haemostasis & Thrombosis'],
-        ['dom-prof-malig', 'Haemato-Oncology'],
-        ['dom-prof-gen', 'General Haematology']
-      ];
-      meters.forEach(([elId, domain]) => {
-        const label = document.getElementById(elId);
-        if (!label) return;
-        const qs = practiceQuestions.filter(q => q.domain === domain && q.questionType !== 'ESSAY');
-        const attempted = qs.filter(q => latest.has(q.id));
-        const correct = attempted.filter(q => latest.get(q.id).correct).length;
-        const pct = qs.length ? Math.round(100 * correct / qs.length) : 0;
-        label.innerText = attempted.length
-          ? `${pct}% • ${correct}/${qs.length} correct (latest attempt)`
-          : `Not started • ${qs.length} questions`;
-        const fill = label.closest('.domain-meter-card')?.querySelector('.progress-bar-fill');
-        if (fill) fill.style.width = pct + '%';
+      renderTopicProgress();
+      renderExamPlan();
+    }
+
+    // ================= Topic progress (latest-attempt bar + 8-week trend) =================
+    const TOPICS = [
+      ['Haemostasis & Thrombosis', 'Haemostasis & thrombosis'],
+      ['Haemato-Oncology', 'Haemato-oncology'],
+      ['General Haematology', 'General haematology']
+    ];
+    const DAY_MS = 86400000;
+
+    function startOfDay(t) { const d = new Date(t); d.setHours(0, 0, 0, 0); return d.getTime(); }
+    function weekStart(t) {
+      const d = new Date(t); d.setHours(0, 0, 0, 0);
+      d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); // Monday
+      return d.getTime();
+    }
+    function fmtDay(t) { return new Date(t).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); }
+
+    function weeklyAccuracy(domain, weeks = 8) {
+      const ids = new Set(practiceQuestions.filter(q => q.domain === domain).map(q => q.id));
+      const thisWeek = weekStart(Date.now());
+      const buckets = [];
+      for (let i = weeks - 1; i >= 0; i--) {
+        const d = new Date(thisWeek); d.setDate(d.getDate() - 7 * i);
+        buckets.push({ start: d.getTime(), n: 0, c: 0 });
+      }
+      answerLog.forEach(a => {
+        if (!a.ts || !ids.has(a.id)) return;
+        const b = buckets.find(x => x.start === weekStart(a.ts));
+        if (b) { b.n++; if (a.correct) b.c++; }
       });
+      return buckets;
+    }
+
+    function topicSnapshot(domain) {
+      const latest = latestAttempts();
+      const qs = practiceQuestions.filter(q => q.domain === domain && q.questionType !== 'ESSAY');
+      const attempted = qs.filter(q => latest.has(q.id));
+      const correct = attempted.filter(q => latest.get(q.id).correct).length;
+      return { total: qs.length, attempted: attempted.length, correct, pct: qs.length ? Math.round(100 * correct / qs.length) : 0 };
+    }
+
+    function svgEl(tag, attrs) {
+      const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+      Object.entries(attrs || {}).forEach(([k, v]) => el.setAttribute(k, v));
+      return el;
+    }
+
+    // Single-series weekly trend (one hue per chart; topics are small multiples, so no legend).
+    function buildTrendChart(buckets, topicLabel, tip) {
+      const wrap = document.createElement('div');
+      wrap.className = 'trend';
+      if (!buckets.some(b => b.n > 0)) {
+        const p = document.createElement('p');
+        p.className = 'empty';
+        p.textContent = 'No answers in the last 8 weeks yet.';
+        wrap.appendChild(p);
+        return wrap;
+      }
+      const W = 320, H = 76, L = 34, R = 10, T = 8, B = 20;
+      const x = i => L + (i * (W - L - R)) / (buckets.length - 1);
+      const y = v => T + (1 - v / 100) * (H - T - B);
+      const last = [...buckets].reverse().find(b => b.n > 0);
+      const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img' });
+      const title = svgEl('title');
+      title.textContent = `${topicLabel}: weekly accuracy over the last 8 weeks. Most recent week with answers: ${Math.round(100 * last.c / last.n)}% (${last.c} of ${last.n}).`;
+      svg.appendChild(title);
+      [0, 50, 100].forEach(v => {
+        svg.appendChild(svgEl('line', { class: 'grid', x1: L, x2: W - R, y1: y(v), y2: y(v) }));
+        const t = svgEl('text', { class: 'axis-label', x: L - 6, y: y(v) + 4, 'text-anchor': 'end' });
+        t.textContent = `${v}%`;
+        svg.appendChild(t);
+      });
+      const tl = svgEl('text', { class: 'axis-label', x: L, y: H - 4, 'text-anchor': 'start' });
+      tl.textContent = fmtDay(buckets[0].start);
+      svg.appendChild(tl);
+      const tr = svgEl('text', { class: 'axis-label', x: W - R, y: H - 4, 'text-anchor': 'end' });
+      tr.textContent = 'This week';
+      svg.appendChild(tr);
+      // line segments only between consecutive weeks that both have answers (gaps stay gaps)
+      let d = '';
+      buckets.forEach((b, i) => {
+        if (!b.n) return;
+        const prev = buckets[i - 1];
+        d += `${prev && prev.n ? 'L' : 'M'}${x(i).toFixed(1)},${y(100 * b.c / b.n).toFixed(1)} `;
+      });
+      svg.appendChild(svgEl('path', { class: 'series', d: d.trim() }));
+      buckets.forEach((b, i) => {
+        if (!b.n) return;
+        const pct = Math.round(100 * b.c / b.n);
+        const label = `Week of ${fmtDay(b.start)}: ${pct}%, ${b.c} of ${b.n} correct`;
+        const hit = svgEl('circle', { class: 'hit', cx: x(i), cy: y(pct), r: 12, tabindex: 0, role: 'img', 'aria-label': label });
+        const dot = svgEl('circle', { class: 'dot', cx: x(i), cy: y(pct), r: 4 });
+        const show = () => { dot.classList.add('active'); tip.show(wrap, svg, x(i) / W, y(pct) / H, `${pct}%`, `Week of ${fmtDay(b.start)} · ${b.c}/${b.n} correct`); };
+        const hide = () => { dot.classList.remove('active'); tip.hide(); };
+        hit.addEventListener('pointerenter', show);
+        hit.addEventListener('pointerleave', hide);
+        hit.addEventListener('focus', show);
+        hit.addEventListener('blur', hide);
+        svg.appendChild(hit);
+        svg.appendChild(dot);
+      });
+      wrap.appendChild(svg);
+      return wrap;
+    }
+
+    function makeTooltip() {
+      const el = document.createElement('div');
+      el.className = 'chart-tip';
+      el.hidden = true;
+      const v = document.createElement('strong');
+      const l = document.createElement('span');
+      el.append(v, l);
+      return {
+        el,
+        show(wrap, svg, fx, fy, value, label) {
+          if (el.parentNode !== wrap) wrap.appendChild(el);
+          v.textContent = value;
+          l.textContent = label;
+          const r = svg.getBoundingClientRect();
+          el.style.left = `${fx * r.width}px`;
+          el.style.top = `${fy * r.height}px`;
+          el.hidden = false;
+        },
+        hide() { el.hidden = true; }
+      };
+    }
+
+    function renderTopicProgress() {
+      const root = document.getElementById('topic-progress');
+      if (!root) return;
+      root.textContent = '';
+      const tip = makeTooltip();
+      const snaps = {};
+      const series = {};
+      TOPICS.forEach(([domain, label]) => {
+        const s = topicSnapshot(domain);
+        snaps[domain] = s;
+        series[domain] = weeklyAccuracy(domain);
+        const row = document.createElement('div');
+        row.className = 'topic-row';
+        const head = document.createElement('div');
+        head.className = 'head';
+        const name = document.createElement('strong');
+        name.textContent = label;
+        const val = document.createElement('span');
+        val.textContent = s.attempted ? `${s.pct}% · ${s.correct}/${s.total} right on latest attempt` : `Not started · ${s.total} questions`;
+        head.append(name, val);
+        const bar = document.createElement('div');
+        bar.className = 'progress-bar-bg';
+        bar.setAttribute('role', 'progressbar');
+        bar.setAttribute('aria-label', `${label} progress`);
+        bar.setAttribute('aria-valuemin', '0');
+        bar.setAttribute('aria-valuemax', '100');
+        bar.setAttribute('aria-valuenow', String(s.pct));
+        const fill = document.createElement('div');
+        fill.className = 'progress-bar-fill';
+        fill.style.width = `${s.pct}%`;
+        bar.appendChild(fill);
+        row.append(head, bar, buildTrendChart(series[domain], label, tip));
+        root.appendChild(row);
+      });
+
+      // Strongest / weakest (only once a topic has enough attempts to mean something)
+      const insight = document.getElementById('topic-insight');
+      const ranked = TOPICS.filter(([d]) => snaps[d].attempted >= 3).map(([d, label]) => ({ d, label, pct: snaps[d].pct }));
+      insight.textContent = '';
+      if (ranked.length >= 2) {
+        ranked.sort((a, b) => b.pct - a.pct);
+        const best = ranked[0], worst = ranked[ranked.length - 1];
+        if (best.pct !== worst.pct) {
+          insight.append(`Strongest: ${best.label} (${best.pct}%). Needs most work: ${worst.label} (${worst.pct}%). `);
+          const btn = document.createElement('button');
+          btn.className = 'btn btn-ghost';
+          btn.style.minHeight = '32px';
+          btn.style.padding = '0 6px';
+          btn.textContent = `Practise ${worst.label.toLowerCase()} →`;
+          btn.addEventListener('click', () => filterPracticeDomain(worst.d));
+          insight.appendChild(btn);
+        }
+      } else {
+        insight.textContent = 'Answer at least 3 questions in two topics to see your strongest and weakest areas.';
+      }
+
+      // Table view of the same numbers
+      const table = document.getElementById('topic-table');
+      if (table) {
+        table.textContent = '';
+        const t = document.createElement('table');
+        t.className = 'data';
+        const thead = t.createTHead().insertRow();
+        ['Week starting', ...TOPICS.map(([, l]) => l)].forEach(h => { const th = document.createElement('th'); th.scope = 'col'; th.textContent = h; thead.appendChild(th); });
+        const tb = t.createTBody();
+        series[TOPICS[0][0]].forEach((b, i) => {
+          const tr = tb.insertRow();
+          const th = document.createElement('th'); th.scope = 'row'; th.textContent = fmtDay(b.start); tr.appendChild(th);
+          TOPICS.forEach(([d]) => {
+            const x = series[d][i];
+            tr.insertCell().textContent = x.n ? `${Math.round(100 * x.c / x.n)}% (${x.c}/${x.n})` : '—';
+          });
+        });
+        table.appendChild(t);
+      }
+    }
+
+    // ================= Exam planner =================
+    function getExamDate() {
+      const v = localStorage.getItem('prepare_haem_examDate');
+      if (!v) return null;
+      const d = new Date(`${v}T09:00:00`);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function setExamDate(value) {
+      if (value && isNaN(new Date(`${value}T09:00:00`).getTime())) { toast('Please choose a valid date.'); return; }
+      try {
+        if (value) localStorage.setItem('prepare_haem_examDate', value);
+        else localStorage.removeItem('prepare_haem_examDate');
+      } catch (e) {}
+      const input = document.getElementById('setting-exam-date');
+      if (input) input.value = value || '';
+      toast(value ? 'Exam date saved' : 'Exam date cleared');
+      updateDashboardStats();
+    }
+
+    function renderExamPlan() {
+      const el = document.getElementById('exam-plan');
+      if (!el) return;
+      const exam = getExamDate();
+      const todayIso = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+      if (!exam) {
+        el.innerHTML = `
+          <h3 id="exam-plan-title" style="font-size:var(--fs-lg);">Plan for your exam</h3>
+          <p style="color:var(--text-muted); font-size:var(--fs-sm);">Add your FRCPath Part 1 exam date to get a countdown and daily targets.</p>
+          <div class="plan-date-row">
+            <div><label class="form-label" for="plan-exam-date">Exam date</label><input type="date" class="form-input" id="plan-exam-date" min="${todayIso}" style="max-width:220px;"></div>
+            <button class="btn btn-primary" onclick="setExamDate(document.getElementById('plan-exam-date').value)">Save</button>
+          </div>`;
+        return;
+      }
+      const today0 = startOfDay(Date.now());
+      const days = Math.round((startOfDay(exam.getTime()) - today0) / DAY_MS);
+      const dateText = exam.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+      if (days < 0) {
+        el.innerHTML = `<h3 id="exam-plan-title" style="font-size:var(--fs-lg);">Your exam date has passed</h3>
+          <p style="color:var(--text-muted); font-size:var(--fs-sm);">${esc(dateText)}. Set a new date to keep planning.</p>
+          <button class="btn btn-secondary" style="margin-top:8px;" onclick="switchTab('settings')">Change exam date</button>`;
+        return;
+      }
+      if (days === 0) {
+        el.innerHTML = `<h3 id="exam-plan-title" style="font-size:var(--fs-lg);">Exam day. Good luck!</h3>
+          <p style="color:var(--text-muted); font-size:var(--fs-sm);">Skip new material today. A light look at the exam pitfalls in the guideline summaries is plenty.</p>`;
+        return;
+      }
+
+      const phase = days > 28 ? 'Build' : (days > 7 ? 'Consolidate' : 'Final week');
+      const advice = {
+        'Build': 'Work through every question once, keep flashcards up to date, and take a mock every two weeks.',
+        'Consolidate': 'Take a weekly mock, retry weak spots and keep up with flashcard reviews.',
+        'Final week': 'Short mocks every couple of days, weak spots and pitfalls. Rest the day before.'
+      }[phase];
+      const mockEvery = days > 28 ? 14 : (days > 7 ? 7 : 2);
+
+      const latest = latestAttempts();
+      const mcq = practiceQuestions.filter(q => q.questionType !== 'ESSAY');
+      const firstAttempt = new Map();
+      answerLog.forEach(a => { if (a.ts && !firstAttempt.has(a.id)) firstAttempt.set(a.id, a.ts); });
+      const unattempted = mcq.filter(q => !latest.has(q.id)).length;
+      const newToday = mcq.filter(q => (firstAttempt.get(q.id) || 0) >= today0).length;
+      const newTarget = unattempted + newToday > 0 ? Math.ceil((unattempted + newToday) / Math.max(1, days - 7)) : 0;
+      const due = flashcards.filter(c => (c.dueDate || 0) <= Date.now()).length;
+      const reviewedToday = reviewLog.filter(r => r.ts >= today0).length;
+      const weak = getWeakSpots().length;
+      const lastMock = mockHistory.length ? mockHistory[mockHistory.length - 1] : null;
+      const sinceMock = lastMock ? Math.round((today0 - startOfDay(lastMock.ts)) / DAY_MS) : null;
+      const mockDue = !lastMock || sinceMock >= mockEvery;
+
+      const tasks = [];
+      tasks.push({
+        done: due === 0,
+        text: due ? `Review ${due} due flashcard${due === 1 ? '' : 's'}` : 'Flashcards reviewed',
+        sub: `${reviewedToday} reviewed today`,
+        action: due ? ['Review', "setSessionMode('DUE_FOR_REVIEW'); switchTab('flashcards')"] : null
+      });
+      if (newTarget > 0) {
+        tasks.push({
+          done: newToday >= newTarget || unattempted === 0,
+          text: `Answer ${newTarget} new question${newTarget === 1 ? '' : 's'}`,
+          sub: `${newToday} new today · ${mcq.length - unattempted}/${mcq.length} attempted overall, aiming to finish a week before the exam`,
+          action: unattempted ? ['Practise', "practiceSetup.filter='unanswered'; practiceSetup.count=" + Math.min(newTarget, 10) + "; startPracticeSession()"] : null
+        });
+      }
+      tasks.push({
+        done: weak === 0,
+        text: weak ? `Retry ${weak} weak spot${weak === 1 ? '' : 's'}` : 'No weak spots',
+        sub: 'Questions you got wrong on your latest attempt',
+        action: weak ? ['Retry', 'startPracticeSession(getWeakSpots().map(q => q.id))'] : null
+      });
+      tasks.push({
+        done: !mockDue,
+        text: mockDue ? 'Take a timed mock' : `Next mock in ${mockEvery - sinceMock} day${mockEvery - sinceMock === 1 ? '' : 's'}`,
+        sub: lastMock ? `Last mock: ${lastMock.pct}% (${sinceMock === 0 ? 'today' : sinceMock + ' day' + (sinceMock === 1 ? '' : 's') + ' ago'}) · ${phase.toLowerCase()} phase: every ${mockEvery} days` : `No mocks yet · ${phase.toLowerCase()} phase: every ${mockEvery} days`,
+        action: mockDue ? ['Start', 'startTimedMock()'] : null
+      });
+
+      el.innerHTML = `
+        <div class="plan-head">
+          <span class="plan-days">${days}</span>
+          <h3 id="exam-plan-title" style="font-size:var(--fs-lg);">day${days === 1 ? '' : 's'} to your exam</h3>
+          <span class="badge badge-primary">${esc(phase)}</span>
+        </div>
+        <p style="color:var(--text-muted); font-size:var(--fs-sm); margin-top:2px;">${esc(dateText)} · ${esc(advice)}</p>
+        <ul class="plan-tasks" aria-label="Today's targets">
+          ${tasks.map(t => `
+            <li class="${t.done ? 'done' : ''}">
+              <span class="tick" aria-hidden="true">${t.done ? '✓' : ''}</span>
+              <span class="task-text"><span class="sr-only">${t.done ? 'Done: ' : 'To do: '}</span>${esc(t.text)}<small>${esc(t.sub)}</small></span>
+              ${t.action ? `<button class="btn btn-secondary" onclick="${t.action[1]}">${esc(t.action[0])}</button>` : ''}
+            </li>`).join('')}
+        </ul>`;
     }
 
     function renderToday(dueCount) {
@@ -1303,7 +1684,7 @@
       renderSummaries();
     }
 
-    function formatRecommendationHtml(recStr) {
+    function formatRecommendationHtml(recStr, anchorId) {
       const clean = recStr.replace(/^•\s*/, '').trim();
       const gradeMatch = clean.match(/\((Grade\s*[0-9A-Za-z]+|Good Practice [A-Za-z]+)\)/i);
       const grade = gradeMatch ? gradeMatch[1] : null;
@@ -1315,7 +1696,7 @@
       body = body.trim().replace(/^:\s*/, '').trim();
 
       return `
-        <div class="recommendation-card">
+        <div class="recommendation-card anchor-target" ${anchorId ? `id="${anchorId}" tabindex="-1"` : ''}>
           <div class="recommendation-header">
             <span style="font-size:0.75rem; font-weight:800; color:var(--text-strong); letter-spacing:0.5px;">${esc(recLabel.replace(/^REC/i, 'Rec'))}</span>
             ${grade ? `<span class="grade-badge">${esc(grade)}</span>` : ''}
@@ -1325,7 +1706,7 @@
       `;
     }
 
-    function formatPitfallsHtml(pitfallText) {
+    function formatPitfallsHtml(pitfallText, idPrefix) {
       if (!pitfallText) return '';
       const lines = pitfallText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
       return `
@@ -1338,7 +1719,7 @@
               const label = match ? match[1].trim() : `EXAM TRAP ${idx + 1}`;
               const body = match ? cleanLine.substring(match[0].length).trim() : cleanLine;
               return `
-                <div class="exam-trap-card">
+                <div class="exam-trap-card anchor-target" ${idPrefix ? `id="${idPrefix}-${idx}" tabindex="-1"` : ''}>
                   <div class="exam-trap-header">${esc(label.charAt(0) + label.slice(1).toLowerCase())}</div>
                   <div style="font-size:0.85rem; line-height:1.45; color:var(--text);">${esc(body)}</div>
                 </div>
@@ -1430,18 +1811,18 @@
             </div>
           </div>
           <div class="accordion-body" id="guide-body-${idx}">
-            <div style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--primary); margin-bottom:10px;">
+            <div class="anchor-target" id="g-${idx}-summary" tabindex="-1" style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--primary); margin-bottom:10px;">
               <strong style="color:var(--primary); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Summary</strong>
               <p style="margin-top:4px; font-size:0.88rem; line-height:1.5;">${esc(g.summary)}</p>
             </div>
 
-            <div style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--accent-green); margin-bottom:10px;">
+            <div class="anchor-target" id="g-${idx}-cutoffs" tabindex="-1" style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--accent-green); margin-bottom:10px;">
               <strong style="color:var(--accent-green); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Key cutoffs</strong>
               <p style="margin-top:4px; font-size:0.85rem; line-height:1.5; white-space:pre-line;">${esc(g.cutoffs)}</p>
             </div>
 
             ${g.staging ? `
-            <div style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--accent-blue); margin-bottom:10px;">
+            <div class="anchor-target" id="g-${idx}-staging" tabindex="-1" style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--accent-blue); margin-bottom:10px;">
               <strong style="color:var(--accent-blue); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Staging and risk</strong>
               <p style="margin-top:4px; font-size:0.85rem; line-height:1.5; white-space:pre-line;">${esc(g.staging)}</p>
             </div>
@@ -1450,11 +1831,11 @@
             <div style="margin-bottom:10px;">
               <strong style="color:var(--accent-green); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Recommendations (grades as published)</strong>
               <div style="margin-top:8px;">
-                ${g.recommendations.map(r => formatRecommendationHtml(r)).join('')}
+                ${g.recommendations.map((r, i) => formatRecommendationHtml(r, `g-${idx}-rec-${i}`)).join('')}
               </div>
             </div>
 
-            ${g.pitfalls ? formatPitfallsHtml(g.pitfalls) : ''}
+            ${g.pitfalls ? formatPitfallsHtml(g.pitfalls, `g-${idx}-pitfall`) : ''}
 
             <div style="display:flex; gap:8px; margin-top:16px; flex-wrap:wrap;">
               ${g.pdfUrl ? `<a href="${esc(g.pdfUrl)}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">📄 View PDF</a>` : ''}
@@ -1589,7 +1970,19 @@
     }
 
     // Open one guideline's summary (used from questions: "Read the guideline summary").
-    function openGuidelineSummary(resId) {
+    function anchorLabel(anchor, resId) {
+      if (!anchor) return 'Read the guideline summary';
+      if (anchor.startsWith('rec:')) {
+        const g = approvedGuidelines.find(x => x.id === resId);
+        const text = g ? (g.recommendations[Number(anchor.slice(4))] || '') : '';
+        const m = text.match(/Rec\s*(\d+)/i);
+        return m ? `Read recommendation ${m[1]} in the guideline` : 'Read this point in the guideline';
+      }
+      return { cutoffs: 'Read the key cutoffs in the guideline', staging: 'Read the staging section in the guideline', summary: 'Read the guideline summary' }[anchor]
+        || (anchor.startsWith('pitfall:') ? 'Read the related exam pitfall' : 'Read the guideline summary');
+    }
+
+    function openGuidelineSummary(resId, anchor) {
       const idx = approvedGuidelines.findIndex(g => g.id === resId);
       currentSummarySearch = '';
       const search = document.getElementById('summary-search-input');
@@ -1598,10 +1991,24 @@
       switchTab('summaries');
       if (idx < 0) return;
       const el = document.getElementById(`guide-${idx}`);
-      if (el) {
-        if (!el.classList.contains('open')) toggleAccordion(`guide-${idx}`);
-        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+      if (!el) return;
+      if (!el.classList.contains('open')) toggleAccordion(`guide-${idx}`);
+      let target = el;
+      if (anchor) {
+        const id = anchor.startsWith('rec:') ? `g-${idx}-rec-${anchor.slice(4)}`
+          : anchor.startsWith('pitfall:') ? `g-${idx}-pitfall-${anchor.slice(8)}`
+          : `g-${idx}-${anchor}`;
+        target = document.getElementById(id) || el;
       }
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        if (target !== el) {
+          target.classList.add('anchor-highlight');
+          target.focus({ preventScroll: true });
+          setTimeout(() => target.classList.remove('anchor-highlight'), 2600);
+        }
+      }, 60);
     }
 
     function toggleAllAccordions() {
@@ -1669,6 +2076,8 @@
           : (currentSessionMode === 'DIFFICULT_DRILL' ? 'No difficult cards yet. Cards you rate "Again" or find hard will collect here.' : 'No cards yet.');
         document.getElementById('fc-content').innerText = emptyMsg;
         document.getElementById('fc-side').innerText = '';
+        const sb = document.getElementById('fc-source-btn');
+        if (sb) sb.hidden = true;
         document.getElementById('fc-domain').innerText = '';
         document.getElementById('fc-ref').innerText = '';
         document.getElementById('fc-flip-hint').innerText = '';
@@ -1683,6 +2092,12 @@
       document.getElementById('fc-ref').innerText = card.ref || card.guidelineRef || "BSH Core Curriculum";
       document.getElementById('fc-content').innerText = isFlipped ? card.back : card.front;
       document.getElementById('fc-side').innerText = isFlipped ? 'Answer' : 'Question';
+      const srcBtn = document.getElementById('fc-source-btn');
+      if (srcBtn) {
+        const hasSource = isFlipped && card.sourceResourceId && approvedGuidelines.some(g => g.id === card.sourceResourceId);
+        srcBtn.hidden = !hasSource;
+        if (hasSource) srcBtn.innerText = anchorLabel(card.anchor, card.sourceResourceId);
+      }
       document.getElementById('fc-flip-hint').innerText = isFlipped ? 'How well did you remember it?' : 'Tap to show answer';
       document.getElementById('active-flashcard').setAttribute('aria-label', isFlipped ? 'Flashcard answer. Press to show the question.' : 'Flashcard question. Press to show the answer.');
       document.getElementById('sm2-controls').style.display = isFlipped ? "grid" : "none";
@@ -1695,6 +2110,11 @@
         const btn = document.getElementById(btnId);
         if (btn) btn.innerHTML = `${label}<small>${fmt(sm2(card, q).interval)} · key ${i + 1}</small>`;
       });
+    }
+
+    function openCardSource() {
+      const card = getFilteredFlashcards()[currentCardIndex];
+      if (card && card.sourceResourceId) openGuidelineSummary(card.sourceResourceId, card.anchor);
     }
 
     function flipCurrentCard() {
@@ -1890,7 +2310,7 @@
           <span style="font-weight:650; color:var(--text-strong);">Question ${s_.idx + 1} of ${total}</span>
           <button class="btn btn-ghost" onclick="endPracticeSession()">End session</button>
         </div>
-        <div class="session-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><div style="width:${pct}%"></div></div>
+        <div class="session-progress" role="progressbar" aria-label="Session progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><div style="width:${pct}%"></div></div>
         <article class="question-block" aria-labelledby="pq-title">
           <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;">
             <span class="badge badge-primary">${esc(q.domain)}</span>
@@ -1904,7 +2324,7 @@
             <div class="explanation-box">${esc(q.explanation)}</div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px; font-size:var(--fs-sm); color:var(--text-muted);">
               ${q.evidenceGrade ? `<span>Evidence: ${esc(q.evidenceGrade)}</span><span aria-hidden="true">·</span>` : ''}
-              ${g ? `<button class="btn btn-ghost" style="min-height:36px; padding:0 8px;" onclick="openGuidelineSummary('${esc(g.id)}')">Read the guideline summary</button>` : ''}
+              ${g ? `<button class="btn btn-ghost" style="min-height:36px; padding:0 8px;" onclick="openGuidelineSummary('${esc(g.id)}', '${esc(q.anchor || '')}')">${esc(anchorLabel(q.anchor, g.id))} →</button>` : ''}
             </div>` : ''}
         </article>
         <div class="session-toolbar">
@@ -2123,6 +2543,10 @@
       renderWeakSpots();
       updateDashboardStats();
       const pct = Math.round((correct / mockFilteredQuestions.length) * 100);
+      mockHistory.push({ ts: Date.now(), correct, n: mockFilteredQuestions.length, pct });
+      if (mockHistory.length > 500) mockHistory = mockHistory.slice(-500);
+      writeJson('prepare_haem_mocks', mockHistory);
+      updateDashboardStats();
       document.getElementById('mock-question-display').innerHTML = '';
       document.getElementById('mock-running').hidden = true;
       document.getElementById('mock-intro').hidden = true;
@@ -2136,6 +2560,7 @@
             <p style="margin-top:8px;"><strong>Your answer:</strong> ${esc(yours)}</p>
             <p><strong>Correct answer:</strong> ${String.fromCharCode(65 + q.correct)}. ${esc(q.options[q.correct])}</p>
             <div class="explanation-box">${esc(q.explanation)}</div>
+            <button class="btn btn-ghost" style="margin-top:6px; min-height:36px; padding:0 8px;" onclick="openGuidelineSummary('${esc(q.sourceResourceId)}', '${esc(q.anchor || '')}')">${esc(anchorLabel(q.anchor, q.sourceResourceId))} →</button>
           </details></li>`;
       }).join('');
       document.getElementById('mock-final-score').innerText = `${pct}%`;
@@ -2676,6 +3101,9 @@
           const loc = document.getElementById('setting-voice-locale');
           if (loc) loc.value = savedLocale;
         }
+        const savedExam = localStorage.getItem('prepare_haem_examDate');
+        const examInput = document.getElementById('setting-exam-date');
+        if (examInput && savedExam) examInput.value = savedExam;
         const savedGoal = localStorage.getItem('prepare_haem_dailyGoal');
         if (savedGoal) {
           const goal = document.getElementById('setting-daily-goal');

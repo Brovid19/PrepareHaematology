@@ -63,17 +63,19 @@
 
 ---
 
-## 2. Recommended next steps (not shipped: need data, content or a backend)
+## 2. Next steps: decisions and status
 
-1. **Peer statistics on each answer** (Passmedicine's "x% of users chose this"). This needs an anonymous answer-aggregation endpoint, for example a Vercel/Cloudflare function plus KV storage, and a privacy notice.
-2. **Image-based questions**, such as blood films, bone-marrow morphology and flow plots. Blood Academy's strength is visual, case-based haematology. Add `image` and `alt` fields to `content/questions.json` and render them with zoom.
-3. **"Notes" linked to every question.** Partly done with "Read the guideline summary". Next, deep-link to the exact recommendation and highlight it.
-4. **Topic-level progress over time**: a performance trend chart per topic and a "strongest/weakest topics" list on Today.
-5. **Exam-date planner**: set an exam date, then get daily targets (new cards, questions per day) and a countdown on Today.
-6. **Accounts and sync** (optional): progress currently lives on the device, with backup/restore to a file.
-7. **Usability testing** with 5–8 trainees on two tasks ("do today's review", "practise 10 TTP questions"). Measure time-on-task and errors before and after.
-
----
+| Recommendation | Decision | Status |
+|---|---|---|
+| Peer statistics on each answer ("x% chose this") | **Not feasible in this build.** It needs a server to aggregate answers anonymously, and the app is static and stores data on the device only. | Not planned |
+| Image-based questions (blood films, morphology, flow plots) | **Not required.** They are not part of the FRCPath Part 1 curriculum. | Not planned |
+| Exam format | FRCPath Part 1 is **written papers only** (Paper 1 essays, Paper 2 MCQ/EMQ). There is **no viva**, so the app never refers to one. | Reflected in the copy |
+| Deep links from questions and flashcards to the exact guideline passage | Agreed | **Done.** Every question and card has an `anchor` (`rec:N`, `cutoffs`, `staging`, `pitfall:N`, `summary`), checked by the build. "Read recommendation 2 in the guideline →" opens the summary, scrolls to the passage, highlights it and moves focus to it. Links appear in practice feedback, the mock review and on flashcard answers. |
+| Topic progress over time; strongest and weakest topics | Agreed | **Done.** "Progress by topic" on Today shows, per topic, the latest-attempt bar plus an **8-week weekly accuracy trend**: one line per topic as small multiples, gaps where a week has no answers, and hover/focus tooltips. A **table view** gives the same numbers, and a **strongest / needs most work** line has a one-tap "Practise …" link. |
+| Exam-date planner | Agreed | **Done.** Set the date on Today or in Settings to get a countdown and a phase (Build >28 days, Consolidate 8–28, Final week ≤7). **Today's targets** cover due flashcards, new questions (paced to finish a week before the exam), weak spots, and mock frequency (every 14/7/2 days by phase, based on saved mock history). Exam day and past-date states are handled. |
+| Accounts and sync | Agreed in principle | **Not built.** Like peer statistics, it needs a server. Until then, *Settings → Back up progress / Restore* moves progress between devices (the exam date and mock history are included). |
+| Usability testing | Agreed | **Plan written:** `docs/USABILITY_TEST_PLAN.md`. |
+| Serif typography | Requested | **Done.** Source Serif 4 is self-hosted (SIL OFL, `public/fonts/OFL.txt`) and precached for offline use. The body is 17 px with optical sizing, falling back to Georgia, Charter and the system serif. Keyboard hints stay monospace. |
 
 ## 3. Deployment
 
