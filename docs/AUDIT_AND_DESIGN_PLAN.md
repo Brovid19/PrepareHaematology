@@ -6,6 +6,26 @@ _Review date: 31 October 2026 · Scope: Android app (`app/`), website (`public/i
 
 ---
 
+## 0b. Unverified content removed (31 Oct 2026)
+
+Rollback point: branch `backup/pre-unverified-removal-2026-10-31`.
+
+The app now contains **only content checked against a source PDF in this repo**: the five 2026 BSH guidelines (Garg, Biss, Tam, MacDonald, Osborne), with 15 questions and 19 flashcards.
+
+- **Guidelines removed (9):** IMWG myeloma, WHO-HAEM5, BSH blood components/irradiation, BSH HIT + UKHCDO acquired haemophilia, BSH haemochromatosis, BSH sickle transfusion, ELN APL, BSH APS and BSH/ISTH TTP.
+- **Questions removed (13), all of which depended on those guidelines:**
+  - the 3 RCPath sample MCQs;
+  - the 5 transfusion EMQs;
+  - the 3 past-paper essays (myeloma, sickle, APL);
+  - HIT;
+  - positive DAT.
+- **Flashcards removed:** 18.
+- **UI references removed:** the HIT and APS takeaways, the domain blurbs that mentioned removed topics, the search hints, and the Transfusion Medicine filter and mastery meter (that domain now has no content).
+- **Kept:** the RCPath sample and past-paper PDFs in the library. They are primary documents, but no questions currently use them.
+- **Learners keep progress** on the remaining cards. Cards from removed guidelines drop out of saved decks automatically.
+
+To bring a topic back, add its guideline to `content/` with a source PDF, check every claim, set `"isVerified": true`, and rebuild.
+
 ## 0a. Architecture change: Android app removed, now a PWA (31 Oct 2026)
 
 Rollback point: branch `backup/pre-pwa-2026-10-31` (the Android + web version with all content fixes).

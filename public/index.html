@@ -924,13 +924,6 @@
           <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
         </div>
 
-        <div class="domain-meter-card">
-          <div style="display:flex; justify-content:space-between; font-size:0.85rem;">
-            <strong>Transfusion Medicine</strong>
-            <span style="color:var(--accent-green); font-weight:700;" id="dom-prof-trans">Not started</span>
-          </div>
-          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:0%;"></div></div>
-        </div>
       </div>
     </div>
 
@@ -941,7 +934,7 @@
         <span style="font-size:1.4rem;">📖</span>
         <div>
           <div style="font-size:0.95rem; font-weight:700; color:#FFF;">High-Yield Clinical Guideline Digests</div>
-          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Collapsible accordion view of diagnostic cutoffs, staging systems, and Grade 1A/1B recommendations for the FRCPath syllabus.</div>
+          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">Collapsible accordion view of diagnostic cutoffs, staging systems, and graded recommendations from verified 2026 BSH guidelines for the FRCPath syllabus.</div>
         </div>
       </div>
 
@@ -954,7 +947,7 @@
 
       <!-- Search Filter Bar -->
       <div style="margin-bottom:12px;">
-        <input type="text" id="summary-search-input" placeholder="Filter summaries (e.g. NT-proBNP, Fludarabine, 4Ts, APL, TTP)..." 
+        <input type="text" id="summary-search-input" placeholder="Filter summaries (e.g. NT-proBNP, ADAMTS13, Deauville, D-dimer, HMB)..." 
                oninput="onSummarySearch(this.value)"
                style="width:100%; padding:10px 14px; background:#181C26; border:1px solid var(--card-border); border-radius:8px; color:#FFF; font-size:0.88rem; outline:none;" />
       </div>
@@ -964,7 +957,6 @@
         <button class="btn btn-primary summary-cat-btn" data-cat="All" onclick="filterSummaryCat('All')">All</button>
         <button class="btn btn-secondary summary-cat-btn" data-cat="Haemostasis & Thrombosis" onclick="filterSummaryCat('Haemostasis & Thrombosis')">Haemostasis & Thrombosis</button>
         <button class="btn btn-secondary summary-cat-btn" data-cat="Malignant Haematology" onclick="filterSummaryCat('Malignant Haematology')">Malignant Haematology</button>
-        <button class="btn btn-secondary summary-cat-btn" data-cat="Transfusion Medicine" onclick="filterSummaryCat('Transfusion Medicine')">Transfusion Medicine</button>
         <button class="btn btn-secondary summary-cat-btn" data-cat="General Haematology" onclick="filterSummaryCat('General Haematology')">General Haematology</button>
       </div>
 
@@ -1022,16 +1014,14 @@
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:8px;">
           <div>
             <h3 style="color:#FFF; font-size:1.15rem;">FRCPath Part 1 Practice Question Bank</h3>
-            <p style="color:var(--text-muted); font-size:0.85rem;">Single Best Answer (SBA) and past paper essay questions with evidence rationales.</p>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Single best answer (SBA) and extended matching (EMQ) questions from verified 2026 BSH guidelines, with rationales.</p>
           </div>
           <div style="display:flex; gap:8px;">
             <select class="form-select" id="practice-domain-filter" onchange="filterPracticeDomain(this.value)" style="width:auto; padding:6px 12px;">
               <option value="All">All Domains</option>
               <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
               <option value="Haemato-Oncology">Haemato-Oncology</option>
-              <option value="Malignant Haematology">Malignant Haematology</option>
               <option value="General Haematology">General Haematology</option>
-              <option value="Transfusion Medicine">Transfusion Medicine</option>
             </select>
           </div>
         </div>
@@ -1393,7 +1383,6 @@
           <select class="form-select" id="custom-domain" required>
             <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
             <option value="Haemato-Oncology">Haemato-Oncology</option>
-            <option value="Malignant Haematology">Malignant Haematology</option>
             <option value="General Haematology">General Haematology</option>
             <option value="Transfusion Medicine">Transfusion Medicine</option>
           </select>
@@ -1568,8 +1557,7 @@
       const meters = [
         ['dom-prof-haem', 'Haemostasis & Thrombosis'],
         ['dom-prof-malig', 'Haemato-Oncology'],
-        ['dom-prof-gen', 'General Haematology'],
-        ['dom-prof-trans', 'Transfusion Medicine']
+        ['dom-prof-gen', 'General Haematology']
       ];
       meters.forEach(([elId, domain]) => {
         const label = document.getElementById(elId);
@@ -1659,13 +1647,13 @@
         return {
           icon: '💧',
           color: '#34D399',
-          desc: 'Anticoagulation, TTP & ADAMTS13, Antiphospholipid Syndrome & Bleeding in Gynaecology'
+          desc: 'TTP laboratory diagnosis (ADAMTS13) & bleeding/thrombotic disorders in gynaecology'
         };
       } else if (cat.includes('malignant')) {
         return {
           icon: '🔬',
           color: '#38BDF8',
-          desc: 'Myeloma (IMWG/BSH), AL Amyloidosis (2026), PMBCL & Acute Leukaemias (WHO 5th / ELN)'
+          desc: 'AL amyloidosis early diagnosis & primary mediastinal B-cell lymphoma (BSH 2026)'
         };
       } else if (cat.includes('transfusion')) {
         return {
@@ -1677,7 +1665,7 @@
         return {
           icon: '📊',
           color: '#2DD4BF',
-          desc: 'Diagnostic Laboratory Medicine, Point-of-Care Testing (ISO 15189:2022) & Iron Overload'
+          desc: 'Point-of-care testing in general haematology (ISO 15189:2022)'
         };
       }
     }
@@ -1696,13 +1684,11 @@
             <span class="badge" style="background:rgba(52,211,153,0.15); border:1px solid rgba(52,211,153,0.5); color:#34D399; font-weight:700;">${count} Guidelines</span>
           </div>
           <p style="font-size:0.82rem; color:var(--text-muted); margin-top:10px; line-height:1.45;">
-            Key high-yield exam algorithms covering TTP laboratory guidance (2026), multidisciplinary gynaecology haemostasis (2026), Antiphospholipid Syndrome (APS), Heparin-Induced Thrombocytopenia (HIT), and Acquired Haemophilia A.
+            Key high-yield points from the 2026 BSH TTP laboratory guidance and the BSH/UKHCDO haematology-gynaecology good practice paper.
           </p>
           <div style="background:#0E1118; border:1px solid rgba(52,211,153,0.25); border-radius:8px; padding:12px; margin-top:10px;">
             <div style="font-size:0.75rem; font-weight:800; color:#34D399; letter-spacing:0.5px; margin-bottom:6px;">CRITICAL EXAM TAKEAWAYS (PAPER 1 ESSAYS &amp; PAPER 2 MCQ/EMQ):</div>
             <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0; margin-bottom:6px;">• <strong>TTP (2026):</strong> Diagnostic cut-off ADAMTS13 &lt;10 IU/dL. Collect pre-treatment sample in 0.109 M sodium citrate; EDTA cannot be used. Never delay treatment while awaiting ADAMTS13.</div>
-            <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0; margin-bottom:6px;">• <strong>HIT (4Ts &gt;=4):</strong> Stop all heparin immediately; start argatroban or danaparoid (fondaparinux off-label). Do NOT start warfarin until platelets have recovered (usually &gt;150 x 10^9/L).</div>
-            <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0; margin-bottom:6px;">• <strong>Antiphospholipid Syndrome:</strong> avoid DOACs in triple-positive or arterial APS (TRAPS trial: excess arterial events); warfarin remains standard (target INR 2-3).</div>
             <div style="font-size:0.82rem; line-height:1.5; color:#E2E8F0;">• <strong>Gynae Haemostasis (2026):</strong> In treatment-resistant HMB on anticoagulation, consider apixaban or dabigatran (lower HMB incidence than rivaroxaban; ungraded good-practice point).</div>
           </div>
         </div>

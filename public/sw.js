@@ -3,7 +3,7 @@
 // BUILD_ID is stamped by scripts/build_web_content.py whenever the app shell or content
 // changes. A new BUILD_ID makes the browser install a new worker; the page then shows an
 // "Update available" banner and the learner chooses when to reload.
-const BUILD_ID = '8a512dc96345';
+const BUILD_ID = '0744c2261dc3';
 const SHELL_CACHE = `prepare-haematology-shell-${BUILD_ID}`;
 const PDF_CACHE = 'prepare-haematology-pdfs'; // kept across updates so offline PDFs survive
 
