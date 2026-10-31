@@ -167,15 +167,10 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                             viewModel.navigateTo(Screen.PRACTICE)
                         },
                         onRecallGuideline = { resId ->
-                            val filterName = when (resId) {
-                                "bsh_amyloidosis_2026" -> "BSH 2026 Amyloidosis"
-                                "imwg_myeloma_2021" -> "IMWG Myeloma"
-                                "who_haem_5th" -> "WHO Classification"
-                                "bsh_transfusion_components" -> "Transfusion & Safety"
-                                "ukhcdo_haemostasis_2022" -> "Haemostasis & HIT"
-                                else -> "All"
-                            }
-                            viewModel.setFlashcardResourceFilter(filterName)
+                            // Recall filters are keyed by resource id, so every guideline
+                            // (including the 2026 additions) can be filtered.
+                            val hasCards = flashcards.any { it.sourceResourceId == resId }
+                            viewModel.setFlashcardResourceFilter(if (hasCards) resId else "All")
                             viewModel.navigateTo(Screen.SPACED_REPETITION)
                         },
                         onSpeakGuideline = { viewModel.speakSingleSummary(it) },
@@ -334,9 +329,8 @@ fun MainAppScreen(viewModel: ExamViewModel) {
                         allQuestions = questions,
                         resources = resources,
                         onPracticeQuestion = { q ->
-                            val targetIndex = questions.indexOf(q).coerceAtLeast(0)
-                            viewModel.setPracticeQuestionIndex(targetIndex)
-                            viewModel.navigateTo(Screen.PRACTICE)
+                            // Clears Practice filters so the index points at the right question.
+                            viewModel.openPracticeQuestion(q.id, questions)
                         },
                         onOpenResourceModal = { viewModel.openGroundingDrawer(it) },
                         onBackToDashboard = { viewModel.navigateTo(Screen.DASHBOARD) }

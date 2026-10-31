@@ -39,6 +39,7 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.UploadFile
 import androidx.compose.material.icons.filled.Verified
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -184,7 +185,7 @@ fun ResourceRegistryScreen(
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
-                            text = "PDF AI",
+                            text = "IMPORT (BETA)",
                             color = DeepNavyBg,
                             fontWeight = FontWeight.Bold,
                             fontSize = 12.sp
@@ -236,7 +237,7 @@ fun ResourceRegistryScreen(
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            text = "AI CLINICAL GUIDELINE INGESTION ENGINE",
+                            text = "GUIDELINE IMPORT (EXPERIMENTAL)",
                             color = TealAccent,
                             fontSize = 11.sp,
                             fontWeight = FontWeight.Bold,
@@ -245,7 +246,7 @@ fun ResourceRegistryScreen(
                     }
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = "Upload any accredited PDF guideline (e.g. BSH 2026 AL Amyloidosis, IMWG, WHO, UKHCDO). AI will extract diagnostic thresholds, generate high-yield summaries, synthesize FRCPath mock questions, and author SM-2 flashcards.",
+                        text = "Recognised bundled guidelines (Garg, Biss, Tam, MacDonald, Osborne 2026) load their editor-verified summaries, questions and flashcards. Any other file is added as an UNVERIFIED placeholder with no generated content: enter cutoffs and recommendations yourself from the source document. No AI model is used and PDF text is not extracted on-device.",
                         color = TextSecondary,
                         fontSize = 11.sp,
                         lineHeight = 15.sp
@@ -284,7 +285,7 @@ fun ResourceRegistryScreen(
 
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "TEST ATTACHED 2026 GUIDELINES VIA AI SYNTHESIS:",
+                        text = "LOAD A BUNDLED 2026 GUIDELINE:",
                         color = TextSecondary,
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Bold,
@@ -641,15 +642,15 @@ fun ResourceRegistryScreen(
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Icon(
-                                    imageVector = Icons.Default.Verified,
+                                    imageVector = if (res.isVerified) Icons.Default.Verified else Icons.Default.Warning,
                                     contentDescription = null,
-                                    tint = EmeraldSuccess,
+                                    tint = if (res.isVerified) EmeraldSuccess else AmberWarning,
                                     modifier = Modifier.size(16.dp)
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
                                 Text(
-                                    text = "Sandbox Verified",
-                                    color = EmeraldSuccess,
+                                    text = if (res.isVerified) "Editor verified" else "Unverified (user-supplied)",
+                                    color = if (res.isVerified) EmeraldSuccess else AmberWarning,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.SemiBold
                                 )
@@ -695,7 +696,7 @@ fun ResourceRegistryScreen(
                     )
                     Spacer(modifier = Modifier.width(10.dp))
                     Text(
-                        text = "AI Analyzing Guideline PDF",
+                        text = "Reading document…",
                         color = TextPrimary,
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
@@ -754,13 +755,13 @@ fun AiGuidelineReviewDialog(
                 Spacer(modifier = Modifier.width(8.dp))
                 Column {
                     Text(
-                        text = "AI Guideline Ingestion Review",
+                        text = if (pkg.matchedVerifiedGuideline) "Verified guideline matched" else "Unverified placeholder: review before saving",
                         color = TextPrimary,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Parsed ${pkg.extractedWordCount} words • Generated ${pkg.flashcards.size} Cards & ${pkg.questions.size} Questions",
+                        text = "Read ${pkg.extractedWordCount} words • ${pkg.flashcards.size} verified cards & ${pkg.questions.size} verified questions",
                         color = EmeraldSuccess,
                         fontSize = 11.sp,
                         fontWeight = FontWeight.SemiBold
@@ -967,7 +968,7 @@ fun IngestGuidelineDialog(
                         Spacer(modifier = Modifier.width(8.dp))
                         Column {
                             Text(text = "Prefer uploading a PDF file?", color = TealAccent, fontSize = 11.sp, fontWeight = FontWeight.Bold)
-                            Text(text = "AI will automatically extract text, cutoffs, and questions.", color = TextSecondary, fontSize = 10.sp)
+                            Text(text = "Bundled guidelines are recognised by title/author; other files become unverified placeholders.", color = TextSecondary, fontSize = 10.sp)
                         }
                     }
                 }
@@ -995,7 +996,7 @@ fun IngestGuidelineDialog(
                 Spacer(modifier = Modifier.height(8.dp))
                 DialogInputField(label = "Full Citation", value = citation, onValueChange = { citation = it }, placeholder = "Authors, Journal, Volume, Pages, Year")
                 Spacer(modifier = Modifier.height(8.dp))
-                DialogInputField(label = "Online Guideline Link / DOI", value = url, onValueChange = { url = it }, placeholder = "e.g. https://doi.org/10.1111/bjh.20173")
+                DialogInputField(label = "Online Guideline Link / DOI", value = url, onValueChange = { url = it }, placeholder = "e.g. https://doi.org/10.1111/bjh.70472")
                 Spacer(modifier = Modifier.height(8.dp))
                 DialogInputField(label = "Executive Summary", value = summary, onValueChange = { summary = it }, placeholder = "Brief clinical summary of the guideline scope", maxLines = 3)
                 Spacer(modifier = Modifier.height(8.dp))

@@ -90,6 +90,7 @@ import com.example.ui.theme.TextMuted
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 import com.example.ui.viewmodel.FlashcardSessionMode
+import com.example.ui.viewmodel.computeSm2
 import com.example.ui.viewmodel.ProficiencyLevel
 import com.example.ui.viewmodel.Sm2ReviewOutcome
 import com.example.ui.viewmodel.SpacedReviewSchedule
@@ -135,16 +136,9 @@ fun SpacedRepetitionScreen(
     val now = System.currentTimeMillis()
 
     // Filter by guideline resource
+    // selectedFilter is "All" or an ApprovedResource id.
     val resourceFiltered = flashcards.filter { card ->
-        when (selectedFilter) {
-            "All" -> true
-            "BSH 2026 Amyloidosis" -> card.sourceResourceId == "bsh_amyloidosis_2026"
-            "IMWG Myeloma" -> card.sourceResourceId == "imwg_myeloma_2021"
-            "WHO Classification" -> card.sourceResourceId == "who_haem_5th"
-            "Transfusion & Safety" -> card.sourceResourceId == "bsh_transfusion_components"
-            "Haemostasis & HIT" -> card.sourceResourceId == "ukhcdo_haemostasis_2022"
-            else -> true
-        }
+        selectedFilter == "All" || card.sourceResourceId == selectedFilter
     }
 
     // Filter by session mode
@@ -152,7 +146,10 @@ fun SpacedRepetitionScreen(
         when (sessionMode) {
             FlashcardSessionMode.ALL_CARDS -> true
             FlashcardSessionMode.DUE_FOR_REVIEW -> card.dueDateTimestamp <= now
-            FlashcardSessionMode.DIFFICULT_DRILL -> card.easeFactor < 2.2f || card.intervalDays <= 1
+            // Cards the learner has actually struggled with: low ease, or reviewed and then
+            // reset by an "Again". Brand-new, never-reviewed cards are not "difficult".
+            FlashcardSessionMode.DIFFICULT_DRILL -> card.easeFactor < 2.2f ||
+                (card.lastReviewedTimestamp > 0L && card.repetitionCount == 0)
         }
     }
 
@@ -302,7 +299,7 @@ fun SpacedRepetitionScreen(
                         )
                     }
                     Text(
-                        text = "Retention: ${scheduleForecast.estimatedRetentionRate}%",
+                        text = "Est. retention ≈${scheduleForecast.estimatedRetentionRate}% (model)",
                         color = EmeraldSuccess,
                         fontSize = 11.sp,
                         fontWeight = FontWeight.Bold
@@ -456,15 +453,17 @@ fun SpacedRepetitionScreen(
                 .horizontalScroll(rememberScrollState()),
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            val filters = listOf(
-                "All",
-                "BSH 2026 Amyloidosis",
-                "IMWG Myeloma",
-                "WHO Classification",
-                "Transfusion & Safety",
-                "Haemostasis & HIT"
-            )
-            filters.forEach { filter ->
+            // Built from the guideline registry so every resource with cards can be filtered.
+            val filterLabels = linkedMapOf("All" to "All")
+            resources
+                .filter { res -> flashcards.any { it.sourceResourceId == res.id } }
+                .forEach { res ->
+                    val shortTitle = res.title.substringBefore(":").trim().let {
+                        if (it.length > 34) it.take(32).trimEnd() + "…" else it
+                    }
+                    filterLabels[res.id] = "$shortTitle (${res.year})"
+                }
+            filterLabels.forEach { (filter, label) ->
                 val isSelected = selectedFilter == filter
                 Box(
                     modifier = Modifier
@@ -474,7 +473,7 @@ fun SpacedRepetitionScreen(
                         .padding(horizontal = 10.dp, vertical = 5.dp)
                 ) {
                     Text(
-                        text = filter,
+                        text = label,
                         color = if (isSelected) DeepNavyBg else TextSecondary,
                         fontSize = 11.sp,
                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
@@ -756,40 +755,48 @@ fun SpacedRepetitionScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                // Again (0)
+                val cardForPreview: Flashcard = activeCard
+                fun previewDays(quality: Int): Int = computeSm2(
+                    currentRepetitions = cardForPreview.repetitionCount,
+                    currentIntervalDays = cardForPreview.intervalDays,
+                    currentEaseFactor = cardForPreview.easeFactor,
+                    qualityRating = quality
+                ).newIntervalDays
+
+                // Again (1): failed recall, card resets
                 RatingButton(
                     label = "Again",
-                    sublabel = "Reset 1d",
+                    sublabel = "${previewDays(1)}d",
                     color = CrimsonError,
                     modifier = Modifier
                         .weight(1f)
                         .testTag("rate_again_btn"),
-                    onClick = { onRateCard(activeCard, 0, filteredCards) }
+                    onClick = { onRateCard(activeCard, 1, filteredCards) }
                 )
-                // Hard (2)
+                // Hard (3): recalled with serious difficulty (still a pass in SM-2)
                 RatingButton(
                     label = "Hard",
-                    sublabel = "${(activeCard.intervalDays * 1.2).toInt().coerceAtLeast(1)}d",
+                    sublabel = "${previewDays(3)}d",
                     color = AmberWarning,
                     modifier = Modifier
                         .weight(1f)
                         .testTag("rate_hard_btn"),
-                    onClick = { onRateCard(activeCard, 2, filteredCards) }
+                    onClick = { onRateCard(activeCard, 3, filteredCards) }
                 )
-                // Good (3)
+                // Good (4)
                 RatingButton(
                     label = "Good",
-                    sublabel = "${(activeCard.intervalDays * 2.5).toInt().coerceAtLeast(3)}d",
+                    sublabel = "${previewDays(4)}d",
                     color = TealAccent,
                     modifier = Modifier
                         .weight(1f)
                         .testTag("rate_good_btn"),
-                    onClick = { onRateCard(activeCard, 3, filteredCards) }
+                    onClick = { onRateCard(activeCard, 4, filteredCards) }
                 )
                 // Easy (5)
                 RatingButton(
                     label = "Easy",
-                    sublabel = "${(activeCard.intervalDays * 3.5).toInt().coerceAtLeast(7)}d",
+                    sublabel = "${previewDays(5)}d",
                     color = EmeraldSuccess,
                     modifier = Modifier
                         .weight(1f)
@@ -1054,14 +1061,14 @@ fun CreateCustomFlashcardDialog(
 ) {
     var front by remember { mutableStateOf("") }
     var back by remember { mutableStateOf("") }
-    var selectedDomain by remember { mutableStateOf("Malignant Haematology") }
+    var selectedDomain by remember { mutableStateOf("Haemato-Oncology") }
     var selectedResourceId by remember { mutableStateOf(resources.firstOrNull()?.id ?: "bsh_amyloidosis_2026") }
     var section by remember { mutableStateOf("Diagnostic Thresholds") }
     var evidenceGrade by remember { mutableStateOf("Grade 1A") }
     var localError by remember { mutableStateOf<String?>(null) }
 
     val domains = listOf(
-        "Malignant Haematology",
+        "Haemato-Oncology",
         "Haemostasis & Thrombosis",
         "Transfusion Medicine",
         "General Haematology"

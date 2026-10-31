@@ -11,6 +11,7 @@ import com.example.audio.TtsPlayer
 import com.example.audio.TtsTextFormatter
 import com.example.data.ai.GeneratedGuidelinePackage
 import com.example.data.ai.GuidelineAiSynthesizer
+import com.example.data.db.SeedData
 import com.example.data.model.ApprovedResource
 import com.example.data.model.Flashcard
 import com.example.data.model.Question
@@ -60,6 +61,58 @@ data class Sm2CalculationResult(
     val proficiencyLevel: ProficiencyLevel
 )
 
+/**
+ * SuperMemo SM-2. Quality ratings used by the UI buttons:
+ *   Again = 1 (failed recall), Hard = 3 (correct with difficulty),
+ *   Good = 4 (correct after some thought), Easy = 5 (instant, perfect recall).
+ * Ratings < 3 reset the card; ratings >= 3 are passes (Hard is a pass, as in SM-2).
+ */
+fun computeSm2(
+    currentRepetitions: Int,
+    currentIntervalDays: Int,
+    currentEaseFactor: Float,
+    qualityRating: Int,
+    currentTime: Long = System.currentTimeMillis()
+): Sm2CalculationResult {
+    val q = qualityRating.coerceIn(0, 5)
+    var repetitions = currentRepetitions
+    val interval: Int
+
+    if (q >= 3) {
+        interval = when (repetitions) {
+            0 -> 1
+            1 -> 6
+            else -> (currentIntervalDays * currentEaseFactor).roundToInt().coerceAtLeast(1)
+        }
+        repetitions += 1
+    } else {
+        // Failed recall: reset repetitions and review again tomorrow
+        repetitions = 0
+        interval = 1
+    }
+
+    // Standard SM-2 Easiness Factor Formula:
+    // EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
+    val delta = 0.1f - (5 - q) * (0.08f + (5 - q) * 0.02f)
+    val ease = (currentEaseFactor + delta).coerceAtLeast(1.3f)
+
+    val nextDueTimestamp = currentTime + (interval * 86_400_000L)
+
+    val proficiency = when {
+        interval >= 21 && repetitions >= 4 && ease >= 2.3f -> ProficiencyLevel.MASTERED
+        interval >= 6 && repetitions >= 2 -> ProficiencyLevel.PROFICIENT
+        else -> ProficiencyLevel.LEARNING
+    }
+
+    return Sm2CalculationResult(
+        newRepetitions = repetitions,
+        newIntervalDays = interval,
+        newEaseFactor = ease,
+        nextDueTimestamp = nextDueTimestamp,
+        proficiencyLevel = proficiency
+    )
+}
+
 data class Sm2ReviewOutcome(
     val cardId: String,
     val rating: Int,
@@ -101,7 +154,7 @@ data class ExamUiState(
     val flashcardIndex: Int = 0,
     val isCardFlipped: Boolean = false,
     val selectedFlashcardResourceFilter: String = "All",
-    val flashcardSessionMode: FlashcardSessionMode = FlashcardSessionMode.ALL_CARDS,
+    val flashcardSessionMode: FlashcardSessionMode = FlashcardSessionMode.DUE_FOR_REVIEW,
     val lastSm2Outcome: Sm2ReviewOutcome? = null,
     val isSpacedSessionCompleted: Boolean = false,
     val reviewedInCurrentSessionCount: Int = 0,
@@ -171,7 +224,18 @@ class ExamViewModel(
 
     private var timerJob: Job? = null
 
+    companion object {
+        const val MOCK_QUESTION_COUNT = 10
+    }
+
     init {
+        val startupSettings = settingsManager.settingsState.value
+        val startupMode = runCatching { FlashcardSessionMode.valueOf(startupSettings.defaultSessionMode) }
+            .getOrDefault(FlashcardSessionMode.DUE_FOR_REVIEW)
+        _uiState.value = _uiState.value.copy(
+            flashcardSessionMode = startupMode,
+            selectedDomainFilter = startupSettings.defaultPracticeDomain
+        )
         viewModelScope.launch {
             repository.ensureDataSeeded()
         }
@@ -217,6 +281,21 @@ class ExamViewModel(
             practiceQuestionIndex = 0,
             selectedOptionIndex = null,
             isAnswerSubmitted = false
+        )
+    }
+
+    /** Opens a specific question in Practice regardless of the current filters. */
+    fun openPracticeQuestion(questionId: String, allQuestions: List<Question>) {
+        val index = allQuestions.indexOfFirst { it.id == questionId }.coerceAtLeast(0)
+        _uiState.value = _uiState.value.copy(
+            selectedDomainFilter = "All",
+            selectedTypeFilter = "All",
+            practiceQuestionIndex = index,
+            selectedOptionIndex = null,
+            isAnswerSubmitted = false,
+            candidateEssayNotes = "",
+            isEssayModelRevealed = false,
+            currentScreen = Screen.PRACTICE
         )
     }
 
@@ -302,46 +381,13 @@ class ExamViewModel(
         currentEaseFactor: Float,
         qualityRating: Int,
         currentTime: Long = System.currentTimeMillis()
-    ): Sm2CalculationResult {
-        val q = qualityRating.coerceIn(0, 5)
-        var repetitions = currentRepetitions
-        var interval: Int
-        var ease = currentEaseFactor
-
-        if (q >= 3) {
-            when (repetitions) {
-                0 -> interval = 1
-                1 -> interval = 6
-                else -> interval = (currentIntervalDays * ease).roundToInt().coerceAtLeast(1)
-            }
-            repetitions += 1
-        } else {
-            // Failed recall: reset repetitions and schedule for immediate review tomorrow
-            repetitions = 0
-            interval = 1
-        }
-
-        // Standard SM-2 Easiness Factor Formula:
-        // EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
-        val delta = 0.1f - (5 - q) * (0.08f + (5 - q) * 0.02f)
-        ease = (ease + delta).coerceAtLeast(1.3f)
-
-        val nextDueTimestamp = currentTime + (interval * 86_400_000L)
-
-        val proficiency = when {
-            interval >= 21 && repetitions >= 4 && ease >= 2.3f -> ProficiencyLevel.MASTERED
-            interval >= 6 && repetitions >= 2 -> ProficiencyLevel.PROFICIENT
-            else -> ProficiencyLevel.LEARNING
-        }
-
-        return Sm2CalculationResult(
-            newRepetitions = repetitions,
-            newIntervalDays = interval,
-            newEaseFactor = ease,
-            nextDueTimestamp = nextDueTimestamp,
-            proficiencyLevel = proficiency
-        )
-    }
+    ): Sm2CalculationResult = computeSm2(
+        currentRepetitions = currentRepetitions,
+        currentIntervalDays = currentIntervalDays,
+        currentEaseFactor = currentEaseFactor,
+        qualityRating = qualityRating,
+        currentTime = currentTime
+    )
 
     fun rateFlashcard(card: Flashcard, qualityScore: Int, currentFilteredCards: List<Flashcard>) {
         val sm2Result = calculateSm2(
@@ -376,12 +422,19 @@ class ExamViewModel(
         }
 
         val nextReviewedCount = _uiState.value.reviewedInCurrentSessionCount + 1
-        val isCompleted = _uiState.value.flashcardSessionMode == FlashcardSessionMode.DUE_FOR_REVIEW &&
-                nextReviewedCount >= currentFilteredCards.size && currentFilteredCards.isNotEmpty()
+        val isDueMode = _uiState.value.flashcardSessionMode == FlashcardSessionMode.DUE_FOR_REVIEW
 
-        val nextIndex = if (currentFilteredCards.isNotEmpty()) {
-            (_uiState.value.flashcardIndex + 1) % currentFilteredCards.size
-        } else 0
+        // In Due mode every rating schedules the card at least a day ahead, so it drops out of
+        // the due list and the next card slides into the current index. Advancing the index as
+        // well would skip a card, and comparing against the shrinking list size would end the
+        // session halfway. The session is complete when the card just rated was the last one due.
+        val isCompleted = isDueMode && currentFilteredCards.size <= 1
+
+        val nextIndex = when {
+            currentFilteredCards.isEmpty() -> 0
+            isDueMode -> _uiState.value.flashcardIndex.coerceAtMost((currentFilteredCards.size - 2).coerceAtLeast(0))
+            else -> (_uiState.value.flashcardIndex + 1) % currentFilteredCards.size
+        }
 
         _uiState.value = _uiState.value.copy(
             flashcardIndex = nextIndex,
@@ -519,7 +572,12 @@ class ExamViewModel(
 
     fun startMockExam(questions: List<Question>) {
         timerJob?.cancel()
-        val examQuestions = questions.shuffled().take(10)
+        val settings = settingsManager.settingsState.value
+        // Essays (correctIndex = -1) cannot be auto-marked, so they are excluded from timed mocks.
+        val markable = questions.filter { it.questionType != "ESSAY" && it.correctIndex >= 0 && it.options.isNotEmpty() }
+        val ordered = if (settings.shuffleQuestions) markable.shuffled() else markable
+        val examQuestions = ordered.take(MOCK_QUESTION_COUNT)
+        val durationSeconds = settings.defaultMockDurationMinutes.coerceIn(1, 180) * 60
         _uiState.value = _uiState.value.copy(
             currentScreen = Screen.MOCK_EXAM,
             isMockActive = true,
@@ -527,7 +585,7 @@ class ExamViewModel(
             mockCurrentIndex = 0,
             mockAnswers = emptyMap(),
             mockFlaggedIds = emptySet(),
-            mockSecondsRemaining = 20 * 60,
+            mockSecondsRemaining = durationSeconds,
             isMockFinished = false,
             mockScorePercentage = 0
         )
@@ -573,21 +631,20 @@ class ExamViewModel(
             if (userPick != null && userPick == q.correctIndex) {
                 correctCount++
             }
-            // Record in history
-            if (userPick != null) {
-                viewModelScope.launch {
-                    repository.recordAnswer(
-                        questionId = q.id,
-                        selectedOptionIndex = userPick,
-                        isCorrect = userPick == q.correctIndex,
-                        notes = "Timed Mock Exam"
-                    )
-                }
+            // Record in history. Unanswered questions count as incorrect so they surface in Weak Spots.
+            viewModelScope.launch {
+                repository.recordAnswer(
+                    questionId = q.id,
+                    selectedOptionIndex = userPick ?: -1,
+                    isCorrect = userPick != null && userPick == q.correctIndex,
+                    notes = if (userPick == null) "Timed Mock Exam (unanswered)" else "Timed Mock Exam"
+                )
             }
         }
         val percentage = if (questions.isNotEmpty()) (correctCount * 100) / questions.size else 0
         _uiState.value = _uiState.value.copy(
             isMockFinished = true,
+            isMockActive = false,
             mockScorePercentage = percentage
         )
     }
@@ -643,7 +700,8 @@ class ExamViewModel(
             stagingCriteria = stagingCriteria.trim(),
             recommendations = recommendations.trim(),
             url = url.trim(),
-            isVerified = true
+            // Entered by the user, not checked by an editor.
+            isVerified = false
         )
         viewModelScope.launch {
             repository.ingestApprovedResource(resource)
@@ -704,7 +762,7 @@ class ExamViewModel(
             id = cardId,
             domain = domain,
             topic = guidelineSection.trim().ifBlank { "Candidate Custom Notes" },
-            sourceResourceId = sourceResourceId.ifBlank { "bsh_amyloidosis_2026" },
+            sourceResourceId = sourceResourceId.ifBlank { allResources.value.firstOrNull()?.id ?: SeedData.getApprovedResources().first().id },
             front = front.trim(),
             back = back.trim(),
             guidelineRef = "${guidelineSection.trim().ifBlank { "Candidate Notes" }} ($evidenceGrade)",

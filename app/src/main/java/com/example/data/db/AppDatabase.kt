@@ -5,14 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.data.model.ApprovedResource
 import com.example.data.model.Flashcard
 import com.example.data.model.Question
 import com.example.data.model.UserAnswerHistory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 @Database(
     entities = [
@@ -43,18 +39,11 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "frcpath_haematology.db"
                 )
+                    // WARNING: destructive migration wipes learner progress. Any future schema
+                    // change (bumping `version`) MUST ship with an explicit Migration instead.
                     .fallbackToDestructiveMigration()
-                    .addCallback(object : Callback() {
-                        override fun onCreate(db: SupportSQLiteDatabase) {
-                            super.onCreate(db)
-                            // Populate database on creation
-                            CoroutineScope(Dispatchers.IO).launch {
-                                INSTANCE?.let { database ->
-                                    seedDatabase(database)
-                                }
-                            }
-                        }
-                    })
+                    // Seeding is done in exactly one place: ExamRepository.ensureDataSeeded().
+                    // The previous onCreate callback raced with it.
                     .build()
                 INSTANCE = instance
                 instance

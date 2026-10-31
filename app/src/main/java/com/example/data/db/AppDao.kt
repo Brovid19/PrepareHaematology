@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import androidx.room.Upsert
 import com.example.data.model.ApprovedResource
 import com.example.data.model.Flashcard
 import com.example.data.model.Question
@@ -22,10 +23,13 @@ interface ApprovedResourceDao {
     @Query("SELECT * FROM approved_resources WHERE category = :category")
     fun getResourcesByCategory(category: String): Flow<List<ApprovedResource>>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    // Upsert updates rows in place. REPLACE would DELETE then INSERT, which fires the
+    // ON DELETE CASCADE foreign keys and silently wipes linked questions and flashcards
+    // (including the learner's spaced-repetition progress).
+    @Upsert
     suspend fun insertResource(resource: ApprovedResource)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertResources(resources: List<ApprovedResource>)
 }
 
@@ -46,10 +50,10 @@ interface QuestionDao {
     @Query("SELECT * FROM questions WHERE id = :id LIMIT 1")
     suspend fun getQuestionById(id: String): Question?
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertQuestions(questions: List<Question>)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertQuestion(question: Question)
 }
 
@@ -70,11 +74,14 @@ interface FlashcardDao {
     @Update
     suspend fun updateFlashcard(flashcard: Flashcard)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertFlashcard(flashcard: Flashcard)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Upsert
     suspend fun insertFlashcards(flashcards: List<Flashcard>)
+
+    @Query("SELECT * FROM flashcards WHERE id IN (:ids)")
+    suspend fun getFlashcardsByIds(ids: List<String>): List<Flashcard>
 }
 
 @Dao
@@ -94,6 +101,16 @@ interface UserAnswerDao {
     @Query("UPDATE user_answers SET isBookmarked = :isBookmarked WHERE questionId = :questionId")
     suspend fun setBookmark(questionId: String, isBookmarked: Boolean)
 
-    @Query("SELECT questionId FROM user_answers WHERE isCorrect = 0 GROUP BY questionId ORDER BY MAX(timestamp) DESC")
+    // A question is a weak spot only while its MOST RECENT attempt was incorrect,
+    // so answering it correctly later clears it.
+    @Query(
+        """
+        SELECT u.questionId FROM user_answers u
+        WHERE u.timestamp = (SELECT MAX(t.timestamp) FROM user_answers t WHERE t.questionId = u.questionId)
+          AND u.isCorrect = 0
+        GROUP BY u.questionId
+        ORDER BY MAX(u.timestamp) DESC
+        """
+    )
     fun getIncorrectQuestionIds(): Flow<List<String>>
 }

@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import androidx.room.withTransaction
 import com.example.data.db.AppDatabase
 import com.example.data.db.SeedData
 import com.example.data.model.ApprovedResource
@@ -8,9 +9,7 @@ import com.example.data.model.Question
 import com.example.data.model.UserAnswerHistory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.withContext
-import kotlin.math.roundToInt
 
 class ExamRepository(private val db: AppDatabase) {
 
@@ -21,29 +20,44 @@ class ExamRepository(private val db: AppDatabase) {
     val bookmarkedQuestionIds: Flow<List<String>> = db.userAnswerDao().getBookmarkedQuestionIds()
     val incorrectQuestionIds: Flow<List<String>> = db.userAnswerDao().getIncorrectQuestionIds()
 
+    /**
+     * Seeds a fresh install AND pushes corrected/updated seed content to existing installs.
+     *
+     * Content fields (text, answers, sources) are always overwritten from [SeedData] so that
+     * corrections reach learners. Learner state is preserved:
+     *  - flashcard scheduling fields (interval, repetitions, ease, due, last reviewed) are kept;
+     *  - answer history and bookmarks live in a separate table and are never touched;
+     *  - upserts update rows in place, so foreign-key cascades never fire.
+     */
     suspend fun ensureDataSeeded() = withContext(Dispatchers.IO) {
-        val existing = db.approvedResourceDao().getAllResources().firstOrNull()
-        if (existing.isNullOrEmpty()) {
-            AppDatabase.seedDatabase(db)
-        } else {
-            val currentResIds = existing.map { it.id }.toSet()
-            val newResources = SeedData.getApprovedResources().filter { it.id !in currentResIds }
-            if (newResources.isNotEmpty()) {
-                db.approvedResourceDao().insertResources(newResources)
-            }
-            val existingQuestions = db.questionDao().getAllQuestions().firstOrNull() ?: emptyList()
-            val currentQIds = existingQuestions.map { it.id }.toSet()
-            val newQuestions = SeedData.getQuestions().filter { it.id !in currentQIds }
-            if (newQuestions.isNotEmpty()) {
-                db.questionDao().insertQuestions(newQuestions)
-            }
-            val existingCards = db.flashcardDao().getAllFlashcards().firstOrNull() ?: emptyList()
-            val currentCardIds = existingCards.map { it.id }.toSet()
-            val newCards = SeedData.getFlashcards().filter { it.id !in currentCardIds }
-            if (newCards.isNotEmpty()) {
-                db.flashcardDao().insertFlashcards(newCards)
+        db.withTransaction {
+            db.approvedResourceDao().insertResources(SeedData.getApprovedResources())
+            db.questionDao().insertQuestions(SeedData.getQuestions())
+            upsertFlashcardsPreservingProgress(SeedData.getFlashcards())
+        }
+    }
+
+    /**
+     * Upserts flashcard content while keeping any existing spaced-repetition progress.
+     */
+    private suspend fun upsertFlashcardsPreservingProgress(cards: List<Flashcard>) {
+        if (cards.isEmpty()) return
+        val existing = db.flashcardDao().getFlashcardsByIds(cards.map { it.id }).associateBy { it.id }
+        val merged = cards.map { incoming ->
+            val current = existing[incoming.id]
+            if (current == null) {
+                incoming
+            } else {
+                incoming.copy(
+                    intervalDays = current.intervalDays,
+                    repetitionCount = current.repetitionCount,
+                    easeFactor = current.easeFactor,
+                    dueDateTimestamp = current.dueDateTimestamp,
+                    lastReviewedTimestamp = current.lastReviewedTimestamp
+                )
             }
         }
+        db.flashcardDao().insertFlashcards(merged)
     }
 
     suspend fun recordAnswer(
@@ -66,44 +80,6 @@ class ExamRepository(private val db: AppDatabase) {
 
     suspend fun toggleBookmark(questionId: String, isBookmarked: Boolean) = withContext(Dispatchers.IO) {
         db.userAnswerDao().setBookmark(questionId, isBookmarked)
-    }
-
-    /**
-     * SuperMemo SM-2 Spaced Repetition Scheduling
-     * quality: 0 (Again), 2 (Hard), 3 (Good), 5 (Easy)
-     */
-    suspend fun processFlashcardReview(flashcard: Flashcard, qualityScore: Int) = withContext(Dispatchers.IO) {
-        val q = qualityScore.coerceIn(0, 5)
-        var newRepetition = flashcard.repetitionCount
-        var newInterval: Int
-        var newEase = flashcard.easeFactor
-
-        if (q >= 3) {
-            when (newRepetition) {
-                0 -> newInterval = 1
-                1 -> newInterval = 6
-                else -> newInterval = (flashcard.intervalDays * newEase).roundToInt().coerceAtLeast(1)
-            }
-            newRepetition += 1
-        } else {
-            newRepetition = 0
-            newInterval = 1
-        }
-
-        // SM-2 formula: EF' = EF + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
-        val delta = 0.1f - (5 - q) * (0.08f + (5 - q) * 0.02f)
-        newEase = (newEase + delta).coerceAtLeast(1.3f)
-
-        val nextDue = System.currentTimeMillis() + (newInterval * 24L * 60L * 60L * 1000L)
-
-        val updated = flashcard.copy(
-            intervalDays = newInterval,
-            repetitionCount = newRepetition,
-            easeFactor = newEase,
-            dueDateTimestamp = nextDue,
-            lastReviewedTimestamp = System.currentTimeMillis()
-        )
-        db.flashcardDao().updateFlashcard(updated)
     }
 
     suspend fun updateFlashcard(flashcard: Flashcard) = withContext(Dispatchers.IO) {
@@ -158,12 +134,12 @@ class ExamRepository(private val db: AppDatabase) {
         questions: List<Question>,
         flashcards: List<Flashcard>
     ) = withContext(Dispatchers.IO) {
-        db.approvedResourceDao().insertResource(resource)
-        if (questions.isNotEmpty()) {
-            db.questionDao().insertQuestions(questions)
-        }
-        if (flashcards.isNotEmpty()) {
-            db.flashcardDao().insertFlashcards(flashcards)
+        db.withTransaction {
+            db.approvedResourceDao().insertResource(resource)
+            if (questions.isNotEmpty()) {
+                db.questionDao().insertQuestions(questions)
+            }
+            upsertFlashcardsPreservingProgress(flashcards)
         }
     }
 }

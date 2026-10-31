@@ -404,5 +404,86 @@ class ExampleRobolectricTest {
     assertNotNull(viewModel.uiState.value.settingsSavedMessage)
     assertTrue(viewModel.uiState.value.settingsSavedMessage!!.contains("factory defaults"))
   }
-}
 
+  @Test
+  fun `re-seeding updates content but keeps spaced repetition progress`() = kotlinx.coroutines.runBlocking {
+    val database = AppDatabase.getInstance(ApplicationProvider.getApplicationContext())
+    val repository = ExamRepository(database)
+    repository.ensureDataSeeded()
+
+    val card = database.flashcardDao().getFlashcardsByIds(listOf("fc_01")).single()
+    val progressed = card.copy(intervalDays = 17, repetitionCount = 4, easeFactor = 2.1f, dueDateTimestamp = 123456789L, lastReviewedTimestamp = 987654321L, back = "stale text")
+    database.flashcardDao().updateFlashcard(progressed)
+
+    repository.ensureDataSeeded()
+
+    val after = database.flashcardDao().getFlashcardsByIds(listOf("fc_01")).single()
+    assertEquals(17, after.intervalDays)
+    assertEquals(4, after.repetitionCount)
+    assertEquals(2.1f, after.easeFactor, 0.0001f)
+    assertEquals(123456789L, after.dueDateTimestamp)
+    assertEquals(SeedData.getFlashcards().first { it.id == "fc_01" }.back, after.back)
+  }
+
+  @Test
+  fun `re-ingesting a resource does not cascade-delete its questions or flashcards`() = kotlinx.coroutines.runBlocking {
+    val database = AppDatabase.getInstance(ApplicationProvider.getApplicationContext())
+    val repository = ExamRepository(database)
+    repository.ensureDataSeeded()
+    val resource = SeedData.getApprovedResources().first { it.id == "bsh_amyloidosis_2026" }
+
+    repository.ingestApprovedResource(resource.copy(summary = "edited"))
+
+    val cards = database.flashcardDao().getFlashcardsByIds(
+      SeedData.getFlashcards().filter { it.sourceResourceId == resource.id }.map { it.id }
+    )
+    assertTrue("Flashcards must survive re-ingest", cards.isNotEmpty())
+    assertNotNull(database.questionDao().getQuestionById("q_amyloid_01"))
+  }
+
+  @Test
+  fun `unknown uploads become unverified placeholders without invented content`() = kotlinx.coroutines.runBlocking {
+    val pkg = com.example.data.ai.GuidelineAiSynthesizer.synthesizeFromGuideline(
+      rawText = "Vitamin B12 and tamoxifen interactions. White cell counts within range.",
+      sourceName = "random_notes.pdf"
+    )
+    assertTrue("Must not match the Tam POCT guideline", pkg.resource.id != "bsh_poct_haematology_2026")
+    assertTrue("Must be unverified", !pkg.resource.isVerified)
+    assertTrue("No questions may be invented", pkg.questions.isEmpty())
+    assertTrue("No flashcards may be invented", pkg.flashcards.isEmpty())
+    assertTrue(!pkg.resource.recommendations.contains("Grade"))
+  }
+
+  @Test
+  fun `seed content uses one domain vocabulary and honest verification flags`() {
+    val practiceDomains = setOf("Haemato-Oncology", "Haemostasis & Thrombosis", "Transfusion Medicine", "General Haematology")
+    SeedData.getQuestions().forEach { assertTrue("Question ${it.id} domain ${it.domain}", it.domain in practiceDomains) }
+    SeedData.getFlashcards().forEach { assertTrue("Card ${it.id} domain ${it.domain}", it.domain in practiceDomains) }
+
+    val verifiedAgainstBundledPdf = setOf(
+      "bsh_amyloidosis_2026", "bsh_haem_gynae_2026", "bsh_poct_haematology_2026",
+      "bsh_ttp_laboratory_2026", "bsh_pmbcl_lymphoma_2026"
+    )
+    SeedData.getApprovedResources().forEach { res ->
+      assertEquals("isVerified for ${res.id}", res.id in verifiedAgainstBundledPdf, res.isVerified)
+    }
+    assertEquals("https://doi.org/10.1111/bjh.70472", SeedData.getApprovedResources().first { it.id == "bsh_amyloidosis_2026" }.getOnlineUrl())
+
+    // Every question option index must be valid and essays must not be markable MCQs
+    SeedData.getQuestions().forEach { q ->
+      if (q.questionType == "ESSAY") assertEquals(-1, q.correctIndex)
+      else assertTrue("Question ${q.id} correctIndex", q.correctIndex in q.options.indices)
+    }
+  }
+
+  @Test
+  fun `mock exam excludes essays`() {
+    val database = AppDatabase.getInstance(ApplicationProvider.getApplicationContext())
+    val viewModel = ExamViewModel(ExamRepository(database))
+    viewModel.startMockExam(SeedData.getQuestions())
+    val mock = viewModel.uiState.value.mockQuestions
+    assertTrue(mock.isNotEmpty())
+    assertTrue(mock.none { it.questionType == "ESSAY" })
+    viewModel.finishMockExam()
+  }
+}

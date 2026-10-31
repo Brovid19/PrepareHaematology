@@ -363,7 +363,7 @@ fun PracticeScreen(
                             )
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = if (isModelRevealed) "Hide Model Answer & Rubric" else "Reveal Royal College Model Answer & Rubric",
+                                text = if (isModelRevealed) "Hide Model Answer & Rubric" else "Reveal Model Answer & Suggested Marking",
                                 color = if (isModelRevealed) CyanPrimary else DeepNavyBg,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 13.sp
@@ -410,7 +410,7 @@ fun PracticeScreen(
                                     ) {
                                         Column {
                                             Text(
-                                                text = "COMPREHENSIVE MODEL ANSWER",
+                                                text = "MODEL ANSWER (AUTHOR-WRITTEN; NOT AN RCPATH MARK SCHEME)",
                                                 color = EmeraldSuccess,
                                                 fontSize = 11.sp,
                                                 fontWeight = FontWeight.Bold
