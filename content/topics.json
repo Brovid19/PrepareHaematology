@@ -1,0 +1,114 @@
+[
+  {
+    "id": "al-screening",
+    "domain": "Haemato-Oncology",
+    "name": "AL amyloidosis: screening in MGUS",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "anchor": "rec:0"
+  },
+  {
+    "id": "al-staging",
+    "domain": "Haemato-Oncology",
+    "name": "AL amyloidosis: staging and prognosis",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "anchor": "staging"
+  },
+  {
+    "id": "al-biopsy",
+    "domain": "Haemato-Oncology",
+    "name": "AL amyloidosis: tissue diagnosis and biopsy",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "anchor": "rec:4"
+  },
+  {
+    "id": "al-referral",
+    "domain": "Haemato-Oncology",
+    "name": "AL amyloidosis: urgent referral",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "anchor": "cutoffs"
+  },
+  {
+    "id": "pmbcl-first-line",
+    "domain": "Haemato-Oncology",
+    "name": "PMBCL: first-line chemoimmunotherapy",
+    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+    "anchor": "rec:1"
+  },
+  {
+    "id": "pmbcl-response",
+    "domain": "Haemato-Oncology",
+    "name": "PMBCL: PET response and radiotherapy",
+    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+    "anchor": "rec:0"
+  },
+  {
+    "id": "pmbcl-thrombosis-relapse",
+    "domain": "Haemato-Oncology",
+    "name": "PMBCL: thrombosis and early relapse",
+    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+    "anchor": "rec:3"
+  },
+  {
+    "id": "hg-aub",
+    "domain": "Haemostasis & Thrombosis",
+    "name": "Abnormal uterine bleeding (PALM-COEIN)",
+    "sourceResourceId": "bsh_haem_gynae_2026",
+    "anchor": "staging"
+  },
+  {
+    "id": "hg-anticoagulation",
+    "domain": "Haemostasis & Thrombosis",
+    "name": "Anticoagulation and heavy menstrual bleeding",
+    "sourceResourceId": "bsh_haem_gynae_2026",
+    "anchor": "cutoffs"
+  },
+  {
+    "id": "hg-bleeding-disorders",
+    "domain": "Haemostasis & Thrombosis",
+    "name": "Inherited bleeding disorders: gynaecological care",
+    "sourceResourceId": "bsh_haem_gynae_2026",
+    "anchor": "cutoffs"
+  },
+  {
+    "id": "ttp-adamts13-activity",
+    "domain": "Haemostasis & Thrombosis",
+    "name": "TTP: ADAMTS13 activity testing",
+    "sourceResourceId": "bsh_ttp_laboratory_2026",
+    "anchor": "cutoffs"
+  },
+  {
+    "id": "ttp-samples",
+    "domain": "Haemostasis & Thrombosis",
+    "name": "TTP: samples and turnaround",
+    "sourceResourceId": "bsh_ttp_laboratory_2026",
+    "anchor": "rec:1"
+  },
+  {
+    "id": "ttp-antibodies",
+    "domain": "Haemostasis & Thrombosis",
+    "name": "TTP: antibodies and monitoring",
+    "sourceResourceId": "bsh_ttp_laboratory_2026",
+    "anchor": "staging"
+  },
+  {
+    "id": "poct-coagulation",
+    "domain": "General Haematology",
+    "name": "POCT: D-dimer and PT/INR",
+    "sourceResourceId": "bsh_poct_haematology_2026",
+    "anchor": "rec:1"
+  },
+  {
+    "id": "poct-blood-gas",
+    "domain": "General Haematology",
+    "name": "POCT: blood gas analysers",
+    "sourceResourceId": "bsh_poct_haematology_2026",
+    "anchor": "rec:2"
+  },
+  {
+    "id": "poct-governance",
+    "domain": "General Haematology",
+    "name": "POCT: governance and quality",
+    "sourceResourceId": "bsh_poct_haematology_2026",
+    "anchor": "staging"
+  }
+]

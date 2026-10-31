@@ -591,6 +591,29 @@
     table.data th, table.data td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--card-border); font-variant-numeric: tabular-nums; }
     table.data th { color: var(--text-muted); font-weight: 600; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .scope-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 6px 4px 12px; margin-bottom: 12px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: var(--fs-sm); font-weight: 600; max-width: 100%; }
+    .scope-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .scope-chip button { flex: none; width: 32px; height: 32px; border-radius: 50%; border: none; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; }
+    .scope-chip button:hover { background: color-mix(in srgb, var(--primary) 15%, transparent); }
+    .card-source { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-top: 10px; font-size: var(--fs-sm); color: var(--text-muted); }
+    .card-source strong { color: var(--text-strong); font-weight: 600; }
+    .link-btn { background: none; border: none; padding: 0; font: inherit; color: var(--primary); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; text-align: left; }
+    .browse-group { margin-bottom: 18px; }
+    .browse-group > header { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; position: static; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 2px solid var(--card-border); padding: 0 0 8px; margin-bottom: 10px; }
+    .browse-group > header h3 { font-size: var(--fs-lg); }
+    .browse-group > header p { font-size: var(--fs-sm); color: var(--text-muted); margin-top: 2px; }
+    .topic-card { background: var(--surface); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px; box-shadow: var(--shadow); }
+    .topic-card .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+    .topic-card h4 { font-size: var(--fs-md); }
+    .topic-card .counts { display: flex; gap: 6px; flex-wrap: wrap; }
+    .topic-card .paper { margin-top: 6px; font-size: var(--fs-sm); color: var(--text-muted); }
+    .topic-card .paper .title { color: var(--text); }
+    .topic-card .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; align-items: center; }
+    .topic-card .actions .btn { min-height: 38px; padding: 0 12px; }
+    .card-list { list-style: none; margin-top: 10px; border-top: 1px solid var(--card-border); }
+    .card-list li { border-bottom: 1px solid var(--card-border); padding: 8px 0; }
+    .card-list summary { cursor: pointer; color: var(--text-strong); font-weight: 600; }
+    .card-list .back { white-space: pre-wrap; margin-top: 6px; color: var(--text); }
     .accordion-toggle .when-open { display: none; }
     .accordion-item.open .accordion-toggle .when-open { display: inline; }
     .accordion-item.open .accordion-toggle .when-closed { display: none; }
@@ -707,6 +730,16 @@
           <button class="btn btn-secondary" onclick="openCreateCardModal()">+ New card</button>
         </div>
 
+        <nav class="sub-nav" aria-label="Flashcard view">
+          <button id="fc-view-study" aria-current="page" onclick="setFlashcardView('study')">Study</button>
+          <button id="fc-view-browse" onclick="setFlashcardView('browse')">Browse by topic</button>
+        </nav>
+
+        <div id="fc-browse" hidden></div>
+
+        <div id="fc-study">
+        <div class="scope-chip" id="fc-scope-chip" hidden><span id="fc-scope-text"></span><button onclick="clearFlashcardScope()" aria-label="Stop studying this topic and show all cards">✕</button></div>
+
         <div class="sub-nav" role="group" aria-label="Which cards">
           <button id="fc-mode-due" aria-current="page" onclick="setSessionMode('DUE_FOR_REVIEW')">Due today</button>
           <button id="fc-mode-all" onclick="setSessionMode('ALL_CARDS')">All cards</button>
@@ -725,6 +758,8 @@
           </div>
         </div>
 
+        <div class="card-source" id="fc-source-line" hidden></div>
+
         <div class="sm2-ratings" id="sm2-controls" style="display:none;" role="group" aria-label="How well did you remember?">
           <button class="btn-rating again" id="rate-btn-again" onclick="rateFlashcard(1)">Again</button>
           <button class="btn-rating hard" id="rate-btn-hard" onclick="rateFlashcard(3)">Hard</button>
@@ -738,6 +773,7 @@
           <button class="btn btn-ghost" onclick="addCurrentCardToPlaylist()">Add to audio queue</button>
           <button class="btn btn-ghost" id="fc-source-btn" hidden onclick="openCardSource()">Read in the guideline</button>
           <button class="btn btn-ghost" onclick="nextCard()">Skip →</button>
+        </div>
         </div>
       </div>
     </div>
@@ -1076,12 +1112,17 @@
   <div class="modal-overlay" id="create-card-modal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 style="color:var(--text-strong);">Type Custom Spaced Flashcard</h3>
+        <h3>New flashcard</h3>
         <button class="modal-close-btn" onclick="closeCreateCardModal()">&times;</button>
       </div>
       <form onsubmit="handleCreateCardSubmit(event)">
         <div class="form-group">
-          <label class="form-label">Domain</label>
+          <label class="form-label" for="custom-topic">Topic</label>
+          <select class="form-select" id="custom-topic" onchange="onCustomTopicChange(this.value)"></select>
+          <p style="font-size:var(--fs-xs); color:var(--text-muted); margin-top:4px;" id="custom-topic-paper">Choose a topic to link the card to its source paper, or keep it as a personal card.</p>
+        </div>
+        <div class="form-group" id="custom-domain-group">
+          <label class="form-label" for="custom-domain">Domain</label>
           <select class="form-select" id="custom-domain" required>
             <option value="Haemostasis & Thrombosis">Haemostasis & Thrombosis</option>
             <option value="Haemato-Oncology">Haemato-Oncology</option>
@@ -1090,18 +1131,18 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Question / Prompt (Front)</label>
+          <label class="form-label" for="custom-front">Question (front)</label>
           <textarea class="form-textarea" id="custom-front" rows="3" placeholder="Clinical prompt or diagnostic criterion..." required></textarea>
         </div>
         <div class="form-group">
-          <label class="form-label">Answer & Key Distinction (Back)</label>
+          <label class="form-label" for="custom-back">Answer (back)</label>
           <textarea class="form-textarea" id="custom-back" rows="4" placeholder="Model answer with key high-yield distinctions..." required></textarea>
         </div>
         <div class="form-group">
-          <label class="form-label">Guideline Source Reference</label>
-          <input type="text" class="form-input" id="custom-ref" placeholder="e.g. BSH TTP 2026, Section 3.1" required>
+          <label class="form-label" for="custom-ref">Your reference (optional)</label>
+          <input type="text" class="form-input" id="custom-ref" placeholder="e.g. section or page of the paper">
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%; padding:12px;">Add Flashcard to Deck</button>
+        <button type="submit" class="btn btn-primary btn-block">Add to my deck</button>
       </form>
     </div>
   </div>
@@ -1115,6 +1156,8 @@
     const CONTENT = window.PREPARE_CONTENT || { guidelines: [], questions: [], flashcards: [] };
     const approvedGuidelines = CONTENT.guidelines;
     const examQuestions = CONTENT.questions;
+    const flashcardTopics = CONTENT.topics || [];
+    const topicById = new Map(flashcardTopics.map(t => [t.id, t]));
     const seedFlashcards = CONTENT.flashcards.map(c => ({ ...c, repetitions: 0, intervalDays: 1, easeFactor: 2.5, dueDate: 0, lastReviewed: 0 }));
 
     // Escape text before inserting it with innerHTML (content contains "<" and ">", and
@@ -2027,16 +2070,187 @@
     let isFlipped = false;
     let currentSessionMode = 'DUE_FOR_REVIEW';
 
+    // ---- Topic / domain scope for study sessions ----
+    let flashcardScope = { type: 'all', value: null }; // or { type: 'topic' | 'domain' | 'personal', value }
+    let flashcardView = 'study';
+    let browseGrouping = 'domain'; // 'domain' | 'paper'
+
+    function cardsInScope() {
+      if (flashcardScope.type === 'topic') return flashcards.filter(c => c.topicId === flashcardScope.value);
+      if (flashcardScope.type === 'domain') return flashcards.filter(c => c.domain === flashcardScope.value);
+      if (flashcardScope.type === 'personal') return flashcards.filter(c => isPersonalCard(c) && (!flashcardScope.value || c.domain === flashcardScope.value));
+      return flashcards;
+    }
+
     function getFilteredFlashcards() {
       const now = Date.now();
+      const pool = cardsInScope();
       if (currentSessionMode === 'DUE_FOR_REVIEW') {
-        return flashcards.filter(c => (c.dueDate || 0) <= now);
+        return pool.filter(c => (c.dueDate || 0) <= now);
       }
       if (currentSessionMode === 'DIFFICULT_DRILL') {
         // Cards the learner has struggled with: low ease, or reviewed then reset by "Again".
-        return flashcards.filter(c => (c.easeFactor || 2.5) < 2.2 || ((c.lastReviewed || 0) > 0 && (c.repetitions || 0) === 0));
+        return pool.filter(c => (c.easeFactor || 2.5) < 2.2 || ((c.lastReviewed || 0) > 0 && (c.repetitions || 0) === 0));
       }
-      return flashcards;
+      return pool;
+    }
+
+    // A card with no topic (or whose topic no longer exists in the content) is a personal card.
+    function isPersonalCard(c) { return !c.topicId || !topicById.has(c.topicId); }
+
+    function paperFor(topicOrCard) {
+      return topicOrCard && approvedGuidelines.find(g => g.id === topicOrCard.sourceResourceId);
+    }
+
+    function scopeLabel() {
+      if (flashcardScope.type === 'topic') {
+        const t = topicById.get(flashcardScope.value);
+        const g = paperFor(t);
+        return t ? `Studying: ${t.name}${g ? ` (${g.shortRef})` : ''}` : '';
+      }
+      if (flashcardScope.type === 'domain') return `Studying: all ${flashcardScope.value} cards`;
+      if (flashcardScope.type === 'personal') return `Studying: my own cards${flashcardScope.value ? ` (${flashcardScope.value})` : ''}`;
+      return '';
+    }
+
+    function startScopedStudy(scope) {
+      flashcardScope = scope;
+      const now = Date.now();
+      const pool = cardsInScope();
+      const due = pool.filter(c => (c.dueDate || 0) <= now).length;
+      // Prefer due cards; if none are due in this topic, study all of them instead of showing an empty deck.
+      currentSessionMode = due ? 'DUE_FOR_REVIEW' : 'ALL_CARDS';
+      if (!due && pool.length) toast(`None due in this selection, so showing all ${pool.length} card${pool.length === 1 ? '' : 's'}`);
+      setSessionMode(currentSessionMode);
+      setFlashcardView('study');
+      switchTab('flashcards');
+    }
+    function studyTopic(topicId) { startScopedStudy({ type: 'topic', value: topicId }); }
+    function studyDomain(domain) { startScopedStudy({ type: 'domain', value: domain }); }
+    function studyPersonal(domain) { startScopedStudy({ type: 'personal', value: domain || null }); }
+    function clearFlashcardScope() {
+      flashcardScope = { type: 'all', value: null };
+      currentCardIndex = 0;
+      isFlipped = false;
+      renderCurrentCard();
+    }
+
+    function setFlashcardView(view) {
+      flashcardView = view;
+      document.getElementById('fc-study').hidden = view !== 'study';
+      document.getElementById('fc-browse').hidden = view !== 'browse';
+      [['fc-view-study', 'study'], ['fc-view-browse', 'browse']].forEach(([id, v]) => {
+        const b = document.getElementById(id);
+        if (v === view) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+      });
+      if (view === 'browse') renderFlashcardBrowse();
+      else renderCurrentCard();
+    }
+
+    function setBrowseGrouping(g) { browseGrouping = g; renderFlashcardBrowse(); }
+
+    function cardStats(cards) {
+      const now = Date.now();
+      return {
+        total: cards.length,
+        due: cards.filter(c => (c.dueDate || 0) <= now).length,
+        mastered: cards.filter(c => (c.intervalDays || 1) >= 21).length
+      };
+    }
+
+    function countsHtml(st) {
+      return `<span class="badge">${st.total} card${st.total === 1 ? '' : 's'}</span>`
+        + (st.due ? `<span class="badge badge-amber">${st.due} due</span>` : '<span class="badge badge-green">Nothing due</span>')
+        + (st.mastered ? `<span class="badge badge-blue">${st.mastered} mastered</span>` : '');
+    }
+
+    function paperHtml(g, anchor) {
+      if (!g) return '<span>Personal card (no source paper)</span>';
+      return `<span>Based on <button class="link-btn" aria-label="Open ${esc(g.shortRef)} at the relevant section" onclick="openGuidelineSummary('${esc(g.id)}', '${esc(anchor || '')}')">${esc(g.shortRef)}</button>`
+        + ` (${esc(g.issuingBody.replace('British Society for Haematology', 'BSH'))})`
+        + (g.pdfUrl ? ` · <a href="${esc(g.pdfUrl)}" target="_blank" rel="noopener">PDF</a>` : '')
+        + `</span><span class="title" style="display:block;">${esc(g.title.split(':')[0])}</span>`;
+    }
+
+    function topicCardHtml(t, cards, showDomain) {
+      const g = paperFor(t);
+      const st = cardStats(cards);
+      const listId = `topic-cards-${esc(t.id)}`;
+      return `
+        <article class="topic-card" aria-labelledby="${listId}-h">
+          <div class="top">
+            <h4 id="${listId}-h">${esc(t.name)}</h4>
+            <div class="counts">${showDomain ? `<span class="badge badge-primary">${esc(t.domain)}</span>` : ''}${countsHtml(st)}</div>
+          </div>
+          <p class="paper">${paperHtml(g, t.anchor)}</p>
+          <div class="actions">
+            <button class="btn btn-primary" onclick="studyTopic('${esc(t.id)}')">${st.due ? `Study ${st.due} due` : 'Study topic'}</button>
+            <details style="flex-basis:100%;">
+              <summary style="cursor:pointer; color:var(--primary); font-weight:600; font-size:var(--fs-sm);">Show the ${st.total} card${st.total === 1 ? '' : 's'}</summary>
+              <ul class="card-list">${cards.map(c => `<li><details><summary>${esc(c.front)}</summary><div class="back">${esc(c.back)}</div></details></li>`).join('')}</ul>
+            </details>
+          </div>
+        </article>`;
+    }
+
+    function renderFlashcardBrowse() {
+      const root = document.getElementById('fc-browse');
+      if (!root) return;
+      const chip = (g, label) => `<button class="chip" aria-pressed="${browseGrouping === g}" onclick="setBrowseGrouping('${g}')">${label}</button>`;
+      let html = `
+        <div class="seg" style="align-items:center; margin-bottom:16px;">
+          <span class="form-label" style="margin:0 4px 0 0;">Arrange by</span>
+          ${chip('domain', 'Domain › topic')}${chip('paper', 'Paper › topic')}
+        </div>`;
+      const personal = flashcards.filter(isPersonalCard);
+
+      if (browseGrouping === 'domain') {
+        const domains = Array.from(new Set([...flashcardTopics.map(t => t.domain), ...personal.map(c => c.domain)]));
+        domains.forEach(domain => {
+          const topics = flashcardTopics.filter(t => t.domain === domain);
+          const domainCards = flashcards.filter(c => c.domain === domain);
+          const st = cardStats(domainCards);
+          html += `<section class="browse-group" aria-label="${esc(domain)}">
+            <header><div><h3>${esc(domain)}</h3><p>${topics.length} topic${topics.length === 1 ? '' : 's'} · ${st.total} cards · ${st.due} due</p></div>
+              <button class="btn btn-secondary" onclick='studyDomain(${JSON.stringify(domain)})'>Study whole domain</button></header>
+            ${topics.map(t => topicCardHtml(t, flashcards.filter(c => c.topicId === t.id), false)).join('')}
+            ${personal.some(c => c.domain === domain) ? personalCardHtml(personal.filter(c => c.domain === domain), domain) : ''}
+          </section>`;
+        });
+      } else {
+        const paperIds = Array.from(new Set(flashcardTopics.map(t => t.sourceResourceId)));
+        paperIds.forEach(pid => {
+          const g = approvedGuidelines.find(x => x.id === pid);
+          const topics = flashcardTopics.filter(t => t.sourceResourceId === pid);
+          const st = cardStats(flashcards.filter(c => c.sourceResourceId === pid && c.topicId));
+          html += `<section class="browse-group" aria-label="${esc(g ? g.shortRef : pid)}">
+            <header><div><h3>${esc(g ? g.title.split(':')[0] : pid)}</h3>
+              <p>${esc(g ? g.shortRef : '')} · ${topics.length} topic${topics.length === 1 ? '' : 's'} · ${st.total} cards · ${st.due} due</p></div>
+              ${g ? `<button class="btn btn-secondary" onclick="openGuidelineSummary('${esc(g.id)}', 'summary')">Open paper summary</button>` : ''}</header>
+            ${topics.map(t => topicCardHtml(t, flashcards.filter(c => c.topicId === t.id), true)).join('')}
+          </section>`;
+        });
+        if (personal.length) {
+          html += `<section class="browse-group" aria-label="My own cards"><header><div><h3>My own cards</h3><p>Not linked to a paper</p></div></header>${personalCardHtml(personal, null)}</section>`;
+        }
+      }
+      root.innerHTML = html;
+    }
+
+    function personalCardHtml(cards, domain) {
+      const st = cardStats(cards);
+      return `
+        <article class="topic-card">
+          <div class="top"><h4>My own cards</h4><div class="counts">${countsHtml(st)}</div></div>
+          <p class="paper">Personal cards (no source paper)</p>
+          <div class="actions">
+            <button class="btn btn-primary" onclick='studyPersonal(${JSON.stringify(domain)})'>${st.due ? `Study ${st.due} due` : 'Study these'}</button>
+            <details style="flex-basis:100%;">
+              <summary style="cursor:pointer; color:var(--primary); font-weight:600; font-size:var(--fs-sm);">Show the ${st.total} card${st.total === 1 ? '' : 's'}</summary>
+              <ul class="card-list">${cards.map(c => `<li><details><summary>${esc(c.front)}</summary><div class="back">${esc(c.back)}</div></details></li>`).join('')}</ul>
+            </details>
+          </div>
+        </article>`;
     }
 
     // SuperMemo SM-2. Buttons: Again = quality 1, Hard = 3, Good = 4, Easy = 5.
@@ -2068,13 +2282,34 @@
       renderCurrentCard();
     }
 
+    function renderScopeAndSource(card) {
+      const chip = document.getElementById('fc-scope-chip');
+      if (chip) {
+        const label = scopeLabel();
+        chip.hidden = !label;
+        document.getElementById('fc-scope-text').textContent = label;
+      }
+      const line = document.getElementById('fc-source-line');
+      if (!line) return;
+      if (!card) { line.hidden = true; return; }
+      const t = isPersonalCard(card) ? null : topicById.get(card.topicId);
+      const g = t ? paperFor(t) : null;
+      line.hidden = false;
+      line.innerHTML = t
+        ? `<span>Topic: <strong>${esc(t.name)}</strong></span><span>${paperHtml(g, t.anchor)}</span>`
+        : `<span>Topic: <strong>My own card</strong></span><span>${esc(card.ref || 'No source paper')}</span>`;
+    }
+
     function renderCurrentCard() {
       const activeList = getFilteredFlashcards();
+      renderScopeAndSource(activeList[Math.min(currentCardIndex, Math.max(0, activeList.length - 1))]);
       if (activeList.length === 0) {
         const emptyMsg = currentSessionMode === 'DUE_FOR_REVIEW'
           ? 'All caught up. No cards are due. Come back tomorrow, or choose "All cards" for extra practice.'
           : (currentSessionMode === 'DIFFICULT_DRILL' ? 'No difficult cards yet. Cards you rate "Again" or find hard will collect here.' : 'No cards yet.');
-        document.getElementById('fc-content').innerText = emptyMsg;
+        const scopedMsg = flashcardScope.type !== 'all' && currentSessionMode === 'DUE_FOR_REVIEW'
+          ? 'Nothing due in this topic. Choose "All cards" to go through it again, or clear the topic filter.' : null;
+        document.getElementById('fc-content').innerText = scopedMsg || emptyMsg;
         document.getElementById('fc-side').innerText = '';
         const sb = document.getElementById('fc-source-btn');
         if (sb) sb.hidden = true;
@@ -2089,7 +2324,8 @@
 
       const card = activeList[currentCardIndex];
       document.getElementById('fc-domain').innerText = card.domain;
-      document.getElementById('fc-ref').innerText = card.ref || card.guidelineRef || "BSH Core Curriculum";
+      renderScopeAndSource(card);
+      document.getElementById('fc-ref').innerText = card.topic || card.ref || 'My own card';
       document.getElementById('fc-content').innerText = isFlipped ? card.back : card.front;
       document.getElementById('fc-side').innerText = isFlipped ? 'Answer' : 'Question';
       const srcBtn = document.getElementById('fc-source-btn');
@@ -2140,6 +2376,7 @@
       writeJson('prepare_haem_flashcards_v2', flashcards);
 
       updateDashboardStats();
+      if (flashcardView === 'browse') renderFlashcardBrowse();
       isFlipped = false;
       // In Due mode the rated card leaves the list, so the next card is already at this index.
       if (currentSessionMode !== 'DUE_FOR_REVIEW') {
@@ -2178,7 +2415,34 @@
     }
 
     // Custom Card Form
+    function populateCustomTopics() {
+      const sel = document.getElementById('custom-topic');
+      if (!sel || sel.options.length) return;
+      const none = new Option('No topic (personal card)', '');
+      sel.add(none);
+      Array.from(new Set(flashcardTopics.map(t => t.domain))).forEach(domain => {
+        const og = document.createElement('optgroup');
+        og.label = domain;
+        flashcardTopics.filter(t => t.domain === domain).forEach(t => og.appendChild(new Option(t.name, t.id)));
+        sel.appendChild(og);
+      });
+    }
+
+    function onCustomTopicChange(topicId) {
+      const t = topicById.get(topicId);
+      const g = paperFor(t);
+      document.getElementById('custom-domain-group').hidden = !!t;
+      document.getElementById('custom-topic-paper').textContent = t && g
+        ? `Linked to ${g.shortRef}: ${g.title.split(':')[0]}`
+        : 'Choose a topic to link the card to its source paper, or keep it as a personal card.';
+    }
+
     function openCreateCardModal() {
+      populateCustomTopics();
+      const sel = document.getElementById('custom-topic');
+      // Pre-select the topic being studied, if any.
+      sel.value = flashcardScope.type === 'topic' ? flashcardScope.value : '';
+      onCustomTopicChange(sel.value);
       document.getElementById('create-card-modal').classList.add('open');
     }
 
@@ -2188,7 +2452,8 @@
 
     function handleCreateCardSubmit(e) {
       e.preventDefault();
-      const domain = document.getElementById('custom-domain').value;
+      const topic = topicById.get(document.getElementById('custom-topic').value);
+      const domain = topic ? topic.domain : document.getElementById('custom-domain').value;
       const front = document.getElementById('custom-front').value.trim();
       const back = document.getElementById('custom-back').value.trim();
       const ref = document.getElementById('custom-ref').value.trim();
@@ -2199,6 +2464,7 @@
         ref,
         front,
         back,
+        ...(topic ? { topicId: topic.id, topic: topic.name, sourceResourceId: topic.sourceResourceId, anchor: topic.anchor } : {}),
         repetitions: 0,
         intervalDays: 1,
         easeFactor: 2.5,
@@ -3060,7 +3326,7 @@
       }
       const active = document.querySelector('.tab-panel.active');
       const tab = active ? active.id.replace('tab-', '') : '';
-      if (tab === 'flashcards') {
+      if (tab === 'flashcards' && flashcardView === 'study') {
         if (e.key === ' ' && !(t && t.tagName === 'BUTTON')) { e.preventDefault(); flipCurrentCard(); }
         else if (isFlipped && ['1', '2', '3', '4'].includes(e.key)) { rateFlashcard([1, 3, 4, 5][Number(e.key) - 1]); }
         else if (e.key === 'ArrowRight') nextCard();

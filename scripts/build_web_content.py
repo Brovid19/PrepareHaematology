@@ -5,7 +5,8 @@ Build the PWA's study content.
 Source of truth (edit these):
     content/guidelines.json   guideline digests (summary, cutoffs, staging, recommendations, pitfalls)
     content/questions.json    MCQ / EMQ / essay questions
-    content/flashcards.json   spaced-repetition flashcards
+    content/flashcards.json   spaced-repetition flashcards (each linked to a topic)
+    content/topics.json       flashcard topics: domain + the paper (guideline) each topic is based on
 
 Generated (do not edit by hand):
     public/content.js         the data the web app loads
@@ -64,7 +65,7 @@ def check_anchor(kind, item, guidelines_by_id, errors):
         errors.append(f"{kind} {item['id']}: anchor {anchor} out of range for {g['id']}")
 
 
-def validate(guidelines, questions, flashcards):
+def validate(guidelines, questions, flashcards, topics):
     errors = []
 
     def need(item, kind, keys):
@@ -72,7 +73,7 @@ def validate(guidelines, questions, flashcards):
             if k not in item or item[k] in (None, "", []):
                 errors.append(f"{kind} {item.get('id', '?')}: missing {k}")
 
-    for kind, items in (("guideline", guidelines), ("question", questions), ("flashcard", flashcards)):
+    for kind, items in (("guideline", guidelines), ("question", questions), ("flashcard", flashcards), ("topic", topics)):
         ids = [x.get("id") for x in items]
         dupes = sorted({i for i in ids if ids.count(i) > 1})
         if dupes:
@@ -114,8 +115,34 @@ def validate(guidelines, questions, flashcards):
                 errors.append(f"question {q['id']}: missing rationale")
         check_anchor("question", q, guidelines_by_id, errors)
 
+    topics_by_id = {t["id"]: t for t in topics}
+    for t in topics:
+        need(t, "topic", ["id", "domain", "name", "sourceResourceId", "anchor"])
+        if not re.match(r"^[a-z0-9]+(-[a-z0-9]+)*$", t.get("id", "")):
+            errors.append(f"topic {t.get('id')!r}: id must be lowercase-kebab-case")
+        if t.get("domain") not in PRACTICE_DOMAINS:
+            errors.append(f"topic {t['id']}: unknown domain {t.get('domain')!r}")
+        g = guidelines_by_id.get(t.get("sourceResourceId"))
+        if not g:
+            errors.append(f"topic {t['id']}: unknown paper (sourceResourceId) {t.get('sourceResourceId')!r}")
+        elif PRACTICE_DOMAIN_FOR_CATEGORY.get(g["category"], g["category"]) != t.get("domain"):
+            errors.append(f"topic {t['id']}: domain {t.get('domain')!r} does not match its paper's domain")
+        check_anchor("topic", t, guidelines_by_id, errors)
+    used_topics = {c.get("topicId") for c in flashcards}
+    for t in topics:
+        if t["id"] not in used_topics:
+            errors.append(f"topic {t['id']}: has no flashcards")
+
     for c in flashcards:
-        need(c, "flashcard", ["id", "domain", "front", "back", "sourceResourceId"])
+        need(c, "flashcard", ["id", "domain", "front", "back", "sourceResourceId", "topicId"])
+        t = topics_by_id.get(c.get("topicId"))
+        if not t:
+            errors.append(f"flashcard {c['id']}: unknown topicId {c.get('topicId')!r}")
+        else:
+            if t["sourceResourceId"] != c.get("sourceResourceId"):
+                errors.append(f"flashcard {c['id']}: paper differs from its topic's paper ({t['sourceResourceId']})")
+            if t["domain"] != c.get("domain"):
+                errors.append(f"flashcard {c['id']}: domain differs from its topic's domain ({t['domain']})")
         if c.get("domain") not in PRACTICE_DOMAINS:
             errors.append(f"flashcard {c['id']}: unknown domain {c.get('domain')!r}")
         if c.get("sourceResourceId") not in guideline_ids:
@@ -130,7 +157,14 @@ def lines(value):
     return "\n".join(value) if isinstance(value, list) else (value or "")
 
 
-def to_web(guidelines, questions, flashcards):
+def short_ref(g):
+    """'Garg M, Choudhuri S, ...' + year -> 'Garg et al. 2026'."""
+    first = g["citation"].split(",")[0].strip()
+    surname = first.split(" ")[0] if first else g["issuingBody"]
+    return f"{surname} et al. {g['year']}"
+
+
+def to_web(guidelines, questions, flashcards, topics):
     web_guidelines = [{
         "id": g["id"],
         "title": g["title"],
@@ -148,6 +182,7 @@ def to_web(guidelines, questions, flashcards):
         "staging": lines(g.get("stagingCriteria")),
         "recommendations": g["recommendations"],
         "pitfalls": "\n".join("• " + p for p in g.get("pitfalls", [])),
+        "shortRef": short_ref(g),
     } for g in guidelines]
 
     web_questions = []
@@ -176,10 +211,12 @@ def to_web(guidelines, questions, flashcards):
             "anchor": q["anchor"],
         })
 
+    topic_name = {t["id"]: t["name"] for t in topics}
     web_cards = [{
         "id": c["id"],
         "domain": c["domain"],
-        "topic": c.get("topic", ""),
+        "topicId": c["topicId"],
+        "topic": topic_name[c["topicId"]],
         "ref": c.get("guidelineRef", ""),
         "front": c["front"],
         "back": c["back"],
@@ -187,13 +224,14 @@ def to_web(guidelines, questions, flashcards):
         "anchor": c["anchor"],
     } for c in flashcards]
 
-    return {"guidelines": web_guidelines, "questions": web_questions, "flashcards": web_cards}
+    web_topics = [{k: t[k] for k in ("id", "domain", "name", "sourceResourceId", "anchor")} for t in topics]
+    return {"guidelines": web_guidelines, "questions": web_questions, "flashcards": web_cards, "topics": web_topics}
 
 
 def build():
-    guidelines, questions, flashcards = load("guidelines"), load("questions"), load("flashcards")
-    validate(guidelines, questions, flashcards)
-    payload = to_web(guidelines, questions, flashcards)
+    guidelines, questions, flashcards, topics = load("guidelines"), load("questions"), load("flashcards"), load("topics")
+    validate(guidelines, questions, flashcards, topics)
+    payload = to_web(guidelines, questions, flashcards, topics)
     js = (
         "// GENERATED FILE - DO NOT EDIT BY HAND.\n"
         "// Source of truth: content/*.json. Regenerate with: python3 scripts/build_web_content.py\n"
@@ -210,12 +248,12 @@ def build():
     sw_new, n = re.subn(r"const BUILD_ID = '[^']*';", f"const BUILD_ID = '{build_id}';", sw_src)
     if n != 1:
         raise SystemExit("public/sw.js must contain exactly one line: const BUILD_ID = '...';")
-    return js, sw_new, (len(guidelines), len(questions), len(flashcards)), build_id
+    return js, sw_new, (len(guidelines), len(questions), len(flashcards), len(topics)), build_id
 
 
 def main():
     js, sw_new, counts, build_id = build()
-    summary = "{} guidelines, {} questions, {} flashcards".format(*counts)
+    summary = "{} guidelines, {} questions, {} flashcards, {} topics".format(*counts)
     if "--check" in sys.argv:
         stale = []
         if (OUT.read_text(encoding="utf-8") if OUT.exists() else "") != js:

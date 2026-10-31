@@ -4,6 +4,7 @@ A Progressive Web App (PWA) for FRCPath Haematology Part 1 revision. It includes
 
 - **Installable** on Android, iOS/iPadOS and desktop (Chrome/Edge) straight from the browser. There's no app store or APK.
 - **Works offline** after the first visit. Guideline PDFs are kept once opened, or you can save them all from *Install & Offline*.
+- **Flashcards by domain and topic.** Browse cards grouped by domain or by paper. Each topic links to the paper section it is based on, and you can study a single topic or a whole domain.
 - **Exam planner.** Set your exam date for a countdown and daily targets. Progress by topic shows an 8-week trend.
 - **Private by default.** Progress is stored only on the learner's device. *Settings → Back up progress* exports it to a file, and the same page can restore it on another device.
 
@@ -13,7 +14,8 @@ A Progressive Web App (PWA) for FRCPath Haematology Part 1 revision. It includes
 content/                  ← SOURCE OF TRUTH for all study content (edit these)
   guidelines.json           guideline digests: summary, cutoffs, staging, recommendations, pitfalls
   questions.json            MCQ / EMQ / essay questions
-  flashcards.json           spaced-repetition cards
+  flashcards.json           spaced-repetition cards (each has a topicId)
+  topics.json               flashcard topics: domain + the paper each topic is based on
 scripts/build_web_content.py  validates content/ and generates public/content.js + stamps sw.js
 public/                   ← the deployed site
   index.html                the app (single page)
@@ -28,6 +30,7 @@ docs/AUDIT_AND_DESIGN_PLAN.md  audit, content accuracy review and roadmap
 ## Editing content
 
 1. Edit the JSON in `content/`. Every question and card needs a `sourceResourceId` that matches a guideline `id`. Mark a guideline `"isVerified": true` only once it has been checked against its source.
+   Every flashcard needs a `topicId` from `content/topics.json`. A topic belongs to one domain and one paper (`sourceResourceId`) and has an `anchor` for its "Based on" link. The build checks that each card's domain and paper match its topic, and that every topic has at least one card.
    Every question and card also needs an `anchor`: the part of the guideline it is based on (`rec:N` is the Nth recommendation, counting from 0; or `cutoffs`, `staging`, `pitfall:N`, `summary`). This drives the "Read recommendation N in the guideline" links.
 2. Run `npm run build` (or `python3 scripts/build_web_content.py`).
 3. Commit both `content/` and the regenerated `public/content.js` and `public/sw.js`.
