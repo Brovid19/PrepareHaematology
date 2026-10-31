@@ -4,7 +4,7 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/((?!assets/|icons/|fonts/).*)",
+      "source": "/((?!assets/|icons/|fonts/|api/).*)",
       "destination": "/index.html"
     }
   ],
@@ -69,6 +69,20 @@
           "value": "*"
         }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     }
-  ]
+  ],
+  "functions": {
+    "api/synthesise.js": {
+      "maxDuration": 300
+    }
+  }
 }

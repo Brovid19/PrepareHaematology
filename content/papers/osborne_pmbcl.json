@@ -1,0 +1,712 @@
+{
+  "guideline": {
+    "id": "bsh_pmbcl_lymphoma_2026",
+    "title": "The diagnosis and management of primary mediastinal B-cell lymphoma: A British Society for Haematology guideline",
+    "issuingBody": "British Society for Haematology",
+    "year": 2026,
+    "category": "Malignant Haematology",
+    "citation": "Osborne W, Bielby H, Cwynarski K, El-Sharkawi D, Petrides G, Illidge T, et al. Br J Haematol. 2026;209(4):1505–1517.",
+    "url": "https://doi.org/10.1111/bjh.70768",
+    "isVerified": true,
+    "pdf": "Br_J_Haematol_-_2026_-_Osborne_-_The_diagnosis_and_management_of_primary_mediastinal_B_cell_lymphoma_A_British_Society_for_3361c436.pdf",
+    "overview": "PMBCL is an aggressive B-cell lymphoma of thymic B-cell origin. It mainly affects young adults, more often women, and its biology overlaps with classical Hodgkin lymphoma (9p24.1/PD-L1/PD-L2, JAK/STAT, NF-κB). This guideline updates the 2019 BSH good practice paper. It recommends dose-intensive chemoimmunotherapy (R-CHOP-14 or DA-R-EPOCH, not R-CHOP-21), PET-adapted radiotherapy (no RT after complete metabolic response, per IELSG37), a structured approach to Deauville 4 and 5 at end of treatment, thromboprophylaxis, and a relapse pathway built around CAR-T, with checkpoint inhibitors, bispecifics, loncastuximab, RT and transplant as further options."
+  },
+  "recommendations": [
+    {
+      "id": "fl-1",
+      "group": "First-line treatment",
+      "grade": "1A",
+      "page": 4,
+      "text": "Offer participation in a clinical trial wherever possible."
+    },
+    {
+      "id": "fl-2",
+      "group": "First-line treatment",
+      "grade": "1B",
+      "page": 4,
+      "text": "Offer R-CHOP-14 × 6 or DA-R-EPOCH × 6."
+    },
+    {
+      "id": "fl-3",
+      "group": "First-line treatment",
+      "grade": "1B",
+      "page": 4,
+      "text": "R-CHOP-21 is not recommended."
+    },
+    {
+      "id": "fl-4",
+      "group": "First-line treatment",
+      "grade": "1C",
+      "page": 4,
+      "text": "Thromboprophylaxis is recommended in view of the high thrombotic risk."
+    },
+    {
+      "id": "fl-5",
+      "group": "First-line treatment",
+      "grade": "1B",
+      "page": 4,
+      "text": "Anti-microbial prophylaxis is recommended as per local practice."
+    },
+    {
+      "id": "resp-1",
+      "group": "Chemoimmunotherapy treatment response assessment",
+      "grade": "1A",
+      "page": 5,
+      "text": "Use conventional OSEM PET reconstruction techniques or specific research-accredited reconstructions for reporting the Deauville score on response assessment scans."
+    },
+    {
+      "id": "resp-2",
+      "group": "Chemoimmunotherapy treatment response assessment",
+      "grade": "2B",
+      "page": 5,
+      "text": "There are no current data to support a change of treatment as a result of interim PET response; therefore, the modality of interim imaging should be as per local clinical practice to assess response."
+    },
+    {
+      "id": "rt-1",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "1A",
+      "page": 6,
+      "text": "Do not offer radiotherapy for patients with DS 1–3 following chemoimmunotherapy."
+    },
+    {
+      "id": "rt-2",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "1B",
+      "page": 6,
+      "text": "Re-biopsy is recommended if feasible for all DS 4 and DS 5 patients at the EOT."
+    },
+    {
+      "id": "rt-3",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "1B",
+      "page": 6,
+      "text": "MDT discussion is essential to review the following: the heterogeneity of the DS 4 group—there is more concern regarding patients with SUV nearly 2× that of liver compared to just above liver; the site of disease and risk of radiotherapy; patient factors such as age and sex."
+    },
+    {
+      "id": "rt-4",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "2C",
+      "page": 6,
+      "text": "A personalised approach to balance the risk versus benefit of surveillance PET-CT or radiotherapy consolidation is required for patients with DS 4 at EOT."
+    },
+    {
+      "id": "rt-5",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "2A",
+      "page": 6,
+      "text": "Patients with DS 4 at EOT should be offered consultation with a clinical (radiation) oncologist to discuss radiotherapy versus surveillance imaging."
+    },
+    {
+      "id": "rt-6",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "1B",
+      "page": 6,
+      "text": "Discuss all patients with DS 5 at EOT at an MDT and perform a biopsy if possible. Offer systemic treatment as for relapsed disease for patients with DS 5."
+    },
+    {
+      "id": "rt-7",
+      "group": "Radiotherapy consolidation after first-line chemoimmunotherapy",
+      "grade": "2B",
+      "page": 6,
+      "text": "Radiotherapy alone can be considered if there is limited single residual uptake on PET-CT without progression or if the patient is unfit for systemic chemotherapy."
+    },
+    {
+      "id": "rel-1",
+      "group": "Management of relapsed PMBCL",
+      "grade": "1A",
+      "page": 10,
+      "text": "Offer participation in a clinical trial wherever possible."
+    },
+    {
+      "id": "rel-2",
+      "group": "Management of relapsed PMBCL",
+      "grade": "1C",
+      "page": 10,
+      "text": "Offer CD19-directed targeted chimeric antigen receptor (CAR) T-cell (CAR-T) therapy (liso-cel) as second-line treatment if the patient has relapsed within 12 months."
+    },
+    {
+      "id": "rel-3",
+      "group": "Management of relapsed PMBCL",
+      "grade": "1C",
+      "page": 10,
+      "text": "Offer CD19-directed CAR T-cell therapy (axi-cel or liso-cel) as third or subsequent treatment line."
+    },
+    {
+      "id": "rel-4",
+      "group": "Management of relapsed PMBCL",
+      "grade": "2C",
+      "page": 10,
+      "text": "If available, consider the unlicensed combination of a PD1 inhibitor with brentuximab vedotin for patients with disease progression following CAR-T or autologous transplant."
+    },
+    {
+      "id": "rel-5",
+      "group": "Management of relapsed PMBCL",
+      "grade": "2C",
+      "page": 10,
+      "text": "Consider radiotherapy to localised sites of chemotherapy refractory disease."
+    },
+    {
+      "id": "rel-6",
+      "group": "Management of relapsed PMBCL",
+      "grade": "2C",
+      "page": 10,
+      "text": "Consider CD20-directed bispecific antibody with epcoritamab or glofitamab as a third or subsequent line of treatment line."
+    },
+    {
+      "id": "rel-7",
+      "group": "Management of relapsed PMBCL",
+      "grade": "2C",
+      "page": 10,
+      "text": "Consider loncastuximab as a third or subsequent line of treatment."
+    },
+    {
+      "id": "rel-8",
+      "group": "Management of relapsed PMBCL",
+      "grade": "2C",
+      "page": 10,
+      "text": "Consider allogeneic transplant for occasional patients who have failed multiple lines of treatment including CAR-T."
+    },
+    {
+      "id": "fu-1",
+      "group": "Follow-up",
+      "grade": "2C",
+      "page": 10,
+      "text": "Consider discharge back to primary care for patients who are 24 months following end of treatment and who remain in remission."
+    },
+    {
+      "id": "fu-2",
+      "group": "Follow-up",
+      "grade": null,
+      "page": 10,
+      "text": "Potential long-term complications should be outlined to patients and primary care health care professionals."
+    },
+    {
+      "id": "fu-3",
+      "group": "Follow-up",
+      "grade": "1B",
+      "page": 10,
+      "text": "Do not perform surveillance imaging in asymptomatic patients."
+    }
+  ],
+  "topics": [
+    {
+      "id": "pmbcl-presentation",
+      "name": "Presentation and thrombosis risk",
+      "pages": [
+        2
+      ],
+      "why": "The typical patient (a young woman with an anterior mediastinal mass, SVCO or an effusion) and the 28% thrombosis rate are core facts.",
+      "keyPoints": [
+        "PMBCL is a **mature, aggressive B-cell lymphoma of thymic B-cell origin**, with distinctive clinical, immunophenotypic and molecular features.",
+        "It arises in the **anterior mediastinum**, with variable extension to **lung, pleura and pericardium**. Regional nodes, often **supraclavicular**, may be involved.",
+        "**Bone marrow and extranodal involvement are uncommon at presentation** but more frequent **at relapse**.",
+        "Typical age is the **third or fourth decade**, with a **female predominance**.",
+        "Presentation: **pericardial or pleural effusions** (a **poor prognostic factor**), or **compressive symptoms including SVCO**.",
+        "**VTE is common, especially at presentation**: **28%** had thrombotic complications in a retrospective series of 156 adults and children.",
+        "**Prophylactic anticoagulation** is recommended if **platelets are >50 × 10⁹/L**, although evidence is limited. Use **therapeutic** anticoagulation for **proven thrombosis**.",
+        "There is **not enough evidence for routine therapeutic anticoagulation for venous compression alone**: decide **case by case**. Refer to the BSH cancer-associated thrombosis guideline."
+      ],
+      "numbers": [
+        [
+          "28%",
+          "thrombotic complications (156 adults and children)"
+        ],
+        [
+          ">50 × 10⁹/L",
+          "platelet count above which prophylactic anticoagulation is recommended"
+        ],
+        [
+          "3rd–4th decade",
+          "typical age at presentation (female predominance)"
+        ]
+      ],
+      "recs": [
+        "fl-4"
+      ],
+      "pitfalls": [
+        "Venous compression (e.g. SVCO) without proven thrombosis does not automatically need therapeutic anticoagulation. Decide case by case.",
+        "Effusions are a poor prognostic sign, not just a complication."
+      ],
+      "hook": "Young woman, front of the chest, squeezed SVC, sticky blood: 28% clot, so give prophylaxis if platelets are over 50.",
+      "selfTest": [
+        {
+          "q": "What thromboprophylaxis does the guideline recommend at PMBCL diagnosis?",
+          "a": "Prophylactic anticoagulation if platelets are >50 × 10⁹/L (thromboprophylaxis 1C), and therapeutic dosing for proven thrombosis."
+        },
+        {
+          "q": "Which sites are uncommon at presentation but more frequent at relapse?",
+          "a": "Bone marrow and extranodal sites (the CNS is a site of rare late relapse)."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-diagnosis",
+      "name": "Diagnosis: biopsy, immunophenotype and molecular features",
+      "pages": [
+        2,
+        3
+      ],
+      "why": "Distinguishing PMBCL from cHL and grey zone lymphoma depends on the pattern of CD30, CD15, CD23 and PD-L1/L2 expression and on the 9p24.1 biology.",
+      "keyPoints": [
+        "Differentials: **classical Hodgkin lymphoma, mediastinal grey zone lymphoma** and other B-cell lymphomas.",
+        "A **needle core** is often adequate (**14G, ideally ≥2 cores**), but tissue may run out before **FISH or molecular** testing. Some patients need a surgical biopsy. Review every case at an **MDT with a specialist haematopathologist**.",
+        "**Gene expression profiling** shows a signature that **overlaps with cHL** and differs from other aggressive lymphomas. Hallmarks are **NF-κB and JAK/STAT deregulation** and **immune escape**.",
+        "**Morphology:** diffuse sheets or clusters of medium to large cells with **abundant pale cytoplasm**, in a **fibrotic background**.",
+        "**Immunophenotype:** **CD45+** and B-cell antigens **CD19, CD20, CD22, CD79a**; transcription factors **BOB1, OCT2, PAX5**. **CD30** in most cases, but **weak and heterogeneous** (unlike cHL). Usually **IRF4+ and CD23+**. BCL6 and BCL2 variable. **CD10 uncommon (20–30%)**. **EBER negative**. Occasionally **CD15+**. **Thymic epithelial remnants** support the diagnosis. **PD-L1 and especially PD-L2** are typically expressed.",
+        "**Cytogenetics:** **CIITA rearrangements**, **REL amplification**, and **PD-L1 (CD274) / PD-L2 (PDCD1LG2)** copy number changes or rearrangements are generally specific. PD-L1 and PD-L2 sit on **9p24.1**, where **9p gain** is frequent. **JAK2**, upstream of PD-L1 on 9p24.1, further increases PD-ligand expression. **High PD-L1/L2 expression correlates with worse outcome.**",
+        "**BCL2, BCL6 and MYC rearrangements are rare or absent**, unlike in DLBCL.",
+        "**NGS variants:** SOCS1 60–91%, B2M 36–67%, ITPKB 40–64%, TNFAIP3 30–60%, STAT6 33–58%, GNA13 47–53%, NFKBIE 22–49%, CD58 20–48%, IL4R 24%.",
+        "The NHS England **National Genomic Test Directory** includes **REL copy number** and **PD-L1/PD-L2 rearrangement and copy number** by FISH, or a multitarget NGS panel."
+      ],
+      "numbers": [
+        [
+          "14G, ≥2 cores",
+          "minimum core biopsy"
+        ],
+        [
+          "20–30%",
+          "CD10-positive cases"
+        ],
+        [
+          "60–91%",
+          "SOCS1 variants (the most frequent)"
+        ],
+        [
+          "9p24.1",
+          "locus of PD-L1, PD-L2 and JAK2"
+        ]
+      ],
+      "pitfalls": [
+        "CD30 positivity does not make it Hodgkin: in PMBCL CD30 is weak and heterogeneous, and the cells keep a full B-cell programme (CD20, CD79a, OCT2, BOB1).",
+        "A MYC or BCL2 rearrangement makes PMBCL unlikely. Reconsider DLBCL or high-grade B-cell lymphoma.",
+        "EBER positivity argues against PMBCL."
+      ],
+      "hook": "PMBCL = B-cell body with a Hodgkin soul: CD20+, CD23+, weak CD30, EBER−, 9p24.1 gain driving PD-L1 and PD-L2.",
+      "selfTest": [
+        {
+          "q": "Which genetic changes are generally specific to PMBCL?",
+          "a": "CIITA rearrangements, REL amplification, and PD-L1/PD-L2 (9p24.1) copy gain or rearrangement."
+        },
+        {
+          "q": "How does CD30 staining differ between PMBCL and cHL?",
+          "a": "In PMBCL, CD30 is usually weak and heterogeneous. In cHL it is strong on Hodgkin/Reed-Sternberg cells."
+        },
+        {
+          "q": "Which gene is most frequently mutated in PMBCL on NGS?",
+          "a": "SOCS1 (60–91%)."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-staging-fertility",
+      "name": "Staging, fertility and pregnancy",
+      "pages": [
+        3
+      ],
+      "why": "Baseline PET before steroids underpins later Deauville decisions, and patients are young, so fertility planning matters.",
+      "keyPoints": [
+        "**Baseline PET-CT in all patients before corticosteroids**, to assess the extent, volume and metabolic activity of disease.",
+        "**Do not withhold steroids in a clinical emergency.** CT staging is acceptable if waiting for PET would cause unacceptable delay in urgent cases.",
+        "Consider **contrast-enhanced CT** at baseline, especially if **vascular compromise or thrombosis** is suspected.",
+        "Marrow involvement is seldom seen, so **bone marrow biopsy is not mandated**. Consider it only if an alternative diagnosis is a concern. Blood tests are as in the BSH DLBCL guideline.",
+        "**Fertility:** ovarian dysfunction occurred during chemotherapy, but fertility was **preserved in most**. **Ovarian failure** occurred in some women **over 40**.",
+        "Offer **referral to a reproductive specialist before chemoimmunotherapy**. If urgency prevents this, still refer after treatment starts. Consider assessing gonadal function after treatment.",
+        "Males: offer **sperm banking** (testicular sperm extraction if no semen sample). Females: **embryo, oocyte or ovarian tissue cryopreservation**.",
+        "**Pregnancy:** manage with high-risk obstetricians and anaesthetists. Chemotherapy is riskiest in the **first trimester**. Small studies suggest regimens **without antimetabolites** can be given safely **after the second trimester**."
+      ],
+      "pitfalls": [
+        "Steroids before baseline PET reduce its accuracy, but they should never be withheld in an emergency such as airway compromise or SVCO.",
+        "Bone marrow biopsy is not routine in PMBCL."
+      ],
+      "hook": "PET before pred, unless the patient is in danger.",
+      "selfTest": [
+        {
+          "q": "When is CT staging acceptable instead of baseline PET-CT?",
+          "a": "When waiting for PET would cause unacceptable delay in a clinically urgent case."
+        },
+        {
+          "q": "What does the guideline say about chemotherapy in pregnancy?",
+          "a": "Manage jointly with high-risk obstetrics and anaesthesia. Regimens without antimetabolites may be safe after the second trimester. The first trimester carries the greatest risk."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-first-line",
+      "name": "First-line chemoimmunotherapy",
+      "pages": [
+        3,
+        4
+      ],
+      "why": "Second-line therapy works poorly in PMBCL, so getting first-line right is the main determinant of cure. Dose-intensity matters.",
+      "keyPoints": [
+        "First line is **dose- and time-intensive chemoimmunotherapy**: **R-CHOP-14, R-ACVBP or DA-R-EPOCH**.",
+        "**NCRI R-CHOP-14 vs 21** (PMBCL subgroup, n=50; 58% had ISRT): 5-year **PFS 79.8%**, **OS 83.8%**. Numerically better EFS with R-CHOP-14, but not significant (small numbers).",
+        "**LYSA real-world** (n=313): 3-year PFS **89.4% (R-ACVBP) / 89.4% (R-CHOP-14) / 74.7% (R-CHOP-21)**; 3-year OS **92.4% / 100% / 87.5%** (p=0.0036).",
+        "**LYSA pooled trials** (n=290): 4-year PFS **64% (R-CHOP-21) / 78% (R-CHOP-14) / 86% (R-ACVBP)**. Regimen was **independently prognostic**.",
+        "**Swedish registry:** benefit for R-CHOEP-14 and R-Hyper-CVAD over R-CHOP.",
+        "**Meta-analysis** (n=4068): **8% OS benefit** for dose-intensive regimens over CHOP ± R 21, **maintained only with rituximab-containing regimens**.",
+        "**DA-R-EPOCH** (Dunleavy, phase II, 51 + 16 patients): **EFS 93%, OS 97%, CR 96%**, with RT omitted unless progression. In the extended cohort (n=93), **25 had EOT DS4/5**: of **17 DS4, only 1 failed**; of **8 DS5, 4 failed**. So a single EOT PET has a **high false-positive rate**, and **serial PET with falling SUVmax** helps separate inflammation from residual disease.",
+        "**CALGB** phase III (DLBCL; only 6% PMBCL): **no efficacy difference** between R-CHOP and DA-R-EPOCH (including the PMBCL cohort, n=35), but **more toxicity** with DA-R-EPOCH.",
+        "**IELSG37** induction data: **R-CHOP-21** gave **more DS5 (23.8% vs 8.2%)** and **inferior EFS**. CMR rates were similar with R-CHOP-14 and DA-R-EPOCH, so **either is recommended** and **R-CHOP-21 should be avoided**. The trial was not powered to compare regimens.",
+        "**CNS prophylaxis is usually not needed** (low CNS-IPI). Indications are as in the BSH DLBCL guideline."
+      ],
+      "numbers": [
+        [
+          "8%",
+          "OS benefit of dose-intensive, rituximab-containing regimens (meta-analysis, n=4068)"
+        ],
+        [
+          "93% / 97% / 96%",
+          "DA-R-EPOCH EFS / OS / CR (Dunleavy)"
+        ],
+        [
+          "23.8% vs 8.2%",
+          "DS5 rate with R-CHOP-21 vs other regimens (IELSG37)"
+        ],
+        [
+          "64 / 78 / 86%",
+          "4-year PFS: R-CHOP-21 / R-CHOP-14 / R-ACVBP (LYSA pooled)"
+        ],
+        [
+          "× 6",
+          "cycles of R-CHOP-14 or DA-R-EPOCH"
+        ]
+      ],
+      "recs": [
+        "fl-1",
+        "fl-2",
+        "fl-3",
+        "fl-4",
+        "fl-5"
+      ],
+      "pitfalls": [
+        "R-CHOP-21, the DLBCL standard, is specifically not recommended in PMBCL (1B).",
+        "CALGB found no PMBCL benefit for DA-R-EPOCH, but the PMBCL numbers were small. The guideline still accepts DA-R-EPOCH or R-CHOP-14."
+      ],
+      "hook": "Fourteen or EPOCH, never twenty-one.",
+      "selfTest": [
+        {
+          "q": "Which first-line regimens are recommended in PMBCL, and which is not?",
+          "a": "R-CHOP-14 × 6 or DA-R-EPOCH × 6 (1B). R-CHOP-21 is not recommended (1B)."
+        },
+        {
+          "q": "In IELSG37, how did R-CHOP-21 perform compared with other inductions?",
+          "a": "More DS5 responses (23.8% vs 8.2% average) and inferior EFS."
+        },
+        {
+          "q": "Is CNS prophylaxis routinely needed in PMBCL?",
+          "a": "No. Most patients have a low CNS-IPI. Indications are as for de novo DLBCL."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-response",
+      "name": "Response assessment: interim and end-of-treatment PET",
+      "pages": [
+        4,
+        5
+      ],
+      "why": "Every radiotherapy decision depends on the end-of-treatment Deauville score, so how and when PET is done and reported matters.",
+      "keyPoints": [
+        "Perform **interim imaging (CT or PET-CT)**. Interim PET is **prognostic** but must **not guide escalation or de-escalation**, because its positive predictive value is limited.",
+        "**EOT PET-CT at 6 weeks after cycle 6 day 1**, reported with **Deauville criteria**. If RT is given, assess with a **PET-CT 3 months after RT**.",
+        "**DS1–3 = complete metabolic response** (Lugano), with excellent prognosis. **DS4 = inflammation or lymphoma.** **DS5 = poor prognosis, usually lymphoma.**",
+        "DS5 definition: **IELSG37 used >2 × liver**. **Many UK centres use >3 × liver.**",
+        "**Advanced PET reconstruction** increases sensitivity and can **change Deauville scores**. Published PMBCL data used **conventional OSEM**, so report with OSEM-matched or research-accredited reconstructions until a harmonisation standard exists.",
+        "Report **lesion and liver SUVmax** so **ΔSUVmax** can be assessed. A significant fall in the DS4/5 group can be prognostic."
+      ],
+      "numbers": [
+        [
+          "6 weeks after C6D1",
+          "timing of end-of-treatment PET"
+        ],
+        [
+          "3 months",
+          "PET after radiotherapy"
+        ],
+        [
+          ">2 × liver (IELSG37) / >3 × liver (many UK centres)",
+          "DS5 definitions"
+        ]
+      ],
+      "recs": [
+        "resp-1",
+        "resp-2"
+      ],
+      "pitfalls": [
+        "Do not change treatment because of interim PET (2B).",
+        "A newer high-sensitivity PET reconstruction can upgrade a score to DS4 or DS5 and lead to overtreatment. Use OSEM-matched reporting (1A)."
+      ],
+      "hook": "Six weeks after C6D1, read with OSEM, report the SUVmax.",
+      "selfTest": [
+        {
+          "q": "When should the end-of-treatment PET be performed?",
+          "a": "6 weeks after cycle 6 day 1, or 3 months after radiotherapy if RT is given."
+        },
+        {
+          "q": "Why does the guideline insist on OSEM reconstruction?",
+          "a": "Published PMBCL Deauville data used OSEM. Advanced reconstructions are more sensitive and can change the score (1A)."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-radiotherapy",
+      "name": "Radiotherapy after first line: DS1–3, DS4 and DS5",
+      "pages": [
+        5,
+        6
+      ],
+      "why": "IELSG37 changed practice: radiotherapy is no longer routine after complete metabolic response. DS4 is the grey zone that needs MDT judgement.",
+      "keyPoints": [
+        "Second-line chemotherapy has limited efficacy, so first-line cure is key. But **routine consolidation RT for everyone would overtreat**, and the high **NPV of EOT PET** supports PET-guided RT.",
+        "**IELSG37:** of 545 patients in CMR by central review, **268 (49.2%)** were randomised to **observation (n=132) or RT (n=136)**. 30-month PFS was **96.2% vs 98.5%** (HR 1.47; 95% CI 0.34–6.28; absolute difference 0.68%). **5-year OS 99%** in both arms. So **omit RT after CMR**.",
+        "Not in CMR (50.8%): **DS4 PFS 95.8%**, similar to CMR (97.5%), but **86% of DS4 patients had RT**. **DS5**: 5-year **PFS 60.3%, OS 74.6%**.",
+        "**DS4 is heterogeneous**: SUV just above liver is less concerning than SUV nearly 2× liver. Options are **consolidation RT** or **repeat PET within 4–6 weeks**. A falling SUV may allow RT to be omitted. Melani: 1 of 17 DS4 patients progressed after DA-R-EPOCH. Royal Marsden: 2 of 9 DS4 patients progressed after R-CHOP-21.",
+        "**Personalise DS4 management** by age, sex, disease site, residual mass and lesion vs liver SUVmax, with the clinical oncologist, the patient and the MDT. **Biopsy if possible.** Most can have RT with low late toxicity, using **cardiac- and breast-sparing** techniques to residual PET-positive areas only.",
+        "If uptake is only minimally above liver and heart or breast dose cannot be avoided, **watch and wait** with interval PET or **DW-MRI** is reasonable. If there is no improvement, **biopsy and consider RT**. Do **not delay RT** if active disease is a concern. Consider the **psychological impact** of serial scans.",
+        "**DS5:** **re-biopsy** wherever possible. Most patients (progression or significant DS5 activity) get **systemic treatment as for relapse**. **RT alone** is an option for **limited single residual uptake without progression**, or when the patient is unfit for systemic therapy.",
+        "Technique: **deep inspiration breath hold (DIBH) photons**, or **protons** in selected cases."
+      ],
+      "numbers": [
+        [
+          "96.2% vs 98.5%",
+          "30-month PFS: observation vs RT after CMR (IELSG37)"
+        ],
+        [
+          "99%",
+          "5-year OS in both IELSG37 arms"
+        ],
+        [
+          "95.8% vs 97.5%",
+          "PFS in DS4 vs CMR (86% of DS4 irradiated)"
+        ],
+        [
+          "60.3% / 74.6%",
+          "5-year PFS / OS with DS5"
+        ],
+        [
+          "4–6 weeks",
+          "maximum interval for surveillance PET in DS4"
+        ],
+        [
+          "~2 × liver",
+          "DS4 SUV level of greater concern"
+        ]
+      ],
+      "recs": [
+        "rt-1",
+        "rt-2",
+        "rt-3",
+        "rt-4",
+        "rt-5",
+        "rt-6",
+        "rt-7"
+      ],
+      "pitfalls": [
+        "Do not irradiate DS1–3 (1A).",
+        "Do not assume DS4 is lymphoma, or that it is only inflammation. Biopsy if feasible, then decide on RT or surveillance with the MDT.",
+        "DS5 usually needs relapse-type systemic therapy, not just radiotherapy."
+      ],
+      "hook": "1–3: let it be. 4: think, biopsy, discuss. 5: biopsy and treat as relapse.",
+      "selfTest": [
+        {
+          "q": "What did IELSG37 show?",
+          "a": "In CMR (DS1–3) after chemoimmunotherapy, omitting RT gave no meaningful loss of PFS (96.2% vs 98.5% at 30 months) and the same 5-year OS (99%). So RT is not offered for DS1–3 (1A)."
+        },
+        {
+          "q": "List the factors the MDT should review for a DS4 patient.",
+          "a": "How far SUV is above liver (nearly 2× is more concerning), disease site and RT risk, and patient factors such as age and sex (1B). Biopsy if feasible, and offer a clinical oncology consultation (2A)."
+        },
+        {
+          "q": "When can RT alone be considered for DS5?",
+          "a": "Limited single residual uptake without progression, or if the patient is unfit for systemic chemotherapy (2B)."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-relapse",
+      "name": "Relapsed PMBCL: CAR-T and transplant",
+      "pages": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "why": "Relapse is rare but early, and chemorefractoriness is common. CAR-T is now the main second-line option.",
+      "keyPoints": [
+        "Relapse is **relatively rare**. Responses to second-line high-dose chemotherapy are **lower than in DLBCL**. Relapse is **almost always within 1 year**, and rare **late relapses often involve the CNS**. See the algorithms in **Figure 1** (first relapse) and **Figure 2** (second or later relapse).",
+        "**Liso-cel is licensed second line** and **NICE-approved for relapse within 12 months** of first-line treatment (TRANSFORM: 18 PMBCL patients, and 6 of 10 in the standard arm crossed over to liso-cel).",
+        "**Axi-cel is not approved second line** for PMBCL, because PMBCL was **excluded from ZUMA-7**.",
+        "**Third line: axi-cel or liso-cel** are both licensed. ZUMA-1: 8 of 101 had PMBCL, and 3 remained 'at risk' at 5 years. TRANSCEND: 15 PMBCL patients, **ORR 79%, CR 50%**, median DOR and PFS not reached.",
+        "**Real-world CAR-T (Table 1):** CART-SIE (70 PMBCL, better PFS and OS than LBCL, CR ~50%); axi-cel retrospective (33 patients, ORR 70%, CR 69%, 24-month PFS 64%); GLA/DRST (13 patients, ORR 85%, CR 54%); **DESCAR-T** (82 patients, CR 68%, 24-month PFS 71% with axi-cel); **CIBMTR** (135 patients, CR 67%, 24-month PFS 58.6%).",
+        "**Autologous transplant:** PMBCL is often **chemorefractory** second line, so many cannot reach it. **EBMT** (86 patients): 3-year PFS/OS **94%/100% if chemosensitive vs 39%/41% if chemoresistant**. MSKCC: 3-year PFS 60%, OS 65%. MD Anderson: 5-year PFS 58% in responders.",
+        "**Allogeneic transplant** can give durable remissions. In a Belgian/French series (33 patients), PFS was 47% and OS 48%, and disease status at transplant was the key predictor. In a US series (28 patients), 5-year PFS was 34% and OS 45%, rising to 50% and 58% if chemosensitive."
+      ],
+      "tables": [
+        {
+          "title": "Table 1: Real-world CAR-T outcomes in PMBCL",
+          "page": 9,
+          "columns": [
+            "Study",
+            "n (PMBCL)",
+            "Outcome"
+          ],
+          "rows": [
+            [
+              "CART-SIE (Italy, prospective)",
+              "70",
+              "Better PFS/OS than LBCL (unmatched); CR ~50%"
+            ],
+            [
+              "Axi-cel real-world (retrospective)",
+              "33",
+              "ORR 70%, CR 69%, 24-month PFS 64%"
+            ],
+            [
+              "GLA/DRST registry",
+              "13",
+              "ORR 85%, CR 54%"
+            ],
+            [
+              "DESCAR-T (France)",
+              "82",
+              "CR 68%; 24-month PFS 71% (76 axi-cel)"
+            ],
+            [
+              "CIBMTR (US)",
+              "135",
+              "CR 67%; 24-month PFS 58.6%"
+            ]
+          ]
+        }
+      ],
+      "numbers": [
+        [
+          "12 months",
+          "relapse window for second-line liso-cel"
+        ],
+        [
+          "79% / 50%",
+          "TRANSCEND PMBCL ORR / CR"
+        ],
+        [
+          "94%/100% vs 39%/41%",
+          "EBMT 3-year PFS/OS after ASCT: chemosensitive vs chemoresistant"
+        ]
+      ],
+      "recs": [
+        "rel-1",
+        "rel-2",
+        "rel-3",
+        "rel-8"
+      ],
+      "pitfalls": [
+        "Axi-cel is not a second-line option in PMBCL. Liso-cel is (ZUMA-7 excluded PMBCL).",
+        "A late relapse in PMBCL should prompt a search for CNS disease."
+      ],
+      "hook": "Early relapse (<12 months): liso-cel. Later lines: axi-cel or liso-cel. ZUMA-7 left PMBCL out.",
+      "selfTest": [
+        {
+          "q": "Which CAR-T is licensed second line for PMBCL, and why not the other?",
+          "a": "Liso-cel, for relapse within 12 months (1C). Axi-cel is not approved second line because PMBCL was excluded from ZUMA-7."
+        },
+        {
+          "q": "How does chemosensitivity affect ASCT outcome in PMBCL (EBMT)?",
+          "a": "3-year PFS/OS was 94%/100% if chemosensitive vs 39%/41% if chemoresistant."
+        }
+      ],
+      "aliases": [
+        "pmbcl-thrombosis-relapse"
+      ]
+    },
+    {
+      "id": "pmbcl-relapse-other",
+      "name": "Relapse: checkpoint inhibitors, bispecifics, ADCs and radiotherapy",
+      "pages": [
+        9,
+        10
+      ],
+      "why": "The PD-L1/L2 biology makes checkpoint inhibitors uniquely useful in PMBCL. Know which other agents work and which do not.",
+      "keyPoints": [
+        "**Radiotherapy in relapsed or refractory disease** is increasingly used. A meta-analysis of 12 studies gave 2-year **PFS 95% and OS 97%**. Follow **ILROG** principles. **Give RT after transplant**, not before, because of **pneumonitis risk**. Use butterfly IMRT/VMAT, protons and **DIBH** to spare lung, heart and breast.",
+        "**Loncastuximab** (anti-CD19 ADC) is licensed and commissioned **third line onwards** (LOTIS-2, which **excluded bulky disease**). Only 1 of 7 PMBCL patients had a PR, with a PFS of 1.35 months.",
+        "**Bispecifics (CD3 × CD20): glofitamab and epcoritamab** are licensed **third line+**. Glofitamab: CR 39% overall and **50% in the PMBCL subgroup** (6 patients). Glofitamab plus polatuzumab: 2 patients in CMR at 5 months.",
+        "**Brentuximab alone works poorly** despite CD30 expression: **2 of 15 responded, with no CRs**.",
+        "**Pembrolizumab:** KEYNOTE-013 ORR **48%**, CR 33% (n=21). KEYNOTE-170 ORR **45%**, CR 13% (n=53), rising to **21%** with more than 4 years' follow-up. **No CR patient relapsed.** Median PFS was 4.3 months.",
+        "**Nivolumab + brentuximab (CheckMate 436, n=30):** **ORR 73%, CR 40%**, median PFS **26 months**. 12 proceeded to transplant, and 4 stayed in long-term remission without consolidation. Real-world data (n=14) match these results.",
+        "Case reports describe **nivolumab with RT** or with **high-dose chemotherapy**."
+      ],
+      "numbers": [
+        [
+          "95% / 97%",
+          "2-year PFS / OS with RT in R/R PMBCL (meta-analysis)"
+        ],
+        [
+          "73% / 40%",
+          "nivolumab + brentuximab ORR / CR (CheckMate 436)"
+        ],
+        [
+          "2/15",
+          "responses to single-agent brentuximab"
+        ],
+        [
+          "50%",
+          "glofitamab CR in the PMBCL subgroup"
+        ]
+      ],
+      "recs": [
+        "rel-4",
+        "rel-5",
+        "rel-6",
+        "rel-7"
+      ],
+      "pitfalls": [
+        "CD30 is expressed in PMBCL, but single-agent brentuximab is ineffective. Its activity comes when it is combined with a PD-1 inhibitor.",
+        "Irradiating before high-dose therapy and ASCT increases pneumonitis risk. Irradiate after transplant."
+      ],
+      "hook": "9p24.1 explains why PD-1 blockade works. Brentuximab needs a PD-1 partner.",
+      "selfTest": [
+        {
+          "q": "What is the guideline's position on PD-1 inhibitor plus brentuximab?",
+          "a": "If available, consider the unlicensed combination for progression after CAR-T or autologous transplant (2C). CheckMate 436 showed ORR 73% and CR 40%."
+        },
+        {
+          "q": "When should RT be given relative to transplant in relapsed PMBCL, and why?",
+          "a": "After transplant, because RT before high-dose therapy increases the risk of pneumonitis."
+        }
+      ]
+    },
+    {
+      "id": "pmbcl-follow-up",
+      "name": "Follow-up and survivorship",
+      "pages": [
+        10
+      ],
+      "why": "Most relapses happen within 12 months, so follow-up can be short and should not include routine scans.",
+      "keyPoints": [
+        "**Most relapses occur within 12 months**, so patients still in remission at **24 months** may be **discharged to primary care**.",
+        "**Re-scan only for new symptoms or signs** suggesting relapse. **No surveillance imaging** in asymptomatic patients.",
+        "Tell patients and GPs about **long-term complications**, such as **cardiac toxicity and second malignancies**, so they are referred promptly if symptoms arise."
+      ],
+      "recs": [
+        "fu-1",
+        "fu-2",
+        "fu-3"
+      ],
+      "pitfalls": [
+        "Routine surveillance PET or CT in asymptomatic patients is not recommended (1B)."
+      ],
+      "hook": "Two years clear: back to the GP, and no routine scans.",
+      "selfTest": [
+        {
+          "q": "When can PMBCL patients be discharged to primary care?",
+          "a": "Once they are 24 months after end of treatment and still in remission (2C)."
+        },
+        {
+          "q": "Which long-term complications should patients and GPs be told about?",
+          "a": "Cardiac toxicity and second malignancies, among others."
+        }
+      ]
+    }
+  ]
+}

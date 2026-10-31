@@ -183,7 +183,7 @@
       min-height: 100vh;
       padding-bottom: calc(var(--nav-h) + 24px + env(safe-area-inset-bottom));
     }
-    body.audio-open { padding-bottom: calc(var(--nav-h) + 96px + env(safe-area-inset-bottom)); }
+    body.audio-open { padding-bottom: calc(var(--nav-h) + 130px + env(safe-area-inset-bottom)); }
 
     h1, h2, h3, h4 { color: var(--text-strong); line-height: 1.3; font-weight: 700; }
     h2 { font-size: var(--fs-2xl); letter-spacing: -0.01em; }
@@ -487,27 +487,122 @@
     .grid-num-btn.answered { background: var(--primary-soft); color: var(--primary); }
     .grid-num-btn.flagged::after { content: ""; position: absolute; top: 3px; right: 3px; width: 8px; height: 8px; border-radius: 50%; background: var(--warning); }
 
-    /* ---------- Audio mini-player (only visible when something is queued) ---------- */
+    /* ---------- Audio player (only visible when something is queued) ---------- */
     .audio-player-bar {
       position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 940;
-      max-width: 760px; margin: 0 auto; display: none; align-items: center; gap: 12px; padding: 10px 12px 10px 16px;
+      max-width: 760px; margin: 0 auto; display: none; flex-direction: column; gap: 6px; padding: 10px 12px 8px 16px;
       background: var(--surface); border: 1px solid var(--card-border); border-radius: 14px; box-shadow: var(--shadow-lg);
     }
     body.audio-open .audio-player-bar { display: flex; }
-    @media (max-width: 760px) {
-      .audio-player-bar { bottom: calc(var(--nav-h) + 8px + env(safe-area-inset-bottom)); left: 8px; right: 8px; }
-      .audio-player-bar .speed-wrap { display: none !important; }
-    }
+    .player-row { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .player-seek-row { display: flex; align-items: center; gap: 8px; }
+    .player-seek-row .time { font-size: var(--fs-xs); color: var(--text-muted); font-variant-numeric: tabular-nums; min-width: 36px; text-align: center; }
+    .seek { flex: 1; accent-color: var(--primary); min-height: 28px; }
     .player-track-info { min-width: 0; flex: 1; }
     .player-title { font-weight: 650; color: var(--text-strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: var(--fs-sm); }
     .player-subtitle { font-size: var(--fs-xs); color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .player-controls { display: flex; align-items: center; gap: 4px; }
     .control-btn {
       width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--card-border); background: var(--surface);
-      color: var(--text-strong); cursor: pointer; font-size: 0.9rem; display: grid; place-items: center;
+      color: var(--text-strong); cursor: pointer; font-size: 0.9rem; display: grid; place-items: center; font-family: inherit;
     }
+    .control-btn.skip-btn { font-size: 0.72rem; font-weight: 700; }
     .control-btn.play-btn { width: 44px; height: 44px; background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
+    .speed-select { width: auto !important; min-height: 36px; padding: 4px 6px !important; font-size: 0.8rem !important; }
     .player-close { background: none; border: none; color: var(--text-muted); width: 36px; height: 36px; cursor: pointer; font-size: 1.1rem; }
+    @media (max-width: 760px) {
+      .audio-player-bar { bottom: calc(var(--nav-h) + 8px + env(safe-area-inset-bottom)); left: 8px; right: 8px; padding: 8px 8px 6px 12px; }
+      .player-row { gap: 6px; }
+      .control-btn { width: 36px; height: 36px; }
+      .control-btn.play-btn { width: 40px; height: 40px; }
+    }
+    @media (max-width: 480px) {
+      .hide-narrow { display: none !important; }
+      .player-track-info { display: none; }
+      .player-row { justify-content: space-between; }
+    }
+
+    /* ---------- Learn: domains, topic lists, topic pages ---------- */
+    .muted { color: var(--text-muted); font-size: var(--fs-sm); }
+    .crumbs { font-size: var(--fs-sm); color: var(--text-muted); margin-bottom: 10px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+    .domain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .domain-tile { text-align: left; display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 14px; border: 1px solid var(--card-border);
+      background: var(--surface); color: var(--text); cursor: pointer; font: inherit; box-shadow: var(--shadow-sm, none); min-height: 44px; }
+    .domain-tile:hover, .domain-tile:focus-visible { border-color: var(--primary); }
+    .domain-icon { font-size: 1.6rem; }
+    .domain-name { font-size: var(--fs-lg); font-weight: 700; color: var(--text-strong); }
+    .domain-blurb { font-size: var(--fs-sm); color: var(--text-muted); }
+    .domain-papers { font-size: var(--fs-xs); color: var(--text-muted); line-height: 1.45; }
+    .domain-foot { font-size: var(--fs-sm); font-weight: 600; color: var(--primary); display: flex; flex-direction: column; gap: 6px; margin-top: auto; }
+    .mini-progress, .topic-progress { display: block; height: 6px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+    .mini-progress > span, .topic-progress > span { display: block; height: 100%; background: var(--primary); border-radius: 999px; }
+    .topic-progress { margin-bottom: 10px; }
+    .paper-group { margin-bottom: 24px; }
+    .paper-head h3 { font-size: var(--fs-lg); color: var(--text-strong); margin-bottom: 4px; }
+    .paper-overview { margin: 8px 0; line-height: 1.6; }
+    .paper-links { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 10px; }
+    .learn-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .learn-row { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 14px; text-align: left; border-radius: 12px; border: 1px solid var(--card-border);
+      background: var(--surface); color: var(--text); cursor: pointer; font: inherit; min-height: 56px; }
+    .learn-row:hover, .learn-row:focus-visible { border-color: var(--primary); }
+    .learn-num { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary); font-weight: 700; font-size: var(--fs-sm); }
+    .learn-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+    .learn-name { font-weight: 650; color: var(--text-strong); }
+    .learn-meta { font-size: var(--fs-xs); color: var(--text-muted); }
+    .learn-go { color: var(--text-muted); font-size: 1.4rem; }
+    .topic-page { max-width: 760px; }
+    .topic-page .eyebrow { font-size: var(--fs-sm); font-weight: 650; color: var(--primary); margin-bottom: 4px; }
+    .topic-title { font-size: clamp(1.4rem, 3.2vw, 1.9rem); line-height: 1.25; color: var(--text-strong); margin-bottom: 6px; }
+    .topic-title:focus { outline: none; }
+    .topic-source { color: var(--text-muted); font-size: var(--fs-sm); margin-bottom: 12px; }
+    .topic-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .t-sec { margin-bottom: 22px; }
+    .t-sec h3 { font-size: var(--fs-md); text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); margin-bottom: 8px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+    .t-sec p, .t-sec li { line-height: 1.65; }
+    .t-why { padding: 12px 14px; border-left: 4px solid var(--primary); background: var(--surface-2); border-radius: 8px; }
+    .t-why h3 { margin-bottom: 4px; }
+    .key-list { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 8px; }
+    .key-list li::marker { color: var(--primary); font-weight: 700; }
+    .num-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; margin: 0; }
+    .num-grid > div { padding: 10px 12px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--card-border); }
+    .num-grid dt { font-weight: 750; color: var(--text-strong); font-size: var(--fs-md); font-variant-numeric: tabular-nums; }
+    .num-grid dd { margin: 2px 0 0; font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.45; }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--card-border); border-radius: 10px; }
+    .t-table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+    .t-table th, .t-table td { padding: 8px 10px; border-bottom: 1px solid var(--card-border); text-align: left; vertical-align: top; }
+    .t-table thead th { background: var(--surface-2); color: var(--text-strong); }
+    .t-table tbody th { font-weight: 650; color: var(--text-strong); }
+    .t-note { font-size: var(--fs-xs); color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+    .pg { font-size: var(--fs-xs); font-weight: 600; text-transform: none; letter-spacing: 0; }
+    .rec-card { padding: 12px 14px; border: 1px solid var(--card-border); border-radius: 10px; margin-bottom: 8px; background: var(--surface); }
+    .rec-card p { margin-top: 6px; }
+    .rec-top { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .rec-group { font-size: var(--fs-xs); color: var(--text-muted); flex: 1; min-width: 120px; }
+    .rec-group-h { font-size: var(--fs-sm); color: var(--text-strong); margin: 14px 0 6px; }
+    .grade-pill { font-size: var(--fs-xs); font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-strong); border: 1px solid var(--card-border); }
+    .grade-pill.g1 { background: var(--success-soft); color: var(--success); border-color: transparent; }
+    .grade-pill.g2 { background: var(--info-soft); color: var(--info); border-color: transparent; }
+    .t-pitfalls { padding: 12px 14px; border-radius: 10px; background: var(--warning-soft); }
+    .t-pitfalls ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+    .t-hook { padding: 12px 14px; border-radius: 10px; border: 2px dashed var(--primary); }
+    .t-hook p { font-weight: 650; color: var(--text-strong); font-size: var(--fs-md); }
+    .self-test { border: 1px solid var(--card-border); border-radius: 10px; margin-bottom: 8px; background: var(--surface); }
+    .self-test summary { cursor: pointer; padding: 12px 14px; font-weight: 600; color: var(--text-strong); min-height: 44px; }
+    .self-test summary .qn { color: var(--primary); margin-right: 4px; }
+    .self-test p { padding: 0 14px 12px; }
+    .topic-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 24px 0 8px; }
+    .topic-step { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--surface);
+      cursor: pointer; font: inherit; color: var(--text); text-align: left; min-height: 56px; }
+    .topic-step.next { text-align: right; align-items: flex-end; border-color: var(--primary); }
+    .topic-step:hover, .topic-step:focus-visible { border-color: var(--primary); background: var(--primary-soft); }
+    .topic-step .dir { font-size: var(--fs-xs); font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; }
+    .topic-step .nm { font-weight: 650; color: var(--text-strong); font-size: var(--fs-sm); }
+    .draft-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .draft-list li { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; padding: 10px; border: 1px solid var(--card-border); border-radius: 10px; }
+    .draft-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .form-error { color: var(--danger, #b91c1c); font-weight: 600; }
+    @media (hover: hover) { .swipe-hint { display: none; } }
+    @media (max-width: 520px) { .topic-nav { grid-template-columns: 1fr; } .topic-step.next { order: -1; } }
 
     /* ---------- Forms & modals ---------- */
     .form-group { margin-bottom: 16px; }
@@ -690,33 +785,10 @@
       </section>
     </div>
 
-    <!-- TAB 2: GUIDELINE SUMMARIES -->
+    <!-- TAB 2: LEARN (domains → topics → topic pages) -->
     <div id="tab-summaries" class="tab-panel">
-      <nav class="sub-nav" aria-label="Learn"><button data-tab="summaries" onclick="switchTab('summaries')">Guideline summaries</button><button data-tab="library" onclick="switchTab('library')">Source PDFs</button></nav>
-      <div class="page-head">
-        <h2>Guideline summaries</h2>
-        <p>Key cutoffs, staging and graded recommendations from 2026 BSH guidelines, each checked against its source PDF.</p>
-      </div>
-      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
-        <button class="btn btn-secondary" onclick="toggleAllAccordions()">Expand or collapse all</button>
-        <button class="btn btn-secondary" onclick="queueAllSummariesAudio()">Listen to all</button>
-      </div>
-
-      <!-- Search Filter Bar -->
-      <div style="margin-bottom:12px;">
-        <label for="summary-search-input" class="form-label">Search summaries</label>
-        <input type="search" id="summary-search-input" class="form-input" placeholder="e.g. NT-proBNP, ADAMTS13, Deauville, D-dimer" oninput="onSummarySearch(this.value)" />
-      </div>
-
-      <!-- Category Filter Chips -->
-      <div style="display:flex; gap:8px; margin-bottom:16px; overflow-x:auto; padding-bottom:4px;" id="summary-cat-filters">
-        <button class="btn btn-primary summary-cat-btn" data-cat="All" onclick="filterSummaryCat('All')">All</button>
-        <button class="btn btn-secondary summary-cat-btn" data-cat="Haemostasis & Thrombosis" onclick="filterSummaryCat('Haemostasis & Thrombosis')">Haemostasis & Thrombosis</button>
-        <button class="btn btn-secondary summary-cat-btn" data-cat="Malignant Haematology" onclick="filterSummaryCat('Malignant Haematology')">Malignant Haematology</button>
-        <button class="btn btn-secondary summary-cat-btn" data-cat="General Haematology" onclick="filterSummaryCat('General Haematology')">General Haematology</button>
-      </div>
-
-      <div id="summaries-accordion-container"></div>
+      <nav class="sub-nav" aria-label="Learn"><button data-tab="summaries" onclick="switchTab('summaries'); openLearnHome();">Topics</button><button data-tab="library" onclick="switchTab('library')">Source PDFs</button></nav>
+      <div id="learn-root"></div>
     </div>
 
     <!-- TAB 3: FLASHCARDS -->
@@ -938,7 +1010,7 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="setting-rate">Default Speech Rate: <span id="setting-rate-label">1.0x</span></label>
-            <input type="range" min="0.75" max="1.75" step="0.25" value="1.0" id="setting-rate" oninput="updateSpeechRateSetting(this.value)" style="width:100%;">
+            <input type="range" min="0.75" max="2" step="0.25" value="1.0" id="setting-rate" oninput="updateSpeechRateSetting(this.value)" style="width:100%;">
           </div>
         </div>
 
@@ -1058,27 +1130,33 @@
 
   <!-- Sticky Global Audio Player Bar -->
   <div class="audio-player-bar" role="region" aria-label="Audio player">
-    <div class="player-track-info">
-      <div class="player-title" id="player-title">Audio</div>
-      <div class="player-subtitle" id="player-subtitle">Ready</div>
-    </div>
-
-    <div class="player-controls">
-      <button class="control-btn" onclick="prevAudioTrack()" aria-label="Previous">⏮</button>
-      <button class="control-btn play-btn" id="play-pause-btn" onclick="toggleAudioPlayback()" aria-label="Play or pause">▶</button>
-      <button class="control-btn" onclick="nextAudioTrack()" aria-label="Next">⏭</button>
-    </div>
-
-    <div class="speed-wrap" style="display:flex; align-items:center; gap:8px;">
-      <span style="font-size:0.75rem; color:var(--text-muted);">Speed:</span>
-      <select id="audio-speed-select" aria-label="Playback speed" onchange="changeAudioSpeed(this.value)" style="width:auto; min-height:36px; padding:4px 8px; font-size:0.8rem;">
-        <option value="0.75">0.75x</option>
-        <option value="1.0" selected>1.0x</option>
-        <option value="1.25">1.25x</option>
-        <option value="1.5">1.5x</option>
+    <div class="player-row">
+      <div class="player-track-info">
+        <div class="player-title" id="player-title">Audio</div>
+        <div class="player-subtitle" id="player-subtitle">Ready</div>
+      </div>
+      <div class="player-controls">
+        <button class="control-btn hide-narrow" onclick="prevAudioTrack()" aria-label="Previous track">⏮</button>
+        <button class="control-btn skip-btn" onclick="skipAudio(-10)" aria-label="Back 10 seconds">−10s</button>
+        <button class="control-btn play-btn" id="play-pause-btn" onclick="toggleAudioPlayback()" aria-label="Play">▶</button>
+        <button class="control-btn skip-btn" onclick="skipAudio(10)" aria-label="Forward 10 seconds">+10s</button>
+        <button class="control-btn hide-narrow" onclick="nextAudioTrack()" aria-label="Next track">⏭</button>
+      </div>
+      <select id="audio-speed-select" class="speed-select" aria-label="Playback speed" onchange="changeAudioSpeed(this.value)">
+        <option value="0.75">0.75×</option>
+        <option value="1" selected>1×</option>
+        <option value="1.25">1.25×</option>
+        <option value="1.5">1.5×</option>
+        <option value="1.75">1.75×</option>
+        <option value="2">2×</option>
       </select>
+      <button class="player-close" onclick="closeAudioPlayer()" aria-label="Close audio player">✕</button>
     </div>
-    <button class="player-close" onclick="closeAudioPlayer()" aria-label="Close audio player">✕</button>
+    <div class="player-seek-row">
+      <span class="time" id="audio-time-current">0:00</span>
+      <input type="range" id="audio-seek" class="seek" min="0" max="1" step="1" value="0" aria-label="Playback position" oninput="onSeekInput(this.value)" onchange="onSeekChange(this.value)" />
+      <span class="time" id="audio-time-total">0:00</span>
+    </div>
   </div>
 
   <!-- Audio Playlist Queue Modal -->
@@ -1089,7 +1167,7 @@
         <button class="modal-close-btn" onclick="togglePlaylistModal()">&times;</button>
       </div>
       <div style="display:flex; gap:8px; margin-bottom:16px; flex-wrap:wrap;">
-        <button class="btn btn-secondary" onclick="queueAllSummariesAudio()">Add All Summaries</button>
+        <button class="btn btn-secondary" onclick="queueAllSummariesAudio()">Queue all topics</button>
         <button class="btn btn-secondary" onclick="queueDueCardsAudio()">Queue Due Cards</button>
         <button class="btn btn-secondary" onclick="clearAudioQueue()">Clear Queue</button>
       </div>
@@ -1153,11 +1231,62 @@
   <script>
     // Study content is GENERATED from content/*.json (the single source of truth) by
     // scripts/build_web_content.py. Edit the JSON, not public/content.js.
-    const CONTENT = window.PREPARE_CONTENT || { guidelines: [], questions: [], flashcards: [] };
+    const CONTENT = window.PREPARE_CONTENT || { guidelines: [], topics: [], questions: [], flashcards: [] };
+    // ---- AI drafts: papers the learner submitted to Claude (stored on this device only) ----
+    // Each draft is merged into the content at start-up as an unverified paper with its own
+    // topics, cards and questions, clearly labelled "AI draft: not checked".
+    const DRAFTS_KEY = 'prepare_haem_drafts';
+    const DRAFT_DOMAIN_FOR_CATEGORY = { 'Malignant Haematology': 'Haemato-Oncology' };
+    let paperDrafts = readJson(DRAFTS_KEY, []);
+    if (!Array.isArray(paperDrafts)) paperDrafts = [];
+
+    function draftShortRef(d) {
+      const first = (d.paper.citation || '').split(',')[0].trim().split(' ')[0];
+      return `${first || d.paper.issuingBody || 'Draft'} et al. ${d.paper.year || ''}`.trim();
+    }
+
+    function draftToContent(d) {
+      const gid = `draft_${d.id}`;
+      const domain = DRAFT_DOMAIN_FOR_CATEGORY[d.paper.category] || d.paper.category || 'General Haematology';
+      const tid = id => `d-${d.id}-${id}`;
+      const guideline = {
+        id: gid, draftId: d.id, title: d.paper.title, issuingBody: d.paper.issuingBody || 'Unknown issuer', year: d.paper.year,
+        domain: d.paper.category, practiceDomain: domain, isVerified: false, citation: d.paper.citation || d.paper.title,
+        pdfUrl: d.sourceUrl || '', onlineUrl: d.paper.doiUrl || d.sourceUrl || 'https://b-s-h.org.uk/guidelines',
+        overview: d.paper.overview, recommendations: d.recommendations || [], topicIds: (d.topics || []).map(t => tid(t.id)),
+        shortRef: draftShortRef(d)
+      };
+      const topics = (d.topics || []).map((t, i) => ({ ...t, id: tid(t.id), domain, sourceResourceId: gid, order: i, draft: true }));
+      const flashcards = (d.flashcards || []).map((c, i) => ({
+        id: `draft_${d.id}_c${i}`, domain, topicId: tid(c.topicId), topic: (topics.find(t => t.id === tid(c.topicId)) || {}).name || '',
+        ref: 'AI draft: check against the source', front: c.front, back: c.back, sourceResourceId: gid, recId: c.recId || null
+      }));
+      const questions = (d.questions || []).map((q, i) => ({
+        id: `draft_${d.id}_q${i}`, domain, questionType: 'MCQ', title: q.title, stem: q.stem, options: q.options, correct: q.correctIndex,
+        explanation: q.rationale, ref: 'AI draft: not checked against the source', evidenceGrade: '', sourceResourceId: gid,
+        topicId: tid(q.topicId), recId: q.recId || null, draft: true
+      }));
+      return { guideline, topics, flashcards, questions };
+    }
+
+    if (!CONTENT.topics) CONTENT.topics = [];
+    paperDrafts.forEach(d => {
+      try {
+        const c = draftToContent(d);
+        CONTENT.guidelines.push(c.guideline);
+        CONTENT.topics.push(...c.topics);
+        CONTENT.flashcards.push(...c.flashcards);
+        CONTENT.questions.push(...c.questions);
+      } catch (e) { /* skip a damaged draft rather than break the app */ }
+    });
+
     const approvedGuidelines = CONTENT.guidelines;
     const examQuestions = CONTENT.questions;
     const flashcardTopics = CONTENT.topics || [];
     const topicById = new Map(flashcardTopics.map(t => [t.id, t]));
+    // Renamed topics keep their old ids as aliases, so saved cards and links still resolve.
+    const TOPIC_ALIAS = {};
+    flashcardTopics.forEach(t => (t.aliases || []).forEach(a => { TOPIC_ALIAS[a] = t.id; topicById.set(a, t); }));
     const seedFlashcards = CONTENT.flashcards.map(c => ({ ...c, repetitions: 0, intervalDays: 1, easeFactor: 2.5, dueDate: 0, lastReviewed: 0 }));
 
     // Escape text before inserting it with innerHTML (content contains "<" and ">", and
@@ -1176,7 +1305,7 @@
     }
 
     function writeJson(key, value) {
-      try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+      try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; }
     }
 
     // Saved decks keep the learner's PROGRESS, but always take card TEXT from the current
@@ -1199,7 +1328,8 @@
       const seedIds = new Set(seedFlashcards.map(c => c.id));
       // Keep the learner's own cards. Cards made by the old placeholder "AI" importer
       // (ids starting "ai_") contained invented content and are dropped.
-      const own = list.filter(c => !seedIds.has(c.id) && String(c.id).startsWith('custom_'));
+      const own = list.filter(c => !seedIds.has(c.id) && String(c.id).startsWith('custom_'))
+        .map(c => (c.topicId && TOPIC_ALIAS[c.topicId] ? { ...c, topicId: TOPIC_ALIAS[c.topicId] } : c));
       return [...merged, ...own];
     }
 
@@ -1259,16 +1389,6 @@
     let currentSpeechRate = 1.0;
     let preferredVoiceLocale = "en-GB";
 
-    function populateAudioPlaylistFromGuidelines() {
-      audioPlaylist = approvedGuidelines.map(g => ({
-        id: g.id,
-        title: g.title,
-        subtitle: `${g.domain} • ${g.grade}`,
-        text: `Summary of ${g.title}, published by ${g.issuingBody}. ${g.summary} Key cutoffs: ${g.cutoffs} Recommendations: ${g.recommendations.join(". ")}`
-      }));
-      updatePlaylistUI();
-    }
-
     // App Navigation
     // Each tab belongs to one of the five primary sections (bottom bar on phones).
     const TAB_SECTION = {
@@ -1277,7 +1397,7 @@
       flashcards: 'cards', settings: 'more', install: 'more'
     };
     const TAB_TITLE = {
-      dashboard: 'Today', summaries: 'Guideline summaries', library: 'Source PDFs', practice: 'Practice questions',
+      dashboard: 'Today', summaries: 'Learn', library: 'Source PDFs', practice: 'Practice questions',
       mock: 'Timed mock exam', weakspots: 'Weak spots', flashcards: 'Flashcards', settings: 'Settings', install: 'Install & offline'
     };
 
@@ -1706,363 +1826,560 @@
       }
     }
 
-    // Summaries State & Filtering
-    let currentSummaryCategory = 'All';
-    let currentSummarySearch = '';
+    // ================= Learn: domains → topics → topic pages =================
+    // Topics are the unit of study. Each belongs to one paper and one domain, and the order
+    // (domain, then paper, then the paper's topic order) defines previous/next navigation.
+    const DOMAIN_ORDER = ['Haemato-Oncology', 'Haemostasis & Thrombosis', 'Transfusion Medicine', 'General Haematology'];
+    const DOMAIN_META = {
+      'Haemato-Oncology': { icon: '🔬', blurb: 'Plasma cell disorders and lymphoma' },
+      'Haemostasis & Thrombosis': { icon: '💧', blurb: 'Bleeding, thrombosis and TTP' },
+      'Transfusion Medicine': { icon: '🩸', blurb: 'Blood components and haemovigilance' },
+      'General Haematology': { icon: '📊', blurb: 'Laboratory practice and point-of-care testing' }
+    };
+    const paperIndex = new Map(approvedGuidelines.map((g, i) => [g.id, i]));
+    const learnSequence = flashcardTopics.slice().sort((a, b) =>
+      (DOMAIN_ORDER.indexOf(a.domain) - DOMAIN_ORDER.indexOf(b.domain))
+      || ((paperIndex.get(a.sourceResourceId) ?? 99) - (paperIndex.get(b.sourceResourceId) ?? 99))
+      || ((a.order ?? 0) - (b.order ?? 0)));
+    const learnDomains = DOMAIN_ORDER.filter(d => learnSequence.some(t => t.domain === d));
 
-    function filterSummaryCat(cat) {
-      currentSummaryCategory = cat;
-      document.querySelectorAll('.summary-cat-btn').forEach(btn => {
-        if (btn.getAttribute('data-cat') === cat) {
-          btn.className = 'btn btn-primary summary-cat-btn';
-        } else {
-          btn.className = 'btn btn-secondary summary-cat-btn';
+    let learnView = { level: 'domains', domain: null, topicId: null };
+    let learnSearch = '';
+    let topicsRead = new Set(readJson('prepare_haem_topicsRead', []));
+
+    function markTopicRead(id) {
+      if (topicsRead.has(id)) return;
+      topicsRead.add(id);
+      writeJson('prepare_haem_topicsRead', Array.from(topicsRead));
+    }
+
+    // Content strings may contain **bold**. Escape first, then convert the markers.
+    function rich(text) {
+      return esc(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    }
+    function plain(text) { return String(text || '').replace(/\*\*/g, ''); }
+
+    function pdfPageUrl(g, page) { return g && g.pdfUrl ? `${g.pdfUrl}#page=${page}` : ''; }
+    function pageLinks(g, pages) {
+      if (!g || !g.pdfUrl || !pages || !pages.length) return '';
+      return pages.map(p => `<a href="${esc(pdfPageUrl(g, p))}" target="_blank" rel="noopener" aria-label="Open the PDF at page ${p}">p.${p}</a>`).join(', ');
+    }
+    function recById(g, id) { return g ? g.recommendations.find(r => r.id === id) : null; }
+    function gradeBadge(grade) {
+      if (!grade) return '<span class="grade-pill ungraded" title="Ungraded statement">Ungraded</span>';
+      const strength = grade[0] === '1' ? 'Strong' : 'Weak';
+      return `<span class="grade-pill g${esc(grade[0])}" title="${strength} recommendation, evidence quality ${esc(grade[1])}">Grade ${esc(grade)}</span>`;
+    }
+    function topicsOfPaper(gid) { return learnSequence.filter(t => t.sourceResourceId === gid); }
+    function countFor(list, t) { return list.filter(x => x.topicId === t.id).length; }
+
+    function learnSetView(view) {
+      learnView = { ...learnView, ...view };
+      renderLearn();
+      const main = document.getElementById('main');
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      if (main) main.focus({ preventScroll: true });
+    }
+    function openLearnHome() { learnSetView({ level: 'domains', domain: null, topicId: null }); }
+    function openLearnDomain(domain) { learnSetView({ level: 'domain', domain, topicId: null }); }
+
+    // Open a topic page; optionally jump to one of its recommendations (used by deep links).
+    function openTopic(topicId, recId) {
+      const t = topicById.get(topicId);
+      if (!t) return;
+      if (!document.getElementById('tab-summaries').classList.contains('active')) switchTab('summaries');
+      learnSetView({ level: 'topic', domain: t.domain, topicId: t.id });
+      markTopicRead(t.id);
+      if (recId) {
+        const target = document.getElementById(`rec-${recId}`);
+        if (target) {
+          const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+            target.classList.add('anchor-highlight');
+            target.focus({ preventScroll: true });
+            setTimeout(() => target.classList.remove('anchor-highlight'), 2600);
+          }, 60);
         }
-      });
-      renderSummaries();
-    }
-
-    function onSummarySearch(query) {
-      currentSummarySearch = (query || '').trim().toLowerCase();
-      renderSummaries();
-    }
-
-    function formatRecommendationHtml(recStr, anchorId) {
-      const clean = recStr.replace(/^•\s*/, '').trim();
-      const gradeMatch = clean.match(/\((Grade\s*[0-9A-Za-z]+|Good Practice [A-Za-z]+)\)/i);
-      const grade = gradeMatch ? gradeMatch[1] : null;
-      const recMatch = clean.match(/^(Rec\s*\d+)/i);
-      const recLabel = recMatch ? recMatch[1] : 'RECOMMENDATION';
-      let body = clean;
-      if (gradeMatch) body = body.replace(gradeMatch[0], '');
-      if (recMatch) body = body.replace(recMatch[0], '');
-      body = body.trim().replace(/^:\s*/, '').trim();
-
-      return `
-        <div class="recommendation-card anchor-target" ${anchorId ? `id="${anchorId}" tabindex="-1"` : ''}>
-          <div class="recommendation-header">
-            <span style="font-size:0.75rem; font-weight:800; color:var(--text-strong); letter-spacing:0.5px;">${esc(recLabel.replace(/^REC/i, 'Rec'))}</span>
-            ${grade ? `<span class="grade-badge">${esc(grade)}</span>` : ''}
-          </div>
-          <div style="font-size:0.85rem; line-height:1.5; color:var(--text);">${esc(body)}</div>
-        </div>
-      `;
-    }
-
-    function formatPitfallsHtml(pitfallText, idPrefix) {
-      if (!pitfallText) return '';
-      const lines = pitfallText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-      return `
-        <div style="margin-bottom:12px;">
-          <strong style="color:var(--accent-amber); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Exam pitfalls</strong>
-          <div style="margin-top:6px; display:flex; flex-direction:column; gap:6px;">
-            ${lines.map((line, idx) => {
-              const cleanLine = line.replace(/^•\s*/, '').trim();
-              const match = cleanLine.match(/^(EXAM PITFALL\s*\d*):?\s*/i);
-              const label = match ? match[1].trim() : `EXAM TRAP ${idx + 1}`;
-              const body = match ? cleanLine.substring(match[0].length).trim() : cleanLine;
-              return `
-                <div class="exam-trap-card anchor-target" ${idPrefix ? `id="${idPrefix}-${idx}" tabindex="-1"` : ''}>
-                  <div class="exam-trap-header">${esc(label.charAt(0) + label.slice(1).toLowerCase())}</div>
-                  <div style="font-size:0.85rem; line-height:1.45; color:var(--text);">${esc(body)}</div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-        </div>
-      `;
-    }
-
-    function getDomainMeta(category) {
-      const cat = category.toLowerCase();
-      if (cat.includes('haemostasis')) {
-        return {
-          icon: '💧',
-          color: 'var(--success)',
-          desc: 'TTP laboratory diagnosis (ADAMTS13) & bleeding/thrombotic disorders in gynaecology'
-        };
-      } else if (cat.includes('malignant')) {
-        return {
-          icon: '🔬',
-          color: 'var(--info)',
-          desc: 'AL amyloidosis early diagnosis & primary mediastinal B-cell lymphoma (BSH 2026)'
-        };
-      } else if (cat.includes('transfusion')) {
-        return {
-          icon: '🩸',
-          color: '#E57373',
-          desc: 'Blood Components, Reversal Strategies, TA-GVHD, SHOT & Sickle Cell Transfusion'
-        };
-      } else {
-        return {
-          icon: '📊',
-          color: '#2DD4BF',
-          desc: 'Point-of-care testing in general haematology (ISO 15189:2022)'
-        };
       }
     }
 
-    function renderHaemostasisHeroBanner(count) {
-      return `
-        <div class="hero-focus-banner" id="haemostasis-hero-banner">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div style="display:flex; align-items:center; gap:10px;">
-              <span style="font-size:1.6rem; background:var(--success-soft); border:1px solid var(--success-soft); border-radius:8px; padding:4px 8px;">💧</span>
-              <div>
-                <div style="font-size:var(--fs-lg); font-weight:700; color:var(--text-strong);">Haemostasis &amp; thrombosis: key points</div>
-                <div style="font-size:0.8rem; color:var(--success); font-weight:600;">BSH and UKHCDO 2026</div>
-              </div>
-            </div>
-            <span class="badge" style="background:var(--success-soft); border:1px solid var(--success-soft); color:var(--success); font-weight:700;">${count} Guidelines</span>
-          </div>
-          <p style="font-size:0.82rem; color:var(--text-muted); margin-top:10px; line-height:1.45;">
-            Key high-yield points from the 2026 BSH TTP laboratory guidance and the BSH/UKHCDO haematology-gynaecology good practice paper.
-          </p>
-          <div style="background:var(--surface-2); border:1px solid var(--success-soft); border-radius:8px; padding:12px; margin-top:10px;">
-            <div style="font-size:var(--fs-sm); font-weight:700; color:var(--text-strong); margin-bottom:6px;">Exam takeaways</div>
-            <div style="font-size:0.82rem; line-height:1.5; color:var(--text); margin-bottom:6px;">• <strong>TTP (2026):</strong> Diagnostic cut-off ADAMTS13 &lt;10 IU/dL. Collect pre-treatment sample in 0.109 M sodium citrate; EDTA cannot be used. Never delay treatment while awaiting ADAMTS13.</div>
-            <div style="font-size:0.82rem; line-height:1.5; color:var(--text);">• <strong>Gynae Haemostasis (2026):</strong> In treatment-resistant HMB on anticoagulation, consider apixaban or dabigatran (lower HMB incidence than rivaroxaban; ungraded good-practice point).</div>
-          </div>
-        </div>
-      `;
-    }
-
-    function renderSingleGuidelineAccordion(g, idx) {
-      const cleanIssuer = g.issuingBody
-        .replace("British Society for Haematology", "BSH")
-        .replace("United Kingdom Haemophilia Centre Doctors' Organisation", "UKHCDO")
-        .replace("World Health Organization", "WHO")
-        .replace("International Myeloma Working Group", "IMWG");
-      const shortDomain = g.domain.includes('Haemostasis') ? 'Haemostasis' : (g.domain.includes('Malignant') ? 'Malignant' : (g.domain.includes('Transfusion') ? 'Transfusion' : 'General'));
-
-      return `
-        <div class="accordion-item ${idx === 0 ? 'open' : ''}" id="guide-${idx}">
-          <div class="accordion-header" onclick="toggleAccordion('guide-${idx}')">
-            <div style="flex:1;">
-              <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px; flex-wrap:wrap;">
-                <span class="badge" style="background:var(--info-soft); border:1px solid var(--info-soft); color:var(--info); font-weight:700; font-size:0.72rem; padding:2px 8px;">${esc(cleanIssuer)} • ${esc(g.year)}</span>
-                <span class="badge badge-primary" style="font-size:0.72rem; padding:2px 8px;">${shortDomain}</span>
-                <span class="badge" style="background:${g.isVerified ? 'var(--success-soft)' : 'var(--warning-soft)'}; border:1px solid ${g.isVerified ? 'var(--success-soft)' : 'var(--warning-soft)'}; color:${g.isVerified ? 'var(--success)' : 'var(--warning)'}; font-size:0.72rem; padding:2px 8px;">${esc(g.grade)}</span>
-              </div>
-              <h3 class="accordion-title" style="font-size:var(--fs-md); font-weight:700; line-height:1.4;">${esc(g.title)}</h3>
-              <div style="font-size:0.75rem; color:var(--text-muted); font-style:italic; margin-top:3px;">${esc(g.citation)}</div>
-
-            </div>
-            <div style="display:flex; align-items:center; gap:8px; margin-left:10px;">
-              <button class="btn btn-ghost" style="min-height:40px; padding:0 10px;" onclick="event.stopPropagation(); playSpecificSummary(${idx});" aria-label="Listen to this summary">Listen</button>
-              <button class="btn btn-secondary accordion-toggle" style="min-height:40px; padding:0 12px;" aria-expanded="${idx === 0 ? 'true' : 'false'}" aria-controls="guide-body-${idx}" onclick="event.stopPropagation(); toggleAccordion('guide-${idx}')"><span class="when-closed">Show</span><span class="when-open">Hide</span> <span class="accordion-chevron" aria-hidden="true">▼</span></button>
-            </div>
-          </div>
-          <div class="accordion-body" id="guide-body-${idx}">
-            <div class="anchor-target" id="g-${idx}-summary" tabindex="-1" style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--primary); margin-bottom:10px;">
-              <strong style="color:var(--primary); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Summary</strong>
-              <p style="margin-top:4px; font-size:0.88rem; line-height:1.5;">${esc(g.summary)}</p>
-            </div>
-
-            <div class="anchor-target" id="g-${idx}-cutoffs" tabindex="-1" style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--accent-green); margin-bottom:10px;">
-              <strong style="color:var(--accent-green); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Key cutoffs</strong>
-              <p style="margin-top:4px; font-size:0.85rem; line-height:1.5; white-space:pre-line;">${esc(g.cutoffs)}</p>
-            </div>
-
-            ${g.staging ? `
-            <div class="anchor-target" id="g-${idx}-staging" tabindex="-1" style="padding:10px 14px; background:var(--surface-2); border-radius:6px; border-left:3px solid var(--accent-blue); margin-bottom:10px;">
-              <strong style="color:var(--accent-blue); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Staging and risk</strong>
-              <p style="margin-top:4px; font-size:0.85rem; line-height:1.5; white-space:pre-line;">${esc(g.staging)}</p>
-            </div>
-            ` : ''}
-
-            <div style="margin-bottom:10px;">
-              <strong style="color:var(--accent-green); font-size:0.8rem; text-transform:uppercase; letter-spacing:0.5px;">Recommendations (grades as published)</strong>
-              <div style="margin-top:8px;">
-                ${g.recommendations.map((r, i) => formatRecommendationHtml(r, `g-${idx}-rec-${i}`)).join('')}
-              </div>
-            </div>
-
-            ${g.pitfalls ? formatPitfallsHtml(g.pitfalls, `g-${idx}-pitfall`) : ''}
-
-            <div style="display:flex; gap:8px; margin-top:16px; flex-wrap:wrap;">
-              ${g.pdfUrl ? `<a href="${esc(g.pdfUrl)}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">📄 View PDF</a>` : ''}
-              <a href="${esc(g.onlineUrl)}" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.8rem;">🌐 Online Guideline</a>
-              <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="openGroundingModal('${esc(g.id)}')">🔍 Evidence Grounding</button>
-              <button class="btn btn-secondary" style="font-size:0.8rem;" onclick="filterPracticeDomain('${esc(g.practiceDomain || g.domain)}'); switchTab('practice');">📝 Practice Questions</button>
-              <button class="btn btn-primary" style="font-size:0.8rem;" onclick="addSummaryToQueue(${idx})">+ Add to Audio Queue</button>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // Summaries Accordion
-    function renderSummaries() {
-      const container = document.getElementById('summaries-accordion-container');
-      if (!container) return;
-
-      const filtered = approvedGuidelines.filter(g => {
-        const matchesCat = (currentSummaryCategory === 'All') || (g.domain.toLowerCase() === currentSummaryCategory.toLowerCase());
-        const matchesSearch = !currentSummarySearch || 
-          g.title.toLowerCase().includes(currentSummarySearch) ||
-          g.summary.toLowerCase().includes(currentSummarySearch) ||
-          g.cutoffs.toLowerCase().includes(currentSummarySearch) ||
-          (g.staging && g.staging.toLowerCase().includes(currentSummarySearch)) ||
-          (g.recommendations && g.recommendations.some(r => r.toLowerCase().includes(currentSummarySearch))) ||
-          (g.pitfalls && g.pitfalls.toLowerCase().includes(currentSummarySearch));
-        return matchesCat && matchesSearch;
-      });
-
-      if (filtered.length === 0) {
-        container.innerHTML = `
-          <div style="text-align:center; padding:32px 16px; background:var(--surface-2); border:1px solid var(--card-border); border-radius:10px; color:var(--text-muted);">
-            <div style="font-size:2rem; margin-bottom:8px;">🔍</div>
-            <div style="font-weight:700; color:var(--text-strong); margin-bottom:4px;">No guidelines found</div>
-            <div style="font-size:0.85rem;">Try adjusting your search query or filter category.</div>
-          </div>
-        `;
-        return;
-      }
-
-      const domainOrder = [
-        "Haemostasis & Thrombosis",
-        "Malignant Haematology",
-        "Transfusion Medicine",
-        "General Haematology"
-      ];
-
-      let html = '';
-
-      if (currentSummarySearch) {
-        html += `
-          <div style="padding:10px 14px; background:var(--surface-2); border:1px solid var(--info-soft); border-radius:8px; margin-bottom:14px; font-size:0.85rem; color:var(--info); font-weight:700;">
-            🔍 FILTER RESULTS: ${filtered.length} GUIDELINES MATCHING "${esc(currentSummarySearch.toUpperCase())}"
-          </div>
-        `;
-      }
-
-      if (currentSummaryCategory === 'All' && !currentSummarySearch) {
-        domainOrder.forEach((domainName) => {
-          const domainItems = filtered.filter(g => g.domain.toLowerCase() === domainName.toLowerCase());
-          if (domainItems.length > 0) {
-            const meta = getDomainMeta(domainName);
-            
-            html += `
-              <div class="domain-subheading-bar" >
-                <div>
-                  <div class="domain-subheading-title">
-                    <span style="font-size:1.2rem;">${meta.icon}</span>
-                    <span>${esc(domainName)}</span>
-                  </div>
-                  <div class="domain-subheading-desc">${meta.desc}</div>
-                </div>
-                <span class="badge">
-                  ${domainItems.length} ${domainItems.length === 1 ? 'Guideline' : 'Guidelines'}
-                </span>
-              </div>
-            `;
-
-            if (domainName.includes('Haemostasis')) {
-              html += renderHaemostasisHeroBanner(domainItems.length);
-            }
-
-            domainItems.forEach(g => {
-              const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
-              html += renderSingleGuidelineAccordion(g, globalIdx);
-            });
-          }
-        });
-      } else if (currentSummaryCategory === 'Haemostasis & Thrombosis' && !currentSummarySearch) {
-        html += renderHaemostasisHeroBanner(filtered.length);
-        filtered.forEach(g => {
-          const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
-          html += renderSingleGuidelineAccordion(g, globalIdx);
-        });
-      } else if (!currentSummarySearch) {
-        const meta = getDomainMeta(currentSummaryCategory);
-        html += `
-          <div class="domain-subheading-bar" >
-            <div>
-              <div class="domain-subheading-title">
-                <span style="font-size:1.2rem;">${meta.icon}</span>
-                <span>${esc(currentSummaryCategory)}</span>
-              </div>
-              <div class="domain-subheading-desc">${meta.desc}</div>
-            </div>
-            <span class="badge">
-              ${filtered.length} Guidelines
-            </span>
-          </div>
-        `;
-        filtered.forEach(g => {
-          const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
-          html += renderSingleGuidelineAccordion(g, globalIdx);
-        });
-      } else {
-        filtered.forEach(g => {
-          const globalIdx = approvedGuidelines.findIndex(item => item.id === g.id);
-          html += renderSingleGuidelineAccordion(g, globalIdx);
-        });
-      }
-
-      container.innerHTML = html;
-    }
-
-    function toggleAccordion(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.classList.toggle('open');
-      const toggle = el.querySelector('.accordion-toggle');
-      if (toggle) toggle.setAttribute('aria-expanded', el.classList.contains('open') ? 'true' : 'false');
-    }
-
-    // Open one guideline's summary (used from questions: "Read the guideline summary").
-    function anchorLabel(anchor, resId) {
-      if (!anchor) return 'Read the guideline summary';
-      if (anchor.startsWith('rec:')) {
-        const g = approvedGuidelines.find(x => x.id === resId);
-        const text = g ? (g.recommendations[Number(anchor.slice(4))] || '') : '';
-        const m = text.match(/Rec\s*(\d+)/i);
-        return m ? `Read recommendation ${m[1]} in the guideline` : 'Read this point in the guideline';
-      }
-      return { cutoffs: 'Read the key cutoffs in the guideline', staging: 'Read the staging section in the guideline', summary: 'Read the guideline summary' }[anchor]
-        || (anchor.startsWith('pitfall:') ? 'Read the related exam pitfall' : 'Read the guideline summary');
-    }
-
-    function openGuidelineSummary(resId, anchor) {
-      const idx = approvedGuidelines.findIndex(g => g.id === resId);
-      currentSummarySearch = '';
-      const search = document.getElementById('summary-search-input');
-      if (search) search.value = '';
-      filterSummaryCat('All');
+    // Open a paper: its domain's topic list, scrolled to that paper.
+    function openPaper(gid) {
+      const g = approvedGuidelines.find(x => x.id === gid);
+      if (!g) return;
       switchTab('summaries');
-      if (idx < 0) return;
-      const el = document.getElementById(`guide-${idx}`);
-      if (!el) return;
-      if (!el.classList.contains('open')) toggleAccordion(`guide-${idx}`);
-      let target = el;
-      if (anchor) {
-        const id = anchor.startsWith('rec:') ? `g-${idx}-rec-${anchor.slice(4)}`
-          : anchor.startsWith('pitfall:') ? `g-${idx}-pitfall-${anchor.slice(8)}`
-          : `g-${idx}-${anchor}`;
-        target = document.getElementById(id) || el;
-      }
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      setTimeout(() => {
-        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
-        if (target !== el) {
-          target.classList.add('anchor-highlight');
-          target.focus({ preventScroll: true });
-          setTimeout(() => target.classList.remove('anchor-highlight'), 2600);
-        }
-      }, 60);
+      learnSetView({ level: 'domain', domain: g.practiceDomain, topicId: null });
+      const el = document.getElementById(`paper-${gid}`);
+      if (el) setTimeout(() => el.scrollIntoView({ block: 'start' }), 30);
+    }
+    // Kept for older links: a guideline id (and optional legacy anchor) opens the paper.
+    function openGuidelineSummary(resId) { openPaper(resId); }
+
+    function stepTopic(delta) {
+      const i = learnSequence.findIndex(t => t.id === learnView.topicId);
+      const next = learnSequence[i + delta];
+      if (next) openTopic(next.id);
     }
 
-    function toggleAllAccordions() {
-      const items = document.querySelectorAll('.accordion-item');
-      const anyOpen = Array.from(items).some(i => i.classList.contains('open'));
-      items.forEach(i => {
-        if (anyOpen) i.classList.remove('open');
-        else i.classList.add('open');
-        const t = i.querySelector('.accordion-toggle');
-        if (t) t.setAttribute('aria-expanded', i.classList.contains('open') ? 'true' : 'false');
+    // Label + action for "where did this question/card come from" links.
+    function sourceLinkLabel(item) {
+      const t = item && topicById.get(item.topicId);
+      if (!t) return 'Read the paper';
+      return item.recId ? `Read the recommendation in “${t.name}”` : `Read the topic: ${t.name}`;
+    }
+    function openSource(item) {
+      if (!item) return;
+      if (topicById.has(item.topicId)) openTopic(topicById.get(item.topicId).id, item.recId);
+      else if (item.sourceResourceId) openPaper(item.sourceResourceId);
+    }
+    function openSourceById(kind, id) {
+      const list = kind === 'card' ? flashcards : examQuestions;
+      openSource(list.find(x => x.id === id));
+    }
+
+    function onLearnSearch(value) {
+      learnSearch = (value || '').trim().toLowerCase();
+      const root = document.getElementById('learn-results');
+      if (root) root.innerHTML = learnSearchResultsHtml();
+    }
+
+    function topicHaystack(t) {
+      const g = paperFor(t);
+      const recs = (t.recs || []).map(id => (recById(g, id) || {}).text || '');
+      const tables = (t.tables || []).map(tb => [tb.title, ...(tb.rows || []).flat(), tb.note || ''].join(' '));
+      return plain([t.name, t.why, ...(t.keyPoints || []), ...(t.numbers || []).flat(), ...(t.pitfalls || []), t.hook,
+        ...(t.selfTest || []).map(s => s.q + ' ' + s.a), ...recs, ...tables, g ? g.shortRef + ' ' + g.title : ''].join(' ')).toLowerCase();
+    }
+
+    function learnSearchResultsHtml() {
+      if (!learnSearch) return '';
+      const hits = learnSequence.filter(t => topicHaystack(t).includes(learnSearch));
+      if (!hits.length) return `<p class="muted" role="status">No topics mention “${esc(learnSearch)}”.</p>`;
+      return `<p class="muted" role="status">${hits.length} topic${hits.length === 1 ? '' : 's'} mention “${esc(learnSearch)}”</p>
+        <ol class="learn-list">${hits.map(t => topicRowHtml(t, true)).join('')}</ol>`;
+    }
+
+    function topicRowHtml(t, showDomain) {
+      const g = paperFor(t);
+      const n = learnSequence.indexOf(t) + 1;
+      const cards = countFor(flashcards, t), qs = countFor(examQuestions, t);
+      const read = topicsRead.has(t.id);
+      return `<li><button class="learn-row" onclick="openTopic('${esc(t.id)}')">
+          <span class="learn-num" aria-hidden="true">${read ? '✓' : (topicsOfPaper(t.sourceResourceId).indexOf(t) + 1)}</span>
+          <span class="learn-main"><span class="learn-name">${esc(t.name)}</span>
+            <span class="learn-meta">${showDomain ? esc(t.domain) + ' · ' : ''}${esc(g ? g.shortRef : '')}${t.pages && t.pages.length ? ` · PDF p.${t.pages.join(', ')}` : ''}${(t.recs || []).length ? ` · ${t.recs.length} rec${t.recs.length === 1 ? '' : 's'}` : ''}${cards ? ` · ${cards} card${cards === 1 ? '' : 's'}` : ''}${qs ? ` · ${qs} question${qs === 1 ? '' : 's'}` : ''}</span></span>
+          <span class="learn-go" aria-hidden="true">›</span>
+          <span class="sr-only">${read ? 'Read. ' : ''}Topic ${n} of ${learnSequence.length}</span>
+        </button></li>`;
+    }
+
+    function renderLearn() {
+      const root = document.getElementById('learn-root');
+      if (!root) return;
+      if (learnView.level === 'topic' && topicById.has(learnView.topicId)) root.innerHTML = learnTopicHtml(topicById.get(learnView.topicId));
+      else if (learnView.level === 'domain' && learnDomains.includes(learnView.domain)) root.innerHTML = learnDomainHtml(learnView.domain);
+      else root.innerHTML = learnHomeHtml();
+      const search = document.getElementById('learn-search');
+      if (search) search.value = learnSearch;
+    }
+    // Older code paths call renderSummaries().
+    function renderSummaries() { renderLearn(); }
+
+    function learnHomeHtml() {
+      const totalRead = learnSequence.filter(t => topicsRead.has(t.id)).length;
+      return `
+        <div class="page-head">
+          <h2>Learn</h2>
+          <p>Choose a domain, then work through its topics in order. Each topic summarises one part of a checked 2026 BSH paper, with every recommendation quoted in full and links to the PDF page it comes from.</p>
+        </div>
+        <div style="margin-bottom:16px;">
+          <label for="learn-search" class="form-label">Search all topics</label>
+          <input type="search" id="learn-search" class="form-input" placeholder="e.g. NT-proBNP, ADAMTS13, Deauville, D-dimer" oninput="onLearnSearch(this.value)" />
+        </div>
+        <div id="learn-results" aria-live="polite">${learnSearchResultsHtml()}</div>
+        <p class="muted" style="margin-bottom:10px;">${totalRead} of ${learnSequence.length} topics read</p>
+        <div class="domain-grid">
+          ${learnDomains.map(d => {
+            const ts = learnSequence.filter(t => t.domain === d);
+            const papers = Array.from(new Set(ts.map(t => t.sourceResourceId))).map(id => approvedGuidelines.find(g => g.id === id)).filter(Boolean);
+            const read = ts.filter(t => topicsRead.has(t.id)).length;
+            const meta = DOMAIN_META[d] || { icon: '📘', blurb: '' };
+            return `<button class="domain-tile" onclick='openLearnDomain(${JSON.stringify(d)})'>
+              <span class="domain-icon" aria-hidden="true">${meta.icon}</span>
+              <span class="domain-name">${esc(d)}</span>
+              <span class="domain-blurb">${esc(meta.blurb)}</span>
+              <span class="domain-papers">${papers.map(g => esc(g.shortRef) + ': ' + esc(g.title.split(':')[0])).join('<br>')}</span>
+              <span class="domain-foot">${ts.length} topics · ${read} read
+                <span class="mini-progress" role="progressbar" aria-label="${esc(d)} topics read" aria-valuemin="0" aria-valuemax="${ts.length}" aria-valuenow="${read}"><span style="width:${ts.length ? Math.round(read / ts.length * 100) : 0}%"></span></span></span>
+            </button>`;
+          }).join('')}
+        </div>
+        <section class="card" style="margin-top:20px;">
+          <h3 style="font-size:var(--fs-md); margin-bottom:6px;">Add your own paper</h3>
+          <p class="muted" style="margin-bottom:10px;">Upload a guideline or paper PDF and Claude will draft topic summaries, flashcards and questions from it. Drafts stay on this device and are labelled as unchecked.</p>
+          <button class="btn btn-secondary" onclick="openSynthModal()">Submit a paper to Claude</button>
+          ${draftsSummaryHtml()}
+        </section>`;
+    }
+
+    function learnDomainHtml(domain) {
+      const ts = learnSequence.filter(t => t.domain === domain);
+      const paperIds = Array.from(new Set(ts.map(t => t.sourceResourceId)));
+      const read = ts.filter(t => topicsRead.has(t.id)).length;
+      const firstUnread = ts.find(t => !topicsRead.has(t.id)) || ts[0];
+      return `
+        <nav class="crumbs" aria-label="Breadcrumb"><button class="link-btn" onclick="openLearnHome()">Learn</button> › <span aria-current="page">${esc(domain)}</span></nav>
+        <div class="page-head">
+          <h2>${esc(domain)}</h2>
+          <p>${ts.length} topics from ${paperIds.length} paper${paperIds.length === 1 ? '' : 's'} · ${read} read</p>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+          ${firstUnread ? `<button class="btn btn-primary" onclick="openTopic('${esc(firstUnread.id)}')">${read && read < ts.length ? 'Continue: ' : 'Start: '}${esc(firstUnread.name)}</button>` : ''}
+          <button class="btn btn-secondary" onclick='queueTopicsAudio(${JSON.stringify(domain)})'>Listen to this domain</button>
+          <button class="btn btn-secondary" onclick='studyDomain(${JSON.stringify(domain)})'>Flashcards</button>
+          <button class="btn btn-secondary" onclick='filterPracticeDomain(${JSON.stringify(domain)}); switchTab("practice");'>Questions</button>
+        </div>
+        ${paperIds.map(pid => {
+          const g = approvedGuidelines.find(x => x.id === pid);
+          const pts = ts.filter(t => t.sourceResourceId === pid);
+          return `<section class="paper-group" id="paper-${esc(pid)}" aria-labelledby="paper-h-${esc(pid)}">
+            <div class="paper-head">
+              <h3 id="paper-h-${esc(pid)}">${esc(g.title.split(':')[0])}</h3>
+              <p class="muted">${esc(g.shortRef)} · ${esc(g.issuingBody)} · ${g.recommendations.length} recommendations
+                ${g.isVerified ? '<span class="badge badge-green">Checked against PDF</span>' : '<span class="badge badge-amber">AI draft: not checked</span>'}</p>
+              <p class="paper-overview">${rich(g.overview)}</p>
+              <div class="paper-links">
+                ${g.pdfUrl ? `<a class="btn btn-secondary" href="${esc(g.pdfUrl)}" target="_blank" rel="noopener">Open PDF</a>` : ''}
+                <a class="btn btn-ghost" href="${esc(g.onlineUrl)}" target="_blank" rel="noopener">Journal page</a>
+                <button class="btn btn-ghost" onclick="openGroundingModal('${esc(g.id)}')">All ${g.recommendations.length} recommendations</button>
+              </div>
+            </div>
+            <ol class="learn-list">${pts.map(t => topicRowHtml(t, false)).join('')}</ol>
+          </section>`;
+        }).join('')}`;
+    }
+
+    function learnTopicHtml(t) {
+      const g = paperFor(t);
+      const i = learnSequence.indexOf(t);
+      const prev = learnSequence[i - 1], next = learnSequence[i + 1];
+      const inDomain = learnSequence.filter(x => x.domain === t.domain);
+      const posInDomain = inDomain.indexOf(t) + 1;
+      const cards = countFor(flashcards, t), qs = countFor(examQuestions, t);
+      const recs = (t.recs || []).map(id => recById(g, id)).filter(Boolean);
+      const navBtn = (other, dir) => {
+        if (!other) return `<span></span>`;
+        const crosses = other.domain !== t.domain;
+        const label = dir < 0 ? 'Previous' : (crosses ? `Next domain: ${other.domain}` : 'Next');
+        return `<button class="topic-step ${dir < 0 ? 'prev' : 'next'}" onclick="stepTopic(${dir})" aria-label="${label} topic: ${esc(other.name)}">
+          <span class="dir">${dir < 0 ? '← ' : ''}${esc(label)}${dir > 0 ? ' →' : ''}</span><span class="nm">${esc(other.name)}</span></button>`;
+      };
+      return `
+        <article class="topic-page" id="topic-page" aria-labelledby="topic-title">
+          <nav class="crumbs" aria-label="Breadcrumb"><button class="link-btn" onclick="openLearnHome()">Learn</button> ›
+            <button class="link-btn" onclick='openLearnDomain(${JSON.stringify(t.domain)})'>${esc(t.domain)}</button> ›
+            <button class="link-btn" onclick="openPaper('${esc(g.id)}')">${esc(g.shortRef)}</button></nav>
+          <div class="topic-progress" aria-hidden="true"><span style="width:${Math.round(posInDomain / inDomain.length * 100)}%"></span></div>
+          <p class="eyebrow">Topic ${posInDomain} of ${inDomain.length} in ${esc(t.domain)}</p>
+          ${g.isVerified ? '' : '<p class="badge badge-amber" style="display:inline-block; margin-bottom:8px;">AI draft: not checked against the PDF</p>'}
+          <h2 id="topic-title" class="topic-title" tabindex="-1">${esc(t.name)}</h2>
+          <p class="topic-source">From ${esc(g.shortRef)}, <em>${esc(g.title.split(':')[0])}</em>${t.pages && t.pages.length && g.pdfUrl ? ` · PDF ${pageLinks(g, t.pages)}` : ''}</p>
+          <div class="topic-actions">
+            <button class="btn btn-secondary" onclick="playTopicAudio('${esc(t.id)}')">▶ Listen</button>
+            ${cards ? `<button class="btn btn-secondary" onclick="studyTopic('${esc(t.id)}')">${cards} flashcard${cards === 1 ? '' : 's'}</button>` : ''}
+            ${qs ? `<button class="btn btn-secondary" onclick="practiseTopic('${esc(t.id)}')">${qs} question${qs === 1 ? '' : 's'}</button>` : ''}
+            <button class="btn btn-ghost" onclick="addTopicToQueue('${esc(t.id)}')">+ Audio queue</button>
+          </div>
+
+          ${t.why ? `<section class="t-sec t-why"><h3>Why it matters</h3><p>${rich(t.why)}</p></section>` : ''}
+
+          ${(t.keyPoints || []).length ? `<section class="t-sec"><h3>Key points</h3><ol class="key-list">${t.keyPoints.map(k => `<li>${rich(k)}</li>`).join('')}</ol></section>` : ''}
+
+          ${(t.numbers || []).length ? `<section class="t-sec"><h3>Numbers to know</h3><dl class="num-grid">${t.numbers.map(([v, m]) => `<div><dt>${esc(v)}</dt><dd>${esc(m)}</dd></div>`).join('')}</dl></section>` : ''}
+
+          ${(t.tables || []).map(tb => `<section class="t-sec"><h3>${esc(tb.title)}${tb.page && g.pdfUrl ? ` <a class="pg" href="${esc(pdfPageUrl(g, tb.page))}" target="_blank" rel="noopener">PDF p.${tb.page}</a>` : ''}</h3>
+            <div class="table-wrap"><table class="t-table"><thead><tr>${tb.columns.map(c => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>
+            <tbody>${tb.rows.map(r => `<tr>${r.map((c, ci) => ci === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+            ${tb.note ? `<p class="t-note">${esc(tb.note)}</p>` : ''}</section>`).join('')}
+
+          ${recs.length ? `<section class="t-sec"><h3>Recommendations, quoted in full</h3>
+            ${recs.map(r => `<div class="rec-card anchor-target" id="rec-${esc(r.id)}" tabindex="-1">
+              <div class="rec-top">${gradeBadge(r.grade)}<span class="rec-group">${esc(r.group)}</span>
+                ${g.pdfUrl ? `<a class="pg" href="${esc(pdfPageUrl(g, r.page))}" target="_blank" rel="noopener" aria-label="Open the PDF at page ${r.page}">PDF p.${r.page}</a>` : ''}</div>
+              <p>${esc(r.text)}</p></div>`).join('')}
+            <p class="t-note">Grades use GRADE: 1 = strong, 2 = weak (suggest); A–D = evidence quality, from high to very low.</p></section>` : ''}
+
+          ${(t.pitfalls || []).length ? `<section class="t-sec t-pitfalls"><h3>Exam pitfalls</h3><ul>${t.pitfalls.map(p => `<li>${rich(p)}</li>`).join('')}</ul></section>` : ''}
+
+          ${t.hook ? `<section class="t-sec t-hook"><h3>Memory hook</h3><p>${rich(t.hook)}</p></section>` : ''}
+
+          ${(t.selfTest || []).length ? `<section class="t-sec"><h3>Test yourself</h3><p class="t-note">Answer in your head first, then reveal.</p>
+            ${t.selfTest.map((s, si) => `<details class="self-test"><summary><span class="qn">Q${si + 1}</span> ${esc(s.q)}</summary><p>${esc(s.a)}</p></details>`).join('')}</section>` : ''}
+
+          <section class="t-sec t-cite"><h3>Source</h3><p>${esc(g.citation)}</p>
+            <div class="paper-links">${g.pdfUrl ? `<a class="btn btn-secondary" href="${esc(g.pdfUrl)}${t.pages && t.pages.length ? '#page=' + t.pages[0] : ''}" target="_blank" rel="noopener">Open the PDF${t.pages && t.pages.length ? ' at p.' + t.pages[0] : ''}</a>` : ''}
+            <a class="btn btn-ghost" href="${esc(g.onlineUrl)}" target="_blank" rel="noopener">Journal page</a></div></section>
+
+          <nav class="topic-nav" aria-label="Topic navigation">${navBtn(prev, -1)}${navBtn(next, 1)}</nav>
+          <p class="t-note swipe-hint">Tip: swipe left or right, or use the ← → keys, to move between topics.</p>
+        </article>`;
+    }
+
+    // Practise only the questions linked to one topic.
+    function practiseTopic(topicId) {
+      const ids = examQuestions.filter(q => q.topicId === topicId).map(q => q.id);
+      if (!ids.length) return;
+      switchTab('practice');
+      startPracticeSession(ids);
+    }
+
+    // Swipe between topics on touch screens (ignored when the gesture is mostly vertical or starts in a table).
+    (function enableTopicSwipe() {
+      let sx = 0, sy = 0, st = 0, tracking = false;
+      document.addEventListener('touchstart', e => {
+        const page = e.target.closest && e.target.closest('#topic-page');
+        tracking = !!page && !e.target.closest('.table-wrap') && e.touches.length === 1;
+        if (!tracking) return;
+        sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now();
+      }, { passive: true });
+      document.addEventListener('touchend', e => {
+        if (!tracking) return;
+        tracking = false;
+        const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > 70 && Math.abs(dx) > 2 * Math.abs(dy) && Date.now() - st < 800) stepTopic(dx < 0 ? 1 : -1);
+      }, { passive: true });
+    })();
+
+    function toggleAccordion() {}
+    function toggleAllAccordions() {}
+
+    // ================= Submit a paper to Claude =================
+    // The PDF goes to this site's /api/synthesise endpoint, which calls the Claude API with a
+    // server-side key. The result is a draft that is saved only on this device.
+    const PDF_DB = 'prepare_haem_files';
+    function pdfStore(mode, fn) {
+      return new Promise((resolve, reject) => {
+        let open;
+        try { open = indexedDB.open(PDF_DB, 1); } catch (e) { reject(e); return; }
+        open.onupgradeneeded = () => open.result.createObjectStore('pdfs');
+        open.onerror = () => reject(open.error);
+        open.onsuccess = () => {
+          const tx = open.result.transaction('pdfs', mode);
+          const req = fn(tx.objectStore('pdfs'));
+          tx.oncomplete = () => resolve(req && req.result);
+          tx.onerror = () => reject(tx.error);
+        };
       });
+    }
+    // Uploaded PDFs are kept in IndexedDB so the draft's page links open the original document.
+    function attachDraftPdfs() {
+      paperDrafts.filter(d => d.hasPdf).forEach(d => {
+        pdfStore('readonly', s => s.get(d.id)).then(blob => {
+          if (!blob) return;
+          const g = approvedGuidelines.find(x => x.draftId === d.id);
+          if (g) { g.pdfUrl = URL.createObjectURL(blob); if (document.getElementById('tab-summaries').classList.contains('active')) renderLearn(); }
+        }).catch(() => {});
+      });
+    }
+
+    let synthResult = null, synthFile = null, synthBusy = false;
+
+    function ensureSynthModal() {
+      if (document.getElementById('synth-modal')) return;
+      const el = document.createElement('div');
+      el.className = 'modal-overlay';
+      el.id = 'synth-modal';
+      el.innerHTML = `
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="synth-title">
+          <div class="modal-header">
+            <h3 id="synth-title" style="color:var(--text-strong);">Submit a paper to Claude</h3>
+            <button class="modal-close-btn" onclick="closeSynthModal()" aria-label="Close">&times;</button>
+          </div>
+          <p class="muted" style="margin-bottom:12px;">Claude reads the PDF and drafts topic summaries (with every recommendation quoted and graded), flashcards and questions. Drafts are saved only on this device and labelled <strong>AI draft: not checked</strong> until someone checks them against the PDF.</p>
+          <form id="synth-form" onsubmit="event.preventDefault(); submitPaperToClaude();">
+            <div class="form-group">
+              <label class="form-label" for="synth-file">PDF file</label>
+              <input type="file" id="synth-file" accept="application/pdf,.pdf" class="form-input" onchange="synthFile = this.files[0] || null" />
+              <p class="t-note">Up to about 3 MB on Vercel, or 30 MB on Cloudflare. For bigger files, use a link instead.</p>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="synth-url">…or a link to a PDF (https)</label>
+              <input type="url" id="synth-url" class="form-input" placeholder="https://…/guideline.pdf" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="synth-notes">Notes for Claude (optional)</label>
+              <textarea id="synth-notes" class="form-textarea" rows="2" maxlength="2000" placeholder="e.g. Focus on the laboratory sections"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="synth-code">Access code</label>
+              <input type="password" id="synth-code" class="form-input" autocomplete="off" />
+              <p class="t-note">Ask the site owner. It stops strangers from using the site's Claude allowance.</p>
+            </div>
+            <p class="t-note" style="margin-bottom:12px;">The document is sent to Anthropic's Claude API through this site's server. Only submit documents you are allowed to share.</p>
+            <button type="submit" class="btn btn-primary" id="synth-submit">Send to Claude</button>
+          </form>
+          <div id="synth-status" role="status" aria-live="polite" style="margin-top:12px;"></div>
+          <div id="synth-preview"></div>
+        </div>`;
+      document.body.appendChild(el);
+    }
+
+    function openSynthModal() {
+      ensureSynthModal();
+      try { document.getElementById('synth-code').value = localStorage.getItem('prepare_haem_synthCode') || ''; } catch (e) {}
+      document.getElementById('synth-modal').classList.add('open');
+      document.getElementById('synth-file').focus();
+    }
+    function closeSynthModal() {
+      const m = document.getElementById('synth-modal');
+      if (m) m.classList.remove('open');
+    }
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const r = new FileReader();
+        r.onload = () => resolve(String(r.result).split(',')[1] || '');
+        r.onerror = () => reject(r.error);
+        r.readAsDataURL(file);
+      });
+    }
+
+    function setSynthStatus(html) { document.getElementById('synth-status').innerHTML = html; }
+
+    async function submitPaperToClaude() {
+      if (synthBusy) return;
+      const url = document.getElementById('synth-url').value.trim();
+      const notes = document.getElementById('synth-notes').value.trim();
+      const code = document.getElementById('synth-code').value.trim();
+      document.getElementById('synth-preview').innerHTML = '';
+      synthResult = null;
+      if (!synthFile && !url) { setSynthStatus('<p class="form-error">Choose a PDF file or paste a link to one.</p>'); return; }
+      if (synthFile && synthFile.size > 30 * 1024 * 1024) { setSynthStatus('<p class="form-error">That PDF is larger than 30 MB.</p>'); return; }
+      if (!code) { setSynthStatus('<p class="form-error">Enter the access code.</p>'); return; }
+      if (!navigator.onLine) { setSynthStatus('<p class="form-error">You are offline. Connect to the internet to submit a paper.</p>'); return; }
+      try { localStorage.setItem('prepare_haem_synthCode', code); } catch (e) {}
+
+      synthBusy = true;
+      const btn = document.getElementById('synth-submit');
+      btn.disabled = true;
+      setSynthStatus('<p>Uploading…</p>');
+      try {
+        const body = { notes };
+        if (synthFile) { body.pdfBase64 = await fileToBase64(synthFile); body.fileName = synthFile.name; }
+        else body.pdfUrl = url;
+        const res = await fetch('/api/synthesise', { method: 'POST', headers: { 'content-type': 'application/json', 'x-access-code': code }, body: JSON.stringify(body) });
+        if (!res.ok || !(res.headers.get('content-type') || '').includes('ndjson')) {
+          let msg = `The server answered ${res.status}.`;
+          try { const j = await res.json(); if (j.error) msg = j.error; } catch (e) {
+            if (res.status === 413) msg = 'The PDF is too large for this server. Use a link to the PDF instead.';
+            else if (res.status === 404) msg = 'Paper submission is not available on this deployment.';
+          }
+          throw new Error(msg);
+        }
+        const reader = res.body.getReader();
+        const dec = new TextDecoder();
+        let buf = '', done = false, result = null, failure = null;
+        const started = Date.now();
+        while (!done) {
+          const chunk = await reader.read();
+          done = chunk.done;
+          buf += dec.decode(chunk.value || new Uint8Array(), { stream: !done });
+          let nl;
+          while ((nl = buf.indexOf('\n')) >= 0) {
+            const line = buf.slice(0, nl).trim();
+            buf = buf.slice(nl + 1);
+            if (!line) continue;
+            const ev = JSON.parse(line);
+            const secs = Math.round((Date.now() - started) / 1000);
+            if (ev.type === 'progress') setSynthStatus(`<p>${ev.stage === 'reading' ? 'Claude is reading the paper…' : `Claude is writing the draft… ${Math.round(ev.chars / 1000)}k characters`} (${secs}s). This usually takes 1–4 minutes. Keep this page open.</p>`);
+            else if (ev.type === 'result') result = ev;
+            else if (ev.type === 'error') failure = ev.error;
+          }
+        }
+        if (failure) throw new Error(failure);
+        if (!result) throw new Error('The connection closed before Claude finished. Please try again.');
+        synthResult = result.draft;
+        if (!synthFile && url) synthResult.sourceUrl = url;
+        setSynthStatus('<p class="badge badge-green" style="display:inline-block;">Draft ready. Review it below.</p>');
+        renderSynthPreview();
+      } catch (e) {
+        setSynthStatus(`<p class="form-error">${esc(e.message || 'Something went wrong.')}</p>`);
+      } finally {
+        synthBusy = false;
+        btn.disabled = false;
+      }
+    }
+
+    function renderSynthPreview() {
+      const d = synthResult;
+      if (!d) return;
+      document.getElementById('synth-preview').innerHTML = `
+        <section class="card" style="margin-top:12px;">
+          <h4 style="margin-bottom:4px;">${esc(d.paper.title)}</h4>
+          <p class="muted">${esc(d.paper.issuingBody)} · ${esc(d.paper.year)} · ${esc(d.paper.category)}</p>
+          <p style="margin:8px 0;">${esc(d.paper.overview)}</p>
+          <p><strong>${d.topics.length}</strong> topics · <strong>${d.recommendations.length}</strong> recommendations · <strong>${d.flashcards.length}</strong> flashcards · <strong>${d.questions.length}</strong> questions</p>
+          <ol style="margin:8px 0 8px 20px;">${d.topics.map(t => `<li>${esc(t.name)}</li>`).join('')}</ol>
+          ${d.warnings.length ? `<div class="t-pitfalls" style="padding:10px; border-radius:8px;"><strong>Claude flagged these for checking:</strong><ul>${d.warnings.map(w => `<li>${esc(w)}</li>`).join('')}</ul></div>` : ''}
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;">
+            <button class="btn btn-primary" onclick="saveSynthDraft()">Save draft on this device</button>
+            <button class="btn btn-secondary" onclick="exportDraftJson(synthResult)">Download JSON</button>
+            <button class="btn btn-ghost" onclick="synthResult=null; document.getElementById('synth-preview').innerHTML=''; setSynthStatus('');">Discard</button>
+          </div>
+        </section>`;
+    }
+
+    async function saveSynthDraft() {
+      if (!synthResult) return;
+      const id = Date.now().toString(36);
+      const draft = { ...synthResult, id, createdAt: Date.now(), hasPdf: !!synthFile };
+      if (synthFile) {
+        try { await pdfStore('readwrite', s => s.put(synthFile, id)); } catch (e) { draft.hasPdf = false; }
+      }
+      paperDrafts.push(draft);
+      if (!writeJson(DRAFTS_KEY, paperDrafts)) { toast('Could not save: this device\'s storage is full or blocked'); paperDrafts.pop(); return; }
+      try { sessionStorage.setItem('prepare_haem_openDraft', id); } catch (e) {}
+      location.reload(); // drafts are merged into the content at start-up
+    }
+
+    function deleteDraft(id) {
+      if (!confirm('Delete this AI draft, with its topics, cards and questions?')) return;
+      paperDrafts = paperDrafts.filter(d => d.id !== id);
+      writeJson(DRAFTS_KEY, paperDrafts);
+      pdfStore('readwrite', s => s.delete(id)).catch(() => {}).finally(() => location.reload());
+    }
+
+    // Download a draft in the repository's content/papers format, for a maintainer to check
+    // against the PDF and add to the app.
+    function exportDraftJson(d) {
+      if (typeof d === 'string') d = paperDrafts.find(x => x.id === d);
+      if (!d) return;
+      const slug = (d.paper.title || 'paper').toLowerCase().replace(/[^a-z0-9]+/g, '_').slice(0, 40);
+      const payload = {
+        guideline: { id: slug, title: d.paper.title, issuingBody: d.paper.issuingBody, year: d.paper.year, category: d.paper.category, citation: d.paper.citation, url: d.paper.doiUrl || d.sourceUrl || '', isVerified: false, pdf: null, overview: d.paper.overview },
+        recommendations: d.recommendations,
+        topics: d.topics,
+        _draftFlashcards: d.flashcards,
+        _draftQuestions: d.questions,
+        _warnings: d.warnings,
+        _note: 'AI draft from Prepare Haematology. Check every item against the PDF, set isVerified to true, then move the cards and questions into content/flashcards.json and content/questions.json.'
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${slug}.draft.json`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    }
+
+    function draftsSummaryHtml() {
+      if (!paperDrafts.length) return '';
+      return `<h4 style="margin:14px 0 6px;">Your AI drafts</h4><ul class="draft-list">${paperDrafts.map(d => `
+        <li><span><strong>${esc(d.paper.title.split(':')[0])}</strong><br><span class="muted">${d.topics.length} topics · ${d.flashcards.length} cards · ${d.questions.length} questions · saved ${new Date(d.createdAt).toLocaleDateString()}</span></span>
+          <span class="draft-actions"><button class="btn btn-secondary" onclick="openPaper('draft_${esc(d.id)}')">Open</button>
+          <button class="btn btn-ghost" onclick="exportDraftJson('${esc(d.id)}')">Download JSON</button>
+          <button class="btn btn-ghost" onclick="deleteDraft('${esc(d.id)}')">Delete</button></span></li>`).join('')}</ul>`;
     }
 
     // Spaced Repetition (SuperMemo-2 Implementation)
@@ -2164,9 +2481,9 @@
         + (st.mastered ? `<span class="badge badge-blue">${st.mastered} mastered</span>` : '');
     }
 
-    function paperHtml(g, anchor) {
+    function paperHtml(g, t) {
       if (!g) return '<span>Personal card (no source paper)</span>';
-      return `<span>Based on <button class="link-btn" aria-label="Open ${esc(g.shortRef)} at the relevant section" onclick="openGuidelineSummary('${esc(g.id)}', '${esc(anchor || '')}')">${esc(g.shortRef)}</button>`
+      return `<span>Based on <button class="link-btn" aria-label="Read the topic page for ${esc(t ? t.name : g.shortRef)}" onclick="${t ? `openTopic('${esc(t.id)}')` : `openPaper('${esc(g.id)}')`}">${esc(g.shortRef)}${t ? ': ' + esc(t.name) : ''}</button>`
         + ` (${esc(g.issuingBody.replace('British Society for Haematology', 'BSH'))})`
         + (g.pdfUrl ? ` · <a href="${esc(g.pdfUrl)}" target="_blank" rel="noopener">PDF</a>` : '')
         + `</span><span class="title" style="display:block;">${esc(g.title.split(':')[0])}</span>`;
@@ -2182,7 +2499,7 @@
             <h4 id="${listId}-h">${esc(t.name)}</h4>
             <div class="counts">${showDomain ? `<span class="badge badge-primary">${esc(t.domain)}</span>` : ''}${countsHtml(st)}</div>
           </div>
-          <p class="paper">${paperHtml(g, t.anchor)}</p>
+          <p class="paper">${paperHtml(g, t)}</p>
           <div class="actions">
             <button class="btn btn-primary" onclick="studyTopic('${esc(t.id)}')">${st.due ? `Study ${st.due} due` : 'Study topic'}</button>
             <details style="flex-basis:100%;">
@@ -2205,9 +2522,9 @@
       const personal = flashcards.filter(isPersonalCard);
 
       if (browseGrouping === 'domain') {
-        const domains = Array.from(new Set([...flashcardTopics.map(t => t.domain), ...personal.map(c => c.domain)]));
+        const domains = Array.from(new Set([...flashcardTopics.filter(t => flashcards.some(c => c.topicId === t.id)).map(t => t.domain), ...personal.map(c => c.domain)]));
         domains.forEach(domain => {
-          const topics = flashcardTopics.filter(t => t.domain === domain);
+          const topics = flashcardTopics.filter(t => t.domain === domain && flashcards.some(c => c.topicId === t.id));
           const domainCards = flashcards.filter(c => c.domain === domain);
           const st = cardStats(domainCards);
           html += `<section class="browse-group" aria-label="${esc(domain)}">
@@ -2218,15 +2535,16 @@
           </section>`;
         });
       } else {
-        const paperIds = Array.from(new Set(flashcardTopics.map(t => t.sourceResourceId)));
+        const carded = flashcardTopics.filter(t => flashcards.some(c => c.topicId === t.id));
+        const paperIds = Array.from(new Set(carded.map(t => t.sourceResourceId)));
         paperIds.forEach(pid => {
           const g = approvedGuidelines.find(x => x.id === pid);
-          const topics = flashcardTopics.filter(t => t.sourceResourceId === pid);
+          const topics = carded.filter(t => t.sourceResourceId === pid);
           const st = cardStats(flashcards.filter(c => c.sourceResourceId === pid && c.topicId));
           html += `<section class="browse-group" aria-label="${esc(g ? g.shortRef : pid)}">
             <header><div><h3>${esc(g ? g.title.split(':')[0] : pid)}</h3>
               <p>${esc(g ? g.shortRef : '')} · ${topics.length} topic${topics.length === 1 ? '' : 's'} · ${st.total} cards · ${st.due} due</p></div>
-              ${g ? `<button class="btn btn-secondary" onclick="openGuidelineSummary('${esc(g.id)}', 'summary')">Open paper summary</button>` : ''}</header>
+              ${g ? `<button class="btn btn-secondary" onclick="openPaper('${esc(g.id)}')">Open paper topics</button>` : ''}</header>
             ${topics.map(t => topicCardHtml(t, flashcards.filter(c => c.topicId === t.id), true)).join('')}
           </section>`;
         });
@@ -2296,7 +2614,7 @@
       const g = t ? paperFor(t) : null;
       line.hidden = false;
       line.innerHTML = t
-        ? `<span>Topic: <strong>${esc(t.name)}</strong></span><span>${paperHtml(g, t.anchor)}</span>`
+        ? `<span>Topic: <strong>${esc(t.name)}</strong></span><span>${paperHtml(g, t)}</span>`
         : `<span>Topic: <strong>My own card</strong></span><span>${esc(card.ref || 'No source paper')}</span>`;
     }
 
@@ -2332,7 +2650,7 @@
       if (srcBtn) {
         const hasSource = isFlipped && card.sourceResourceId && approvedGuidelines.some(g => g.id === card.sourceResourceId);
         srcBtn.hidden = !hasSource;
-        if (hasSource) srcBtn.innerText = anchorLabel(card.anchor, card.sourceResourceId);
+        if (hasSource) srcBtn.innerText = sourceLinkLabel(card);
       }
       document.getElementById('fc-flip-hint').innerText = isFlipped ? 'How well did you remember it?' : 'Tap to show answer';
       document.getElementById('active-flashcard').setAttribute('aria-label', isFlipped ? 'Flashcard answer. Press to show the question.' : 'Flashcard question. Press to show the answer.');
@@ -2350,7 +2668,7 @@
 
     function openCardSource() {
       const card = getFilteredFlashcards()[currentCardIndex];
-      if (card && card.sourceResourceId) openGuidelineSummary(card.sourceResourceId, card.anchor);
+      if (card) openSource(card);
     }
 
     function flipCurrentCard() {
@@ -2464,7 +2782,7 @@
         ref,
         front,
         back,
-        ...(topic ? { topicId: topic.id, topic: topic.name, sourceResourceId: topic.sourceResourceId, anchor: topic.anchor } : {}),
+        ...(topic ? { topicId: topic.id, topic: topic.name, sourceResourceId: topic.sourceResourceId } : {}),
         repetitions: 0,
         intervalDays: 1,
         easeFactor: 2.5,
@@ -2590,7 +2908,7 @@
             <div class="explanation-box">${esc(q.explanation)}</div>
             <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:12px; font-size:var(--fs-sm); color:var(--text-muted);">
               ${q.evidenceGrade ? `<span>Evidence: ${esc(q.evidenceGrade)}</span><span aria-hidden="true">·</span>` : ''}
-              ${g ? `<button class="btn btn-ghost" style="min-height:36px; padding:0 8px;" onclick="openGuidelineSummary('${esc(g.id)}', '${esc(q.anchor || '')}')">${esc(anchorLabel(q.anchor, g.id))} →</button>` : ''}
+              ${g ? `<button class="btn btn-ghost" style="min-height:36px; padding:0 8px;" onclick="openSourceById('question', '${esc(q.id)}')">${esc(sourceLinkLabel(q))} →</button>` : ''}
             </div>` : ''}
         </article>
         <div class="session-toolbar">
@@ -2826,7 +3144,7 @@
             <p style="margin-top:8px;"><strong>Your answer:</strong> ${esc(yours)}</p>
             <p><strong>Correct answer:</strong> ${String.fromCharCode(65 + q.correct)}. ${esc(q.options[q.correct])}</p>
             <div class="explanation-box">${esc(q.explanation)}</div>
-            <button class="btn btn-ghost" style="margin-top:6px; min-height:36px; padding:0 8px;" onclick="openGuidelineSummary('${esc(q.sourceResourceId)}', '${esc(q.anchor || '')}')">${esc(anchorLabel(q.anchor, q.sourceResourceId))} →</button>
+            <button class="btn btn-ghost" style="margin-top:6px; min-height:36px; padding:0 8px;" onclick="openSourceById('question', '${esc(q.id)}')">${esc(sourceLinkLabel(q))} →</button>
           </details></li>`;
       }).join('');
       document.getElementById('mock-final-score').innerText = `${pct}%`;
@@ -2875,29 +3193,28 @@
       updateDashboardStats();
     }
 
-    // Evidence Grounding Modal
+    // All recommendations of one paper, quoted in full with grades and PDF page links.
     function openGroundingModal(resId) {
       const res = approvedGuidelines.find(g => g.id === resId) || approvedGuidelines[0];
-      document.getElementById('grounding-title').innerText = res.title;
+      const topicFor = rid => learnSequence.find(t => t.sourceResourceId === res.id && (t.recs || []).includes(rid));
+      let lastGroup = null;
+      document.getElementById('grounding-title').innerText = res.title.split(':')[0];
       document.getElementById('grounding-body').innerHTML = `
-        <div style="margin-bottom:12px;">
-          <span class="badge badge-primary">${esc(res.domain)}</span>
-          <span class="badge ${res.isVerified ? 'badge-green' : ''}" style="${res.isVerified ? '' : 'background:var(--warning-soft); border:1px solid var(--warning-soft); color:var(--warning);'}">${esc(res.grade)}</span>
-          <span style="font-size:0.8rem; color:var(--text-muted); margin-left:8px;">${esc(res.issuingBody)} • ${esc(res.year)}</span>
-        </div>
-        <p style="margin-bottom:12px;"><strong>Citation:</strong> ${esc(res.citation)}</p>
-        <p style="margin-bottom:12px;"><strong>Clinical Summary:</strong> ${esc(res.summary)}</p>
-        <div style="background:var(--surface-2); padding:12px; border-radius:8px; margin-bottom:16px;">
-          <strong style="color:var(--accent-amber);">Key Cutoffs:</strong>
-          <div style="white-space:pre-line; margin-top:4px;">${esc(res.cutoffs)}</div>
-        </div>
-        <strong>Key Recommendations:</strong>
-        <ul class="key-points-list">
-          ${res.recommendations.map(r => `<li>${esc(r)}</li>`).join('')}
-        </ul>
-        <div style="display:flex; gap:10px; margin-top:20px;">
-          ${res.pdfUrl ? `<a href="${esc(res.pdfUrl)}" target="_blank" rel="noopener" class="btn btn-primary">Open PDF Document</a>` : ''}
-          <a href="${esc(res.onlineUrl)}" target="_blank" rel="noopener" class="btn btn-secondary">Open Online Guideline</a>
+        <p class="muted" style="margin-bottom:8px;">${esc(res.citation)}</p>
+        <p style="margin-bottom:12px;">${res.isVerified ? '<span class="badge badge-green">Checked against the PDF</span>' : '<span class="badge badge-amber">AI draft: not checked</span>'}
+          ${res.recommendations.length} recommendations, quoted in full.</p>
+        ${res.recommendations.map(r => {
+          const head = r.group !== lastGroup ? `<h4 class="rec-group-h">${esc(r.group)}</h4>` : '';
+          lastGroup = r.group;
+          const t = topicFor(r.id);
+          return head + `<div class="rec-card"><div class="rec-top">${gradeBadge(r.grade)}
+            ${res.pdfUrl ? `<a class="pg" href="${esc(pdfPageUrl(res, r.page))}" target="_blank" rel="noopener">PDF p.${r.page}</a>` : `<span class="pg">p.${r.page}</span>`}</div>
+            <p>${esc(r.text)}</p>
+            ${t ? `<button class="link-btn" style="font-size:var(--fs-sm);" onclick="closeGroundingModal(); openTopic('${esc(t.id)}', '${esc(r.id)}')">In topic: ${esc(t.name)}</button>` : ''}</div>`;
+        }).join('')}
+        <div style="display:flex; gap:10px; margin-top:20px; flex-wrap:wrap;">
+          ${res.pdfUrl ? `<a href="${esc(res.pdfUrl)}" target="_blank" rel="noopener" class="btn btn-primary">Open the PDF</a>` : ''}
+          <a href="${esc(res.onlineUrl)}" target="_blank" rel="noopener" class="btn btn-secondary">Journal page</a>
         </div>
       `;
       document.getElementById('grounding-modal').classList.add('open');
@@ -2907,102 +3224,297 @@
       document.getElementById('grounding-modal').classList.remove('open');
     }
 
-    // Audio & TTS
-    function speakText(text) {
-      if ('speechSynthesis' in window) {
-        openAudioPlayer();
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.rate = currentSpeechRate;
-        const voices = window.speechSynthesis.getVoices();
-        const voice = voices.find(v => v.lang.includes(preferredVoiceLocale.replace('-', '_')) || v.lang.includes(preferredVoiceLocale));
-        if (voice) utterance.voice = voice;
-        window.speechSynthesis.speak(utterance);
+    // ================= Audio (Web Speech API) =================
+    // Speech synthesis has no timeline, so each track is split into short segments and the
+    // player keeps its own clock. Duration is estimated from character count and speed, and
+    // corrected with word-boundary events where the browser sends them. Seeking (slider,
+    // ±10 s) restarts speech at the nearest word. Short utterances also avoid Chrome's
+    // habit of stopping long ones after about 15 s.
+    const CHARS_PER_SEC = 14.5; // about 155 words a minute at 1.0x
+    let audioSegments = [];     // [{ text, start, chars }] start = char offset in the track
+    let audioTrackChars = 0;
+    let audioPosChars = 0;      // playback position in characters
+    let audioGen = 0;           // bumps on every (re)start so stale onend events are ignored
+    let audioTick = null;
+    let segStartedAt = 0, segStartChar = 0, segBoundaryChar = 0;
+    let seeking = false;
+
+    function speechVoice() {
+      const voices = window.speechSynthesis.getVoices();
+      return voices.find(v => v.lang.replace('_', '-') === preferredVoiceLocale)
+        || voices.find(v => v.lang.includes(preferredVoiceLocale.split('-')[0]));
+    }
+
+    function splitIntoSegments(text) {
+      const parts = String(text).replace(/\s+/g, ' ').trim().match(/[^.!?;:]+[.!?;:]*\s*/g) || [];
+      const segs = [];
+      let offset = 0;
+      parts.forEach(p => {
+        // Break very long sentences at commas or spaces so no utterance runs too long.
+        let rest = p;
+        while (rest.length > 220) {
+          let cut = rest.lastIndexOf(', ', 220);
+          if (cut < 80) cut = rest.lastIndexOf(' ', 220);
+          if (cut < 80) cut = 220;
+          segs.push({ text: rest.slice(0, cut + 1), start: offset });
+          offset += cut + 1;
+          rest = rest.slice(cut + 1);
+        }
+        if (rest.trim()) segs.push({ text: rest, start: offset });
+        offset += rest.length;
+      });
+      return segs.map(s => ({ ...s, chars: s.text.length }));
+    }
+
+    function charsToSec(chars) { return chars / (CHARS_PER_SEC * currentSpeechRate); }
+    function fmtTime(sec) {
+      sec = Math.max(0, Math.round(sec));
+      return `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
+    }
+
+    function currentPosChars() {
+      if (!isSpeaking) return audioPosChars;
+      // Estimate from the clock since this segment started, but never behind the last boundary event.
+      const seg = audioSegments.find(s => segStartChar >= s.start && segStartChar < s.start + s.chars);
+      const est = segStartChar + (Date.now() - segStartedAt) / 1000 * CHARS_PER_SEC * currentSpeechRate;
+      const limit = seg ? seg.start + seg.chars : audioTrackChars;
+      return Math.min(limit, Math.max(est, segBoundaryChar));
+    }
+
+    function updateAudioProgressUI() {
+      const seek = document.getElementById('audio-seek');
+      const total = charsToSec(audioTrackChars);
+      const pos = charsToSec(currentPosChars());
+      if (seek && !seeking) {
+        seek.max = Math.max(1, Math.round(total));
+        seek.value = Math.min(seek.max, Math.round(pos));
+        seek.setAttribute('aria-valuetext', `${fmtTime(pos)} of ${fmtTime(total)}`);
       }
+      const cur = document.getElementById('audio-time-current');
+      const tot = document.getElementById('audio-time-total');
+      if (cur && !seeking) cur.innerText = fmtTime(pos);
+      if (tot) tot.innerText = fmtTime(total);
+    }
+
+    function setPlayButton(playing) {
+      const b = document.getElementById('play-pause-btn');
+      if (!b) return;
+      b.innerText = playing ? '⏸' : '▶';
+      b.setAttribute('aria-label', playing ? 'Pause' : 'Play');
+    }
+
+    function stopSpeechOnly() {
+      audioGen++;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      clearInterval(audioTick);
+      audioTick = null;
+    }
+
+    // Load a track (without playing) so the slider shows its length.
+    function loadAudioTrack(idx) {
+      currentAudioTrack = ((idx % audioPlaylist.length) + audioPlaylist.length) % audioPlaylist.length;
+      const track = audioPlaylist[currentAudioTrack];
+      audioSegments = splitIntoSegments(track.text);
+      audioTrackChars = audioSegments.length ? audioSegments[audioSegments.length - 1].start + audioSegments[audioSegments.length - 1].chars : 0;
+      audioPosChars = 0;
+      document.getElementById('player-title').innerText = track.title;
+      document.getElementById('player-subtitle').innerText = track.subtitle;
+      updateAudioProgressUI();
+    }
+
+    // Speak from a character position in the current track.
+    function speakFrom(posChars) {
+      if (!('speechSynthesis' in window) || !audioSegments.length) return;
+      stopSpeechOnly();
+      const gen = audioGen;
+      posChars = Math.max(0, Math.min(posChars, audioTrackChars));
+      let si = audioSegments.findIndex(s => posChars < s.start + s.chars);
+      if (si < 0) { audioPosChars = audioTrackChars; onTrackFinished(); return; }
+
+      const speakSeg = (index, fromChar) => {
+        if (gen !== audioGen) return;
+        const seg = audioSegments[index];
+        if (!seg) { audioPosChars = audioTrackChars; onTrackFinished(); return; }
+        let offset = Math.max(0, fromChar - seg.start);
+        if (offset > 0) { // start on a word boundary
+          const sp = seg.text.lastIndexOf(' ', offset);
+          offset = sp > 0 ? sp + 1 : 0;
+        }
+        const text = seg.text.slice(offset);
+        const base = seg.start + offset;
+        segStartChar = base;
+        segBoundaryChar = segStartChar;
+        segStartedAt = Date.now();
+        audioPosChars = segStartChar;
+        const u = new SpeechSynthesisUtterance(text);
+        u.rate = currentSpeechRate;
+        u.lang = preferredVoiceLocale;
+        const v = speechVoice();
+        if (v) u.voice = v;
+        u.onstart = () => { if (gen === audioGen) segStartedAt = Date.now(); };
+        u.onboundary = e => {
+          if (gen !== audioGen || typeof e.charIndex !== 'number') return;
+          segBoundaryChar = base + e.charIndex;
+          // Re-anchor the clock to the real position so the estimate does not drift.
+          segStartChar = segBoundaryChar;
+          segStartedAt = Date.now();
+        };
+        u.onend = () => {
+          if (gen !== audioGen) return;
+          audioPosChars = seg.start + seg.chars;
+          speakSeg(index + 1, seg.start + seg.chars);
+        };
+        u.onerror = e => {
+          if (gen !== audioGen || e.error === 'interrupted' || e.error === 'canceled') return;
+          isSpeaking = false; setPlayButton(false); clearInterval(audioTick);
+        };
+        window.speechSynthesis.speak(u);
+      };
+
+      isSpeaking = true;
+      setPlayButton(true);
+      openAudioPlayer();
+      audioTick = setInterval(updateAudioProgressUI, 250);
+      speakSeg(si, posChars);
+      updateAudioProgressUI();
+    }
+
+    function onTrackFinished() {
+      isSpeaking = false;
+      clearInterval(audioTick);
+      setPlayButton(false);
+      updateAudioProgressUI();
+      if (currentAudioTrack < audioPlaylist.length - 1) playAudioTrack(currentAudioTrack + 1);
     }
 
     function playAudioTrack(idx) {
-      if (!('speechSynthesis' in window) || audioPlaylist.length === 0) return;
-      window.speechSynthesis.cancel();
-      currentAudioTrack = idx % audioPlaylist.length;
-      const track = audioPlaylist[currentAudioTrack];
-      document.getElementById('player-title').innerText = track.title;
-      document.getElementById('player-subtitle').innerText = track.subtitle;
-
-      const utterance = new SpeechSynthesisUtterance(track.text);
-      utterance.rate = currentSpeechRate;
-
-      const voices = window.speechSynthesis.getVoices();
-      const voice = voices.find(v => v.lang.includes(preferredVoiceLocale.replace('-', '_')) || v.lang.includes(preferredVoiceLocale));
-      if (voice) utterance.voice = voice;
-
-      utterance.onend = () => {
-        isSpeaking = false;
-        document.getElementById('play-pause-btn').innerText = '▶';
-        if (currentAudioTrack < audioPlaylist.length - 1) {
-          playAudioTrack(currentAudioTrack + 1);
-        }
-      };
-
-      window.speechSynthesis.speak(utterance);
-      isSpeaking = true;
-      openAudioPlayer();
-      document.getElementById('play-pause-btn').innerText = '⏸';
+      if (!('speechSynthesis' in window)) { toast('Read-aloud is not supported in this browser'); return; }
+      if (audioPlaylist.length === 0) return;
+      loadAudioTrack(idx);
+      speakFrom(0);
     }
 
-    function openAudioPlayer() { document.body.classList.add('audio-open'); }
-    function closeAudioPlayer() {
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    // Plain speech without the queue (kept for older callers).
+    function speakText(text) {
+      audioPlaylist.unshift({ id: 'adhoc_' + Date.now(), title: 'Read aloud', subtitle: '', text });
+      updatePlaylistUI();
+      playAudioTrack(0);
+    }
+
+    function pauseAudio() {
+      audioPosChars = currentPosChars();
+      stopSpeechOnly();
       isSpeaking = false;
-      document.getElementById('play-pause-btn').innerText = '▶';
-      document.body.classList.remove('audio-open');
+      setPlayButton(false);
+      updateAudioProgressUI();
     }
 
     function toggleAudioPlayback() {
       if (audioPlaylist.length === 0) populateAudioPlaylistFromGuidelines();
-      if (!isSpeaking) {
-        playAudioTrack(currentAudioTrack);
-      } else {
-        window.speechSynthesis.cancel();
-        isSpeaking = false;
-        document.getElementById('play-pause-btn').innerText = '▶';
-      }
+      if (!audioSegments.length) loadAudioTrack(currentAudioTrack);
+      if (isSpeaking) pauseAudio();
+      else speakFrom(audioPosChars >= audioTrackChars ? 0 : audioPosChars);
     }
 
-    function nextAudioTrack() {
-      playAudioTrack(currentAudioTrack + 1);
+    function seekAudioSeconds(sec) {
+      const chars = Math.max(0, Math.min(audioTrackChars, sec * CHARS_PER_SEC * currentSpeechRate));
+      if (isSpeaking) speakFrom(chars);
+      else { audioPosChars = chars; updateAudioProgressUI(); }
+    }
+    function skipAudio(deltaSec) {
+      if (!audioSegments.length) return;
+      seekAudioSeconds(charsToSec(currentPosChars()) + deltaSec);
+    }
+    function onSeekInput(val) {
+      seeking = true;
+      const cur = document.getElementById('audio-time-current');
+      if (cur) cur.innerText = fmtTime(Number(val));
+    }
+    function onSeekChange(val) {
+      seeking = false;
+      seekAudioSeconds(Number(val));
     }
 
+    function nextAudioTrack() { if (audioPlaylist.length) playAudioTrack(currentAudioTrack + 1); }
     function prevAudioTrack() {
-      playAudioTrack(currentAudioTrack - 1 + audioPlaylist.length);
+      if (!audioPlaylist.length) return;
+      // Like a music player: restart the track unless we are within its first 3 seconds.
+      if (charsToSec(currentPosChars()) > 3) seekAudioSeconds(0);
+      else playAudioTrack(currentAudioTrack - 1);
+    }
+
+    function syncSpeedControls() {
+      const sel = document.getElementById('audio-speed-select');
+      if (sel) {
+        const match = Array.from(sel.options).find(o => parseFloat(o.value) === currentSpeechRate);
+        if (match) sel.value = match.value;
+      }
+      const range = document.getElementById('setting-rate');
+      if (range) range.value = currentSpeechRate;
+      const label = document.getElementById('setting-rate-label');
+      if (label) label.innerText = currentSpeechRate.toFixed(2).replace(/0$/, '') + 'x';
     }
 
     function changeAudioSpeed(val) {
-      currentSpeechRate = parseFloat(val);
-      if (isSpeaking) playAudioTrack(currentAudioTrack);
+      const pos = currentPosChars(); // position is kept in characters, so it survives a speed change
+      currentSpeechRate = Math.min(2, Math.max(0.5, parseFloat(val) || 1));
+      syncSpeedControls();
+      if (isSpeaking) speakFrom(pos);
+      else updateAudioProgressUI();
     }
 
-    function playSpecificSummary(idx) {
-      if (audioPlaylist.length === 0) populateAudioPlaylistFromGuidelines();
-      playAudioTrack(idx);
+    function openAudioPlayer() { document.body.classList.add('audio-open'); }
+    function closeAudioPlayer() {
+      stopSpeechOnly();
+      isSpeaking = false;
+      setPlayButton(false);
+      document.body.classList.remove('audio-open');
     }
 
-    function addSummaryToQueue(idx) {
-      const g = approvedGuidelines[idx];
-      audioPlaylist.push({
-        id: g.id,
-        title: g.title,
-        subtitle: `${g.domain} • ${g.grade}`,
-        text: `Summary of ${g.title}. ${g.summary} Recommendations: ${g.recommendations.join(". ")}`
-      });
+    // ---- What gets read: topic pages ----
+    function topicSpeech(t) {
+      const g = paperFor(t);
+      const parts = [`${t.name}. From ${g ? g.shortRef : 'the guideline'}.`];
+      if (t.why) parts.push(`Why it matters. ${plain(t.why)}`);
+      if ((t.keyPoints || []).length) parts.push('Key points. ' + t.keyPoints.map(plain).join(' '));
+      if ((t.numbers || []).length) parts.push('Numbers to know. ' + t.numbers.map(([v, m]) => `${v}: ${m}.`).join(' '));
+      (t.tables || []).forEach(tb => parts.push(`${tb.title}. ` + tb.rows.map(r => r.map((c, i) => i ? `${tb.columns[i]}: ${c}` : c).join(', ') + '.').join(' ')));
+      const recs = (t.recs || []).map(id => recById(g, id)).filter(Boolean);
+      if (recs.length) parts.push('Recommendations. ' + recs.map(r => `${r.grade ? 'Grade ' + r.grade + '. ' : ''}${r.text}`).join(' '));
+      if ((t.pitfalls || []).length) parts.push('Exam pitfalls. ' + t.pitfalls.map(plain).join(' '));
+      if (t.hook) parts.push(`Memory hook. ${plain(t.hook)}`);
+      return parts.join(' ').replace(/×/g, ' times ').replace(/≥/g, ' at least ').replace(/≤/g, ' at most ').replace(/</g, ' less than ').replace(/>/g, ' more than ').replace(/−/g, 'minus ');
+    }
+    function topicTrack(t) {
+      const g = paperFor(t);
+      return { id: t.id, title: t.name, subtitle: `${t.domain}${g ? ' · ' + g.shortRef : ''}`, text: topicSpeech(t) };
+    }
+
+    function populateAudioPlaylistFromGuidelines() {
+      audioPlaylist = learnSequence.map(topicTrack);
       updatePlaylistUI();
-      toast('Added to audio queue'); openAudioPlayer();
     }
-
-    function queueAllSummariesAudio() {
-      populateAudioPlaylistFromGuidelines();
+    function queueTopicsAudio(domain) {
+      audioPlaylist = learnSequence.filter(t => !domain || t.domain === domain).map(topicTrack);
+      updatePlaylistUI();
       playAudioTrack(0);
     }
+    function playTopicAudio(topicId) {
+      const t = topicById.get(topicId);
+      if (!t) return;
+      let idx = audioPlaylist.findIndex(x => x.id === t.id);
+      if (idx < 0) { audioPlaylist.unshift(topicTrack(t)); idx = 0; updatePlaylistUI(); }
+      playAudioTrack(idx);
+    }
+    function addTopicToQueue(topicId) {
+      const t = topicById.get(topicId);
+      if (!t) return;
+      audioPlaylist.push(topicTrack(t));
+      updatePlaylistUI();
+      if (audioPlaylist.length === 1) loadAudioTrack(0);
+      toast('Added to audio queue'); openAudioPlayer();
+    }
+    function queueAllSummariesAudio() { queueTopicsAudio(null); }
 
     function queueDueCardsAudio() {
       flashcards.forEach(c => {
@@ -3014,13 +3526,18 @@
         });
       });
       updatePlaylistUI();
+      if (audioPlaylist.length === flashcards.length) loadAudioTrack(0);
       toast(`Queued ${flashcards.length} flashcards`); openAudioPlayer();
     }
 
     function clearAudioQueue() {
-      window.speechSynthesis.cancel();
+      stopSpeechOnly();
+      isSpeaking = false;
+      setPlayButton(false);
       audioPlaylist = [];
+      audioSegments = []; audioTrackChars = 0; audioPosChars = 0;
       updatePlaylistUI();
+      updateAudioProgressUI();
     }
 
     function updatePlaylistUI() {
@@ -3028,25 +3545,27 @@
       const list = document.getElementById('playlist-items-list');
       if (!list) return;
       if (audioPlaylist.length === 0) {
-        list.innerHTML = `<p style="color:var(--text-muted); padding:16px 0;">Audio queue is currently empty.</p>`;
+        list.innerHTML = `<p style="color:var(--text-muted); padding:16px 0;">The audio queue is empty.</p>`;
         return;
       }
       list.innerHTML = audioPlaylist.map((t, i) => `
-        <div style="display:flex; justify-content:space-between; align-items:center; padding:10px; background:var(--surface-2); border-radius:6px; margin-bottom:8px; border:1px solid var(--card-border);">
-          <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; padding:10px; background:var(--surface-2); border-radius:6px; margin-bottom:8px; border:1px solid var(--card-border);">
+          <div style="min-width:0;">
             <div style="font-size:0.9rem; font-weight:600; color:var(--text-strong);">${i + 1}. ${esc(t.title)}</div>
-            <div style="font-size:0.75rem; color:var(--primary);">${esc(t.subtitle)}</div>
+            <div style="font-size:0.75rem; color:var(--primary);">${esc(t.subtitle)} · about ${fmtTime(charsToSec(String(t.text).length))}</div>
           </div>
           <div style="display:flex; gap:6px;">
-            <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="playAudioTrack(${i})">▶ Play</button>
-            <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="removePlaylistItem(${i})">✕</button>
+            <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="playAudioTrack(${i})" aria-label="Play ${esc(t.title)}">▶ Play</button>
+            <button class="btn btn-secondary" style="padding:4px 8px; font-size:0.75rem;" onclick="removePlaylistItem(${i})" aria-label="Remove ${esc(t.title)}">✕</button>
           </div>
         </div>
       `).join('');
     }
 
     function removePlaylistItem(idx) {
+      if (idx === currentAudioTrack && isSpeaking) pauseAudio();
       audioPlaylist.splice(idx, 1);
+      if (idx < currentAudioTrack) currentAudioTrack--;
       updatePlaylistUI();
     }
 
@@ -3061,7 +3580,6 @@
     }
 
     function updateSpeechRateSetting(val) {
-      document.getElementById('setting-rate-label').innerText = val + 'x';
       changeAudioSpeed(val);
       saveAppSetting('speechRate', val);
     }
@@ -3104,8 +3622,7 @@
         } catch(e) {}
         changeTheme('system');
         currentSpeechRate = 1.0;
-        document.getElementById('setting-rate').value = 1.0;
-        document.getElementById('setting-rate-label').innerText = '1.0x';
+        syncSpeedControls();
         document.getElementById('setting-mock-duration').value = '20';
         updateDashboardStats();
         toast("Settings reset");
@@ -3326,6 +3843,11 @@
       }
       const active = document.querySelector('.tab-panel.active');
       const tab = active ? active.id.replace('tab-', '') : '';
+      if (tab === 'summaries' && learnView.level === 'topic' && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+        e.preventDefault();
+        stepTopic(e.key === 'ArrowRight' ? 1 : -1);
+        return;
+      }
       if (tab === 'flashcards' && flashcardView === 'study') {
         if (e.key === ' ' && !(t && t.tagName === 'BUTTON')) { e.preventDefault(); flipCurrentCard(); }
         else if (isFlipped && ['1', '2', '3', '4'].includes(e.key)) { rateFlashcard([1, 3, 4, 5][Number(e.key) - 1]); }
@@ -3383,11 +3905,15 @@
         const savedRate = localStorage.getItem('prepare_haem_speechRate');
         if (savedRate) {
           currentSpeechRate = parseFloat(savedRate);
-          document.getElementById('setting-rate').value = savedRate;
-          document.getElementById('setting-rate-label').innerText = savedRate + 'x';
-          document.getElementById('audio-speed-select').value = savedRate;
+          syncSpeedControls();
         }
       } catch(e) {}
+
+      attachDraftPdfs();
+      try {
+        const openDraft = sessionStorage.getItem('prepare_haem_openDraft');
+        if (openDraft) { sessionStorage.removeItem('prepare_haem_openDraft'); openPaper('draft_' + openDraft); toast('Draft saved on this device'); }
+      } catch (e) {}
 
       initPwa();
     });

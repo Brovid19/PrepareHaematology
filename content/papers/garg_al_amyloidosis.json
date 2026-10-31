@@ -1,0 +1,294 @@
+{
+  "guideline": {
+    "id": "bsh_amyloidosis_2026",
+    "title": "Early diagnosis of AL amyloidosis in haematology, cardiology, neurology, renal and general clinics: A British Society for Haematology Guideline",
+    "issuingBody": "British Society for Haematology",
+    "year": 2026,
+    "category": "Malignant Haematology",
+    "citation": "Garg M, Choudhuri S, Parrish C, Hawkins S, Lachmann H, Clayton L, Richardson J, Chan YLT, Wechalekar A. Br J Haematol. 2026;208(6):1931–1938.",
+    "url": "https://doi.org/10.1111/bjh.70472",
+    "isVerified": true,
+    "pdf": "Br_J_Haematol_-_2026_-_Garg_-_Early_diagnosis_of_AL_amyloidosis_in_haematology_cardiology_neurology_renal_and_general_b50657c2.pdf",
+    "overview": "AL amyloidosis is caused by a plasma cell clone, usually with less than 10% marrow plasma cells (a 'small dangerous clone'), that makes misfolded light chains. These deposit as amyloid fibrils and damage organs. Survival depends on how much organ damage is present at diagnosis, and most patients are still diagnosed late. This guideline is aimed mainly at non-haematologists. It sets out the biomarkers and red flags that should raise suspicion in MGUS, cardiology, renal and neurology clinics, and says when to refer urgently. It is written to prompt suspicion and referral, not to guide treatment."
+  },
+  "recommendations": [
+    { "id": "mgus-1", "group": "Patients in monitoring clinics for MGUS", "grade": "1A", "page": 4, "text": "Urine PCR and ACR and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS." },
+    { "id": "mgus-2", "group": "Patients in monitoring clinics for MGUS", "grade": "1A", "page": 4, "text": "Falling serum albumin levels and raised alkaline phosphatase should be noted and if persistent, then should be investigated further." },
+    { "id": "mgus-3", "group": "Patients in monitoring clinics for MGUS", "grade": "1A", "page": 4, "text": "Patients can progress to AL amyloidosis with minimal or no increase in clonal light chains." },
+    { "id": "cardiac-1", "group": "Patients presenting with cardiac failure in cardiology clinics", "grade": "1B", "page": 5, "text": "Amyloid should be considered as a differential cause of unexplained cardiac failure." },
+    { "id": "cardiac-2", "group": "Patients presenting with cardiac failure in cardiology clinics", "grade": "1B", "page": 5, "text": "Screening investigations for AL amyloidosis should be undertaken in all patients with unexplained cardiac failure, especially with preserved ejection fraction." },
+    { "id": "cardiac-3", "group": "Patients presenting with cardiac failure in cardiology clinics", "grade": "1A", "page": 5, "text": "Every effort should be made to clarify the type of amyloid deposits in any patient with cardiac amyloidosis in a patient with MGUS at a specialist centre as MGUS and unrelated ATTR frequently coexist. Please note that both AL and ATTR may also occur concurrently." },
+    { "id": "renal-1", "group": "Patients presenting with a paraprotein in renal clinics", "grade": "1A", "page": 5, "text": "Urine PCR and ACR can be a surrogate for 24-h urine collection for quantitation of proteinuria and albuminuria; urine ACR and urine PCR should be monitored in all cases of MGUS." },
+    { "id": "renal-2", "group": "Patients presenting with a paraprotein in renal clinics", "grade": "1A", "page": 5, "text": "Kidney biopsy is the most definitive test to make a diagnosis of MGRS and AL amyloidosis affecting kidneys and should be considered in any patient with MGUS/SMM with unexplained rise in urine ACR > 50." },
+    { "id": "renal-3", "group": "Patients presenting with a paraprotein in renal clinics", "grade": "2B", "page": 5, "text": "A kidney biopsy can be avoided in the presence of MGUS/SMM and confirmation of AL amyloid deposits on another biopsy (bone marrow or fat pad biopsy)." },
+    { "id": "neuro-1", "group": "Patients presenting with a paraprotein in neurology clinics", "grade": "1A", "page": 6, "text": "The combination of peripheral and autonomic neuropathy without a cause should prompt screening for amyloidosis." },
+    { "id": "neuro-2", "group": "Patients presenting with a paraprotein in neurology clinics", "grade": "1A", "page": 6, "text": "A sustained fall in blood pressures by 20/10 mm Hg by 3 min with little compensatory rise in heart rate suggests neurogenic orthostatic hypotension." },
+    { "id": "neuro-3", "group": "Patients presenting with a paraprotein in neurology clinics", "grade": "1A", "page": 6, "text": "Concurrent carpal tunnel syndrome in addition to other systemic features of AL amyloidosis as shown in Figure 1 should raise the clinical suspicion for AL." }
+  ],
+  "topics": [
+    {
+      "id": "al-overview",
+      "name": "Why early diagnosis changes outcome",
+      "pages": [1, 2],
+      "why": "Prognosis in AL amyloidosis is set by the stage of organ damage when it is found. Advanced cardiac disease can kill within months even with modern treatment, so the gain comes from finding it earlier.",
+      "keyPoints": [
+        "AL amyloidosis is a **conformational disease**: a plasma cell clone makes abnormal light chains that misfold and deposit as amyloid fibrils, damaging organ function.",
+        "Most patients have **bone marrow plasma cells below 10%** (an MGUS-like phenotype). These clones are low grade and otherwise benign, but they cause life-threatening organ damage, hence the term **'small dangerous plasma cell clones'**.",
+        "**Cardiac involvement is the main cause of death.** Renal involvement causes major morbidity through progressive renal failure.",
+        "Diagnosis is often late: in a patient survey, **nearly 40%** were diagnosed at least a year after symptoms began.",
+        "Clinical features are protean and reflect advanced organ damage. **Involvement of two or more systems** is a key diagnostic clue, and symptoms often mimic commoner conditions.",
+        "ATTR (transthyretin) amyloidosis is now the **commonest acquired type** of amyloid, especially cardiac ATTR in the elderly, helped by better cardiac imaging.",
+        "Sensitive biomarkers of the clone and of organ involvement (FLC, NT-proBNP, troponin, ACR/PCR, ALP) are used for **risk stratification** and can also be used for **early identification**.",
+        "Audience: primary and secondary care **non-haematology physicians** first, haematologists second. AL can present in **any clinic**, including general medicine, care of the elderly and general practice.",
+        "ALChemy data (3349 patients) show that **two-thirds of renal AL patients still present at stage II or III**. The proportion of cardiac patients presenting at stage IIIa has improved as awareness in cardiology has grown."
+      ],
+      "numbers": [
+        ["~80% vs <30%", "5-year survival in early-stage vs advanced disease with contemporary treatment"],
+        ["75%", "patients with stage III renal disease at presentation who need dialysis"],
+        ["~40%", "diagnosed at least 1 year after symptom onset"],
+        ["50.4%", "new NAC diagnoses with stage III disease"],
+        ["15%", "new NAC diagnoses with very advanced stage IIIb"],
+        ["~4 months", "median survival in AL-ISS stage IIIc (IIIb plus abnormal global longitudinal strain)"],
+        ["<10%", "marrow plasma cells in most AL patients"]
+      ],
+      "pitfalls": [
+        "Do not be reassured by a low plasma cell percentage or a 'benign' MGUS: the dangerous part is the light chain, not the size of the clone.",
+        "Cardiac and renal staging (Tables 2 and 3) is **prognostic**. It is included to show why early diagnosis matters, not as a diagnostic test."
+      ],
+      "hook": "Small clone, big damage: in AL, the light chain does the harm, not the clone size.",
+      "selfTest": [
+        { "q": "What is the 5-year survival with contemporary treatment in early-stage versus advanced AL amyloidosis?", "a": "About 80% in early-stage disease versus less than 30% in advanced disease." },
+        { "q": "What new stage did AL-ISS add, and what is its median survival?", "a": "Stage IIIc: stage IIIb plus global longitudinal strain worse than −9%. Median survival is about 4 months." },
+        { "q": "Why are AL clones called 'small dangerous plasma cell clones'?", "a": "Most have less than 10% marrow plasma cells (MGUS-like) but still cause life-threatening organ damage." }
+      ]
+    },
+    {
+      "id": "al-screening",
+      "name": "Suspecting AL in MGUS: screening tests and thresholds",
+      "pages": [2, 3, 4],
+      "why": "MGUS and smouldering myeloma clinics are where AL can be caught before symptoms appear, but only if the right organ biomarkers are added to routine paraprotein monitoring.",
+      "keyPoints": [
+        "AL amyloidosis is **commoner than often appreciated** and is a well-established complication of monoclonal gammopathies.",
+        "**Lambda** light chain disease carries particular risk, but AL can occur with kappa disease or an intact paraprotein without light chain excess.",
+        "Biomarker screening finds **presymptomatic** AL. In a study of 4742 MGUS patients followed for a median of 4 years, AL was confirmed at a presymptomatic stage in **36% (22/60)** of those with an altered sFLC ratio and a biomarker abnormality. **None** of the MGUS cases without a biomarker change progressed to AL.",
+        "At baseline and at **every** monitoring visit, add **urine ACR and PCR and NT-proBNP** to the standard tests (SPE, IFE, sFLC, FBC, U&E, bone profile, LFT). Add a **troponin** if NT-proBNP is abnormal.",
+        "Thresholds that should raise suspicion of organ involvement: **kidney**: 24 h proteinuria >0.5 g/24 h, or urine PCR >50 mg/mmol with a concordant ACR >30 mg/mmol; **heart**: NT-proBNP >332 ng/L; **liver**: ALP >1.5 × the institutional upper limit of normal.",
+        "**NT-proBNP is always raised in cardiac AL** and can rise years before cardiac amyloid becomes clinically evident. An unexplained level >332 ng/L, or a progressively rising one, should raise high suspicion. It can be **falsely raised in AF, renal impairment and the elderly**.",
+        "The first sign of renal amyloid is often **albuminuria**. ACR detects albumin specifically (glomerular disease). PCR detects all protein, **including Bence Jones protein**. PCR 50 mg/mmol is roughly 0.5 g/24 h. A **PCR rise without an ACR rise** in MGUS suggests Bence Jones proteinuria rather than glomerular amyloid.",
+        "**ALP is raised in 86%** of hepatic amyloidosis. Weight loss and hepatomegaly are late features, and a **raised bilirubin is a poor prognostic marker**.",
+        "Progression to AL can happen with **minimal or no rise in clonal light chains**. Treat new symptoms as being as important as classic myeloma features: pedal oedema, unexplained severe fatigue, weight loss, dry mouth, difficulty chewing or swallowing, postural hypotension, frothy urine and breathlessness.",
+        "If AL is suspected, get a **histological diagnosis with amyloid typing**. **Congo red positivity in a biopsy from any site (including bone marrow)** should prompt detailed assessment of end-organ involvement.",
+        "Remember other M-protein disorders: **MGRS, light chain deposition disease and POEMS** (polyneuropathy, organomegaly/oedema, endocrinopathy, monoclonal gammopathy, skin changes)."
+      ],
+      "tables": [
+        {
+          "title": "Table 1: Screening investigations for AL amyloidosis in non-haematology clinics",
+          "page": 3,
+          "columns": ["Investigation", "What it looks for"],
+          "rows": [
+            ["Immunoglobulins, SPE and IFE", "The paraprotein"],
+            ["Serum free light chains (κ, λ, ratio)", "Light chain excess"],
+            ["Urine electrophoresis and IFE", "Bence Jones protein"],
+            ["Urine ACR and PCR", "Albuminuria and total proteinuria (kidney)"],
+            ["U&E", "Renal function"],
+            ["LFTs: albumin, bilirubin, ALT, ALP", "Liver involvement, hypoalbuminaemia"],
+            ["Bone profile: Ca, albumin, phosphate, ALP", "Myeloma, liver"],
+            ["Coagulation screen (PT, APTT)", "e.g. acquired factor X deficiency"],
+            ["NT-proBNP or BNP", "Cardiac involvement"],
+            ["Troponin (TnT or TnI)", "Cardiac involvement (use the local assay; raise concern above the local range, corrected for renal function)"],
+            ["ECG", "Low voltages, conduction disease"]
+          ],
+          "note": "If troponin is requested outside a specialist clinic, tell the patient it is a staging test for a different condition. A raised result may otherwise trigger an acute coronary syndrome pathway."
+        }
+      ],
+      "numbers": [
+        [">332 ng/L", "NT-proBNP: suspect cardiac involvement"],
+        [">50 mg/mmol + ACR >30", "Urine PCR with concordant ACR: suspect kidney involvement"],
+        [">0.5 g/24 h", "24 h proteinuria: suspect kidney involvement"],
+        [">1.5 × ULN", "ALP: suspect liver involvement"],
+        ["86%", "hepatic amyloid with raised ALP"],
+        ["36% (22/60)", "MGUS patients with abnormal sFLCr and a biomarker change who had presymptomatic AL"],
+        ["4742", "MGUS patients in that single-centre study (median follow-up 4 years)"]
+      ],
+      "recs": ["mgus-1", "mgus-2", "mgus-3"],
+      "pitfalls": [
+        "A stable FLC level does not exclude progression to AL.",
+        "A high NT-proBNP in an elderly patient with AF or CKD may be a false positive. Look at the trend and the context, but do not dismiss it.",
+        "A discordant PCR rise with a normal ACR is Bence Jones proteinuria, not glomerular amyloid.",
+        "Falling albumin or rising ALP that persists in an MGUS patient needs investigation (Grade 1A), not just a note in the record."
+      ],
+      "hook": "MGUS monitoring needs \"A-P-N\": ACR, PCR, NT-proBNP every visit; then T for troponin if N is up.",
+      "selfTest": [
+        { "q": "Which three tests does the guideline add to routine MGUS monitoring, and at which visits?", "a": "Urine ACR, urine PCR and NT-proBNP, at baseline and at every monitoring visit (Grade 1A). Add troponin if NT-proBNP is abnormal." },
+        { "q": "An MGUS patient's urine PCR rises but ACR is normal. What is the likely explanation?", "a": "Bence Jones (light chain) proteinuria. PCR detects all protein, while ACR detects only albumin." },
+        { "q": "Give the thresholds that suggest cardiac, renal and hepatic involvement.", "a": "Cardiac: NT-proBNP >332 ng/L. Renal: proteinuria >0.5 g/24 h, or PCR >50 mg/mmol with ACR >30 mg/mmol. Hepatic: ALP >1.5 × ULN." }
+      ]
+    },
+    {
+      "id": "al-staging",
+      "name": "Cardiac and renal staging (prognosis)",
+      "pages": [3, 4],
+      "why": "The staging tables are the clearest evidence that early diagnosis matters: median survival falls from 'not reached at 5 years' to 4 months, and dialysis risk rises to 60–75% at 2 years.",
+      "keyPoints": [
+        "Cardiac staging (Table 2) uses **NT-proBNP** (cut-offs **332** and **8500 ng/L**) and **troponin T** (cut-off **0.035**). AL-ISS adds **global longitudinal strain** to define stage IIIc.",
+        "Renal staging (Table 3) uses **proteinuria 5 g/24 h** and **eGFR 50**: neither = stage 1, one = stage 2, both = stage 3.",
+        "Both systems are **primarily prognostic**. The guideline includes them to stress that prognosis depends heavily on stage at diagnosis.",
+        "**Dialysis** is needed in **75%** of patients presenting with stage III renal disease.",
+        "Scoring systems mainly used **TnT**. Many centres now use **TnI**: use whichever assay is available locally."
+      ],
+      "tables": [
+        {
+          "title": "Table 2: Staging of cardiac amyloidosis",
+          "page": 3,
+          "columns": ["Stage", "Criteria", "Median survival"],
+          "rows": [
+            ["I", "NT-proBNP <332 ng/L and troponin T <0.035", "Not reached at 5 years"],
+            ["II", "NT-proBNP >332 but <8500 ng/L, or troponin T ≥0.035", "Not reached at 5 years"],
+            ["IIIa", "NT-proBNP <8500 ng/L and troponin T ≥0.035", "76 months"],
+            ["IIIb", "NT-proBNP >8500 ng/L and troponin T ≥0.035", "26 months"],
+            ["IIIc", "NT-proBNP >8500 ng/L, troponin T ≥0.035 and GLS >−9%", "4 months"]
+          ],
+          "note": "The PDF prints the troponin T cut-off as 0.035 ng/L. In the original Mayo staging it is 0.035 µg/L (ng/mL). Check the units against your local assay."
+        },
+        {
+          "title": "Table 3: Staging of renal amyloidosis",
+          "page": 4,
+          "columns": ["Stage", "Criteria", "Risk of dialysis (2 years)"],
+          "rows": [
+            ["1", "Proteinuria ≤5 g/24 h and eGFR ≥50", "None"],
+            ["2", "Proteinuria >5 g/24 h or eGFR <50", "11%–25%"],
+            ["3", "Proteinuria >5 g/24 h and eGFR <50", "60%–75%"]
+          ]
+        }
+      ],
+      "numbers": [
+        ["332 / 8500 ng/L", "NT-proBNP cardiac staging cut-offs"],
+        ["0.035", "troponin T cut-off"],
+        [">−9%", "GLS defining stage IIIc"],
+        ["76 / 26 / 4 months", "median survival in IIIa / IIIb / IIIc"],
+        ["5 g/24 h and eGFR 50", "renal staging cut-offs"],
+        ["60%–75%", "2-year dialysis risk in renal stage 3"]
+      ],
+      "pitfalls": [
+        "Stage II needs only **one** abnormal marker ('or'). Stage IIIa and IIIb need troponin ≥0.035 **and** the relevant NT-proBNP level ('and').",
+        "Renal stage 2 is either marker abnormal; stage 3 is both abnormal."
+      ],
+      "hook": "Heart: 332 then 8500 (think 'three-three-two, then eighty-five hundred'). Kidney: 5 and 50.",
+      "selfTest": [
+        { "q": "NT-proBNP is 9200 ng/L, troponin T is above 0.035 and GLS is −7%. What stage, and what is the median survival?", "a": "Stage IIIc. Median survival is about 4 months." },
+        { "q": "Proteinuria is 6 g/24 h and eGFR is 62. What is the renal stage and the 2-year dialysis risk?", "a": "Stage 2 (one criterion met), with an 11%–25% risk of dialysis at 2 years." }
+      ]
+    },
+    {
+      "id": "al-cardiac",
+      "name": "Unexplained heart failure: when to think AL",
+      "pages": [4, 5],
+      "why": "Cardiac involvement drives early mortality. Cardiologists see these patients first, often with HFpEF that looks like hypertensive heart disease.",
+      "keyPoints": [
+        "Red flags in heart failure, with or without a known paraprotein: **albumin <30 g/L**; unexplained persistent proteinuria (PCR or ACR >50 mg/mmol); **autonomic and/or peripheral neuropathy**; unexplained persistently high or rising **troponin without significant coronary disease**.",
+        "Further red flags: persistent hypotension or worsening heart failure after starting **ACE-I, ARB, beta-blocker or ARNi**; a previously hypertensive patient with unexplained low or low-normal BP despite reducing antihypertensives; **HFpEF** on echo; **low-voltage ECG**.",
+        "Musculoskeletal and other clues: **bilateral carpal tunnel surgery, biceps (or other) tendon rupture, spinal canal stenosis**, and unexplained weight and muscle loss (cardiac cachexia).",
+        "Echo features: **'LVH' with normal or low-voltage ECG**, and loss of longitudinal function, meaning abnormal GLS with **apical sparing** (apex preserved compared with base).",
+        "Imaging changes can be subtle. Echo and cardiac MRI should be reported by someone with **expertise in cardiac amyloid**.",
+        "**ATTR** is the alternative cause. **ATTR and MGUS may coexist**, and AL and ATTR can occur together, so amyloid must be **typed at a specialist centre**.",
+        "Screen for a monoclonal gammopathy (Table 1) in **all** patients with suspected cardiac amyloidosis."
+      ],
+      "recs": ["cardiac-1", "cardiac-2", "cardiac-3"],
+      "pitfalls": [
+        "A paraprotein in an elderly patient with cardiac amyloid does not prove AL. Coexisting MGUS with ATTR is common, so type the deposits.",
+        "Thick walls on echo with low ECG voltages is the classic mismatch. True hypertensive LVH gives high voltages."
+      ],
+      "hook": "Thick heart, quiet ECG, wrists that needed surgery: think amyloid.",
+      "selfTest": [
+        { "q": "A 72-year-old has HFpEF, an IgG lambda MGUS and a technetium scan suggesting cardiac amyloid. What does the guideline require?", "a": "Clarify the amyloid type at a specialist centre (Grade 1A). MGUS and unrelated ATTR frequently coexist, and AL and ATTR may also occur together." },
+        { "q": "Name four non-cardiac clues to cardiac amyloidosis.", "a": "Any four of: bilateral carpal tunnel surgery, biceps tendon rupture, spinal canal stenosis, neuropathy (autonomic or peripheral), albumin <30 g/L, proteinuria >50 mg/mmol, and weight or muscle loss." }
+      ]
+    },
+    {
+      "id": "al-biopsy",
+      "name": "Renal clinic: proteinuria, MGRS and which biopsy",
+      "pages": [5],
+      "why": "Renal amyloid is often missed because the paraprotein is not known before biopsy. Choosing the least invasive diagnostic biopsy matters.",
+      "keyPoints": [
+        "Test for myeloma and screen for AL in: **unexplained persistent proteinuria**; **urine PCR/ACR >50 mg/mmol**; **progressive renal impairment after age 40**; and high clinical suspicion of AL.",
+        "**Up to 50%** of patients with a monoclonal gammopathy and **proteinuria >1.5 g/L or microscopic haematuria** (for non-AL MGRS), particularly with an abnormal FLC ratio, have a monoclonal-protein-related renal disorder.",
+        "Unless there is a contraindication or high suspicion of AL, **refer for kidney biopsy**. In suspected **non-AL MGRS**, a kidney biopsy is more informative than a bone marrow biopsy.",
+        "In suspected **AL**, a **bone marrow, fat pad aspirate or fat pad biopsy is less invasive** and can be done **before** a kidney biopsy.",
+        "A renal biopsy is **not routinely needed** if a marrow or fat pad biopsy is **Congo red positive and typed as AL**, because the renal disease is then most likely renal amyloid.",
+        "Unexpected features such as **haematuria or non-proteinuric CKD** need further investigation.",
+        "A known paraprotein should **lower the threshold** to screen for myeloma, AL and MGRS. But in a large biopsy series, **29%** of MGRS patients and **>70%** of amyloid patients were **not known to have a paraprotein** before biopsy."
+      ],
+      "numbers": [
+        [">50 mg/mmol", "PCR/ACR prompting myeloma and AL screening"],
+        ["age 40", "progressive renal impairment after this age prompts screening"],
+        ["up to 50%", "monoclonal gammopathy plus proteinuria >1.5 g/L or haematuria with an M-protein-related renal disorder"],
+        ["29% / >70%", "MGRS / amyloid patients not known to have a paraprotein before kidney biopsy"]
+      ],
+      "recs": ["renal-1", "renal-2", "renal-3"],
+      "pitfalls": [
+        "Lack of a known paraprotein does not exclude renal AL: most renal amyloid is first discovered at kidney biopsy.",
+        "Do not jump straight to kidney biopsy when AL is likely. A fat pad or marrow biopsy is safer, and a kidney biopsy can be avoided if it confirms AL (Grade 2B)."
+      ],
+      "hook": "Suspect AL? Fat pad or marrow first. Suspect non-AL MGRS? Go to the kidney.",
+      "selfTest": [
+        { "q": "An SMM patient has an unexplained rise in urine ACR to 80 mg/mmol. What is the most definitive diagnostic test?", "a": "Kidney biopsy, which is the most definitive test for MGRS and renal AL (Grade 1A). It may be avoided if another biopsy (marrow or fat pad) confirms AL deposits (Grade 2B)." },
+        { "q": "What proportion of patients later diagnosed with amyloid were not known to have a paraprotein before kidney biopsy?", "a": "More than 70%." }
+      ]
+    },
+    {
+      "id": "al-neuropathy",
+      "name": "Neuropathy and autonomic red flags",
+      "pages": [5, 6],
+      "why": "Combined peripheral and autonomic neuropathy is a hallmark of systemic amyloid and is easily attributed to diabetes or age.",
+      "keyPoints": [
+        "Both **AL and ATTR** can involve peripheral nerves. **IgM** paraproteins can also have direct anti-neuronal antibody activity.",
+        "Testing for a monoclonal protein (Table 1) should be part of the **routine work-up of unexplained polyneuropathy**. Involve a clinical haematologist if AL is suspected.",
+        "**Peripheral plus autonomic neuropathy** without an apparent cause (e.g. long-standing uncontrolled diabetes) should prompt a detailed search for amyloidosis.",
+        "Conversely, **isolated, non-progressive or very slowly progressive neuropathy with a paraprotein but normal sFLC** is **rarely** amyloid.",
+        "Ask about **diarrhoea, erectile dysfunction and orthostatic intolerance**. These may be made worse by large meals, alcohol, new antihypertensive or cardiac drugs, or alpha-blockers for prostatism.",
+        "**Prominent or nocturnal diarrhoea is a red flag** for amyloid neuropathy.",
+        "Neurogenic orthostatic hypotension: a **sustained fall of 20/10 mmHg by 3 minutes** with **little compensatory rise in heart rate**."
+      ],
+      "numbers": [
+        ["20/10 mmHg by 3 min", "postural BP fall defining neurogenic orthostatic hypotension (with little HR rise)"]
+      ],
+      "recs": ["neuro-1", "neuro-2", "neuro-3"],
+      "pitfalls": [
+        "Orthostatic hypotension with a normal heart rate rise is more likely volume depletion or a drug effect. In neurogenic orthostatic hypotension the heart rate barely rises.",
+        "Carpal tunnel syndrome alone is common. It matters when it occurs with other systemic features (Figure 1)."
+      ],
+      "hook": "Numb feet + dizzy standing + night-time diarrhoea = autonomic amyloid until proven otherwise.",
+      "selfTest": [
+        { "q": "How does the guideline define neurogenic orthostatic hypotension?", "a": "A sustained BP fall of 20/10 mmHg by 3 minutes with little compensatory rise in heart rate (Grade 1A)." },
+        { "q": "Which neuropathy picture is rarely caused by amyloid?", "a": "Isolated non-progressive or very slowly progressive neuropathy with a monoclonal protein but normal serum free light chains." }
+      ]
+    },
+    {
+      "id": "al-referral",
+      "name": "Urgent haematology referral and the NAC",
+      "pages": [6],
+      "why": "These features mark patients at high risk of early death or irreversible organ failure, so referral should not wait for a routine clinic.",
+      "keyPoints": [
+        "Consider **urgent haematology review** for a confirmed or highly likely diagnosis of AL with any of: **albumin <25 g/L**; **falling eGFR <50 mL/min/1.73 m²**; **all cases of cardiac amyloidosis**; autonomic neuropathy with **postural hypotension >20 mmHg**; hepatic amyloid with **bilirubin >2 × ULN**; **bleeding or bruising due to factor X deficiency**.",
+        "Once diagnosed, discuss **all** AL patients at an **MDT experienced** in diagnosing and treating AL.",
+        "Refer **all** AL patients to the **National Amyloidosis Centre** for confirmation of diagnosis and treatment advice. Encourage trial entry and contribution to central data collection.",
+        "AL amyloidosis is a **'chameleon of clinical medicine'**, but it is **not particularly rare**."
+      ],
+      "numbers": [
+        ["<25 g/L", "albumin: urgent referral"],
+        ["<50 mL/min/1.73 m²", "falling eGFR: urgent referral"],
+        [">20 mmHg", "postural BP fall with autonomic neuropathy: urgent referral"],
+        [">2 × ULN", "bilirubin in hepatic amyloid: urgent referral"]
+      ],
+      "pitfalls": [
+        "Note the different albumin numbers: <30 g/L is a red flag for suspecting cardiac amyloid; <25 g/L triggers urgent referral once AL is confirmed or highly likely.",
+        "Every case of cardiac AL is urgent, whatever the stage."
+      ],
+      "hook": "Urgent if: Albumin 25, GFR 50, any Heart, postural 20, Bilirubin 2×, factor X bleeding. Shorthand: 'A-G-H-P-B-X'.",
+      "selfTest": [
+        { "q": "List the six features that should prompt urgent haematology referral in AL amyloidosis.", "a": "Albumin <25 g/L; falling eGFR <50; any cardiac amyloidosis; autonomic neuropathy with postural hypotension >20 mmHg; hepatic amyloid with bilirubin >2 × ULN; bleeding or bruising from factor X deficiency." },
+        { "q": "Where should all newly diagnosed AL patients be referred?", "a": "To an experienced MDT and to the National Amyloidosis Centre, for confirmation of diagnosis, treatment advice, trials and data collection." }
+      ]
+    }
+  ]
+}

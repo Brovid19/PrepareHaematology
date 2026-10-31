@@ -1,30 +1,33 @@
-// Worker entrypoint for preparehaematology
-// Serves static assets from ./public via env.ASSETS with SPA routing fallback
+// Worker entrypoint for preparehaematology.
+// Handles the paper-submission API, then serves static assets from ./public via env.ASSETS
+// with SPA routing fallback.
+import { handleSynthesise } from './server/synthesise.js';
 
 export default {
   async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === '/api/synthesise') {
+      return handleSynthesise(request, env);
+    }
+    if (url.pathname.startsWith('/api/')) {
+      return new Response(JSON.stringify({ error: 'Not found' }), { status: 404, headers: { 'content-type': 'application/json' } });
+    }
+
     try {
-      // Fetch static asset from the environment assets binding
       const response = await env.ASSETS.fetch(request);
-      
-      // If the asset exists (not a 404), return it directly
-      if (response && response.status !== 404) {
-        return response;
-      }
+      if (response && response.status !== 404) return response;
     } catch (err) {
       // Fall through to SPA fallback
     }
 
     // Single Page Application (SPA) fallback: serve index.html
     try {
-      const url = new URL(request.url);
       url.pathname = '/index.html';
-      const indexRequest = new Request(url.toString(), request);
-      return await env.ASSETS.fetch(indexRequest);
+      return await env.ASSETS.fetch(new Request(url.toString(), request));
     } catch (err) {
-      return new Response("Prepare Haematology app loading...", {
+      return new Response('Prepare Haematology app loading...', {
         status: 200,
-        headers: { "Content-Type": "text/html; charset=utf-8" }
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
       });
     }
   }

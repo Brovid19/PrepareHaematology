@@ -80,3 +80,11 @@
 ## 3. Deployment
 
 All changes are static files in `public/`. `vercel.json` already serves `public/` and sets no-cache headers for `index.html`, `sw.js`, `content.js` and the manifest. If the GitHub repository is connected to a Vercel project, each push to a branch creates a preview deployment, and a merge to the production branch deploys to production. Installed copies of the app show an **"Update available"** banner, because the build stamps a new service-worker `BUILD_ID`.
+
+## Update: Learn redesign (topic pages, audio, Claude drafts)
+
+- **The long scroll is gone.** Learn → domain → topic list → topic page. Topics follow each paper's own sections (39 topics across 5 papers). Previous/Next, ← →, and swipe move along the sequence, and from the last topic in a domain to the next domain.
+- **Content rewritten from the PDFs for retention.** Each topic has a "why it matters" line, then key points with the most testable phrase in bold, numbers to know, tables, every recommendation verbatim with its GRADE badge and PDF page, exam pitfalls, a memory hook, and self-test questions with hidden answers (retrieval practice). All 120 recommendations from the five papers are included, and the build fails if one is missing from the topic pages.
+- **Deep links** now point to a topic (`topicId`) and, where relevant, one recommendation (`recId`). This replaces the old `anchor` scheme.
+- **Audio** uses a segment-based speech engine, so it has a draggable progress bar, ±10 s, and 0.75×–2×. Changing speed keeps your place.
+- **Claude drafts:** learners can submit a paper. Drafts are clearly labelled, stay on the device, and can be exported for checking.

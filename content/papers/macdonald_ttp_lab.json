@@ -1,0 +1,291 @@
+{
+  "guideline": {
+    "id": "bsh_ttp_laboratory_2026",
+    "title": "Diagnosis and monitoring of thrombotic thrombocytopenic purpura: Guidance for laboratories from the British Society for Haematology",
+    "issuingBody": "British Society for Haematology",
+    "year": 2026,
+    "category": "Haemostasis & Thrombosis",
+    "citation": "MacDonald S, Pitchford T, Singh D, Fretwell R, Jenkins PV, Lawrence C, et al. Br J Haematol. 2026;209(3):928–938.",
+    "url": "https://doi.org/10.1111/bjh.70727",
+    "isVerified": true,
+    "pdf": "Br_J_Haematol_-_2026_-_MacDonald_-_Diagnosis_and_monitoring_of_thrombotic_thrombocytopenic_purpura_Guidance_for_c719170c.pdf",
+    "overview": "Laboratory guidance for TTP, covering the whole pathway: spotting it on an FBC and film, turnaround times, sampling and pre-analytical handling, ADAMTS13 activity assays and how to interpret them (including the 10–20 IU/dL grey area and the HemosIL CLEIA caveat), anti-ADAMTS13 antibodies, antigen and conformation assays, monitoring in remission and relapse, EQA, and the consultant's role in supporting the laboratory. The central message is that treatment must never wait for the ADAMTS13 result."
+  },
+  "recommendations": [
+    { "id": "recog-1", "group": "Laboratory investigation for TTP", "grade": "1C", "page": 2, "text": "Haematology laboratories should have documented processes in place to ensure that new patients with full blood count samples with thrombocytopenia, especially those with platelet count <30 × 10⁹/L, are examined microscopically for evidence of haemolysis." },
+    { "id": "recog-2", "group": "Laboratory investigation for TTP", "grade": "1C", "page": 2, "text": "Haematology laboratories should have a documented process in place to ensure that new patients with blood films with thrombocytopenia and evidence of haemolysis are escalated rapidly for clinical review." },
+    { "id": "tat-1", "group": "Turnaround times", "grade": "1B", "page": 2, "text": "Haematology laboratories should have access to urgent ADAMTS13 activity testing either via sample transfer to the laboratory of a regional TTP centre, or on-site." },
+    { "id": "tat-2", "group": "Turnaround times", "grade": "1C", "page": 2, "text": "Local protocols should be established for urgent transfer of pre-treatment samples for ADAMTS13 activity assays in patients with suspected TTP." },
+    { "id": "tat-3", "group": "Turnaround times", "grade": "1C", "page": 2, "text": "In cases of suspected TTP where an urgent ADAMTS13 activity assay is required, preliminary results should be available as soon as possible, but ideally within one hour of sample receipt by the testing laboratory for laboratories with rapid tests available, or six hours for laboratories using enzyme-linked immunosorbent assay (ELISA)." },
+    { "id": "sample-1", "group": "Pre-analytical considerations", "grade": "1B", "page": 4, "text": "Samples should be collected into 0.109 M sodium citrate." },
+    { "id": "sample-2", "group": "Pre-analytical considerations", "grade": "1B", "page": 4, "text": "For patients with a strong clinical suspicion of TTP, samples must be sent to a regional TTP centre immediately if the patient has not already been transferred." },
+    { "id": "act-1", "group": "Testing for ADAMTS13 activity", "grade": "2C", "page": 6, "text": "Early confirmation with an alternative assay may be obtained in all instances when an ADAMTS13 activity <20 IU/dL is not consistent with pre-test probability and clinical assessment." },
+    { "id": "act-2", "group": "Testing for ADAMTS13 activity", "grade": "1D", "page": 6, "text": "Laboratories and clinicians must have a clear understanding of the expected ranges in iTTP and cTTP at presentation of the ADAMTS13 activity assay in use." },
+    { "id": "act-3", "group": "Testing for ADAMTS13 activity", "grade": "1D", "page": 6, "text": "There must be clear clinical pathways for dealing with both normal and abnormal ADAMTS13 activity results." },
+    { "id": "ab-1", "group": "Testing for antibodies against ADAMTS13", "grade": "1C", "page": 7, "text": "Anti-ADAMTS13 antibody assays for clinical use should only be performed in laboratories of regional TTP centres." },
+    { "id": "ab-2", "group": "Testing for antibodies against ADAMTS13", "grade": "1B", "page": 7, "text": "Anti-ADAMTS13 antibody assays must be performed when ADAMTS13 activity <10 IU/dL, within 72 h of presentation." },
+    { "id": "ab-3", "group": "Testing for antibodies against ADAMTS13", "grade": "2B", "page": 7, "text": "Anti-ADAMTS13 antibody assays may be performed when there is strong clinical suspicion of TTP but ADAMTS13 activity is between 10 and 20 IU/dL." },
+    { "id": "ab-4", "group": "Testing for antibodies against ADAMTS13", "grade": "2C", "page": 7, "text": "Anti-ADAMTS13 antibody assays may be repeated when ADAMTS13 activity levels remain low despite treatment for acute iTTP to guide clinical decision making for immunosuppression." },
+    { "id": "ab-5", "group": "Testing for antibodies against ADAMTS13", "grade": "2B", "page": 7, "text": "Anti-ADAMTS13 antibody assays may be used to exclude acquired inhibitors for those receiving recombinant ADAMTS13." },
+    { "id": "ab-6", "group": "Testing for antibodies against ADAMTS13", "grade": "2B", "page": 7, "text": "Anti-ADAMTS13 antibody assays may be performed in patients with suspected relapse of iTTP." },
+    { "id": "ab-7", "group": "Testing for antibodies against ADAMTS13", "grade": "2D", "page": 7, "text": "An ELISA is recommended over non-standardised Bethesda-style inhibitor assay or mixing studies for the detection of anti-ADAMTS13 antibodies." },
+    { "id": "ab-8", "group": "Testing for antibodies against ADAMTS13", "grade": "1C", "page": 7, "text": "Genomic analysis of the ADAMTS13 gene is required to confirm cTTP." },
+    { "id": "ag-1", "group": "Testing for ADAMTS13 antigen", "grade": "2C", "page": 7, "text": "ADAMTS13 antigen assays are not recommended for routine clinical use." },
+    { "id": "ag-2", "group": "Testing for ADAMTS13 antigen", "grade": "2C", "page": 7, "text": "ADAMTS13 antigen assays may be considered in individual patients on a case-by-case basis." },
+    { "id": "ag-3", "group": "Testing for ADAMTS13 antigen", "grade": "1C", "page": 7, "text": "ADAMTS13 antigen assays for clinical use should only be performed in laboratories of regional TTP centres." },
+    { "id": "conf-1", "group": "ADAMTS13 conformation (open/closed index) assay", "grade": "2C", "page": 8, "text": "ADAMTS13 conformation assays are not currently recommended for routine clinical use." },
+    { "id": "conf-2", "group": "ADAMTS13 conformation (open/closed index) assay", "grade": "1C", "page": 8, "text": "ADAMTS13 conformation assays for clinical use should only be performed in laboratories of regional TTP centres." },
+    { "id": "mon-1", "group": "Laboratory monitoring in recovery and relapse", "grade": "1C", "page": 8, "text": "ADAMTS13 activity assay differences indicate that for monitoring, and identification of remission and relapse, the same analytical method should be used in any single patient to retain sensitivity for clinically significant changes." },
+    { "id": "mon-2", "group": "Laboratory monitoring in recovery and relapse", "grade": "2B", "page": 8, "text": "Laboratories may consider confirmation on a second platform when ADAMTS13 activity is unexpectedly low, or results appear discordant with the clinical picture." }
+  ],
+  "topics": [
+    {
+      "id": "ttp-recognition",
+      "name": "Recognising TTP and turnaround times",
+      "pages": [2, 3],
+      "why": "TTP is an emergency. The laboratory's job is to spot MAHA with low platelets fast and get ADAMTS13 tested quickly, without ever holding up treatment.",
+      "keyPoints": [
+        "Suspected TTP is a **medical emergency**. An ADAMTS13 activity result is **not a prerequisite** for immediate management or treatment.",
+        "Epidemiology: prevalence **6–10 per million**, annual incidence about **1 per million** (similar to acquired haemophilia A). Most cases are **immune-mediated (iTTP)**; **<5%** of presentations are **congenital (cTTP)**.",
+        "Suspect TTP with **MAHA plus thrombocytopenia**, especially **platelets <30 × 10⁹/L**. Examine a **blood film as soon as possible, ideally within 60 minutes**. If red cell morphology suggests haemolysis, refer for **immediate review by a clinical haematologist**.",
+        "Supporting haemolysis markers: **reticulocytes >120 × 10⁹/L**, **undetectable haptoglobin**, **raised LDH**. **Schistocytes** are the hallmark but are **not always seen**. **Routine coagulation is usually normal**, which helps separate TTP from DIC.",
+        "Thrombocytopenia with haemolysis is not specific: it also occurs in **DIC and other TMAs, including HUS**. So request an **urgent ADAMTS13 activity** whenever TTP is clinically suspected.",
+        "A UK audit found **diagnostic uncertainty** was the commonest cause of delay, defined as **>8 hours from first FBC to issue of plasma for PEX**. Delay was commoner in patients transferred to tertiary centres.",
+        "NHS England commissioned **nine regional TTP centres (11 laboratories)**. Specialist testing in Scotland, Wales and Northern Ireland is done at regional centres.",
+        "Rapid ADAMTS13 testing at diagnosis **reduces unnecessary PEX and blood product exposure** in people without TTP, and cuts plasma costs. **Automated assays give results in 30–40 minutes.** Health-economic studies support rapid testing because it reduces demand for **PEX and caplacizumab**.",
+        "Figure 1 (PDF p3) shows the suggested laboratory pathway. Some automated assays may prove comparable to FRET/ELISA after further evaluation."
+      ],
+      "numbers": [
+        ["<30 × 10⁹/L", "platelet count that should trigger urgent film review"],
+        ["≤60 min", "target time to examine the blood film"],
+        [">120 × 10⁹/L", "reticulocyte count supporting haemolysis"],
+        ["6–10 / million", "TTP prevalence"],
+        ["~1 / million / year", "TTP incidence"],
+        ["<5%", "presentations that are congenital TTP"],
+        [">8 h", "first FBC to plasma issue: the audit definition of delay"],
+        ["9 centres, 11 labs", "NHS England regional TTP centres"],
+        ["30–40 min", "automated ADAMTS13 activity turnaround"],
+        ["1 h / 6 h", "target preliminary result after receipt: rapid assay / ELISA"]
+      ],
+      "recs": ["recog-1", "recog-2", "tat-1", "tat-2", "tat-3"],
+      "pitfalls": [
+        "Do not wait for ADAMTS13 before starting PEX when clinical suspicion is strong.",
+        "Absence of schistocytes does not exclude TTP.",
+        "Normal PT and APTT are expected in TTP. Abnormal clotting points towards DIC."
+      ],
+      "hook": "Thirty, sixty, one-hour: platelets under 30, film within 60 minutes, rapid ADAMTS13 result within 1 hour (6 hours by ELISA).",
+      "selfTest": [
+        { "q": "What turnaround is recommended for a preliminary urgent ADAMTS13 activity result?", "a": "As soon as possible, ideally within 1 hour of sample receipt with a rapid assay, or within 6 hours with ELISA (1C)." },
+        { "q": "Which audit finding prompted the regional TTP centre model?", "a": "Diagnostic uncertainty was the commonest cause of delay (>8 hours from first FBC to plasma issue for PEX), especially in transferred patients." },
+        { "q": "What proportion of TTP presentations are congenital?", "a": "Less than 5%. Most are immune-mediated." }
+      ]
+    },
+    {
+      "id": "ttp-samples",
+      "name": "Samples, transport and processing",
+      "pages": [2, 3, 4],
+      "why": "Pre-analytical errors give falsely low ADAMTS13 results. EDTA, thawing in transit or over-thawing can all mislead.",
+      "keyPoints": [
+        "Collect samples **before treatment**. After clinical discussion between the referring and centre haematologists, **phone the regional centre laboratory** to confirm imminent dispatch and urgency.",
+        "For known TTP patients, the requesting clinician decides whether **monitoring** samples need urgent processing.",
+        "**Tube:** sodium citrate **3.2% (0.109 M)**, **filled to at least 90%**, mixed by gentle inversion. Under- or overfilled samples are **unacceptable**.",
+        "**Transport** citrated whole blood at **ambient temperature, 18–25 °C**, with minimal delay. Whole blood going to a regional centre must be sent **immediately**.",
+        "**Centrifuge** at **18–25 °C, 2000 g for 15 minutes** to deplete platelets.",
+        "**Storage:** if not tested immediately, freeze in a **screw-capped polypropylene tube with an O-ring** below **−24 °C (ideally below −70 °C)**. Ship frozen plasma **on dry ice**.",
+        "A pre-treatment sample at the referring site can still be used if treatment has started, **as long as the plasma was frozen within 48 hours** of collection.",
+        "**Reject samples that thaw in transit**. Keep **extra frozen aliquots below −70 °C** at the referring laboratory, including aliquots for **antibody testing if activity is <10 IU/dL**.",
+        "**Serum** may be used if no citrate sample is available (on the regional centre's advice). **EDTA cannot be used**: it gives **falsely low ADAMTS13 activity**.",
+        "**Thaw** at **37 °C for 5 minutes** (or until fully thawed) and test promptly. **Longer thawing reduces ADAMTS13 activity.**",
+        "If the centre's request form is not available, every request must include: patient details (name, DOB, MRN and/or NHS number); **date and time of collection**; clinical details; the referring **consultant haematologist's contact details**; return address and phone number; **'Has treatment and/or patient transfer been considered?'**; and a **statement of urgency**. Missing details delay processing, especially without a prior phone call."
+      ],
+      "numbers": [
+        ["0.109 M (3.2%)", "sodium citrate"],
+        ["≥90%", "tube fill"],
+        ["18–25 °C", "transport and centrifugation temperature"],
+        ["2000 g × 15 min", "centrifugation for platelet-poor plasma"],
+        ["below −24 °C (ideally −70 °C)", "frozen storage"],
+        ["48 h", "latest time to freeze a usable pre-treatment sample"],
+        ["37 °C × 5 min", "thawing"]
+      ],
+      "recs": ["sample-1", "sample-2"],
+      "pitfalls": [
+        "EDTA plasma gives falsely low ADAMTS13 activity. Never use it.",
+        "Over-thawing lowers measured activity, which can mimic TTP.",
+        "Do not chill citrated whole blood: transport at room temperature."
+      ],
+      "hook": "Blue top, 90% full, room temperature, spin 2000 g for 15 minutes, freeze below −70 °C, thaw 5 minutes at 37 °C. Never purple (EDTA).",
+      "selfTest": [
+        { "q": "Why must EDTA samples not be used for ADAMTS13 activity?", "a": "EDTA chelates the metal ions ADAMTS13 needs, giving falsely low activity." },
+        { "q": "Treatment has started, but a pre-treatment citrate sample exists at the referring hospital. Can it be used?", "a": "Yes, provided the plasma was frozen within 48 hours of collection." },
+        { "q": "How should frozen plasma be shipped to the regional centre?", "a": "On dry ice. Samples that thaw in transit are rejected." }
+      ]
+    },
+    {
+      "id": "ttp-adamts13-activity",
+      "name": "ADAMTS13 activity assays and interpretation",
+      "pages": [4, 5, 6],
+      "why": "Interpreting activity results correctly is the core of TTP diagnosis, including the 10–20 IU/dL grey area and assay-specific false lows.",
+      "keyPoints": [
+        "Activity assays measure the ability of patient plasma to **cleave an external VWF substrate**.",
+        "**First-generation** assays use full-length VWF, need prolonged pre-treatment, take days and are rarely used now. Some are **affected by caplacizumab**.",
+        "**Second-generation** assays use **truncated VWF fragments** containing part of the **A2 domain** with the cleavage site **Tyr1605–Met1606**. The commonest is **VWF73** (Asp1596–Arg1668).",
+        "**Manual** second-generation assays (turnaround **<5 h**, usually at specialist sites) include **VWF73-FRET**, which is **direct**: cleavage separates a fluorophore from its quencher. The **Technozym ELISA** is **indirect**: the **N10** monoclonal antibody binds the new epitope revealed after cleavage.",
+        "**Automated** assays in the UK: **Technofluor** on the Ceveron s100, a **direct FRET** assay; and **HemosIL AcuStar**, an **indirect CLEIA** using VWF73 and the N10 antibody. A Sysmex assay is also listed in Table 1b. Direct assays measure cleavage in solution. Indirect assays measure VWF73 bound to a matrix after the reaction solution is washed away.",
+        "Buffers, dilutions, incubation, calibrators, and whether the reaction is in solution or on a matrix all differ between assays, which limits **comparability**.",
+        "**Activity <10 IU/dL confirms TTP** in all major guidelines. **ISTH** adds an **equivocal 10–20 IU/dL** range: not negative, but consider other diagnoses.",
+        "Using <10 IU/dL on manual FRET: sensitivity/specificity **97%/100%** and **94%/99%** in two studies. The cut-off also captures **cTTP**.",
+        "UK TTP Registry: **93%** of iTTP in the last 5 years presented with **undetectable activity (<1 IU/dL)**. Some iTTP presents with 1–10 IU/dL.",
+        "cTTP varies more. With **p.(Arg1060Trp)**, the commonest UK variant, activity may be **5–12 IU/dL**.",
+        "For manual FRET and ELISA, **10–20 IU/dL is a grey area** that needs clinical expertise and context. No equivalent grey area has been established for automated platforms.",
+        "**HemosIL CLEIA** has been reported to give **erroneously low results (<10 IU/dL)** in samples that read >10 IU/dL on other assays.",
+        "Pre-test screening can reduce inappropriate requests, but **do not delay testing** in low-probability requests from **young patients (possible cTTP)** or **elderly patients**, in whom clinical scores work less well.",
+        "When a result does not fit the pre-test probability, get **early confirmation with an alternative assay**. A repeat sample on the **same assay may not help**. A **positive anti-ADAMTS13 antibody confirms iTTP**.",
+        "**Technoscreen** (a semi-quantitative flow-through assay) has high sensitivity and NPV for ruling out iTTP, but because of false negatives **every result must be confirmed** quantitatively.",
+        "Before introducing a local assay: understand the expected ranges at presentation in iTTP and cTTP and in relapse; consider whether local testing could **delay treatment**; have **pathways for normal and abnormal results**; and validate with samples that reflect local requests, including other TMAs and low-probability cases."
+      ],
+      "tables": [
+        {
+          "title": "Table 1: ADAMTS13 activity and antigen platforms",
+          "page": 5,
+          "columns": ["Assay", "Type", "Substrate / platform"],
+          "rows": [
+            ["Technozym ADAMTS13 Activity", "Manual quantitative ELISA", "VWF73-GST"],
+            ["Immucor ATS-13 Activity", "Manual quantitative", "VWF73-FRET"],
+            ["Actifluor ADAMTS13 Activity", "Manual quantitative", "VWF86-Alexa FRET"],
+            ["Technoscreen ADAMTS13", "Semi-quantitative flow-through", "VWF73-GST"],
+            ["HemosIL AcuStar ADAMTS13 Activity", "Automated CLEIA", "VWF73-GST; Werfen AcuStar/Bio-Flash"],
+            ["Technofluor ADAMTS13 Activity", "Automated (FRET)", "VWF73-FRET; Technoclone Ceveron s100"],
+            ["Sysmex ADAMTS13 Activity", "Automated", "Biotinylated VWF73; Sysmex CN-3500/6500"],
+            ["Technozym / Imubind / LDT antigen", "Quantitative ELISA", "ADAMTS13 antigen (Table 1c)"]
+          ],
+          "note": "As listed in Table 1 (ECAT Foundation data). The text describes Technofluor as a direct FRET assay and HemosIL as an indirect CLEIA."
+        }
+      ],
+      "numbers": [
+        ["<10 IU/dL", "confirms TTP"],
+        ["10–20 IU/dL", "ISTH equivocal or grey zone"],
+        ["97%/100%, 94%/99%", "sensitivity/specificity of <10 IU/dL (manual FRET)"],
+        ["93%", "iTTP presenting with <1 IU/dL (UK Registry)"],
+        ["5–12 IU/dL", "possible activity with p.(Arg1060Trp) cTTP"],
+        ["<5 h", "manual second-generation assay turnaround"]
+      ],
+      "recs": ["act-1", "act-2", "act-3"],
+      "pitfalls": [
+        "HemosIL CLEIA can give false results below 10 IU/dL. Confirm unexpected lows on another platform.",
+        "cTTP with p.(Arg1060Trp) may sit at 5–12 IU/dL, so a value just above 10 does not exclude it.",
+        "Repeating the same assay does not resolve a discordant result. Use an alternative assay."
+      ],
+      "hook": "Under 10 confirms, 10–20 is the grey zone, and HemosIL can read falsely low.",
+      "selfTest": [
+        { "q": "Which UK automated ADAMTS13 assay is known for erroneously low results, and what should you do?", "a": "HemosIL AcuStar (CLEIA). Confirm early with an alternative assay when the result does not fit the clinical picture." },
+        { "q": "Where is the VWF cleavage site targeted by second-generation assays?", "a": "Tyr1605–Met1606 in the VWF A2 domain. VWF73 spans Asp1596–Arg1668." },
+        { "q": "What proportion of UK iTTP patients present with ADAMTS13 activity <1 IU/dL?", "a": "93% (UK TTP Registry, last 5 years)." }
+      ]
+    },
+    {
+      "id": "ttp-antibodies",
+      "name": "Anti-ADAMTS13 antibodies (and confirming cTTP)",
+      "pages": [6, 7],
+      "why": "The antibody result separates immune from congenital TTP and guides immunosuppression. Its limits (false positives and negatives) are commonly examined.",
+      "keyPoints": [
+        "If activity is **<10 IU/dL at presentation**, an antibody assay is **essential**, done **within 72 hours**. At **10–20 IU/dL** with strong suspicion, it may clarify the diagnosis.",
+        "**IgG anti-ADAMTS13 supports iTTP**. Its **absence may indicate cTTP**, but **ADAMTS13 gene analysis is required to confirm cTTP**.",
+        "Higher antibody levels in iTTP are linked to **higher mortality, longer admission, more care and more PEX sessions**. Antibody results also guide **immunomodulation**.",
+        "cTTP is treated with plasma or **recombinant ADAMTS13**. Laboratories may test for **anti-rADAMTS13** inhibitors.",
+        "Autoantibodies are either **neutralising IgG** or **non-neutralising** (which speed ADAMTS13 clearance). **Both can coexist.**",
+        "There is **no international standard** for anti-ADAMTS13 antibodies, so cut-offs are assay-specific and subjective.",
+        "Most UK sites use the **Technozym ADAMTS13-INH ELISA** (results in arbitrary units per mL), and some use an in-house ELISA. Both use full-length recombinant ADAMTS13 and detect **neutralising and non-neutralising** antibodies.",
+        "**ELISA false positives** come from non-specific binding, especially with **recent or ongoing infection**. This is minimised by a **1/100 dilution**. If an unexpected positive occurs, **repeat at higher dilution or with an alternative buffer**.",
+        "**7.7% (21/273)** of iTTP patients in the UK registry had **no detectable antibody** at presentation. This is probably due to **immune complexes** binding the antibody. IgM and IgA isotypes may also be present but their significance is unclear.",
+        "**Bethesda-style assays** detect **only neutralising** antibodies and are **not standardised** (heat treatment, incubation, buffers, ADAMTS13 source, pH). A simple screen is a **1:1 mix** of patient and normal plasma, measuring residual activity."
+      ],
+      "tables": [
+        {
+          "title": "Table 2: Anti-ADAMTS13 inhibitor assays",
+          "page": 6,
+          "columns": ["Assay", "Detects", "Interpretation"],
+          "rows": [
+            ["Technozym ADAMTS13-INH ELISA", "Neutralising and non-neutralising IgG", "<12 U/mL negative; 12–15 borderline; >15 positive"],
+            ["Laboratory-developed ELISA", "Neutralising and non-neutralising IgG", "<6.1% negative; ≥6.1% positive"],
+            ["Bethesda-style assay", "Neutralising only", "<0.5 BU/mL negative; ≥0.5 BU/mL positive"]
+          ]
+        }
+      ],
+      "numbers": [
+        ["72 h", "deadline for the antibody assay when activity is <10 IU/dL"],
+        ["12 / 15 U/mL", "Technozym INH borderline / positive thresholds"],
+        ["0.5 BU/mL", "Bethesda-style positivity"],
+        ["7.7% (21/273)", "iTTP with no detectable antibody at presentation"],
+        ["1/100", "plasma dilution to reduce non-specific ELISA binding"]
+      ],
+      "recs": ["ab-1", "ab-2", "ab-3", "ab-4", "ab-5", "ab-6", "ab-7", "ab-8"],
+      "pitfalls": [
+        "A negative antibody does not make it cTTP: 7.7% of iTTP is antibody-negative at presentation. Confirm cTTP genetically.",
+        "An unexpected positive ELISA during infection may be non-specific binding. Repeat at higher dilution.",
+        "A Bethesda assay misses non-neutralising (clearing) antibodies."
+      ],
+      "hook": "Under 10 means antibody test within 72 hours. Antibody positive points to iTTP. Antibody negative means do the genetics before calling it cTTP.",
+      "selfTest": [
+        { "q": "What is required to confirm congenital TTP?", "a": "Genomic analysis of the ADAMTS13 gene (1C). Absent antibodies alone are not enough." },
+        { "q": "Why is ELISA preferred over a Bethesda-style assay for anti-ADAMTS13?", "a": "Bethesda-style assays are not standardised and detect only neutralising antibodies. ELISA detects neutralising and non-neutralising IgG (2D)." },
+        { "q": "Give two reasons an iTTP patient might test antibody-negative at presentation.", "a": "Antibodies bound in circulating immune complexes, and IgM or IgA isotypes not detected by IgG assays." }
+      ]
+    },
+    {
+      "id": "ttp-antigen-conformation",
+      "name": "ADAMTS13 antigen and conformation assays",
+      "pages": [7, 8],
+      "why": "These are newer tests with niche uses, such as stopping caplacizumab and predicting relapse. Know when they are and are not recommended.",
+      "keyPoints": [
+        "**ADAMTS13 antigen** has limited routine utility, and there is insufficient evidence to recommend it outside research.",
+        "**Caplacizumab may be safely stopped** when **antigen is >30 IU/dL**, even if **activity stays <10 IU/dL** during prolonged treatment.",
+        "So antigen may be considered **case by case**, to predict exacerbation or relapse off treatment when activity remains low. It is measured by **ELISA** (commercial or LDT), and **results are not comparable** between assays.",
+        "**Conformation ELISA (open/closed index):** an **open** conformation, driven by IgG antibody, can appear **before activity falls**, flagging relapse risk. **Antigen quantitation** is needed to interpret it.",
+        "Possibly useful when activity is **borderline (10–20 IU/dL)**. In remission, an open conformation predicted relapse **even with normal activity**.",
+        "At peak activity (>60%), **open vs closed conformation**: relapse **46% vs 9% at 1 year** and **62% vs 23% at 2 years**. An open conformation may persist despite falling antibody levels.",
+        "Conformation testing **complements** routine monitoring and is **not a first-line test**. It will probably stay confined to regional centres."
+      ],
+      "numbers": [
+        [">30 IU/dL", "antigen level at which caplacizumab may be stopped despite activity <10"],
+        ["46% vs 9%", "1-year relapse: open vs closed conformation"],
+        ["62% vs 23%", "2-year relapse: open vs closed conformation"]
+      ],
+      "recs": ["ag-1", "ag-2", "ag-3", "conf-1", "conf-2"],
+      "pitfalls": [
+        "Neither antigen nor conformation assays are recommended for routine use (2C). Both belong in regional TTP centres only (1C)."
+      ],
+      "hook": "Antigen above 30 means caplacizumab can stop. An open conformation means watch for relapse.",
+      "selfTest": [
+        { "q": "When may caplacizumab be stopped despite persistently low ADAMTS13 activity?", "a": "When ADAMTS13 antigen is above 30 IU/dL." },
+        { "q": "What relapse rates were seen with open vs closed ADAMTS13 conformation?", "a": "1 year: 46% vs 9%. 2 years: 62% vs 23%." }
+      ]
+    },
+    {
+      "id": "ttp-monitoring",
+      "name": "Monitoring, EQA and clinical support",
+      "pages": [8, 9],
+      "why": "Serial ADAMTS13 activity is the basis of surveillance, and consistent methods matter. The laboratory also needs named clinical backing.",
+      "keyPoints": [
+        "**Longitudinal ADAMTS13 activity** is the cornerstone of post-diagnosis surveillance in iTTP and cTTP. The optimal frequency and intervention thresholds are not yet fully defined.",
+        "International Working Group definitions now separate **clinical** remission and relapse from **ADAMTS13** remission and relapse, and account for caplacizumab.",
+        "Use a **single platform** per patient so that falling activity is detected reliably. Switching platforms adds variability unrelated to disease.",
+        "Confirm on a **second platform** if a result is unexpectedly low or does not fit the clinical picture.",
+        "**Caplacizumab lowers VWF activity**, depending on the assay. **VWF:GPIbM, VWF:RCo and VWF:GPIbR are very low** after treatment. **VWF:CB, VWF:Ab and VWF:Ag are much less affected.** VWF activity may be considered as a drug-monitoring biomarker.",
+        "**EQA:** every laboratory performing ADAMTS13 activity, antibody or antigen assays should take part, e.g. **UK NEQAS for Blood Coagulation** or **ECAT**.",
+        "Treatment decisions for strong suspicion must be made by **critical care and haematology teams without waiting** for laboratory results. Teams should know the agreed turnaround times, so laboratory scientists are **protected from time pressure** and can work safely.",
+        "Job-planned **consultant laboratory support**: laboratory scientists in TMA MDTs; a **gatekeeping** role (pre-test risk assessment); discussing results; writing policies (film review and escalation, reporting results with in-vivo haemolysis, new TTP tests); and advising on **pre-test probability scores**.",
+        "Without clinical support, ADAMTS13 testing risks both **over-diagnosis and late diagnosis**."
+      ],
+      "recs": ["mon-1", "mon-2"],
+      "pitfalls": [
+        "A patient monitored on one platform and then tested on another may show an apparent 'relapse' that is really assay variation.",
+        "After caplacizumab, a very low VWF:RCo or GPIbM does not mean VWD. It reflects the drug blocking the VWF A1–GPIb interaction."
+      ],
+      "hook": "One patient, one platform. Caplacizumab silences the GPIb-based VWF assays, while antigen and collagen binding are much less affected.",
+      "selfTest": [
+        { "q": "Why should the same ADAMTS13 method be used throughout a patient's monitoring?", "a": "Differences between assays can mimic or mask change. One method keeps sensitivity for clinically significant changes (1C)." },
+        { "q": "Which VWF assays are most affected by caplacizumab?", "a": "The GPIb-based activity assays: VWF:GPIbM, VWF:RCo and VWF:GPIbR. VWF:CB, VWF:Ab and VWF:Ag are much less affected." }
+      ]
+    }
+  ]
+}
