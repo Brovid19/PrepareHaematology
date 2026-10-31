@@ -1,0 +1,21 @@
+name: Content integrity
+
+on:
+  push:
+    paths:
+      - "content/**"
+      - "public/**"
+      - "scripts/build_web_content.py"
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Fails if content/*.json has integrity problems (unknown sources, bad answer
+      # indexes, mixed domain names) or if public/content.js / sw.js BUILD_ID are stale.
+      - run: python3 scripts/build_web_content.py --check

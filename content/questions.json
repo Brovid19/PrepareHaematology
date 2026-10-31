@@ -1,0 +1,311 @@
+[
+  {
+    "id": "q_amyloid_01",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Cardiac AL Amyloidosis Staging (AL-ISS 2026)",
+    "stem": "A 68-year-old female with newly confirmed systemic AL amyloidosis undergoes baseline staging. Echocardiography demonstrates concentric ventricular thickening with 'apical sparing' and an abnormal global longitudinal strain (GLS) of -7%. Laboratory investigations are shown below.\n\nAccording to the AL International Staging System (AL-ISS) adopted in the 2026 BSH Guideline, what is the patient's cardiac stage and projected median survival?",
+    "labData": [
+      "NT-proBNP: 9,450 ng/L (NR <332)",
+      "Troponin T: 0.052 µg/L (= 52 ng/L; staging threshold 0.035 µg/L)",
+      "eGFR: 62 mL/min/1.73m²",
+      "Urine Albumin:Creatinine Ratio: 45 mg/mmol"
+    ],
+    "options": [
+      "Stage II; Median survival not reached at 5 years",
+      "Stage IIIA; Median survival approximately 76 months",
+      "Stage IIIB; Median survival approximately 26 months",
+      "Stage IIIC; Median survival approximately 4 months",
+      "Stage IV; Median survival less than 1 month"
+    ],
+    "correctIndex": 3,
+    "rationale": "According to the 2026 BSH AL Amyloidosis Guideline (Garg et al., Table 2) and the newly adopted AL-ISS system (Khwaja et al. 2026):\n• Stage IIIB is defined by NT-proBNP >8500 ng/L and Troponin T >=0.035 µg/L (median survival 26 months).\n• Stage IIIC defines ultra-poor risk, requiring NT-proBNP >8500 ng/L, Troponin T >=0.035 µg/L AND abnormal global longitudinal strain (GLS) >-9% (median survival 4 months).\n(The guideline table prints the troponin unit as 'ng/L'; 0.035 µg/L = 35 ng/L.)\nBecause this patient has NT-proBNP 9450, TnT 0.052, and GLS -7% (which is >-9%), she fulfills Stage IIIC criteria.",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "guidelineSection": "Table 2: Staging of cardiac amyloidosis (AL-ISS 2026)",
+    "evidenceGrade": "Prognostic staging table (ungraded)",
+    "yearPaper": "BSH 2026 Core Curriculum"
+  },
+  {
+    "id": "q_amyloid_02",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Biomarker Screening in Monoclonal Gammopathy",
+    "stem": "A 62-year-old man with known IgG lambda MGUS attends annual surveillance. He feels well with no bone pain, weight loss, or dyspnoea. His serum paraprotein is stable at 5 g/L and free light chain ratio is 0.18. Routine annual screening is performed.\n\nWhich combination of screening investigations and findings should raise immediate suspicion of presymptomatic AL amyloidosis according to the 2026 BSH Guideline?",
+    "labData": [
+      "FBC: Hb 138 g/L, Plt 220x10^9/L, WBC 6.2x10^9/L",
+      "Serum Albumin: 38 g/L (down from 45 g/L 12 months ago)",
+      "Urine PCR: 62 mg/mmol",
+      "Urine ACR: 38 mg/mmol",
+      "NT-proBNP: 390 ng/L"
+    ],
+    "options": [
+      "Findings are benign MGUS; repeat in 12 months as paraprotein is stable",
+      "Concordant rise in urine PCR >50 and ACR >30 with NT-proBNP >332 ng/L indicates early renal and cardiac AL involvement; perform fat pad/bone marrow Congo red",
+      "Isolated rise in NT-proBNP indicates hypertension; refer to cardiology and continue routine haematology follow-up",
+      "Refer for immediate emergency autologous stem cell transplant",
+      "Perform renal biopsy immediately as first-line investigation before any bone marrow or fat pad testing"
+    ],
+    "correctIndex": 1,
+    "rationale": "The 2026 BSH Guideline (Recommendations for MGUS Monitoring, Grade 1A) states:\n1. Urine PCR, ACR, and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS.\n2. Suspect kidney involvement if urine PCR >50 mg/mmol with a concordant rise in ACR >30 mg/mmol.\n3. Suspect cardiac involvement if NT-proBNP >332 ng/L (in MGUS/myeloma clinics).\n4. Falling albumin levels and raised ALP should prompt immediate investigation.\n5. In suspected AL, abdominal fat pad aspirate or bone marrow biopsy with Congo red should be performed before invasive renal biopsy (Grade 2B).",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "guidelineSection": "Section: When to Suspect AL Amyloidosis in MGUS / Table 1",
+    "evidenceGrade": "Grade 1A",
+    "yearPaper": "BSH 2026 Core Curriculum"
+  },
+  {
+    "id": "q_amyloid_03",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "MCQ",
+    "title": "Autonomic Neuropathy & Coagulopathy in Amyloidosis",
+    "stem": "A 65-year-old male presents with lightheadedness on standing, chronic nocturnal diarrhoea, and extensive spontaneous periorbital ecchymoses ('raccoon eyes'). Lying BP is 138/84 mmHg, which falls to 102/64 mmHg at 3 minutes of standing with a heart rate change from 68 to 72 bpm. Coagulation screen shows prolongation of both PT (19s) and APTT (46s) with normal fibrinogen and platelets; Factor X activity is 18%.\n\nAccording to the 2026 BSH AL Amyloidosis Guideline, what is the underlying mechanism of the ecchymoses and postural hypotension?",
+    "labData": [
+      "Lying BP: 138/84 mmHg",
+      "Standing BP (3 min): 102/64 mmHg (HR 72 bpm)",
+      "PT: 19s (Control 12s)",
+      "APTT: 46s (Control 30s)",
+      "Factor X activity: 18%",
+      "Platelets: 215x10^9/L"
+    ],
+    "options": [
+      "Primary idiopathic thrombocytopenic purpura with vasovagal syncope",
+      "Factor X deficiency due to binding by amyloid fibrils and neurogenic orthostatic hypotension from autonomic neuropathy",
+      "Scurvy with adrenal insufficiency",
+      "Warfarin toxicity with diabetic autonomic neuropathy",
+      "Severe Von Willebrand disease with sympathetic hyperreactivity"
+    ],
+    "correctIndex": 1,
+    "rationale": "According to the 2026 BSH Guideline on AL Amyloidosis (Garg et al.):\n• Periorbital ecchymoses (purpura) and bleeding in AL amyloidosis are classic hallmark signs caused by vascular amyloid fragility and acquired Factor X deficiency (caused by rapid clearance and adsorption of circulating Factor X onto amyloid fibrils in tissues). Factor X sits in the common pathway, so its deficiency prolongs BOTH the PT and the APTT.\n• Neurogenic orthostatic hypotension is defined as a sustained fall in blood pressure >=20/10 mmHg within 3 minutes of standing with blunted compensatory heart rate elevation (<10 bpm), characteristic of autonomic amyloid infiltration.\n• Both bleeding due to Factor X deficiency and postural drop >20 mmHg are explicit criteria for urgent haematology clinic referral.",
+    "sourceResourceId": "bsh_amyloidosis_2026",
+    "guidelineSection": "Section: When to Refer Urgently to a Haematology Clinic / Figure 1",
+    "evidenceGrade": "Grade 1A",
+    "yearPaper": "BSH 2026 Core Curriculum"
+  },
+  {
+    "id": "q_gynae_01",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "MCQ",
+    "title": "Biss 2026: Anticoagulation-Induced Heavy Menstrual Bleeding",
+    "stem": "A 28-year-old woman receiving therapeutic anticoagulation with rivaroxaban for unprovoked deep vein thrombosis develops severe heavy menstrual bleeding requiring repeated hospital attendance despite first-line measures. According to the 2026 BSH/UKHCDO Good Practice Paper on multidisciplinary haematology-gynaecology care, which anticoagulant modification is recommended to reduce HMB while maintaining therapeutic anticoagulation?",
+    "options": [
+      "Switch anticoagulation to apixaban or dabigatran, which have a lower incidence of HMB",
+      "Permanently discontinue all anticoagulation without haematological review",
+      "Increase the rivaroxaban dose during menses to promote clot stabilization",
+      "Switch to low-dose unfractionated heparin without monitoring",
+      "Add high-dose aspirin alongside rivaroxaban"
+    ],
+    "correctIndex": 0,
+    "rationale": "According to the BSH/UKHCDO 2026 Good Practice Paper (Biss et al., Section on Individuals receiving anti-coagulant therapy), oral anticoagulant agents may need to be changed in treatment-resistant HMB. Apixaban or dabigatran have a lower incidence of heavy menstrual bleeding compared to rivaroxaban (an ungraded good-practice point in the text, not a formal recommendation). Complete cessation of anticoagulation carries unacceptable risk of recurrent VTE.",
+    "sourceResourceId": "bsh_haem_gynae_2026",
+    "guidelineSection": "Section: Individuals receiving anti-coagulant therapy",
+    "evidenceGrade": "Consensus"
+  },
+  {
+    "id": "q_gynae_02",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "MCQ",
+    "title": "Biss 2026: Intrauterine System Expulsion in Bleeding Disorders",
+    "stem": "A 17-year-old girl with severe Type 1 von Willebrand disease is considering a levonorgestrel-releasing intrauterine system (LNS-IUS / Mirena) for persistent heavy menstrual bleeding. Which clinical counseling point is emphasized in the 2026 BSH/UKHCDO guideline?",
+    "options": [
+      "Women with inherited bleeding disorders have higher IUS expulsion rates, and menstrual suppression can reduce this risk",
+      "LNS-IUS is strictly contraindicated in all women with inherited bleeding disorders",
+      "The device must only be inserted after full surgical hysterectomy",
+      "Coagulation factor concentrates are contraindicated during intrauterine procedures",
+      "Expulsion rates are zero in adolescent bleeding disorder populations"
+    ],
+    "correctIndex": 0,
+    "rationale": "The BSH/UKHCDO 2026 guideline highlights that there are reports of increased intrauterine device expulsion rates in women with inherited bleeding disorders (IBDs). The role of medical menstrual suppression to decrease this expulsion risk has been described and should be discussed with the patient.",
+    "sourceResourceId": "bsh_haem_gynae_2026",
+    "guidelineSection": "Section: Individuals with inherited bleeding disorders",
+    "evidenceGrade": "Consensus"
+  },
+  {
+    "id": "q_gynae_03",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "EMQ",
+    "title": "Biss 2026: PALM-COEIN Classification for Abnormal Uterine Bleeding",
+    "stem": "A 22-year-old female presents to the combined clinic with menorrhagia since menarche and family history of easy bruising. According to the FIGO PALM-COEIN classification adopted by BSH/UKHCDO 2026, which category does an underlying von Willebrand disease represent?",
+    "options": [
+      "Coagulopathy (Non-structural cause)",
+      "Adenomyosis (Structural cause)",
+      "Leiomyoma (Structural cause)",
+      "Endometrial (Structural cause)",
+      "Iatrogenic (Structural cause)"
+    ],
+    "correctIndex": 0,
+    "rationale": "In the FIGO PALM-COEIN system adopted in the BSH/UKHCDO guideline, PALM represents structural etiologies (Polyp, Adenomyosis, Leiomyoma, Malignancy), whereas COEIN represents non-structural etiologies (Coagulopathy, Ovulatory dysfunction, Endometrial, Iatrogenic, Not yet classified). Inherited bleeding disorders fall under Coagulopathy.",
+    "sourceResourceId": "bsh_haem_gynae_2026",
+    "guidelineSection": "Figure 1: PALM-COEIN Classification",
+    "evidenceGrade": "Consensus"
+  },
+  {
+    "id": "q_poct_01",
+    "domain": "General Haematology",
+    "type": "MCQ",
+    "title": "Tam 2026: Point-of-Care D-Dimer for VTE Exclusion",
+    "stem": "An ambulatory care unit is evaluating a bedside point-of-care test for D-dimer to aid in the exclusion of deep vein thrombosis. According to the 2026 BSH Point-of-Care Testing guideline (Tam et al.), what is the specific recommendation regarding POCT D-dimer assays?",
+    "options": [
+      "Only high-sensitivity D-dimer tests with performance matching STA or ELISA laboratory assays should be used (Grade 1B)",
+      "Qualitative POCT D-dimer dipstick assays are sufficient to exclude PE in high-risk patients",
+      "Any POCT D-dimer device may be used without comparison to laboratory reference methods",
+      "D-dimer testing should be replaced entirely by bedside ultrasound without clinical pre-test probability scoring",
+      "POCT D-dimer has higher sensitivity than automated central laboratory latex immunoassays"
+    ],
+    "correctIndex": 0,
+    "rationale": "According to the 2026 BSH POCT guideline recommendation (Grade 1B), only high-sensitivity D-dimer tests with performance matching STA or ELISA laboratory assays should be used. Meta-analyses have shown that qualitative POCT D-dimer assays have limited utility due to low sensitivity and must not be used to rule out VTE.",
+    "sourceResourceId": "bsh_poct_haematology_2026",
+    "guidelineSection": "Recommendations: Point-of-care D-dimer testing",
+    "evidenceGrade": "Grade 1B"
+  },
+  {
+    "id": "q_poct_02",
+    "domain": "General Haematology",
+    "type": "MCQ",
+    "title": "Tam 2026: Blood Gas Analysers vs Central Laboratory Haemoglobin",
+    "stem": "In an emergency department, a patient with upper GI bleeding has a blood gas analyser (BGA) haemoglobin of 72 g/L. The central laboratory full blood count returns a haemoglobin of 84 g/L. According to the 2026 BSH Point-of-Care Testing guideline, what is the key clinical guidance regarding BGAs?",
+    "options": [
+      "Blood gas analysers should not substitute laboratory-based testing of Hb/Hct but may aid in monitoring trends (Grade 1C)",
+      "BGAs are fully interchangeable with central laboratory analysers under CLIA criteria",
+      "BGA haemoglobin measurements are unaffected by haemolysis or lipaemia",
+      "Blood transfusion should always be triggered solely by BGA without laboratory verification",
+      "Centrifugal BGA methods consistently overestimate haemoglobin compared to central laboratories"
+    ],
+    "correctIndex": 0,
+    "rationale": "The BSH 2026 guideline explicitly recommends that blood gas analysers should not substitute laboratory-based testing of Hb/Hct (Grade 1C). Studies disagree in both directions: BGA underestimation can trigger unnecessary transfusion, while one study found 21% of patients who would be transfused on the lab Hct would not be on the BGA Hct, and another found systematic BGA overestimation (mean 8 g/L). BGAs are therefore not interchangeable with lab analysers.",
+    "sourceResourceId": "bsh_poct_haematology_2026",
+    "guidelineSection": "Recommendations: Blood gas Hb/haematocrit measurement",
+    "evidenceGrade": "Grade 1C"
+  },
+  {
+    "id": "q_poct_03",
+    "domain": "General Haematology",
+    "type": "MCQ",
+    "title": "Tam 2026: POCT PT/INR Limitations in Antiphospholipid Syndrome",
+    "stem": "A 42-year-old woman with triple-positive antiphospholipid syndrome on warfarin attends a clinic where an electromechanical POCT PT/INR meter (CoaguChek) reports an INR of 2.4. Which limitation of POCT PT/INR devices is highlighted in the 2026 BSH guideline?",
+    "options": [
+      "Clinically significant discrepancies occur in patients with antiphospholipid syndrome receiving warfarin, requiring central laboratory monitoring",
+      "POCT PT/INR devices are completely immune to lupus anticoagulant interference",
+      "POCT meters are accurate up to INR 12.0 without lot-to-lot bias",
+      "POCT PT/INR is licensed for direct oral anticoagulant (DOAC) therapeutic drug monitoring",
+      "Capillary INR is identical to venous laboratory INR in all thrombophilia conditions"
+    ],
+    "correctIndex": 0,
+    "rationale": "The 2026 BSH guideline notes that despite widespread use, portable PT/INR devices have notable limitations: clinically significant discrepancies have been observed in patients with antiphospholipid syndrome receiving warfarin. In addition, at INRs >=4, analytical bias exists between test strip lots.",
+    "sourceResourceId": "bsh_poct_haematology_2026",
+    "guidelineSection": "Section: Point-of-care PT/INR testing for anticoagulation management",
+    "evidenceGrade": "Grade 1B"
+  },
+  {
+    "id": "q_ttp_01",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "MCQ",
+    "title": "MacDonald 2026: Emergency Suspicion & Sample Requirements for TTP",
+    "stem": "A 34-year-old previously well woman presents to the acute medical unit with confusion, petechiae, a platelet count of 18 x 10^9/L, and microangiopathic haemolytic anaemia with abundant schistocytes. Which statement accurately reflects the 2026 BSH laboratory guideline (MacDonald et al.)?",
+    "options": [
+      "Suspected TTP is a medical emergency: ADAMTS13 activity availability is not a prerequisite for initiating treatment, and pre-treatment blood must be collected in 0.109 M sodium citrate",
+      "Plasma exchange must be withheld until quantitative ADAMTS13 activity confirmation is received",
+      "Blood samples for ADAMTS13 activity should be collected into EDTA tubes to stabilize metalloproteinase cleavage",
+      "Blood film review for thrombocytopenia with haemolysis should be deferred until the next routine laboratory shift",
+      "An ADAMTS13 activity of 25 IU/dL confirms acute immune-mediated TTP"
+    ],
+    "correctIndex": 0,
+    "rationale": "The BSH 2026 guideline emphasizes that suspected TTP is a medical emergency where availability of ADAMTS13 activity is NOT a prerequisite for immediate treatment (stated as context, ungraded). Samples should be collected into 0.109 M (3.2%) sodium citrate BEFORE treatment (Grade 1B). EDTA cannot be used because it chelates divalent cations (zinc and calcium), causing falsely low ADAMTS13 activity.",
+    "sourceResourceId": "bsh_ttp_laboratory_2026",
+    "guidelineSection": "Section: Laboratory Investigation for TTP & Pre-analytical considerations",
+    "evidenceGrade": "Grade 1B"
+  },
+  {
+    "id": "q_ttp_02",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "MCQ",
+    "title": "MacDonald 2026: ADAMTS13 Activity Cutoff & Turnaround Standards",
+    "stem": "According to the 2026 BSH laboratory guideline for TTP, which ADAMTS13 activity threshold confirms the diagnosis of TTP, and what is the recommended turnaround time for rapid automated assays in suspected cases?",
+    "options": [
+      "ADAMTS13 activity <10 IU/dL confirms TTP; preliminary results should be available ideally within 1 hour of sample receipt (Grade 1C)",
+      "ADAMTS13 activity <50 IU/dL confirms TTP; preliminary results within 24 hours",
+      "ADAMTS13 activity <30 IU/dL confirms TTP; preliminary results within 12 hours",
+      "ADAMTS13 activity <5 IU/dL confirms TTP; results are only valid if tested by manual full-length VWF multimer assay",
+      "ADAMTS13 activity <20 IU/dL confirms TTP; turnaround times of up to 48 hours are acceptable"
+    ],
+    "correctIndex": 0,
+    "rationale": "The 2026 BSH guideline states that ADAMTS13 activity <10 IU/dL is the diagnostic cut-off for TTP (10–20 IU/dL is an equivocal grey zone for manual FRET/ELISA assays; not established for automated platforms). In suspected TTP, preliminary results should be available as soon as possible, ideally within 1 hour of sample receipt for rapid automated assays, or 6 hours for ELISA (Grade 1C).",
+    "sourceResourceId": "bsh_ttp_laboratory_2026",
+    "guidelineSection": "Section: Turnaround Times & Testing for ADAMTS13 Activity",
+    "evidenceGrade": "Grade 1C"
+  },
+  {
+    "id": "q_ttp_03",
+    "domain": "Haemostasis & Thrombosis",
+    "type": "MCQ",
+    "title": "MacDonald 2026: Anti-ADAMTS13 Antibody Timing and Methodology",
+    "stem": "In a patient with confirmed severe ADAMTS13 deficiency (<10 IU/dL), what does the 2026 BSH guideline mandate regarding anti-ADAMTS13 antibody testing?",
+    "options": [
+      "Anti-ADAMTS13 antibody assays must be performed within 72 hours of presentation, and an ELISA is recommended over Bethesda-style inhibitor assays (Grade 1B/2D)",
+      "Anti-ADAMTS13 antibody testing is unnecessary in acute TTP",
+      "Bethesda-style inhibitor assays are superior to ELISA for detecting non-neutralising antibodies",
+      "Antibody testing should only be performed after 6 months of clinical remission",
+      "Presence of anti-ADAMTS13 antibodies confirms congenital TTP (Upshaw-Schulman syndrome)"
+    ],
+    "correctIndex": 0,
+    "rationale": "The 2026 BSH guideline recommends that anti-ADAMTS13 antibody assays must be performed within 72h of presentation when ADAMTS13 activity is <10 IU/dL (Grade 1B). An ELISA is recommended over non-standardised Bethesda-style inhibitor assays or mixing studies because ELISA detects both neutralising and non-neutralising IgG antibodies (Grade 2D).",
+    "sourceResourceId": "bsh_ttp_laboratory_2026",
+    "guidelineSection": "Recommendations: Testing for antibodies against ADAMTS13",
+    "evidenceGrade": "Grade 1B"
+  },
+  {
+    "id": "q_pmbcl_01",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Osborne 2026: Omission of Radiotherapy in Complete Metabolic Response",
+    "stem": "A 26-year-old woman with newly diagnosed bulky Primary Mediastinal B-cell Lymphoma (PMBCL) completes 6 cycles of DA-R-EPOCH. An end-of-treatment PET-CT scan performed at 6 weeks demonstrates Deauville Score 2 (Complete Metabolic Response). According to the 2026 BSH guideline (Osborne et al.) and the IELSG37 prospective trial, what is the recommended management?",
+    "options": [
+      "Do not offer consolidative radiotherapy; observation only is recommended (Grade 1A)",
+      "Mandatory consolidative involved-site radiotherapy to 36 Gy regardless of PET response",
+      "Immediate autologous stem cell transplantation as consolidation",
+      "Maintenance rituximab for 2 years",
+      "High-dose salvage chemotherapy with R-ICE"
+    ],
+    "correctIndex": 0,
+    "rationale": "The 2026 BSH PMBCL guideline states: 'Do not offer radiotherapy for patients with DS 1–3 following chemoimmunotherapy (Grade 1A)'. This is supported by the landmark IELSG37 trial, which randomised patients in complete metabolic response (DS 1–3) to observation vs radiotherapy and showed no survival detriment with observation (5-year OS 99% in both arms).",
+    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+    "guidelineSection": "Recommendations: Radiotherapy consolidation after first-line chemoimmunotherapy",
+    "evidenceGrade": "Grade 1A"
+  },
+  {
+    "id": "q_pmbcl_02",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Osborne 2026: First-Line Chemoimmunotherapy Regimens",
+    "stem": "A 32-year-old man is diagnosed with anterior mediastinal PMBCL with superior vena cava compression. Which first-line chemotherapy approach is recommended by the 2026 BSH guideline?",
+    "options": [
+      "Offer dose-intensive R-CHOP-14 x6 or DA-R-EPOCH x6; R-CHOP-21 is not recommended (Grade 1B)",
+      "R-CHOP-21 for 6 cycles is the preferred national standard of care",
+      "Single-agent rituximab with involved-field radiation therapy",
+      "CHOP-21 chemotherapy without anti-CD20 monoclonal antibody",
+      "Immediate upfront CAR T-cell therapy without prior chemoimmunotherapy"
+    ],
+    "correctIndex": 0,
+    "rationale": "The 2026 BSH guideline recommends dose-intensive chemoimmunotherapy: offer R-CHOP-14 x6 or DA-R-EPOCH x6 (Grade 1B). In the IELSG37 trial (not powered to compare induction regimens), patients given R-CHOP-21 had a significantly higher rate of Deauville 5 response (23.8% vs 8.2%) and inferior EFS compared with dose-intensive regimens; R-CHOP-21 is therefore not recommended (Grade 1B). A LYSA study found no efficacy difference between R-CHOP-14 and DA-R-EPOCH but more toxicity with DA-R-EPOCH.",
+    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+    "guidelineSection": "Recommendations: First-Line Treatment",
+    "evidenceGrade": "Grade 1B"
+  },
+  {
+    "id": "q_pmbcl_03",
+    "domain": "Haemato-Oncology",
+    "type": "MCQ",
+    "title": "Osborne 2026: Thromboprophylaxis & Second-Line CAR T-Cell Therapy",
+    "stem": "Which pair of recommendations is explicitly supported in the 2026 BSH PMBCL guideline?",
+    "options": [
+      "Thromboprophylaxis is recommended at presentation in patients with platelets >50 x 10^9/L (Grade 1C), and CD19 CAR T-cell therapy (liso-cel) is recommended for relapse within 12 months (Grade 1C)",
+      "Anticoagulation is strictly contraindicated in PMBCL due to pericardial effusion risk, and autologous transplant is superior to CAR-T in primary refractory disease",
+      "Surveillance PET-CT imaging should be performed every 3 months for 5 years in asymptomatic patients",
+      "Central nervous system prophylaxis is mandatory in all PMBCL patients",
+      "R-CHOP-21 is superior to DA-R-EPOCH in women under 40"
+    ],
+    "correctIndex": 0,
+    "rationale": "The 2026 BSH PMBCL guideline emphasizes two crucial points: (1) Thrombotic complications occur in 28% of patients (most often around presentation); thromboprophylaxis is recommended if platelets >50 x 10^9/L (Grade 1C). (2) In patients with relapsed or refractory disease within 12 months, second-line high-dose chemotherapy has very poor outcomes; CD19 CAR T-cell therapy (liso-cel, TRANSFORM trial) is licensed and recommended second-line (Grade 1C). Routine surveillance imaging in asymptomatic patients in remission is not recommended (Grade 1B).",
+    "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+    "guidelineSection": "Recommendations: Presentation & Relapsed PMBCL",
+    "evidenceGrade": "Grade 1C"
+  }
+]

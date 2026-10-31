@@ -1,56 +1,104 @@
-// Prepare Haematology Service Worker for Offline & Edge Caching
-const CACHE_NAME = 'prepare-haematology-v1';
-const ASSETS_TO_CACHE = [
+// Prepare Haematology service worker (PWA offline support).
+//
+// BUILD_ID is stamped by scripts/build_web_content.py whenever the app shell or content
+// changes. A new BUILD_ID makes the browser install a new worker; the page then shows an
+// "Update available" banner and the learner chooses when to reload.
+const BUILD_ID = '0744c2261dc3';
+const SHELL_CACHE = `prepare-haematology-shell-${BUILD_ID}`;
+const PDF_CACHE = 'prepare-haematology-pdfs'; // kept across updates so offline PDFs survive
+
+const APP_SHELL = [
   '/',
   '/index.html',
-  '/site.webmanifest'
+  '/content.js',
+  '/site.webmanifest',
+  '/favicon.ico',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/maskable-192.png',
+  '/icons/maskable-512.png',
+  '/icons/apple-touch-icon.png',
+  '/icons/favicon-32.png'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    }).then(() => self.skipWaiting())
+    caches.open(SHELL_CACHE).then((cache) => cache.addAll(APP_SHELL.map((url) => new Request(url, { cache: 'reload' }))))
   );
+  // Do not skipWaiting here: the page asks the learner before switching versions,
+  // so an in-progress mock exam is never reloaded underneath them.
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
-      );
-    }).then(() => self.clients.claim())
+    caches.keys()
+      .then((keys) => Promise.all(
+        keys
+          .filter((key) => key.startsWith('prepare-haematology') && key !== SHELL_CACHE && key !== PDF_CACHE)
+          .map((key) => caches.delete(key))
+      ))
+      .then(() => self.clients.claim())
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
+function isCacheable(response) {
+  return response && response.status === 200 && response.type === 'basic';
+}
 
-  // For PDF assets or large downloads, use network first
-  if (url.pathname.startsWith('/assets/') || url.pathname.startsWith('/downloads/')) {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
-    );
+async function networkFirst(request, fallbackUrl) {
+  const cache = await caches.open(SHELL_CACHE);
+  try {
+    const response = await fetch(request);
+    if (isCacheable(response)) cache.put(request, response.clone());
+    return response;
+  } catch (err) {
+    const cached = await cache.match(request, { ignoreSearch: true });
+    if (cached) return cached;
+    if (fallbackUrl) {
+      const fallback = await cache.match(fallbackUrl);
+      if (fallback) return fallback;
+    }
+    throw err;
+  }
+}
+
+async function cacheFirst(request, cacheName) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
+  if (cached) return cached;
+  const response = await fetch(request);
+  if (isCacheable(response)) cache.put(request, response.clone());
+  return response;
+}
+
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  // Pages: network-first so corrections arrive immediately; offline falls back to the shell.
+  if (request.mode === 'navigate') {
+    event.respondWith(networkFirst(request, '/index.html'));
     return;
   }
 
-  // Cache-first for local static shell, fallback to network
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
-        const responseToCache = response.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-        return response;
-      });
-    })
-  );
+  // Study content: network-first, cached copy offline.
+  if (url.pathname === '/content.js') {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  // Guideline PDFs: cached once opened, so they can be read offline afterwards.
+  if (url.pathname.startsWith('/assets/')) {
+    event.respondWith(cacheFirst(request, PDF_CACHE));
+    return;
+  }
+
+  // Icons, manifest and other static files.
+  event.respondWith(cacheFirst(request, SHELL_CACHE));
 });

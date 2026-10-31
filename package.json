@@ -1,11 +1,13 @@
 {
   "name": "preparehaematology",
   "version": "1.0.0",
-  "description": "Prepare Haematology - FRCPath Part 1 Revision Platform",
+  "description": "Prepare Haematology - FRCPath Part 1 revision Progressive Web App",
   "type": "module",
   "scripts": {
-    "build": "echo 'Static assets ready in ./public'",
-    "deploy": "wrangler deploy"
+    "build": "python3 scripts/build_web_content.py",
+    "check": "python3 scripts/build_web_content.py --check",
+    "dev": "python3 scripts/build_web_content.py && python3 -m http.server 8080 --directory public",
+    "deploy": "python3 scripts/build_web_content.py && wrangler deploy"
   },
   "devDependencies": {
     "wrangler": "^3.90.0"
