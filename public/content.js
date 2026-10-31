@@ -143,7 +143,8 @@ window.PREPARE_CONTENT = {
    "explanation": "According to the 2026 BSH AL Amyloidosis Guideline (Garg et al., Table 2) and the newly adopted AL-ISS system (Khwaja et al. 2026):\n• Stage IIIB is defined by NT-proBNP >8500 ng/L and Troponin T >=0.035 µg/L (median survival 26 months).\n• Stage IIIC defines ultra-poor risk, requiring NT-proBNP >8500 ng/L, Troponin T >=0.035 µg/L AND abnormal global longitudinal strain (GLS) >-9% (median survival 4 months).\n(The guideline table prints the troponin unit as 'ng/L'; 0.035 µg/L = 35 ng/L.)\nBecause this patient has NT-proBNP 9450, TnT 0.052, and GLS -7% (which is >-9%), she fulfills Stage IIIC criteria.",
    "ref": "BSH 2026 Core Curriculum • Table 2: Staging of cardiac amyloidosis (AL-ISS 2026)",
    "evidenceGrade": "Prognostic staging table (ungraded)",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "staging"
   },
   {
    "id": "q_amyloid_02",
@@ -162,7 +163,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH Guideline (Recommendations for MGUS Monitoring, Grade 1A) states:\n1. Urine PCR, ACR, and NT-proBNP should be added to standard tests for assessment as well as monitoring of MGUS.\n2. Suspect kidney involvement if urine PCR >50 mg/mmol with a concordant rise in ACR >30 mg/mmol.\n3. Suspect cardiac involvement if NT-proBNP >332 ng/L (in MGUS/myeloma clinics).\n4. Falling albumin levels and raised ALP should prompt immediate investigation.\n5. In suspected AL, abdominal fat pad aspirate or bone marrow biopsy with Congo red should be performed before invasive renal biopsy (Grade 2B).",
    "ref": "BSH 2026 Core Curriculum • Section: When to Suspect AL Amyloidosis in MGUS / Table 1",
    "evidenceGrade": "Grade 1A",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "rec:0"
   },
   {
    "id": "q_amyloid_03",
@@ -181,7 +183,8 @@ window.PREPARE_CONTENT = {
    "explanation": "According to the 2026 BSH Guideline on AL Amyloidosis (Garg et al.):\n• Periorbital ecchymoses (purpura) and bleeding in AL amyloidosis are classic hallmark signs caused by vascular amyloid fragility and acquired Factor X deficiency (caused by rapid clearance and adsorption of circulating Factor X onto amyloid fibrils in tissues). Factor X sits in the common pathway, so its deficiency prolongs BOTH the PT and the APTT.\n• Neurogenic orthostatic hypotension is defined as a sustained fall in blood pressure >=20/10 mmHg within 3 minutes of standing with blunted compensatory heart rate elevation (<10 bpm), characteristic of autonomic amyloid infiltration.\n• Both bleeding due to Factor X deficiency and postural drop >20 mmHg are explicit criteria for urgent haematology clinic referral.",
    "ref": "BSH 2026 Core Curriculum • Section: When to Refer Urgently to a Haematology Clinic / Figure 1",
    "evidenceGrade": "Grade 1A",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "q_gynae_01",
@@ -200,7 +203,8 @@ window.PREPARE_CONTENT = {
    "explanation": "According to the BSH/UKHCDO 2026 Good Practice Paper (Biss et al., Section on Individuals receiving anti-coagulant therapy), oral anticoagulant agents may need to be changed in treatment-resistant HMB. Apixaban or dabigatran have a lower incidence of heavy menstrual bleeding compared to rivaroxaban (an ungraded good-practice point in the text, not a formal recommendation). Complete cessation of anticoagulation carries unacceptable risk of recurrent VTE.",
    "ref": "Section: Individuals receiving anti-coagulant therapy",
    "evidenceGrade": "Consensus",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "q_gynae_02",
@@ -219,7 +223,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The BSH/UKHCDO 2026 guideline highlights that there are reports of increased intrauterine device expulsion rates in women with inherited bleeding disorders (IBDs). The role of medical menstrual suppression to decrease this expulsion risk has been described and should be discussed with the patient.",
    "ref": "Section: Individuals with inherited bleeding disorders",
    "evidenceGrade": "Consensus",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "q_gynae_03",
@@ -238,7 +243,8 @@ window.PREPARE_CONTENT = {
    "explanation": "In the FIGO PALM-COEIN system adopted in the BSH/UKHCDO guideline, PALM represents structural etiologies (Polyp, Adenomyosis, Leiomyoma, Malignancy), whereas COEIN represents non-structural etiologies (Coagulopathy, Ovulatory dysfunction, Endometrial, Iatrogenic, Not yet classified). Inherited bleeding disorders fall under Coagulopathy.",
    "ref": "Figure 1: PALM-COEIN Classification",
    "evidenceGrade": "Consensus",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "staging"
   },
   {
    "id": "q_poct_01",
@@ -257,7 +263,8 @@ window.PREPARE_CONTENT = {
    "explanation": "According to the 2026 BSH POCT guideline recommendation (Grade 1B), only high-sensitivity D-dimer tests with performance matching STA or ELISA laboratory assays should be used. Meta-analyses have shown that qualitative POCT D-dimer assays have limited utility due to low sensitivity and must not be used to rule out VTE.",
    "ref": "Recommendations: Point-of-care D-dimer testing",
    "evidenceGrade": "Grade 1B",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "rec:1"
   },
   {
    "id": "q_poct_02",
@@ -276,7 +283,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The BSH 2026 guideline explicitly recommends that blood gas analysers should not substitute laboratory-based testing of Hb/Hct (Grade 1C). Studies disagree in both directions: BGA underestimation can trigger unnecessary transfusion, while one study found 21% of patients who would be transfused on the lab Hct would not be on the BGA Hct, and another found systematic BGA overestimation (mean 8 g/L). BGAs are therefore not interchangeable with lab analysers.",
    "ref": "Recommendations: Blood gas Hb/haematocrit measurement",
    "evidenceGrade": "Grade 1C",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "rec:2"
   },
   {
    "id": "q_poct_03",
@@ -295,7 +303,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH guideline notes that despite widespread use, portable PT/INR devices have notable limitations: clinically significant discrepancies have been observed in patients with antiphospholipid syndrome receiving warfarin. In addition, at INRs >=4, analytical bias exists between test strip lots.",
    "ref": "Section: Point-of-care PT/INR testing for anticoagulation management",
    "evidenceGrade": "Grade 1B",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "q_ttp_01",
@@ -314,7 +323,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The BSH 2026 guideline emphasizes that suspected TTP is a medical emergency where availability of ADAMTS13 activity is NOT a prerequisite for immediate treatment (stated as context, ungraded). Samples should be collected into 0.109 M (3.2%) sodium citrate BEFORE treatment (Grade 1B). EDTA cannot be used because it chelates divalent cations (zinc and calcium), causing falsely low ADAMTS13 activity.",
    "ref": "Section: Laboratory Investigation for TTP & Pre-analytical considerations",
    "evidenceGrade": "Grade 1B",
-   "sourceResourceId": "bsh_ttp_laboratory_2026"
+   "sourceResourceId": "bsh_ttp_laboratory_2026",
+   "anchor": "rec:0"
   },
   {
    "id": "q_ttp_02",
@@ -333,7 +343,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH guideline states that ADAMTS13 activity <10 IU/dL is the diagnostic cut-off for TTP (10–20 IU/dL is an equivocal grey zone for manual FRET/ELISA assays; not established for automated platforms). In suspected TTP, preliminary results should be available as soon as possible, ideally within 1 hour of sample receipt for rapid automated assays, or 6 hours for ELISA (Grade 1C).",
    "ref": "Section: Turnaround Times & Testing for ADAMTS13 Activity",
    "evidenceGrade": "Grade 1C",
-   "sourceResourceId": "bsh_ttp_laboratory_2026"
+   "sourceResourceId": "bsh_ttp_laboratory_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "q_ttp_03",
@@ -352,7 +363,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH guideline recommends that anti-ADAMTS13 antibody assays must be performed within 72h of presentation when ADAMTS13 activity is <10 IU/dL (Grade 1B). An ELISA is recommended over non-standardised Bethesda-style inhibitor assays or mixing studies because ELISA detects both neutralising and non-neutralising IgG antibodies (Grade 2D).",
    "ref": "Recommendations: Testing for antibodies against ADAMTS13",
    "evidenceGrade": "Grade 1B",
-   "sourceResourceId": "bsh_ttp_laboratory_2026"
+   "sourceResourceId": "bsh_ttp_laboratory_2026",
+   "anchor": "rec:4"
   },
   {
    "id": "q_pmbcl_01",
@@ -371,7 +383,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH PMBCL guideline states: 'Do not offer radiotherapy for patients with DS 1–3 following chemoimmunotherapy (Grade 1A)'. This is supported by the landmark IELSG37 trial, which randomised patients in complete metabolic response (DS 1–3) to observation vs radiotherapy and showed no survival detriment with observation (5-year OS 99% in both arms).",
    "ref": "Recommendations: Radiotherapy consolidation after first-line chemoimmunotherapy",
    "evidenceGrade": "Grade 1A",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:0"
   },
   {
    "id": "q_pmbcl_02",
@@ -390,7 +403,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH guideline recommends dose-intensive chemoimmunotherapy: offer R-CHOP-14 x6 or DA-R-EPOCH x6 (Grade 1B). In the IELSG37 trial (not powered to compare induction regimens), patients given R-CHOP-21 had a significantly higher rate of Deauville 5 response (23.8% vs 8.2%) and inferior EFS compared with dose-intensive regimens; R-CHOP-21 is therefore not recommended (Grade 1B). A LYSA study found no efficacy difference between R-CHOP-14 and DA-R-EPOCH but more toxicity with DA-R-EPOCH.",
    "ref": "Recommendations: First-Line Treatment",
    "evidenceGrade": "Grade 1B",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:1"
   },
   {
    "id": "q_pmbcl_03",
@@ -409,7 +423,8 @@ window.PREPARE_CONTENT = {
    "explanation": "The 2026 BSH PMBCL guideline emphasizes two crucial points: (1) Thrombotic complications occur in 28% of patients (most often around presentation); thromboprophylaxis is recommended if platelets >50 x 10^9/L (Grade 1C). (2) In patients with relapsed or refractory disease within 12 months, second-line high-dose chemotherapy has very poor outcomes; CD19 CAR T-cell therapy (liso-cel, TRANSFORM trial) is licensed and recommended second-line (Grade 1C). Routine surveillance imaging in asymptomatic patients in remission is not recommended (Grade 1B).",
    "ref": "Recommendations: Presentation & Relapsed PMBCL",
    "evidenceGrade": "Grade 1C",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:3"
   }
  ],
  "flashcards": [
@@ -420,7 +435,8 @@ window.PREPARE_CONTENT = {
    "ref": "BSH 2026 AL Amyloidosis Guideline (Table 2; Khwaja et al.)",
    "front": "What defines AL-ISS Stage IIIC cardiac amyloidosis and what is its median survival?",
    "back": "• NT-proBNP >8500 ng/L\n• Troponin T >=0.035 µg/L (35 ng/L; printed as 'ng/L' in the guideline table)\n• Global Longitudinal Strain (GLS) >-9%\n\nMedian Survival: Approximately 4 months (Ultra-poor risk group).",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "staging"
   },
   {
    "id": "fc_02",
@@ -429,7 +445,8 @@ window.PREPARE_CONTENT = {
    "ref": "BSH 2026 AL Amyloidosis Guideline (Rec 1A)",
    "front": "What three screening biomarkers should be added to routine monitoring of MGUS/SMM to detect early AL amyloidosis?",
    "back": "1. Urine Protein:Creatinine Ratio (PCR) - suspect if >50 mg/mmol\n2. Urine Albumin:Creatinine Ratio (ACR) - suspect if concordant >30 mg/mmol\n3. NT-proBNP - suspect if >332 ng/L\n\nGrade 1A recommendation. Note: Patients can progress with minimal or no increase in clonal light chains.",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "rec:0"
   },
   {
    "id": "fc_03",
@@ -438,7 +455,8 @@ window.PREPARE_CONTENT = {
    "ref": "BSH 2026 AL Amyloidosis Guideline (Rec 2B)",
    "front": "In suspected AL amyloidosis with proteinuria, when should a kidney biopsy be avoided?",
    "back": "A kidney biopsy can be avoided if AL amyloid deposits are confirmed with Congo red staining on less invasive tissue (bone marrow trephine or abdominal fat pad aspirate/biopsy) in the presence of a clonal paraprotein (Grade 2B).",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "rec:4"
   },
   {
    "id": "fc_04",
@@ -447,7 +465,8 @@ window.PREPARE_CONTENT = {
    "ref": "BSH 2026 AL Amyloidosis Guideline",
    "front": "List the 6 red-flag triggers for URGENT haematology referral in suspected AL amyloidosis.",
    "back": "1. Serum Albumin <25 g/L\n2. Falling eGFR <50 mL/min/1.73m²\n3. All cases of cardiac amyloidosis\n4. Autonomic neuropathy with postural drop >20 mmHg\n5. Hepatic amyloid with Bilirubin >2x ULN\n6. Bleeding/bruising due to acquired Factor X deficiency",
-   "sourceResourceId": "bsh_amyloidosis_2026"
+   "sourceResourceId": "bsh_amyloidosis_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_gynae_01",
@@ -456,7 +475,8 @@ window.PREPARE_CONTENT = {
    "ref": "Biss 2026 (FIGO FIG. 1)",
    "front": "What is the FIGO PALM-COEIN classification for abnormal uterine bleeding (AUB) adopted in the 2026 BSH/UKHCDO guideline?",
    "back": "PALM-COEIN Classification:\n• Structural (PALM):\n  - P: Polyp\n  - A: Adenomyosis\n  - L: Leiomyoma (fibroids)\n  - M: Malignancy and hyperplasia\n• Non-structural (COEIN):\n  - C: Coagulopathy (e.g. VWD, platelet disorders)\n  - O: Ovulatory dysfunction\n  - E: Endometrial\n  - I: Iatrogenic\n  - N: Not yet classified",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "staging"
   },
   {
    "id": "fc_gynae_02",
@@ -465,7 +485,8 @@ window.PREPARE_CONTENT = {
    "ref": "Biss 2026 (Section: Anticoagulants)",
    "front": "In females on therapeutic anticoagulation with treatment-resistant heavy menstrual bleeding, which anticoagulant switch does BSH/UKHCDO 2026 describe?",
    "back": "Switch to Apixaban or Dabigatran:\n• Both apixaban and dabigatran have a lower incidence of heavy menstrual bleeding compared to rivaroxaban (ungraded good-practice point).\n• Avoid complete interruption of anticoagulation without haematological risk-benefit appraisal due to recurrent VTE hazard.",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_gynae_03",
@@ -474,7 +495,8 @@ window.PREPARE_CONTENT = {
    "ref": "Biss 2026 (Section: IBD Management)",
    "front": "What key complication occurs with levonorgestrel-releasing intrauterine systems (LNS-IUS / Mirena) in women with bleeding disorders, and how is it mitigated?",
    "back": "Key issue: Increased device expulsion rates in women with inherited bleeding disorders (IBDs).\n\nMitigation: Menstrual suppression has been described as reducing expulsion risk. Insertion may require sedation/anaesthesia and specialist technique in younger/adolescent patients.",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_poct_01",
@@ -483,7 +505,8 @@ window.PREPARE_CONTENT = {
    "ref": "Tam 2026 (Grade 1B)",
    "front": "What is the BSH 2026 Grade 1B recommendation regarding point-of-care D-dimer testing in secondary care?",
    "back": "Recommendation: Only high-sensitivity D-dimer tests with performance matching STA® or ELISA laboratory assays should be used (Grade 1B).\n\nClinical Pearl: Qualitative POCT D-dimer assays have poor sensitivity and should NOT be used to rule out DVT or PE in acute care.",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "rec:1"
   },
   {
    "id": "fc_poct_02",
@@ -492,7 +515,8 @@ window.PREPARE_CONTENT = {
    "ref": "Tam 2026 (Grade 1C)",
    "front": "Why are blood gas analysers (BGAs) not interchangeable with central laboratory analysers for Hb/Hct measurement?",
    "back": "BGA vs Central Lab:\n• Disagreement runs in BOTH directions: some studies show BGA underestimation (unnecessary transfusion risk); one found 21% of patients who would be transfused on the lab Hct would not be on the BGA Hct; another found systematic overestimation (mean 8 g/L).\n• Not interchangeable under CLIA criteria; BGAs usually cannot detect haemolysis in whole blood.\n• BSH Rec (Grade 1C): Blood gas analysers should not substitute laboratory-based Hb/Hct testing, but may aid in monitoring trends.",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "rec:2"
   },
   {
    "id": "fc_poct_03",
@@ -501,7 +525,8 @@ window.PREPARE_CONTENT = {
    "ref": "Tam 2026 (Section: PT/INR)",
    "front": "What critical diagnostic trap applies to handheld electromechanical PT/INR meters (e.g. CoaguChek) in patients with antiphospholipid syndrome (APS)?",
    "back": "Diagnostic Trap:\n• Clinically significant discrepancies occur in patients with antiphospholipid syndrome receiving warfarin due to variable lupus anticoagulant interference with thromboplastin reagents on test strips.\n• Central laboratory venous INR measurement must be used to verify therapeutic control in APS.\n• Also note: Strip lot-to-lot bias is significant when INR >= 4.0.",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_ttp_01",
@@ -510,7 +535,8 @@ window.PREPARE_CONTENT = {
    "ref": "MacDonald 2026",
    "front": "What is the diagnostic threshold for ADAMTS13 activity in TTP, and what is the emergency rule regarding treatment initiation?",
    "back": "Diagnostic Cutoffs:\n• ADAMTS13 activity <10 IU/dL is the diagnostic cut-off (93% of iTTP in the UK registry presented with <1 IU/dL).\n• 10–20 IU/dL is an equivocal grey zone for manual FRET/ELISA assays (not established for automated platforms; HemosIL CLEIA can read falsely low).\n\nEmergency Rule (context, ungraded): Availability of ADAMTS13 activity is NOT a prerequisite for starting treatment. In suspected TTP, start plasma exchange, steroids, and caplacizumab immediately without waiting for laboratory results.",
-   "sourceResourceId": "bsh_ttp_laboratory_2026"
+   "sourceResourceId": "bsh_ttp_laboratory_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_ttp_02",
@@ -519,7 +545,8 @@ window.PREPARE_CONTENT = {
    "ref": "MacDonald 2026 (Grade 1B/1C)",
    "front": "What sample tube is mandatory for ADAMTS13 testing, which tube is strictly forbidden, and what are the required turnaround times?",
    "back": "Sample Requirements:\n• Tube: 0.109 M (3.2%) Sodium Citrate filled >=90% (Grade 1B).\n• FORBIDDEN: EDTA tubes cannot be used (EDTA chelates zinc and calcium, causing falsely low ADAMTS13 activity).\n\nTurnaround Times (Grade 1C):\n• Rapid automated assays: within 1 hour of sample receipt.\n• ELISA assays: within 6 hours of sample receipt.\n• Platelet count <30 x 10^9/L: blood film examined for haemolysis, ideally within 60 minutes, with rapid escalation (1C).",
-   "sourceResourceId": "bsh_ttp_laboratory_2026"
+   "sourceResourceId": "bsh_ttp_laboratory_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_ttp_03",
@@ -528,7 +555,8 @@ window.PREPARE_CONTENT = {
    "ref": "MacDonald 2026 (Section: Conformation)",
    "front": "What is the timing for anti-ADAMTS13 antibody testing, and how does the open ADAMTS13 conformation index predict relapse?",
    "back": "Antibody Assay Timing:\n• Must be performed within 72 hours of presentation when ADAMTS13 activity <10 IU/dL (Grade 1B).\n• ELISA is recommended over Bethesda assays (detects neutralizing and non-neutralizing IgG).\n\nOpen Conformation Index:\n• Predicts clinical relapse before activity drops.\n• At peak activity (>60%), patients with open conformation had 46% 1-year relapse vs 9% with closed conformation.\n• BUT: conformation assays are NOT recommended for routine clinical use (2C); regional TTP centres only.",
-   "sourceResourceId": "bsh_ttp_laboratory_2026"
+   "sourceResourceId": "bsh_ttp_laboratory_2026",
+   "anchor": "staging"
   },
   {
    "id": "fc_pmbcl_01",
@@ -537,7 +565,8 @@ window.PREPARE_CONTENT = {
    "ref": "Osborne 2026 (IELSG37, Grade 1A)",
    "front": "What is the landmark Grade 1A recommendation from BSH 2026 regarding radiotherapy in PMBCL patients in Complete Metabolic Response (DS 1–3)?",
    "back": "BSH Recommendation (Grade 1A):\n• Do NOT offer consolidative radiotherapy for patients with Deauville Score 1–3 following first-line chemoimmunotherapy.\n\nEvidence: IELSG37 phase III trial showed 5-year OS was 99% in both observation and RT arms, confirming radiotherapy can be safely omitted in CMR without survival detriment.",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:0"
   },
   {
    "id": "fc_pmbcl_02",
@@ -546,7 +575,8 @@ window.PREPARE_CONTENT = {
    "ref": "Osborne 2026 (Grade 1B)",
    "front": "Which first-line regimens are recommended for PMBCL in BSH 2026, and why is standard R-CHOP-21 explicitly not recommended?",
    "back": "First-line Regimens (Grade 1B):\n• Recommended: Dose-intensive R-CHOP-14 x6 or DA-R-EPOCH x6.\n• NOT Recommended: R-CHOP-21 is not recommended.\n\nRationale: In IELSG37 (not powered to compare regimens), R-CHOP-21 had inferior EFS and roughly 3-fold more Deauville 5 responses (23.8% vs 8.2% with other regimens).",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:1"
   },
   {
    "id": "fc_pmbcl_03",
@@ -555,7 +585,8 @@ window.PREPARE_CONTENT = {
    "ref": "Osborne 2026 (Grade 1C)",
    "front": "What are the specific BSH 2026 recommendations for (1) thrombosis prophylaxis and (2) relapsed PMBCL within 12 months?",
    "back": "1. Thromboprophylaxis (Grade 1C):\n• Thrombotic complications in 28% of PMBCL patients (most often around presentation).\n• Prophylactic anticoagulation is recommended if platelet count >50 x 10^9/L.\n\n2. Early Relapse Salvage (Grade 1C):\n• Second-line high-dose chemotherapy has poor response in PMBCL.\n• CD19 CAR T-cell therapy with Lisocabtagene maraleucel (Liso-cel) is licensed and recommended second-line for relapse within 12 months (TRANSFORM trial).",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:3"
   },
   {
    "id": "fc_guideline_gynae_anticoag_switch",
@@ -564,7 +595,8 @@ window.PREPARE_CONTENT = {
    "ref": "Biss 2026 (Section: Individuals receiving anti-coagulant therapy)",
    "front": "BSH/UKHCDO 2026: In females on therapeutic anticoagulation with treatment-resistant heavy menstrual bleeding, what medication adjustment does the paper suggest?",
    "back": "Good-practice point (ungraded, in the text; not a formal recommendation):\n• Consider changing the anticoagulant, e.g. to apixaban or dabigatran, which have a lower incidence of HMB (vs rivaroxaban).\n\nClinical Pearl:\n• Do not stop anticoagulation without haematology review (recurrent VTE risk).",
-   "sourceResourceId": "bsh_haem_gynae_2026"
+   "sourceResourceId": "bsh_haem_gynae_2026",
+   "anchor": "cutoffs"
   },
   {
    "id": "fc_guideline_poct_iso15189",
@@ -573,7 +605,8 @@ window.PREPARE_CONTENT = {
    "ref": "Tam 2026 POCT Guideline",
    "front": "BSH 2026 Guideline Recommendation: What are the hospital laboratory governance and incident reporting requirements for Point-of-Care Testing (POCT)?",
    "back": "Guideline Governance Standards (Grades 1A-1B):\n1. Hospital Central Laboratory Oversight: All POCT devices must operate under a formal hospital POCT policy and ISO 15189:2022 quality framework.\n2. Internal & External QA: Regular IQC at decision thresholds and enrollment in UK NEQAS/EQA schemes.\n3. Mandatory SHOT Reporting: All transfusion-related POCT adverse events (e.g. incorrect BGA Hb causing inappropriate transfusion) must be reported to SHOT.",
-   "sourceResourceId": "bsh_poct_haematology_2026"
+   "sourceResourceId": "bsh_poct_haematology_2026",
+   "anchor": "staging"
   },
   {
    "id": "fc_guideline_pmbcl_ielsg37",
@@ -582,7 +615,8 @@ window.PREPARE_CONTENT = {
    "ref": "BSH 2026 PMBCL Guideline (Rec 1A; IELSG37 Trial)",
    "front": "BSH 2026 Guideline Recommendation: What is the Grade 1A recommendation regarding consolidative mediastinal radiotherapy in PMBCL?",
    "back": "Guideline Recommendation (Grade 1A):\n• Do NOT offer consolidative mediastinal radiotherapy for PMBCL patients with Deauville Score 1–3 (Complete Metabolic Response) on end-of-treatment PET-CT at 6 weeks.\n\nEvidence Base:\n• IELSG37 phase III trial showed 5-year Overall Survival of 99% in both observation and RT arms, sparing young patients long-term radiation-induced cardiovascular and secondary malignancy morbidity.",
-   "sourceResourceId": "bsh_pmbcl_lymphoma_2026"
+   "sourceResourceId": "bsh_pmbcl_lymphoma_2026",
+   "anchor": "rec:0"
   }
  ]
 };

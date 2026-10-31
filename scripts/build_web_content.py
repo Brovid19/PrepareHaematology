@@ -43,6 +43,27 @@ def load(name):
     return json.loads((CONTENT / f"{name}.json").read_text(encoding="utf-8"))
 
 
+ANCHOR_RE = re.compile(r"^(summary|cutoffs|staging|rec:\d+|pitfall:\d+)$")
+
+
+def check_anchor(kind, item, guidelines_by_id, errors):
+    """anchor = the part of the guideline summary an item is based on (for deep links)."""
+    anchor = item.get("anchor")
+    if anchor is None:
+        errors.append(f"{kind} {item['id']}: missing anchor (summary | cutoffs | staging | rec:N | pitfall:N)")
+        return
+    if not ANCHOR_RE.match(anchor):
+        errors.append(f"{kind} {item['id']}: invalid anchor {anchor!r}")
+        return
+    g = guidelines_by_id.get(item.get("sourceResourceId"))
+    if not g:
+        return
+    if anchor.startswith("rec:") and int(anchor[4:]) >= len(g.get("recommendations", [])):
+        errors.append(f"{kind} {item['id']}: anchor {anchor} out of range for {g['id']}")
+    if anchor.startswith("pitfall:") and int(anchor[8:]) >= len(g.get("pitfalls", [])):
+        errors.append(f"{kind} {item['id']}: anchor {anchor} out of range for {g['id']}")
+
+
 def validate(guidelines, questions, flashcards):
     errors = []
 
@@ -58,6 +79,7 @@ def validate(guidelines, questions, flashcards):
             errors.append(f"duplicate {kind} ids: {dupes}")
 
     guideline_ids = {g["id"] for g in guidelines}
+    guidelines_by_id = {g["id"]: g for g in guidelines}
     for g in guidelines:
         need(g, "guideline", ["id", "title", "issuingBody", "year", "category", "citation", "summary", "recommendations"])
         if g.get("category") not in GUIDELINE_CATEGORIES:
@@ -90,6 +112,7 @@ def validate(guidelines, questions, flashcards):
                 errors.append(f"question {q['id']}: correctIndex out of range")
             if not q.get("rationale"):
                 errors.append(f"question {q['id']}: missing rationale")
+        check_anchor("question", q, guidelines_by_id, errors)
 
     for c in flashcards:
         need(c, "flashcard", ["id", "domain", "front", "back", "sourceResourceId"])
@@ -97,6 +120,7 @@ def validate(guidelines, questions, flashcards):
             errors.append(f"flashcard {c['id']}: unknown domain {c.get('domain')!r}")
         if c.get("sourceResourceId") not in guideline_ids:
             errors.append(f"flashcard {c['id']}: unknown sourceResourceId {c.get('sourceResourceId')!r}")
+        check_anchor("flashcard", c, guidelines_by_id, errors)
 
     if errors:
         raise SystemExit("Content validation FAILED:\n  " + "\n  ".join(errors))
@@ -149,6 +173,7 @@ def to_web(guidelines, questions, flashcards):
             "ref": " • ".join(p for p in (q.get("yearPaper"), q.get("guidelineSection")) if p),
             "evidenceGrade": q.get("evidenceGrade", ""),
             "sourceResourceId": q["sourceResourceId"],
+            "anchor": q["anchor"],
         })
 
     web_cards = [{
@@ -159,6 +184,7 @@ def to_web(guidelines, questions, flashcards):
         "front": c["front"],
         "back": c["back"],
         "sourceResourceId": c["sourceResourceId"],
+        "anchor": c["anchor"],
     } for c in flashcards]
 
     return {"guidelines": web_guidelines, "questions": web_questions, "flashcards": web_cards}
@@ -176,7 +202,7 @@ def build():
 
     # BUILD_ID changes whenever the app shell or content changes, so installed PWAs update.
     digest = hashlib.sha256()
-    for path in sorted(list(PUBLIC.glob("*.html")) + list(PUBLIC.glob("*.webmanifest")) + list((PUBLIC / "icons").glob("*"))):
+    for path in sorted(list(PUBLIC.glob("*.html")) + list(PUBLIC.glob("*.webmanifest")) + list((PUBLIC / "icons").glob("*")) + list((PUBLIC / "fonts").glob("*"))):
         digest.update(path.read_bytes())
     digest.update(js.encode("utf-8"))
     build_id = digest.hexdigest()[:12]
